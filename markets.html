@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script id="reb-final-route-sync">
+(function(){
+  'use strict';
+  var V='reb-chat-final-sync-20260913';
+  try{
+    var u=new URL(location.href);
+    if(u.searchParams.get('rebv')!==V){
+      u.searchParams.set('rebv',V);
+      location.replace(u.href);
+      return;
+    }
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var raw=a.getAttribute('href')||'';
+    if(!raw || raw.charAt(0)==='#' || /^(mailto:|tel:|javascript:|data:)/i.test(raw))return;
+    try{
+      var x=new URL(a.href,location.href);
+      if(x.origin!==location.origin)return;
+      if(/\.(?:png|jpe?g|gif|webp|svg|css|js|woff2?|ttf|eot|mp4|webm|mov|zip|rar|7z|pdf|docx?|xlsx?|pptx?|ex5|mq5|set)$/i.test(x.pathname))return;
+      x.searchParams.set('rebv',V);
+      a.href=x.href;
+    }catch(e){}
+  },true);
+})();
+</script>
+
+<link rel="stylesheet" href="/assets/css/reb-desktop-auth-stable-v3.css?v=20260812-3">
+<!-- REB_MARKET_BACKEND_ONLY_20260810 -->
+<base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EA Bot Market - ReachEmpireBot</title>
+<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="/assets/css/font-awesome-all.css" rel="stylesheet">
+<style>
+:root{--gold:#f5b026;--black:#050505;--ink:#111;--muted:#666;--line:#e8e2d6;--soft:#fff8ea;}
+*{box-sizing:border-box}
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{margin:0;font-family:Ubuntu,Arial,sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}
+.reb-top{background:#101312;color:#fff;padding:16px 7vw;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.reb-phone{font-size:20px;font-weight:700}.reb-phone i{color:var(--gold);margin-right:10px}
+.reb-login{display:flex;gap:10px}.reb-login a{border:1px solid rgba(255,255,255,.45);border-radius:8px;padding:10px 22px;font-weight:700}.reb-login a:first-child{background:var(--gold);border-color:var(--gold);color:#070707}
+.reb-header{padding:18px 7vw;border-bottom:1px solid #eee;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:26px;position:sticky;top:0;z-index:20}
+.reb-logo img{width:260px;max-width:52vw;height:auto;display:block}
+.reb-nav{display:flex;align-items:center;gap:10px;flex-wrap:nowrap}.reb-nav a{border:1px solid var(--black);border-radius:999px;padding:8px 16px;font-weight:700;white-space:nowrap;line-height:1.1}.reb-nav a.trade-account-link{font-size:14px;padding:8px 13px;min-width:188px;text-align:center;white-space:nowrap;line-height:1.08}.reb-nav a.active,.reb-nav a:hover{border-color:var(--gold);color:#050505;background:#fff9ed}
+.reb-hero{background:radial-gradient(circle at 82% 34%,rgba(245,176,38,.35),transparent 30%),linear-gradient(135deg,#050505,#171106 78%);color:#fff;padding:82px 7vw 70px;position:relative;overflow:hidden}
+.reb-hero-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.reb-kicker{color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:16px}.reb-hero h1{font-size:64px;line-height:1.02;margin:0 0 22px}.reb-hero p{font-size:20px;line-height:1.7;color:rgba(255,255,255,.78);max-width:610px}
+.reb-hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}.reb-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:8px;padding:0 28px;font-weight:700}.reb-btn.gold{background:var(--gold);color:#070707}.reb-btn.dark{border:1px solid rgba(255,255,255,.24);color:#fff}
+.reb-hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(245,176,38,.25);border-radius:8px;padding:26px;backdrop-filter:blur(10px)}
+.reb-hero-card img{width:230px;display:block;margin:0 auto 16px;filter:drop-shadow(0 26px 34px rgba(0,0,0,.4))}
+.reb-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.reb-mini{background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:14px}.reb-mini strong{display:block;color:var(--gold);font-size:24px}.reb-mini span{font-size:13px;color:rgba(255,255,255,.72)}
+.reb-store{padding:76px 7vw;background:#fff}.reb-section-title{text-align:center;max-width:760px;margin:0 auto 46px}.reb-section-title span{display:inline-block;color:#a36f00;background:#fff8ea;border:1px solid #f4d9a7;border-radius:999px;padding:7px 22px;font-size:12px;font-weight:700;text-transform:uppercase}.reb-section-title h2{font-size:46px;line-height:1.08;margin:20px 0 12px}.reb-section-title p{color:var(--muted);font-size:18px;line-height:1.6}
+.reb-products{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.reb-product{border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:0 22px 54px rgba(13,13,13,.07);overflow:hidden;display:flex;flex-direction:column}
+.reb-product-top{min-height:190px;background:linear-gradient(135deg,#0a0a0a,#2b210e);display:flex;align-items:center;justify-content:center;position:relative}
+.reb-product-top:after{content:"";position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(transparent,rgba(245,176,38,.20))}
+.reb-product-top i{font-size:62px;color:var(--gold);z-index:1}.reb-product-body{padding:28px;display:flex;flex-direction:column;flex:1}.reb-product h3{font-size:28px;margin:0 0 10px}.reb-product p{color:var(--muted);line-height:1.65;margin:0 0 20px}.reb-price{display:flex;align-items:flex-end;gap:8px;margin:auto 0 20px}.reb-price strong{font-size:34px;color:#050505}.reb-price span{color:#777;margin-bottom:6px}.reb-list{list-style:none;margin:0 0 24px;padding:0}.reb-list li{padding:9px 0;border-top:1px solid #f1ede4;color:#303030}.reb-list i{color:var(--gold);margin-right:9px}
+.reb-product .reb-btn{width:100%}
+.reb-bundle{max-width:1180px;margin:50px auto 0;background:#090909;color:#fff;border-radius:8px;padding:34px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}.reb-bundle h3{font-size:30px;margin:0 0 8px}.reb-bundle p{color:rgba(255,255,255,.72);margin:0;line-height:1.6}
+.reb-process{padding:74px 7vw;background:#f8f8f8}.reb-steps{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.reb-step{background:#fff;border:1px solid #eee;border-radius:8px;padding:24px}.reb-step strong{display:inline-flex;width:42px;height:42px;border-radius:50%;background:var(--gold);align-items:center;justify-content:center;margin-bottom:18px}.reb-step h3{margin:0 0 8px;font-size:20px}.reb-step p{margin:0;color:var(--muted);line-height:1.55}
+.reb-footer{background:#050505;color:#fff;padding:38px 7vw;display:flex;justify-content:space-between;gap:20px;align-items:center}.reb-footer img{width:220px}.reb-footer p{color:rgba(255,255,255,.68);margin:0}
+</style>
+<link rel="stylesheet" href="/assets/css/standard-font-safe.css?v=20260518-font3">
+<link rel="stylesheet" href="/assets/css/reb-page-stability.css">
+
+<style id="reb-vercel-safe-fix">
+[class*="lang"], [id*="lang"], .language-dropdown, .language-selector, .language-switcher,
+.lang-switcher, .lang-dropdown, .flag-dropdown, .flag-selector{
+  display:none!important;visibility:hidden!important;opacity:0!important;width:0!important;height:0!important;overflow:hidden!important;
+}
+img{max-width:100%}
+@media(max-width:900px){.reb-nav{flex-wrap:wrap!important;}.reb-nav a.trade-account-link{min-width:0;white-space:normal;font-size:15px;}
+  body{overflow-x:hidden!important}
+  .form-grid,.auth-grid{grid-template-columns:1fr!important}
+  input,select,button,.btn{max-width:100%!important}
+}
+</style>
+
+<link rel="stylesheet" href="/assets/css/reb-mobile-responsive.css?v=20260519-dense-space1">
+<style id="reb-taskbar-nav-style">
+.reb-subpage .reb-header{padding:14px 7vw!important;background:#fff!important;border-bottom:1px solid #ececec!important;gap:24px!important;align-items:center!important;}
+.reb-subpage .reb-nav{display:flex!important;align-items:center!important;align-self:center!important;justify-content:flex-end!important;gap:3px!important;flex-wrap:nowrap!important;background:#101312!important;border:1px solid rgba(245,176,38,.24)!important;border-radius:14px!important;padding:5px!important;box-shadow:0 14px 30px rgba(0,0,0,.12)!important;min-width:0!important;width:auto!important;height:auto!important;min-height:0!important;max-height:54px!important;overflow:visible!important;}
+.reb-subpage .reb-nav a{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:40px!important;padding:0 16px!important;border:0!important;border-radius:10px!important;color:#fff!important;background:transparent!important;font-size:14px!important;font-weight:700!important;line-height:1!important;white-space:nowrap!important;text-align:center!important;transition:background .18s ease,color .18s ease,box-shadow .18s ease!important;}
+.reb-subpage .reb-nav a + a{border-left:0!important;}
+.reb-subpage .reb-nav a.active,.reb-subpage .reb-nav a:hover{background:var(--gold)!important;color:#070707!important;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)!important;}
+.reb-subpage .reb-nav a.trade-account-link{min-width:118px!important;padding-left:14px!important;padding-right:14px!important;font-size:14px!important;letter-spacing:0!important;}
+@media(max-width:1180px){.reb-subpage .reb-header{align-items:flex-start!important;flex-direction:column!important;}.reb-subpage .reb-nav{width:100%!important;max-height:none!important;justify-content:flex-start!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;}.reb-subpage .reb-nav::-webkit-scrollbar{display:none!important;}.reb-subpage .reb-nav a{flex:0 0 auto!important;}}
+@media(max-width:640px){.reb-subpage .reb-header{padding:14px 20px!important;}.reb-subpage .reb-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;background:#101312!important;border-radius:10px!important;padding:6px!important;overflow:visible!important;}.reb-subpage .reb-nav a,.reb-subpage .reb-nav a.trade-account-link{width:100%!important;min-width:0!important;min-height:42px!important;font-size:14px!important;white-space:normal!important;line-height:1.08!important;padding:0 8px!important;border-left:0!important;}}
+</style>
+<style id="reb-standard-mobile-menu">
+@media(max-width:767px){
+  body{overflow-x:hidden!important}
+  .reb-top{display:flex!important;justify-content:flex-end!important;align-items:center!important;width:100%!important;padding:12px 18px!important;background:#101312!important;box-sizing:border-box!important}
+  .reb-top .reb-phone{display:none!important}
+  .reb-top .reb-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;width:min(280px,calc(100vw - 36px))!important;margin-left:auto!important;margin-right:auto!important}
+  .reb-top .reb-actions a{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;min-height:44px!important;padding:0 14px!important;border-radius:9px!important;font-size:15px!important;font-weight:800!important;line-height:1!important;white-space:nowrap!important;text-align:center!important}
+  .reb-header{position:relative!important;top:auto!important;display:grid!important;grid-template-columns:1fr!important;width:100%!important;max-width:100%!important;padding:18px!important;gap:18px!important;background:#fff!important;border-bottom:1px solid #ececec!important;box-sizing:border-box!important;overflow:hidden!important}
+  .reb-header .reb-logo,.reb-logo{display:flex!important;align-items:center!important;justify-content:flex-start!important;width:100%!important;max-width:100%!important;margin:0!important}
+  .reb-header .reb-logo img,.reb-logo img{width:min(245px,72vw)!important;max-width:72vw!important;height:auto!important;display:block!important}
+  .reb-nav{display:flex!important;flex-wrap:nowrap!important;align-items:center!important;width:100%!important;max-width:100%!important;min-width:0!important;gap:8px!important;margin:0!important;padding:8px!important;background:#101312!important;border:1px solid rgba(245,176,38,.24)!important;border-radius:12px!important;box-shadow:0 12px 24px rgba(0,0,0,.12)!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;box-sizing:border-box!important;-webkit-overflow-scrolling:touch!important} .reb-nav::-webkit-scrollbar{display:none!important}
+  .reb-nav a,.reb-nav a.trade-account-link{display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;width:auto!important;min-width:112px!important;min-height:46px!important;padding:0 14px!important;border:0!important;border-radius:9px!important;background:transparent!important;color:#fff!important;font-size:14px!important;font-weight:800!important;line-height:1.08!important;white-space:nowrap!important;text-align:center!important;box-sizing:border-box!important}
+  .reb-nav a.active,.reb-nav a:hover{background:var(--gold,#f5b026)!important;color:#070707!important;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)!important}
+}
+@media(max-width:380px){
+  .reb-top{padding-left:14px!important;padding-right:14px!important}
+  .reb-header{padding:16px 14px!important}
+  .reb-nav{gap:7px!important;padding:7px!important} .reb-nav a,.reb-nav a.trade-account-link{font-size:13px!important;min-width:104px!important;min-height:44px!important;padding:0 12px!important}
+}
+</style>
+<link rel="stylesheet" href="/assets/css/reb-font-scale-polish.css?v=20260530-fontscale1">
+<link rel="stylesheet" href="/assets/css/reb-global-page-align.css?v=20260531-marketbanner1">
+<style id="reb-ea-marketplace-polish">
+.reb-ea-market-note{display:inline-flex;align-items:center;gap:10px;margin-top:18px;color:rgba(255,255,255,.78);font-size:15px;line-height:1.5}.reb-ea-market-note i{color:var(--gold)}
+.reb-seller-strip{padding:72px 7vw;background:#0a0a0a;color:#fff}.reb-seller-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr .92fr;gap:24px;align-items:stretch}.reb-seller-copy,.reb-upload-preview{border:1px solid rgba(245,176,38,.22);border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.025));padding:30px}.reb-seller-copy span{color:var(--gold);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.reb-seller-copy h2{font-size:40px;line-height:1.1;margin:14px 0}.reb-seller-copy p{color:rgba(255,255,255,.72);font-size:17px;line-height:1.65;margin:0 0 22px}.reb-seller-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px}.reb-seller-points div{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:14px}.reb-seller-points strong{display:block;color:var(--gold);font-size:18px;margin-bottom:4px}.reb-seller-points small{color:rgba(255,255,255,.68);line-height:1.35}.reb-upload-preview{display:grid;gap:12px}.reb-upload-row{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;background:#fff;color:#111;border-radius:8px;padding:14px}.reb-upload-row i{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--gold);color:#070707}.reb-upload-row b{display:block;font-size:16px}.reb-upload-row span{color:#666;font-size:13px}.reb-upload-row em{font-style:normal;font-weight:700;color:#a36f00;background:#fff8ea;border:1px solid #f4d9a7;border-radius:999px;padding:7px 12px;white-space:nowrap}.reb-product .reb-product-meta{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.reb-product .reb-product-meta span{font-size:12px;font-weight:700;color:#7a5600;background:#fff8ea;border:1px solid #f0d7a4;border-radius:999px;padding:6px 10px}.reb-market-upload-anchor{scroll-margin-top:110px}
+@media(max-width:900px){.reb-seller-inner{grid-template-columns:1fr}.reb-seller-points{grid-template-columns:1fr}.reb-seller-copy h2{font-size:32px}.reb-upload-row{grid-template-columns:38px 1fr}.reb-upload-row em{grid-column:2;justify-self:start}}
+@media(max-width:640px){.reb-hero h1{font-size:38px!important;line-height:1.08!important}.reb-hero p{font-size:16px!important}.reb-products{grid-template-columns:1fr!important}.reb-mini-grid{grid-template-columns:1fr!important}.reb-bundle{grid-template-columns:1fr!important}.reb-steps{grid-template-columns:1fr!important}.reb-seller-strip,.reb-store,.reb-process{padding-left:18px!important;padding-right:18px!important}.reb-seller-copy,.reb-upload-preview{padding:22px}.reb-section-title h2{font-size:32px!important}}
+</style>
+<style id="reb-ea-market-mobile-guard">
+html,body{max-width:100%;overflow-x:hidden}.reb-seller-strip,.reb-seller-inner,.reb-seller-copy,.reb-upload-preview,.reb-upload-row,.reb-products,.reb-product{min-width:0;max-width:100%;box-sizing:border-box}.reb-seller-copy h2,.reb-seller-copy p,.reb-upload-row b,.reb-upload-row span{white-space:normal!important;word-break:normal!important;overflow-wrap:break-word!important}.reb-seller-copy h2{max-width:100%;font-size:clamp(28px,7vw,40px)!important;line-height:1.12!important}.reb-upload-preview{overflow:hidden}.reb-upload-row{width:100%}
+@media(max-width:640px){.reb-seller-inner{display:grid!important;grid-template-columns:minmax(0,1fr)!important}.reb-seller-strip{overflow:hidden!important}.reb-seller-copy,.reb-upload-preview{width:100%!important}.reb-upload-row{grid-template-columns:38px minmax(0,1fr)!important}.reb-upload-row em{grid-column:2!important;justify-self:start!important}.reb-hero-card{max-width:100%!important}.reb-hero-actions .reb-btn{width:100%!important}}
+</style>
+<style id="reb-ea-market-mobile-tight-final">
+@media(max-width:640px){.reb-seller-copy h2{font-size:26px!important;line-height:1.14!important;overflow-wrap:anywhere!important;word-break:normal!important}.reb-seller-copy p{font-size:14px!important;line-height:1.55!important}.reb-seller-copy .reb-btn{width:100%!important}.reb-upload-row span{font-size:12px!important}.reb-seller-points div{padding:12px!important}}
+</style>
+<style id="reb-ea-market-filter-list">
+.reb-market-controls{max-width:1180px;margin:0 auto 28px;display:grid;grid-template-columns:minmax(240px,1fr) auto;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;box-shadow:0 16px 38px rgba(13,13,13,.06)}
+.reb-market-search{position:relative;min-width:0}.reb-market-search i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#a36f00}.reb-market-search input{width:100%;min-height:48px;border:1px solid #eadfcd;border-radius:8px;padding:0 16px 0 44px;font:inherit;font-weight:600;outline:none;background:#fffaf0}.reb-market-search input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,176,38,.18)}
+.reb-market-filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.reb-filter-btn{border:1px solid #eadfcd;background:#fff;border-radius:999px;min-height:42px;padding:0 15px;font:inherit;font-weight:800;color:#4f3b12;cursor:pointer}.reb-filter-btn.active,.reb-filter-btn:hover{background:var(--gold);border-color:var(--gold);color:#070707}
+.reb-market-count{max-width:1180px;margin:0 auto 16px;color:#77664e;font-size:14px;font-weight:700}.reb-market-empty{display:none;max-width:1180px;margin:16px auto 0;border:1px dashed #e2c88d;border-radius:8px;background:#fffaf0;padding:18px;color:#7a5600;font-weight:700;text-align:center}.reb-market-empty.show{display:block}
+.reb-product[hidden]{display:none!important}.reb-product-actions{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:auto}.reb-product-actions .reb-btn{min-height:48px;padding:0 18px}.reb-product-actions .reb-btn.light{border:1px solid #eadfcd;background:#fff;color:#111}.reb-product-status{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 18px;color:#666;font-size:13px}.reb-product-status b{color:#07805f}.reb-product-author{display:flex;align-items:center;gap:8px;color:#555;font-size:13px;margin:0 0 16px}.reb-product-author i{color:var(--gold)}
+.reb-ea-detail-link{color:inherit;text-decoration:none}.reb-ea-detail-link:hover h3{color:#a36f00}.reb-compact-ea-body .reb-product-actions{grid-template-columns:1fr 1fr}.reb-compact-ea-body .reb-product-actions .reb-btn{width:100%;min-width:0;padding:0 10px;font-size:13px}
+@media(max-width:900px){.reb-market-controls{grid-template-columns:1fr}.reb-market-filters{justify-content:flex-start}.reb-products{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.reb-market-controls{padding:12px;margin-bottom:20px}.reb-market-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.reb-filter-btn{width:100%;padding:0 8px;font-size:13px}.reb-product-actions{grid-template-columns:1fr}.reb-product-actions .reb-btn{width:100%}.reb-product h3{font-size:24px!important}.reb-product-body{padding:22px!important}.reb-product-top{min-height:150px!important}.reb-product-top i{font-size:52px!important}}
+</style>
+<style id="reb-ea-market-mobile-control-fix">
+.reb-product-top i{color:var(--gold)!important;text-shadow:0 0 0 var(--gold)!important}
+@media(max-width:640px){
+  .reb-store{overflow:hidden!important}
+  .reb-market-controls{display:grid!important;grid-template-columns:minmax(0,1fr)!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;overflow:hidden!important}
+  .reb-market-search{width:100%!important;max-width:100%!important;overflow:hidden!important}
+  .reb-market-search input{width:100%!important;max-width:100%!important;min-width:0!important;font-size:13px!important;padding-left:40px!important;padding-right:10px!important;white-space:nowrap!important;text-overflow:ellipsis!important;overflow:hidden!important}
+  .reb-market-filters{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;max-width:100%!important;overflow:hidden!important}
+  .reb-filter-btn{min-width:0!important;white-space:normal!important;line-height:1.08!important}
+  .reb-products{width:100%!important;max-width:100%!important;overflow:hidden!important}
+  .reb-product{width:100%!important;max-width:100%!important;min-width:0!important}
+}
+</style>
+<style id="reb-ea-market-mobile-width-clamp-final">
+@media(max-width:640px){
+  .reb-store{padding-left:14px!important;padding-right:14px!important;box-sizing:border-box!important;overflow:hidden!important}
+  .reb-store .reb-section-title,.reb-market-controls,.reb-market-count,.reb-products,.reb-market-empty,.reb-bundle{width:100%!important;max-width:calc(100vw - 28px)!important;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box!important}
+  .reb-store .reb-section-title h2{font-size:30px!important;line-height:1.12!important;max-width:100%!important;overflow-wrap:break-word!important}
+  .reb-store .reb-section-title p{font-size:14px!important;line-height:1.5!important;max-width:100%!important;overflow-wrap:break-word!important}
+  .reb-market-controls{padding:10px!important}
+  .reb-market-search input{font-size:12px!important}
+  .reb-products{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+  .reb-product-top i{display:flex!important;align-items:center!important;justify-content:center!important;width:70px!important;height:70px!important;margin:auto!important;border-radius:50%!important;background:rgba(245,176,38,.14)!important;color:var(--gold)!important;font-size:42px!important}
+}
+</style>
+<style id="reb-market-client-upload-photo-style">
+.reb-product-top.reb-product-photo{padding:0;background:#111;overflow:hidden}.reb-product-top.reb-product-photo:after{display:none}.reb-product-top.reb-product-photo img{width:100%;height:100%;min-height:190px;object-fit:cover;display:block}.reb-client-uploaded{border-color:#e8c16a!important}.reb-client-uploaded .reb-product-status b{color:#a36f00}
+@media(max-width:640px){.reb-product-top.reb-product-photo img{min-height:150px}}
+</style>
+<style id="reb-ea-card-cover-redesign">
+.reb-product{position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.reb-product:hover{transform:translateY(-3px);box-shadow:0 28px 70px rgba(13,13,13,.12);border-color:#e5bd66}.reb-product-top.reb-ea-cover{min-height:214px;padding:0;background:radial-gradient(circle at 73% 24%,rgba(245,176,38,.42),transparent 35%),radial-gradient(circle at 20% 88%,rgba(0,205,168,.13),transparent 24%),linear-gradient(135deg,#050505,#231a08 78%);overflow:hidden;align-items:stretch!important;justify-content:stretch!important}.reb-product-top.reb-ea-cover:after{content:"";position:absolute;inset:auto 0 0;height:55%;background:linear-gradient(transparent,rgba(0,0,0,.60));z-index:0}.reb-cover-stage{position:relative;width:100%;min-height:214px;display:grid;grid-template-columns:minmax(0,1fr) minmax(118px,.88fr);align-items:center;padding:18px;gap:10px;z-index:1}.reb-cover-copy{display:grid;gap:9px;color:#fff;min-width:0}.reb-cover-label{display:inline-flex;align-items:center;gap:7px;width:max-content;max-width:100%;border:1px solid rgba(245,176,38,.36);background:rgba(0,0,0,.42);border-radius:999px;padding:7px 10px;color:#ffd15b;font-size:12px;font-weight:800;white-space:nowrap}.reb-cover-title{font-size:23px;font-weight:900;line-height:1.08;color:#fff;overflow-wrap:break-word}.reb-cover-symbols{display:flex;gap:6px;flex-wrap:wrap}.reb-cover-symbols span{border-radius:999px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.14);padding:5px 8px;font-size:11px;font-weight:800;color:#fff;white-space:nowrap}.reb-cover-robot{position:relative;display:flex;align-items:flex-end;justify-content:center;min-width:0;height:100%}.reb-cover-robot img{width:min(172px,100%);max-height:184px;object-fit:contain;filter:drop-shadow(0 20px 26px rgba(0,0,0,.45));z-index:2}.reb-cover-chart{position:absolute;left:0;right:4px;bottom:5px;height:76px;border-radius:8px;background:linear-gradient(135deg,rgba(0,0,0,.70),rgba(0,0,0,.30));border:1px solid rgba(245,176,38,.18);overflow:hidden}.reb-cover-chart:before{content:"";position:absolute;inset:16px 10px;background:linear-gradient(135deg,transparent 8%,rgba(12,210,164,.55) 9%,transparent 10%,transparent 28%,rgba(245,176,38,.46) 29%,transparent 31%,transparent 52%,rgba(255,72,96,.55) 53%,transparent 55%,transparent 72%,rgba(12,210,164,.46) 73%,transparent 75%);opacity:.92}.reb-product-top.reb-product-photo{min-height:214px;padding:0;background:#111;overflow:hidden}.reb-product-top.reb-product-photo:after{display:none}.reb-product-top.reb-product-photo img{width:100%;height:100%;min-height:214px;object-fit:cover;display:block}.reb-product-body>p{min-height:78px}.reb-client-uploaded{border-color:#e8c16a!important}.reb-client-uploaded:before{content:"Client Upload";position:absolute;top:12px;right:12px;z-index:4;background:#f5b026;color:#070707;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:900;box-shadow:0 10px 22px rgba(0,0,0,.22)}
+.reb-product-top.reb-ea-cover .reb-cover-label i{display:none!important}
+@media(max-width:640px){.reb-product-top.reb-ea-cover,.reb-cover-stage{min-height:184px}.reb-cover-stage{grid-template-columns:minmax(0,1fr) minmax(96px,.82fr);padding:14px}.reb-cover-title{font-size:19px}.reb-cover-label{font-size:11px}.reb-cover-symbols span{font-size:10px;padding:4px 7px}.reb-cover-robot img{width:min(136px,100%);max-height:154px}.reb-cover-chart{height:58px}.reb-product-body>p{min-height:0}.reb-product-top.reb-product-photo,.reb-product-top.reb-product-photo img{min-height:184px}}
+</style>
+<style id="reb-payment-ui">
+.reb-pay-methods{max-width:1180px;margin:34px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:18px}.reb-pay-card{border:1px solid #ead7aa;border-radius:8px;background:#fffaf0;padding:22px;display:grid;gap:12px}.reb-pay-card h3{font-size:24px;margin:0;display:flex;align-items:center;gap:10px}.reb-pay-card h3 i{color:#f5b026}.reb-pay-card p{margin:0;color:#665f52;line-height:1.55}.reb-pay-badges{display:flex;gap:8px;flex-wrap:wrap}.reb-pay-badge{display:inline-flex;align-items:center;justify-content:center;min-height:30px;border-radius:6px;padding:0 10px;font-weight:900;font-size:12px;border:1px solid #e6c57a;background:#fff;color:#111}.reb-pay-badge.paypal{color:#073b86}.reb-pay-badge.visa{color:#1434cb}.reb-pay-badge.mastercard{color:#d71920}.reb-buy-btn{cursor:pointer;border:0}.reb-payment-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.68)}.reb-payment-modal.show{display:flex}.reb-payment-dialog{width:min(920px,100%);max-height:min(92vh,820px);overflow:auto;background:#fff;border-radius:10px;box-shadow:0 28px 80px rgba(0,0,0,.36);border:1px solid rgba(245,176,38,.28)}.reb-payment-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:24px 26px;background:linear-gradient(135deg,#050505,#221907);color:#fff}.reb-payment-head h2{font-size:30px;line-height:1.1;margin:0 0 8px}.reb-payment-head p{margin:0;color:rgba(255,255,255,.72);line-height:1.5}.reb-pay-close{width:40px;height:40px;border-radius:8px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;font-size:18px;cursor:pointer}.reb-payment-body{display:grid;grid-template-columns:.82fr 1.18fr;gap:0}.reb-order-summary{background:#fff8ea;border-right:1px solid #ead7aa;padding:24px}.reb-order-summary span{display:block;color:#8a5d00;font-weight:800;font-size:12px;text-transform:uppercase;margin-bottom:8px}.reb-order-summary h3{font-size:26px;margin:0 0 10px}.reb-order-price{font-size:38px;font-weight:900;margin:18px 0;color:#050505}.reb-order-note{font-size:13px;color:#6a604f;line-height:1.5}.reb-payment-form{padding:24px;display:grid;gap:18px}.reb-method-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.reb-method{border:1px solid #ead7aa;border-radius:8px;background:#fff;padding:16px;text-align:left;cursor:pointer;display:grid;gap:8px;font:inherit}.reb-method.active{border-color:#f5b026;box-shadow:0 0 0 3px rgba(245,176,38,.16);background:#fffaf0}.reb-method strong{font-size:18px;display:flex;align-items:center;gap:8px}.reb-method small{color:#6a604f;line-height:1.4}.reb-secure-panel{border:1px solid #eee2c8;border-radius:8px;background:#fff;padding:18px;display:grid;gap:12px}.reb-secure-panel h4{font-size:18px;margin:0}.reb-secure-panel p{margin:0;color:#655f55;line-height:1.55}.reb-card-preview{border-radius:10px;background:linear-gradient(135deg,#101312,#1d1608);color:#fff;padding:18px;min-height:132px;display:grid;align-content:space-between;box-shadow:0 16px 34px rgba(0,0,0,.18)}.reb-card-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.reb-card-number{font-size:20px;font-weight:800;letter-spacing:.12em}.reb-payment-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.reb-payment-field.full{grid-column:1/-1}.reb-payment-field label{display:block;font-size:12px;font-weight:900;text-transform:uppercase;color:#6d5218;margin-bottom:7px}.reb-payment-field input{width:100%;min-height:44px;border:1px solid #e5d7bd;border-radius:8px;padding:0 12px;font:inherit;background:#fff}.reb-payment-field input:disabled{background:#f7f7f7;color:#777}.reb-payment-warning{border-left:4px solid #f5b026;background:#fff8ea;border-radius:0 8px 8px 0;padding:12px 14px;color:#67501c;font-size:13px;line-height:1.48}.reb-payment-actions{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.reb-payment-actions .reb-btn{border:0;cursor:pointer}.reb-pay-status{display:none;border-radius:8px;background:#eefbf5;border:1px solid #cbeedd;color:#08704f;padding:12px 14px;font-weight:800}.reb-pay-status.show{display:block}.reb-payment-logos{display:flex;gap:8px;flex-wrap:wrap}.reb-payment-logos span{border:1px solid #e8d3a1;border-radius:6px;padding:6px 10px;font-weight:900;background:#fff}.reb-payment-logos .paypal{color:#073b86}.reb-payment-logos .visa{color:#1434cb}.reb-payment-logos .mastercard{color:#d71920}
+@media(max-width:820px){.reb-pay-methods{grid-template-columns:1fr}.reb-payment-body{grid-template-columns:1fr}.reb-order-summary{border-right:0;border-bottom:1px solid #ead7aa}.reb-method-grid{grid-template-columns:1fr}.reb-payment-actions{grid-template-columns:1fr}.reb-payment-actions .reb-btn{width:100%}}
+@media(max-width:520px){.reb-payment-modal{padding:10px}.reb-payment-head,.reb-order-summary,.reb-payment-form{padding:18px}.reb-payment-head h2{font-size:24px}.reb-payment-fields{grid-template-columns:1fr}.reb-order-price{font-size:32px}.reb-card-number{font-size:16px}}
+</style>
+<style id="reb-payment-ui-fix">
+.reb-secure-panel[hidden]{display:none!important}
+.reb-payment-dialog,.reb-payment-body,.reb-payment-form,.reb-order-summary,.reb-secure-panel,.reb-method{min-width:0;box-sizing:border-box}
+.reb-payment-head{min-width:0}.reb-payment-head>div{min-width:0}.reb-pay-close{flex:0 0 40px}
+.reb-method strong,.reb-method small,.reb-secure-panel p,.reb-order-note{white-space:normal!important;overflow-wrap:break-word!important;word-break:normal!important}
+@media(max-width:520px){
+  .reb-payment-modal{align-items:flex-start!important;justify-content:center!important;padding:10px!important;overflow-x:hidden!important;overflow-y:auto!important}
+  .reb-payment-dialog{width:calc(100vw - 20px)!important;max-width:calc(100vw - 20px)!important;max-height:calc(100vh - 20px)!important}
+  .reb-payment-head{padding:16px!important;gap:10px!important}
+  .reb-payment-head h2{font-size:22px!important}
+  .reb-payment-head p{font-size:14px!important}
+  .reb-order-summary,.reb-payment-form{padding:16px!important}
+  .reb-order-summary h3{font-size:24px!important}
+  .reb-order-price{font-size:32px!important}
+  .reb-method{padding:14px!important}
+  .reb-method strong{font-size:17px!important}
+  .reb-method small,.reb-secure-panel p,.reb-payment-warning{font-size:13px!important;line-height:1.45!important}
+  .reb-card-preview{min-height:118px!important;padding:14px!important}
+  .reb-card-number{font-size:15px!important;letter-spacing:.08em!important}
+  .reb-payment-actions{grid-template-columns:1fr!important}
+  .reb-payment-actions .reb-btn{width:100%!important}
+}
+</style>
+<style id="reb-payment-mobile-tight-fix">
+@media(max-width:520px){
+  .reb-payment-dialog{width:360px!important;max-width:calc(100vw - 32px)!important;margin:0 auto!important;overflow:hidden!important}
+  .reb-payment-body{display:block!important;width:100%!important}
+  .reb-payment-form{display:block!important;width:100%!important;overflow:hidden!important}
+  .reb-method-grid{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;width:100%!important}
+  .reb-payment-dialog *{max-width:100%!important;box-sizing:border-box!important}
+  .reb-payment-head{grid-template-columns:minmax(0,1fr) 36px!important;align-items:flex-start!important}
+  .reb-pay-close{width:36px!important;height:36px!important;margin:0!important;flex:0 0 36px!important}
+  .reb-method,.reb-secure-panel,.reb-payment-warning{width:100%!important;overflow:hidden!important}
+  .reb-method strong,.reb-method small,.reb-secure-panel p,.reb-order-note{overflow-wrap:anywhere!important}
+}
+</style>
+<style id="reb-market-blank-image-style">
+.reb-product-top.reb-product-blank{min-height:214px!important;padding:18px!important;background:#f7f7f7!important;border-bottom:1px solid #ead7aa!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
+.reb-product-top.reb-product-blank:after{display:none!important}
+.reb-image-placeholder{width:100%;min-height:172px;border:2px dashed #d8c295;border-radius:8px;background:#fffaf0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;color:#7a6a48;padding:18px}
+.reb-image-placeholder i{font-size:34px!important;color:#c99719!important;background:transparent!important;width:auto!important;height:auto!important;margin:0!important;border-radius:0!important}
+.reb-image-placeholder strong{font-size:18px;line-height:1.2;color:#111;font-weight:900}
+.reb-image-placeholder span{font-size:13px;font-weight:800;color:#7a5b16}
+.reb-image-placeholder small{font-size:12px;color:#7d7463;line-height:1.35}
+.reb-product-top.reb-product-photo{aspect-ratio:16/9!important;min-height:214px!important;background:#111!important}
+.reb-product-top.reb-product-photo img{aspect-ratio:16/9!important;min-height:214px!important;object-fit:cover!important}
+@media(max-width:640px){.reb-product-top.reb-product-blank{min-height:184px!important;padding:14px!important}.reb-image-placeholder{min-height:150px;padding:14px}.reb-image-placeholder strong{font-size:16px}.reb-product-top.reb-product-photo,.reb-product-top.reb-product-photo img{min-height:184px!important}}
+</style>
+<style id="reb-market-hero-placeholder-style">
+.reb-hero-card>img{display:none!important}
+.reb-hero-image-placeholder{width:100%;min-height:250px;border:2px dashed rgba(245,176,38,.45);border-radius:8px;background:rgba(255,255,255,.055);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;color:#fff;margin-bottom:18px;padding:22px}
+.reb-hero-image-placeholder i{font-size:42px;color:#f5b026}.reb-hero-image-placeholder strong{font-size:24px;font-weight:900}.reb-hero-image-placeholder span{color:#ffd15b;font-weight:800}.reb-hero-image-placeholder small{color:rgba(255,255,255,.72)}
+@media(max-width:640px){.reb-hero-image-placeholder{min-height:190px}.reb-hero-image-placeholder strong{font-size:20px}}
+</style>
+<style id="reb-market-5-grid-upload-fields-style">
+.reb-store{padding-left:5vw!important;padding-right:5vw!important}.reb-products{max-width:1560px!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:18px!important}.reb-product{min-width:0}.reb-product-top.reb-ea-cover,.reb-product-top.reb-product-photo,.reb-product-top.reb-product-blank{min-height:176px!important}.reb-cover-stage{min-height:176px!important;padding:14px!important;grid-template-columns:minmax(0,1fr) minmax(88px,.72fr)!important}.reb-cover-title{font-size:18px!important}.reb-cover-label{font-size:10px!important;padding:6px 8px!important}.reb-cover-symbols span,.reb-product .reb-product-meta span{font-size:10px!important;padding:5px 7px!important}.reb-cover-robot img{width:min(122px,100%)!important;max-height:136px!important}.reb-cover-chart{height:52px!important}.reb-product-body{padding:20px!important}.reb-product h3{font-size:21px!important;line-height:1.14!important;margin-bottom:9px!important}.reb-product p{font-size:14px!important;line-height:1.5!important;margin-bottom:14px!important;min-height:64px}.reb-product .reb-product-meta{margin-bottom:13px!important}.reb-product-author,.reb-product-status{font-size:12px!important}.reb-price{margin:0 0 14px!important}.reb-price strong{font-size:29px!important}.reb-list{margin-bottom:18px!important}.reb-list li{font-size:13px!important;padding:7px 0!important}.reb-product-actions{grid-template-columns:1fr!important}.reb-product-actions .reb-btn{min-height:44px!important;font-size:13px!important}.reb-youtube-link{border-color:#ffd1d1!important;color:#c90000!important;background:#fff!important}.reb-youtube-link i{color:#ff0000}.reb-product-top.reb-product-photo img{min-height:176px!important;object-fit:cover!important}.reb-product-status span{overflow-wrap:anywhere}
+@media(max-width:1380px){.reb-products{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media(max-width:1100px){.reb-products{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media(max-width:820px){.reb-products{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:640px){.reb-store{padding-left:14px!important;padding-right:14px!important}.reb-products{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}.reb-product h3{font-size:23px!important}.reb-product p{min-height:0}.reb-product-top.reb-ea-cover,.reb-product-top.reb-product-photo,.reb-product-top.reb-product-blank{min-height:184px!important}.reb-cover-stage{min-height:184px!important}.reb-product-top.reb-product-photo img{min-height:184px!important}}
+</style>
+<style id="reb-market-hero-video-style">
+.reb-hero-video-card{padding:0!important;overflow:hidden;background:#050505!important;border:1px solid rgba(245,176,38,.32)!important;border-radius:10px!important;box-shadow:0 22px 54px rgba(0,0,0,.28);max-width:min(620px,100%);aspect-ratio:16/9;justify-self:center;width:100%}
+.reb-market-hero-video{display:block;width:100%;height:100%;aspect-ratio:16/9;max-height:none;object-fit:cover;object-position:center;background:#050505;border-radius:9px}
+@media(max-width:900px){.reb-hero-video-card{max-width:min(620px,100%);aspect-ratio:16/9}.reb-market-hero-video{height:100%;max-height:none}}
+@media(max-width:640px){.reb-hero-video-card{margin-top:8px;max-width:100%;aspect-ratio:16/9}.reb-market-hero-video{height:100%;aspect-ratio:16/9;max-height:none}}
+</style>
+<style id="reb-market-upload-only-style">
+.reb-market-empty{max-width:760px;margin:24px auto 0;padding:28px;border:1px dashed #d8c295;border-radius:8px;background:#fffaf0;color:#655f52;text-align:center;font-weight:800;line-height:1.55}
+.reb-market-empty.show{display:block!important}
+.reb-list li span{color:#595959}
+</style>
+<style id="reb-market-five-post-row-v1">
+@media (min-width:1200px){
+  .reb-products{max-width:1320px!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:16px!important}
+  .reb-product-body{padding:18px!important}
+  .reb-product h3{font-size:19px!important;line-height:1.18!important;margin-bottom:8px!important}
+  .reb-product p{font-size:13px!important;line-height:1.48!important;margin-bottom:14px!important;min-height:58px!important}
+  .reb-product .reb-product-meta{gap:6px!important;margin-bottom:12px!important}
+  .reb-product .reb-product-meta span{font-size:10px!important;padding:5px 7px!important}
+  .reb-price{margin:8px 0 12px!important}.reb-price strong{font-size:25px!important}.reb-price span{font-size:12px!important}
+  .reb-list{margin-bottom:14px!important}.reb-list li{font-size:12px!important;line-height:1.35!important;padding:7px 0!important}
+  .reb-product-status,.reb-product-author{font-size:11px!important;margin-bottom:12px!important}
+  .reb-product-actions{grid-template-columns:1fr!important}.reb-product-actions .reb-btn{min-height:42px!important;padding:0 10px!important;font-size:12px!important}
+  .reb-product-top.reb-product-blank,.reb-product-top.reb-product-photo{min-height:148px!important}.reb-image-placeholder{min-height:116px!important;padding:12px!important}.reb-image-placeholder strong{font-size:15px!important}.reb-image-placeholder small{font-size:11px!important}
+}
+@media (min-width:901px) and (max-width:1199px){.reb-products{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media (min-width:641px) and (max-width:900px){.reb-products{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+.reb-market-listing:before{display:none!important}
+</style>
+<style id="reb-market-live-product-polish">
+.reb-market-visual{display:grid;gap:14px;margin-bottom:18px}.reb-market-terminal{border:1px solid rgba(245,176,38,.22);border-radius:8px;background:linear-gradient(135deg,rgba(0,0,0,.72),rgba(0,0,0,.28));padding:16px;display:grid;gap:12px}.reb-market-terminal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#ffd15b;font-size:12px;font-weight:900;text-transform:uppercase}.reb-market-signal{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;border-radius:8px;background:rgba(255,255,255,.08);padding:12px}.reb-market-signal strong{font-size:20px;color:#fff}.reb-market-signal span{color:rgba(255,255,255,.7);font-size:13px}.reb-market-signal b{color:#070707;background:var(--gold);border-radius:999px;padding:7px 10px;font-size:12px}.reb-market-bars{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;align-items:end;height:86px}.reb-market-bars i{display:block;border-radius:7px 7px 2px 2px;background:linear-gradient(180deg,#ffd46a,#f5b026);box-shadow:0 0 18px rgba(245,176,38,.2)}.reb-market-bars i:nth-child(1){height:38%}.reb-market-bars i:nth-child(2){height:58%;background:linear-gradient(180deg,#7cf3b1,#20c866)}.reb-market-bars i:nth-child(3){height:46%}.reb-market-bars i:nth-child(4){height:76%;background:linear-gradient(180deg,#7cf3b1,#20c866)}.reb-market-bars i:nth-child(5){height:64%}.reb-market-robot{display:flex;align-items:center;justify-content:center}.reb-market-robot img{width:min(210px,64%);filter:drop-shadow(0 22px 30px rgba(0,0,0,.45))}
+.reb-product-top.reb-ea-cover{aspect-ratio:16/9;min-height:0!important}.reb-cover-stage{min-height:0!important;height:100%}.reb-product-top.reb-ea-cover .reb-cover-label i{display:inline-flex!important;color:#ffd15b!important;background:transparent!important;width:auto!important;height:auto!important;margin:0!important;font-size:12px!important}.reb-cover-robot img{display:block!important}.reb-market-listing .reb-product-status b{color:#07805f}.reb-market-listing .reb-product-author i{color:#f5b026!important}
+@media(max-width:767px){.reb-top .reb-login{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;width:min(280px,calc(100vw - 36px))!important;margin-left:auto!important;margin-right:auto!important}.reb-top .reb-login a{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;min-height:44px!important;padding:0 14px!important;border-radius:9px!important;font-size:15px!important;font-weight:800!important;line-height:1!important;white-space:nowrap!important;text-align:center!important}.reb-market-signal{grid-template-columns:1fr}.reb-market-robot img{width:min(185px,72%)}}
+@media(min-width:1200px){.reb-product-top.reb-ea-cover{min-height:148px!important}.reb-cover-stage{grid-template-columns:minmax(0,1fr) minmax(82px,.72fr)!important;padding:12px!important}.reb-cover-title{font-size:16px!important}.reb-cover-label{font-size:10px!important;padding:5px 7px!important}.reb-cover-symbols span{font-size:9px!important;padding:4px 6px!important}.reb-cover-robot img{width:min(96px,100%)!important;max-height:116px!important}.reb-cover-chart{height:44px!important}}
+</style>
+<style id="reb-market-footer-redesign">
+.reb-footer{display:block!important;background:linear-gradient(135deg,#050505 0%,#0b0b0b 58%,#1d1505 100%)!important;color:#fff!important;padding:0!important;border-top:1px solid rgba(245,176,38,.22)!important}.reb-footer-wrap{max-width:1320px;margin:0 auto;padding:46px 7vw 24px}.reb-footer-grid{display:grid;grid-template-columns:1.25fr .8fr .9fr;gap:34px;align-items:start}.reb-footer-brand img{width:230px!important;max-width:72vw;height:auto;display:block;margin:0 0 16px}.reb-footer-brand p,.reb-footer-contact p{margin:0;color:rgba(255,255,255,.68);line-height:1.65;font-size:15px}.reb-footer-title{margin:0 0 14px;color:#f5b026;font-size:13px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}.reb-footer-links{display:grid;gap:10px}.reb-footer-links a,.reb-footer-contact a{color:rgba(255,255,255,.82);font-weight:700;text-decoration:none}.reb-footer-links a:hover,.reb-footer-contact a:hover{color:#f5b026}.reb-footer-contact{display:grid;gap:12px}.reb-footer-contact-item{display:grid;grid-template-columns:38px minmax(0,1fr);gap:12px;align-items:start}.reb-footer-contact-item i{width:38px;height:38px;border-radius:8px;background:#f5b026;color:#070707;display:flex;align-items:center;justify-content:center}.reb-footer-bottom{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:18px;align-items:center;color:rgba(255,255,255,.58);font-size:14px}.reb-footer-badges{display:flex;gap:8px;flex-wrap:wrap}.reb-footer-badges span{border:1px solid rgba(245,176,38,.28);background:rgba(245,176,38,.1);color:#ffd067;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:900}
+@media(max-width:900px){.reb-footer-grid{grid-template-columns:1fr 1fr}.reb-footer-brand{grid-column:1/-1}.reb-footer-bottom{align-items:flex-start;flex-direction:column}}
+@media(max-width:620px){.reb-footer-wrap{padding:34px 18px 22px}.reb-footer-grid{grid-template-columns:1fr;gap:24px}.reb-footer-brand img{width:205px!important}.reb-footer-contact-item{grid-template-columns:34px minmax(0,1fr)}.reb-footer-contact-item i{width:34px;height:34px}.reb-footer-bottom{font-size:13px}.reb-footer-badges span{font-size:11px}}
+</style><style id="reb-market-card-height-polish">
+  .reb-products {
+    align-items: start !important;
+  }
+
+  .reb-product {
+    box-shadow: 0 18px 44px rgba(13, 13, 13, 0.07) !important;
+  }
+
+  .reb-product-top.reb-ea-cover,
+  .reb-product-top.reb-product-photo,
+  .reb-product-top.reb-product-blank {
+    aspect-ratio: 16 / 8.2 !important;
+    min-height: 136px !important;
+  }
+
+  .reb-cover-stage {
+    grid-template-columns: minmax(0, 1fr) 82px !important;
+    min-height: 136px !important;
+    padding: 11px !important;
+  }
+
+  .reb-cover-label {
+    font-size: 9px !important;
+    padding: 4px 7px !important;
+  }
+
+  .reb-cover-title {
+    font-size: 15px !important;
+    line-height: 1.06 !important;
+  }
+
+  .reb-cover-symbols {
+    gap: 4px !important;
+  }
+
+  .reb-cover-symbols span {
+    font-size: 9px !important;
+    padding: 3px 6px !important;
+  }
+
+  .reb-cover-robot img {
+    max-height: 98px !important;
+    width: 82px !important;
+  }
+
+  .reb-cover-chart {
+    height: 38px !important;
+  }
+
+  .reb-product-top.reb-product-photo img {
+    min-height: 136px !important;
+  }
+
+  .reb-product-body {
+    padding: 14px !important;
+  }
+
+  .reb-product h3 {
+    font-size: 18px !important;
+    line-height: 1.12 !important;
+    margin-bottom: 7px !important;
+  }
+
+  .reb-product p {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;
+    font-size: 13px !important;
+    line-height: 1.42 !important;
+    margin-bottom: 10px !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .reb-product .reb-product-meta {
+    gap: 5px !important;
+    margin-bottom: 9px !important;
+  }
+
+  .reb-product .reb-product-meta span {
+    font-size: 9px !important;
+    padding: 4px 6px !important;
+  }
+
+  .reb-product-author {
+    font-size: 11px !important;
+    margin-bottom: 9px !important;
+  }
+
+  .reb-price {
+    margin: 0 0 9px !important;
+  }
+
+  .reb-price strong {
+    font-size: 24px !important;
+  }
+
+  .reb-price span {
+    font-size: 12px !important;
+    margin-bottom: 3px !important;
+  }
+
+  .reb-product-status {
+    font-size: 11px !important;
+    margin-bottom: 9px !important;
+  }
+
+  .reb-list {
+    margin: 0 0 12px !important;
+  }
+
+  .reb-list li {
+    font-size: 12px !important;
+    padding: 5px 0 !important;
+  }
+
+  .reb-list li:nth-child(n+3) {
+    display: none !important;
+  }
+
+  .reb-product-actions {
+    gap: 8px !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .reb-product-actions .reb-buy-btn {
+    grid-column: 1 / -1 !important;
+  }
+
+  .reb-product-actions .reb-btn {
+    font-size: 12px !important;
+    min-height: 38px !important;
+    padding: 0 10px !important;
+  }
+
+  @media (max-width: 640px) {
+    .reb-product-top.reb-ea-cover,
+    .reb-product-top.reb-product-photo,
+    .reb-product-top.reb-product-blank {
+      aspect-ratio: 16 / 9 !important;
+      min-height: 170px !important;
+    }
+
+    .reb-cover-stage {
+      grid-template-columns: minmax(0, 1fr) minmax(96px, 0.82fr) !important;
+      min-height: 170px !important;
+      padding: 14px !important;
+    }
+
+    .reb-cover-title {
+      font-size: 18px !important;
+    }
+
+    .reb-cover-robot img {
+      max-height: 146px !important;
+      width: min(126px, 100%) !important;
+    }
+
+    .reb-product-body {
+      padding: 18px !important;
+    }
+
+    .reb-product p {
+      -webkit-line-clamp: 3 !important;
+    }
+
+    .reb-list li:nth-child(n+3) {
+      display: list-item !important;
+    }
+
+    .reb-product-actions {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+<style id="reb-market-square-card-polish">
+  .reb-products {
+    align-items: start !important;
+    gap: 18px !important;
+  }
+
+  .reb-product {
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .reb-product-body.reb-compact-ea-body {
+    display: grid !important;
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+
+  .reb-ea-card-head {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+  }
+
+  .reb-ea-thumb {
+    width: 90px;
+    height: 90px;
+    border: 1px solid rgba(245, 176, 38, 0.35);
+    border-radius: 10px;
+    background: radial-gradient(circle at 68% 20%, rgba(245, 176, 38, 0.34), transparent 34%), linear-gradient(135deg, #050505, #241a08);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .reb-ea-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .reb-ea-thumb.reb-ea-thumb-robot img {
+    width: 86%;
+    height: 86%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.32));
+  }
+
+  .reb-ea-thumb-empty i {
+    color: #f5b026;
+    font-size: 28px;
+  }
+
+  .reb-ea-head-copy {
+    min-width: 0;
+  }
+
+  .reb-product .reb-ea-head-copy h3 {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;
+    font-size: 18px !important;
+    line-height: 1.16 !important;
+    margin: 0 0 8px !important;
+    overflow: hidden !important;
+  }
+
+  .reb-ea-price-line {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .reb-ea-price-line strong {
+    color: #050505;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 0;
+  }
+
+  .reb-ea-price-line span {
+    color: #777;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .reb-product .reb-ea-desc {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 3 !important;
+    color: #5d5d5d !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+.reb-product .reb-product-meta,
+  .reb-product .reb-product-author,
+  .reb-product .reb-product-status,
+  .reb-product .reb-price,
+  .reb-product .reb-list,
+  .reb-product-top.reb-ea-cover,
+  .reb-product-top.reb-product-photo,
+  .reb-product-top.reb-product-blank {
+    display: none !important;
+  }
+
+  .reb-product-actions {
+    display: grid !important;
+    gap: 8px !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .reb-product-actions .reb-buy-btn {
+    grid-column: 1 / -1 !important;
+  }
+
+  .reb-product-actions .reb-btn {
+    min-height: 38px !important;
+    font-size: 12px !important;
+    padding: 0 10px !important;
+  }
+
+  @media (max-width: 820px) {
+    .reb-ea-card-head {
+      grid-template-columns: 96px minmax(0, 1fr);
+    }
+
+    .reb-ea-thumb {
+      width: 96px;
+      height: 96px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .reb-product-body.reb-compact-ea-body {
+      padding: 16px !important;
+    }
+
+    .reb-ea-card-head {
+      grid-template-columns: 86px minmax(0, 1fr);
+      gap: 12px;
+    }
+
+    .reb-ea-thumb {
+      width: 86px;
+      height: 86px;
+      border-radius: 9px;
+    }
+
+    .reb-product .reb-ea-head-copy h3 {
+      font-size: 18px !important;
+      -webkit-line-clamp: 2 !important;
+    }
+
+    .reb-ea-price-line strong {
+      font-size: 24px;
+    }
+
+    .reb-product .reb-ea-desc {
+      -webkit-line-clamp: 3 !important;
+      font-size: 13px !important;
+    }
+
+    .reb-product-actions {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+<style id="reb-market-desktop-logo-size">
+  @media (min-width: 1024px) {
+    .reb-ea-card-head {
+      grid-template-columns: 1fr !important;
+      justify-items: center !important;
+      gap: 11px !important;
+      text-align: center !important;
+    }
+
+    .reb-ea-thumb {
+      width: 180px !important;
+      height: 180px !important;
+      border-radius: 12px !important;
+    }
+
+    .reb-ea-thumb.reb-ea-thumb-robot img {
+      width: 88% !important;
+      height: 88% !important;
+    }
+
+    .reb-ea-head-copy {
+      display: grid !important;
+      justify-items: center !important;
+      width: 100% !important;
+    }
+
+    .reb-product .reb-ea-head-copy h3 {
+      min-height: 42px !important;
+      text-align: center !important;
+    }
+
+    .reb-ea-price-line {
+      justify-content: center !important;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1023px) {
+    .reb-ea-card-head {
+      grid-template-columns: 120px minmax(0, 1fr) !important;
+    }
+
+    .reb-ea-thumb {
+      width: 120px !important;
+      height: 120px !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .reb-ea-card-head {
+      grid-template-columns: 92px minmax(0, 1fr) !important;
+    }
+
+    .reb-ea-thumb {
+      width: 92px !important;
+      height: 92px !important;
+    }
+  }
+</style>
+<style id="reb-market-api-status-style">
+.reb-market-api-status{max-width:1560px;margin:0 auto 14px;color:#80600c;background:#fff8e8;border:1px solid #f1d79b;border-radius:8px;padding:10px 12px;font-size:13px;font-weight:800;display:none}
+.reb-market-api-status.show{display:block}
+.reb-market-api-status.ok{color:#08704f;background:#edfdf5;border-color:#c8efd9}
+.reb-market-api-status.error{color:#9b1c1c;background:#fff0f0;border-color:#ffcaca}
+</style>
+<style id="reb-market-card-standard-v1">
+/* One shared card standard: equal media, copy and action zones */
+.reb-products{
+  align-items:stretch!important;
+  grid-auto-rows:1fr!important;
+  width:100%!important;
+  max-width:1180px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.reb-products .reb-product{
+  display:flex!important;
+  align-self:stretch!important;
+  height:100%!important;
+  min-height:474px!important;
+  overflow:visible!important;
+}
+.reb-products .reb-product-body.reb-compact-ea-body{
+  display:grid!important;
+  grid-template-rows:auto 58px auto!important;
+  width:100%!important;
+  height:100%!important;
+  gap:12px!important;
+}
+.reb-products .reb-ea-card-head{
+  align-content:start!important;
+}
+.reb-products .reb-product .reb-ea-head-copy h3{
+  display:-webkit-box!important;
+  height:42px!important;
+  min-height:42px!important;
+  max-height:42px!important;
+  margin:0 0 8px!important;
+  overflow:hidden!important;
+  -webkit-box-orient:vertical!important;
+  -webkit-line-clamp:2!important;
+  font-size:18px!important;
+  font-weight:700!important;
+  line-height:1.17!important;
+}
+.reb-products .reb-ea-price-line{
+  min-height:34px!important;
+  align-items:baseline!important;
+}
+.reb-products .reb-ea-price-line strong{
+  font-size:25px!important;
+  font-weight:700!important;
+  line-height:1!important;
+}
+.reb-products .reb-ea-price-line span{
+  font-size:11px!important;
+  font-weight:500!important;
+}
+.reb-products .reb-product .reb-ea-desc{
+  display:-webkit-box!important;
+  height:58px!important;
+  min-height:58px!important;
+  max-height:58px!important;
+  margin:0!important;
+  overflow:hidden!important;
+  -webkit-box-orient:vertical!important;
+  -webkit-line-clamp:3!important;
+  color:#606773!important;
+  font-size:12.5px!important;
+  font-weight:400!important;
+  line-height:1.52!important;
+}
+.reb-products .reb-product-actions{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-auto-rows:38px!important;
+  align-self:end!important;
+  gap:8px!important;
+  min-height:84px!important;
+  margin-top:auto!important;
+}
+.reb-products .reb-product-actions .reb-buy-btn{
+  grid-column:1/-1!important;
+}
+.reb-products .reb-product-actions .reb-btn{
+  width:100%!important;
+  min-width:0!important;
+  min-height:38px!important;
+  height:38px!important;
+  padding:0 9px!important;
+  overflow:hidden!important;
+  font-size:11.5px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+  text-overflow:ellipsis!important;
+}
+.reb-products .reb-youtube-link.is-disabled{
+  border-color:#e4e7ec!important;
+  background:#f7f8fa!important;
+  color:#98a2b3!important;
+  cursor:not-allowed!important;
+  pointer-events:none!important;
+}
+.reb-products .reb-youtube-link.is-disabled i{color:#b8bec8!important}
+@media(min-width:1024px){
+  .reb-products .reb-ea-thumb{
+    width:180px!important;
+    height:180px!important;
+    min-width:180px!important;
+  }
+}
+@media(max-width:640px){
+  .reb-products{grid-auto-rows:auto!important}
+  .reb-products .reb-product-body.reb-compact-ea-body{grid-template-rows:auto auto auto!important}
+  .reb-products .reb-product .reb-ea-head-copy h3{height:auto!important;min-height:42px!important;max-height:42px!important}
+  .reb-products .reb-product .reb-ea-desc{height:58px!important;min-height:58px!important;max-height:58px!important}
+  .reb-products .reb-product-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:42px!important;min-height:92px!important}
+  .reb-products .reb-product-actions .reb-btn{height:42px!important;min-height:42px!important;font-size:12px!important}
+  .reb-products .reb-product{height:100%!important;min-height:344px!important;overflow:visible!important}
+}
+@media(min-width:641px) and (max-width:1023px){
+  .reb-products .reb-product{height:100%!important;min-height:364px!important;overflow:visible!important}
+}
+.reb-store{padding-bottom:84px!important}
+</style>
+<style id="reb-market-video-frame-final-v11">
+.reb-markets-page .reb-hero-inner{align-items:center!important}
+.reb-markets-page .reb-hero-video-card{
+  width:min(620px,100%)!important;
+  height:clamp(250px,31vw,350px)!important;
+  min-height:0!important;
+  max-height:350px!important;
+  aspect-ratio:16/9!important;
+  align-self:center!important;
+  justify-self:center!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border-radius:10px!important;
+}
+.reb-markets-page .reb-hero-video-card .reb-market-hero-video{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:0!important;
+  max-height:100%!important;
+  aspect-ratio:auto!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  margin:0!important;
+}
+@media(max-width:900px){
+  .reb-markets-page .reb-hero-video-card{height:auto!important;max-height:none!important;aspect-ratio:16/9!important}
+  .reb-markets-page .reb-hero-video-card .reb-market-hero-video{height:100%!important;aspect-ratio:auto!important}
+}
+</style>
+<style id="reb-market-card-detail-link-v12">
+.reb-products .reb-product{overflow:hidden!important;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.reb-products .reb-product:hover{transform:translateY(-5px);border-color:#f5b026!important;box-shadow:0 24px 52px rgba(15,23,42,.12)!important}
+.reb-ea-card-link{display:flex;width:100%;height:100%;color:inherit!important;text-decoration:none!important}
+.reb-ea-card-link .reb-product-body{width:100%;height:100%;display:flex!important;flex-direction:column!important}
+.reb-card-view-hint{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid #eee7da;color:#966600;font-size:13px;font-weight:900}
+.reb-card-view-hint i{transition:transform .2s ease}.reb-product:hover .reb-card-view-hint i{transform:translateX(4px)}
+</style>
+<link rel="stylesheet" href="/assets/css/reb-mobile-professional-v1.css?v=20260809-auth28">
+<link rel="stylesheet" href="/assets/css/reb-unified-drawer-v41.css?v=20260726-drawer47">
+<link rel="stylesheet" href="/assets/css/reb-market-mobile-v52.css?v=20260726-market57">
+<link rel="stylesheet" href="/assets/css/reb-desktop-broker-mobile-auth-v71.css?v=20260727-v71">
+<link rel="stylesheet" href="/assets/css/reb-mobile-auth-home-standard-v74.css?v=20260727-v78">
+  <link rel="stylesheet" href="/assets/css/trade-account-video-v1.css?v=1">
+<style id="reb-ios-mobile-scale-final-v1">
+@media (max-width:640px){
+  body.reb-markets-page .reb-hero,
+  body.reb-markets-page .reb-store,
+  body.reb-markets-page .reb-process{
+    width:100%!important;
+    max-width:100%!important;
+    padding-left:max(20px,env(safe-area-inset-left))!important;
+    padding-right:max(20px,env(safe-area-inset-right))!important;
+  }
+  body.reb-markets-page .reb-hero-inner,
+  body.reb-markets-page .reb-section-title,
+  body.reb-markets-page .reb-products,
+  body.reb-markets-page .reb-bundle,
+  body.reb-markets-page .reb-steps{
+    width:100%!important;
+    max-width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  body.reb-markets-page .reb-hero-inner > *,
+  body.reb-markets-page .reb-products > *,
+  body.reb-markets-page .reb-steps > *{
+    min-width:0!important;
+    max-width:100%!important;
+  }
+}
+</style>
+<style id="reb-market-mobile-font-v31">
+@media(max-width:767px){html body,html body button,html body input,html body select,html body textarea{font-family:Ubuntu,Arial,sans-serif!important}.reb-market-count{font-size:14px!important;line-height:1.4!important;letter-spacing:0!important}.reb-ea-card h3,.reb-product-card h3{font-size:20px!important;line-height:1.15!important;letter-spacing:0!important}.reb-ea-card p,.reb-product-card p{font-size:14px!important;line-height:1.5!important}.reb-filter-tabs button{font-size:14px!important}}
+</style>
+<link id="reb-mobile-auth-standard-v71-css" rel="stylesheet" href="/assets/css/reb-mobile-auth-standard-v71.css?v=20260910-v71">
+<script id="reb-mobile-auth-standard-v71-js" defer src="/assets/js/reb-mobile-auth-standard-v71.js?v=20260910-v71"></script>
+
+<style id="reb-market-title-mobile-truefix-v73">
+/* V73 TRUE FIX
+   Desktop keeps the approved V72 one-row size.
+   Mobile gets a valid media query and smaller responsive size so the full title fits. */
+.reb-markets-page .reb-hero h1{
+  font-size:34px!important;
+  line-height:1.08!important;
+  white-space:nowrap!important;
+  letter-spacing:-0.03em!important;
+  margin:0 0 18px!important;
+  max-width:100%!important;
+}
+
+.reb-markets-page .reb-hero p{
+  max-width:620px!important;
+}
+
+@media (max-width:1199px) and (min-width:768px){
+  .reb-markets-page .reb-hero h1{
+    font-size:clamp(24px,2.5vw,30px)!important;
+  }
+}
+
+@media (max-width:767px){
+  .reb-markets-page .reb-hero h1{
+    font-size:clamp(16px,4.35vw,18px)!important;
+    line-height:1.12!important;
+    letter-spacing:-0.035em!important;
+    white-space:nowrap!important;
+    max-width:100%!important;
+  }
+}
+</style>
+
+
+
+<style id="reb-live-chat-final-inline">
+
+:root{
+  --reb-chat-gold:#f5b326;
+  --reb-chat-blue1:#087fa8;
+  --reb-chat-blue2:#0aa0cb;
+  --reb-chat-ink:#18212b;
+  --reb-chat-font:Ubuntu,"Noto Sans Khmer","Khmer OS",Arial,sans-serif;
+}
+.reb-floating-chat{display:none!important}
+
+/* Floating launcher */
+.reb-customer-chat-launcher{
+  position:fixed!important;right:18px!important;bottom:18px!important;z-index:2147483000!important;
+  width:54px!important;height:54px!important;min-width:54px!important;max-width:54px!important;padding:0!important;
+  border:0!important;border-radius:50%!important;background:#101214!important;overflow:visible!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;
+  box-shadow:0 10px 28px rgba(0,0,0,.32),0 0 0 2px rgba(245,179,38,.18)!important;
+  animation:rebSupportBounce 1.75s ease-in-out infinite!important;
+}
+.reb-customer-chat-launcher:hover{transform:scale(1.08)!important}
+.reb-support-launcher-image{
+  display:block!important;width:46px!important;height:46px!important;object-fit:contain!important;border-radius:50%!important;pointer-events:none!important;
+}
+.reb-chat-launcher-badge{
+  position:absolute!important;top:-5px!important;right:-5px!important;display:none!important;
+  min-width:19px!important;height:19px!important;padding:0 5px!important;border-radius:999px!important;
+  align-items:center!important;justify-content:center!important;background:#e53935!important;color:#fff!important;
+  border:2px solid #fff!important;font:900 10px/1 Arial,sans-serif!important;
+}
+.reb-chat-launcher-badge.show{display:flex!important}
+@keyframes rebSupportBounce{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  22%{transform:translateY(-9px) rotate(-5deg)}
+  45%{transform:translateY(-2px) rotate(4deg)}
+  70%{transform:translateY(-7px) rotate(-3deg)}
+}
+
+/* Chat shell desktop */
+.reb-chat-shell{
+  position:fixed!important;right:20px!important;bottom:84px!important;z-index:2147483100!important;
+  width:390px!important;height:610px!important;max-width:calc(100vw - 32px)!important;max-height:calc(100vh - 110px)!important;
+  background:#fff!important;border:1px solid #dfe5ea!important;border-radius:20px!important;
+  box-shadow:0 24px 70px rgba(10,22,34,.30)!important;overflow:hidden!important;display:none!important;
+  font-family:var(--reb-chat-font)!important;color:var(--reb-chat-ink)!important;
+}
+.reb-chat-shell.open{display:flex!important;flex-direction:column!important}
+.reb-chat-shell,.reb-chat-shell *{box-sizing:border-box}
+.reb-chat-shell button,.reb-chat-shell input,.reb-chat-shell textarea,.reb-chat-shell a,.reb-chat-shell span,.reb-chat-shell strong{
+  font-family:var(--reb-chat-font)!important;
+}
+
+.reb-chat-header{
+  flex:0 0 66px!important;min-height:66px!important;padding:10px 12px!important;
+  display:flex!important;align-items:center!important;gap:10px!important;background:linear-gradient(135deg,#111317,#25272b)!important;color:#fff!important;
+}
+.reb-chat-avatar{width:40px!important;height:40px!important;flex:0 0 40px!important;border-radius:12px!important;background:var(--reb-chat-gold)!important;display:flex!important;align-items:center!important;justify-content:center!important;color:#111!important}
+.reb-chat-headcopy{min-width:0!important;flex:1!important}
+.reb-chat-headcopy strong{display:block!important;font-size:14px!important;font-weight:800!important}
+.reb-chat-headcopy span{display:block!important;margin-top:2px!important;color:#cbd0d5!important;font-size:10px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.reb-chat-close{width:34px!important;height:34px!important;border-radius:10px!important;border:1px solid rgba(255,255,255,.14)!important;background:rgba(255,255,255,.07)!important;color:#fff!important;cursor:pointer!important}
+
+.reb-chat-status{display:none!important;padding:6px 9px!important;background:#fff7df!important;color:#7a5a00!important;font-size:10px!important}
+.reb-chat-status.show{display:block!important}
+.reb-chat-status.error{background:#fff0f0!important;color:#a82727!important}
+.reb-chat-progress{display:none!important;height:2px!important;background:#eee!important}
+.reb-chat-progress.show{display:block!important}
+
+.reb-chat-body{
+  flex:1 1 auto!important;min-height:0!important;overflow:auto!important;padding:10px 9px 12px!important;
+  background:linear-gradient(180deg,#f7f8fa,#f2f5f7)!important;
+}
+.reb-chat-empty,.reb-chat-login{height:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;padding:18px!important;color:#7a858f!important}
+.reb-chat-empty strong{color:#27313b!important;margin-bottom:5px!important}
+.reb-chat-empty p,.reb-chat-login p{margin:0!important;font-size:11px!important;line-height:1.5!important}
+.reb-empty-icon{width:40px!important;height:40px!important;border-radius:12px!important;background:#fff1c4!important;color:#b77b00!important;display:flex!important;align-items:center!important;justify-content:center!important;margin-bottom:10px!important}
+.reb-chat-day{text-align:center!important;margin:7px 0!important}
+.reb-chat-day span{display:inline-block!important;background:#e7ebef!important;border-radius:999px!important;padding:3px 7px!important;font-size:9px!important;color:#6f7983!important}
+.reb-chat-row{display:flex!important;margin:7px 0!important}
+.reb-chat-row.user{justify-content:flex-end!important}
+.reb-chat-row.admin{justify-content:flex-start!important}
+.reb-chat-bubble{
+  display:inline-block!important;width:auto!important;max-width:84%!important;padding:8px 10px!important;border-radius:15px!important;overflow:hidden!important;
+}
+.reb-chat-row.user .reb-chat-bubble{background:linear-gradient(145deg,var(--reb-chat-blue1),var(--reb-chat-blue2))!important;color:#fff!important;border-bottom-right-radius:5px!important}
+.reb-chat-row.admin .reb-chat-bubble{background:#fff!important;color:#202832!important;border:1px solid #e3e8ec!important;border-bottom-left-radius:5px!important}
+.reb-chat-sender{font-size:10px!important;font-weight:800!important;margin-bottom:4px!important;color:#a87600!important}
+.reb-chat-row.user .reb-chat-sender{color:#e9fbff!important;text-align:right!important}
+.reb-chat-text{font-size:12px!important;line-height:1.45!important;white-space:pre-wrap!important;word-break:break-word!important}
+.reb-chat-meta{margin-top:4px!important;display:flex!important;justify-content:flex-end!important;gap:4px!important;font-size:9px!important;color:#919ba4!important}
+.reb-chat-row.user .reb-chat-meta{color:rgba(255,255,255,.80)!important}
+.reb-chat-inline-link{color:#eaffff!important;text-decoration:underline!important;overflow-wrap:anywhere!important}
+.reb-chat-row.admin .reb-chat-inline-link{color:#136fca!important}
+
+.reb-chat-media{display:block!important;width:max-content!important;max-width:250px!important;margin-top:5px!important;border-radius:10px!important;overflow:hidden!important}
+.reb-chat-media img,.reb-chat-media video{display:block!important;max-width:250px!important;max-height:220px!important;width:auto!important;height:auto!important;object-fit:contain!important;border-radius:10px!important}
+.reb-chat-media audio{display:block!important;width:220px!important;max-width:100%!important;height:40px!important}
+.reb-chat-file-card{display:flex!important;align-items:center!important;gap:7px!important;margin-top:5px!important;width:230px!important;max-width:100%!important;padding:7px!important;border-radius:10px!important;background:rgba(255,255,255,.10)!important;border:1px solid rgba(150,160,170,.25)!important}
+.reb-chat-file-icon{width:31px!important;height:31px!important;flex:0 0 31px!important;border-radius:8px!important;background:var(--reb-chat-gold)!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.reb-chat-file-copy{min-width:0!important;flex:1!important}
+.reb-chat-file-copy strong{font-size:10px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;display:block!important}
+.reb-chat-file-copy span{font-size:8.5px!important;color:#8e98a3!important;display:block!important}
+.reb-chat-file-card button{border:0!important;background:#111!important;color:#fff!important;border-radius:7px!important;padding:6px 7px!important;font-size:9px!important}
+
+.reb-chat-rich-preview{margin-top:6px!important}
+.reb-chat-preview-card{display:flex!important;width:250px!important;max-width:100%!important;min-height:62px!important;border-radius:10px!important;overflow:hidden!important;text-decoration:none!important;border:1px solid rgba(150,160,170,.25)!important;background:rgba(255,255,255,.09)!important;color:inherit!important}
+.reb-chat-row.admin .reb-chat-preview-card{background:#f7f8fa!important;color:#1f2933!important}
+.reb-chat-preview-card>img{width:76px!important;height:64px!important;object-fit:cover!important;flex:0 0 76px!important}
+.reb-chat-preview-thumb-fallback{width:64px!important;flex:0 0 64px!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#dff5fb!important;color:#087fa8!important}
+.reb-chat-preview-copy{min-width:0!important;flex:1!important;padding:7px!important}
+.reb-chat-preview-copy strong{font-size:10px!important;line-height:1.25!important}
+.reb-chat-preview-copy small{display:block!important;margin-top:3px!important;font-size:8px!important;opacity:.7!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.reb-chat-preview-open{width:26px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+
+.reb-chat-attach-preview{display:none!important;padding:6px 8px!important;border-top:1px solid #e7e9ed!important;background:#fff!important;font-size:10px!important}
+.reb-chat-attach-preview.show{display:flex!important;align-items:center!important;justify-content:space-between!important}
+.reb-chat-composer{flex:0 0 auto!important;background:#fff!important;border-top:1px solid #e5e9ed!important;padding:6px!important}
+.reb-chat-tools{display:flex!important;align-items:center!important;gap:5px!important;margin-bottom:5px!important;overflow:visible!important}
+.reb-chat-tool{
+  position:relative!important;width:33px!important;height:33px!important;flex:0 0 33px!important;border:1px solid #e2e6ea!important;background:#fff!important;border-radius:10px!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;color:#526170!important;padding:0!important;cursor:pointer!important;
+}
+.reb-chat-tool svg{width:17px!important;height:17px!important;pointer-events:none!important}
+.reb-chat-mic{color:#a62f2f!important;background:#fff8f8!important;border-color:#efd5d5!important;touch-action:none!important}
+.reb-chat-mic.recording{background:#d92d2d!important;color:#fff!important}
+.reb-chat-record-label{display:none!important;color:#c43333!important;font-size:9px!important;font-weight:800!important}
+.reb-chat-mic.recording~.reb-chat-record-label{display:inline!important}
+
+.reb-chat-compose-row{display:flex!important;align-items:flex-end!important;gap:5px!important}
+.reb-chat-text-indicator{width:32px!important;height:38px!important;flex:0 0 32px!important;border:1px solid #e3e7eb!important;background:#f7f8fa!important;border-radius:10px!important;display:flex!important;align-items:center!important;justify-content:center!important;color:#64717e!important}
+.reb-chat-input{flex:1!important;min-height:38px!important;max-height:66px!important;resize:none!important;border:1px solid #dfe4e8!important;background:#f8f9fa!important;border-radius:10px!important;padding:9px!important;font-size:12px!important;outline:none!important}
+.reb-chat-send{width:38px!important;height:38px!important;flex:0 0 38px!important;border:0!important;border-radius:10px!important;background:var(--reb-chat-gold)!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important}
+
+/* ONE mobile rule only */
+@media (max-width:760px),(pointer:coarse){
+  .reb-customer-chat-launcher{
+    right:14px!important;bottom:14px!important;width:50px!important;height:50px!important;min-width:50px!important;max-width:50px!important;
+  }
+  .reb-support-launcher-image{width:42px!important;height:42px!important}
+  .reb-chat-shell{
+    right:14px!important;bottom:72px!important;left:auto!important;top:auto!important;
+    width:286px!important;height:390px!important;min-width:0!important;min-height:0!important;
+    max-width:calc(100vw - 84px)!important;max-height:calc(100dvh - 180px)!important;
+    border-radius:20px!important;
+  }
+  .reb-chat-header{flex-basis:58px!important;min-height:58px!important;padding:8px 9px!important}
+  .reb-chat-avatar{width:36px!important;height:36px!important;flex-basis:36px!important}
+  .reb-chat-headcopy strong{font-size:12px!important}
+  .reb-chat-headcopy span{font-size:9px!important}
+  .reb-chat-body{padding:7px!important}
+  .reb-chat-bubble{max-width:90%!important}
+  .reb-chat-media,.reb-chat-media img,.reb-chat-media video{max-width:205px!important}
+  .reb-chat-media audio{width:195px!important}
+  .reb-chat-file-card,.reb-chat-preview-card{width:205px!important}
+  .reb-chat-composer{padding:5px!important}
+  .reb-chat-tool{width:31px!important;height:31px!important;flex-basis:31px!important}
+  .reb-chat-input{min-height:36px!important;max-height:56px!important;padding:8px!important;font-size:11.5px!important}
+  .reb-chat-send{width:36px!important;height:36px!important;flex-basis:36px!important}
+  .reb-chat-text-indicator{width:30px!important;height:36px!important;flex-basis:30px!important}
+}
+
+/* Upload fallback panel: browser-native file inputs are intentionally NOT hidden/styled. */
+.reb-chat-native-picker-panel[hidden]{display:none!important}
+.reb-chat-native-picker-panel{
+  margin:0 0 7px!important;padding:8px!important;border:1px solid #dfe5ea!important;
+  border-radius:11px!important;background:#f8fafb!important;box-shadow:0 6px 18px rgba(0,0,0,.08)!important;
+}
+.reb-chat-native-picker-head{display:flex!important;align-items:center!important;justify-content:space-between!important;margin-bottom:7px!important}
+.reb-chat-native-picker-head strong{font-size:11px!important;color:#28333d!important}
+.reb-chat-native-picker-close{
+  width:26px!important;height:26px!important;border:0!important;border-radius:7px!important;
+  background:#eceff2!important;color:#333!important;font-size:16px!important;cursor:pointer!important;
+}
+.reb-chat-native-picker-row{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:7px!important;background:#fff!important;border:1px solid #e5e9ed!important;border-radius:9px!important;
+}
+.reb-chat-native-picker-row span{font-size:10.5px!important;font-weight:700!important;color:#46525e!important}
+.reb-chat-native-picker-row input[type="file"]{
+  position:static!important;display:block!important;width:165px!important;height:auto!important;
+  opacity:1!important;visibility:visible!important;pointer-events:auto!important;
+  font-size:10px!important;color:#333!important;background:transparent!important;
+}
+@media(max-width:760px),(pointer:coarse){
+  .reb-chat-native-picker-panel{padding:7px!important}
+  .reb-chat-native-picker-row{display:block!important}
+  .reb-chat-native-picker-row span{display:block!important;margin-bottom:5px!important}
+  .reb-chat-native-picker-row input[type="file"]{width:100%!important;font-size:10px!important}
+}
+
+.reb-chat-media-panel .reb-chat-native-picker-row,.reb-chat-file-panel .reb-chat-native-picker-row{margin:0!important}
+
+</style>
+</head>
+<body class="reb-subpage reb-markets-page">
+<div class="reb-top">
+  <div class="reb-phone"><i class="fas fa-headset reb-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2Zm16 0h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2ZM17 20c-1 1-2.7 1-5 1"/></svg></i>+855 93 525 363</div>
+  <div class="reb-actions"><a href="/signup/">Sign Up</a><a href="/login/">Log In</a></div>
+</div>
+<header class="reb-header">
+  <a class="reb-logo" href="/"><img src="/assets/images/logo.png" alt="ReachEmpireBot"></a>
+  <button class="reb-mobile-menu-toggle" type="button" aria-expanded="false" aria-label="Open navigation" onclick="var n=this.nextElementSibling,o=n.classList.toggle('is-open');this.classList.toggle('is-open',o);this.setAttribute('aria-expanded',o?'true':'false')"><span></span><span></span><span></span></button>
+      <nav class="reb-nav" aria-label="Primary navigation">
+    <a href="/">Home</a>
+    <a href="/download/">Download</a>
+    <a class="active" href="/markets/">EA Bot Market</a>
+        
+    <a class="trade-account-link" href="/create-trade-account/">Trade Account</a>
+    <a href="/contact/">Contact Us</a>
+    <a href="/about/">About Us</a>
+  </nav>
+</header>
+<main>
+  <section class="reb-hero">
+    <div class="reb-hero-inner">
+      <div>
+        <div class="reb-kicker">ReachEmpireBot EA Marketplace</div>
+        <h1>Choose Your EA Bot Market Package</h1>
+        <p>Browse ready-made Expert Advisors for MT5, compare available packages, and choose the trading solution that fits your strategy.</p>
+        <div class="reb-hero-actions">
+          <a class="reb-btn gold" href="/markets/#store" data-smooth-target="store"><i class="fas fa-store"></i> Browse EA Market</a>
+        </div>
+      </div>
+      <div class="reb-hero-card reb-hero-video-card">
+        <video class="reb-market-hero-video" autoplay muted loop playsinline controls preload="metadata" poster="/assets/images/resource/reb-robot.png" aria-label="ReachEmpireBot EA marketplace video">
+          <source src="/assets/videos/ea-market-hero.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="reb-store" id="store">
+    <div class="reb-section-title"><span>EA Bot Market</span><h2>Marketplace Packages</h2><p>Browse MT5 EA bots.</p></div>
+    <div class="reb-market-controls" aria-label="EA Bot Market controls">
+      <label class="reb-market-search" for="eaMarketSearch"><i class="fas fa-search"></i><input id="eaMarketSearch" type="search" placeholder="Search EA bot"></label>
+      <div class="reb-market-filters" role="group" aria-label="EA categories">
+        <button class="reb-filter-btn active" type="button" data-filter="all">All EA</button>
+        <button class="reb-filter-btn" type="button" data-filter="forex">Forex</button>
+        <button class="reb-filter-btn" type="button" data-filter="crypto">Crypto</button>
+        <button class="reb-filter-btn" type="button" data-filter="metal">Metal</button>
+      </div>
+    </div>
+    <div class="reb-market-api-status" id="eaMarketApiStatus" role="status" aria-live="polite"></div>
+    <div class="reb-market-count" id="eaMarketCount">Showing 0 EA bots</div>
+    <div class="reb-products" id="eaMarketList"></div>
+    <nav class="reb-market-pagination" id="eaMarketPagination" aria-label="EA marketplace pages"></nav>
+    <div class="reb-market-empty" id="eaMarketEmpty">No EA listings are available right now.</div>
+  </section>
+</main>
+<div class="reb-payment-modal" id="rebPaymentModal" aria-hidden="true">
+  <div class="reb-payment-dialog" role="dialog" aria-modal="true" aria-labelledby="rebPaymentTitle">
+    <div class="reb-payment-head"><div><h2 id="rebPaymentTitle">Secure Payment</h2><p>Choose PayPal or Visa/Mastercard for the selected EA Bot package.</p></div><button class="reb-pay-close" type="button" aria-label="Close payment">&times;</button></div>
+    <div class="reb-payment-body">
+      <aside class="reb-order-summary"><span>Order Summary</span><h3 id="rebPayProduct">EA Bot Package</h3><div class="reb-order-price" id="rebPayPrice">$0</div><p class="reb-order-note">This frontend prepares the payment request. Real PayPal/Card charging should be connected through a secure backend payment gateway.</p></aside>
+      <form class="reb-payment-form" id="rebPaymentForm">
+        <div class="reb-method-grid"><button class="reb-method active" type="button" data-method="paypal"><strong><i class="fab fa-paypal"></i> PayPal</strong><small>Redirect buyer to PayPal checkout after backend gateway is connected.</small></button><button class="reb-method" type="button" data-method="card"><strong><i class="far fa-credit-card"></i> Visa / Mastercard</strong><small>Use secure card checkout. Card data must be handled by the payment provider.</small></button></div>
+        <div class="reb-secure-panel" id="rebPaypalPanel"><h4>PayPal Checkout</h4><p>Buyer can pay with PayPal balance or linked card after PayPal API is connected.</p><div class="reb-payment-logos"><span class="paypal">PayPal</span><span>Buyer Protection</span><span>USD</span></div></div>
+        <div class="reb-secure-panel" id="rebCardPanel" hidden><h4>Secure Card Checkout</h4><div class="reb-card-preview"><div class="reb-card-row"><strong>ReachEmpireBot</strong><span>VISA</span></div><div class="reb-card-number">**** **** **** ****</div><div class="reb-card-row"><small>Cardholder</small><small>MM / YY</small></div></div><div class="reb-payment-fields"><div class="reb-payment-field full"><label>Card checkout provider</label><input type="text" value="Secure gateway iframe will load here" disabled></div><div class="reb-payment-field"><label>Billing name</label><input name="billingName" type="text" placeholder="Client name"></div><div class="reb-payment-field"><label>Email</label><input name="email" type="email" placeholder="client@email.com"></div></div></div>
+        <div class="reb-payment-warning">Do not store raw card numbers in this static website. Use PayPal/Stripe/authorized gateway tokenization from the backend before going live.</div><div class="reb-pay-status" id="rebPayStatus">Payment request prepared. Backend gateway connection is required before real payment.</div><div class="reb-payment-actions"><button class="reb-btn gold" type="submit"><i class="fas fa-lock"></i> Submit Payment Request</button><button class="reb-btn dark" type="button" id="rebPayContact"><i class="fas fa-headset reb-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2Zm16 0h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2ZM17 20c-1 1-2.7 1-5 1"/></svg></i> Contact Support</button></div>
+      </form>
+    </div>
+  </div>
+</div>
+<script id="reb-ea-market-filter-script">
+(function(){
+  window.REB_MARKET_DEPLOY_VERSION='20260810-backend-only-v2';
+  document.addEventListener('DOMContentLoaded', function(){
+    var storageKey = 'REB_EA_MARKET_UPLOADS_V2';
+    var list = document.getElementById('eaMarketList');
+    var search = document.getElementById('eaMarketSearch');
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.reb-filter-btn'));
+    var count = document.getElementById('eaMarketCount');
+    var empty = document.getElementById('eaMarketEmpty');
+    var pagination = document.getElementById('eaMarketPagination');
+    var apiStatus = document.getElementById('eaMarketApiStatus');
+    var active = 'all';
+    var currentPage = 1;
+    var perPage = 5;
+    var apiBase = (window.REB_API_BASE || 'https://admin.reachempirebot.com').replace(/\/$/, '');
+    var backendListings = null;
+    function esc(value){return String(value||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+    function setApiStatus(type,message){if(!apiStatus)return;if(type==='ok'){apiStatus.className='reb-market-api-status';apiStatus.textContent='';return;}apiStatus.className='reb-market-api-status show '+type;apiStatus.textContent=message;} 
+    function categorySlug(value){value=String(value||'').toLowerCase();if(/crypto|bitcoin|btc|ethereum|eth|usdt/.test(value))return 'crypto';if(/metal|gold|silver|xau|xag/.test(value))return 'metal';if(/forex|currency|eur|gbp|jpy|aud|cad|chf|nzd|usd/.test(value))return 'forex';return 'other';}
+    function blankCoverHtml(){return '<div class="reb-image-placeholder"><i class="far fa-image"></i><strong>EA Image Pending</strong><span>Upload from Seller Dashboard</span><small>Required: 1200 x 675 px (16:9)</small></div>';}
+    function marketCoverHtml(item, slug, title, tags){
+      var label=slug==='metal'?'Metal EA':slug==='crypto'?'Crypto EA':slug==='forex'?'Forex EA':'EA Bot';
+      var symbols=(tags&&tags.length?tags:[label]).slice(0,3).map(function(t){return '<span>'+esc(t)+'</span>';}).join('');
+      return '<div class="reb-product-top reb-ea-cover"><div class="reb-cover-stage"><div class="reb-cover-copy"><div class="reb-cover-label"><i class="fas fa-shield-alt"></i>'+esc(label)+'</div><div class="reb-cover-title">'+esc(title)+'</div><div class="reb-cover-symbols">'+symbols+'</div></div><div class="reb-cover-robot"><div class="reb-cover-chart"></div><img src="/assets/images/resource/reb-robot.png" alt="'+esc(title)+' cover"></div></div></div>';
+    }
+    function loadUploads(){try{return JSON.parse(localStorage.getItem(storageKey)||'[]')||[];}catch(e){return [];}}
+    function normalizeBackendListing(item){
+      var title=item.title||item.name||'EA Bot Listing';
+      return {
+        backendListing:true,
+        title:title,
+        category:item.category||item.market||item.bot_category||item.ea_category||item.type||'',
+        price:item.price || item.price_usd || 'Review',
+        description:item.description||item.detail||'Published EA bot from ReachEmpireBot marketplace.',
+        tags:item.tags||item.category||'',
+        features:item.features||'',
+        file:item.ea_filename||item.file||'EA file',
+        youtube:item.youtube_url||item.youtube||'',
+        photo:item.image_url||item.image||'',
+        download:item.download_url||'',
+        id:item.id||'',
+        detail:item.detail_url||''
+      };
+    }
+    function loadBackendListings(){
+      if(!window.fetch){return Promise.resolve([]);}
+      return fetch(apiBase+'/api/bot-marketplace/listings?v='+Date.now(),{cache:'no-store',mode:'cors'})
+        .then(function(response){if(!response.ok){throw new Error('Marketplace API '+response.status);}return response.json();})
+        .then(function(data){
+          var rawItems=Array.isArray(data)?data:(data&&Array.isArray(data.items)?data.items:(data&&Array.isArray(data.bots)?data.bots:[]));
+          var items=rawItems.map(normalizeBackendListing);
+          setApiStatus('ok','');
+          return items;
+        })
+        .catch(function(error){setApiStatus('ok','');return [];});
+    }
+    function renderClientUploads(){
+      if(!list)return;
+      list.innerHTML='';
+      var liveItems=Array.isArray(backendListings)?backendListings:[];
+      var items=liveItems;
+      items.forEach(function(item){
+        var explicitCategory=item.category||item.market||item.bot_category||item.ea_category||item.type||'';
+        var slug=categorySlug(explicitCategory);
+        if(slug==='other')slug=categorySlug([item.symbol,item.tags,item.title,item.description].filter(Boolean).join(' '));
+        var title=item.title||'Uploaded EA Listing';
+        var desc=item.description||'Seller did not provide a description yet.';
+        var category=item.category||slug.toUpperCase()+' EA';
+        var price=item.price?'$'+esc(item.price):'Review';
+        var tags=String(item.tags||category).split(',').map(function(x){return x.trim();}).filter(Boolean).slice(0,3);
+        if(!tags.length)tags=[category];
+        var features=String(item.features||'EA file uploaded, Seller description submitted, Admin review pending').split(/\r?\n|,/).map(function(x){return x.trim();}).filter(Boolean).slice(0,3);
+        var article=document.createElement('article');
+        article.className='reb-product '+(item.backendListing?'reb-market-listing':'reb-market-listing');
+        article.setAttribute('data-category',slug);
+        article.setAttribute('data-search',[title,category,desc,item.file,item.tags,item.features,item.youtube,item.backendListing?'published backend marketplace listing':'published backend marketplace listing'].join(' ').toLowerCase());
+        var fileText=item.file||('EA file');
+        var detail=features[0]||fileText;
+        var youtube=item.youtube?String(item.youtube).trim():'';
+        var youtubeBtn=youtube?'<a class="reb-btn light reb-youtube-link" href="'+esc(youtube)+'" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> YouTube</a>':'<span class="reb-btn light reb-youtube-link is-disabled" aria-disabled="true"><i class="fab fa-youtube"></i> No Video</span>';
+        var thumb=item.photo?'<span class="reb-ea-thumb"><img src="'+esc(item.photo)+'" alt="'+esc(title)+' image"></span>':'<span class="reb-ea-thumb reb-ea-thumb-empty"><i class="far fa-image"></i></span>';
+        var downloadAttr=item.download?' data-download="'+esc(item.download)+'"':'';
+        var detailHref='/markets-details/?id='+encodeURIComponent(item.id||title);
+        article.innerHTML='<a class="reb-ea-card-link" href="'+esc(detailHref)+'" aria-label="View '+esc(title)+' details"><div class="reb-product-body reb-compact-ea-body"><div class="reb-ea-card-head">'+thumb+'<div class="reb-ea-head-copy"><h3>'+esc(title)+'</h3><div class="reb-ea-price-line"><strong>'+price+'</strong><span>/ license</span></div></div></div><p class="reb-ea-desc">'+esc(desc)+'</p><span class="reb-card-view-hint"><i class="fas fa-arrow-right"></i> View EA Details</span></div></a>';
+        list.appendChild(article);
+      });
+    }
+    function paginationPages(totalPages){
+      if(totalPages<=7)return Array.from({length:totalPages},function(_,i){return i+1;});
+      var pages=[1];
+      var start=Math.max(2,currentPage-1);
+      var end=Math.min(totalPages-1,currentPage+1);
+      if(start>2)pages.push('ellipsis-left');
+      for(var i=start;i<=end;i++)pages.push(i);
+      if(end<totalPages-1)pages.push('ellipsis-right');
+      pages.push(totalPages);
+      return pages;
+    }
+    function renderPagination(totalItems){
+      if(!pagination)return;
+      var totalPages=Math.ceil(totalItems/perPage);
+      pagination.innerHTML='';
+      pagination.classList.toggle('show',totalPages>1);
+      if(totalPages<=1)return;
+      function addButton(label,page,className,disabled,current){
+        var button=document.createElement('button');
+        button.type='button';
+        button.className='reb-page-btn '+(className||'')+(current?' active':'');
+        button.textContent=label;
+        button.disabled=!!disabled;
+        if(current)button.setAttribute('aria-current','page');
+        button.addEventListener('click',function(){
+          if(disabled||page===currentPage)return;
+          currentPage=page;
+          applyFilter(false);
+          var target=count||list;
+          if(target)window.scrollTo({top:target.getBoundingClientRect().top+window.pageYOffset-110,behavior:'smooth'});
+        });
+        pagination.appendChild(button);
+      }
+      addButton('Previous Page',currentPage-1,'reb-page-nav',currentPage===1,false);
+      paginationPages(totalPages).forEach(function(page){
+        if(typeof page==='string'){
+          var dots=document.createElement('span');
+          dots.className='reb-page-ellipsis';
+          dots.textContent='Ã¢â‚¬Â¦';
+          pagination.appendChild(dots);
+        }else{
+          addButton(String(page),page,'reb-page-number',false,page===currentPage);
+        }
+      });
+      addButton('Next Page',currentPage+1,'reb-page-nav',currentPage===totalPages,false);
+    }
+    function applyFilter(resetPage){
+      if(!list)return;
+      if(resetPage)currentPage=1;
+      var term=(search&&search.value?search.value:'').trim().toLowerCase();
+      var matches=[];
+      var cards=Array.prototype.slice.call(list.querySelectorAll('.reb-product'));
+      cards.forEach(function(card){
+        var category=card.getAttribute('data-category')||'';
+        var text=(card.getAttribute('data-search')||card.textContent||'').toLowerCase();
+        var okCategory=active==='all'||category===active;
+        var okSearch=!term||text.indexOf(term)!==-1;
+        if(okCategory&&okSearch)matches.push(card);
+      });
+      var totalPages=Math.max(1,Math.ceil(matches.length/perPage));
+      if(currentPage>totalPages)currentPage=totalPages;
+      var start=(currentPage-1)*perPage;
+      var end=Math.min(start+perPage,matches.length);
+      cards.forEach(function(card){card.hidden=true;card.style.setProperty('display','none','important');});
+      matches.slice(start,end).forEach(function(card){card.hidden=false;card.style.removeProperty('display');});
+      if(count){
+        count.textContent=matches.length?'Showing '+(start+1)+'–'+end+' of '+matches.length+' EA bots':'Showing 0 EA bots';
+      }
+      if(empty)empty.classList.toggle('show',matches.length===0);
+      renderPagination(matches.length);
+    }
+    if(count)count.textContent='Loading EA bots…';
+    loadBackendListings().then(function(items){backendListings=items;renderClientUploads();applyFilter(true);});
+    if(search)search.addEventListener('input',function(){applyFilter(true);});
+    buttons.forEach(function(btn){btn.addEventListener('click',function(){active=btn.getAttribute('data-filter')||'all';buttons.forEach(function(b){b.classList.toggle('active',b===btn);});applyFilter(true);});});
+  });
+})();
+</script>
+<script id="reb-marketplace-payment-delegate">
+document.addEventListener('click', function(e){
+  var btn = e.target && e.target.closest ? e.target.closest('[data-payment-buy]') : null;
+  if(!btn) return;
+  var modal=document.getElementById('rebPaymentModal');
+  if(!modal) return;
+  e.preventDefault();
+  var product=document.getElementById('rebPayProduct');
+  var price=document.getElementById('rebPayPrice');
+  var status=document.getElementById('rebPayStatus');
+  if(product) product.textContent=btn.getAttribute('data-product')||'EA Bot Package';
+  if(price) price.textContent=btn.getAttribute('data-price')||'$0';
+  if(status) status.classList.remove('show');
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+});
+</script>
+<script id="reb-payment-script">
+(function(){document.addEventListener('DOMContentLoaded',function(){var modal=document.getElementById('rebPaymentModal');if(!modal)return;var product=document.getElementById('rebPayProduct');var price=document.getElementById('rebPayPrice');var status=document.getElementById('rebPayStatus');var paypal=document.getElementById('rebPaypalPanel');var card=document.getElementById('rebCardPanel');var selected='paypal';function openPayment(btn){product.textContent=btn.getAttribute('data-product')||'EA Bot Package';price.textContent=btn.getAttribute('data-price')||'$0';status.classList.remove('show');modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}function closePayment(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}document.querySelectorAll('[data-payment-buy]').forEach(function(btn){btn.addEventListener('click',function(e){e.preventDefault();openPayment(btn);});});modal.querySelector('.reb-pay-close').addEventListener('click',closePayment);modal.addEventListener('click',function(e){if(e.target===modal)closePayment();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('show'))closePayment();});modal.querySelectorAll('.reb-method').forEach(function(btn){btn.addEventListener('click',function(){selected=btn.getAttribute('data-method')||'paypal';modal.querySelectorAll('.reb-method').forEach(function(x){x.classList.toggle('active',x===btn);});paypal.hidden=selected!=='paypal';card.hidden=selected!=='card';status.classList.remove('show');});});document.getElementById('rebPaymentForm').addEventListener('submit',function(e){e.preventDefault();var order={product:product.textContent,price:price.textContent,method:selected,created:new Date().toISOString(),status:'gateway_pending'};try{localStorage.setItem('REB_PAYMENT_REQUEST',JSON.stringify(order));}catch(err){}status.textContent='Payment request prepared for '+order.product+' using '+(selected==='paypal'?'PayPal':'Visa/Mastercard')+'. Backend gateway connection is required before real payment.';status.classList.add('show');});document.getElementById('rebPayContact').addEventListener('click',function(){window.location.href='/contact/';});});})();
+</script><script id="reb-logo-route-fix">
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('img').forEach(function(img){
+    var s = img.getAttribute('src') || '';
+    if(s.indexOf('assets/images/logo') !== -1){
+      img.onerror = function(){ this.onerror = null; this.src = '/assets/images/logo.png'; };
+    }
+  });
+  document.querySelectorAll('a').forEach(function(a){
+    var h = (a.getAttribute('href') || '').replace(/^\//,'').replace(/\/$/,'').toLowerCase();
+    if(h === 'login') a.setAttribute('href','/login/');
+    if(h === 'signup') a.setAttribute('href','/signup/');
+  });
+});
+</script>
+<script id="reb-vercel-final-fallback">
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('a').forEach(function(a){
+    var h=(a.getAttribute('href')||'').replace(/^\//,'').replace(/\/$/,'').toLowerCase();
+    if(h==='signup') a.setAttribute('href','/signup/');
+    if(h==='login') a.setAttribute('href','/login/');
+  });
+});
+</script>
+<script src="/assets/js/reb-auth-state.js?v=20260818-auth-ticker-v49"></script>
+<style id="reb-mobile-menu-one-row-final">
+@media(max-width:767px){
+  body .reb-header .reb-nav, body .reb-nav{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;grid-template-columns:none!important;align-items:center!important;justify-content:flex-start!important;width:100%!important;max-width:100%!important;gap:8px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;padding:8px!important;background:#101312!important;border-radius:12px!important;box-sizing:border-box!important;-webkit-overflow-scrolling:touch!important}
+  body .reb-header .reb-nav::-webkit-scrollbar, body .reb-nav::-webkit-scrollbar{display:none!important}
+  body .reb-header .reb-nav a, body .reb-nav a, body .reb-nav a.trade-account-link{flex:0 0 auto!important;width:auto!important;min-width:108px!important;max-width:none!important;min-height:44px!important;padding:0 13px!important;font-size:14px!important;line-height:1.08!important;white-space:nowrap!important;text-align:center!important}
+}
+</style>
+<style id="reb-home-clean-footer">
+.reb-clean-footer{background:linear-gradient(135deg,#050505 0%,#0a0a0a 58%,#1d1506 100%);color:#fff;border-top:1px solid rgba(245,176,38,.2);padding:58px 6vw 24px}.reb-clean-footer-inner{max-width:1480px;margin:0 auto}.reb-clean-footer .reb-clean-footer-grid{display:grid;grid-template-columns:minmax(310px,1.45fr) minmax(135px,.64fr) minmax(155px,.72fr) minmax(230px,.9fr) minmax(230px,.95fr)!important;gap:34px;align-items:start}.reb-clean-footer-logo{width:245px;max-width:74vw;height:auto;display:block;margin-bottom:16px}.reb-clean-footer p{color:rgba(255,255,255,.7);line-height:1.65;margin:0;font-size:15px}.reb-clean-footer h3{color:#f5b026;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin:0}.reb-clean-footer-links{display:grid;gap:11px;margin-top:15px}.reb-clean-footer-links a{color:rgba(255,255,255,.82);font-weight:700;text-decoration:none}.reb-clean-footer-links a:hover{color:#f5b026}.reb-contact-list{display:grid;gap:10px;margin-top:15px}.reb-contact-row{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:center;color:rgba(255,255,255,.82)!important;text-decoration:none;font-weight:700;line-height:1.35}.reb-contact-row:hover{color:#f5b026!important}.reb-contact-row i{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;transition:transform .18s ease,box-shadow .18s ease}.reb-contact-row:hover i{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.25)}.reb-contact-row.phone i{background:#f5b026;color:#050505}.reb-contact-row.email i{background:#6b7280}.reb-contact-row.telegram i{background:#229ed9}.reb-contact-row span{display:block;min-width:0;overflow-wrap:anywhere}.reb-contact-help{margin-top:14px!important;color:rgba(255,255,255,.62)!important;font-size:14px!important;line-height:1.55!important}.reb-follow-social{display:grid;grid-template-columns:repeat(4,44px);gap:10px;margin-top:15px}.reb-follow-social a{width:44px;height:44px;border-radius:10px;color:#fff!important;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}.reb-follow-social a:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(0,0,0,.28);filter:saturate(1.08)}.reb-follow-social .facebook{background:#1877f2}.reb-follow-social .youtube{background:#ff0000}.reb-follow-social .telegram{background:#229ed9}.reb-follow-social .tiktok{background:linear-gradient(135deg,#050505 0%,#101010 56%,#25f4ee 100%);border:1px solid rgba(255,255,255,.24);position:relative;overflow:hidden}.reb-follow-social .tiktok:after{content:"";position:absolute;right:4px;bottom:4px;width:11px;height:11px;border-radius:50%;background:#fe2c55;opacity:.82}.reb-tiktok-svg{width:21px;height:21px;position:relative;z-index:1;filter:drop-shadow(1px 1px 0 #fe2c55)}.reb-clean-footer-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.reb-clean-footer-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 16px;border-radius:8px;background:#f5b026;color:#050505!important;font-weight:900;text-decoration:none}.reb-clean-footer-btn.secondary{background:rgba(255,255,255,.08);border:1px solid rgba(245,176,38,.24);color:#fff!important}.reb-clean-footer-bottom{margin-top:38px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:flex-start;gap:26px;color:rgba(255,255,255,.6);font-size:14px}.reb-floating-chat{position:fixed;right:26px;bottom:96px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 18px;border-radius:999px;background:#229ed9;color:#fff!important;font-weight:900;text-decoration:none;box-shadow:0 18px 42px rgba(34,158,217,.36);border:1px solid rgba(255,255,255,.28);animation:rebFloatChat 3.2s ease-in-out infinite,rebChatPulse 2.4s ease-in-out infinite;transition:transform .18s ease,background .18s ease}.reb-floating-chat i{font-size:20px}.reb-floating-chat:hover{background:#1b8fc6;color:#fff!important;transform:translateY(-3px)}@keyframes rebFloatChat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes rebChatPulse{0%,100%{box-shadow:0 18px 42px rgba(34,158,217,.36),0 0 0 0 rgba(34,158,217,.28)}50%{box-shadow:0 22px 48px rgba(34,158,217,.42),0 0 0 10px rgba(34,158,217,0)}}
+@media(max-width:1180px){.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1.2fr .8fr .8fr!important}.reb-clean-footer-brand{grid-column:1/-1}.reb-clean-follow{grid-column:auto}.reb-follow-social{grid-template-columns:repeat(4,42px)}.reb-follow-social a{width:42px;height:42px}}
+@media(max-width:760px){.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1fr 1fr!important}.reb-clean-footer-brand{grid-column:1/-1}.reb-clean-contact,.reb-clean-follow{grid-column:auto}}
+@media(max-width:640px){.reb-clean-footer{padding:38px 18px 22px}.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1fr!important;gap:26px}.reb-clean-footer-logo{width:220px}.reb-contact-list{gap:9px}.reb-contact-row{grid-template-columns:32px minmax(0,1fr)}.reb-contact-row i{width:32px;height:32px}.reb-follow-social{grid-template-columns:repeat(4,40px);gap:9px}.reb-follow-social a{width:40px;height:40px}.reb-clean-footer-actions{display:grid;grid-template-columns:1fr;gap:10px}.reb-clean-footer-btn{width:100%;min-width:0}.reb-clean-footer-bottom{flex-direction:column;align-items:flex-start;font-size:13px;gap:18px}.reb-floating-chat{right:14px;bottom:84px;min-height:50px;padding:0 14px;font-size:13px}.reb-floating-chat span{max-width:96px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-floating-chat i{font-size:18px}}
+</style>
+<!-- footer area start -->
+<footer class="reb-clean-footer">
+    <div class="reb-clean-footer-inner">
+        <div class="reb-clean-footer-grid">
+            <div class="reb-clean-footer-brand">
+                <a href="/"><img class="reb-clean-footer-logo" src="/assets/images/logo-2.png" alt="ReachEmpireBot"></a>
+                <p>AI-assisted auto trading software for disciplined MT5 execution, setup guidance, copy trading information, and risk-aware automation support.</p>
+                <div class="reb-clean-footer-actions">
+                    <a class="reb-clean-footer-btn" href="/download/"><i class="fas fa-download reb-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14"/></svg></i> Download</a>
+                    <a class="reb-clean-footer-btn secondary" href="/contact/"><i class="fas fa-headset reb-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2Zm16 0h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2ZM17 20c-1 1-2.7 1-5 1"/></svg></i> Contact Support</a>
+                </div>
+            </div>
+            <div>
+                <h3>Main Pages</h3>
+                <nav class="reb-clean-footer-links" aria-label="Footer main pages">
+                    <a href="/">Home</a>
+                    <a href="/download/">Download</a>
+                    <a href="/markets/">EA Bot Market</a>
+        
+                    <a href="/create-trade-account/">Trade Account</a>
+                    <a href="/about/">About Us</a>
+                </nav>
+            </div>
+            <div>
+                <h3>Markets</h3>
+                <nav class="reb-clean-footer-links" aria-label="Footer market pages">
+                    <a href="/forex-trading/">Forex Trading</a>
+                    <a href="/crypto-trading/">Crypto Trading</a>
+                    <a href="/metal-trading/">Metal Trading</a>
+                </nav>
+            </div>
+            <div class="reb-clean-contact">
+                <h3>Contact Info</h3>
+                <div class="reb-contact-list" aria-label="Contact links">
+                    <a class="reb-contact-row phone" href="tel:+85593525363" aria-label="Call ReachEmpireBot"><i class="fas fa-phone reb-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7.2 3.5 10 8 7.8 10c1.2 2.7 3.4 4.9 6.2 6.2l2-2.2 4.5 2.8-.8 3.1c-.3 1-1.3 1.7-2.4 1.5C9.7 20.1 3.9 14.3 2.6 6.7c-.2-1.1.5-2.1 1.5-2.4l3.1-.8Z"/></svg></i><span>093 525 363</span></a>
+                    <a class="reb-contact-row email" href="mailto:reachempirebot@gmail.com" aria-label="Email ReachEmpireBot"><i class="fas fa-envelope reb-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></i><span>reachempirebot@gmail.com</span></a>
+                    <a class="reb-contact-row telegram" href="https://t.me/ReachEmpireBot" target="_blank" rel="noopener" aria-label="Telegram Channel"><i class="fab fa-telegram-plane"></i><span>Telegram Channel</span></a>
+                </div>
+                <p class="reb-contact-help">For direct questions, use the Live Chat button.</p>
+            </div>
+            <div class="reb-clean-follow">
+                <h3>Follow Us On</h3>
+                <div class="reb-follow-social" aria-label="Social links">
+                    <a class="facebook" href="https://web.facebook.com/ReachEmpireBot" target="_blank" rel="noopener" aria-label="Facebook Page"><i class="fab fa-facebook-f"></i></a>
+                    <a class="youtube" href="https://www.youtube.com/@ReachEmpireBot" target="_blank" rel="noopener" aria-label="YouTube Channel"><i class="fab fa-youtube"></i></a>
+                    <a class="telegram" href="https://t.me/ReachEmpireBot" target="_blank" rel="noopener" aria-label="Telegram Channel"><i class="fab fa-telegram-plane"></i></a>
+                    <a class="tiktok" href="https://www.tiktok.com/@reachempirebot" target="_blank" rel="noopener" aria-label="TikTok"><svg class="reb-tiktok-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.7 4.2c.6 1.8 1.9 3.1 3.7 3.4v3.1c-1.5 0-2.8-.5-3.9-1.3v5.8c0 3.2-2.2 5.2-5.2 5.2-2.8 0-5-1.9-5-4.6 0-2.9 2.3-4.8 5.1-4.8.4 0 .8 0 1.1.1v3.2c-.3-.1-.7-.2-1.1-.2-1.2 0-2 .7-2 1.7 0 1 .8 1.6 1.8 1.6 1.2 0 2-.7 2-2.1V3.6h3.5v.6z" fill="currentColor"/></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="reb-clean-footer-bottom">
+            <span>Copyright &copy; 2026 ReachEmpireBot. All rights reserved.</span>
+        </div>
+    </div>
+</footer>
+
+<!-- footer area end -->
+<style id="reb-market-smooth-scroll-polish">
+.reb-store{scroll-margin-top:96px}.reb-store.reb-scroll-focus .reb-market-controls{animation:rebMarketFocus 1.2s ease-out}@keyframes rebMarketFocus{0%{filter:brightness(.94);transform:translateY(8px)}55%{filter:brightness(1.03)}100%{filter:brightness(1);transform:none}}
+</style>
+<script id="reb-market-smooth-scroll">
+(function(){
+  function scrollToStore(){var target=document.getElementById('store');if(!target)return;var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;var header=document.querySelector('.reb-header');var offset=(header&&getComputedStyle(header).position==='sticky'?header.offsetHeight:0)+22;var start=window.pageYOffset;var end=Math.max(0,target.getBoundingClientRect().top+start-offset);var distance=end-start;var duration=reduce?0:1050;target.classList.remove('reb-scroll-focus');void target.offsetWidth;target.classList.add('reb-scroll-focus');if(!duration){window.scrollTo(0,end);return;}var begin=performance.now();function step(now){var t=Math.min(1,(now-begin)/duration);var eased=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;window.scrollTo(0,start+distance*eased);if(t<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+  document.addEventListener('click',function(event){var link=event.target.closest&&event.target.closest('[data-smooth-target="store"]');if(!link)return;event.preventDefault();if(location.hash!=='#store')history.pushState(null,'','#store');scrollToStore();});
+  if(location.hash==='#store'){window.scrollTo(0,0);setTimeout(scrollToStore,180);}
+})();
+</script>
+<script src="/assets/js/reb-unified-drawer-v41.js?v=20260811-desktop-guard-v1"></script>
+  <script src="/assets/js/trade-account-video-v1.js?v=1"></script>
+<style id="reb-mobile-auth-hardfix-v33">
+@media(max-width:767px){
+ html body .main-header .header-top .option-block,html body .reb-top .reb-actions,html body .reb-top .reb-login{box-sizing:border-box!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;width:min(300px,calc(100vw - 28px))!important;margin-left:auto!important;margin-right:14px!important;padding:0!important;background:transparent!important;border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important}
+ html body .main-header .header-top .option-block .language-picker{display:none!important}
+ html body .main-header .header-top .option-block a[href*="/signup/"],html body .reb-top .reb-actions a[href*="/signup/"],html body .reb-top .reb-login a[href*="/signup/"]{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;margin:0!important;padding:0 8px!important;border:1px solid #ffb11b!important;border-radius:9px!important;background:#ffb11b!important;background-image:none!important;color:#090909!important;font-size:13px!important;font-weight:800!important;line-height:1!important;box-shadow:none!important;transform:none!important}
+ html body .main-header .header-top .option-block a[href*="/signup/"]::before,html body .main-header .header-top .option-block a[href*="/signup/"]::after,html body .reb-top a[href*="/signup/"]::before,html body .reb-top a[href*="/signup/"]::after{content:none!important;display:none!important;opacity:0!important;visibility:hidden!important;transform:none!important;background:transparent!important}
+ html body .main-header .header-top .option-block a[href*="/login/"],html body .reb-top .reb-actions a[href*="/login/"],html body .reb-top .reb-login a[href*="/login/"]{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;margin:0!important;padding:0 8px!important;border:1px solid #59605f!important;border-radius:9px!important;background:#101413!important;background-image:none!important;color:#fff!important;font-size:13px!important;font-weight:800!important;line-height:1!important;box-shadow:none!important}
+ html body .main-header .header-top .option-block.reb-auth-logged-in .reb-session-account,html body .reb-top .reb-auth-logged-in .reb-session-account{background:#181b18!important;border-color:#a27618!important;color:#fff!important}
+ html body .main-header .header-top .option-block.reb-auth-logged-in .reb-session-logout,html body .reb-top .reb-auth-logged-in .reb-session-logout{background:#321919!important;border-color:#8b3b3b!important;color:#fff!important}
+}
+</style>
+<script id="reb-mobile-auth-hardfix-v33-runtime">
+(function(){function run(){if(Math.min(innerWidth||9999,document.documentElement.clientWidth||9999)>767&&!/Android|iPhone|Mobile/i.test(navigator.userAgent||''))return;var a=document.querySelectorAll('a[href*="/login/"]');for(var i=0;i<a.length;i++)if(!a[i].classList.contains('reb-session-logout'))a[i].textContent='Log In';var s=document.querySelectorAll('a[href*="/signup/"]');for(var j=0;j<s.length;j++)s[j].textContent='Sign Up'}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();setTimeout(run,300)})();
+</script>
+<link id="reb-mobile-auth-home-v36" rel="stylesheet" href="/assets/css/reb-mobile-auth-home-v36.css?v=20260809-v36">
+
+<!-- REB TRADE ACCOUNT AUTH STANDARD - copied 1:1 geometry to all pages -->
+<style id="reb-trade-account-auth-standard-all-pages">
+@media(max-width:640px){
+  html body .reb-top{padding:12px 20px!important;justify-content:flex-end!important;gap:0!important;}
+  html body .reb-top .reb-phone{display:none!important;}
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login{
+    width:auto!important;max-width:100%!important;display:flex!important;grid-template-columns:none!important;
+    justify-content:center!important;gap:8px!important;flex:0 0 auto!important;
+    margin-left:auto!important;margin-right:0!important;padding:0!important;
+    background:transparent!important;border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important;
+  }
+  html body .reb-top .reb-actions a,
+  html body .reb-top .reb-login a{
+    box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;
+    width:auto!important;min-width:86px!important;max-width:none!important;height:40px!important;min-height:40px!important;max-height:40px!important;
+    margin:0!important;padding:0 14px!important;border-radius:8px!important;font-size:15px!important;font-weight:800!important;
+    line-height:1!important;white-space:nowrap!important;text-align:center!important;box-shadow:none!important;transform:none!important;
+  }
+  html body .reb-top .reb-actions a[href*="/signup/"],
+  html body .reb-top .reb-login a[href*="/signup/"]{background:#f5b026!important;background-image:none!important;border:1px solid #f5b026!important;color:#070707!important;}
+  html body .reb-top .reb-actions a[href*="/login/"],
+  html body .reb-top .reb-login a[href*="/login/"]{background:#101312!important;background-image:none!important;border:1px solid rgba(255,255,255,.45)!important;color:#fff!important;}
+  html body .reb-top a[href*="/signup/"]::before,html body .reb-top a[href*="/signup/"]::after,
+  html body .reb-top a[href*="/login/"]::before,html body .reb-top a[href*="/login/"]::after{content:none!important;display:none!important;}
+}
+</style>
+
+<style id="reb-inline-desktop-menu-final-v6">
+@media (min-width:768px){
+html body.reb-subpage header.reb-header{
+  display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;
+  gap:28px!important;width:100%!important;max-width:100%!important;min-height:136px!important;height:auto!important;
+  margin:0!important;padding:22px 5.5vw!important;box-sizing:border-box!important;overflow:visible!important;background:#fff!important;
+}
+html body.reb-subpage header.reb-header>a.reb-logo{display:flex!important;align-items:center!important;flex:0 0 auto!important;width:auto!important;margin:0!important;padding:0!important}
+html body.reb-subpage header.reb-header>a.reb-logo img{display:block!important;width:245px!important;max-width:245px!important;height:auto!important}
+html body.reb-subpage header.reb-header>button.reb-mobile-menu-toggle{display:none!important}
+html body.reb-subpage header.reb-header>nav.reb-nav{
+  display:flex!important;visibility:visible!important;opacity:1!important;position:static!important;inset:auto!important;transform:none!important;
+  flex:0 0 auto!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;
+  gap:4px!important;width:auto!important;min-width:760px!important;max-width:calc(100vw - 390px)!important;height:56px!important;min-height:56px!important;
+  margin:0 0 0 auto!important;padding:6px!important;box-sizing:border-box!important;overflow:visible!important;
+  background:#101312!important;border:1px solid rgba(245,176,38,.24)!important;border-radius:14px!important;box-shadow:0 14px 30px rgba(0,0,0,.12)!important;
+  font-family:Ubuntu,Arial,sans-serif!important;
+}
+html body.reb-subpage header.reb-header>nav.reb-nav>a,
+html body.reb-subpage header.reb-header>nav.reb-nav>a.trade-account-link{
+  display:inline-flex!important;visibility:visible!important;opacity:1!important;align-items:center!important;justify-content:center!important;flex:1 1 auto!important;
+  width:auto!important;min-width:100px!important;max-width:none!important;height:44px!important;min-height:44px!important;margin:0!important;padding:0 14px!important;
+  box-sizing:border-box!important;border:0!important;border-radius:10px!important;background:transparent!important;color:#fff!important;
+  font-family:Ubuntu,Arial,sans-serif!important;font-size:14px!important;font-style:normal!important;font-weight:700!important;letter-spacing:0!important;line-height:1!important;
+  text-align:center!important;text-transform:none!important;text-decoration:none!important;white-space:nowrap!important;
+}
+html body.reb-subpage header.reb-header>nav.reb-nav>a.active,
+html body.reb-subpage header.reb-header>nav.reb-nav>a:hover{background:#f5b026!important;color:#070707!important}
+}
+@media (min-width:768px) and (max-width:1180px){
+html body.reb-subpage header.reb-header{padding-left:28px!important;padding-right:28px!important;gap:18px!important}
+html body.reb-subpage header.reb-header>a.reb-logo img{width:205px!important;max-width:205px!important}
+html body.reb-subpage header.reb-header>nav.reb-nav{min-width:0!important;max-width:calc(100vw - 275px)!important;overflow-x:auto!important;justify-content:flex-start!important}
+html body.reb-subpage header.reb-header>nav.reb-nav>a,html body.reb-subpage header.reb-header>nav.reb-nav>a.trade-account-link{flex:0 0 auto!important;min-width:105px!important;font-size:13px!important;padding:0 12px!important}
+}
+</style><!-- REB desktop auth: final cascade override. Keep immediately before </body>. -->
+<style id="reb-desktop-auth-final-override-v3">
+@media (min-width:768px){
+  html body .reb-top{
+    box-sizing:border-box!important;
+    width:100%!important;
+    padding:12px 5.5vw!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:18px!important;
+    position:relative!important;
+  }
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login,
+  html body.reb-home .main-header .header-top .option-block{
+    box-sizing:border-box!important;
+    display:flex!important;
+    grid-template-columns:none!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:14px!important;
+    width:auto!important;
+    max-width:none!important;
+    flex:0 0 auto!important;
+    position:absolute!important;
+    top:50%!important;
+    left:auto!important;
+    bottom:auto!important;
+    margin:0!important;
+    padding:0!important;
+    background:transparent!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    transform:translateY(-50%)!important;
+  }
+  html body:not(.reb-home) .reb-top .reb-actions,
+  html body:not(.reb-home) .reb-top .reb-login{right:5.5vw!important}
+  html body.reb-home .main-header .header-top .large-container,
+  html body.reb-home .main-header .header-top .top-inner{position:relative!important}
+  html body.reb-home .main-header .header-top .option-block{right:0!important}
+  html body .reb-top .reb-actions>a,
+  html body .reb-top .reb-login>a,
+  html body.reb-home .main-header .header-top .option-block>a{
+    box-sizing:border-box!important;
+    display:inline-flex!important;
+    visibility:visible!important;
+    opacity:1!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:44px!important;
+    min-height:44px!important;
+    max-height:44px!important;
+    margin:0!important;
+    padding:0 20px!important;
+    border-radius:8px!important;
+    background-image:none!important;
+    font-family:Ubuntu,Arial,sans-serif!important;
+    font-size:15px!important;
+    font-style:normal!important;
+    font-weight:800!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    text-align:center!important;
+    text-decoration:none!important;
+    text-transform:none!important;
+    white-space:nowrap!important;
+    box-shadow:none!important;
+    transform:none!important;
+  }
+  html body .reb-top .reb-actions>a[href*="/signup/"],
+  html body .reb-top .reb-login>a[href*="/signup/"],
+  html body.reb-home .main-header .header-top .option-block>a[href*="/signup/"]{
+    width:104px!important;
+    background:#f5b026!important;
+    border:1px solid #f5b026!important;
+    color:#070707!important;
+  }
+  html body .reb-top .reb-actions>a[href*="/login/"],
+  html body .reb-top .reb-login>a[href*="/login/"],
+  html body.reb-home .main-header .header-top .option-block>a[href*="/login/"]{
+    width:92px!important;
+    background:#101312!important;
+    border:1px solid rgba(255,255,255,.45)!important;
+    color:#fff!important;
+  }
+  html body .reb-top a[href*="/signup/"]::before,
+  html body .reb-top a[href*="/signup/"]::after,
+  html body .reb-top a[href*="/login/"]::before,
+  html body .reb-top a[href*="/login/"]::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body.reb-home .main-header .header-top .option-block .language-picker{display:none!important}
+  html body .reb-top .reb-auth-logged-in>.reb-session-account{
+    background:#181b18!important;
+    border:1px solid #a27618!important;
+    color:#fff!important;
+  }
+  html body .reb-top .reb-auth-logged-in>.reb-session-logout{
+    background:#321919!important;
+    border:1px solid #8b3b3b!important;
+    color:#fff!important;
+  }
+}
+</style>
+
+
+
+<script id="reb-live-chat-final-inline-js">
+(function(){
+  'use strict';
+  if(window.__REB_LIVE_CHAT_LOADED__) return;
+  window.__REB_LIVE_CHAT_LOADED__=true;
+
+  var API_BASE=String(window.REB_API_BASE||localStorage.getItem('REB_API_BASE')||'https://admin.reachempirebot.com').replace(/\/$/,'');
+  var TOKEN_KEY='REB_CLIENT_TOKEN', USER_KEY='REB_CLIENT_USER';
+  var pollTimer=null, unreadTimer=null, statusTimer=null;
+  var mediaRecorder=null, recordStream=null, recordChunks=[], recordHoldActive=false;
+  var busy=false, lastMessageId=0, initialLoaded=false, lastKnownUnread=0;
+  var objectUrls=[], previewCache=new Map(), ids={};
+
+  function token(){var t=(localStorage.getItem(TOKEN_KEY)||'').trim();return t&&t!=='null'&&t!=='undefined'&&t.indexOf('pending-')!==0?t:'';}
+  function authHeaders(extra){var h=extra||{};var t=token();if(t)h.Authorization='Bearer '+t;return h;}
+  function userName(){try{var d=JSON.parse(localStorage.getItem(USER_KEY)||'{}')||{},p=d.profile||{};return String(p.name||p.username||d.username||'Account');}catch(e){return 'Account';}}
+  function qs(s,r){return (r||document).querySelector(s)}
+  function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function formatBytes(n){n=Number(n||0);if(!n)return '0 KB';if(n<1024*1024)return Math.max(1,Math.round(n/1024))+' KB';return (n/1024/1024).toFixed(1)+' MB';}
+  function fmtTime(v){if(!v)return '';var d=new Date(v);if(isNaN(d.getTime()))return '';return d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});}
+  function fmtDay(v){if(!v)return '';var d=new Date(v);if(isNaN(d.getTime()))return '';var t=new Date(),y=new Date(t);y.setDate(t.getDate()-1);if(d.toDateString()===t.toDateString())return 'Today';if(d.toDateString()===y.toDateString())return 'Yesterday';return d.toLocaleDateString([],{month:'short',day:'numeric',year:d.getFullYear()===t.getFullYear()?undefined:'numeric'});}
+  function setStatus(msg,isError){var e=ids.status;if(!e)return;if(!msg){e.className='reb-chat-status';e.textContent='';return;}e.textContent=msg;e.className='reb-chat-status show'+(isError?' error':'');}
+  function setProgress(on){if(ids.progress)ids.progress.classList.toggle('show',!!on);}
+  function setBusy(on){busy=!!on;if(ids.send)ids.send.disabled=busy;if(ids.tools){Array.prototype.forEach.call(ids.tools.querySelectorAll('button'),function(b){b.disabled=busy&&!b.classList.contains('reb-chat-mic');});}}
+  function badge(n){n=Math.max(0,Number(n||0));lastKnownUnread=n;if(!ids.badge)return;ids.badge.textContent=n>99?'99+':String(n);ids.badge.classList.toggle('show',n>0);}
+
+  function supportIcon(){return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2Z"/><path d="M20 14h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2Z"/><path d="M17 20c-1 1-2.7 1-5 1"/></svg>';}
+  function chatIcon(name){
+    var common='viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+    var d={
+      text:'<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8M8 13h5"/>',
+      image:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m21 15-5-5L5 20"/>',
+      video:'<rect x="3" y="5" width="14" height="14" rx="2"/><path d="m17 10 4-2v8l-4-2z"/>',
+      file:'<path d="M6 2h8l4 4v16H6z"/><path d="M14 2v5h5M9 13h6M9 17h6"/>',
+      mic:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/>',
+      send:'<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>',
+      open:'<path d="M14 3h7v7M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/>'
+    };
+    return '<svg '+common+'>'+String(d[name]||d.text)+'</svg>';
+  }
+
+  function build(){
+    // Remove every legacy Telegram floating launcher. A fresh button prevents old mobile
+    // Telegram CSS from taking control of the Customer Service launcher again.
+    var legacy=Array.prototype.slice.call(document.querySelectorAll('.reb-floating-chat'));
+    var launcher=document.createElement('button');launcher.type='button';launcher.className='reb-customer-chat-launcher';launcher.setAttribute('aria-label','Open ReachEmpireBot Customer Service');
+    /* REB_LAST_2_PAGES_MOBILE_CHAT_ROUTE_20260914 */
+    launcher.addEventListener('click',function(ev){
+      var w=Math.min(
+        Number(window.innerWidth||99999),
+        Number((document.documentElement&&document.documentElement.clientWidth)||99999),
+        Number((window.screen&&window.screen.width)||99999)
+      );
+      var mobile = w<=900 ||
+        Number(navigator.maxTouchPoints||0)>0 ||
+        /Android|iPhone|iPad|iPod|Mobile/i.test(String(navigator.userAgent||'')) ||
+        !!(window.matchMedia && (
+          window.matchMedia('(pointer: coarse)').matches ||
+          window.matchMedia('(hover: none)').matches ||
+          window.matchMedia('(max-width: 900px)').matches
+        ));
+      if(!mobile) return;
+      ev.preventDefault();
+      ev.stopPropagation();
+      if(ev.stopImmediatePropagation) ev.stopImmediatePropagation();
+      var from=window.location.pathname+window.location.search+window.location.hash;
+      window.location.replace('/customer-service.html?v=20260915-chat-sync-v3&from='+encodeURIComponent(from));
+    },true);
+
+    launcher.innerHTML='<img class="reb-support-launcher-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAreElEQVR42u19eXhd1XXvb619zrmjBgvjxGAsmwAhNmQC8uXRJDYZSJo2YyOHpC0N+VLzGl5GSCCeri6WA5ma5KWlL07zEmjJS+VMbWmagcR2aDNhMttNwWBJmMnYlnR1x3POXuv9cc6RroxkJFuyZdD+Pn2Iz0fn3r3X2mv4rQmYX/Nrfs2v+fU0XfRU3ZgC1F0ArdwD6uoCsHtV0153YgeA1SuhALBjN2g1AGDV2CMrdyp2Q7sBdBehhOjZeQaYo8RGAYSVoIjQO4WKkBn9jAIYWMUJY1ARiqcAU5yyDKAKwjbwjt2gy4oIn/Dvn7/IrT7+2CJI6plW7RIInamQRarUBtUcgLQCXnwIPoA6iCpEOkzAAQg9ZFyzH9x4NHv6Mw7Q1fcEEzCFg5VQdEGITk1moFPupveCsQ2gbbDNzFDqXn6uAzxXSC9S1RcAdI4qFjuGsmmHwPzElx3tJESAeqgIQq0y4xEi3AfFL5npHkP0m/SmB/Y2v0W7YNAFYA3kVFIXpwQDaAGMlSBa00T0wuKFVaQuVcblolgFxbPzHrvEEfF8qwiswioUCgFUj9w2PYEXmh8hAsCGQK4heCZiIhVgxJfAAL8HYafD9N2U0/gJrXv40OhbemFiNSHzDHA8hO+FaRavevPZbbWavFqY3qKql2VdXsgM+KGiHihEYSNCEwEgEIjiPSqgMX01ou8YR1CiUpL/jf6o+e9ifR+9mxkm7RA8h2AFqPvyODH9EIKvZWG+R8W9pckYd54Bpkj45kOrFJa/iFivFMUbsy6fCQKqvsK3KgQVgDghdhPBJFIaRAQYQwAzwVDEHkwxpRH9gcTktQqIKKwCClioanxME3yGioLYM8Q5jyAKVAPZT0TfJKHbcsUHdk22p3kGmIjwXTCJbtcCuIrO1xPRu5XoVVmPIqKHmhwiE8XEACQmFDsGnDIE10R3WASoBgJrUVXSEYDKgFYZqCkoiA5BXQEyAGUBzZNSizHIZl2ObAcFAqtoWEVoIYBKoiIIIB1lOMBzyGQ9QqWhIMh3Qfy3ucK+OxCLD3SBm+2XeQYYdbGAWGdStfvsKxRyXdrlF6oCIw0BoCFAZpTo0aWFwzAZl+EYIAgVtUBKRHQfAb8B0W61updZ+wlyoFrNjiy85L+rk91E7YU5ePezs9lstUXBi0SoUxnnMrBCFM8D9JyMy62uQwgtUAsEocBSdJJNzKAWRE5riqEK1EO5WxWfbCn29Y4ajCvmho1wshmAthdgEjeuXOh8LTNvTLv04tAqyg0VIigRTGztC6BimJycx2ACRhpSI8I9rLRdgB/lPfyW1u97bMrYAQBMEegpFzqfqcwXsuJlonqZKi5qSXNaFKj4AisaAsREEUNrpEko7xEbJtQD+U9V3Jgv9n0vcSNpAhf2acEAWgAnN+BgYemKLHGP6/CbAEW5oTa2wzkmllUFZV3ilEsYqUvNELYr0zeDhv3Bgi0D+458//YCnNVY9QREL960TsoUALoLoG4ACbC0AzsxEdYwVFh6tmv4lSJ4kwKrW1KcbgSKWqA2tiKbGBeaT7FRVQSC3koNGxfdvO/ehBFPljSgk0R8h4oId62Fe/4Zyz9MhHUZl7LDNRGNFGvzDeLWFBMRUA9kN4Fu94Owt33Lg/ePA4W6Vxns2anonT1QRhWENWCsWEXo3mmbP6dWeNY5lu0VpHh72uXnxKpLgDEJJgohAO0Z5logIyLo+QT6PlksQrYX4Fx2EqTBCWUAVdC2NeA122CHCmdd7LH524zHLyrVBVZgeZyoB1rTzKEoQtEfWtAtLQ91/AttjRA5LYB3ALwakJN1eyb6DlpY4dW49gZVXOMYrDJEKDVEKHI9OWYE6zBMS5pRDeQ/Gz6u6ejp+7X2wpxoIOmEMUBvF8ya2Pod2dT5AePQzS6zV27YEEQmMaAUkLxHhgjwQ/2+KH28pbjvznHw60kk+pMYstys08vFZa8mxfWeQ5dFdoJaSryX2FhsSRnHt1oLVa5t7e7/uyPV41OCARKRv+99ne2nL+DP51K0plQTFYU0iUfrGjL5FKHWkHtEqTtf3HdHM6ByKsCso3B1E4BVKS57A4GKGY+eV64LgvHSzppYGpQbelv/gfI1F9zyePlE4QZ0ooj/6PVLLmzNOl/NeLxiqCohADN2EyDtGTa1UA+r1eLP0XfLZUWEWgBjD2gu+c3TxTUSm+R3hRXe2VR7D0g3ph1uG6rLEdIAtj3LTq0hvyzX6YpFN++790R4CXQiiH9oQ+drsx7fbhjt5YaETOQk3O8wTD7FqAXyjYYv1yUW/VxFzo4X2RzecPa5jiN/nfX4j0sNgbUQ5tg2EA1b08YJrDxeD/WtCzb3b59tJqDZJv7ghs53pj3+eysg32qT6NMwnzJOIFIOLa5tLfZtnSu+8ayphgJMsreRTcveYwx9zGFkKr6EFF8KUdi0Q4ZIg6qvV57W0//V2TwTmk3iD2/sfH8+bT5daYjYKETDUVQHYXuWnWpD7qlr+I7Tivt/dypF0GYK9TywbukLcx5/OZviC4eqEhLBIQBWII4BpV2ikYZefdrmvq2zxQQ0azd/07IPtaf546W6WKtgjnUdEaQtw6Zct7f+tmT/6tJP7689VW/9VM7pvz50WstZuZatuRRfMVwTq/FZWYU6DMl5bIbr9pqOzf23zMY50Wxs6vCmZe9bkObPlOoSisIkGzIE5Dymqm/Xtd7Yf9OR7uHTbTUHv0YKy2/MebRxJJKWxAQShRqG5D02g9XwXQu3DHxxppmAZpr4B9cv+4sFWf5yuSFWYm4WhTgMcgxpLdR3dtzYd+v2ApzV3bCnairVjKKL28C0BnZoY+f/zHj8d/VQ1QpgmiRByiEzUrNvWfjRga/PJBPMCAMkVu6BDZ2vbU3xvwahaiBRNo0oxDFEDmtQ9vWtp/f0f2vX2ovci7c+Mcfuac0IifTc0Pn2jMf/EIoisKCECVwDdRjhSAOvWrSl70cz5SXxTCB8tAb28IazL8x79E+hBYUSfXFRiGsAhzWo1vWNp/f0f0vniT/xTSwi1LVwO3r6v1Kp2zWuITgGahXKBApCQJW8nItvPLb+rGfRGtjEoDxpEiAKwoAG62e3uGm5O+XQuWU/cvU01l+uIS778uaI+HBpK+aJf7QzXXuRS1vvCQ5vWvqnLZ75x2qgVmTUMLStaTbVhvxqaCS89KzW/Q10Q49HjR4zBylA6IahIoRT9tZ8ms8tNzRkglFAmWBzHpuKL++cJ/40buTWewJdC7fjxoHbRxr2Pa0pNkSwcZTUlGo2bMnw81vy5vNUhKA7wlVOuAQYRfnWL/twR4v52GDFhkxIEL6wPcvOYMVu6Ojp3zIR8ZPgybhqnFN67QRmMEi1ay3ci7ciOLyx8+YFWXN9ghM0n+/hcrj2tC0DXzgee+CYGCBxXwYLS1+YNuZngVWyGqVEiWq4IGuc4aq9rX1z/18cabEmauOpCvgckd42I8jh8KZl32hN85sGazKqXl0DIUIjFHpBW3HfvccaQXSO6YshinuXtPIlw3DqAWwc1LAtKXZGavKrQcbV2gWDblgUxw6HKMqOqRWWnq3GXCqiZ4ZWzalMdIchAB9wYH9KxYE9M4FvUJREKloAH4LzjnIjvCDn0bmVhgoz2LdAW5qzI3X7RVW8DNuO7TJP+48ScTO4obPYnjebItFPTsyVyoRKIHRxW3Hfvc2HkHDo/vVnnLXA824C6M1ZlzJPmfLUKCU8JMK/D5ftRxZ//MHdzUDP8YJFgxs6X5D26CehhRNqkoCqYXvOOINleX9HT99nj0UV0LTFWxF6qLD0ORnmX1qBSUQ/FGFbhp1DFXnHwi19tzaL/oT4j63rfH5rmv4t7fIZwzWBKCyNq9g51S04ctrTjIaVUrkuf7Jwy8CdM5HcMYoRbFz63gVZ57OJPaAKdQyUgAobszKz4f7901Wv01MBe0AEyGGhT6dT7A1HOolEYRdk2BmsyjefQPyo4kaHsKSDCf/sGj5jsGoDJnKiyOBTq0J9qGaDtMutaY+/Prh+6fPRPdCnOD4moCg3wqHiwP8e2rjsDa1pfvlwPbIHAgtZkOWWwar9eJbwNu2dnmfH0xL922APb1z+ura0ubwUGyRQSMohqvgy6IlcExN8dLM7umGIoBBzQ0vaWVqq24CJXDxFexMQkVsPJMh53ArmjxJBsXJG9ioACBxeXQ+l6pqoPoIJZrgmNuvRFYcLZ7+E1sBq19Rdw6lzy27orrUXuQS5KZSxSjoBNOsRN6yuy3904JEdMTaQGIyXFRHqp5ZkFPSntYYogwye6ovIGamLEvD6cqHzmbQGtnCcqB1FmcOmvbh/byPULfkUc5I8qwo4RCBrbwYArJg6MDSlLxWLdDl70aG3tWfNyoovQoBRwOZTZIZrck8H92/VLpjVxSYjJC68GCy55zqMM3yrBDp++HLO0x8gK9BcirIh6LkA0D0DUmB1Eba3C2bBkPup4aq9N+sSa5xXOdIQ25IxfzC8cekfURGivVOTAjyl/XTD6ucvckG6rhGqRjWSAGI5oCQfpiIEXUcUXeyJNy1ocw2Npns/LRA9QBwmwOrCWILSDLxTu7oA+tzehkLXeQ4RkvMmQFVVwBsUIOyemhTgKdx+QwQdfujQm9sz5tk1X4UIrBEuzeWGfmdBceCH2vXUyeGb0cU6o7ZOEgRq3zzwjaGq/Vk+xUYBS4ApN1TzKXrx8Prlr5iqFJiKBBBVkKp+0DbpfgLIt6qGtThP5RO8VoIIUEMoEo3rbaBMBGG9NrHbjosBtCsy6A5vWnppxuUXlRuqBBhV2JY0c82XO9uK/T/VwtwqeX7Kq5dYCrTe2P+dUs3uyqeIFbCxLaCeg1eWNnQ+h4oRknjsEqAreYjWphxCk3tHogom+UTCkfNkOfHKhQjqMn3S4THLS1VtzmNHGO+cCo0n/UfVqLVJqbB4IRHeUPEViFK6bdYjLjfkt9/7/YM/TJ6bp8cJXsWo9HxwJPyX4ZodSLtkIiObuO4rVHCFfmpJhooI9SiYy+TcEceZrXqva0ubNt+qjfFn9RyCEn1xzTbY441Hz69j9whQgFn66f01JtyWdglAZKDXQpWWjFlSGvJeDgA4CjrIT4I8AaA1otDY31CHySnVpOKF0hvxydPHtZuDSyLcCbeXGxISRSAbAWIIKrBvPSYjUDUKKBxYt3QxAy+t+kIgMClsLsUQ6J35jw48ol0wxeI8A5w0KRAbea3F/t+HFj/Ne0wKWACmFigBuPyxwul5WhOpi6lLgFisOw5e3pLmXNwHh5KXkKBXAcKKeeNvLhiDkUWIrxkTWYFEoEaokk/xM1LIv/hoaoAn8TOjVipKr47tS1VAHQNTqtuRmjF3EqDonjf+5ooagPC3SzUJOVIDCqg4hhQil0eYwKqpSQBFZNVH0C9d2giVADAUknUZCvx0cfGBA3F2j86f/xxQAwpq7Xlgr1X8NutSXIJHFFqQJkmX3Tvt1CRAHMA5/OCB8wxjeT1UjVqbqEY98yju1rGK549/jqzuVYai0PB2x4m8AQW4HggAuuDAuqWLiaATRSR5Up0CviTvMasmYp5MPVAIy38AAPbsnL/9c2Wt3Jm0v91pY7+AAAoFkk9x1nPpecDEEckJGGBVgjNdQnG3XFWo5xDVAjmo8H4XGxXz1v9cWTHmH4bml+W61A1HtRmRHQBA9OLJ7AB+ogOwM+Ih6IU26dYHSMoQCNizsLi3NK//554dAAAdzv0PgXB/yiFAoYQo41KInt8sKZqX8wQDsAjRTy3JDA3Rs/yoYzIDaiMXA78Z0/87TwkJML7b9wkkCmChIAidkM9NMoKHNukez/DKWmwHhFbBwHmJcX9UBkABhCJ0+DCdQYxFgcSef7wFYvrdqXIrksZLTHBSLpFr6ISCFqHAIMMg33onRg2soqg6iXaD0BVtn8i3AEBLhm9a2o6PDAyqgpql93gG2JP0yOezsh451ST5A8RBqFCVvZOJkjnlGAvEdcD5FDvDNbH1QO+rh/qQAj6dIFFAgG2pqSOC/vhsZ/Vjd0SlaQD0Xo1NQiJQKAoC2qmOxQAG0Y1xRzCeAWJkTw2d5RlCLEaICVz1VZjNg81Gx5wkflxB2whluFyXW9KO/kPq/P57T2bEMo7J64Sx+eOs7k3W6j3JIAztb4Q6at+pQrIeccN3FgPYM5qmNyEDYBWAnSDF4ijcpIASjCGEosOtCA4mXxrFuUn89jSbWiD/EWh4VXtx/965ZKRNuIpR4k33CuhxxVXiTOA63AMSWMsMEwfxohJ9DRc3X/JJGCARX7KoyUFQwyDfYhhnPmME2D8nM/pFIK1pNpXA/ui3w/Y1l356fy2pSv5dYYV3DmrLAiA9F75rAMAF4Bm2Ndt4hIr7DyeS4pgLSOJLmU7VBrXmjRiidpHY/iWAmE5vvuSTMMDOxNpbMNpYHYAhgEmHk9Fpc65dq0JSLqEeyuOVBq+59NP9tV1r4WIrwuHCsutcU/1LP8TZxNMvhp2N5cb/bVgLl5zHq8Xl/3bY501UvP/BQgF8TJIgvpTDj3O1Na9lJmqn5klZigWYDPUbQ5RGE4taRt9JUaJhNGplrPx5Tt3+uDilbtHzzJv2PaaFFd5Fi2GHN3X+U2vOfAJK5wngWAHm0o8oIKDTMyl+R4dnfzy0+axndRcnsRWmuM5q3d8AUOUjbimB8k/OANtGH3cTXADJDC6gPlfdPc/AlGoy6ATyD5EY3eOXZNn/ass7XUMjod8IVTBHm0yHojpYDv2Mx0u0wV8anWIyfQGgib2hhAYf8RYiZMZJ+QkZoGv0Nzv60uTNOv3Ur4SfiG0ljCrbZsN6kIzLEOjP228eGASiqaECfU+jIQKQE/fpn5O5CwQQM3lDNbHZFL+0JMsuoSJkOvV9TZchLtihShQNiA0ABQSaj9zFo0mAMfQseAKcRupO9wt1xfECzTj3+1YPuzwK0MyoDIimgtL9CZI5OHDoDAKWNkJl0CmStBLFW1ShF0XW+qrpf+/uUa0d0njTAKxRutjqlePPfxwD7Ng9OkjPoklmxu6gGbU2p8rdBNVemI4bHhhm0jtyKaax6OLMS4JEWBkKPD3lilCTHBzKHfMruhNhTc64KZkABBqOo/FEDLB6lGu01jRXleLRiemEqNODKONxmxL2VHytew45MhtMMFYdAzV0ygaq+DhAoYQ2BKRVm84kGmBVb6bxJCpgVQyoRBZ/wj8SqYBcYp3qNPQpFSHbusBtPQ/dVw/tnzkGNu+xEYVV1VAVForwaIWjyTMT/kT2SgjQ0zo8Pda7CazQvOg4yQJAS800PqoNAMJg8/9ZBUip5QBWZI/ly63ZFjUtWLh54OsjVXmVVf1VW5pNe9Y47Rk2bRl20lGp84RWfms6emain3yKU0izQ6S54zpAhU7FPpnyc5jaczO9DlafnSNCi9VxJgBANDjR8xMCQQw9gCbZESFKaMtjpBVAOQo0TVM8xUxAN/VvL6zCJR96xfLXcKCvCARLNIrZPtdz+Dw/SkGjURfPISo17HcJNAKARY8UmWrbGEaFfnKMN0cRwaXJoCpBlAVBE0kix8AwEfxwNE4y4XOGYRxDaFhVRG3yZxU/6Y4juZQtt6m4bXY0kktxagg/NpEb6EwEBDHoEZFErcQdqw0yvs+LADx8ZERpWkwQwZ1hcee+OwDckfzb8KbOzdkUbfBDsUBkJyzIshmq2n9asLn/iikRc5pQqkYoJ+U8NqWGHCKotKTM6bVQENpR/GN0taXZDNdtCaS1jMvPEAXqoWozE6hCo+ekJqpDLtNi14Aq/vjnZpwBABQBGJhFrkE6ECgBpASyAijso+PBvgkYYFvsuAvzQ/WooizR+ZJ12QxbPQvAr46nGJSKkNHJWrtXEToeMli8Nxz+HdJjBY6QtENcrstDxPbd2gWDBWC88ijEnWaEUqPyahhGveLL+4nCrymMVAJ5vcP4G8cgHzMBxQEVKvuyyUnzFxq+qTWsfZkh/XzaoTMa4WjPBMmliCuB3KKCj2vIQ76nzwX0lpxHFyTh9aO6MsdqySQ0sbQ0k2EEdRFEw9K5FnXv3j/ROY1jgN1xRMlF8LAfmprDyIQKhUa+NkHOjR5Mkg+OGfxQrIEFdkILq0Dv22uHNo59MSaIa8ip+fKu07bsPxxnuwTY+uQSYDrxg3yKzVBNPtLR09f85tsOrl/qLsg6f1+yYlWhrRl2hmv2cws29/c0PXfH4MbOP0t7dCfFYr8lzabckG+339h3TdNzdz22/qw35mF+bRhZG0XoJi/WPFZFEdOEmJ7NcSBYQeowKLRadtg8POoqFicxApPZulk8eACEh12TxIQpzhejlRPpkZmFdShszbJTbtjPnbal/ztagDPTsXyNIpxmuG79lIRf014Y7YXRAlh7YRpO8M+lmi07BgYE8kMFM76ivTC71sJVgLQLpmNz//aaLw+kXWKCWsOAQL6iBfDvCvAUoF1r4T5jy4P3N0L8POcxYZba5IwmhKiubJqQrB4TANqfxwMHJ3Lj+cibmehoBu5zTdwCiEChAAS9AABQnCUwR4G0S+lSVf6rnfFh7YKZrc9SBYwhDgQZbAPuuTNpXg048Bzm2CtRwDAgojnshl60GIQuMLoAKYAZcJtPlJVzVISs7DiHUABdNPaJnh6D8TzVNdaciy4M7GhCiLrRTNb7JoOXJ0oLj/W+/mZMlIAboUAU55cKixdSLF9mGBRXMERVA1X6Cyr215uDHDONv4vC5j124JmraRvsxVsRUBEhrYFNKf1lS5qzVuKYCBGY+K+oCKEifNoGS2tgB3Xp23Ip7myEapXIxJLiXYUCmN63t0FFCG1FcGhj5/9Iu/SipLvaTO+nUAAToI8VOp+phHMbUSkoAaoUUfiXk8HLzmSihInvlqYig8BCch63Vnz3eQB+gG3gGISZKSAvRMZwvSzrTuvZd/esD0wkmJG6iGf4ulJhGVnoP6olNYw1jqEbynVJDDYaqYvkPPqTUvfyW9XqLWHIFcezlxumzfVAVTWaAFr1VfIpvuS6cNm/vb+gHxPfHGRjX+QaugkgV1SFnuTaHIsR2L0SVASQFrwgm+LcSEOECaxEkQegvCsyFJ8kLTyGCiXCju0vyg0OmOHGg47FdZjZp5cC+MHxGoJPIIjqwvJgsGdhT9/HthfgzJqaGa9x2LeKtjRfW27ItWqAlhRjuC7joA4icMVXbUvzlTXClSBBa8pgpCGwMuYuEoFHGqKtKX5NIPqahitoSRnUQ03cxSc18Y7JCIxpoYrVjgEIKhpN5DblhtTEhr8AgO4JPCWezE1rw0CfqN6bdiiK4BGRtYASXh4bgjNjzCRlTcAj1qerNGbCE5l1NFQTazWCvIdqYjGBqiYCDdfF+lZVx/5Gj7zRTKARX2wjUAGAUl2sH84uBpAUfirh5ZHrSgSFZiLa7V740f0PqYImyjSamN8KcbtXors8hxRQAcDVQECgiys9S86cSgeqKd382MIP2P3r9o/u+3nChCcSPk0mmB/5+0TPJS5c8+8T2BgmwVCIoiHZsybF4iqtoc1nPcsx9NxqIKoAAyqOQyDSHRGTrJpwXzyxSxEtQ/pdEVBTsaFtTXPG983lMdA4Y/DmwuLe0owblk+PFQ2eDsxr8yn2RKJeTgBxaBVQ/t5k+n9SBlgdN34oNYK7Ruoy5BoyUYJ4JCah9JZYRM/YTY1ghvl6w2NYEvu1a5JaTlVoyiEuN/TRttbqjwEAayamFU8i6lS7YJbc/PAhELbnPFJSWBC44gsM47Lq+medNVNqYKbdPbL6tJAkSeyjVOg83zP04rIvGruZNuOSAvo9+tBjFe2Fmex8JydeUkAg2qtxf6C4C3bYkuZMg+3bmnGDubSsuj6gp2L7GoXAn674t0JX5lLsqGqSycWhgIjx/6b0gglX7IZJYP59uGYPeoZMHN9mPwoQvFMLq5zJWo+clFWMso8edrKPEGh/yiGBnipqhSi0SsT41dF0drPKRBH2ocLiLKB/XvMVhKh9fMYlLjdsf1tkztFk4v+oDECAbi/A6fjYA8MAvp5NERD1o+WKr9KaNs8uyYOvJoqemxNHGDdPvKC4xwf0C6kUM6CBzm0mUFX12zJsKg39RQv6fqyFaJj00eG/SKxnbOot7RmzpB6qjT0PiZpG0leo2F/XwuTiH09mxY8WHEK/UPNVKX4+eaHV8Npm8GiOSAGrBXAb5/56qBx+t73FSTkmMoxUISfjZ6IAUPJvBFB71nj1QA4Z5XdMA/0ULYCV9INBPLkrxiFMpSE+K39pnJE4+aWZmqExuKHzRy1p85KRZFqIQjIese/bl7RuHvjPmZpmPWMeBaBaWOGVqVo0wFUgeobhkyKVEAjQaAKDCEDcfBtWtcpMdx6uyvVn3tT/+6kktSRnfXjDste3ZfifS3WxFA2UDNsy7AzV5Fsdm/veNJWxdU8qundEt14M0aeI8NImjFRdJlSUigBeOVZVNDdUQVQjsMcH8JHBQufHPKXzLDTT8E+gh8CIEHnhz+Y9uqDsq3UNGWulVA3oz9JMg+Tog5mN+/qbL9uTQ79R1HZQULDjw3LsW4XD/CkAUaHPtidn0Cm5G1gJGvpt5y+zHl9Qi2BOA8QDohvB5e2bH/z+XJICo4ZS7xT06Syv8obOFxiPfhYIiEFOIHro/jP7Fl98dVSAM51xs9sLcC4rIjy8ofPt7Vlz+3Bt9PbbljSbUl12dGzuu2yqzDQl420HwJetQTi0ibZ4hr5a8SOdE7UQVQDm49qLi7FtTPzOGaNwDawqCGtOUlHrihWGint++fj6zk0L8+am4ZooFHTew4vbtOuRQXSNweFPbi2C0A3RwuJsSWlLIxzLMKA4eZegN0ZexNQu95TFoRbA2AMaPH/ZrnyKnl/x1RJgkuTNwXL43o4tA59LOHQeoBuTQjsKMC8vIhzcuGx7W5ZXD1XtAcrq+e0T9Ox5EhpEE9s3dG7uyJkNg9XRYdK2Nc1mqGZ/cFpP/yunM7d46rdiJYi2wTLj+riRUMJBXPFFPJc3V3qWnLm6O7LC50k/JoVWR2F+SrFeVfO1QoSU1qdXvZRkah3c0PmctEsfKkeGHyPqEArfqhhjbkhU/7SQpCltJJ5I2V7s+165oXe0ZaLqHiKQH0KzHrf5DXNLzM3zDNB8dkUIesGZYn9fzbcfAKjNwpVpSZH4TA1ha8rhVJSiF01sb82wqQZ6W3vxgV3JhNcZZ4AYHlYFiF3+YC3QustRgmU8vjRsz5jXD67vvIqKCOcKODRnmCC+QKdtGfiCAv/HIOiY8h8XYC4rIjy8vvOG9qx5yUhdQorH9npR+vygl6YbCgXwdNPjj3l8/MGNSzeclnM2D5UlJEYyPl6IUAsDfmFbzwP3TUcXPV3sAQB4uLA4cwYAKj5SnfJ5r+t8cS7DdwWhkh0dH4+wPcvO4apcfdrmvq2zPj5+dBNdYKxYRSXt/1nWoxeWGzrqiuRTbGq+/OLRQefScx/dG6IXMh/mPUaGKYDRDR3+yNJ2J827HKazq4EKE1gUtj3DZqhm7+zY3P+qY3XBp62rCdBtAKi4M7SCdwZWAydWBRTloIUtGX7h6e3BVpofKnVUSTCFZ6KezB7fnvP47GqgluMKJM8B1XwZhtC7pjMq9rgZAIirfQtwOnr6ft0I9Pp8hg3iUCQRnKGqhO1Zc+XhDZ0foSJCXQt3nuxH4BNPsu5ZG7l8gxs7P9OW5T8cqknIcboaAZJzmauhvrtjS18/eo+9vdzxwKKkUe5gOLRx2TfbsvzGwYqEzHAUUAZsLsXOYC3889N7Bv4x6dk3T/4pSIj4rA5t6Ly2I2c+OVyVEBQZ1SIaLsgbZ7Bit3Zs7r/6eNPnjwsXj5EpQubslkrd/twzfF7ZV2sIxsZGocOEEd++cVHPwB3zTDB14h/c0PnO9oz5YrUhoY1aNZIobFuaTaUhP22h7Cqs3GOx5vgyqI/LXyeCbtsDohseGG6E8uZQteQZYlGIIVBoQaEot3j8tQPrOv+QtiLQtRfNq4NJ1q6Y+Ic3LLuyNcVfrPpircIwQCKQrEumFsrDfhi+hYp7fOxOqv+PSx3NANfGFuih9Z2vyab424FVCQVsCCQKcQyxw+qXfX3r6T3939q19iL34q33zEuCZoMvVqeHNix9V0vKfKEeqIQKajpDchi1chCsPn3z/rtnKvA2Y6HRRBcdXN951YKs+b/lhlhRMBPIKsRlkGNIa75e1dHTd5sW4KAb9unuIjZHAoc3Lb82l6JPVhoiNiZ+3JxDPSYq+fb1i3oG7pjJsjma4c04VER4eOOy9y7I8GdLdQlFYTjZCEGzHnPZt+vab+y/CQCezmBRc8JGqdD5mZaUeV+pPu7iqEPQjEc8VLeRMT3DNZM0Cxwduy9Lr2vPOJ8oNcRaiTYUzbODtGXYVH350oEH9N3Lb+2vz3Yh6By9+Q4VEe6/4YzTFqS9W7Mp/qPhqoQaVxypQowBUoZ4pCFXLezp//JsnBPN5uYGN3a+vzVtPl0JRGzUboXjToZhe5adWiB3V2vyjoU3DezRLhisgNJTfBZxs8g/uK7zxdkU3ZZx+dyhmoQ06upBXIfYMZByQ/789J7+r8zWJaHZ5vDBTZ1XpV3+e2vBvlWbgBmqGrakjONbGRbR9+eL/V9u/runsqEHAOXCsuvYYIsBedVAQiKKiK9qMy4bALWar1d09PT9y2yeCZ0IMXdoQ+drcx7fzoz2ckNCjjebtF3LeYx6IF8bruqHFn+svy/J4KGniG3QbLEfKiy5IE3OZ7IpfkWpJrAKScrGRTRsyxjHD/Whaihdp23u/8ms90k4Ubru0euXXNiadb6a8XjFUIRsJbpOAUh7hk0tkENWqdDSve8WxO1qtu0BnapGonbBJMGwgQ8syXS0OdcR0UfSDmVK9SecgW3PsVNtyI+HS3j7GZ/q6z8R0vCEZMgmG9n3vs720xfQF3NpfvNwVVQVkpRji8J6hkzOI1RD+YlavTFf7P/OqN5cCaKowmVOu42jLfC6xqKg1eLyLlUtZFO8slQXiMA279s1MHmPUW7oFx45bN5z3uf2Nk5Ugu0JS5FudvcS/ecye+WGDaNmFtFNUEBaUmxUgVDkjhD4ZGuhb2czM3UDUpxjxmJs3HHzja0Ul78O0A+nHX5JYBXVQCwR8ditV9uaNo5vdcgP5YNtN/Z/KXnXiTKGT2gVbRI7oCJkaOPyS1Ku/m3a5UtKdYEVjBqIElXMoDXNHFiFFXxXGX+TO3/fvye3QgvgHQDvOInMkBAdgCQEG/jAkszCBc7rRPDelMN/AAAjUb8hJE0iRdW6hk0+Raj5cme5RtcsunnfvdoLc7zY/pxmgCNVwq61F7nnn3HoBma6Ie1QdqgWtUhKjKJ4tgC3pplUgXoov2HVWwn4RqbY3zeeEKsYe3bqbCagqIKwLe5wWtxpmwlVv3HZs0PBFVD8acbjc0UVIw2daD/UnmGuBTpoRW5sKfZ/BhjL9z/RtKCTKTKTW3Now1krs67T4xi8URUoRynnRE0HpwDlPGLPIZTrUgFhO7F+k625M1t8YOBIQu3ohlmNVVGV7W4ouqPu+Ue7XaOJGsncnpUg7F5FWLlTJ9LHtc1nPQvCr7JKbxZgVUuKvXqgqAdqk4Gb8XutKqg1xWxVEYre7vuyccGWgX3NUvFk0OGkNlJIcuYvG/WNl/8xs25Mu/yiwCoqDRViJE0PEM0UUDFMTs5jMAEjDakw8FNR3EUkd+WR/g0V7z04BZ98bO9TnN6phc5nVoSepwarAaxWxQta0pyyAlR8gYiGAHGSrh3PQKB8ipkANELZLio9LcWBH57MWz9nGGAidKwA8PXdy98G4NqUSy9QBUYaolHDBzJEoHgiuCgAh2GyLsMYwA8VjUAPg/DfRNgtqv8F5vsM6QBYDgwHwfCZR0nE1AL4EM7JZx1t8/1gkevwktDSOURyoSpdCODcrEstjkMIraIaKGxk0ceSfsy4IyKnJcWwCgSh3AWiT+QK+/511D2cI6jnnGql0hwc6e2C+aMVnW9QomuY6OUZj1D1FX442vmDR5kBkKhGjdg1xCkHcDiZdQBUA4EVVAAMASipagVEjbifHhNgoEgraQ6KNgK1uobSaZeivn0KBFbRsIrQRlKIiEjHET0ipueQyXqESkOECN9W4G/yhb7vjtoQcwzgmpO9dI70gSuFzhcT05VW8cacx4sBoOorAqs2xgUYUVv30YBTfBPjpnkwUWt4guGYak1bjxqiRw2wrAJWFFbHMRbGfUb8J4gZKGWIsx5BFKgGst+AviFqb80XB34xVwk/pxkg+W56BKAydNPSBV5ArxahtyhwWc7lDiKgESoaoSIaRqXJqEtKCBbrfaWIzlETrCcaBmOT1iiZlRJPFImYQSNSRh040w7BdQjWArVQHmXCdoC+XhPz/YXFvaVR1bYnKqmbs4d8SkCqY0jg6EGOFM5exEZfBsXlovoHKjgvn2aHYrHvW0Vg45scGY965LbHBqPhiN9GRQQ7BHINwTME4ujd5YbUmbGHVO8Cm++HtfDHydDKRIJh96kR2Tyl2qmN+uHbovEzzQzSMMvODSyeJ6QXMfj5KnqOAItdQ5m0Q0/swatHPwlrI8kSipaJ8AgB9zLwKzDuZtFfN+MQo4ZdF3CigZynFQNMxAw7doMmcqW0sMKrwl8EyDMt7BJSPhMkp4eCdiLkVJHG6CBvskRaBagE0kOs9LgSPaJiH3FSeDgXDDxOE34GHKyENqupU209JRoqJn79DoBXYxWAnTLT4re3C6ZrRQQKnSri/WnDAEdjim17QF1diFuqJ2sndmBsju6O3aDVAMaGKu6MpmtNEUGcX/Nrfs2v+TW/TsH1/wGtEYG+0p8hiAAAAABJRU5ErkJggg==" alt="Customer Support">'+'<b class="reb-chat-launcher-badge" aria-label="Unread messages">0</b>';
+    if(legacy.length&&legacy[0].parentNode) legacy[0].parentNode.insertBefore(launcher,legacy[0]); else document.body.appendChild(launcher);
+    legacy.forEach(function(el){try{el.remove();}catch(e){if(el.parentNode)el.parentNode.removeChild(el);}});
+    ids.launcher=launcher;ids.badge=qs('.reb-chat-launcher-badge',launcher);
+
+    var shell=document.createElement('section');shell.className='reb-chat-shell';shell.setAttribute('aria-label','ReachEmpireBot Customer Service Live Chat');
+    function isMobileChatClient(){
+      var ua=String(navigator.userAgent||'');
+      return /Android|iPhone|iPad|iPod|Mobile/i.test(ua) || window.innerWidth<=760 || (window.matchMedia&&window.matchMedia('(pointer:coarse)').matches);
+    }
+    function applyChatFloatingGeometry(){
+      if(!isMobileChatClient()){
+        ['left','top','right','bottom','width','max-width','min-width','height','max-height','min-height','border-radius'].forEach(function(k){shell.style.removeProperty(k);});
+        return;
+      }
+      shell.style.setProperty('position','fixed','important');
+      shell.style.setProperty('left','auto','important');
+      shell.style.setProperty('top','auto','important');
+      shell.style.setProperty('right','14px','important');
+      shell.style.setProperty('bottom','72px','important');
+      shell.style.setProperty('width','286px','important');
+      shell.style.setProperty('max-width','calc(100vw - 84px)','important');
+      shell.style.setProperty('min-width','0','important');
+      shell.style.setProperty('height','390px','important');
+      shell.style.setProperty('max-height','calc(100dvh - 180px)','important');
+      shell.style.setProperty('min-height','0','important');
+      shell.style.setProperty('border-radius','20px','important');
+    }
+    applyChatFloatingGeometry();
+    window.addEventListener('resize',applyChatFloatingGeometry,{passive:true});
+    window.addEventListener('orientationchange',function(){setTimeout(applyChatFloatingGeometry,120);},{passive:true});
+
+    shell.innerHTML='\
+      <header class="reb-chat-header">\
+        <div class="reb-chat-avatar">'+supportIcon()+'</div>\
+        <div class="reb-chat-headcopy"><strong>ReachEmpireBot Customer Service</strong><span>Live Chat • '+esc(userName())+'</span></div>\
+        <button type="button" class="reb-chat-close" aria-label="Close chat">×</button>\
+      </header>\
+      <div class="reb-chat-progress"></div>\
+      <div class="reb-chat-status" role="status" aria-live="polite"></div>\
+      <main class="reb-chat-body"></main>\
+      <div class="reb-chat-attach-preview"><span></span><button type="button" aria-label="Clear selected attachment">×</button></div>\
+      <footer class="reb-chat-composer">\
+        <div class="reb-chat-tools">\
+          <button type="button" class="reb-chat-tool reb-chat-mic" data-label="Voice" title="Hold to record voice" aria-label="Hold to record voice">'+chatIcon('mic')+'</button>\
+          <button type="button" class="reb-chat-tool reb-chat-media-picker" data-label="Photo / Video" title="Upload photo or video" aria-label="Upload photo or video">'+chatIcon('image')+'</button>\
+          <button type="button" class="reb-chat-tool reb-chat-file-tool" data-label="File" title="Upload file" aria-label="Upload file">'+chatIcon('file')+'</button>\
+          <span class="reb-chat-record-label">Recording… release to send</span>\
+        </div>\
+        <div class="reb-chat-native-picker-panel reb-chat-media-panel" hidden>\
+          <div class="reb-chat-native-picker-head"><strong>Upload Photo / Video</strong><button type="button" class="reb-chat-native-picker-close reb-chat-media-picker-close" aria-label="Close photo or video upload">×</button></div>\
+          <label class="reb-chat-native-picker-row"><span>Photo / Video</span><input class="reb-chat-media-input" type="file" accept="image/*,video/*"></label>\
+        </div>\
+        <div class="reb-chat-native-picker-panel reb-chat-file-panel" hidden>\
+          <div class="reb-chat-native-picker-head"><strong>Upload File</strong><button type="button" class="reb-chat-native-picker-close reb-chat-file-picker-close" aria-label="Close file upload">×</button></div>\
+          <label class="reb-chat-native-picker-row"><span>File</span><input class="reb-chat-file-input" type="file"></label>\
+        </div>\
+        <div class="reb-chat-tools reb-chat-tools-spacer" style="display:none">\
+          <span class="reb-chat-record-label">Recording… release to send</span>\
+        </div>\
+        <div class="reb-chat-compose-row"><span class="reb-chat-text-indicator" title="Text message" aria-hidden="true">'+chatIcon('text')+'</span><textarea class="reb-chat-input" rows="1" placeholder="Type a message…" aria-label="Text message"></textarea><button type="button" class="reb-chat-send" aria-label="Send text message">'+chatIcon('send')+'</button></div>\
+      </footer>';
+    document.body.appendChild(shell);
+    ids.shell=shell;ids.body=qs('.reb-chat-body',shell);ids.status=qs('.reb-chat-status',shell);ids.progress=qs('.reb-chat-progress',shell);ids.send=qs('.reb-chat-send',shell);ids.input=qs('.reb-chat-input',shell);ids.tools=qs('.reb-chat-tools',shell);ids.attach=qs('.reb-chat-attach-preview',shell);
+
+    launcher.addEventListener('click',function(ev){
+      var mobile=false;
+      try{
+        mobile=window.matchMedia('(max-width: 900px)').matches ||
+               window.matchMedia('(pointer: coarse)').matches ||
+               /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent||'');
+      }catch(_){ mobile=(window.innerWidth||0)<=900; }
+      if(mobile){
+        if(ev){ev.preventDefault();ev.stopPropagation();if(ev.stopImmediatePropagation)ev.stopImmediatePropagation();}
+        var from=window.location.pathname+window.location.search+window.location.hash;
+        window.location.href='/customer-service.html?v=20260915-chat-sync-v3&from='+encodeURIComponent(from);
+        return;
+      }
+      applyChatFloatingGeometry();toggle(true);
+    });
+    qs('.reb-chat-close',shell).addEventListener('click',function(){toggle(false);});
+    ids.send.addEventListener('click',sendText);
+    ids.input.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendText();}});
+    var mediaInput=qs('.reb-chat-media-input',shell), fileInput=qs('.reb-chat-file-input',shell);
+    var mediaPanel=qs('.reb-chat-media-panel',shell), filePanel=qs('.reb-chat-file-panel',shell);
+    var mediaBtn=qs('.reb-chat-media-picker',shell), fileBtn=qs('.reb-chat-file-tool',shell);
+    var mediaClose=qs('.reb-chat-media-picker-close',shell), fileClose=qs('.reb-chat-file-picker-close',shell);
+
+    function hideMediaPanel(){if(mediaPanel)mediaPanel.hidden=true;}
+    function hideFilePanel(){if(filePanel)filePanel.hidden=true;}
+
+    mediaBtn.addEventListener('click',function(e){
+      e.preventDefault();
+      hideFilePanel();
+      if(mediaPanel)mediaPanel.hidden=false;
+    });
+    fileBtn.addEventListener('click',function(e){
+      e.preventDefault();
+      hideMediaPanel();
+      if(filePanel)filePanel.hidden=false;
+    });
+    mediaClose.addEventListener('click',hideMediaPanel);
+    fileClose.addEventListener('click',hideFilePanel);
+
+    mediaInput.addEventListener('change',function(){
+      var f=this.files&&this.files[0];
+      if(f){hideMediaPanel();sendFile(f,this);}
+    });
+    fileInput.addEventListener('change',function(){
+      var f=this.files&&this.files[0];
+      if(f){hideFilePanel();sendFile(f,this);}
+    });
+    qs('button',ids.attach).addEventListener('click',function(){ids.attach.classList.remove('show');});
+
+    var mic=qs('.reb-chat-mic',shell);
+    mic.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'&&e.button!==0)return;e.preventDefault();recordHoldActive=true;try{mic.setPointerCapture(e.pointerId);}catch(_e){}startRecording();});
+    mic.addEventListener('pointerup',function(e){e.preventDefault();recordHoldActive=false;stopRecordingAndSend();});
+    mic.addEventListener('pointercancel',function(){recordHoldActive=false;cancelRecording();});
+    mic.addEventListener('lostpointercapture',function(){if(mediaRecorder&&mediaRecorder.state==='recording')stopRecordingAndSend();});
+    mic.addEventListener('contextmenu',function(e){e.preventDefault();});
+    renderLoggedOutOrEmpty();
+  }
+
+  function isOpen(){return !!(ids.shell&&ids.shell.classList.contains('open'));}
+  function toggle(open){if(!ids.shell)return;ids.shell.classList.toggle('open',open!==false);if(open!==false){if(!token()){renderLoggedOutOrEmpty();return;}loadInitial(true);startPolling();}else stopPolling();}
+  function renderLoggedOutOrEmpty(){
+    if(!ids.body)return;
+    var footer=qs('.reb-chat-composer',ids.shell);
+    if(!token()){ids.body.innerHTML='<div class="reb-chat-login"><div class="reb-empty-icon">'+supportIcon()+'</div><h4>Customer Service</h4><p>Please log in to your ReachEmpireBot account to start or continue your Live Chat.</p><a href="/login/">Log In</a></div>';if(footer)footer.style.display='none';return;}
+    if(footer)footer.style.display='block';
+    if(!initialLoaded)ids.body.innerHTML='<div class="reb-chat-empty"><div class="reb-empty-icon">'+supportIcon()+'</div><strong>ReachEmpireBot Customer Service</strong><p>Send text, voice, image, video or files. Web links can be pasted directly into a text message.</p></div>';
+  }
+
+  async function api(path,opts){opts=opts||{};opts.headers=authHeaders(opts.headers||{});var r=await fetch(API_BASE+path,opts);var d=await r.json().catch(function(){return {ok:false,message:'Invalid server response.'};});if(r.status===401){initialLoaded=false;renderLoggedOutOrEmpty();throw new Error(d.message||'Please log in again.');}if(!r.ok||d.ok===false)throw new Error(d.message||('Request failed ('+r.status+')'));return d;}
+
+  function maxMessageId(messages){var m=0;(messages||[]).forEach(function(x){m=Math.max(m,Number(x.id||0));});return m;}
+  async function loadInitial(markRead){
+    if(!token()||busy)return;
+    try{setProgress(true);var d=await api('/api/customer-chat/messages?after_id=0');renderMessages(d.messages||[]);lastMessageId=maxMessageId(d.messages||[]);initialLoaded=true;badge(d.unread||0);if(markRead&&Number(d.unread||0)>0){await api('/api/customer-chat/read',{method:'POST'});badge(0);}}
+    catch(e){setStatus(e.message,true);}finally{setProgress(false);}
+  }
+  async function pollNew(){
+    if(!isOpen()||!token()||busy)return;
+    try{var d=await api('/api/customer-chat/messages?after_id='+encodeURIComponent(lastMessageId));var msgs=d.messages||[];if(msgs.length){appendMessages(msgs);lastMessageId=Math.max(lastMessageId,maxMessageId(msgs));}badge(d.unread||0);if(Number(d.unread||0)>0){await api('/api/customer-chat/read',{method:'POST'});badge(0);}}
+    catch(_e){}
+  }
+  async function refreshStatuses(){
+    if(!isOpen()||!token()||busy)return;
+    try{var d=await api('/api/customer-chat/messages?after_id=0');patchMessageStatuses(d.messages||[]);}catch(_e){}
+  }
+  function startPolling(){stopPolling();pollTimer=setInterval(pollNew,2200);statusTimer=setInterval(refreshStatuses,12000);}
+  function stopPolling(){if(pollTimer){clearInterval(pollTimer);pollTimer=null;}if(statusTimer){clearInterval(statusTimer);statusTimer=null;}}
+  async function pollUnread(){if(!token()){badge(0);return;}try{var d=await api('/api/customer-chat/unread');badge(d.unread||0);}catch(_e){}}
+
+  function linkRegex(){return /(?:https?:\/\/|www\.)[^\s<>"']+|(?:\b[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+(?::\d+)?(?:\/[^\s<>"']*)?)/ig;}
+  function cleanUrlToken(v){return String(v||'').replace(/[),.;!?]+$/,'');}
+  function normalizeUrl(v){var u=cleanUrlToken(v).trim();if(!u)return '';return /^https?:\/\//i.test(u)?u:'https://'+u;}
+  function extractUrls(text){var raw=String(text||''),re=linkRegex(),out=[],m;while((m=re.exec(raw))){var shown=cleanUrlToken(m[0]);if(shown&&shown.indexOf('@')<0)out.push(normalizeUrl(shown));}return out;}
+  function linkifyText(text){
+    var raw=String(text||''),re=linkRegex(),html='',last=0,m;
+    while((m=re.exec(raw))){var shown=m[0],clean=cleanUrlToken(shown),href=normalizeUrl(clean);html+=esc(raw.slice(last,m.index));if(href){html+='<a class="reb-chat-inline-link" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+esc(clean)+'</a>';}else{html+=esc(clean);}if(shown.length>clean.length)html+=esc(shown.slice(clean.length));last=m.index+shown.length;}
+    html+=esc(raw.slice(last));return html;
+  }
+  function messageUrls(m){var display=String(m.message_text||m.link_url||'');return extractUrls(display);}
+
+  function renderMessages(messages){
+    if(!ids.body)return;
+    if(!messages.length){initialLoaded=true;ids.body.innerHTML='<div class="reb-chat-empty"><div class="reb-empty-icon">'+supportIcon()+'</div><strong>ReachEmpireBot Customer Service</strong><p>Send text, voice, image, video or files. Web links can be pasted directly into a text message.</p></div>';return;}
+    var html='',lastDay='';messages.forEach(function(m){var day=fmtDay(m.created_at);if(day!==lastDay){html+='<div class="reb-chat-day" data-chat-day="'+esc(day)+'"><span>'+esc(day)+'</span></div>';lastDay=day;}html+=messageHtml(m);});ids.body.innerHTML=html;hydrateNodes(ids.body);ids.body.scrollTop=ids.body.scrollHeight;
+  }
+  function appendMessages(messages){
+    if(!messages.length)return;
+    var atBottom=(ids.body.scrollHeight-ids.body.scrollTop-ids.body.clientHeight)<100;
+    if(qs('.reb-chat-empty',ids.body))ids.body.innerHTML='';
+    messages.forEach(function(m){var day=fmtDay(m.created_at),lastDay=ids.body.querySelector('.reb-chat-day:last-of-type');var dayExists=false;if(lastDay&&lastDay.dataset.chatDay===day)dayExists=true;if(!dayExists){var days=ids.body.querySelectorAll('.reb-chat-day');if(days.length&&days[days.length-1].dataset.chatDay===day)dayExists=true;}if(!dayExists)ids.body.insertAdjacentHTML('beforeend','<div class="reb-chat-day" data-chat-day="'+esc(day)+'"><span>'+esc(day)+'</span></div>');ids.body.insertAdjacentHTML('beforeend',messageHtml(m));var row=ids.body.querySelector('[data-message-id="'+Number(m.id||0)+'"]');if(row)hydrateNodes(row);});
+    if(atBottom)ids.body.scrollTop=ids.body.scrollHeight;
+  }
+  function patchMessageStatuses(messages){(messages||[]).forEach(function(m){if(m.sender_type!=='user')return;var row=ids.body&&ids.body.querySelector('[data-message-id="'+Number(m.id||0)+'"]');if(!row)return;var st=qs('.reb-chat-state',row);if(st)st.textContent=m.read_at?'Read':(m.delivered_at?'Delivered':'Sent');});}
+
+  function messageHtml(m){
+    var mine=m.sender_type==='user',att=m.attachment||null,status=mine?(m.read_at?'Read':(m.delivered_at?'Delivered':'Sent')):'',display=String(m.message_text||m.link_url||''),urls=extractUrls(display),content='';
+    if(display)content+='<div class="reb-chat-text">'+linkifyText(display)+'</div>';
+    if(urls.length===1)content+='<div class="reb-chat-rich-preview" data-link-preview="'+esc(urls[0])+'"><div class="reb-chat-link-skeleton">Loading link preview…</div></div>';
+    if(att){if(att.kind==='file')content+=fileCard(att);else content+='<div class="reb-chat-media" data-media-id="'+Number(att.id||0)+'" data-kind="'+esc(att.kind)+'" data-url="'+esc(att.url||'')+'"><div class="reb-chat-media-loading">Loading '+esc(att.kind)+'…</div></div>';}
+    var bubbleClass='reb-chat-bubble'+(att?' reb-chat-bubble-media reb-chat-bubble-'+esc(att.kind||'file'):'');return '<div class="reb-chat-row '+(mine?'user':'admin')+'" data-message-id="'+Number(m.id||0)+'"><div class="'+bubbleClass+'"><div class="reb-chat-sender">'+esc(mine?'You':(m.sender_name||'Customer Service'))+'</div>'+content+'<div class="reb-chat-meta"><span>'+esc(fmtTime(m.created_at))+'</span>'+(status?'<span>• <span class="reb-chat-state">'+esc(status)+'</span></span>':'')+'</div></div></div>';
+  }
+  function fileCard(att){return '<div class="reb-chat-file-card"><span class="reb-chat-file-icon">'+chatIcon('file')+'</span><span class="reb-chat-file-copy"><strong>'+esc(att.original_name||'File')+'</strong><span>'+esc(formatBytes(att.file_size))+'</span></span><button type="button" data-file-view="'+Number(att.id||0)+'" data-file-url="'+esc(att.url||'')+'" data-file-name="'+esc(att.original_name||'file')+'">View</button></div>';}
+  function hydrateNodes(root){Array.prototype.forEach.call(root.querySelectorAll('[data-media-id]'),loadMediaNode);Array.prototype.forEach.call(root.querySelectorAll('[data-file-view]'),function(btn){if(btn.dataset.bound)return;btn.dataset.bound='1';btn.addEventListener('click',function(){openProtectedFile(btn.dataset.fileUrl,btn.dataset.fileName);});});Array.prototype.forEach.call(root.querySelectorAll('[data-link-preview]'),loadLinkPreviewNode);}
+  async function mediaBlobUrl(rel){var r=await fetch(API_BASE+rel,{headers:authHeaders({})});if(!r.ok)throw new Error('Could not load attachment.');var blob=await r.blob(),u=URL.createObjectURL(blob);objectUrls.push(u);return u;}
+  async function loadMediaNode(node){if(node.dataset.loading)return;node.dataset.loading='1';try{var u=await mediaBlobUrl(node.dataset.url),kind=node.dataset.kind;if(kind==='image'){node.innerHTML='<img alt="Chat image">';qs('img',node).src=u;}else if(kind==='video'){node.innerHTML='<video controls playsinline preload="metadata"></video>';qs('video',node).src=u;}else if(kind==='audio'){node.innerHTML='<audio controls preload="metadata"></audio>';qs('audio',node).src=u;}}catch(e){node.innerHTML='<div class="reb-chat-media-loading">Attachment unavailable</div>';}}
+  async function openProtectedFile(rel,name){try{setProgress(true);var u=await mediaBlobUrl(rel),w=window.open(u,'_blank');if(!w){var a=document.createElement('a');a.href=u;a.download=name||'file';a.click();}}catch(e){setStatus(e.message,true);}finally{setProgress(false);}}
+  async function loadLinkPreviewNode(node){
+    if(node.dataset.loading)return;var url=node.dataset.linkPreview;if(!url)return;node.dataset.loading='1';
+    try{var p=previewCache.get(url);if(!p){var d=await api('/api/customer-chat/link-preview?url='+encodeURIComponent(url));p=d.preview||{};previewCache.set(url,p);}var href=p.final_url||url,img=p.image_url||p.icon_url||'',thumb=img?'<img src="'+esc(img)+'" alt="Link preview" loading="lazy">':'<span class="reb-chat-preview-thumb-fallback">'+chatIcon('open')+'</span>';node.innerHTML='<a class="reb-chat-preview-card" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+thumb+'<span class="reb-chat-preview-copy"><strong>'+esc(p.title||p.domain||url)+'</strong><small>'+esc(p.domain||url)+'</small></span><span class="reb-chat-preview-open">'+chatIcon('open')+'</span></a>';}
+    catch(_e){node.innerHTML='';}
+  }
+
+  async function sendText(){
+    var v=(ids.input.value||'').trim();if(!v||busy||!token())return;ids.input.value='';
+    try{setBusy(true);setProgress(true);var d=await api('/api/customer-chat/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:v})});setStatus('');if(d.message){if(qs('.reb-chat-empty',ids.body))ids.body.innerHTML='';appendMessages([d.message]);lastMessageId=Math.max(lastMessageId,Number(d.message.id||0));}else await pollNew();}
+    catch(e){ids.input.value=v;setStatus(e.message,true);}finally{setBusy(false);setProgress(false);}
+  }
+  async function sendFile(file,inputEl,forcedKind){
+    if(!file||busy||!token())return;var label=qs('span',ids.attach);label.textContent=file.name+' • '+formatBytes(file.size);ids.attach.classList.add('show');
+    try{setBusy(true);setProgress(true);var fd=new FormData();fd.append('file',file,file.name);if(forcedKind)fd.append('attachment_kind',forcedKind);var d=await api('/api/customer-chat/send',{method:'POST',body:fd});ids.attach.classList.remove('show');if(inputEl)inputEl.value='';setStatus('');if(d.message){if(qs('.reb-chat-empty',ids.body))ids.body.innerHTML='';appendMessages([d.message]);lastMessageId=Math.max(lastMessageId,Number(d.message.id||0));}else await pollNew();}
+    catch(e){setStatus(e.message,true);}finally{setBusy(false);setProgress(false);}
+  }
+
+  async function startRecording(){
+    var btn=qs('.reb-chat-mic',ids.shell),label=qs('.reb-chat-record-label',ids.shell);if(busy||!token()||(mediaRecorder&&mediaRecorder.state==='recording'))return;if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia||typeof MediaRecorder==='undefined'){setStatus('Voice recording is not supported by this browser.',true);return;}
+    try{recordStream=await navigator.mediaDevices.getUserMedia({audio:true});if(!recordHoldActive){recordStream.getTracks().forEach(function(t){t.stop();});recordStream=null;return;}recordChunks=[];var mime='';['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg;codecs=opus'].some(function(m){if(MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(m)){mime=m;return true;}return false;});mediaRecorder=mime?new MediaRecorder(recordStream,{mimeType:mime}):new MediaRecorder(recordStream);mediaRecorder.ondataavailable=function(e){if(e.data&&e.data.size)recordChunks.push(e.data);};mediaRecorder.onstop=async function(){btn.classList.remove('recording');label.classList.remove('show');if(recordStream)recordStream.getTracks().forEach(function(t){t.stop();});var recorder=mediaRecorder,type=(recorder&&recorder.mimeType)||mime||'audio/webm',chunks=recordChunks.slice();mediaRecorder=null;recordStream=null;recordChunks=[];if(!chunks.length)return;var ext=type.indexOf('mp4')>=0?'m4a':(type.indexOf('ogg')>=0?'ogg':'webm'),blob=new Blob(chunks,{type:type});if(blob.size<300)return;var f=new File([blob],'voice_'+Date.now()+'.'+ext,{type:type});await sendFile(f,null,'audio');};mediaRecorder.start(120);btn.classList.add('recording');label.classList.add('show');setStatus('');}
+    catch(e){setStatus('Microphone permission is required for voice messages.',true);if(recordStream)recordStream.getTracks().forEach(function(t){t.stop();});mediaRecorder=null;recordStream=null;recordChunks=[];btn.classList.remove('recording');label.classList.remove('show');}
+  }
+  function stopRecordingAndSend(){recordHoldActive=false;if(mediaRecorder&&mediaRecorder.state==='recording'){try{mediaRecorder.stop();}catch(e){}}}
+  function cancelRecording(){recordHoldActive=false;var btn=qs('.reb-chat-mic',ids.shell),label=qs('.reb-chat-record-label',ids.shell);if(mediaRecorder&&mediaRecorder.state==='recording'){try{mediaRecorder.onstop=null;mediaRecorder.stop();}catch(e){}}if(recordStream)recordStream.getTracks().forEach(function(t){t.stop();});mediaRecorder=null;recordStream=null;recordChunks=[];if(btn)btn.classList.remove('recording');if(label)label.classList.remove('show');}
+
+  function resetForAuth(){initialLoaded=false;lastMessageId=0;renderLoggedOutOrEmpty();pollUnread();}
+  function init(){build();pollUnread();unreadTimer=setInterval(pollUnread,5000);window.addEventListener('storage',function(e){if(e.key===TOKEN_KEY||e.key===USER_KEY)resetForAuth();});window.addEventListener('reb:auth-changed',resetForAuth);window.addEventListener('beforeunload',function(){stopPolling();objectUrls.forEach(function(u){try{URL.revokeObjectURL(u);}catch(e){}});});}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+
+</script>
+
+<script id="REB_MOBILE_CUSTOMER_SERVICE_ROUTE_ALL_PAGES_20260914">
+(function(){
+  'use strict';
+  if(/\/customer-service\.html$/i.test(window.location.pathname)) return;
+
+  function rebIsMobileCustomerService(){
+    try{
+      return window.matchMedia('(max-width: 900px)').matches ||
+             window.matchMedia('(pointer: coarse)').matches ||
+             /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || '');
+    }catch(_){
+      return (window.innerWidth || 0) <= 900;
+    }
+  }
+
+  function rebOpenDedicatedCustomerService(ev){
+    if(!rebIsMobileCustomerService()) return;
+    var target = ev.target && ev.target.closest ? ev.target.closest('.reb-customer-chat-launcher') : null;
+    if(!target) return;
+
+    ev.preventDefault();
+    ev.stopPropagation();
+    if(typeof ev.stopImmediatePropagation === 'function') ev.stopImmediatePropagation();
+
+    var from = window.location.pathname + window.location.search + window.location.hash;
+    window.location.assign('/customer-service.html?v=20260915-chat-sync-v3&from=' + encodeURIComponent(from));
+  }
+
+  document.addEventListener('click', rebOpenDedicatedCustomerService, true);
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

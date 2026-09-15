@@ -1,0 +1,2925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script id="reb-final-route-sync">
+(function(){
+  'use strict';
+  var V='reb-chat-final-sync-20260913';
+  try{
+    var u=new URL(location.href);
+    if(u.searchParams.get('rebv')!==V){
+      u.searchParams.set('rebv',V);
+      location.replace(u.href);
+      return;
+    }
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var raw=a.getAttribute('href')||'';
+    if(!raw || raw.charAt(0)==='#' || /^(mailto:|tel:|javascript:|data:)/i.test(raw))return;
+    try{
+      var x=new URL(a.href,location.href);
+      if(x.origin!==location.origin)return;
+      if(/\.(?:png|jpe?g|gif|webp|svg|css|js|woff2?|ttf|eot|mp4|webm|mov|zip|rar|7z|pdf|docx?|xlsx?|pptx?|ex5|mq5|set)$/i.test(x.pathname))return;
+      x.searchParams.set('rebv',V);
+      a.href=x.href;
+    }catch(e){}
+  },true);
+})();
+</script>
+
+<link rel="stylesheet" href="/assets/css/reb-desktop-auth-stable-v3.css?v=20260812-3">
+<base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Checkout - ReachEmpireBot</title>
+<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/standard-font-safe.css?v=20260518-font3">
+<link rel="stylesheet" href="/assets/css/reb-font-scale-polish.css?v=20260530-fontscale1">
+<style>
+:root{--gold:#f5b026;--black:#050505;--ink:#101828;--muted:#667085;--line:#dfe6ef;--soft:#fff8ea;--blue:#1d4ed8}
+*{box-sizing:border-box}html,body{width:100%;max-width:100%;overflow-x:hidden}body{margin:0;font-family:Ubuntu,Arial,sans-serif;color:var(--ink);background:#f3f6fb}a{text-decoration:none;color:inherit}img{max-width:100%}
+.reb-top{background:#101312;color:#fff;padding:16px 7vw;display:flex;align-items:center;justify-content:space-between;gap:18px}.reb-phone{font-size:20px;font-weight:700}.reb-phone .reb-icon{color:var(--gold);margin-right:10px;width:18px;height:18px}.reb-actions{display:flex;gap:10px}.reb-actions a{border:1px solid rgba(255,255,255,.45);border-radius:8px;padding:10px 22px;font-weight:700}.reb-actions a:first-child{background:var(--gold);border-color:var(--gold);color:#070707}
+.reb-header{padding:18px 7vw;border-bottom:1px solid #eee;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:26px;position:sticky;top:0;z-index:20}.reb-logo img{width:250px;max-width:52vw;height:auto;display:block}.reb-nav{display:flex;align-items:center;justify-content:flex-end;gap:4px;flex-wrap:nowrap;max-width:100%;min-width:0;background:#101312;border:1px solid rgba(245,176,38,.24);border-radius:14px;padding:6px;box-shadow:0 14px 30px rgba(0,0,0,.12)}.reb-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;border:0;border-radius:10px;color:#fff;font-size:15px;font-weight:800;line-height:1;white-space:nowrap}.reb-nav a.active,.reb-nav a:hover{background:var(--gold);color:#070707;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)}
+.reb-icon{width:1em;height:1em;display:inline-block;vertical-align:-.14em;fill:currentColor;flex:0 0 auto}.reb-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:10px;padding:0 22px;font-weight:900;border:0;cursor:pointer}.reb-btn.gold{background:var(--gold);color:#070707}.reb-btn.dark{background:#050505;color:#fff}.reb-btn.blue{background:var(--blue);color:#fff}.reb-btn.light{border:1px solid #dfe6ef;background:#fff;color:#111}
+.pay-hero{padding:56px 7vw 36px;background:radial-gradient(circle at 15% 8%,rgba(245,176,38,.12),transparent 32%),linear-gradient(180deg,#fff 0%,#f5f7fb 100%)}.pay-wrap{max-width:1320px;margin:auto}.pay-crumb{display:flex;align-items:center;gap:10px;color:#667085;font-size:14px;margin-bottom:24px}.pay-crumb a{color:#a36f00;font-weight:900}.pay-title{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px}.pay-title h1{font-size:46px;line-height:1.02;margin:0;letter-spacing:-.03em}.pay-title p{max-width:650px;margin:12px 0 0;color:#667085;line-height:1.6;font-size:17px}.paypal-wordmark{display:inline-flex;align-items:center;gap:0;font-weight:900;letter-spacing:-.04em;font-family:Arial,Helvetica,sans-serif}.paypal-wordmark .pay-pal-blue{color:#003087}.paypal-wordmark .pay-pal-light{color:#009cde}.paypal-wordmark.small{font-size:16px}.paypal-wordmark.large{font-size:18px}
+.pay-layout{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:30px;align-items:start}.pay-card{border:1px solid rgba(148,163,184,.28);border-radius:22px;background:rgba(255,255,255,.92);box-shadow:0 24px 70px rgba(15,23,42,.1);backdrop-filter:blur(10px)}.pay-card-inner{padding:32px}.pay-product{display:grid;grid-template-columns:108px minmax(0,1fr);gap:20px;align-items:center;border-bottom:1px solid #e8eef6;padding-bottom:26px;margin-bottom:28px}.pay-product-icon{width:108px;height:108px;border-radius:22px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;border:1px solid #e4e7ec;box-shadow:0 16px 30px rgba(15,23,42,.1)}.pay-product-icon img{width:92px;height:92px;object-fit:cover;display:block;border-radius:18px}.pay-product h2{font-size:30px;line-height:1.12;margin:0 0 8px;letter-spacing:-.02em}.pay-product p{margin:0;color:#667085;line-height:1.5;font-size:16px}.pay-plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.pay-plan{position:relative;border:1px solid #d7e0ec;border-radius:22px;background:linear-gradient(180deg,#fff 0%,#f8fafc 100%);padding:24px;cursor:pointer;min-height:250px;display:grid;grid-template-rows:auto 1fr auto auto;gap:15px;text-align:left;font:inherit;overflow:hidden;box-shadow:0 14px 30px rgba(15,23,42,.055);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease}.pay-plan:before{content:"";position:absolute;right:18px;top:18px;width:20px;height:20px;border-radius:50%;border:2px solid #cbd5e1;background:#fff;box-shadow:inset 0 0 0 4px #fff}.pay-plan:after{content:"";position:absolute;left:24px;right:24px;bottom:74px;height:1px;background:#e8eef6}.pay-plan:hover{transform:translateY(-3px);box-shadow:0 24px 50px rgba(15,23,42,.12);border-color:#f5b026}.pay-plan.selected{border-color:#f5b026;background:linear-gradient(145deg,#fff8e8 0%,#fff 52%,#f8fbff 100%);box-shadow:0 28px 56px rgba(245,176,38,.24)}.pay-plan.selected:before{border-color:#101312;background:#f5b026;box-shadow:inset 0 0 0 5px #fff}.pay-plan.featured .plan-badge,.pay-plan.featured:before{} .pay-plan.featured:after{background:#ead9b4}.pay-plan.featured .plan-badge{display:none}.pay-plan.featured span:after{content:"Best Value";display:inline-flex;margin-left:8px;vertical-align:middle;background:#101312;color:#fff;border-radius:999px;padding:5px 8px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.pay-plan span{display:block;color:#101828;font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;padding-right:34px}.pay-plan small{display:block;color:#5f6b7d;line-height:1.5;font-size:13px;max-width:190px}.pay-plan b{display:block;font-size:44px;line-height:.95;color:#050b18;letter-spacing:-.05em}.pay-plan em{font-style:normal;display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:999px;padding:0 16px;background:#101312;color:#fff;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.pay-plan[data-kind="one_time"] em{background:#f5b026;color:#050505}.pay-plan.selected em{box-shadow:0 12px 24px rgba(15,23,42,.16)}.summary{position:sticky;top:116px;overflow:hidden}.summary:before{content:"";display:block;height:6px;background:linear-gradient(90deg,#f5b026,#101312)}.summary h3{font-size:26px;margin:0 0 20px;letter-spacing:-.02em}.summary-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0;border-top:1px solid #eef2f6;color:#667085}.summary-row:first-of-type{border-top:0}.summary-row b{color:#101828;text-align:right}.summary-total{margin-top:18px;padding:22px;border-radius:18px;background:linear-gradient(135deg,#101312,#050505);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 18px 36px rgba(15,19,18,.22)}.summary-total span{color:rgba(255,255,255,.7);font-size:13px}.summary-total b{font-size:38px;letter-spacing:-.04em}.summary-actions{display:grid;gap:12px;margin-top:20px}.summary-actions .reb-btn.gold{min-height:60px;border-radius:14px;box-shadow:0 16px 30px rgba(245,176,38,.28)}.summary-actions .reb-btn.light{min-height:58px;border-radius:14px}.pay-status{display:none;margin-top:12px;padding:13px 14px;border-radius:12px;background:#ecfdf5;border:1px solid #bbf7d0;color:#047857;font-weight:800;line-height:1.45}.pay-status.show{display:block}
+.reb-clean-footer{background:linear-gradient(135deg,#050505 0%,#0a0a0a 58%,#1d1506 100%);color:#fff;border-top:1px solid rgba(245,176,38,.2);padding:58px 6vw 24px}.reb-clean-footer-inner{max-width:1480px;margin:0 auto}.reb-clean-footer .reb-clean-footer-grid{display:grid;grid-template-columns:minmax(310px,1.45fr) minmax(135px,.64fr) minmax(155px,.72fr) minmax(230px,.9fr) minmax(230px,.95fr);gap:34px;align-items:start}.reb-clean-footer-logo{width:245px;max-width:74vw;height:auto;display:block;margin-bottom:16px}.reb-clean-footer p{color:rgba(255,255,255,.7);line-height:1.65;margin:0;font-size:15px}.reb-clean-footer h3{color:#f5b026;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin:0}.reb-clean-footer-links{display:grid;gap:11px;margin-top:15px}.reb-clean-footer-links a{color:rgba(255,255,255,.82);font-weight:700}.reb-contact-list{display:grid;gap:10px;margin-top:15px}.reb-contact-row{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:center;color:rgba(255,255,255,.82)!important;font-weight:700;line-height:1.35}.reb-contact-row .contact-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}.reb-contact-row .contact-icon .reb-icon{width:14px;height:14px}.reb-contact-row.phone .contact-icon{background:#f5b026;color:#050505}.reb-contact-row.email .contact-icon{background:#6b7280}.reb-contact-row.telegram .contact-icon{background:#229ed9}.reb-follow-social{display:grid;grid-template-columns:repeat(4,44px);gap:10px;margin-top:15px}.reb-follow-social a{width:44px;height:44px;border-radius:10px;color:#fff!important;display:flex;align-items:center;justify-content:center;font-size:18px}.reb-follow-social .reb-icon{width:20px;height:20px}.reb-follow-social .facebook{background:#1877f2}.reb-follow-social .youtube{background:#ff0000}.reb-follow-social .telegram{background:#229ed9}.reb-follow-social .tiktok{background:linear-gradient(135deg,#050505,#101010 56%,#25f4ee);border:1px solid rgba(255,255,255,.24)}.reb-tiktok-svg{width:21px;height:21px;filter:drop-shadow(1px 1px 0 #fe2c55)}.reb-clean-footer-bottom{margin-top:38px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:14px}.reb-floating-chat{position:fixed;right:26px;bottom:96px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 18px;border-radius:999px;background:#229ed9;color:#fff!important;font-weight:900;box-shadow:0 18px 42px rgba(34,158,217,.36);border:1px solid rgba(255,255,255,.28);animation:rebFloatChat 3.2s ease-in-out infinite}.reb-floating-chat .reb-icon{width:20px;height:20px}@keyframes rebFloatChat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(max-width:1080px){.pay-layout{grid-template-columns:1fr}.summary{position:relative;top:auto}.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1fr 1fr}.reb-clean-footer-brand{grid-column:1/-1}}
+@media(max-width:767px){.reb-top{display:none}.reb-header{position:relative;top:auto;display:grid;grid-template-columns:1fr;padding:18px;gap:18px}.reb-logo img{width:min(245px,72vw)}.reb-nav{width:100%;justify-content:flex-start;overflow-x:auto;background:#101312;border-radius:12px;padding:8px}.reb-nav a{flex:0 0 auto;min-width:112px;min-height:46px}.pay-hero{padding:30px 18px}.pay-title{display:block}.pay-title h1{font-size:32px}.pay-title p{font-size:15px}.pay-layout,.pay-plan-grid{grid-template-columns:1fr}.pay-card-inner{padding:20px}.pay-product{grid-template-columns:78px 1fr;gap:14px}.pay-product-icon{width:78px;height:78px;border-radius:18px}.pay-product-icon img{width:66px;height:66px}.pay-product h2{font-size:24px}.pay-plan{min-height:210px}.pay-plan b{font-size:38px}.reb-clean-footer{padding:38px 18px 22px}.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1fr;gap:26px}.reb-floating-chat{right:14px;bottom:84px;min-height:50px;padding:0 14px;font-size:13px}}
+.pay-hero{padding:42px 7vw 42px!important;background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%)!important}
+.pay-title{margin-bottom:24px!important}
+.pay-title h1{max-width:720px;font-size:48px!important}
+.pay-layout{margin-top:0!important;display:grid!important;grid-template-columns:minmax(0,1fr) 390px!important;gap:30px!important;align-items:start!important}
+.pay-layout>.pay-card{margin:0!important;padding:0!important}
+.pay-card{border:1px solid #dbe4ef!important;border-radius:20px!important;background:#fff!important;box-shadow:0 22px 60px rgba(15,23,42,.08)!important}
+.pay-card-inner{padding:32px!important}
+.pay-product{grid-template-columns:96px minmax(0,1fr)!important;padding-bottom:24px!important;margin-bottom:24px!important}
+.pay-product-icon{width:96px!important;height:96px!important;border-radius:18px!important;background:linear-gradient(145deg,#fff,#f8fafc)!important}
+.pay-product-icon img{width:82px!important;height:82px!important;border-radius:14px!important}
+.pay-plan-grid{gap:16px!important}
+.pay-plan{min-height:230px!important;padding:22px!important;border-radius:20px!important;background:#fff!important}
+.pay-plan.selected{background:linear-gradient(180deg,#fffaf0 0%,#fff 100%)!important}
+.pay-plan b{font-size:42px!important}
+.pay-plan em{min-height:46px!important}
+.summary{position:sticky!important;top:108px!important}
+.summary h3{font-size:28px!important}
+.summary-actions .reb-btn.gold{background:linear-gradient(135deg,#ffc23a,#f5a90f)!important;color:#050505!important}
+@media(max-width:1080px){.pay-layout{grid-template-columns:1fr!important}.summary{position:relative!important;top:auto!important}}
+@media(max-width:767px){.pay-hero{padding:28px 16px 34px!important}.pay-title{margin-bottom:18px!important}.pay-title h1{font-size:34px!important}.pay-layout{gap:18px!important}.pay-card-inner{padding:20px!important}.pay-product{grid-template-columns:76px 1fr!important}.pay-product-icon{width:76px!important;height:76px!important}.pay-product-icon img{width:64px!important;height:64px!important}.pay-plan-grid{grid-template-columns:1fr!important}.pay-plan{min-height:190px!important}}
+.pay-wrap{max-width:1360px!important}
+.pay-crumb{margin-bottom:18px!important}
+.pay-title{display:block!important;max-width:820px!important}
+.pay-title p{max-width:560px!important}
+.pay-title+.pay-layout{position:relative!important;top:auto!important;transform:none!important}
+.pay-layout{min-height:0!important;visibility:visible!important;opacity:1!important}
+.pay-main-card{display:block!important;overflow:hidden!important;background:linear-gradient(180deg,#fff 0%,#fbfcff 100%)!important}
+.pay-main-card:before{content:"";display:block;height:7px;background:linear-gradient(90deg,#101312 0%,#f5b026 48%,#101312 100%)}
+.pay-product{background:linear-gradient(135deg,#fffaf0 0%,#fff 48%,#f8fbff 100%)!important;border:1px solid #edf1f7!important;border-radius:18px!important;padding:18px!important;margin-bottom:24px!important}
+.pay-product h2{font-size:32px!important}
+.pay-plan-grid{align-items:stretch!important}
+.pay-plan{border-color:#dce5ef!important}
+.pay-plan span{font-size:16px!important}
+.pay-plan small{font-size:14px!important;color:#5f6b7d!important}
+.pay-plan.selected{background:linear-gradient(145deg,#111615 0%,#050505 100%)!important;border-color:#101312!important;box-shadow:0 28px 54px rgba(16,19,18,.28)!important}
+.pay-plan.selected span,.pay-plan.selected small,.pay-plan.selected b{color:#fff!important}
+.pay-plan.selected small{color:rgba(255,255,255,.72)!important}
+.pay-plan.selected:before{border-color:#f5b026!important;background:#f5b026!important}
+.pay-plan.selected em{background:#f5b026!important;color:#050505!important}
+.pay-plan.featured span:after{background:#f5b026!important;color:#050505!important}
+.summary{background:linear-gradient(180deg,#fff 0%,#fbfcff 100%)!important}
+.summary-row{font-size:15px!important}
+.summary-total{background:linear-gradient(135deg,#050505 0%,#101312 100%)!important}
+.summary-actions .reb-btn{width:100%!important}
+@media(max-width:767px){.pay-product{padding:14px!important}.pay-product h2{font-size:24px!important}.pay-plan.selected{box-shadow:0 18px 34px rgba(16,19,18,.22)!important}}
+main.pay-hero,
+main.pay-hero .pay-wrap,
+main.pay-hero .pay-title,
+main.pay-hero .pay-title > div{
+  display:block!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+  margin-top:0!important;
+}
+main.pay-hero{
+  padding-top:34px!important;
+}
+main.pay-hero .pay-crumb{
+  margin-bottom:16px!important;
+}
+main.pay-hero .pay-title{
+  margin:0 0 22px!important;
+}
+main.pay-hero .pay-title h1{
+  margin:0!important;
+}
+main.pay-hero .pay-title p{
+  margin:10px 0 0!important;
+}
+main.pay-hero .pay-layout,
+main.pay-hero .pay-title + .pay-layout{
+  clear:both!important;
+  position:relative!important;
+  inset:auto!important;
+  top:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  left:auto!important;
+  transform:none!important;
+  margin:0!important;
+  padding:0!important;
+  min-height:0!important;
+}
+main.pay-hero .pay-layout{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 390px!important;
+  gap:30px!important;
+  align-items:start!important;
+}
+@media(max-width:1080px){
+  main.pay-hero .pay-layout{grid-template-columns:1fr!important}
+}
+@media(max-width:767px){
+  main.pay-hero{padding-top:24px!important}
+  main.pay-hero .pay-title{margin-bottom:18px!important}
+}
+/* Premium payment page refresh */
+body{background:#f5f7fb!important}
+main.pay-hero{
+  padding:38px 7vw 58px!important;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(245,176,38,.12),transparent 30%),
+    radial-gradient(circle at 84% 8%,rgba(16,19,18,.06),transparent 28%),
+    linear-gradient(180deg,#fff 0%,#f7f9fc 42%,#f4f7fb 100%)!important;
+}
+main.pay-hero .pay-wrap{max-width:1420px!important}
+main.pay-hero .pay-crumb{
+  margin-bottom:18px!important;
+  font-size:14px!important;
+  font-weight:800!important;
+}
+main.pay-hero .pay-title{
+  max-width:none!important;
+  margin:0 0 28px!important;
+}
+main.pay-hero .pay-title h1{
+  max-width:820px!important;
+  font-size:clamp(42px,4.2vw,64px)!important;
+  line-height:.98!important;
+  letter-spacing:-.055em!important;
+  color:#0b1220!important;
+}
+main.pay-hero .pay-title p{
+  max-width:620px!important;
+  margin-top:14px!important;
+  color:#5f6b7d!important;
+  font-size:18px!important;
+}
+main.pay-hero .pay-layout{
+  display:grid!important;
+  grid-template-columns:minmax(720px,1fr) 420px!important;
+  gap:32px!important;
+  align-items:start!important;
+}
+.pay-card{
+  border:1px solid rgba(148,163,184,.24)!important;
+  border-radius:28px!important;
+  background:rgba(255,255,255,.96)!important;
+  box-shadow:0 34px 90px rgba(15,23,42,.12)!important;
+  backdrop-filter:blur(12px)!important;
+}
+.pay-card-inner{padding:34px!important}
+.pay-main-card{
+  position:relative!important;
+  overflow:hidden!important;
+}
+.pay-main-card:before{
+  content:""!important;
+  display:block!important;
+  height:9px!important;
+  background:linear-gradient(90deg,#101312 0%,#f5b026 38%,#ffd36c 52%,#101312 100%)!important;
+}
+.pay-product{
+  display:grid!important;
+  grid-template-columns:120px minmax(0,1fr)!important;
+  gap:24px!important;
+  align-items:center!important;
+  margin:0 0 30px!important;
+  padding:26px!important;
+  border:0!important;
+  border-radius:24px!important;
+  background:
+    radial-gradient(circle at 90% 0%,rgba(245,176,38,.32),transparent 34%),
+    linear-gradient(135deg,#101312 0%,#151917 58%,#2b1e05 100%)!important;
+  color:#fff!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 24px 50px rgba(16,19,18,.2)!important;
+}
+.pay-product-icon{
+  width:120px!important;
+  height:120px!important;
+  border-radius:24px!important;
+  background:rgba(255,255,255,.08)!important;
+  border:1px solid rgba(245,176,38,.38)!important;
+  box-shadow:0 18px 34px rgba(0,0,0,.22)!important;
+}
+.pay-product-icon img{
+  width:104px!important;
+  height:104px!important;
+  border-radius:20px!important;
+  object-fit:cover!important;
+}
+.pay-product h2{
+  color:#fff!important;
+  font-size:34px!important;
+  line-height:1.05!important;
+  letter-spacing:-.035em!important;
+}
+.pay-product p{
+  color:rgba(255,255,255,.72)!important;
+  font-size:16px!important;
+}
+.pay-plan-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:18px!important;
+}
+.pay-plan{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:292px!important;
+  padding:26px!important;
+  border-radius:24px!important;
+  border:1px solid #dce6f2!important;
+  background:linear-gradient(180deg,#fff 0%,#f8fafc 100%)!important;
+  box-shadow:0 18px 42px rgba(15,23,42,.08)!important;
+  overflow:visible!important;
+}
+.pay-plan:after{display:none!important}
+.pay-plan:before{
+  right:24px!important;
+  top:24px!important;
+  width:18px!important;
+  height:18px!important;
+  border-color:#c7d2e2!important;
+}
+.pay-plan span{
+  padding-right:34px!important;
+  color:#475467!important;
+  font-size:13px!important;
+  line-height:1!important;
+  letter-spacing:.13em!important;
+}
+.pay-plan small{
+  max-width:none!important;
+  margin-top:20px!important;
+  min-height:48px!important;
+  color:#5f6b7d!important;
+  font-size:14px!important;
+}
+.pay-plan b{
+  margin-top:auto!important;
+  margin-bottom:22px!important;
+  color:#07111f!important;
+  font-size:50px!important;
+  line-height:.9!important;
+  letter-spacing:-.06em!important;
+}
+.pay-plan em{
+  min-height:50px!important;
+  width:100%!important;
+  border-radius:14px!important;
+  background:#101312!important;
+  color:#fff!important;
+  font-size:12px!important;
+  letter-spacing:.08em!important;
+}
+.pay-plan:hover{
+  transform:translateY(-5px)!important;
+  border-color:#f5b026!important;
+  box-shadow:0 30px 64px rgba(15,23,42,.14)!important;
+}
+.pay-plan.selected{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(245,176,38,.34),transparent 38%),
+    linear-gradient(145deg,#111615 0%,#050505 64%,#261902 100%)!important;
+  border-color:#f5b026!important;
+  box-shadow:0 34px 78px rgba(16,19,18,.32)!important;
+}
+.pay-plan.selected:before{
+  border-color:#f5b026!important;
+  background:#f5b026!important;
+  box-shadow:inset 0 0 0 5px #101312!important;
+}
+.pay-plan.selected span,.pay-plan.selected small,.pay-plan.selected b{color:#fff!important}
+.pay-plan.selected small{color:rgba(255,255,255,.72)!important}
+.pay-plan.selected em{
+  background:#f5b026!important;
+  color:#050505!important;
+  box-shadow:0 14px 30px rgba(245,176,38,.24)!important;
+}
+.pay-plan.featured span:after{
+  position:absolute!important;
+  right:18px!important;
+  top:-15px!important;
+  margin:0!important;
+  padding:7px 12px!important;
+  border-radius:999px!important;
+  background:#050505!important;
+  color:#fff!important;
+  box-shadow:0 12px 24px rgba(0,0,0,.22)!important;
+}
+.summary{
+  position:sticky!important;
+  top:112px!important;
+  overflow:hidden!important;
+  background:#fff!important;
+}
+.summary:before{
+  content:""!important;
+  display:block!important;
+  height:9px!important;
+  background:linear-gradient(90deg,#f5b026,#101312)!important;
+}
+.summary .pay-card-inner{padding:30px!important}
+.summary h3{
+  font-size:30px!important;
+  line-height:1!important;
+  margin-bottom:22px!important;
+}
+.summary-row{
+  padding:16px 0!important;
+  font-size:16px!important;
+  border-color:#e8eef6!important;
+}
+.summary-row span{color:#667085!important}
+.summary-row b{
+  color:#07111f!important;
+  font-size:16px!important;
+}
+.summary-total{
+  margin-top:22px!important;
+  padding:26px!important;
+  border-radius:22px!important;
+  background:
+    radial-gradient(circle at 90% 0%,rgba(245,176,38,.2),transparent 35%),
+    linear-gradient(135deg,#050505 0%,#101312 100%)!important;
+}
+.summary-total b{font-size:44px!important}
+.summary-actions{gap:14px!important;margin-top:22px!important}
+.summary-actions .reb-btn.gold{
+  min-height:64px!important;
+  border-radius:18px!important;
+  background:linear-gradient(135deg,#ffc84d 0%,#f5b026 58%,#e99c05 100%)!important;
+  color:#050505!important;
+  box-shadow:0 20px 42px rgba(245,176,38,.34)!important;
+}
+.summary-actions .reb-btn.light{
+  min-height:60px!important;
+  border-radius:18px!important;
+  background:#fff!important;
+}
+.summary-actions .reb-btn:hover{transform:translateY(-2px)}
+.paypal-wordmark.large{font-size:22px!important;letter-spacing:-.055em!important}
+@media(max-width:1180px){
+  main.pay-hero .pay-layout{grid-template-columns:1fr!important}
+  .summary{position:relative!important;top:auto!important}
+}
+@media(max-width:860px){
+  .pay-plan-grid{grid-template-columns:1fr!important}
+  .pay-plan{min-height:auto!important}
+  .pay-plan small{min-height:0!important}
+}
+@media(max-width:767px){
+  main.pay-hero{padding:24px 16px 40px!important}
+  main.pay-hero .pay-title h1{font-size:38px!important}
+  main.pay-hero .pay-title p{font-size:16px!important}
+  .pay-card-inner{padding:20px!important}
+  .pay-product{grid-template-columns:82px minmax(0,1fr)!important;padding:18px!important;border-radius:20px!important}
+  .pay-product-icon{width:82px!important;height:82px!important;border-radius:18px!important}
+  .pay-product-icon img{width:70px!important;height:70px!important;border-radius:14px!important}
+  .pay-product h2{font-size:26px!important}
+  .pay-plan{padding:22px!important;border-radius:20px!important}
+  .pay-plan b{font-size:44px!important}
+  .summary .pay-card-inner{padding:22px!important}
+}
+/* Modern checkout cards v2 */
+main.pay-hero{
+  padding:36px 7vw 64px!important;
+  background:
+    linear-gradient(180deg,#ffffff 0%,#f8fafc 42%,#eef3f8 100%)!important;
+}
+main.pay-hero .pay-wrap{max-width:1400px!important}
+main.pay-hero .pay-title{margin-bottom:30px!important}
+main.pay-hero .pay-title h1{
+  font-size:clamp(42px,4vw,58px)!important;
+  letter-spacing:-.045em!important;
+}
+main.pay-hero .pay-layout{
+  grid-template-columns:minmax(720px,1fr) 410px!important;
+  gap:30px!important;
+}
+.pay-card{
+  border-radius:24px!important;
+  border:1px solid #dce5ef!important;
+  background:#fff!important;
+  box-shadow:0 26px 70px rgba(16,24,40,.09)!important;
+}
+.pay-main-card:before,
+.summary:before{
+  height:6px!important;
+  background:linear-gradient(90deg,#f5b026 0%,#171a18 100%)!important;
+}
+.pay-main-card .pay-card-inner{padding:30px!important}
+.pay-product{
+  grid-template-columns:92px minmax(0,1fr)!important;
+  gap:20px!important;
+  min-height:132px!important;
+  padding:20px!important;
+  border-radius:20px!important;
+  background:
+    linear-gradient(135deg,#101312 0%,#141816 58%,#3a2704 100%)!important;
+  box-shadow:none!important;
+}
+.pay-product-icon{
+  width:92px!important;
+  height:92px!important;
+  border-radius:18px!important;
+  background:rgba(255,255,255,.1)!important;
+  border:1px solid rgba(245,176,38,.42)!important;
+  box-shadow:0 12px 24px rgba(0,0,0,.18)!important;
+}
+.pay-product-icon img{
+  width:78px!important;
+  height:78px!important;
+  border-radius:14px!important;
+}
+.pay-product h2{
+  font-size:32px!important;
+  letter-spacing:-.035em!important;
+}
+.pay-product p{
+  font-size:15px!important;
+  color:rgba(255,255,255,.74)!important;
+}
+.pay-plan-grid{
+  gap:16px!important;
+}
+.pay-plan{
+  min-height:252px!important;
+  padding:22px!important;
+  border-radius:20px!important;
+  background:#ffffff!important;
+  border:1px solid #dbe5f0!important;
+  box-shadow:0 14px 34px rgba(16,24,40,.065)!important;
+}
+.pay-plan:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 22px 52px rgba(16,24,40,.12)!important;
+}
+.pay-plan:before{
+  width:17px!important;
+  height:17px!important;
+  top:22px!important;
+  right:22px!important;
+  border:2px solid #b9c7d9!important;
+}
+.pay-plan span{
+  color:#344054!important;
+  font-size:13px!important;
+  letter-spacing:.12em!important;
+}
+.pay-plan small{
+  margin-top:18px!important;
+  min-height:42px!important;
+  color:#667085!important;
+  font-size:14px!important;
+}
+.pay-plan b{
+  font-size:46px!important;
+  color:#0b1220!important;
+  margin-bottom:18px!important;
+}
+.pay-plan em{
+  min-height:48px!important;
+  border-radius:14px!important;
+  background:#101312!important;
+  color:#fff!important;
+}
+.pay-plan.selected{
+  background:
+    radial-gradient(circle at 88% 0%,rgba(255,255,255,.38),transparent 30%),
+    linear-gradient(145deg,#ffc44b 0%,#f5b026 62%,#e79b05 100%)!important;
+  border-color:#e39a05!important;
+  color:#050505!important;
+  box-shadow:0 28px 64px rgba(245,176,38,.24)!important;
+}
+.pay-plan.selected:before{
+  border-color:#101312!important;
+  background:#101312!important;
+  box-shadow:inset 0 0 0 5px #f5b026!important;
+}
+.pay-plan.selected span,
+.pay-plan.selected small,
+.pay-plan.selected b{
+  color:#050505!important;
+}
+.pay-plan.selected small{color:rgba(5,5,5,.68)!important}
+.pay-plan.selected em{
+  background:#101312!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+.pay-plan.featured span:after{
+  top:-13px!important;
+  right:18px!important;
+  background:#101312!important;
+  color:#fff!important;
+  box-shadow:0 10px 24px rgba(16,19,18,.22)!important;
+}
+.summary{
+  top:104px!important;
+  border-radius:24px!important;
+  box-shadow:0 26px 70px rgba(16,24,40,.1)!important;
+}
+.summary .pay-card-inner{padding:32px!important}
+.summary h3{
+  font-size:32px!important;
+  margin-bottom:24px!important;
+}
+.summary-row{
+  padding:15px 0!important;
+  font-size:15px!important;
+}
+.summary-total{
+  margin-top:20px!important;
+  border-radius:20px!important;
+  padding:24px!important;
+  background:linear-gradient(135deg,#101312 0%,#050505 62%,#2c1f05 100%)!important;
+  box-shadow:0 18px 42px rgba(16,19,18,.22)!important;
+}
+.summary-total b{font-size:42px!important}
+.summary-actions .reb-btn.gold{
+  min-height:62px!important;
+  border-radius:16px!important;
+  background:linear-gradient(135deg,#f9c044,#f5a90f)!important;
+  box-shadow:0 18px 34px rgba(245,176,38,.24)!important;
+}
+.summary-actions .reb-btn.light{
+  min-height:58px!important;
+  border-radius:16px!important;
+  border-color:#dbe5f0!important;
+}
+@media(max-width:1180px){
+  main.pay-hero .pay-layout{grid-template-columns:1fr!important}
+  .summary{position:relative!important;top:auto!important}
+}
+@media(max-width:900px){
+  .pay-plan-grid{grid-template-columns:1fr!important}
+  .pay-plan{min-height:auto!important}
+}
+@media(max-width:767px){
+  main.pay-hero{padding:24px 16px 44px!important}
+  .pay-main-card .pay-card-inner,.summary .pay-card-inner{padding:20px!important}
+  .pay-product{grid-template-columns:74px minmax(0,1fr)!important;min-height:0!important}
+  .pay-product-icon{width:74px!important;height:74px!important}
+  .pay-product-icon img{width:62px!important;height:62px!important}
+  .pay-product h2{font-size:24px!important}
+  .pay-plan b{font-size:40px!important}
+}
+/* Modern checkout plan cards v3 */
+main.pay-hero{
+  background:
+    radial-gradient(circle at 78% 8%,rgba(34,158,217,.12),transparent 30%),
+    radial-gradient(circle at 18% 16%,rgba(245,176,38,.13),transparent 28%),
+    linear-gradient(180deg,#fff 0%,#f6f9fc 48%,#eef4f8 100%)!important;
+}
+main.pay-hero .pay-layout{
+  grid-template-columns:minmax(760px,1fr) 420px!important;
+  gap:32px!important;
+}
+.pay-main-card{
+  border-radius:30px!important;
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%)!important;
+  border:1px solid #dbe5ef!important;
+  box-shadow:0 30px 80px rgba(15,23,42,.1)!important;
+}
+.pay-main-card:before{
+  height:8px!important;
+  background:linear-gradient(90deg,#101312 0%,#f5b026 52%,#dff7f5 100%)!important;
+}
+.pay-main-card .pay-card-inner{padding:38px!important}
+.pay-product{
+  min-height:150px!important;
+  padding:26px 30px!important;
+  border-radius:24px!important;
+  background:linear-gradient(135deg,#111614 0%,#171b18 55%,#5a3a07 100%)!important;
+  border:0!important;
+  margin-bottom:52px!important;
+}
+.pay-product-icon{
+  width:104px!important;
+  height:104px!important;
+  border-radius:22px!important;
+  background:rgba(255,255,255,.1)!important;
+  border:1px solid rgba(245,176,38,.48)!important;
+}
+.pay-product-icon img{
+  width:88px!important;
+  height:88px!important;
+  border-radius:18px!important;
+}
+.pay-product h2{
+  color:#fff!important;
+  font-size:38px!important;
+  letter-spacing:-.04em!important;
+}
+.pay-product p{
+  color:rgba(255,255,255,.76)!important;
+  font-size:16px!important;
+}
+.pay-plan-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:24px!important;
+  align-items:stretch!important;
+}
+.pay-plan{
+  position:relative!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  min-height:342px!important;
+  padding:70px 24px 22px!important;
+  border-radius:0 0 18px 18px!important;
+  background:#fff!important;
+  border:0!important;
+  overflow:visible!important;
+  text-align:center!important;
+  box-shadow:0 24px 52px rgba(15,23,42,.12)!important;
+  clip-path:polygon(12% 0,88% 0,100% 12%,100% 88%,88% 100%,12% 100%,0 88%,0 12%)!important;
+  transition:transform .2s ease,box-shadow .2s ease!important;
+}
+.pay-plan:before{
+  content:""!important;
+  position:absolute!important;
+  inset:10px!important;
+  width:auto!important;
+  height:auto!important;
+  border:1px solid #edf1f6!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  clip-path:polygon(12% 0,88% 0,100% 12%,100% 88%,88% 100%,12% 100%,0 88%,0 12%)!important;
+  pointer-events:none!important;
+}
+.pay-plan:after{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  left:50%!important;
+  top:-30px!important;
+  width:92px!important;
+  height:78px!important;
+  transform:translateX(-50%)!important;
+  background:#344765!important;
+  clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)!important;
+  box-shadow:0 18px 26px rgba(52,71,101,.22)!important;
+  z-index:0!important;
+}
+.pay-plan:nth-child(2):after{background:#13b8ae!important;box-shadow:0 18px 26px rgba(19,184,174,.24)!important}
+.pay-plan:nth-child(3):after{background:#f15a24!important;box-shadow:0 18px 26px rgba(241,90,36,.24)!important}
+.pay-plan:hover{
+  transform:translateY(-7px)!important;
+  box-shadow:0 34px 70px rgba(15,23,42,.17)!important;
+}
+.pay-plan.selected{
+  background:#fffaf0!important;
+  border:0!important;
+  box-shadow:0 34px 76px rgba(245,176,38,.22)!important;
+}
+.pay-plan.selected:before{border-color:#f5b026!important;background:transparent!important;box-shadow:none!important}
+.pay-plan b{
+  position:absolute!important;
+  top:-10px!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  z-index:1!important;
+  margin:0!important;
+  color:#fff!important;
+  font-size:26px!important;
+  line-height:1!important;
+  letter-spacing:-.03em!important;
+  text-shadow:0 2px 8px rgba(0,0,0,.18)!important;
+}
+.pay-plan.selected b{color:#fff!important}
+.pay-plan span{
+  padding:0!important;
+  color:#8a93a1!important;
+  font-size:17px!important;
+  font-weight:500!important;
+  letter-spacing:.28em!important;
+  text-transform:uppercase!important;
+}
+.pay-plan small{
+  display:block!important;
+  max-width:none!important;
+  min-height:44px!important;
+  margin:14px auto 16px!important;
+  color:#667085!important;
+  font-size:13px!important;
+  line-height:1.45!important;
+}
+.pay-plan span:after,.pay-plan.featured span:after{display:none!important}
+.plan-features{
+  list-style:none!important;
+  display:grid!important;
+  gap:10px!important;
+  padding:14px 0 18px!important;
+  margin:0 0 auto!important;
+  border-top:1px solid #e7edf5!important;
+  border-bottom:1px solid #e7edf5!important;
+  text-align:left!important;
+}
+.plan-features li{
+  position:relative!important;
+  padding-left:24px!important;
+  color:#344054!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+}
+.plan-features li:before{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  color:#249b3e!important;
+  font-weight:900!important;
+}
+.pay-plan:nth-child(1) .plan-features li:nth-child(3):before{
+  content:""!important;
+  color:#ef4444!important;
+}
+.pay-plan em{
+  min-height:48px!important;
+  margin-top:18px!important;
+  border-radius:8px!important;
+  background:#344765!important;
+  color:#fff!important;
+  box-shadow:0 14px 24px rgba(52,71,101,.22)!important;
+}
+.pay-plan:nth-child(2) em{background:#13b8ae!important;box-shadow:0 14px 24px rgba(19,184,174,.22)!important}
+.pay-plan:nth-child(3) em{background:#f15a24!important;color:#fff!important;box-shadow:0 14px 24px rgba(241,90,36,.22)!important}
+.pay-plan.selected em{background:#f5b026!important;color:#050505!important;box-shadow:0 14px 24px rgba(245,176,38,.24)!important}
+.summary{
+  border-radius:30px!important;
+  background:#fff!important;
+  box-shadow:0 30px 80px rgba(15,23,42,.11)!important;
+}
+.summary:before{height:8px!important;background:linear-gradient(90deg,#f5b026,#101312)!important}
+.summary-total{
+  border-radius:22px!important;
+  background:linear-gradient(135deg,#101312 0%,#050505 55%,#3b2806 100%)!important;
+}
+.summary-actions .reb-btn.gold{
+  border-radius:16px!important;
+  background:linear-gradient(135deg,#ffc947 0%,#f5b026 100%)!important;
+}
+@media(max-width:1180px){
+  main.pay-hero .pay-layout{grid-template-columns:1fr!important}
+}
+@media(max-width:900px){
+  .pay-plan-grid{grid-template-columns:1fr!important;gap:44px!important}
+  .pay-plan{min-height:auto!important}
+}
+@media(max-width:767px){
+  .pay-main-card .pay-card-inner{padding:24px 18px!important}
+  .pay-product{grid-template-columns:78px minmax(0,1fr)!important;padding:18px!important;margin-bottom:46px!important}
+  .pay-product-icon{width:78px!important;height:78px!important}
+  .pay-product-icon img{width:64px!important;height:64px!important}
+  .pay-product h2{font-size:26px!important}
+  .pay-plan{padding:64px 22px 22px!important}
+}
+/* Payment plan cards final premium compact */
+main.pay-hero{
+  padding:30px 6vw 58px!important;
+  background:
+    radial-gradient(circle at 18% 6%,rgba(245,176,38,.12),transparent 30%),
+    radial-gradient(circle at 86% 12%,rgba(34,158,217,.11),transparent 32%),
+    linear-gradient(180deg,#fff 0%,#f8fbfd 48%,#eef5f8 100%)!important;
+}
+main.pay-hero .pay-wrap{max-width:1320px!important}
+main.pay-hero .pay-title{margin-bottom:22px!important}
+main.pay-hero .pay-title h1{
+  font-size:clamp(38px,3.45vw,54px)!important;
+  letter-spacing:-.045em!important;
+}
+main.pay-hero .pay-layout{
+  grid-template-columns:minmax(0,1fr) 370px!important;
+  gap:24px!important;
+  align-items:start!important;
+}
+.pay-main-card,
+.pay-main-card .pay-card-inner,
+.pay-plan-grid{
+  overflow:visible!important;
+}
+.pay-main-card{
+  border-radius:28px!important;
+  background:rgba(255,255,255,.94)!important;
+  box-shadow:0 28px 70px rgba(15,23,42,.10)!important;
+}
+.pay-main-card:before{height:6px!important;border-radius:28px 28px 0 0!important}
+.pay-main-card .pay-card-inner{padding:24px 28px 30px!important}
+.pay-product{
+  min-height:112px!important;
+  margin-bottom:44px!important;
+  padding:18px 22px!important;
+  grid-template-columns:82px minmax(0,1fr)!important;
+  gap:18px!important;
+  border-radius:20px!important;
+}
+.pay-product-icon{width:82px!important;height:82px!important;border-radius:18px!important}
+.pay-product-icon img{width:68px!important;height:68px!important;border-radius:14px!important}
+.pay-product h2{font-size:30px!important;line-height:1.05!important}
+.pay-product p{font-size:15px!important}
+.pay-plan-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:18px!important;
+  padding-top:30px!important;
+}
+.pay-plan{
+  min-height:284px!important;
+  padding:60px 18px 18px!important;
+  border-radius:18px!important;
+  clip-path:none!important;
+  background:#fff!important;
+  border:1px solid #e2e8f0!important;
+  box-shadow:0 18px 38px rgba(15,23,42,.085)!important;
+}
+.pay-plan:before{
+  inset:0!important;
+  border-radius:18px!important;
+  clip-path:none!important;
+  border:1px solid rgba(255,255,255,.78)!important;
+}
+.pay-plan:after{
+  top:-28px!important;
+  width:78px!important;
+  height:64px!important;
+  border-radius:13px 13px 17px 17px!important;
+  clip-path:polygon(18% 0,82% 0,100% 46%,74% 100%,26% 100%,0 46%)!important;
+  box-shadow:0 18px 28px rgba(15,23,42,.18)!important;
+}
+.pay-plan:nth-child(1):after{background:#344966!important}
+.pay-plan:nth-child(2):after{background:#19b8ad!important}
+.pay-plan:nth-child(3):after{background:#f4511e!important}
+.pay-plan b{
+  top:-6px!important;
+  font-size:23px!important;
+  letter-spacing:-.04em!important;
+}
+.pay-plan span:not(.plan-features){
+  font-size:15px!important;
+  letter-spacing:.24em!important;
+  color:#667085!important;
+  text-align:center!important;
+  padding-right:0!important;
+}
+.pay-plan small{
+  min-height:38px!important;
+  margin:12px auto 14px!important;
+  color:#5f6b7d!important;
+  font-size:12.5px!important;
+  line-height:1.45!important;
+  text-align:center!important;
+}
+.plan-features{
+  display:grid!important;
+  gap:8px!important;
+  margin:0 0 auto!important;
+  padding:13px 0!important;
+  border-top:1px solid #e7edf5!important;
+  border-bottom:1px solid #e7edf5!important;
+  text-align:left!important;
+}
+.plan-features li,
+.plan-features i{
+  display:block!important;
+  position:relative!important;
+  padding-left:22px!important;
+  color:#344054!important;
+  font-size:12.5px!important;
+  font-style:normal!important;
+  line-height:1.35!important;
+}
+.plan-features li:before,
+.plan-features i:before{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  color:#17a34a!important;
+  font-weight:900!important;
+}
+.pay-plan:nth-child(1) .plan-features li:nth-child(3):before,
+.pay-plan:nth-child(1) .plan-features i:nth-child(3):before{
+  content:""!important;
+  color:#ef4444!important;
+}
+.pay-plan em{
+  min-height:44px!important;
+  margin-top:14px!important;
+  border-radius:10px!important;
+  font-size:12px!important;
+  letter-spacing:.06em!important;
+}
+.pay-plan:nth-child(1) em{background:#344966!important;color:#fff!important}
+.pay-plan:nth-child(2) em{background:#19b8ad!important;color:#fff!important}
+.pay-plan:nth-child(3) em{background:#f4511e!important;color:#fff!important}
+.pay-plan.selected{
+  background:#fffaf0!important;
+  border-color:#f5b026!important;
+  box-shadow:0 24px 54px rgba(245,176,38,.22)!important;
+}
+.pay-plan.selected:before{border-color:rgba(245,176,38,.35)!important}
+.summary{
+  width:auto!important;
+  border-radius:28px!important;
+  box-shadow:0 28px 70px rgba(15,23,42,.10)!important;
+}
+.summary .pay-card-inner{padding:28px!important}
+.summary h3{font-size:30px!important}
+.summary-total{padding:20px!important;border-radius:18px!important}
+.summary-total b{font-size:38px!important}
+.summary-actions .reb-btn.gold{min-height:56px!important;border-radius:14px!important}
+.summary-actions .reb-btn.light{min-height:56px!important;border-radius:14px!important}
+@media(max-width:1180px){
+  main.pay-hero .pay-layout{grid-template-columns:1fr!important}
+  .summary{position:relative!important;top:auto!important}
+}
+@media(max-width:900px){
+  .pay-plan-grid{grid-template-columns:1fr!important;gap:42px!important}
+  .pay-plan{min-height:auto!important}
+}
+@media(max-width:767px){
+  main.pay-hero{padding:24px 16px 44px!important}
+  .pay-main-card .pay-card-inner,.summary .pay-card-inner{padding:18px!important}
+  .pay-product{
+    grid-template-columns:70px minmax(0,1fr)!important;
+    padding:16px!important;
+    margin-bottom:38px!important;
+  }
+  .pay-product-icon{width:70px!important;height:70px!important}
+  .pay-product-icon img{width:58px!important;height:58px!important}
+  .pay-product h2{font-size:24px!important}
+  .pay-plan{padding:54px 18px 18px!important}
+  .pay-plan-grid{gap:38px!important;padding-top:24px!important}
+  .pay-plan b{font-size:21px!important}
+  .pay-plan:after{width:72px!important;height:58px!important;top:-24px!important}
+}
+/* Payment plan typography final standard */
+.pay-plan,
+.pay-plan *{
+  font-family:inherit!important;
+}
+.pay-plan b{
+  font-weight:900!important;
+  letter-spacing:-.025em!important;
+  line-height:1!important;
+}
+.pay-plan span:not(.plan-features){
+  display:block!important;
+  padding-right:0!important;
+  color:#344054!important;
+  font-size:17px!important;
+  font-weight:900!important;
+  line-height:1.15!important;
+  letter-spacing:.045em!important;
+  text-align:center!important;
+  text-transform:uppercase!important;
+}
+.pay-plan small{
+  display:block!important;
+  max-width:230px!important;
+  min-height:40px!important;
+  margin:12px auto 14px!important;
+  color:#5f6b7d!important;
+  font-size:14px!important;
+  font-weight:500!important;
+  line-height:1.45!important;
+  letter-spacing:0!important;
+  text-align:center!important;
+  text-transform:none!important;
+}
+.plan-features{
+  display:grid!important;
+  gap:9px!important;
+  margin:0 0 auto!important;
+  padding:14px 0!important;
+  border-top:1px solid #e7edf5!important;
+  border-bottom:1px solid #e7edf5!important;
+  text-align:left!important;
+}
+.plan-features li,
+.plan-features i{
+  display:block!important;
+  position:relative!important;
+  padding-left:22px!important;
+  color:#344054!important;
+  font-size:14px!important;
+  font-weight:700!important;
+  font-style:normal!important;
+  line-height:1.35!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+  word-spacing:0!important;
+}
+.plan-features li:before,
+.plan-features i:before{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  color:#16a34a!important;
+  font-weight:900!important;
+}
+.pay-plan:nth-child(1) .plan-features li:nth-child(3):before,
+.pay-plan:nth-child(1) .plan-features i:nth-child(3):before{
+  content:""!important;
+  color:#ef4444!important;
+}
+.pay-plan em{
+  font-size:13px!important;
+  font-weight:900!important;
+  letter-spacing:.035em!important;
+  line-height:1!important;
+  text-transform:uppercase!important;
+}
+.pay-product h2{
+  font-size:32px!important;
+  font-weight:900!important;
+  letter-spacing:-.025em!important;
+}
+.pay-product p{
+  font-size:16px!important;
+  font-weight:700!important;
+  letter-spacing:0!important;
+}
+@media(max-width:767px){
+  .pay-plan span:not(.plan-features){font-size:16px!important;letter-spacing:.035em!important}
+  .pay-plan small{font-size:13.5px!important}
+  .plan-features li,.plan-features i{font-size:13.5px!important}
+  .pay-product h2{font-size:24px!important}
+  .pay-product p{font-size:14px!important}
+}
+/* Store Packages-inspired plan cards */
+.pay-plan-grid{
+  gap:18px!important;
+  padding-top:0!important;
+  align-items:stretch!important;
+}
+.pay-plan{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:430px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:1px solid #eadfcd!important;
+  border-radius:8px!important;
+  background:#fff!important;
+  box-shadow:0 18px 44px rgba(13,13,13,.08)!important;
+  text-align:left!important;
+}
+.pay-plan:before,.pay-plan:after{display:none!important}
+.pay-plan-top{
+  min-height:116px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:linear-gradient(135deg,#080807 0%,#171108 58%,#5a3d08 100%)!important;
+  color:#f5b026!important;
+}
+.pay-plan-top svg{width:52px!important;height:52px!important;display:block!important;fill:#f5b026!important}
+.pay-plan-body{
+  display:flex!important;
+  flex:1!important;
+  flex-direction:column!important;
+  width:100%!important;
+  padding:20px 22px 20px!important;
+  box-sizing:border-box!important;
+}
+.pay-plan .pay-plan-body .plan-name{
+  display:block!important;
+  padding:0!important;
+  color:#080808!important;
+  font-size:22px!important;
+  font-weight:900!important;
+  letter-spacing:-.02em!important;
+  text-align:left!important;
+  text-transform:none!important;
+}
+.pay-plan small{
+  max-width:none!important;
+  min-height:42px!important;
+  margin:7px 0 13px!important;
+  color:#6b7280!important;
+  font-size:13.5px!important;
+  font-weight:500!important;
+  line-height:1.55!important;
+  text-align:left!important;
+}
+.pay-plan .plan-price{
+  display:flex!important;
+  align-items:flex-end!important;
+  gap:7px!important;
+  margin:0 0 14px!important;
+}
+.pay-plan .plan-price b{
+  position:static!important;
+  left:auto!important;
+  top:auto!important;
+  transform:none!important;
+  display:block!important;
+  margin:0!important;
+  color:#050505!important;
+  font-size:32px!important;
+  font-weight:900!important;
+  line-height:1!important;
+}
+.pay-plan .plan-price span{
+  padding:0 0 4px!important;
+  color:#888!important;
+  font-size:12px!important;
+  font-weight:500!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-plan.featured span:after{content:none!important;display:none!important}
+.plan-features{
+  gap:0!important;
+  margin:0 0 22px!important;
+  padding:0!important;
+  border:0!important;
+}
+.plan-features i{
+  padding:9px 0 9px 22px!important;
+  border-top:1px solid #f1ede4!important;
+  color:#303030!important;
+  font-size:13px!important;
+  font-weight:500!important;
+}
+.plan-features i:before{color:#f5a900!important}
+.pay-plan:nth-child(1) .plan-features i:nth-child(3):before{
+  content:"\2713"!important;
+  color:#f5a900!important;
+}
+.pay-plan em{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  min-height:46px!important;
+  margin-top:auto!important;
+  border-radius:7px!important;
+  background:#f5b026!important;
+  color:#080808!important;
+  font-size:13px!important;
+  font-weight:900!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-plan:nth-child(1) em,
+.pay-plan:nth-child(2) em,
+.pay-plan:nth-child(3) em,
+.pay-plan.selected em{
+  background:#f5b026!important;
+  color:#080808!important;
+  box-shadow:none!important;
+}
+.pay-plan:hover,.pay-plan.selected{
+  transform:translateY(-4px)!important;
+  border-color:#f5b026!important;
+  background:#fff!important;
+  box-shadow:0 22px 52px rgba(245,176,38,.20)!important;
+}
+.pay-plan.selected .pay-plan-top{
+  box-shadow:inset 0 -4px 0 #f5b026!important;
+}
+@media(max-width:900px){
+  .pay-plan{min-height:0!important}
+  .pay-plan-top{min-height:108px!important}
+}
+/* Pricing cards v3: compact, balanced and decision-focused */
+main.pay-hero .pay-layout{grid-template-columns:minmax(0,1fr) 360px!important;gap:24px!important}
+.pay-main-card .pay-card-inner{padding:26px!important}
+.pay-main-card .pay-product{margin-bottom:24px!important;padding:18px 22px!important}
+.pay-main-card .pay-plan-grid{gap:14px!important}
+.pay-main-card .pay-plan{
+  min-height:416px!important;
+  border-radius:14px!important;
+  border:1px solid #e7dfd1!important;
+  box-shadow:0 12px 30px rgba(15,23,42,.07)!important;
+}
+.pay-main-card .pay-plan .pay-plan-top{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:92px!important;
+  padding:0!important;
+  background:linear-gradient(135deg,#0b0d0c 0%,#211807 68%,#513706 100%)!important;
+  border-bottom:3px solid #f5b026!important;
+}
+.pay-main-card .pay-plan .pay-plan-top svg{
+  width:42px!important;
+  height:42px!important;
+  margin:0!important;
+  filter:drop-shadow(0 5px 12px rgba(245,176,38,.22))!important;
+}
+.pay-main-card .pay-plan .pay-plan-body{
+  display:flex!important;
+  flex:1!important;
+  flex-direction:column!important;
+  padding:18px!important;
+}
+.pay-main-card .pay-plan .plan-name{
+  font-size:20px!important;
+  line-height:1.2!important;
+}
+.pay-main-card .pay-plan small{
+  min-height:40px!important;
+  margin:6px 0 12px!important;
+  font-size:12.5px!important;
+  line-height:1.45!important;
+}
+.pay-main-card .pay-plan .plan-price{
+  display:flex!important;
+  align-items:flex-end!important;
+  justify-content:flex-start!important;
+  gap:7px!important;
+  min-height:38px!important;
+  margin:0 0 13px!important;
+}
+.pay-main-card .pay-plan .plan-price b{
+  position:static!important;
+  inset:auto!important;
+  transform:none!important;
+  margin:0!important;
+  color:#090909!important;
+  font-size:34px!important;
+  line-height:1!important;
+  text-shadow:none!important;
+}
+.pay-main-card .pay-plan .plan-price span{
+  display:block!important;
+  padding:0 0 3px!important;
+  color:#818181!important;
+  font-size:11px!important;
+  font-weight:600!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan .plan-features{margin-bottom:16px!important}
+.pay-main-card .pay-plan .plan-features i{
+  padding:8px 0 8px 20px!important;
+  font-size:12px!important;
+  line-height:1.3!important;
+}
+.pay-main-card .pay-plan em{
+  min-height:44px!important;
+  border-radius:8px!important;
+  font-size:12px!important;
+}
+.pay-main-card .pay-plan .plan-recommend{
+  position:absolute!important;
+  top:10px!important;
+  right:10px!important;
+  z-index:2!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  width:auto!important;
+  min-height:25px!important;
+  padding:0 9px!important;
+  border:1px solid rgba(245,176,38,.5)!important;
+  border-radius:999px!important;
+  background:#fff8e8!important;
+  color:#8a5b00!important;
+  font-size:9px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+}
+.pay-main-card .pay-plan .plan-recommend:after{display:none!important;content:none!important}
+.pay-main-card .pay-plan:hover{transform:translateY(-3px)!important}
+.pay-main-card .pay-plan.selected{
+  border-color:#f5b026!important;
+  box-shadow:0 0 0 2px rgba(245,176,38,.15),0 18px 38px rgba(109,76,10,.16)!important;
+}
+.pay-main-card .pay-plan.selected em{background:#0e1110!important;color:#fff!important}
+@media(max-width:1180px){main.pay-hero .pay-layout{grid-template-columns:1fr!important}}
+@media(max-width:900px){
+  .pay-main-card .pay-plan-grid{grid-template-columns:1fr!important;gap:16px!important}
+  .pay-main-card .pay-plan{min-height:0!important}
+}
+/* Final visual polish and responsive pass */
+.pay-title{margin-bottom:26px!important}
+.pay-card{border-color:#e7e0d5!important}
+.pay-main-card{overflow:hidden!important}
+.pay-main-card .pay-product{
+  grid-template-columns:74px minmax(0,1fr)!important;
+  min-height:96px!important;
+  gap:16px!important;
+  margin-bottom:24px!important;
+  border:0!important;
+  border-radius:16px!important;
+}
+.pay-main-card .pay-product-icon{width:64px!important;height:64px!important;border-radius:14px!important}
+.pay-main-card .pay-product-icon img{width:56px!important;height:56px!important;border-radius:11px!important}
+.pay-main-card .pay-product h2{font-size:27px!important;margin-bottom:4px!important}
+.pay-main-card .pay-product p{font-size:13px!important}
+.pay-main-card .pay-plan .pay-plan-body{background:linear-gradient(180deg,#fff 0%,#fffdf8 100%)!important}
+.pay-main-card .pay-plan.selected .pay-plan-body{background:linear-gradient(180deg,#fffdf7 0%,#fff8e8 100%)!important}
+.pay-main-card .pay-plan.selected .plan-name{color:#805500!important}
+.pay-main-card .pay-plan .plan-features i:last-child{border-bottom:1px solid #f1ede4!important}
+.summary{border-radius:22px!important}
+.summary .pay-card-inner{padding:25px!important}
+.summary h3{font-size:27px!important;margin-bottom:18px!important}
+.summary-row{padding:13px 0!important;font-size:13px!important}
+.summary-total{margin-top:16px!important;padding:18px!important;border-radius:15px!important}
+.summary-total b{font-size:34px!important}
+.summary-actions{gap:10px!important;margin-top:16px!important}
+.summary-actions .reb-btn.gold,.summary-actions .reb-btn.light{min-height:52px!important;border-radius:11px!important}
+.pay-status{font-size:13px!important;line-height:1.5!important}
+@media(max-width:767px){
+  main.pay-hero{padding:20px 12px 36px!important}
+  .pay-wrap{width:100%!important}
+  .pay-crumb{gap:7px!important;margin-bottom:14px!important;font-size:11px!important;white-space:nowrap!important;overflow-x:auto!important}
+  .pay-title{margin-bottom:20px!important}
+  .pay-title h1{font-size:31px!important;line-height:1.08!important;letter-spacing:-.035em!important}
+  .pay-title p{margin-top:8px!important;font-size:14px!important;line-height:1.45!important}
+  .pay-card{border-radius:18px!important}
+  .pay-main-card .pay-card-inner{padding:14px!important}
+  .pay-main-card .pay-product{
+    grid-template-columns:58px minmax(0,1fr)!important;
+    min-height:82px!important;
+    gap:12px!important;
+    margin-bottom:16px!important;
+    padding:12px!important;
+    border-radius:13px!important;
+  }
+  .pay-main-card .pay-product-icon{width:52px!important;height:52px!important;border-radius:11px!important}
+  .pay-main-card .pay-product-icon img{width:46px!important;height:46px!important;border-radius:9px!important}
+  .pay-main-card .pay-product h2{font-size:20px!important;line-height:1.15!important}
+  .pay-main-card .pay-product p{font-size:11.5px!important;line-height:1.4!important}
+  .pay-main-card .pay-plan-grid{gap:14px!important}
+  .pay-main-card .pay-plan{border-radius:13px!important}
+  .pay-main-card .pay-plan .pay-plan-top{min-height:72px!important;border-bottom-width:2px!important}
+  .pay-main-card .pay-plan .pay-plan-top svg{width:34px!important;height:34px!important}
+  .pay-main-card .pay-plan .pay-plan-body{padding:15px!important}
+  .pay-main-card .pay-plan .plan-name{font-size:19px!important}
+  .pay-main-card .pay-plan small{min-height:0!important;margin:5px 0 10px!important;font-size:12px!important}
+  .pay-main-card .pay-plan .plan-price{margin-bottom:10px!important}
+  .pay-main-card .pay-plan .plan-price b{font-size:31px!important}
+  .pay-main-card .pay-plan .plan-features{margin-bottom:13px!important}
+  .pay-main-card .pay-plan .plan-features i{padding-top:7px!important;padding-bottom:7px!important;font-size:11.5px!important}
+  .pay-main-card .pay-plan em{min-height:42px!important}
+  .pay-main-card .pay-plan .plan-recommend{top:8px!important;right:8px!important;min-height:22px!important;font-size:8px!important}
+  .summary{position:relative!important;top:auto!important;margin-top:16px!important}
+  .summary .pay-card-inner{padding:18px!important}
+  .summary h3{font-size:24px!important}
+  .summary-row{padding:12px 0!important}
+  .summary-total{padding:16px!important}
+  .summary-total b{font-size:31px!important}
+  .summary-actions .reb-btn.gold,.summary-actions .reb-btn.light{min-height:50px!important;font-size:13px!important}
+}
+@media(max-width:380px){
+  .pay-title h1{font-size:28px!important}
+  .pay-main-card .pay-product h2{font-size:18px!important}
+  .pay-main-card .pay-plan .plan-price b{font-size:29px!important}
+}
+/* Final typography system — aligned with surrounding marketplace UI */
+.pay-main-card .pay-plan,
+.pay-main-card .pay-plan *{
+  font-family:Ubuntu,Arial,sans-serif!important;
+  font-style:normal!important;
+}
+.pay-main-card .pay-plan .plan-name,
+.pay-main-card .pay-plan.selected .plan-name{
+  color:#15171a!important;
+  font-size:19px!important;
+  font-weight:700!important;
+  line-height:1.25!important;
+  letter-spacing:-.015em!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan small{
+  color:#667085!important;
+  font-size:13px!important;
+  font-weight:400!important;
+  line-height:1.5!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan .plan-price b,
+.pay-main-card .pay-plan.selected .plan-price b{
+  color:#101312!important;
+  font-size:33px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:-.035em!important;
+}
+.pay-main-card .pay-plan .plan-price span{
+  color:#7b8493!important;
+  font-size:11px!important;
+  font-weight:500!important;
+  line-height:1.2!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan .plan-features i{
+  color:#30343a!important;
+  font-size:12px!important;
+  font-weight:500!important;
+  line-height:1.4!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan em,
+.pay-main-card .pay-plan.selected em{
+  font-size:12px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan .plan-recommend{
+  font-size:9px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:.045em!important;
+}
+.pay-main-card .pay-product h2{
+  font-weight:700!important;
+  letter-spacing:-.02em!important;
+}
+.pay-main-card .pay-product p{
+  font-weight:500!important;
+  letter-spacing:0!important;
+}
+.summary h3{font-weight:700!important;letter-spacing:-.02em!important}
+.summary-row{font-weight:400!important}
+.summary-row b{font-weight:700!important}
+.summary-total span{font-weight:400!important}
+.summary-total b{font-weight:700!important}
+.summary-actions .reb-btn{font-weight:700!important;letter-spacing:0!important}
+@media(max-width:767px){
+  .pay-main-card .pay-plan .plan-name,
+  .pay-main-card .pay-plan.selected .plan-name{font-size:18px!important}
+  .pay-main-card .pay-plan small{font-size:12.5px!important}
+  .pay-main-card .pay-plan .plan-price b,
+  .pay-main-card .pay-plan.selected .plan-price b{font-size:30px!important}
+  .pay-main-card .pay-plan .plan-features i{font-size:12px!important}
+  .pay-main-card .pay-plan em,
+  .pay-main-card .pay-plan.selected em{font-size:12px!important}
+}
+/* Product identity and plan icon polish */
+.pay-main-card .pay-product{
+  position:relative!important;
+  grid-template-columns:94px minmax(0,1fr)!important;
+  min-height:126px!important;
+  gap:20px!important;
+  padding:17px 22px!important;
+  background:
+    radial-gradient(circle at 88% 20%,rgba(245,176,38,.14),transparent 28%),
+    linear-gradient(112deg,#101513 0%,#14160f 48%,#4d3406 100%)!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 14px 30px rgba(17,18,14,.13)!important;
+}
+.pay-main-card .pay-product:after{
+  content:""!important;
+  position:absolute!important;
+  right:22px!important;
+  top:50%!important;
+  width:74px!important;
+  height:74px!important;
+  transform:translateY(-50%)!important;
+  border:1px solid rgba(245,176,38,.13)!important;
+  border-radius:50%!important;
+  box-shadow:0 0 0 16px rgba(245,176,38,.035)!important;
+  pointer-events:none!important;
+}
+.pay-main-card .pay-product-icon{
+  position:relative!important;
+  z-index:1!important;
+  width:88px!important;
+  height:88px!important;
+  padding:4px!important;
+  border:1px solid rgba(245,176,38,.7)!important;
+  border-radius:18px!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.04))!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.3),inset 0 0 0 3px rgba(255,255,255,.08)!important;
+}
+.pay-main-card .pay-product-icon img{
+  width:78px!important;
+  height:78px!important;
+  border-radius:13px!important;
+  object-fit:cover!important;
+}
+.pay-main-card .pay-product>div:last-child{position:relative!important;z-index:1!important;min-width:0!important}
+.pay-main-card .pay-product h2{
+  margin:0 0 7px!important;
+  color:#fff!important;
+  font-size:31px!important;
+  font-weight:700!important;
+  line-height:1.1!important;
+}
+.pay-main-card .pay-product p{
+  display:inline-flex!important;
+  align-items:center!important;
+  width:auto!important;
+  min-height:29px!important;
+  margin:0!important;
+  padding:0 11px!important;
+  border:1px solid rgba(245,176,38,.28)!important;
+  border-radius:999px!important;
+  background:rgba(245,176,38,.1)!important;
+  color:#f8d47e!important;
+  font-size:12px!important;
+  font-weight:500!important;
+  line-height:1.2!important;
+}
+.pay-main-card .pay-plan .pay-plan-top{overflow:hidden!important}
+.pay-main-card .pay-plan .pay-plan-top:before{
+  content:""!important;
+  position:absolute!important;
+  width:118px!important;
+  height:118px!important;
+  border-radius:50%!important;
+  background:radial-gradient(circle,rgba(245,176,38,.16) 0%,rgba(245,176,38,0) 68%)!important;
+  pointer-events:none!important;
+}
+.pay-main-card .pay-plan .pay-plan-top svg{
+  position:relative!important;
+  z-index:1!important;
+  width:34px!important;
+  height:34px!important;
+  padding:8px!important;
+  box-sizing:content-box!important;
+  border:1px solid rgba(245,176,38,.45)!important;
+  border-radius:50%!important;
+  background:linear-gradient(145deg,rgba(245,176,38,.18),rgba(245,176,38,.05))!important;
+  box-shadow:0 8px 20px rgba(0,0,0,.28),inset 0 0 0 3px rgba(245,176,38,.05)!important;
+}
+.pay-main-card .pay-plan:hover .pay-plan-top svg,
+.pay-main-card .pay-plan.selected .pay-plan-top svg{
+  transform:translateY(-2px) scale(1.04)!important;
+  border-color:#f5b026!important;
+  background:linear-gradient(145deg,rgba(245,176,38,.28),rgba(245,176,38,.09))!important;
+}
+@media(max-width:767px){
+  .pay-main-card .pay-product{
+    grid-template-columns:70px minmax(0,1fr)!important;
+    min-height:100px!important;
+    gap:14px!important;
+    padding:14px!important;
+  }
+  .pay-main-card .pay-product:after{right:14px!important;width:54px!important;height:54px!important;box-shadow:0 0 0 11px rgba(245,176,38,.035)!important}
+  .pay-main-card .pay-product-icon{width:66px!important;height:66px!important;padding:3px!important;border-radius:14px!important}
+  .pay-main-card .pay-product-icon img{width:58px!important;height:58px!important;border-radius:10px!important}
+  .pay-main-card .pay-product h2{font-size:22px!important;margin-bottom:6px!important}
+  .pay-main-card .pay-product p{min-height:25px!important;padding:0 8px!important;font-size:10.5px!important}
+  .pay-main-card .pay-plan .pay-plan-top svg{width:29px!important;height:29px!important;padding:7px!important}
+}
+@media(max-width:380px){
+  .pay-main-card .pay-product{grid-template-columns:62px minmax(0,1fr)!important;gap:11px!important;padding:12px!important}
+  .pay-main-card .pay-product-icon{width:58px!important;height:58px!important}
+  .pay-main-card .pay-product-icon img{width:50px!important;height:50px!important}
+  .pay-main-card .pay-product h2{font-size:20px!important}
+  .pay-main-card .pay-product p{max-width:100%!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+}
+/* Verified PayPal return and secure auto-download status */
+.pay-status.is-checking{display:block;background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
+.pay-status.is-complete{display:block;background:#ecfdf5;border-color:#86efac;color:#047857}
+.pay-status.is-error{display:block;background:#fff7ed;border-color:#fed7aa;color:#c2410c}
+.pay-status a{display:inline-flex;margin-top:8px;color:inherit;font-weight:900;text-decoration:underline}
+</style>
+<link rel="stylesheet" href="/assets/css/reb-mobile-professional-v1.css?v=20260809-auth28">
+<link rel="stylesheet" href="/assets/css/reb-unified-drawer-v41.css?v=20260726-drawer47">
+<link rel="stylesheet" href="/assets/css/reb-desktop-broker-mobile-auth-v71.css?v=20260727-v71">
+<link rel="stylesheet" href="/assets/css/reb-mobile-auth-home-standard-v74.css?v=20260727-v78">
+  <link rel="stylesheet" href="/assets/css/trade-account-video-v1.css?v=1">
+<link id="reb-mobile-auth-standard-v71-css" rel="stylesheet" href="/assets/css/reb-mobile-auth-standard-v71.css?v=20260910-v71">
+<script id="reb-mobile-auth-standard-v71-js" defer src="/assets/js/reb-mobile-auth-standard-v71.js?v=20260910-v71"></script>
+
+
+
+<style id="reb-live-chat-final-inline">
+
+:root{
+  --reb-chat-gold:#f5b326;
+  --reb-chat-blue1:#087fa8;
+  --reb-chat-blue2:#0aa0cb;
+  --reb-chat-ink:#18212b;
+  --reb-chat-font:Ubuntu,"Noto Sans Khmer","Khmer OS",Arial,sans-serif;
+}
+.reb-floating-chat{display:none!important}
+
+/* Floating launcher */
+.reb-customer-chat-launcher{
+  position:fixed!important;right:18px!important;bottom:18px!important;z-index:2147483000!important;
+  width:54px!important;height:54px!important;min-width:54px!important;max-width:54px!important;padding:0!important;
+  border:0!important;border-radius:50%!important;background:#101214!important;overflow:visible!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;
+  box-shadow:0 10px 28px rgba(0,0,0,.32),0 0 0 2px rgba(245,179,38,.18)!important;
+  animation:rebSupportBounce 1.75s ease-in-out infinite!important;
+}
+.reb-customer-chat-launcher:hover{transform:scale(1.08)!important}
+.reb-support-launcher-image{
+  display:block!important;width:46px!important;height:46px!important;object-fit:contain!important;border-radius:50%!important;pointer-events:none!important;
+}
+.reb-chat-launcher-badge{
+  position:absolute!important;top:-5px!important;right:-5px!important;display:none!important;
+  min-width:19px!important;height:19px!important;padding:0 5px!important;border-radius:999px!important;
+  align-items:center!important;justify-content:center!important;background:#e53935!important;color:#fff!important;
+  border:2px solid #fff!important;font:900 10px/1 Arial,sans-serif!important;
+}
+.reb-chat-launcher-badge.show{display:flex!important}
+@keyframes rebSupportBounce{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  22%{transform:translateY(-9px) rotate(-5deg)}
+  45%{transform:translateY(-2px) rotate(4deg)}
+  70%{transform:translateY(-7px) rotate(-3deg)}
+}
+
+/* Chat shell desktop */
+.reb-chat-shell{
+  position:fixed!important;right:20px!important;bottom:84px!important;z-index:2147483100!important;
+  width:390px!important;height:610px!important;max-width:calc(100vw - 32px)!important;max-height:calc(100vh - 110px)!important;
+  background:#fff!important;border:1px solid #dfe5ea!important;border-radius:20px!important;
+  box-shadow:0 24px 70px rgba(10,22,34,.30)!important;overflow:hidden!important;display:none!important;
+  font-family:var(--reb-chat-font)!important;color:var(--reb-chat-ink)!important;
+}
+.reb-chat-shell.open{display:flex!important;flex-direction:column!important}
+.reb-chat-shell,.reb-chat-shell *{box-sizing:border-box}
+.reb-chat-shell button,.reb-chat-shell input,.reb-chat-shell textarea,.reb-chat-shell a,.reb-chat-shell span,.reb-chat-shell strong{
+  font-family:var(--reb-chat-font)!important;
+}
+
+.reb-chat-header{
+  flex:0 0 66px!important;min-height:66px!important;padding:10px 12px!important;
+  display:flex!important;align-items:center!important;gap:10px!important;background:linear-gradient(135deg,#111317,#25272b)!important;color:#fff!important;
+}
+.reb-chat-avatar{width:40px!important;height:40px!important;flex:0 0 40px!important;border-radius:12px!important;background:var(--reb-chat-gold)!important;display:flex!important;align-items:center!important;justify-content:center!important;color:#111!important}
+.reb-chat-headcopy{min-width:0!important;flex:1!important}
+.reb-chat-headcopy strong{display:block!important;font-size:14px!important;font-weight:800!important}
+.reb-chat-headcopy span{display:block!important;margin-top:2px!important;color:#cbd0d5!important;font-size:10px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.reb-chat-close{width:34px!important;height:34px!important;border-radius:10px!important;border:1px solid rgba(255,255,255,.14)!important;background:rgba(255,255,255,.07)!important;color:#fff!important;cursor:pointer!important}
+
+.reb-chat-status{display:none!important;padding:6px 9px!important;background:#fff7df!important;color:#7a5a00!important;font-size:10px!important}
+.reb-chat-status.show{display:block!important}
+.reb-chat-status.error{background:#fff0f0!important;color:#a82727!important}
+.reb-chat-progress{display:none!important;height:2px!important;background:#eee!important}
+.reb-chat-progress.show{display:block!important}
+
+.reb-chat-body{
+  flex:1 1 auto!important;min-height:0!important;overflow:auto!important;padding:10px 9px 12px!important;
+  background:linear-gradient(180deg,#f7f8fa,#f2f5f7)!important;
+}
+.reb-chat-empty,.reb-chat-login{height:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;padding:18px!important;color:#7a858f!important}
+.reb-chat-empty strong{color:#27313b!important;margin-bottom:5px!important}
+.reb-chat-empty p,.reb-chat-login p{margin:0!important;font-size:11px!important;line-height:1.5!important}
+.reb-empty-icon{width:40px!important;height:40px!important;border-radius:12px!important;background:#fff1c4!important;color:#b77b00!important;display:flex!important;align-items:center!important;justify-content:center!important;margin-bottom:10px!important}
+.reb-chat-day{text-align:center!important;margin:7px 0!important}
+.reb-chat-day span{display:inline-block!important;background:#e7ebef!important;border-radius:999px!important;padding:3px 7px!important;font-size:9px!important;color:#6f7983!important}
+.reb-chat-row{display:flex!important;margin:7px 0!important}
+.reb-chat-row.user{justify-content:flex-end!important}
+.reb-chat-row.admin{justify-content:flex-start!important}
+.reb-chat-bubble{
+  display:inline-block!important;width:auto!important;max-width:84%!important;padding:8px 10px!important;border-radius:15px!important;overflow:hidden!important;
+}
+.reb-chat-row.user .reb-chat-bubble{background:linear-gradient(145deg,var(--reb-chat-blue1),var(--reb-chat-blue2))!important;color:#fff!important;border-bottom-right-radius:5px!important}
+.reb-chat-row.admin .reb-chat-bubble{background:#fff!important;color:#202832!important;border:1px solid #e3e8ec!important;border-bottom-left-radius:5px!important}
+.reb-chat-sender{font-size:10px!important;font-weight:800!important;margin-bottom:4px!important;color:#a87600!important}
+.reb-chat-row.user .reb-chat-sender{color:#e9fbff!important;text-align:right!important}
+.reb-chat-text{font-size:12px!important;line-height:1.45!important;white-space:pre-wrap!important;word-break:break-word!important}
+.reb-chat-meta{margin-top:4px!important;display:flex!important;justify-content:flex-end!important;gap:4px!important;font-size:9px!important;color:#919ba4!important}
+.reb-chat-row.user .reb-chat-meta{color:rgba(255,255,255,.80)!important}
+.reb-chat-inline-link{color:#eaffff!important;text-decoration:underline!important;overflow-wrap:anywhere!important}
+.reb-chat-row.admin .reb-chat-inline-link{color:#136fca!important}
+
+.reb-chat-media{display:block!important;width:max-content!important;max-width:250px!important;margin-top:5px!important;border-radius:10px!important;overflow:hidden!important}
+.reb-chat-media img,.reb-chat-media video{display:block!important;max-width:250px!important;max-height:220px!important;width:auto!important;height:auto!important;object-fit:contain!important;border-radius:10px!important}
+.reb-chat-media audio{display:block!important;width:220px!important;max-width:100%!important;height:40px!important}
+.reb-chat-file-card{display:flex!important;align-items:center!important;gap:7px!important;margin-top:5px!important;width:230px!important;max-width:100%!important;padding:7px!important;border-radius:10px!important;background:rgba(255,255,255,.10)!important;border:1px solid rgba(150,160,170,.25)!important}
+.reb-chat-file-icon{width:31px!important;height:31px!important;flex:0 0 31px!important;border-radius:8px!important;background:var(--reb-chat-gold)!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.reb-chat-file-copy{min-width:0!important;flex:1!important}
+.reb-chat-file-copy strong{font-size:10px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;display:block!important}
+.reb-chat-file-copy span{font-size:8.5px!important;color:#8e98a3!important;display:block!important}
+.reb-chat-file-card button{border:0!important;background:#111!important;color:#fff!important;border-radius:7px!important;padding:6px 7px!important;font-size:9px!important}
+
+.reb-chat-rich-preview{margin-top:6px!important}
+.reb-chat-preview-card{display:flex!important;width:250px!important;max-width:100%!important;min-height:62px!important;border-radius:10px!important;overflow:hidden!important;text-decoration:none!important;border:1px solid rgba(150,160,170,.25)!important;background:rgba(255,255,255,.09)!important;color:inherit!important}
+.reb-chat-row.admin .reb-chat-preview-card{background:#f7f8fa!important;color:#1f2933!important}
+.reb-chat-preview-card>img{width:76px!important;height:64px!important;object-fit:cover!important;flex:0 0 76px!important}
+.reb-chat-preview-thumb-fallback{width:64px!important;flex:0 0 64px!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#dff5fb!important;color:#087fa8!important}
+.reb-chat-preview-copy{min-width:0!important;flex:1!important;padding:7px!important}
+.reb-chat-preview-copy strong{font-size:10px!important;line-height:1.25!important}
+.reb-chat-preview-copy small{display:block!important;margin-top:3px!important;font-size:8px!important;opacity:.7!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.reb-chat-preview-open{width:26px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+
+.reb-chat-attach-preview{display:none!important;padding:6px 8px!important;border-top:1px solid #e7e9ed!important;background:#fff!important;font-size:10px!important}
+.reb-chat-attach-preview.show{display:flex!important;align-items:center!important;justify-content:space-between!important}
+.reb-chat-composer{flex:0 0 auto!important;background:#fff!important;border-top:1px solid #e5e9ed!important;padding:6px!important}
+.reb-chat-tools{display:flex!important;align-items:center!important;gap:5px!important;margin-bottom:5px!important;overflow:visible!important}
+.reb-chat-tool{
+  position:relative!important;width:33px!important;height:33px!important;flex:0 0 33px!important;border:1px solid #e2e6ea!important;background:#fff!important;border-radius:10px!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;color:#526170!important;padding:0!important;cursor:pointer!important;
+}
+.reb-chat-tool svg{width:17px!important;height:17px!important;pointer-events:none!important}
+.reb-chat-mic{color:#a62f2f!important;background:#fff8f8!important;border-color:#efd5d5!important;touch-action:none!important}
+.reb-chat-mic.recording{background:#d92d2d!important;color:#fff!important}
+.reb-chat-record-label{display:none!important;color:#c43333!important;font-size:9px!important;font-weight:800!important}
+.reb-chat-mic.recording~.reb-chat-record-label{display:inline!important}
+
+.reb-chat-compose-row{display:flex!important;align-items:flex-end!important;gap:5px!important}
+.reb-chat-text-indicator{width:32px!important;height:38px!important;flex:0 0 32px!important;border:1px solid #e3e7eb!important;background:#f7f8fa!important;border-radius:10px!important;display:flex!important;align-items:center!important;justify-content:center!important;color:#64717e!important}
+.reb-chat-input{flex:1!important;min-height:38px!important;max-height:66px!important;resize:none!important;border:1px solid #dfe4e8!important;background:#f8f9fa!important;border-radius:10px!important;padding:9px!important;font-size:12px!important;outline:none!important}
+.reb-chat-send{width:38px!important;height:38px!important;flex:0 0 38px!important;border:0!important;border-radius:10px!important;background:var(--reb-chat-gold)!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important}
+
+/* ONE mobile rule only */
+@media (max-width:760px),(pointer:coarse){
+  .reb-customer-chat-launcher{
+    right:14px!important;bottom:14px!important;width:50px!important;height:50px!important;min-width:50px!important;max-width:50px!important;
+  }
+  .reb-support-launcher-image{width:42px!important;height:42px!important}
+  .reb-chat-shell{
+    right:14px!important;bottom:72px!important;left:auto!important;top:auto!important;
+    width:286px!important;height:390px!important;min-width:0!important;min-height:0!important;
+    max-width:calc(100vw - 84px)!important;max-height:calc(100dvh - 180px)!important;
+    border-radius:20px!important;
+  }
+  .reb-chat-header{flex-basis:58px!important;min-height:58px!important;padding:8px 9px!important}
+  .reb-chat-avatar{width:36px!important;height:36px!important;flex-basis:36px!important}
+  .reb-chat-headcopy strong{font-size:12px!important}
+  .reb-chat-headcopy span{font-size:9px!important}
+  .reb-chat-body{padding:7px!important}
+  .reb-chat-bubble{max-width:90%!important}
+  .reb-chat-media,.reb-chat-media img,.reb-chat-media video{max-width:205px!important}
+  .reb-chat-media audio{width:195px!important}
+  .reb-chat-file-card,.reb-chat-preview-card{width:205px!important}
+  .reb-chat-composer{padding:5px!important}
+  .reb-chat-tool{width:31px!important;height:31px!important;flex-basis:31px!important}
+  .reb-chat-input{min-height:36px!important;max-height:56px!important;padding:8px!important;font-size:11.5px!important}
+  .reb-chat-send{width:36px!important;height:36px!important;flex-basis:36px!important}
+  .reb-chat-text-indicator{width:30px!important;height:36px!important;flex-basis:30px!important}
+}
+
+/* Upload fallback panel: browser-native file inputs are intentionally NOT hidden/styled. */
+.reb-chat-native-picker-panel[hidden]{display:none!important}
+.reb-chat-native-picker-panel{
+  margin:0 0 7px!important;padding:8px!important;border:1px solid #dfe5ea!important;
+  border-radius:11px!important;background:#f8fafb!important;box-shadow:0 6px 18px rgba(0,0,0,.08)!important;
+}
+.reb-chat-native-picker-head{display:flex!important;align-items:center!important;justify-content:space-between!important;margin-bottom:7px!important}
+.reb-chat-native-picker-head strong{font-size:11px!important;color:#28333d!important}
+.reb-chat-native-picker-close{
+  width:26px!important;height:26px!important;border:0!important;border-radius:7px!important;
+  background:#eceff2!important;color:#333!important;font-size:16px!important;cursor:pointer!important;
+}
+.reb-chat-native-picker-row{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:7px!important;background:#fff!important;border:1px solid #e5e9ed!important;border-radius:9px!important;
+}
+.reb-chat-native-picker-row span{font-size:10.5px!important;font-weight:700!important;color:#46525e!important}
+.reb-chat-native-picker-row input[type="file"]{
+  position:static!important;display:block!important;width:165px!important;height:auto!important;
+  opacity:1!important;visibility:visible!important;pointer-events:auto!important;
+  font-size:10px!important;color:#333!important;background:transparent!important;
+}
+@media(max-width:760px),(pointer:coarse){
+  .reb-chat-native-picker-panel{padding:7px!important}
+  .reb-chat-native-picker-row{display:block!important}
+  .reb-chat-native-picker-row span{display:block!important;margin-bottom:5px!important}
+  .reb-chat-native-picker-row input[type="file"]{width:100%!important;font-size:10px!important}
+}
+
+.reb-chat-media-panel .reb-chat-native-picker-row,.reb-chat-file-panel .reb-chat-native-picker-row{margin:0!important}
+
+</style>
+</head>
+<body class="reb-subpage reb-payment-page">
+<div class="reb-top"><div class="reb-phone"><svg class="reb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 2.9 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.4 22 2 13.6 2 3.4 2 2.7 2.5 2.2 3.2 2.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.7.6 4 .1.4 0 .8-.3 1.2l-1.7 2.2z"/></svg>+855 93 525 363</div><div class="reb-actions reb-auth-trade-standard"><a href="/signup/">Sign Up</a><a href="/login/">Log In</a></div></div>
+<header class="reb-header"><a class="reb-logo" href="/"><img src="/assets/images/logo.png" alt="ReachEmpireBot"></a><button class="reb-mobile-menu-toggle" type="button" aria-expanded="false" aria-label="Open navigation" onclick="var n=this.nextElementSibling,o=n.classList.toggle('is-open');this.classList.toggle('is-open',o);this.setAttribute('aria-expanded',o?'true':'false')"><span></span><span></span><span></span></button>
+      <nav class="reb-nav"><a href="/">Home</a><a href="/download/">Download</a><a class="active" href="/markets/">EA Bot Market</a>
+        <a href="/create-trade-account/">Trade Account</a><a href="/contact/">Contact Us</a><a href="/about/">About Us</a></nav></header>
+<main class="pay-hero">
+  <div class="pay-wrap">
+    <div class="pay-crumb"><a href="/markets/">EA Bot Market</a>
+        <span>/</span><a id="backToEa" href="/markets/">EA Details</a><span>/</span><b>Payment</b></div>
+    <div class="pay-title">
+      <div><h1>Complete Your EA License</h1><p>Choose your EA license plan and continue to checkout.</p></div>
+    </div>
+    <div class="pay-layout">
+      <div class="pay-card pay-main-card">
+        <div class="pay-card-inner">
+          <div class="pay-product">
+            <div class="pay-product-icon"><img id="productImage" src="/assets/images/resource/reb-robot.png" alt="EA Bot image"></div>
+            <div><h2 id="productTitle">EA Bot Package</h2><p id="productMeta">MT5 Expert Advisor license from ReachEmpireBot Marketplace.</p></div>
+          </div>
+          <div class="pay-plan-grid">
+            <button class="pay-plan" type="button" data-plan="Monthly" data-kind="subscription"><span class="pay-plan-top"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6c-12 0-22 4.5-22 10s10 10 22 10 22-4.5 22-10S44 6 32 6Zm-22 20v8c0 5.5 10 10 22 10 12 0 22-4.5 22-10v-8c-5 4-13 6-22 6s-17-2-22-6Zm0 18v4c0 5.5 10 10 22 10 12 0 22-4.5 22-10v-4c-5 4-13 6-22 6s-17-2-22-6Z"/></svg></span><span class="pay-plan-body"><span class="plan-name">Monthly Plan</span><small>Flexible access with monthly renewal.</small><span class="plan-price"><b id="monthlyPrice">$0</b><span>/ month</span></span><span class="plan-features"><i>EA license access</i><i>Setup support</i><i>Manual activation</i></span><em>Choose Monthly</em></span></button>
+            <button class="pay-plan" type="button" data-plan="Annual" data-kind="subscription"><span class="pay-plan-top"><span class="plan-recommend">Best Value</span><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 8 14v16c0 15 10 25 24 30 14-5 24-15 24-30V14L32 4Zm0 10 14 6v10c0 9-5 16-14 20-9-4-14-11-14-20V20l14-6Zm-3 8v8h-8v6h8v8h6v-8h8v-6h-8v-8h-6Z"/></svg></span><span class="pay-plan-body"><span class="plan-name">Annual Plan</span><small>Best for long-term EA operation.</small><span class="plan-price"><b id="annualPrice">$0</b><span>/ year</span></span><span class="plan-features"><i>EA license access</i><i>Priority setup help</i><i>Lower yearly cost</i></span><em>Choose Annual</em></span></button>
+            <button class="pay-plan featured selected" type="button" data-plan="Lifetime" data-kind="one_time"><span class="pay-plan-top"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m12 12-8 14 28 34 28-34-8-14H12Zm5 8h10l-5 8H12l5-8Zm16 0h10l5 8H28l5-8Zm15 14L35 50l5-16h8Zm-24 0 5 16-13-16h8Zm8-15 5 9H27l5-9Z"/></svg></span><span class="pay-plan-body"><span class="plan-name">Lifetime Plan</span><small>One-time payment for permanent package access.</small><span class="plan-price"><b id="lifetimePrice">$0</b><span>/ one-time</span></span><span class="plan-features"><i>Lifetime package access</i><i>Setup support</i><i>Best long-term value</i></span><em>Choose Lifetime</em></span></button>
+          </div>
+        </div>
+      </div>
+      <aside class="pay-card summary">
+        <div class="pay-card-inner">
+          <h3>Order Summary</h3>
+          <div class="summary-row"><span>EA Bot</span><b id="summaryTitle">EA Bot Package</b></div>
+          <div class="summary-row"><span>Category</span><b id="summaryCategory">Forex</b></div>
+          <div class="summary-row"><span>Plan</span><b id="summaryPlan">Lifetime</b></div>
+          <div class="summary-row"><span>Payment Type</span><b id="summaryKind">One-time</b></div>
+          <div class="summary-total"><span>Total Due</span><b id="summaryAmount">$0</b></div>
+          <div class="summary-actions">
+            <button class="reb-btn gold" type="button" id="continuePayPal"><span class="paypal-wordmark large"><span class="pay-pal-blue">Pay</span><span class="pay-pal-light">Pal</span></span> Continue to PayPal</button>
+            <a class="reb-btn light" id="editPlan" href="/markets/"><svg class="reb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.8 19.2 3.6 12l7.2-7.2 1.5 1.5L7.7 11H21v2H7.7l4.6 4.7-1.5 1.5z"/></svg> Back to EA Details</a>
+          </div>
+          <div class="pay-status" id="payStatus"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+<footer class="reb-clean-footer">
+  <div class="reb-clean-footer-inner">
+    <div class="reb-clean-footer-grid">
+      <div class="reb-clean-footer-brand"><a href="/"><img class="reb-clean-footer-logo" src="/assets/images/logo-2.png" alt="ReachEmpireBot"></a><p>AI-assisted auto trading software for disciplined MT5 execution, setup guidance, copy trading information, and risk-aware automation support.</p></div>
+      <div><h3>Main Pages</h3><nav class="reb-clean-footer-links"><a href="/">Home</a><a href="/download/">Download</a><a href="/markets/">EA Bot Market</a>
+        <a href="/create-trade-account/">Trade Account</a><a href="/about/">About Us</a></nav></div>
+      <div><h3>Markets</h3><nav class="reb-clean-footer-links"><a href="/forex-trading/">Forex Trading</a><a href="/crypto-trading/">Crypto Trading</a><a href="/metal-trading/">Metal Trading</a></nav></div>
+      <div><h3>Contact Info</h3><div class="reb-contact-list"><a class="reb-contact-row phone" href="tel:+85593525363"><span class="contact-icon"><svg class="reb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 2.9 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.4 22 2 13.6 2 3.4 2 2.7 2.5 2.2 3.2 2.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.7.6 4 .1.4 0 .8-.3 1.2l-1.7 2.2z"/></svg></span><span>093 525 363</span></a><a class="reb-contact-row email" href="mailto:reachempirebot@gmail.com"><span class="contact-icon"><svg class="reb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1zm9 8.1L4.7 7H4v10h16V7h-.7L12 13.1zM6.7 7l5.3 4.4L17.3 7H6.7z"/></svg></span><span>reachempirebot@gmail.com</span></a><a class="reb-contact-row telegram" href="https://t.me/ReachEmpireBot" target="_blank" rel="noopener"><span class="contact-icon"><svg class="reb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 3.3 18.4 20c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.9.4l.3-4.6L18 7.8c.4-.3-.1-.5-.5-.2L7 14.2 2.5 12.8c-1-.3-1-.9.2-1.3L20.5 2.7c.8-.3 1.5.2 1.2.6z"/></svg></span><span>Telegram Channel</span></a></div></div>
+      <div><h3>Follow Us On</h3><div class="reb-follow-social"><a class="facebook" href="https://web.facebook.com/ReachEmpireBot" target="_blank" rel="noopener"><svg class="reb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v2H6v4h3v7h4v-7h3.2l.8-4h-4V9c0-.7.3-1 1-1z"/></svg></a><a class="youtube" href="https://www.youtube.com/@ReachEmpireBot" target="_blank" rel="noopener"><svg class="reb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.5-.8-2.1c-.8-.8-1.7-.8-2.1-.9C15.8 4 12 4 12 4s-3.8 0-6.7.2c-.4 0-1.3.1-2.1.9-.6.6-.8 2.1-.8 2.1S2.2 9 2.2 10.9v1.8c0 1.9.2 3.7.2 3.7s.2 1.5.8 2.1c.8.8 1.9.8 2.4.9 1.7.2 6.4.2 6.4.2s3.8 0 6.7-.2c.4 0 1.3-.1 2.1-.9.6-.6.8-2.1.8-2.1s.2-1.9.2-3.7v-1.8c0-1.9-.2-3.7-.2-3.7zM10.2 14.9V8.5l5.8 3.2-5.8 3.2z"/></svg></a><a class="telegram" href="https://t.me/ReachEmpireBot" target="_blank" rel="noopener"><span class="contact-icon"><svg class="reb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 3.3 18.4 20c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.9.4l.3-4.6L18 7.8c.4-.3-.1-.5-.5-.2L7 14.2 2.5 12.8c-1-.3-1-.9.2-1.3L20.5 2.7c.8-.3 1.5.2 1.2.6z"/></svg></span></a><a class="tiktok" href="https://www.tiktok.com/@reachempirebot" target="_blank" rel="noopener"><svg class="reb-tiktok-svg" viewBox="0 0 24 24"><path d="M16.7 4.2c.6 1.8 1.9 3.1 3.7 3.4v3.1c-1.5 0-2.8-.5-3.9-1.3v5.8c0 3.2-2.2 5.2-5.2 5.2-2.8 0-5-1.9-5-4.6 0-2.9 2.3-4.8 5.1-4.8.4 0 .8 0 1.1.1v3.2c-.3-.1-.7-.2-1.1-.2-1.2 0-2 .7-2 1.7 0 1 .8 1.6 1.8 1.6 1.2 0 2-.7 2-2.1V3.6h3.5v.6z" fill="currentColor"/></svg></a></div></div>
+    </div>
+    <div class="reb-clean-footer-bottom">Copyright &copy; 2026 ReachEmpireBot. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var qs=new URLSearchParams(window.location.search);
+  var apiBase=(window.REB_API_BASE||'https://admin.reachempirebot.com').replace(/\/$/,'');
+  function clean(v,fallback){return String(v||fallback||'').replace(/[<>]/g,'').trim();}
+  function money(v){var s=clean(v,'0').replace(/^\$/,'');return '$'+(s||'0');}
+  var state={
+    bot_id:clean(qs.get('bot_id')||qs.get('id'),''),
+    title:clean(qs.get('title'),'EA Bot Package'),
+    category:clean(qs.get('category'),'Forex'),
+    plan:clean(qs.get('plan'),'Lifetime'),
+    payment_type:clean(qs.get('payment_type'),'one_time'),
+    amount:clean(qs.get('amount'),'0'),
+    image:clean(qs.get('image'),'/assets/images/resource/reb-robot.png'),
+    currency:'USD'
+  };
+  var prices={Monthly:clean(qs.get('monthly'),state.amount),Annual:clean(qs.get('annual'),state.amount),Lifetime:clean(qs.get('lifetime'),state.amount)};
+  function setText(id,value){var el=document.getElementById(id);if(el)el.textContent=value;}
+  function detailUrl(){return '/markets-details/?id='+encodeURIComponent(state.bot_id||state.title);}
+  function update(){
+    setText('productTitle',state.title);
+    var img=document.getElementById('productImage');
+    if(img){img.src=state.image||'/assets/images/resource/reb-robot.png';img.alt=state.title+' image';}
+    setText('productMeta',state.category+' EA | '+state.plan+' license');
+    setText('summaryTitle',state.title);
+    setText('summaryCategory',state.category);
+    setText('summaryPlan',state.plan);
+    setText('summaryKind',state.payment_type==='subscription'?'Subscription':'One-time');
+    setText('summaryAmount',money(state.amount));
+    setText('monthlyPrice',money(prices.Monthly));
+    setText('annualPrice',money(prices.Annual));
+    setText('lifetimePrice',money(prices.Lifetime));
+    document.querySelectorAll('.pay-plan').forEach(function(btn){btn.classList.toggle('selected',btn.getAttribute('data-plan')===state.plan);});
+    document.getElementById('backToEa').href=detailUrl();
+    document.getElementById('editPlan').href=detailUrl();
+  }
+  document.querySelectorAll('.pay-plan').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      state.plan=this.getAttribute('data-plan')||'Lifetime';
+      state.payment_type=this.getAttribute('data-kind')==='subscription'?'subscription':'one_time';
+      state.amount=prices[state.plan]||state.amount;
+      update();
+    });
+  });
+  document.getElementById('continuePayPal').addEventListener('click',async function(){
+    var button=this;
+    var status=document.getElementById('payStatus');
+    var payload={bot_id:state.bot_id,title:state.title,category:state.category,image:state.image,plan:state.plan,payment_type:state.payment_type,amount:state.amount,currency:state.currency};
+    button.setAttribute('disabled','disabled');
+    status.className='pay-status show';
+    status.textContent='Preparing secure checkout...';
+    try{
+      var res=await fetch(apiBase+'/api/paypal/create-checkout',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},mode:'cors',credentials:'include',body:JSON.stringify(payload)});
+      if(!res.ok) throw new Error('Payment checkout is unavailable.');
+      var data=await res.json();
+      var url=data.approval_url||data.approve_url||data.checkout_url||data.url;
+      if(!url) throw new Error('Missing PayPal approval URL from server.');
+      try{localStorage.setItem('REB_PENDING_PAYMENT',JSON.stringify(Object.assign({created:new Date().toISOString(),status:'paypal_opened',order_id:data.order_id||data.id||''},payload)));}catch(e){}
+      window.location.href=url;
+    }catch(err){
+      try{localStorage.setItem('REB_PENDING_PAYMENT',JSON.stringify(Object.assign({created:new Date().toISOString(),status:'gateway_pending'},payload)));}catch(e){}
+      status.textContent='Unable to open payment checkout right now. Please try again or contact support.';
+      button.removeAttribute('disabled');
+    }
+  });
+  async function verifyCompletedPayment(){
+    var paypalToken=clean(qs.get('token')||qs.get('order_id')||qs.get('orderId'),'');
+    var cancelled=qs.get('cancel')==='1'||qs.get('cancelled')==='true';
+    if(cancelled){
+      var cancelledStatus=document.getElementById('payStatus');
+      cancelledStatus.className='pay-status show is-error';
+      cancelledStatus.textContent='Payment was cancelled. No file has been downloaded.';
+      return;
+    }
+    if(!paypalToken)return;
+
+    var status=document.getElementById('payStatus');
+    var button=document.getElementById('continuePayPal');
+    var downloadKey='REB_DOWNLOADED_ORDER_'+paypalToken;
+    status.className='pay-status show is-checking';
+    status.textContent='Payment received. Verifying securely before download...';
+    button.setAttribute('disabled','disabled');
+
+    try{
+      var response=await fetch(apiBase+'/api/paypal/capture-order',{
+        method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+        body:JSON.stringify({order_id:paypalToken,token:paypalToken,bot_id:state.bot_id,plan:state.plan})
+      });
+      if(!response.ok)throw new Error('Payment verification is not available yet.');
+      var result=await response.json();
+      var paymentStatus=clean(result.status||result.payment_status,'').toUpperCase();
+      var downloadUrl=clean(result.signed_download_url||result.download_url||result.file_url,'');
+      if(paymentStatus!=='COMPLETED')throw new Error('Payment has not been completed yet.');
+      if(!downloadUrl)throw new Error('Payment completed, but the secure download is not ready. Please contact Admin.');
+
+      status.className='pay-status show is-complete';
+      status.innerHTML='Payment completed. Your EA download will start automatically.<br><a id="manualSecureDownload" href="#">Download again</a>';
+      var manual=document.getElementById('manualSecureDownload');
+      manual.href=downloadUrl;
+      manual.setAttribute('download','');
+      try{localStorage.removeItem('REB_PENDING_PAYMENT');}catch(e){}
+      if(!sessionStorage.getItem(downloadKey)){
+        sessionStorage.setItem(downloadKey,'1');
+        window.setTimeout(function(){
+          var link=document.createElement('a');
+          link.href=downloadUrl;link.setAttribute('download','');link.style.display='none';
+          document.body.appendChild(link);link.click();link.remove();
+        },900);
+      }
+    }catch(error){
+      status.className='pay-status show is-error';
+      status.textContent=error.message||'Unable to verify payment. No file was downloaded.';
+      button.removeAttribute('disabled');
+    }
+  }
+  update();
+  verifyCompletedPayment();
+})();
+</script>
+<script src="/assets/js/reb-auth-state.js?v=20260818-auth-ticker-v49"></script>
+<script src="/assets/js/reb-unified-drawer-v41.js?v=20260811-desktop-guard-v1"></script>
+  <script src="/assets/js/trade-account-video-v1.js?v=1"></script>
+<style id="reb-mobile-footer-v32">
+@media (max-width:767px){
+  html body .reb-clean-footer .reb-clean-footer-grid{
+    display:grid!important;
+    grid-template-columns:minmax(0,1.25fr) minmax(131px,.75fr)!important;
+    gap:18px 14px!important;
+  }
+  html body .reb-clean-footer .reb-clean-footer-brand{
+    grid-column:1/-1!important;
+  }
+  html body .reb-clean-footer .reb-clean-contact,
+  html body .reb-clean-footer .reb-clean-follow{
+    grid-column:auto!important;
+    min-width:0!important;
+  }
+  html body .reb-clean-footer .reb-contact-row span{
+    overflow-wrap:normal!important;
+    word-break:normal!important;
+  }
+  html body .reb-clean-footer .reb-contact-row.email span{
+    white-space:nowrap!important;
+    font-size:10px!important;
+  }
+  html body .reb-clean-footer .reb-follow-social{
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+    gap:5px!important;
+    align-content:start!important;
+  }
+  html body .reb-clean-footer .reb-follow-social a{
+    display:inline-flex!important;
+    width:29px!important;
+    height:29px!important;
+    border-radius:8px!important;
+    font-size:12px!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  html body .reb-clean-footer .reb-follow-social .reb-tiktok-svg{
+    width:16px!important;
+    height:16px!important;
+  }
+}
+</style>
+<script id="reb-mobile-footer-runtime-v32">
+(function () {
+  var screenWidth = window.screen && window.screen.width ? window.screen.width : 9999;
+  var innerWidth = window.innerWidth || 9999;
+  var clientWidth = document.documentElement.clientWidth || 9999;
+  var mobileBrowser = /Android|Mobile/i.test(navigator.userAgent || '');
+  if (!mobileBrowser && Math.min(screenWidth, innerWidth, clientWidth) > 767) return;
+  var grids = document.querySelectorAll('.reb-clean-footer .reb-clean-footer-grid');
+  for (var g = 0; g < grids.length; g++) {
+    grids[g].style.setProperty('grid-template-columns', 'minmax(0,1.25fr) minmax(131px,.75fr)', 'important');
+  }
+  var emails = document.querySelectorAll('.reb-clean-footer .reb-contact-row.email span');
+  for (var e = 0; e < emails.length; e++) {
+    emails[e].style.setProperty('white-space', 'nowrap', 'important');
+    emails[e].style.setProperty('word-break', 'normal', 'important');
+    emails[e].style.setProperty('overflow-wrap', 'normal', 'important');
+    emails[e].style.setProperty('font-size', '10px', 'important');
+  }
+  var groups = document.querySelectorAll('.reb-clean-footer .reb-follow-social');
+  for (var i = 0; i < groups.length; i++) {
+    var group = groups[i];
+    group.style.setProperty('display', 'flex', 'important');
+    group.style.setProperty('flex-direction', 'row', 'important');
+    group.style.setProperty('flex-wrap', 'nowrap', 'important');
+    group.style.setProperty('gap', '5px', 'important');
+    group.style.setProperty('grid-template-columns', 'none', 'important');
+    var buttons = group.querySelectorAll('a');
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].style.setProperty('display', 'inline-flex', 'important');
+      buttons[j].style.setProperty('flex', '0 0 29px', 'important');
+      buttons[j].style.setProperty('width', '29px', 'important');
+      buttons[j].style.setProperty('height', '29px', 'important');
+      buttons[j].style.setProperty('min-width', '29px', 'important');
+      buttons[j].style.setProperty('min-height', '29px', 'important');
+      buttons[j].style.setProperty('max-width', '29px', 'important');
+      buttons[j].style.setProperty('max-height', '29px', 'important');
+      buttons[j].style.setProperty('font-size', '12px', 'important');
+      buttons[j].style.setProperty('border-radius', '8px', 'important');
+      buttons[j].style.setProperty('align-items', 'center', 'important');
+      buttons[j].style.setProperty('justify-content', 'center', 'important');
+    }
+  }
+})();
+</script>
+<style id="reb-mobile-auth-hardfix-v33">
+@media(max-width:767px){
+ html body .main-header .header-top .option-block,html body .reb-top .reb-actions,html body .reb-top .reb-login{box-sizing:border-box!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;width:min(300px,calc(100vw - 28px))!important;margin-left:auto!important;margin-right:14px!important;padding:0!important;background:transparent!important;border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important}
+ html body .main-header .header-top .option-block .language-picker{display:none!important}
+ html body .main-header .header-top .option-block a[href*="/signup/"],html body .reb-top .reb-actions a[href*="/signup/"],html body .reb-top .reb-login a[href*="/signup/"]{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;margin:0!important;padding:0 8px!important;border:1px solid #ffb11b!important;border-radius:9px!important;background:#ffb11b!important;background-image:none!important;color:#090909!important;font-size:13px!important;font-weight:800!important;line-height:1!important;box-shadow:none!important;transform:none!important}
+ html body .main-header .header-top .option-block a[href*="/signup/"]::before,html body .main-header .header-top .option-block a[href*="/signup/"]::after,html body .reb-top a[href*="/signup/"]::before,html body .reb-top a[href*="/signup/"]::after{content:none!important;display:none!important;opacity:0!important;visibility:hidden!important;transform:none!important;background:transparent!important}
+ html body .main-header .header-top .option-block a[href*="/login/"],html body .reb-top .reb-actions a[href*="/login/"],html body .reb-top .reb-login a[href*="/login/"]{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;margin:0!important;padding:0 8px!important;border:1px solid #59605f!important;border-radius:9px!important;background:#101413!important;background-image:none!important;color:#fff!important;font-size:13px!important;font-weight:800!important;line-height:1!important;box-shadow:none!important}
+ html body .main-header .header-top .option-block.reb-auth-logged-in .reb-session-account,html body .reb-top .reb-auth-logged-in .reb-session-account{background:#181b18!important;border-color:#a27618!important;color:#fff!important}
+ html body .main-header .header-top .option-block.reb-auth-logged-in .reb-session-logout,html body .reb-top .reb-auth-logged-in .reb-session-logout{background:#321919!important;border-color:#8b3b3b!important;color:#fff!important}
+}
+</style>
+<script id="reb-mobile-auth-hardfix-v33-runtime">
+(function(){function run(){if(Math.min(innerWidth||9999,document.documentElement.clientWidth||9999)>767&&!/Android|iPhone|Mobile/i.test(navigator.userAgent||''))return;var a=document.querySelectorAll('a[href*="/login/"]');for(var i=0;i<a.length;i++)if(!a[i].classList.contains('reb-session-logout'))a[i].textContent='Log In';var s=document.querySelectorAll('a[href*="/signup/"]');for(var j=0;j<s.length;j++)s[j].textContent='Sign Up'}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();setTimeout(run,300)})();
+</script>
+<link id="reb-mobile-auth-home-v36" rel="stylesheet" href="/assets/css/reb-mobile-auth-home-v36.css?v=20260809-v36">
+
+<!-- REB TRADE ACCOUNT AUTH STANDARD - copied 1:1 geometry to all pages -->
+<style id="reb-trade-account-auth-standard-all-pages">
+@media(max-width:640px){
+  html body .reb-top{padding:12px 20px!important;justify-content:flex-end!important;gap:0!important;}
+  html body .reb-top .reb-phone{display:none!important;}
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login{
+    width:auto!important;max-width:100%!important;display:flex!important;grid-template-columns:none!important;
+    justify-content:center!important;gap:8px!important;flex:0 0 auto!important;
+    margin-left:auto!important;margin-right:0!important;padding:0!important;
+    background:transparent!important;border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important;
+  }
+  html body .reb-top .reb-actions a,
+  html body .reb-top .reb-login a{
+    box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;
+    width:auto!important;min-width:86px!important;max-width:none!important;height:40px!important;min-height:40px!important;max-height:40px!important;
+    margin:0!important;padding:0 14px!important;border-radius:8px!important;font-size:15px!important;font-weight:800!important;
+    line-height:1!important;white-space:nowrap!important;text-align:center!important;box-shadow:none!important;transform:none!important;
+  }
+  html body .reb-top .reb-actions a[href*="/signup/"],
+  html body .reb-top .reb-login a[href*="/signup/"]{background:#f5b026!important;background-image:none!important;border:1px solid #f5b026!important;color:#070707!important;}
+  html body .reb-top .reb-actions a[href*="/login/"],
+  html body .reb-top .reb-login a[href*="/login/"]{background:#101312!important;background-image:none!important;border:1px solid rgba(255,255,255,.45)!important;color:#fff!important;}
+  html body .reb-top a[href*="/signup/"]::before,html body .reb-top a[href*="/signup/"]::after,
+  html body .reb-top a[href*="/login/"]::before,html body .reb-top a[href*="/login/"]::after{content:none!important;display:none!important;}
+}
+</style><!-- REB desktop auth: final cascade override. Keep immediately before </body>. -->
+<style id="reb-desktop-auth-final-override-v3">
+@media (min-width:768px){
+  html body .reb-top{
+    box-sizing:border-box!important;
+    width:100%!important;
+    padding:12px 5.5vw!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:18px!important;
+    position:relative!important;
+  }
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login,
+  html body.reb-home .main-header .header-top .option-block{
+    box-sizing:border-box!important;
+    display:flex!important;
+    grid-template-columns:none!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:14px!important;
+    width:auto!important;
+    max-width:none!important;
+    flex:0 0 auto!important;
+    position:absolute!important;
+    top:50%!important;
+    left:auto!important;
+    bottom:auto!important;
+    margin:0!important;
+    padding:0!important;
+    background:transparent!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    transform:translateY(-50%)!important;
+  }
+  html body:not(.reb-home) .reb-top .reb-actions,
+  html body:not(.reb-home) .reb-top .reb-login{right:5.5vw!important}
+  html body.reb-home .main-header .header-top .large-container,
+  html body.reb-home .main-header .header-top .top-inner{position:relative!important}
+  html body.reb-home .main-header .header-top .option-block{right:0!important}
+  html body .reb-top .reb-actions>a,
+  html body .reb-top .reb-login>a,
+  html body.reb-home .main-header .header-top .option-block>a{
+    box-sizing:border-box!important;
+    display:inline-flex!important;
+    visibility:visible!important;
+    opacity:1!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:44px!important;
+    min-height:44px!important;
+    max-height:44px!important;
+    margin:0!important;
+    padding:0 20px!important;
+    border-radius:8px!important;
+    background-image:none!important;
+    font-family:Ubuntu,Arial,sans-serif!important;
+    font-size:15px!important;
+    font-style:normal!important;
+    font-weight:800!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    text-align:center!important;
+    text-decoration:none!important;
+    text-transform:none!important;
+    white-space:nowrap!important;
+    box-shadow:none!important;
+    transform:none!important;
+  }
+  html body .reb-top .reb-actions>a[href*="/signup/"],
+  html body .reb-top .reb-login>a[href*="/signup/"],
+  html body.reb-home .main-header .header-top .option-block>a[href*="/signup/"]{
+    width:104px!important;
+    background:#f5b026!important;
+    border:1px solid #f5b026!important;
+    color:#070707!important;
+  }
+  html body .reb-top .reb-actions>a[href*="/login/"],
+  html body .reb-top .reb-login>a[href*="/login/"],
+  html body.reb-home .main-header .header-top .option-block>a[href*="/login/"]{
+    width:92px!important;
+    background:#101312!important;
+    border:1px solid rgba(255,255,255,.45)!important;
+    color:#fff!important;
+  }
+  html body .reb-top a[href*="/signup/"]::before,
+  html body .reb-top a[href*="/signup/"]::after,
+  html body .reb-top a[href*="/login/"]::before,
+  html body .reb-top a[href*="/login/"]::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body.reb-home .main-header .header-top .option-block .language-picker{display:none!important}
+  html body .reb-top .reb-auth-logged-in>.reb-session-account{
+    background:#181b18!important;
+    border:1px solid #a27618!important;
+    color:#fff!important;
+  }
+  html body .reb-top .reb-auth-logged-in>.reb-session-logout{
+    background:#321919!important;
+    border:1px solid #8b3b3b!important;
+    color:#fff!important;
+  }
+}
+</style>
+
+
+<style id="reb-payment-feature-check-v90">
+/* V90 — Payment plan feature icons: CSS-drawn check marks, no encoded glyphs. */
+.pay-main-card .pay-plan .plan-features i{
+  position:relative!important;
+  padding-left:22px!important;
+}
+
+.pay-main-card .pay-plan .plan-features i::before{
+  content:""!important;
+  position:absolute!important;
+  left:3px!important;
+  top:50%!important;
+  width:6px!important;
+  height:10px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-right:2px solid #f5a900!important;
+  border-bottom:2px solid #f5a900!important;
+  background:transparent!important;
+  color:transparent!important;
+  font-size:0!important;
+  line-height:0!important;
+  transform:translateY(-60%) rotate(45deg)!important;
+  transform-origin:center!important;
+  box-shadow:none!important;
+}
+
+/* Keep the same clean feature rows on mobile and desktop. */
+@media(max-width:767px){
+  .pay-main-card .pay-plan .plan-features i::before{
+    left:3px!important;
+    width:5px!important;
+    height:9px!important;
+  }
+}
+</style>
+
+
+
+<style id="reb-payment-mobile-header-standard-v91">
+/* V91 — Payment mobile header follows the same standard as public subpages. */
+@media (max-width:767px){
+  html body.reb-payment-page .reb-top{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    width:100%!important;
+  }
+
+  html body.reb-payment-page .reb-top .reb-phone{
+    display:none!important;
+  }
+
+  html body.reb-payment-page .reb-header{
+    box-sizing:border-box!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) 50px!important;
+    align-items:center!important;
+    gap:12px!important;
+    width:100%!important;
+    padding:12px 16px!important;
+    overflow:visible!important;
+  }
+
+  html body.reb-payment-page .reb-header .reb-logo{
+    display:block!important;
+    min-width:0!important;
+    width:auto!important;
+    max-width:220px!important;
+  }
+
+  html body.reb-payment-page .reb-header .reb-logo img{
+    display:block!important;
+    width:min(200px,62vw)!important;
+    max-width:100%!important;
+    height:auto!important;
+  }
+
+  html body.reb-payment-page .reb-header > button.reb-mobile-menu-toggle{
+    box-sizing:border-box!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:5px!important;
+    width:50px!important;
+    height:48px!important;
+    min-width:50px!important;
+    min-height:48px!important;
+    margin:0!important;
+    padding:0!important;
+    border:1px solid rgba(255,177,22,.45)!important;
+    border-radius:11px!important;
+    background:#10130f!important;
+    box-shadow:0 8px 18px rgba(0,0,0,.12)!important;
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+  }
+
+  html body.reb-payment-page .reb-header > button.reb-mobile-menu-toggle span{
+    display:block!important;
+    width:22px!important;
+    height:2px!important;
+    min-height:2px!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:2px!important;
+    background:#ffb11b!important;
+    opacity:1!important;
+  }
+
+  html body.reb-payment-page .reb-header > button.reb-mobile-menu-toggle.is-open span:nth-child(1){
+    transform:translateY(7px) rotate(45deg)!important;
+  }
+  html body.reb-payment-page .reb-header > button.reb-mobile-menu-toggle.is-open span:nth-child(2){
+    opacity:0!important;
+  }
+  html body.reb-payment-page .reb-header > button.reb-mobile-menu-toggle.is-open span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg)!important;
+  }
+}
+</style>
+
+
+
+<style id="reb-payment-desktop-top-align-v92">
+/* V92 — Payment desktop top bar aligns exactly with Logo (left) and Menu Bar (right). */
+@media (min-width:768px){
+  html body.reb-payment-page .reb-top{
+    box-sizing:border-box!important;
+    width:100%!important;
+    padding:12px 7vw!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:18px!important;
+    position:relative!important;
+  }
+
+  html body.reb-payment-page .reb-top .reb-phone{
+    display:flex!important;
+    align-items:center!important;
+    margin:0!important;
+    padding:0!important;
+    position:static!important;
+    transform:none!important;
+  }
+
+  html body.reb-payment-page .reb-top .reb-actions,
+  html body.reb-payment-page .reb-top .reb-login{
+    right:7vw!important;
+  }
+}
+</style>
+
+
+
+<style id="reb-payment-mobile-auth-title-standard-v93">
+/* V93 — Payment mobile auth now uses the exact approved Home-page standard. */
+@media (max-width:767px){
+
+  html body.reb-payment-page .reb-top{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    width:100%!important;
+    height:50px!important;
+    min-height:50px!important;
+    max-height:50px!important;
+    margin:0!important;
+    padding:4px 11px!important;
+    overflow:hidden!important;
+    background:#101312!important;
+  }
+
+  html body.reb-payment-page .reb-top > .reb-phone{
+    display:none!important;
+  }
+
+  /* Logged-out: EXACT shared Home-page Sign Up / Log In geometry. */
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-actions,
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-login{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    align-items:center!important;
+    justify-content:initial!important;
+    flex:0 0 auto!important;
+    width:238px!important;
+    min-width:238px!important;
+    max-width:68vw!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0 0 0 auto!important;
+    padding:4px!important;
+    gap:5px!important;
+    border:1px solid rgba(244,174,27,.34)!important;
+    border-radius:11px!important;
+    background:#111514!important;
+    background-image:none!important;
+    box-shadow:none!important;
+    transform:none!important;
+    overflow:hidden!important;
+  }
+
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-actions > a,
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-login > a{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:32px!important;
+    min-height:32px!important;
+    max-height:32px!important;
+    margin:0!important;
+    padding:6px 9px!important;
+    border-radius:7px!important;
+    font-family:Ubuntu,Arial,sans-serif!important;
+    font-size:11px!important;
+    font-style:normal!important;
+    font-weight:800!important;
+    line-height:20px!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+    text-align:center!important;
+    box-shadow:none!important;
+    transform:none!important;
+  }
+
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-actions > a[href*="/signup/"],
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-login > a[href*="/signup/"]{
+    border:1px solid #f5ab1b!important;
+    background:#ffb321!important;
+    background-image:none!important;
+    color:#0c0f0e!important;
+  }
+
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-actions > a[href*="/login/"],
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-login > a[href*="/login/"]{
+    border:1px solid rgba(255,255,255,.28)!important;
+    background:#101312!important;
+    background-image:none!important;
+    color:#fff!important;
+  }
+
+  /* Logged-in: preserve the approved Username / Log Out mobile standard. */
+  html.reb-client-logged-in body.reb-payment-page .reb-top > .reb-actions.reb-auth-logged-in,
+  html.reb-client-logged-in body.reb-payment-page .reb-top > .reb-login.reb-auth-logged-in{
+    box-sizing:border-box!important;
+    position:static!important;
+    inset:auto!important;
+    transform:none!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    align-items:center!important;
+    width:264px!important;
+    min-width:264px!important;
+    max-width:264px!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0 12px 0 auto!important;
+    padding:3px!important;
+    gap:5px!important;
+    background:#111514!important;
+    background-image:none!important;
+    border:1px solid rgba(245,176,38,.38)!important;
+    border-radius:10px!important;
+    box-shadow:none!important;
+    overflow:hidden!important;
+  }
+
+  html.reb-client-logged-in body.reb-payment-page .reb-top .reb-auth-logged-in > .reb-session-account,
+  html.reb-client-logged-in body.reb-payment-page .reb-top .reb-auth-logged-in > .reb-session-logout{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:34px!important;
+    min-height:34px!important;
+    max-height:34px!important;
+    margin:0!important;
+    padding:0 6px!important;
+    border-radius:7px!important;
+    font-family:Ubuntu,Arial,sans-serif!important;
+    font-size:10px!important;
+    font-weight:800!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    box-shadow:none!important;
+    transform:none!important;
+    background-image:none!important;
+  }
+
+  html.reb-client-logged-in body.reb-payment-page .reb-top .reb-auth-logged-in > .reb-session-account{
+    color:#fff!important;
+    background:#181b18!important;
+    border:1px solid #a27618!important;
+  }
+
+  html.reb-client-logged-in body.reb-payment-page .reb-top .reb-auth-logged-in > .reb-session-logout{
+    color:#fff!important;
+    background:#321919!important;
+    border:1px solid #8b3b3b!important;
+  }
+
+  html body.reb-payment-page .reb-top a::before,
+  html body.reb-payment-page .reb-top a::after{
+    content:none!important;
+    display:none!important;
+  }
+
+  /* Smaller, cleaner Payment title on phones. */
+  html body.reb-payment-page main.pay-hero .pay-title h1{
+    font-size:27px!important;
+    line-height:1.06!important;
+    letter-spacing:-.035em!important;
+    margin:0!important;
+  }
+
+  html body.reb-payment-page main.pay-hero .pay-title p{
+    margin-top:8px!important;
+    font-size:14px!important;
+    line-height:1.45!important;
+  }
+}
+
+@media (max-width:374px){
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-actions,
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-login{
+    width:min(212px,70vw)!important;
+    min-width:0!important;
+  }
+
+  html.reb-client-logged-in body.reb-payment-page .reb-top > .reb-actions.reb-auth-logged-in,
+  html.reb-client-logged-in body.reb-payment-page .reb-top > .reb-login.reb-auth-logged-in{
+    width:248px!important;
+    min-width:248px!important;
+    max-width:248px!important;
+    margin-right:10px!important;
+  }
+
+  html body.reb-payment-page main.pay-hero .pay-title h1{
+    font-size:24px!important;
+  }
+}
+</style>
+
+
+
+<script id="reb-live-chat-final-inline-js">
+(function(){
+  'use strict';
+  if(window.__REB_LIVE_CHAT_LOADED__) return;
+  window.__REB_LIVE_CHAT_LOADED__=true;
+
+  var API_BASE=String(window.REB_API_BASE||localStorage.getItem('REB_API_BASE')||'https://admin.reachempirebot.com').replace(/\/$/,'');
+  var TOKEN_KEY='REB_CLIENT_TOKEN', USER_KEY='REB_CLIENT_USER';
+  var pollTimer=null, unreadTimer=null, statusTimer=null;
+  var mediaRecorder=null, recordStream=null, recordChunks=[], recordHoldActive=false;
+  var busy=false, lastMessageId=0, initialLoaded=false, lastKnownUnread=0;
+  var objectUrls=[], previewCache=new Map(), ids={};
+
+  function token(){var t=(localStorage.getItem(TOKEN_KEY)||'').trim();return t&&t!=='null'&&t!=='undefined'&&t.indexOf('pending-')!==0?t:'';}
+  function authHeaders(extra){var h=extra||{};var t=token();if(t)h.Authorization='Bearer '+t;return h;}
+  function userName(){try{var d=JSON.parse(localStorage.getItem(USER_KEY)||'{}')||{},p=d.profile||{};return String(p.name||p.username||d.username||'Account');}catch(e){return 'Account';}}
+  function qs(s,r){return (r||document).querySelector(s)}
+  function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function formatBytes(n){n=Number(n||0);if(!n)return '0 KB';if(n<1024*1024)return Math.max(1,Math.round(n/1024))+' KB';return (n/1024/1024).toFixed(1)+' MB';}
+  function fmtTime(v){if(!v)return '';var d=new Date(v);if(isNaN(d.getTime()))return '';return d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});}
+  function fmtDay(v){if(!v)return '';var d=new Date(v);if(isNaN(d.getTime()))return '';var t=new Date(),y=new Date(t);y.setDate(t.getDate()-1);if(d.toDateString()===t.toDateString())return 'Today';if(d.toDateString()===y.toDateString())return 'Yesterday';return d.toLocaleDateString([],{month:'short',day:'numeric',year:d.getFullYear()===t.getFullYear()?undefined:'numeric'});}
+  function setStatus(msg,isError){var e=ids.status;if(!e)return;if(!msg){e.className='reb-chat-status';e.textContent='';return;}e.textContent=msg;e.className='reb-chat-status show'+(isError?' error':'');}
+  function setProgress(on){if(ids.progress)ids.progress.classList.toggle('show',!!on);}
+  function setBusy(on){busy=!!on;if(ids.send)ids.send.disabled=busy;if(ids.tools){Array.prototype.forEach.call(ids.tools.querySelectorAll('button'),function(b){b.disabled=busy&&!b.classList.contains('reb-chat-mic');});}}
+  function badge(n){n=Math.max(0,Number(n||0));lastKnownUnread=n;if(!ids.badge)return;ids.badge.textContent=n>99?'99+':String(n);ids.badge.classList.toggle('show',n>0);}
+
+  function supportIcon(){return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2Z"/><path d="M20 14h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2Z"/><path d="M17 20c-1 1-2.7 1-5 1"/></svg>';}
+  function chatIcon(name){
+    var common='viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+    var d={
+      text:'<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8M8 13h5"/>',
+      image:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m21 15-5-5L5 20"/>',
+      video:'<rect x="3" y="5" width="14" height="14" rx="2"/><path d="m17 10 4-2v8l-4-2z"/>',
+      file:'<path d="M6 2h8l4 4v16H6z"/><path d="M14 2v5h5M9 13h6M9 17h6"/>',
+      mic:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/>',
+      send:'<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>',
+      open:'<path d="M14 3h7v7M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/>'
+    };
+    return '<svg '+common+'>'+String(d[name]||d.text)+'</svg>';
+  }
+
+  function build(){
+    // Remove every legacy Telegram floating launcher. A fresh button prevents old mobile
+    // Telegram CSS from taking control of the Customer Service launcher again.
+    var legacy=Array.prototype.slice.call(document.querySelectorAll('.reb-floating-chat'));
+    var launcher=document.createElement('button');launcher.type='button';launcher.className='reb-customer-chat-launcher';launcher.setAttribute('aria-label','Open ReachEmpireBot Customer Service');
+    launcher.innerHTML='<img class="reb-support-launcher-image" src="data:image/png;base64,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" alt="Customer Support">'+'<b class="reb-chat-launcher-badge" aria-label="Unread messages">0</b>';
+    if(legacy.length&&legacy[0].parentNode) legacy[0].parentNode.insertBefore(launcher,legacy[0]); else document.body.appendChild(launcher);
+    legacy.forEach(function(el){try{el.remove();}catch(e){if(el.parentNode)el.parentNode.removeChild(el);}});
+    ids.launcher=launcher;ids.badge=qs('.reb-chat-launcher-badge',launcher);
+
+    var shell=document.createElement('section');shell.className='reb-chat-shell';shell.setAttribute('aria-label','ReachEmpireBot Customer Service Live Chat');
+    function isMobileChatClient(){
+      var ua=String(navigator.userAgent||'');
+      return /Android|iPhone|iPad|iPod|Mobile/i.test(ua) || window.innerWidth<=760 || (window.matchMedia&&window.matchMedia('(pointer:coarse)').matches);
+    }
+    function applyChatFloatingGeometry(){
+      if(!isMobileChatClient()){
+        ['left','top','right','bottom','width','max-width','min-width','height','max-height','min-height','border-radius'].forEach(function(k){shell.style.removeProperty(k);});
+        return;
+      }
+      shell.style.setProperty('position','fixed','important');
+      shell.style.setProperty('left','auto','important');
+      shell.style.setProperty('top','auto','important');
+      shell.style.setProperty('right','14px','important');
+      shell.style.setProperty('bottom','72px','important');
+      shell.style.setProperty('width','286px','important');
+      shell.style.setProperty('max-width','calc(100vw - 84px)','important');
+      shell.style.setProperty('min-width','0','important');
+      shell.style.setProperty('height','390px','important');
+      shell.style.setProperty('max-height','calc(100dvh - 180px)','important');
+      shell.style.setProperty('min-height','0','important');
+      shell.style.setProperty('border-radius','20px','important');
+    }
+    applyChatFloatingGeometry();
+    window.addEventListener('resize',applyChatFloatingGeometry,{passive:true});
+    window.addEventListener('orientationchange',function(){setTimeout(applyChatFloatingGeometry,120);},{passive:true});
+
+    shell.innerHTML='\
+      <header class="reb-chat-header">\
+        <div class="reb-chat-avatar">'+supportIcon()+'</div>\
+        <div class="reb-chat-headcopy"><strong>ReachEmpireBot Customer Service</strong><span>Live Chat • '+esc(userName())+'</span></div>\
+        <button type="button" class="reb-chat-close" aria-label="Close chat">×</button>\
+      </header>\
+      <div class="reb-chat-progress"></div>\
+      <div class="reb-chat-status" role="status" aria-live="polite"></div>\
+      <main class="reb-chat-body"></main>\
+      <div class="reb-chat-attach-preview"><span></span><button type="button" aria-label="Clear selected attachment">×</button></div>\
+      <footer class="reb-chat-composer">\
+        <div class="reb-chat-tools">\
+          <button type="button" class="reb-chat-tool reb-chat-mic" data-label="Voice" title="Hold to record voice" aria-label="Hold to record voice">'+chatIcon('mic')+'</button>\
+          <button type="button" class="reb-chat-tool reb-chat-media-picker" data-label="Photo / Video" title="Upload photo or video" aria-label="Upload photo or video">'+chatIcon('image')+'</button>\
+          <button type="button" class="reb-chat-tool reb-chat-file-tool" data-label="File" title="Upload file" aria-label="Upload file">'+chatIcon('file')+'</button>\
+          <span class="reb-chat-record-label">Recording… release to send</span>\
+        </div>\
+        <div class="reb-chat-native-picker-panel reb-chat-media-panel" hidden>\
+          <div class="reb-chat-native-picker-head"><strong>Upload Photo / Video</strong><button type="button" class="reb-chat-native-picker-close reb-chat-media-picker-close" aria-label="Close photo or video upload">×</button></div>\
+          <label class="reb-chat-native-picker-row"><span>Photo / Video</span><input class="reb-chat-media-input" type="file" accept="image/*,video/*"></label>\
+        </div>\
+        <div class="reb-chat-native-picker-panel reb-chat-file-panel" hidden>\
+          <div class="reb-chat-native-picker-head"><strong>Upload File</strong><button type="button" class="reb-chat-native-picker-close reb-chat-file-picker-close" aria-label="Close file upload">×</button></div>\
+          <label class="reb-chat-native-picker-row"><span>File</span><input class="reb-chat-file-input" type="file"></label>\
+        </div>\
+        <div class="reb-chat-tools reb-chat-tools-spacer" style="display:none">\
+          <span class="reb-chat-record-label">Recording… release to send</span>\
+        </div>\
+        <div class="reb-chat-compose-row"><span class="reb-chat-text-indicator" title="Text message" aria-hidden="true">'+chatIcon('text')+'</span><textarea class="reb-chat-input" rows="1" placeholder="Type a message…" aria-label="Text message"></textarea><button type="button" class="reb-chat-send" aria-label="Send text message">'+chatIcon('send')+'</button></div>\
+      </footer>';
+    document.body.appendChild(shell);
+    ids.shell=shell;ids.body=qs('.reb-chat-body',shell);ids.status=qs('.reb-chat-status',shell);ids.progress=qs('.reb-chat-progress',shell);ids.send=qs('.reb-chat-send',shell);ids.input=qs('.reb-chat-input',shell);ids.tools=qs('.reb-chat-tools',shell);ids.attach=qs('.reb-chat-attach-preview',shell);
+
+    launcher.addEventListener('click',function(ev){
+      var mobile=false;
+      try{
+        mobile=window.matchMedia('(max-width: 900px)').matches ||
+               window.matchMedia('(pointer: coarse)').matches ||
+               /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent||'');
+      }catch(_){ mobile=(window.innerWidth||0)<=900; }
+      if(mobile){
+        if(ev){ev.preventDefault();ev.stopPropagation();if(ev.stopImmediatePropagation)ev.stopImmediatePropagation();}
+        var from=window.location.pathname+window.location.search+window.location.hash;
+        window.location.href='/customer-service.html?v=20260915-chat-sync-v3&from='+encodeURIComponent(from);
+        return;
+      }
+      applyChatFloatingGeometry();toggle(true);
+    });
+    qs('.reb-chat-close',shell).addEventListener('click',function(){toggle(false);});
+    ids.send.addEventListener('click',sendText);
+    ids.input.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendText();}});
+    var mediaInput=qs('.reb-chat-media-input',shell), fileInput=qs('.reb-chat-file-input',shell);
+    var mediaPanel=qs('.reb-chat-media-panel',shell), filePanel=qs('.reb-chat-file-panel',shell);
+    var mediaBtn=qs('.reb-chat-media-picker',shell), fileBtn=qs('.reb-chat-file-tool',shell);
+    var mediaClose=qs('.reb-chat-media-picker-close',shell), fileClose=qs('.reb-chat-file-picker-close',shell);
+
+    function hideMediaPanel(){if(mediaPanel)mediaPanel.hidden=true;}
+    function hideFilePanel(){if(filePanel)filePanel.hidden=true;}
+
+    mediaBtn.addEventListener('click',function(e){
+      e.preventDefault();
+      hideFilePanel();
+      if(mediaPanel)mediaPanel.hidden=false;
+    });
+    fileBtn.addEventListener('click',function(e){
+      e.preventDefault();
+      hideMediaPanel();
+      if(filePanel)filePanel.hidden=false;
+    });
+    mediaClose.addEventListener('click',hideMediaPanel);
+    fileClose.addEventListener('click',hideFilePanel);
+
+    mediaInput.addEventListener('change',function(){
+      var f=this.files&&this.files[0];
+      if(f){hideMediaPanel();sendFile(f,this);}
+    });
+    fileInput.addEventListener('change',function(){
+      var f=this.files&&this.files[0];
+      if(f){hideFilePanel();sendFile(f,this);}
+    });
+    qs('button',ids.attach).addEventListener('click',function(){ids.attach.classList.remove('show');});
+
+    var mic=qs('.reb-chat-mic',shell);
+    mic.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'&&e.button!==0)return;e.preventDefault();recordHoldActive=true;try{mic.setPointerCapture(e.pointerId);}catch(_e){}startRecording();});
+    mic.addEventListener('pointerup',function(e){e.preventDefault();recordHoldActive=false;stopRecordingAndSend();});
+    mic.addEventListener('pointercancel',function(){recordHoldActive=false;cancelRecording();});
+    mic.addEventListener('lostpointercapture',function(){if(mediaRecorder&&mediaRecorder.state==='recording')stopRecordingAndSend();});
+    mic.addEventListener('contextmenu',function(e){e.preventDefault();});
+    renderLoggedOutOrEmpty();
+  }
+
+  function isOpen(){return !!(ids.shell&&ids.shell.classList.contains('open'));}
+  function toggle(open){if(!ids.shell)return;ids.shell.classList.toggle('open',open!==false);if(open!==false){if(!token()){renderLoggedOutOrEmpty();return;}loadInitial(true);startPolling();}else stopPolling();}
+  function renderLoggedOutOrEmpty(){
+    if(!ids.body)return;
+    var footer=qs('.reb-chat-composer',ids.shell);
+    if(!token()){ids.body.innerHTML='<div class="reb-chat-login"><div class="reb-empty-icon">'+supportIcon()+'</div><h4>Customer Service</h4><p>Please log in to your ReachEmpireBot account to start or continue your Live Chat.</p><a href="/login/">Log In</a></div>';if(footer)footer.style.display='none';return;}
+    if(footer)footer.style.display='block';
+    if(!initialLoaded)ids.body.innerHTML='<div class="reb-chat-empty"><div class="reb-empty-icon">'+supportIcon()+'</div><strong>ReachEmpireBot Customer Service</strong><p>Send text, voice, image, video or files. Web links can be pasted directly into a text message.</p></div>';
+  }
+
+  async function api(path,opts){opts=opts||{};opts.headers=authHeaders(opts.headers||{});var r=await fetch(API_BASE+path,opts);var d=await r.json().catch(function(){return {ok:false,message:'Invalid server response.'};});if(r.status===401){initialLoaded=false;renderLoggedOutOrEmpty();throw new Error(d.message||'Please log in again.');}if(!r.ok||d.ok===false)throw new Error(d.message||('Request failed ('+r.status+')'));return d;}
+
+  function maxMessageId(messages){var m=0;(messages||[]).forEach(function(x){m=Math.max(m,Number(x.id||0));});return m;}
+  async function loadInitial(markRead){
+    if(!token()||busy)return;
+    try{setProgress(true);var d=await api('/api/customer-chat/messages?after_id=0');renderMessages(d.messages||[]);lastMessageId=maxMessageId(d.messages||[]);initialLoaded=true;badge(d.unread||0);if(markRead&&Number(d.unread||0)>0){await api('/api/customer-chat/read',{method:'POST'});badge(0);}}
+    catch(e){setStatus(e.message,true);}finally{setProgress(false);}
+  }
+  async function pollNew(){
+    if(!isOpen()||!token()||busy)return;
+    try{var d=await api('/api/customer-chat/messages?after_id='+encodeURIComponent(lastMessageId));var msgs=d.messages||[];if(msgs.length){appendMessages(msgs);lastMessageId=Math.max(lastMessageId,maxMessageId(msgs));}badge(d.unread||0);if(Number(d.unread||0)>0){await api('/api/customer-chat/read',{method:'POST'});badge(0);}}
+    catch(_e){}
+  }
+  async function refreshStatuses(){
+    if(!isOpen()||!token()||busy)return;
+    try{var d=await api('/api/customer-chat/messages?after_id=0');patchMessageStatuses(d.messages||[]);}catch(_e){}
+  }
+  function startPolling(){stopPolling();pollTimer=setInterval(pollNew,2200);statusTimer=setInterval(refreshStatuses,12000);}
+  function stopPolling(){if(pollTimer){clearInterval(pollTimer);pollTimer=null;}if(statusTimer){clearInterval(statusTimer);statusTimer=null;}}
+  async function pollUnread(){if(!token()){badge(0);return;}try{var d=await api('/api/customer-chat/unread');badge(d.unread||0);}catch(_e){}}
+
+  function linkRegex(){return /(?:https?:\/\/|www\.)[^\s<>"']+|(?:\b[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+(?::\d+)?(?:\/[^\s<>"']*)?)/ig;}
+  function cleanUrlToken(v){return String(v||'').replace(/[),.;!?]+$/,'');}
+  function normalizeUrl(v){var u=cleanUrlToken(v).trim();if(!u)return '';return /^https?:\/\//i.test(u)?u:'https://'+u;}
+  function extractUrls(text){var raw=String(text||''),re=linkRegex(),out=[],m;while((m=re.exec(raw))){var shown=cleanUrlToken(m[0]);if(shown&&shown.indexOf('@')<0)out.push(normalizeUrl(shown));}return out;}
+  function linkifyText(text){
+    var raw=String(text||''),re=linkRegex(),html='',last=0,m;
+    while((m=re.exec(raw))){var shown=m[0],clean=cleanUrlToken(shown),href=normalizeUrl(clean);html+=esc(raw.slice(last,m.index));if(href){html+='<a class="reb-chat-inline-link" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+esc(clean)+'</a>';}else{html+=esc(clean);}if(shown.length>clean.length)html+=esc(shown.slice(clean.length));last=m.index+shown.length;}
+    html+=esc(raw.slice(last));return html;
+  }
+  function messageUrls(m){var display=String(m.message_text||m.link_url||'');return extractUrls(display);}
+
+  function renderMessages(messages){
+    if(!ids.body)return;
+    if(!messages.length){initialLoaded=true;ids.body.innerHTML='<div class="reb-chat-empty"><div class="reb-empty-icon">'+supportIcon()+'</div><strong>ReachEmpireBot Customer Service</strong><p>Send text, voice, image, video or files. Web links can be pasted directly into a text message.</p></div>';return;}
+    var html='',lastDay='';messages.forEach(function(m){var day=fmtDay(m.created_at);if(day!==lastDay){html+='<div class="reb-chat-day" data-chat-day="'+esc(day)+'"><span>'+esc(day)+'</span></div>';lastDay=day;}html+=messageHtml(m);});ids.body.innerHTML=html;hydrateNodes(ids.body);ids.body.scrollTop=ids.body.scrollHeight;
+  }
+  function appendMessages(messages){
+    if(!messages.length)return;
+    var atBottom=(ids.body.scrollHeight-ids.body.scrollTop-ids.body.clientHeight)<100;
+    if(qs('.reb-chat-empty',ids.body))ids.body.innerHTML='';
+    messages.forEach(function(m){var day=fmtDay(m.created_at),lastDay=ids.body.querySelector('.reb-chat-day:last-of-type');var dayExists=false;if(lastDay&&lastDay.dataset.chatDay===day)dayExists=true;if(!dayExists){var days=ids.body.querySelectorAll('.reb-chat-day');if(days.length&&days[days.length-1].dataset.chatDay===day)dayExists=true;}if(!dayExists)ids.body.insertAdjacentHTML('beforeend','<div class="reb-chat-day" data-chat-day="'+esc(day)+'"><span>'+esc(day)+'</span></div>');ids.body.insertAdjacentHTML('beforeend',messageHtml(m));var row=ids.body.querySelector('[data-message-id="'+Number(m.id||0)+'"]');if(row)hydrateNodes(row);});
+    if(atBottom)ids.body.scrollTop=ids.body.scrollHeight;
+  }
+  function patchMessageStatuses(messages){(messages||[]).forEach(function(m){if(m.sender_type!=='user')return;var row=ids.body&&ids.body.querySelector('[data-message-id="'+Number(m.id||0)+'"]');if(!row)return;var st=qs('.reb-chat-state',row);if(st)st.textContent=m.read_at?'Read':(m.delivered_at?'Delivered':'Sent');});}
+
+  function messageHtml(m){
+    var mine=m.sender_type==='user',att=m.attachment||null,status=mine?(m.read_at?'Read':(m.delivered_at?'Delivered':'Sent')):'',display=String(m.message_text||m.link_url||''),urls=extractUrls(display),content='';
+    if(display)content+='<div class="reb-chat-text">'+linkifyText(display)+'</div>';
+    if(urls.length===1)content+='<div class="reb-chat-rich-preview" data-link-preview="'+esc(urls[0])+'"><div class="reb-chat-link-skeleton">Loading link preview…</div></div>';
+    if(att){if(att.kind==='file')content+=fileCard(att);else content+='<div class="reb-chat-media" data-media-id="'+Number(att.id||0)+'" data-kind="'+esc(att.kind)+'" data-url="'+esc(att.url||'')+'"><div class="reb-chat-media-loading">Loading '+esc(att.kind)+'…</div></div>';}
+    var bubbleClass='reb-chat-bubble'+(att?' reb-chat-bubble-media reb-chat-bubble-'+esc(att.kind||'file'):'');return '<div class="reb-chat-row '+(mine?'user':'admin')+'" data-message-id="'+Number(m.id||0)+'"><div class="'+bubbleClass+'"><div class="reb-chat-sender">'+esc(mine?'You':(m.sender_name||'Customer Service'))+'</div>'+content+'<div class="reb-chat-meta"><span>'+esc(fmtTime(m.created_at))+'</span>'+(status?'<span>• <span class="reb-chat-state">'+esc(status)+'</span></span>':'')+'</div></div></div>';
+  }
+  function fileCard(att){return '<div class="reb-chat-file-card"><span class="reb-chat-file-icon">'+chatIcon('file')+'</span><span class="reb-chat-file-copy"><strong>'+esc(att.original_name||'File')+'</strong><span>'+esc(formatBytes(att.file_size))+'</span></span><button type="button" data-file-view="'+Number(att.id||0)+'" data-file-url="'+esc(att.url||'')+'" data-file-name="'+esc(att.original_name||'file')+'">View</button></div>';}
+  function hydrateNodes(root){Array.prototype.forEach.call(root.querySelectorAll('[data-media-id]'),loadMediaNode);Array.prototype.forEach.call(root.querySelectorAll('[data-file-view]'),function(btn){if(btn.dataset.bound)return;btn.dataset.bound='1';btn.addEventListener('click',function(){openProtectedFile(btn.dataset.fileUrl,btn.dataset.fileName);});});Array.prototype.forEach.call(root.querySelectorAll('[data-link-preview]'),loadLinkPreviewNode);}
+  async function mediaBlobUrl(rel){var r=await fetch(API_BASE+rel,{headers:authHeaders({})});if(!r.ok)throw new Error('Could not load attachment.');var blob=await r.blob(),u=URL.createObjectURL(blob);objectUrls.push(u);return u;}
+  async function loadMediaNode(node){if(node.dataset.loading)return;node.dataset.loading='1';try{var u=await mediaBlobUrl(node.dataset.url),kind=node.dataset.kind;if(kind==='image'){node.innerHTML='<img alt="Chat image">';qs('img',node).src=u;}else if(kind==='video'){node.innerHTML='<video controls playsinline preload="metadata"></video>';qs('video',node).src=u;}else if(kind==='audio'){node.innerHTML='<audio controls preload="metadata"></audio>';qs('audio',node).src=u;}}catch(e){node.innerHTML='<div class="reb-chat-media-loading">Attachment unavailable</div>';}}
+  async function openProtectedFile(rel,name){try{setProgress(true);var u=await mediaBlobUrl(rel),w=window.open(u,'_blank');if(!w){var a=document.createElement('a');a.href=u;a.download=name||'file';a.click();}}catch(e){setStatus(e.message,true);}finally{setProgress(false);}}
+  async function loadLinkPreviewNode(node){
+    if(node.dataset.loading)return;var url=node.dataset.linkPreview;if(!url)return;node.dataset.loading='1';
+    try{var p=previewCache.get(url);if(!p){var d=await api('/api/customer-chat/link-preview?url='+encodeURIComponent(url));p=d.preview||{};previewCache.set(url,p);}var href=p.final_url||url,img=p.image_url||p.icon_url||'',thumb=img?'<img src="'+esc(img)+'" alt="Link preview" loading="lazy">':'<span class="reb-chat-preview-thumb-fallback">'+chatIcon('open')+'</span>';node.innerHTML='<a class="reb-chat-preview-card" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+thumb+'<span class="reb-chat-preview-copy"><strong>'+esc(p.title||p.domain||url)+'</strong><small>'+esc(p.domain||url)+'</small></span><span class="reb-chat-preview-open">'+chatIcon('open')+'</span></a>';}
+    catch(_e){node.innerHTML='';}
+  }
+
+  async function sendText(){
+    var v=(ids.input.value||'').trim();if(!v||busy||!token())return;ids.input.value='';
+    try{setBusy(true);setProgress(true);var d=await api('/api/customer-chat/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:v})});setStatus('');if(d.message){if(qs('.reb-chat-empty',ids.body))ids.body.innerHTML='';appendMessages([d.message]);lastMessageId=Math.max(lastMessageId,Number(d.message.id||0));}else await pollNew();}
+    catch(e){ids.input.value=v;setStatus(e.message,true);}finally{setBusy(false);setProgress(false);}
+  }
+  async function sendFile(file,inputEl,forcedKind){
+    if(!file||busy||!token())return;var label=qs('span',ids.attach);label.textContent=file.name+' • '+formatBytes(file.size);ids.attach.classList.add('show');
+    try{setBusy(true);setProgress(true);var fd=new FormData();fd.append('file',file,file.name);if(forcedKind)fd.append('attachment_kind',forcedKind);var d=await api('/api/customer-chat/send',{method:'POST',body:fd});ids.attach.classList.remove('show');if(inputEl)inputEl.value='';setStatus('');if(d.message){if(qs('.reb-chat-empty',ids.body))ids.body.innerHTML='';appendMessages([d.message]);lastMessageId=Math.max(lastMessageId,Number(d.message.id||0));}else await pollNew();}
+    catch(e){setStatus(e.message,true);}finally{setBusy(false);setProgress(false);}
+  }
+
+  async function startRecording(){
+    var btn=qs('.reb-chat-mic',ids.shell),label=qs('.reb-chat-record-label',ids.shell);if(busy||!token()||(mediaRecorder&&mediaRecorder.state==='recording'))return;if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia||typeof MediaRecorder==='undefined'){setStatus('Voice recording is not supported by this browser.',true);return;}
+    try{recordStream=await navigator.mediaDevices.getUserMedia({audio:true});if(!recordHoldActive){recordStream.getTracks().forEach(function(t){t.stop();});recordStream=null;return;}recordChunks=[];var mime='';['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg;codecs=opus'].some(function(m){if(MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(m)){mime=m;return true;}return false;});mediaRecorder=mime?new MediaRecorder(recordStream,{mimeType:mime}):new MediaRecorder(recordStream);mediaRecorder.ondataavailable=function(e){if(e.data&&e.data.size)recordChunks.push(e.data);};mediaRecorder.onstop=async function(){btn.classList.remove('recording');label.classList.remove('show');if(recordStream)recordStream.getTracks().forEach(function(t){t.stop();});var recorder=mediaRecorder,type=(recorder&&recorder.mimeType)||mime||'audio/webm',chunks=recordChunks.slice();mediaRecorder=null;recordStream=null;recordChunks=[];if(!chunks.length)return;var ext=type.indexOf('mp4')>=0?'m4a':(type.indexOf('ogg')>=0?'ogg':'webm'),blob=new Blob(chunks,{type:type});if(blob.size<300)return;var f=new File([blob],'voice_'+Date.now()+'.'+ext,{type:type});await sendFile(f,null,'audio');};mediaRecorder.start(120);btn.classList.add('recording');label.classList.add('show');setStatus('');}
+    catch(e){setStatus('Microphone permission is required for voice messages.',true);if(recordStream)recordStream.getTracks().forEach(function(t){t.stop();});mediaRecorder=null;recordStream=null;recordChunks=[];btn.classList.remove('recording');label.classList.remove('show');}
+  }
+  function stopRecordingAndSend(){recordHoldActive=false;if(mediaRecorder&&mediaRecorder.state==='recording'){try{mediaRecorder.stop();}catch(e){}}}
+  function cancelRecording(){recordHoldActive=false;var btn=qs('.reb-chat-mic',ids.shell),label=qs('.reb-chat-record-label',ids.shell);if(mediaRecorder&&mediaRecorder.state==='recording'){try{mediaRecorder.onstop=null;mediaRecorder.stop();}catch(e){}}if(recordStream)recordStream.getTracks().forEach(function(t){t.stop();});mediaRecorder=null;recordStream=null;recordChunks=[];if(btn)btn.classList.remove('recording');if(label)label.classList.remove('show');}
+
+  function resetForAuth(){initialLoaded=false;lastMessageId=0;renderLoggedOutOrEmpty();pollUnread();}
+  function init(){build();pollUnread();unreadTimer=setInterval(pollUnread,5000);window.addEventListener('storage',function(e){if(e.key===TOKEN_KEY||e.key===USER_KEY)resetForAuth();});window.addEventListener('reb:auth-changed',resetForAuth);window.addEventListener('beforeunload',function(){stopPolling();objectUrls.forEach(function(u){try{URL.revokeObjectURL(u);}catch(e){}});});}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+
+</script>
+
+<script id="REB_MOBILE_CUSTOMER_SERVICE_ROUTE_ALL_PAGES_20260914">
+(function(){
+  'use strict';
+  if(/\/customer-service\.html$/i.test(window.location.pathname)) return;
+
+  function rebIsMobileCustomerService(){
+    try{
+      return window.matchMedia('(max-width: 900px)').matches ||
+             window.matchMedia('(pointer: coarse)').matches ||
+             /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || '');
+    }catch(_){
+      return (window.innerWidth || 0) <= 900;
+    }
+  }
+
+  function rebOpenDedicatedCustomerService(ev){
+    if(!rebIsMobileCustomerService()) return;
+    var target = ev.target && ev.target.closest ? ev.target.closest('.reb-customer-chat-launcher') : null;
+    if(!target) return;
+
+    ev.preventDefault();
+    ev.stopPropagation();
+    if(typeof ev.stopImmediatePropagation === 'function') ev.stopImmediatePropagation();
+
+    var from = window.location.pathname + window.location.search + window.location.hash;
+    window.location.assign('/customer-service.html?v=20260915-chat-sync-v3&from=' + encodeURIComponent(from));
+  }
+
+  document.addEventListener('click', rebOpenDedicatedCustomerService, true);
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

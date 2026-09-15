@@ -1,0 +1,1343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script id="reb-final-route-sync">
+(function(){
+  'use strict';
+  var V='reb-chat-final-sync-20260913';
+  try{
+    var u=new URL(location.href);
+    if(u.searchParams.get('rebv')!==V){
+      u.searchParams.set('rebv',V);
+      location.replace(u.href);
+      return;
+    }
+  }catch(e){}
+  document.addEventListener('click',function(ev){
+    var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+    if(!a)return;
+    var raw=a.getAttribute('href')||'';
+    if(!raw || raw.charAt(0)==='#' || /^(mailto:|tel:|javascript:|data:)/i.test(raw))return;
+    try{
+      var x=new URL(a.href,location.href);
+      if(x.origin!==location.origin)return;
+      if(/\.(?:png|jpe?g|gif|webp|svg|css|js|woff2?|ttf|eot|mp4|webm|mov|zip|rar|7z|pdf|docx?|xlsx?|pptx?|ex5|mq5|set)$/i.test(x.pathname))return;
+      x.searchParams.set('rebv',V);
+      a.href=x.href;
+    }catch(e){}
+  },true);
+})();
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<title>ReachEmpireBot | ICT Signal</title>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{
+  --bg:#060707;--bar:#080808;--panel:#111312;--panel2:#0b0c0c;--panel3:#151716;
+  --gold:#f5b026;--teal:#00a99d;--cyan:#0faebb;--red:#ff3f54;--text:#f8f8f8;
+  --muted:#7b7f82;--line:rgba(245,176,38,.18);--signal:var(--gold);--signal-rgb:245,176,38;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:#050606;color:var(--text);font-family:'Ubuntu',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{overflow-x:hidden}
+button,a{font:inherit}
+button{cursor:pointer}
+.app-shell{width:min(100%,430px);min-height:100vh;margin:0 auto;background:radial-gradient(circle at 15% 8%,rgba(245,176,38,.09),transparent 24%),#060807;position:relative;padding-bottom:18px}
+.appbar{height:88px;background:#060606;display:flex;align-items:center;padding:calc(9px + env(safe-area-inset-top)) 14px 9px;position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(255,255,255,.025)}
+.brandmark{width:38px;height:38px;border-radius:11px;background:#fff;padding:3px;display:grid;place-items:center;overflow:hidden;flex:0 0 auto}.brandmark img{width:100%;height:100%;object-fit:contain}
+.brandcopy{margin-left:10px;min-width:0}.brandcopy strong{display:block;font-size:18px;font-weight:900;line-height:1.05}.brandcopy span{display:block;margin-top:4px;color:var(--gold);font-size:9px;font-weight:900;letter-spacing:1.25px}
+.back-btn{margin-left:auto;min-width:70px;height:36px;padding:0 12px;border-radius:11px;border:1px solid rgba(245,176,38,.38);background:rgba(245,176,38,.10);color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;font-weight:900;letter-spacing:.2px;flex:0 0 auto}.back-btn i{color:var(--gold);font-size:12px}.back-btn:active{transform:scale(.97);background:rgba(245,176,38,.18)}
+.content{padding:12px 15px 24px}
+.chip-row{display:flex;align-items:center;gap:8px;margin-bottom:13px}.chip{height:34px;padding:0 12px;border-radius:17px;border:1px solid rgba(255,255,255,.08);background:#111312;color:#e5e7e7;display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:900;white-space:nowrap}.chip i{color:var(--gold)}.chip.api{margin-left:auto}.chip.api.online{border-color:rgba(0,169,157,.26);color:#dffbf8}.chip.api.online i{color:var(--teal)}.chip.api.offline{border-color:rgba(255,63,84,.28);color:#ffd9de}.chip.api.offline i{color:var(--red)}
+.hero{height:286px;border-radius:28px;position:relative;overflow:hidden;background:linear-gradient(135deg,#251a05,#0a0a0a 53%,#061815);border:1px solid rgba(var(--signal-rgb),.50);box-shadow:0 18px 35px rgba(var(--signal-rgb),.08)}
+.scanner{position:absolute;inset:0;background:repeating-radial-gradient(circle at 50% 51%,transparent 0 36px,rgba(255,255,255,.035) 37px 38px),linear-gradient(90deg,transparent 49.8%,rgba(255,255,255,.035) 50%,transparent 50.2%),linear-gradient(transparent 49.8%,rgba(255,255,255,.035) 50%,transparent 50.2%)}
+.scanner:after{content:"";position:absolute;width:160px;height:1px;left:50%;top:51%;transform-origin:left center;background:linear-gradient(90deg,rgba(var(--signal-rgb),.8),transparent);animation:sweep 5s linear infinite}@keyframes sweep{to{transform:rotate(360deg)}}
+.hero-labels{position:absolute;top:15px;left:18px;right:18px;display:flex;justify-content:space-between}.terminal-label small{display:block;color:rgba(255,255,255,.30);font-size:8px;font-weight:900;letter-spacing:1.15px}.terminal-label strong{display:block;margin-top:3px;font-size:15px;font-weight:900;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.terminal-label.right{text-align:right}
+.signal-core{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:150px;height:150px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;border:2px solid rgba(var(--signal-rgb),.78);background:radial-gradient(circle,rgba(var(--signal-rgb),.25),rgba(0,0,0,.80) 68%);box-shadow:0 0 30px rgba(var(--signal-rgb),.20),inset 0 0 32px rgba(var(--signal-rgb),.08)}
+.signal-core:before,.signal-core:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(var(--signal-rgb),.14)}.signal-core:before{width:210px;height:210px}.signal-core:after{width:248px;height:248px;border-color:rgba(var(--signal-rgb),.075)}
+.signal-icon{font-size:33px;color:var(--signal);height:38px;display:grid;place-items:center}.signal-side{font-size:28px;line-height:1;font-weight:900;letter-spacing:1px;color:var(--signal);margin-top:2px}.signal-status{color:rgba(255,255,255,.52);font-size:9px;font-weight:900;letter-spacing:1px;margin-top:7px}
+.hero-lock{position:absolute;left:18px;right:18px;bottom:15px;min-height:43px;padding:10px 13px;border-radius:15px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.56);display:flex;align-items:center;gap:8px}.pulse{width:8px;height:8px;border-radius:50%;background:var(--signal);box-shadow:0 0 10px rgba(var(--signal-rgb),.8);flex:0 0 auto}.hero-lock strong{font-size:9px;color:rgba(255,255,255,.72);font-weight:900;letter-spacing:.65px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hero-lock em{margin-left:auto;color:rgba(255,255,255,.36);font-size:9px;font-style:normal;font-weight:900;white-space:nowrap}
+.panel{margin-top:12px;padding:15px;border-radius:22px;background:var(--panel);border:1px solid var(--line)}
+.panel-head{display:flex;align-items:flex-start;gap:10px}.panel-title{min-width:0;flex:1}.eyebrow{color:var(--gold);font-size:9px;font-weight:900;letter-spacing:1.08px}.panel-title p{margin:4px 0 0;color:rgba(255,255,255,.48);font-size:10px;font-weight:600}.rr{width:56px;height:56px;border-radius:50%;border:4px solid var(--signal);display:grid;place-items:center;color:var(--signal);font-size:9px;font-weight:900;background:rgba(0,0,0,.16);flex:0 0 auto}
+.trade-map{height:150px;margin-top:12px;position:relative;border:1px solid rgba(255,255,255,.10);border-radius:10px;overflow:hidden;background-color:#0b0e0d;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:20% 20%,16.66% 100%}
+.map-zone{position:absolute;left:0;right:0;opacity:.10}.map-zone.risk{background:var(--red)}.map-zone.reward{background:var(--teal)}
+.map-line{position:absolute;left:8px;right:8px;height:2px;background:currentColor}.map-line span{position:absolute;left:2px;bottom:5px;font-size:9px;font-weight:900;white-space:nowrap}.map-line.sl{color:var(--red)}.map-line.entry{color:var(--red)}.map-line.tp{color:var(--teal)}
+.map-arrow{position:absolute;width:2px;background:var(--signal);left:53%;transform:translateX(-50%)}.map-arrow:after{content:"";position:absolute;left:50%;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent}.map-arrow.down:after{bottom:-1px;border-top:8px solid var(--signal)}.map-arrow.up:after{top:-1px;border-bottom:8px solid var(--signal)}
+.map-wait{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.34);font-size:10px;font-weight:900;letter-spacing:.4px}
+.pipeline{margin-top:12px;padding:14px 15px;border-radius:20px;background:var(--panel);border:1px solid var(--line);display:flex;align-items:center;gap:12px}.pipeline-icon{width:46px;height:46px;border-radius:14px;background:rgba(245,176,38,.13);color:var(--gold);display:grid;place-items:center;font-size:19px;flex:0 0 auto}.pipeline-copy{min-width:0}.pipeline-copy strong{display:block;font-size:13px;font-weight:900}.pipeline-copy span{display:block;margin-top:4px;color:rgba(255,255,255,.45);font-size:10px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pipeline-copy em{display:block;margin-top:6px;color:var(--gold);font-size:9px;font-style:normal;font-weight:800;line-height:1.35}
+.section{margin-top:14px;padding:14px;border-radius:20px;background:var(--panel);border:1px solid var(--line)}.section-head{display:flex;align-items:center;gap:8px}.section-head h2{margin:0;font-size:17px;font-weight:900;flex:1}.refresh-text{border:0;background:transparent;color:var(--gold);font-size:12px;font-weight:900;padding:6px 0 6px 10px}.refresh-text:disabled{opacity:.45}.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.price-card{min-height:78px;border-radius:14px;border:1px solid currentColor;padding:10px 7px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(255,255,255,.018)}.price-card i{font-size:16px}.price-card strong{font-size:14px;font-weight:900;margin-top:6px;max-width:100%;overflow:hidden;text-overflow:ellipsis}.price-card span{margin-top:4px;color:rgba(255,255,255,.46);font-size:8px;font-weight:900;letter-spacing:.35px}.price-card.entry{color:var(--signal)}.price-card.sl{color:var(--red)}.price-card.tp{color:var(--teal)}
+.source-wide{margin-top:10px;min-height:50px;border-radius:13px;background:#0a0b0b;border:1px solid rgba(255,255,255,.05);display:flex;align-items:center;padding:10px 12px;gap:9px}.source-wide i{color:var(--gold)}.source-wide span{color:rgba(255,255,255,.42);font-size:10px}.source-wide strong{font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.confirm-wrap{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.event-chip{padding:8px 10px;border-radius:12px;background:#101827;border:1px solid rgba(255,255,255,.08);color:#b8c7e6;font-size:10px;font-weight:800}.empty{padding:16px 4px;text-align:center;color:rgba(255,255,255,.35);font-size:11px}
+.queue{margin-top:10px}.queue-item{display:flex;align-items:center;gap:10px;margin-bottom:8px;padding:11px;border-radius:13px;background:#0b0b0b;border:1px solid rgba(var(--row-rgb),.16)}.side-badge{width:48px;padding:7px 3px;border-radius:10px;text-align:center;background:rgba(var(--row-rgb),.13);color:rgb(var(--row-rgb));font-size:11px;font-weight:900;flex:0 0 auto}.queue-main{min-width:0;flex:1}.queue-main strong{display:block;font-size:12px;font-weight:800}.queue-main span{display:block;margin-top:3px;color:rgba(255,255,255,.34);font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.queue-price{font-size:11px;font-weight:900;white-space:nowrap}
+.auth-overlay{display:none;position:fixed;inset:0;background:#050606;z-index:100;align-items:center;justify-content:center;padding:20px}.auth-overlay.show{display:flex}.auth-card{width:min(100%,360px);padding:24px;border-radius:20px;background:#111312;border:1px solid var(--line);text-align:center}.auth-card i{font-size:28px;color:var(--gold)}.auth-card h2{font-size:18px}.auth-card p{color:#8b8f91;font-size:12px;line-height:1.5}.auth-card a{display:block;margin-top:14px;padding:13px;border-radius:13px;background:var(--gold);color:#111;text-decoration:none;font-weight:900}
+@media(min-width:700px){body{background:#202020}.app-shell{box-shadow:0 0 0 1px rgba(255,255,255,.04),0 0 55px rgba(0,0,0,.35)}}
+</style>
+
+<style id="reb-ict-desktop-standard-v47">
+/* Desktop-only layout. Mobile remains exactly on the existing app-style rules. */
+/* V48: desktop begins at 768px because the site mobile layout ends at 767px. */
+@media (min-width: 768px){
+  html,body{background:radial-gradient(circle at 78% 4%,rgba(245,176,38,.08),transparent 28%),#080a09!important;}
+  body{padding:24px 0 42px!important;}
+  .app-shell{
+    width:min(1180px,calc(100% - 48px))!important;
+    min-height:0!important;
+    margin:0 auto!important;
+    padding-bottom:0!important;
+    border:1px solid rgba(245,176,38,.16)!important;
+    border-radius:22px!important;
+    overflow:hidden!important;
+    background:radial-gradient(circle at 12% 8%,rgba(245,176,38,.08),transparent 25%),#080b0a!important;
+    box-shadow:0 28px 80px rgba(0,0,0,.34)!important;
+  }
+  .appbar{
+    height:76px!important;
+    position:relative!important;
+    top:auto!important;
+    padding:0 24px!important;
+    border-bottom:1px solid rgba(245,176,38,.12)!important;
+    background:linear-gradient(90deg,#080909,#0b0b0a)!important;
+  }
+  .brandmark{width:44px!important;height:44px!important;border-radius:12px!important;}
+  .brandcopy{margin-left:12px!important;}
+  .brandcopy strong{font-size:21px!important;}
+  .brandcopy span{font-size:10px!important;letter-spacing:1.4px!important;}
+  .back-btn{min-width:92px!important;height:42px!important;padding:0 16px!important;border-radius:10px!important;font-size:12px!important;}
+  .content{
+    padding:24px!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr)!important;
+    gap:18px!important;
+    align-items:stretch!important;
+  }
+  .chip-row{grid-column:1/-1!important;margin:0!important;gap:10px!important;}
+  .chip{height:38px!important;border-radius:19px!important;padding:0 14px!important;font-size:11px!important;}
+  .hero{grid-column:1!important;height:430px!important;border-radius:24px!important;}
+  .hero-labels{top:22px!important;left:24px!important;right:24px!important;}
+  .terminal-label small{font-size:9px!important;}
+  .terminal-label strong{font-size:18px!important;max-width:230px!important;}
+  .signal-core{width:188px!important;height:188px!important;}
+  .signal-core:before{width:268px!important;height:268px!important;}
+  .signal-core:after{width:330px!important;height:330px!important;}
+  .signal-icon{font-size:39px!important;height:44px!important;}
+  .signal-side{font-size:35px!important;}
+  .signal-status{font-size:10px!important;margin-top:9px!important;}
+  .hero-lock{left:24px!important;right:24px!important;bottom:22px!important;min-height:48px!important;padding:11px 15px!important;}
+  .hero-lock strong,.hero-lock em{font-size:10px!important;}
+  .panel{
+    grid-column:2!important;
+    height:430px!important;
+    margin:0!important;
+    padding:20px!important;
+    border-radius:20px!important;
+    display:flex!important;
+    flex-direction:column!important;
+  }
+  .eyebrow{font-size:10px!important;}
+  .panel-title p{font-size:11px!important;}
+  .rr{width:64px!important;height:64px!important;font-size:10px!important;}
+  .trade-map{height:auto!important;min-height:0!important;flex:1!important;margin-top:16px!important;border-radius:13px!important;}
+  .map-line span{font-size:10px!important;}
+  .pipeline{
+    grid-column:1/-1!important;
+    margin:0!important;
+    padding:16px 18px!important;
+    border-radius:16px!important;
+  }
+  .pipeline-icon{width:52px!important;height:52px!important;font-size:21px!important;}
+  .pipeline-copy strong{font-size:14px!important;}
+  .pipeline-copy span{font-size:11px!important;}
+  .pipeline-copy em{font-size:10px!important;}
+  .section{margin:0!important;padding:18px!important;border-radius:18px!important;min-height:230px!important;}
+  .section-head h2{font-size:18px!important;}
+  .refresh-text{font-size:12px!important;}
+  .price-grid{gap:11px!important;margin-top:14px!important;}
+  .price-card{min-height:105px!important;border-radius:14px!important;}
+  .price-card i{font-size:20px!important;}
+  .price-card strong{font-size:17px!important;}
+  .price-card span{font-size:9px!important;}
+  .source-wide{min-height:56px!important;margin-top:13px!important;}
+  .source-wide span{font-size:11px!important;}
+  .source-wide strong{font-size:12px!important;}
+  .queue-item{min-height:58px!important;padding:12px!important;}
+  .queue-main strong{font-size:13px!important;}
+  .queue-main span,.queue-price{font-size:10px!important;}
+  #confirmSection[hidden]{display:none!important;}
+}
+@media (min-width: 768px) and (max-width: 1080px){
+  .content{grid-template-columns:minmax(0,1fr) minmax(300px,.9fr)!important;padding:20px!important;}
+  .hero,.panel{height:400px!important;}
+}
+</style>
+
+<style id="reb-ict-desktop-stack-v49">
+/* V49 desktop-only: Trade Setup first, Signal Queue directly below it. */
+@media (min-width: 768px){
+  #tradeSetupSection,
+  #confirmSection,
+  #signalQueueSection{
+    grid-column:1 / -1!important;
+    width:100%!important;
+    max-width:none!important;
+  }
+  #tradeSetupSection{
+    min-height:0!important;
+  }
+  #signalQueueSection{
+    min-height:0!important;
+  }
+  #signalQueueSection .queue{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+  }
+  #signalQueueSection .queue-item{
+    margin:0!important;
+    min-width:0!important;
+  }
+  #signalQueueSection .empty{
+    grid-column:1 / -1!important;
+  }
+}
+@media (min-width:768px) and (max-width:980px){
+  #signalQueueSection .queue{
+    grid-template-columns:1fr!important;
+  }
+}
+</style>
+
+
+<style id="reb-one-font-standard-v51">
+/* One website font standard: Ubuntu, matching the Dashboard and standard REB pages. */
+html, body,
+.app-shell, .shell, .appbar,
+.hero, .panel, .pipeline, .section, .card,
+.page-head, .chip, .terminal-label, .signal-core,
+.reb-clean-footer, .reb-clean-footer *:not(i):not(svg):not(path) {
+  font-family: 'Ubuntu', Arial, sans-serif !important;
+}
+button, input, select, textarea {
+  font-family: 'Ubuntu', Arial, sans-serif !important;
+}
+</style>
+
+<style id="reb-home-clean-footer">
+.reb-clean-footer{background:linear-gradient(135deg,#050505 0%,#0a0a0a 58%,#1d1506 100%);color:#fff;border-top:1px solid rgba(245,176,38,.2);padding:58px 6vw 24px}.reb-clean-footer-inner{max-width:1480px;margin:0 auto}.reb-clean-footer .reb-clean-footer-grid{display:grid;grid-template-columns:minmax(310px,1.45fr) minmax(135px,.64fr) minmax(155px,.72fr) minmax(230px,.9fr) minmax(230px,.95fr)!important;gap:34px;align-items:start}.reb-clean-footer-logo{width:245px;max-width:74vw;height:auto;display:block;margin-bottom:16px}.reb-clean-footer p{color:rgba(255,255,255,.7);line-height:1.65;margin:0;font-size:15px}.reb-clean-footer h3{color:#f5b026;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin:0}.reb-clean-footer-links{display:grid;gap:11px;margin-top:15px}.reb-clean-footer-links a{color:rgba(255,255,255,.82);font-weight:700;text-decoration:none}.reb-clean-footer-links a:hover{color:#f5b026}.reb-contact-list{display:grid;gap:10px;margin-top:15px}.reb-contact-row{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:center;color:rgba(255,255,255,.82)!important;text-decoration:none;font-weight:700;line-height:1.35}.reb-contact-row:hover{color:#f5b026!important}.reb-contact-row i{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;transition:transform .18s ease,box-shadow .18s ease}.reb-contact-row:hover i{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.25)}.reb-contact-row.phone i{background:#f5b026;color:#050505}.reb-contact-row.email i{background:#6b7280}.reb-contact-row.telegram i{background:#229ed9}.reb-contact-row span{display:block;min-width:0;overflow-wrap:anywhere}.reb-contact-help{margin-top:14px!important;color:rgba(255,255,255,.62)!important;font-size:14px!important;line-height:1.55!important}.reb-follow-social{display:grid;grid-template-columns:repeat(4,44px);gap:10px;margin-top:15px}.reb-follow-social a{width:44px;height:44px;border-radius:10px;color:#fff!important;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}.reb-follow-social a:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(0,0,0,.28);filter:saturate(1.08)}.reb-follow-social .facebook{background:#1877f2}.reb-follow-social .youtube{background:#ff0000}.reb-follow-social .telegram{background:#229ed9}.reb-follow-social .tiktok{background:linear-gradient(135deg,#050505 0%,#101010 56%,#25f4ee 100%);border:1px solid rgba(255,255,255,.24);position:relative;overflow:hidden}.reb-follow-social .tiktok:after{content:"";position:absolute;right:4px;bottom:4px;width:11px;height:11px;border-radius:50%;background:#fe2c55;opacity:.82}.reb-tiktok-svg{width:21px;height:21px;position:relative;z-index:1;filter:drop-shadow(1px 1px 0 #fe2c55)}.reb-clean-footer-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.reb-clean-footer-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 16px;border-radius:8px;background:#f5b026;color:#050505!important;font-weight:900;text-decoration:none}.reb-clean-footer-btn.secondary{background:rgba(255,255,255,.08);border:1px solid rgba(245,176,38,.24);color:#fff!important}.reb-clean-footer-bottom{margin-top:38px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:flex-start;gap:26px;color:rgba(255,255,255,.6);font-size:14px}.reb-floating-chat{position:fixed;right:26px;bottom:96px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 18px;border-radius:999px;background:#229ed9;color:#fff!important;font-weight:900;text-decoration:none;box-shadow:0 18px 42px rgba(34,158,217,.36);border:1px solid rgba(255,255,255,.28);animation:rebFloatChat 3.2s ease-in-out infinite,rebChatPulse 2.4s ease-in-out infinite;transition:transform .18s ease,background .18s ease}.reb-floating-chat i{font-size:20px}.reb-floating-chat:hover{background:#1b8fc6;color:#fff!important;transform:translateY(-3px)}@keyframes rebFloatChat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes rebChatPulse{0%,100%{box-shadow:0 18px 42px rgba(34,158,217,.36),0 0 0 0 rgba(34,158,217,.28)}50%{box-shadow:0 22px 48px rgba(34,158,217,.42),0 0 0 10px rgba(34,158,217,0)}}
+@media(max-width:1180px){.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1.2fr .8fr .8fr!important}.reb-clean-footer-brand{grid-column:1/-1}.reb-clean-follow{grid-column:auto}.reb-follow-social{grid-template-columns:repeat(4,42px)}.reb-follow-social a{width:42px;height:42px}}
+@media(max-width:760px){.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1fr 1fr!important}.reb-clean-footer-brand{grid-column:1/-1}.reb-clean-contact,.reb-clean-follow{grid-column:auto}}
+@media(max-width:640px){.reb-clean-footer{padding:38px 18px 22px}.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1fr!important;gap:26px}.reb-clean-footer-logo{width:220px}.reb-contact-list{gap:9px}.reb-contact-row{grid-template-columns:32px minmax(0,1fr)}.reb-contact-row i{width:32px;height:32px}.reb-follow-social{grid-template-columns:repeat(4,40px);gap:9px}.reb-follow-social a{width:40px;height:40px}.reb-clean-footer-actions{display:grid;grid-template-columns:1fr;gap:10px}.reb-clean-footer-btn{width:100%;min-width:0}.reb-clean-footer-bottom{flex-direction:column;align-items:flex-start;font-size:13px;gap:18px}.reb-floating-chat{right:14px;bottom:84px;min-height:50px;padding:0 14px;font-size:13px}.reb-floating-chat span{max-width:96px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-floating-chat i{font-size:18px}}
+</style>
+
+<style id="reb-ict-ea-footer-spacing-v52">
+/* V52 — make the standard footer explicit and keep a professional gap from page functions. */
+body[data-reb-footer-font]{
+  overflow-x:hidden!important;
+}
+
+body[data-reb-footer-font] .reb-clean-footer{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  position:relative!important;
+  clear:both!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:64px 0 0!important;
+  z-index:5!important;
+}
+
+/* Keep the final functional card visually separated from the footer. */
+body[data-reb-footer-font] .app-shell{
+  margin-bottom:0!important;
+}
+
+@media (max-width:767px){
+  body[data-reb-footer-font] .reb-clean-footer{
+    margin-top:36px!important;
+  }
+}
+
+@media (min-width:768px){
+  body[data-reb-footer-font] .shell{
+    padding-bottom:28px!important;
+  }
+
+  /* EA: Control Scope remains below the control panel, then footer after a clear gap. */
+  body[data-reb-footer-font] .ea-control-stack-v50{
+    margin-bottom:4px!important;
+  }
+}
+</style>
+
+
+<style id="reb-clean-footer-icons-v53">
+/* V53: footer icons are pure inline SVG — one renderer only, no FA pseudo-element duplication. */
+.reb-clean-footer .reb-footer-icon-svg,
+.reb-clean-footer .reb-social-icon-svg,
+.reb-floating-chat .reb-footer-icon-svg{
+  display:block!important;
+  flex:0 0 auto!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:1.9!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+  box-sizing:border-box!important;
+}
+.reb-clean-footer-btn .reb-footer-icon-svg{
+  width:18px!important;
+  height:18px!important;
+}
+.reb-contact-row .reb-contact-icon{
+  width:34px!important;
+  height:34px!important;
+  border-radius:8px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  color:#fff!important;
+  flex:0 0 34px!important;
+}
+.reb-contact-row .reb-contact-icon .reb-footer-icon-svg{
+  width:17px!important;
+  height:17px!important;
+}
+.reb-contact-row.phone .reb-contact-icon{
+  background:#f5b026!important;
+  color:#050505!important;
+}
+.reb-contact-row.email .reb-contact-icon{
+  background:#6b7280!important;
+}
+.reb-contact-row.telegram .reb-contact-icon{
+  background:#229ed9!important;
+}
+.reb-contact-row:hover .reb-contact-icon{
+  transform:translateY(-2px);
+  box-shadow:0 10px 22px rgba(0,0,0,.25);
+}
+.reb-follow-social .reb-social-icon-svg,
+.reb-follow-social .reb-footer-icon-svg{
+  width:19px!important;
+  height:19px!important;
+  color:#fff!important;
+}
+.reb-follow-social .facebook .reb-social-icon-svg,
+.reb-follow-social .youtube .reb-social-icon-svg{
+  fill:currentColor!important;
+  stroke:none!important;
+}
+.reb-follow-social .telegram .reb-footer-icon-svg{
+  width:18px!important;
+  height:18px!important;
+}
+.reb-follow-social .tiktok .reb-tiktok-svg-v53{
+  width:20px!important;
+  height:20px!important;
+  fill:currentColor!important;
+  stroke:none!important;
+  filter:drop-shadow(1px 1px 0 #fe2c55);
+}
+.reb-floating-chat .reb-footer-icon-svg{
+  width:20px!important;
+  height:20px!important;
+}
+@media(max-width:767px){
+  .reb-contact-row .reb-contact-icon{
+    width:32px!important;
+    height:32px!important;
+    flex-basis:32px!important;
+  }
+  .reb-contact-row .reb-contact-icon .reb-footer-icon-svg{
+    width:16px!important;
+    height:16px!important;
+  }
+  .reb-follow-social .reb-social-icon-svg,
+  .reb-follow-social .reb-footer-icon-svg{
+    width:15px!important;
+    height:15px!important;
+  }
+}
+</style>
+
+
+
+<style id="reb-ict-shared-symbol-selector-v16">
+/* ReachEmpireBot V1.6 — shared Master ICT symbol selector. */
+.symbol-selector-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin:0 0 14px;
+  padding:11px 13px;
+  border:1px solid #e2e5e7;
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 8px 20px rgba(12,20,24,.05);
+}
+.symbol-selector-copy{display:flex;flex-direction:column;min-width:0;gap:2px}
+.symbol-selector-copy small{font-size:9px;line-height:1.15;font-weight:900;letter-spacing:.08em;color:#90979d}
+.symbol-selector-copy strong{font-size:14px;line-height:1.25;font-weight:900;color:#172026}
+.symbol-select-wrap{
+  position:relative;
+  display:flex;
+  align-items:center;
+  flex:0 0 178px;
+  width:178px;
+  height:40px;
+  margin:0;
+  border:1px solid rgba(245,176,38,.55);
+  border-radius:10px;
+  background:#111513;
+  color:#f5b026;
+  overflow:hidden;
+}
+.symbol-select-wrap>i:first-child{position:absolute;left:11px;z-index:2;font-size:12px;pointer-events:none}
+.symbol-select-wrap .caret{position:absolute;right:11px;z-index:2;font-size:10px;pointer-events:none}
+.symbol-select-wrap select{
+  appearance:none;
+  -webkit-appearance:none;
+  width:100%;height:100%;
+  margin:0;padding:0 30px 0 31px;
+  border:0;outline:0;
+  background:transparent;
+  color:#fff;
+  font:900 13px/1 Arial,sans-serif;
+  cursor:pointer;
+}
+.symbol-select-wrap select option{background:#111513;color:#fff}
+@media(max-width:767px){
+  .symbol-selector-card{padding:9px 10px;gap:8px;border-radius:12px;margin-bottom:12px}
+  .symbol-selector-copy small{font-size:7.5px;letter-spacing:.05em}
+  .symbol-selector-copy strong{font-size:11px;white-space:nowrap}
+  .symbol-select-wrap{flex-basis:132px;width:132px;height:36px;border-radius:9px}
+  .symbol-select-wrap select{padding-left:28px;padding-right:25px;font-size:11px}
+  .symbol-select-wrap>i:first-child{left:9px;font-size:10px}
+  .symbol-select-wrap .caret{right:9px;font-size:8px}
+}
+@media(max-width:360px){
+  .symbol-selector-copy small{display:none}
+  .symbol-selector-copy strong{font-size:10px}
+  .symbol-select-wrap{flex-basis:126px;width:126px}
+}
+</style>
+
+
+
+<style id="reb-live-chat-final-inline">
+
+:root{
+  --reb-chat-gold:#f5b326;
+  --reb-chat-blue1:#087fa8;
+  --reb-chat-blue2:#0aa0cb;
+  --reb-chat-ink:#18212b;
+  --reb-chat-font:Ubuntu,"Noto Sans Khmer","Khmer OS",Arial,sans-serif;
+}
+.reb-floating-chat{display:none!important}
+
+/* Floating launcher */
+.reb-customer-chat-launcher{
+  position:fixed!important;right:18px!important;bottom:18px!important;z-index:2147483000!important;
+  width:54px!important;height:54px!important;min-width:54px!important;max-width:54px!important;padding:0!important;
+  border:0!important;border-radius:50%!important;background:#101214!important;overflow:visible!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;
+  box-shadow:0 10px 28px rgba(0,0,0,.32),0 0 0 2px rgba(245,179,38,.18)!important;
+  animation:rebSupportBounce 1.75s ease-in-out infinite!important;
+}
+.reb-customer-chat-launcher:hover{transform:scale(1.08)!important}
+.reb-support-launcher-image{
+  display:block!important;width:46px!important;height:46px!important;object-fit:contain!important;border-radius:50%!important;pointer-events:none!important;
+}
+.reb-chat-launcher-badge{
+  position:absolute!important;top:-5px!important;right:-5px!important;display:none!important;
+  min-width:19px!important;height:19px!important;padding:0 5px!important;border-radius:999px!important;
+  align-items:center!important;justify-content:center!important;background:#e53935!important;color:#fff!important;
+  border:2px solid #fff!important;font:900 10px/1 Arial,sans-serif!important;
+}
+.reb-chat-launcher-badge.show{display:flex!important}
+@keyframes rebSupportBounce{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  22%{transform:translateY(-9px) rotate(-5deg)}
+  45%{transform:translateY(-2px) rotate(4deg)}
+  70%{transform:translateY(-7px) rotate(-3deg)}
+}
+
+/* Chat shell desktop */
+.reb-chat-shell{
+  position:fixed!important;right:20px!important;bottom:84px!important;z-index:2147483100!important;
+  width:390px!important;height:610px!important;max-width:calc(100vw - 32px)!important;max-height:calc(100vh - 110px)!important;
+  background:#fff!important;border:1px solid #dfe5ea!important;border-radius:20px!important;
+  box-shadow:0 24px 70px rgba(10,22,34,.30)!important;overflow:hidden!important;display:none!important;
+  font-family:var(--reb-chat-font)!important;color:var(--reb-chat-ink)!important;
+}
+.reb-chat-shell.open{display:flex!important;flex-direction:column!important}
+.reb-chat-shell,.reb-chat-shell *{box-sizing:border-box}
+.reb-chat-shell button,.reb-chat-shell input,.reb-chat-shell textarea,.reb-chat-shell a,.reb-chat-shell span,.reb-chat-shell strong{
+  font-family:var(--reb-chat-font)!important;
+}
+
+.reb-chat-header{
+  flex:0 0 66px!important;min-height:66px!important;padding:10px 12px!important;
+  display:flex!important;align-items:center!important;gap:10px!important;background:linear-gradient(135deg,#111317,#25272b)!important;color:#fff!important;
+}
+.reb-chat-avatar{width:40px!important;height:40px!important;flex:0 0 40px!important;border-radius:12px!important;background:var(--reb-chat-gold)!important;display:flex!important;align-items:center!important;justify-content:center!important;color:#111!important}
+.reb-chat-headcopy{min-width:0!important;flex:1!important}
+.reb-chat-headcopy strong{display:block!important;font-size:14px!important;font-weight:800!important}
+.reb-chat-headcopy span{display:block!important;margin-top:2px!important;color:#cbd0d5!important;font-size:10px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.reb-chat-close{width:34px!important;height:34px!important;border-radius:10px!important;border:1px solid rgba(255,255,255,.14)!important;background:rgba(255,255,255,.07)!important;color:#fff!important;cursor:pointer!important}
+
+.reb-chat-status{display:none!important;padding:6px 9px!important;background:#fff7df!important;color:#7a5a00!important;font-size:10px!important}
+.reb-chat-status.show{display:block!important}
+.reb-chat-status.error{background:#fff0f0!important;color:#a82727!important}
+.reb-chat-progress{display:none!important;height:2px!important;background:#eee!important}
+.reb-chat-progress.show{display:block!important}
+
+.reb-chat-body{
+  flex:1 1 auto!important;min-height:0!important;overflow:auto!important;padding:10px 9px 12px!important;
+  background:linear-gradient(180deg,#f7f8fa,#f2f5f7)!important;
+}
+.reb-chat-empty,.reb-chat-login{height:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;padding:18px!important;color:#7a858f!important}
+.reb-chat-empty strong{color:#27313b!important;margin-bottom:5px!important}
+.reb-chat-empty p,.reb-chat-login p{margin:0!important;font-size:11px!important;line-height:1.5!important}
+.reb-empty-icon{width:40px!important;height:40px!important;border-radius:12px!important;background:#fff1c4!important;color:#b77b00!important;display:flex!important;align-items:center!important;justify-content:center!important;margin-bottom:10px!important}
+.reb-chat-day{text-align:center!important;margin:7px 0!important}
+.reb-chat-day span{display:inline-block!important;background:#e7ebef!important;border-radius:999px!important;padding:3px 7px!important;font-size:9px!important;color:#6f7983!important}
+.reb-chat-row{display:flex!important;margin:7px 0!important}
+.reb-chat-row.user{justify-content:flex-end!important}
+.reb-chat-row.admin{justify-content:flex-start!important}
+.reb-chat-bubble{
+  display:inline-block!important;width:auto!important;max-width:84%!important;padding:8px 10px!important;border-radius:15px!important;overflow:hidden!important;
+}
+.reb-chat-row.user .reb-chat-bubble{background:linear-gradient(145deg,var(--reb-chat-blue1),var(--reb-chat-blue2))!important;color:#fff!important;border-bottom-right-radius:5px!important}
+.reb-chat-row.admin .reb-chat-bubble{background:#fff!important;color:#202832!important;border:1px solid #e3e8ec!important;border-bottom-left-radius:5px!important}
+.reb-chat-sender{font-size:10px!important;font-weight:800!important;margin-bottom:4px!important;color:#a87600!important}
+.reb-chat-row.user .reb-chat-sender{color:#e9fbff!important;text-align:right!important}
+.reb-chat-text{font-size:12px!important;line-height:1.45!important;white-space:pre-wrap!important;word-break:break-word!important}
+.reb-chat-meta{margin-top:4px!important;display:flex!important;justify-content:flex-end!important;gap:4px!important;font-size:9px!important;color:#919ba4!important}
+.reb-chat-row.user .reb-chat-meta{color:rgba(255,255,255,.80)!important}
+.reb-chat-inline-link{color:#eaffff!important;text-decoration:underline!important;overflow-wrap:anywhere!important}
+.reb-chat-row.admin .reb-chat-inline-link{color:#136fca!important}
+
+.reb-chat-media{display:block!important;width:max-content!important;max-width:250px!important;margin-top:5px!important;border-radius:10px!important;overflow:hidden!important}
+.reb-chat-media img,.reb-chat-media video{display:block!important;max-width:250px!important;max-height:220px!important;width:auto!important;height:auto!important;object-fit:contain!important;border-radius:10px!important}
+.reb-chat-media audio{display:block!important;width:220px!important;max-width:100%!important;height:40px!important}
+.reb-chat-file-card{display:flex!important;align-items:center!important;gap:7px!important;margin-top:5px!important;width:230px!important;max-width:100%!important;padding:7px!important;border-radius:10px!important;background:rgba(255,255,255,.10)!important;border:1px solid rgba(150,160,170,.25)!important}
+.reb-chat-file-icon{width:31px!important;height:31px!important;flex:0 0 31px!important;border-radius:8px!important;background:var(--reb-chat-gold)!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.reb-chat-file-copy{min-width:0!important;flex:1!important}
+.reb-chat-file-copy strong{font-size:10px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;display:block!important}
+.reb-chat-file-copy span{font-size:8.5px!important;color:#8e98a3!important;display:block!important}
+.reb-chat-file-card button{border:0!important;background:#111!important;color:#fff!important;border-radius:7px!important;padding:6px 7px!important;font-size:9px!important}
+
+.reb-chat-rich-preview{margin-top:6px!important}
+.reb-chat-preview-card{display:flex!important;width:250px!important;max-width:100%!important;min-height:62px!important;border-radius:10px!important;overflow:hidden!important;text-decoration:none!important;border:1px solid rgba(150,160,170,.25)!important;background:rgba(255,255,255,.09)!important;color:inherit!important}
+.reb-chat-row.admin .reb-chat-preview-card{background:#f7f8fa!important;color:#1f2933!important}
+.reb-chat-preview-card>img{width:76px!important;height:64px!important;object-fit:cover!important;flex:0 0 76px!important}
+.reb-chat-preview-thumb-fallback{width:64px!important;flex:0 0 64px!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#dff5fb!important;color:#087fa8!important}
+.reb-chat-preview-copy{min-width:0!important;flex:1!important;padding:7px!important}
+.reb-chat-preview-copy strong{font-size:10px!important;line-height:1.25!important}
+.reb-chat-preview-copy small{display:block!important;margin-top:3px!important;font-size:8px!important;opacity:.7!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.reb-chat-preview-open{width:26px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+
+.reb-chat-attach-preview{display:none!important;padding:6px 8px!important;border-top:1px solid #e7e9ed!important;background:#fff!important;font-size:10px!important}
+.reb-chat-attach-preview.show{display:flex!important;align-items:center!important;justify-content:space-between!important}
+.reb-chat-composer{flex:0 0 auto!important;background:#fff!important;border-top:1px solid #e5e9ed!important;padding:6px!important}
+.reb-chat-tools{display:flex!important;align-items:center!important;gap:5px!important;margin-bottom:5px!important;overflow:visible!important}
+.reb-chat-tool{
+  position:relative!important;width:33px!important;height:33px!important;flex:0 0 33px!important;border:1px solid #e2e6ea!important;background:#fff!important;border-radius:10px!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;color:#526170!important;padding:0!important;cursor:pointer!important;
+}
+.reb-chat-tool svg{width:17px!important;height:17px!important;pointer-events:none!important}
+.reb-chat-mic{color:#a62f2f!important;background:#fff8f8!important;border-color:#efd5d5!important;touch-action:none!important}
+.reb-chat-mic.recording{background:#d92d2d!important;color:#fff!important}
+.reb-chat-record-label{display:none!important;color:#c43333!important;font-size:9px!important;font-weight:800!important}
+.reb-chat-mic.recording~.reb-chat-record-label{display:inline!important}
+
+.reb-chat-compose-row{display:flex!important;align-items:flex-end!important;gap:5px!important}
+.reb-chat-text-indicator{width:32px!important;height:38px!important;flex:0 0 32px!important;border:1px solid #e3e7eb!important;background:#f7f8fa!important;border-radius:10px!important;display:flex!important;align-items:center!important;justify-content:center!important;color:#64717e!important}
+.reb-chat-input{flex:1!important;min-height:38px!important;max-height:66px!important;resize:none!important;border:1px solid #dfe4e8!important;background:#f8f9fa!important;border-radius:10px!important;padding:9px!important;font-size:12px!important;outline:none!important}
+.reb-chat-send{width:38px!important;height:38px!important;flex:0 0 38px!important;border:0!important;border-radius:10px!important;background:var(--reb-chat-gold)!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important}
+
+/* ONE mobile rule only */
+@media (max-width:760px),(pointer:coarse){
+  .reb-customer-chat-launcher{
+    right:14px!important;bottom:14px!important;width:50px!important;height:50px!important;min-width:50px!important;max-width:50px!important;
+  }
+  .reb-support-launcher-image{width:42px!important;height:42px!important}
+  .reb-chat-shell{
+    right:14px!important;bottom:72px!important;left:auto!important;top:auto!important;
+    width:286px!important;height:390px!important;min-width:0!important;min-height:0!important;
+    max-width:calc(100vw - 84px)!important;max-height:calc(100dvh - 180px)!important;
+    border-radius:20px!important;
+  }
+  .reb-chat-header{flex-basis:58px!important;min-height:58px!important;padding:8px 9px!important}
+  .reb-chat-avatar{width:36px!important;height:36px!important;flex-basis:36px!important}
+  .reb-chat-headcopy strong{font-size:12px!important}
+  .reb-chat-headcopy span{font-size:9px!important}
+  .reb-chat-body{padding:7px!important}
+  .reb-chat-bubble{max-width:90%!important}
+  .reb-chat-media,.reb-chat-media img,.reb-chat-media video{max-width:205px!important}
+  .reb-chat-media audio{width:195px!important}
+  .reb-chat-file-card,.reb-chat-preview-card{width:205px!important}
+  .reb-chat-composer{padding:5px!important}
+  .reb-chat-tool{width:31px!important;height:31px!important;flex-basis:31px!important}
+  .reb-chat-input{min-height:36px!important;max-height:56px!important;padding:8px!important;font-size:11.5px!important}
+  .reb-chat-send{width:36px!important;height:36px!important;flex-basis:36px!important}
+  .reb-chat-text-indicator{width:30px!important;height:36px!important;flex-basis:30px!important}
+}
+
+/* Upload fallback panel: browser-native file inputs are intentionally NOT hidden/styled. */
+.reb-chat-native-picker-panel[hidden]{display:none!important}
+.reb-chat-native-picker-panel{
+  margin:0 0 7px!important;padding:8px!important;border:1px solid #dfe5ea!important;
+  border-radius:11px!important;background:#f8fafb!important;box-shadow:0 6px 18px rgba(0,0,0,.08)!important;
+}
+.reb-chat-native-picker-head{display:flex!important;align-items:center!important;justify-content:space-between!important;margin-bottom:7px!important}
+.reb-chat-native-picker-head strong{font-size:11px!important;color:#28333d!important}
+.reb-chat-native-picker-close{
+  width:26px!important;height:26px!important;border:0!important;border-radius:7px!important;
+  background:#eceff2!important;color:#333!important;font-size:16px!important;cursor:pointer!important;
+}
+.reb-chat-native-picker-row{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:7px!important;background:#fff!important;border:1px solid #e5e9ed!important;border-radius:9px!important;
+}
+.reb-chat-native-picker-row span{font-size:10.5px!important;font-weight:700!important;color:#46525e!important}
+.reb-chat-native-picker-row input[type="file"]{
+  position:static!important;display:block!important;width:165px!important;height:auto!important;
+  opacity:1!important;visibility:visible!important;pointer-events:auto!important;
+  font-size:10px!important;color:#333!important;background:transparent!important;
+}
+@media(max-width:760px),(pointer:coarse){
+  .reb-chat-native-picker-panel{padding:7px!important}
+  .reb-chat-native-picker-row{display:block!important}
+  .reb-chat-native-picker-row span{display:block!important;margin-bottom:5px!important}
+  .reb-chat-native-picker-row input[type="file"]{width:100%!important;font-size:10px!important}
+}
+
+.reb-chat-media-panel .reb-chat-native-picker-row,.reb-chat-file-panel .reb-chat-native-picker-row{margin:0!important}
+
+</style>
+</head>
+<body data-reb-footer-font="v53" data-reb-desktop-layout="v48-768-breakpoint">
+<div class="app-shell">
+  <header class="appbar">
+    <div class="brandmark"><img src="/assets/images/resource/reb-robot.png" alt="ReachEmpireBot"></div>
+    <div class="brandcopy"><strong>ReachEmpireBot</strong><span>ICT SIGNAL CENTER</span></div>
+    <a class="back-btn" href="/dashboard/" aria-label="Back to Dashboard"><i class="fas fa-arrow-left"></i><span>Back</span></a>
+  </header>
+
+  <main class="content">
+    <div class="chip-row">
+      <div class="chip"><i class="fas fa-chart-line"></i><span>REB ICT</span></div>
+      <div class="chip"><i class="far fa-clock"></i><span id="chipTf">MTF</span></div>
+      <div id="apiChip" class="chip api offline"><i class="fas fa-cloud"></i><span>API OFFLINE</span></div>
+    </div>
+
+    <section class="symbol-selector-card" aria-label="ICT signal symbol selector">
+      <div class="symbol-selector-copy">
+        <small>SHARED MASTER ICT FEED</small>
+        <strong>Select Signal Symbol</strong>
+      </div>
+      <label class="symbol-select-wrap" for="symbolSelect">
+        <i class="fas fa-coins" aria-hidden="true"></i>
+        <select id="symbolSelect" aria-label="Select ICT signal symbol">
+          <option value="XAUUSD">XAUUSD</option>
+          <option value="BTCUSD">BTCUSD</option>
+          <option value="EURUSD">EURUSD</option>
+          <option value="GBPUSD">GBPUSD</option>
+          <option value="USDJPY">USDJPY</option>
+          <option value="AUDUSD">AUDUSD</option>
+          <option value="USDCAD">USDCAD</option>
+          <option value="GBPJPY">GBPJPY</option>
+        </select>
+        <i class="fas fa-chevron-down caret" aria-hidden="true"></i>
+      </label>
+    </section>
+
+    <section id="hero" class="hero">
+      <div class="scanner"></div>
+      <div class="hero-labels">
+        <div class="terminal-label"><small>MARKET</small><strong id="market">-</strong></div>
+        <div class="terminal-label right"><small>BIAS</small><strong id="bias">WAIT</strong></div>
+      </div>
+      <div class="signal-core">
+        <div id="signalIcon" class="signal-icon"><i class="fas fa-radar"></i></div>
+        <div id="side" class="signal-side">WAIT</div>
+        <div id="signalStatus" class="signal-status">AI SCANNING</div>
+      </div>
+      <div class="hero-lock">
+        <i class="pulse"></i>
+        <strong id="heroReason">SEARCHING MSS · FVG · LIQUIDITY</strong>
+        <em id="signalAge">WAITING</em>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div class="panel-title"><div class="eyebrow">MARKET INTELLIGENCE</div><p>Live trade setup map</p></div>
+        <div id="rr" class="rr">WAIT</div>
+      </div>
+      <div id="tradeMap" class="trade-map">
+        <div id="riskZone" class="map-zone risk"></div>
+        <div id="rewardZone" class="map-zone reward"></div>
+        <div id="slLine" class="map-line sl"><span id="slMap">SL  -</span></div>
+        <div id="entryLine" class="map-line entry"><span id="entryMap">ENTRY  -</span></div>
+        <div id="tpLine" class="map-line tp"><span id="tpMap">TP  -</span></div>
+        <div id="mapArrow" class="map-arrow down"></div>
+        <div id="mapWait" class="map-wait">WAITING FOR ENTRY / SL / TP</div>
+      </div>
+    </section>
+
+    <section class="pipeline">
+      <div class="pipeline-icon"><i class="fas fa-hourglass-half"></i></div>
+      <div class="pipeline-copy">
+        <strong id="pipelineTitle">Waiting for ICT event</strong>
+        <span id="pipelineSub">ICT EA · Waiting for MT5 chart</span>
+        <em id="pipelineHint">Shared Master EA scans M1 / M5 / M30 / H1 and publishes one final signal per symbol.</em>
+      </div>
+    </section>
+
+    <section id="tradeSetupSection" class="section">
+      <div class="section-head">
+        <h2 id="setupTitle">Trade Setup: Waiting</h2>
+        <button id="refreshSetup" class="refresh-text" type="button">Refresh</button>
+      </div>
+      <div class="price-grid">
+        <div class="price-card entry"><i class="fas fa-right-to-bracket"></i><strong id="entry">WAIT</strong><span>ENTRY</span></div>
+        <div class="price-card sl"><i class="fas fa-shield-halved"></i><strong id="sl">WAIT</strong><span>STOP LOSS</span></div>
+        <div class="price-card tp"><i class="fas fa-flag"></i><strong id="tp">WAIT</strong><span>TAKE PROFIT</span></div>
+      </div>
+      <div class="source-wide"><i class="fas fa-diagram-project"></i><span>Signal Source</span><strong id="source">ict_signal_bridge_v1.6</strong></div>
+    </section>
+
+    <section id="confirmSection" class="section" hidden>
+      <div class="section-head"><h2>ICT Confirmation</h2></div>
+      <div id="confirmations" class="confirm-wrap"></div>
+    </section>
+
+    <section id="signalQueueSection" class="section">
+      <div class="section-head"><h2>Signal Queue</h2></div>
+      <div id="history" class="queue"><div class="empty">No ICT signal history received yet.</div></div>
+    </section>
+  </main>
+</div>
+
+<div id="authOverlay" class="auth-overlay">
+  <div class="auth-card"><i class="fas fa-lock"></i><h2>Login required</h2><p>Your ICT Signal page uses the shared Master ICT signal feed for all authenticated ReachEmpireBot users.</p><a href="/login/">Log In</a></div>
+</div>
+
+
+<!-- footer area start -->
+<footer class="reb-clean-footer">
+<div class="reb-clean-footer-inner">
+<div class="reb-clean-footer-grid">
+<div class="reb-clean-footer-brand">
+<a href="/"><img alt="ReachEmpireBot" class="reb-clean-footer-logo" src="/assets/images/logo-2.png"/></a>
+<p>AI-assisted auto trading software for disciplined MT5 execution, setup guidance, copy trading information, and risk-aware automation support.</p>
+<div class="reb-clean-footer-actions">
+<a class="reb-clean-footer-btn" href="/download/"><svg class="reb-footer-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg> Download</a>
+<a class="reb-clean-footer-btn secondary" href="/contact/"><svg class="reb-footer-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2Zm16 0h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2ZM17 20c-1 1-2.7 1-5 1"/></svg> Contact Support</a>
+</div>
+</div>
+<div>
+<h3>Main Pages</h3>
+<nav aria-label="Footer main pages" class="reb-clean-footer-links">
+<a href="/">Home</a>
+<a href="/download/">Download</a>
+<a href="/markets/">EA Bot Market</a>
+
+<a href="/create-trade-account/">Trade Account</a>
+<a href="/about/">About Us</a>
+</nav>
+</div>
+<div>
+<h3>Markets</h3>
+<nav aria-label="Footer market pages" class="reb-clean-footer-links">
+<a href="/forex-trading/">Forex Trading</a>
+<a href="/crypto-trading/">Crypto Trading</a>
+<a href="/metal-trading/">Metal Trading</a>
+</nav>
+</div>
+<div class="reb-clean-contact">
+<h3>Contact Info</h3>
+<div aria-label="Contact links" class="reb-contact-list">
+<a aria-label="Call ReachEmpireBot" class="reb-contact-row phone" href="tel:+85593525363"><span class="reb-contact-icon"><svg class="reb-footer-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M7.2 3.5 10 8 7.8 10c1.2 2.7 3.4 4.9 6.2 6.2l2-2.2 4.5 2.8-.8 3.1c-.3 1-1.3 1.7-2.4 1.5C9.7 20.1 3.9 14.3 2.6 6.7c-.2-1.1.5-2.1 1.5-2.4l3.1-.8Z"/></svg></span><span>093 525 363</span></a>
+<a aria-label="Email ReachEmpireBot" class="reb-contact-row email" href="mailto:reachempirebot@gmail.com"><span class="reb-contact-icon"><svg class="reb-footer-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span>reachempirebot@gmail.com</span></a>
+<a aria-label="Telegram Channel" class="reb-contact-row telegram" href="https://t.me/ReachEmpireBot" rel="noopener" target="_blank"><span class="reb-contact-icon"><svg class="reb-footer-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M21 4 9.2 16.1 8.7 21l3.4-3.1 4.6 3.4L21 4ZM3 11.2 21 4 7.1 14.1 3 11.2Z"/></svg></span><span>Telegram Channel</span></a>
+</div>
+<p class="reb-contact-help">For direct questions, use the Live Chat button.</p>
+</div>
+<div class="reb-clean-follow">
+<h3>Follow Us On</h3>
+<div aria-label="Social links" class="reb-follow-social">
+<a aria-label="Facebook Page" class="facebook" href="https://web.facebook.com/ReachEmpireBot" rel="noopener" target="_blank"><svg class="reb-social-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M14 8h3V4.5c-.5-.1-1.8-.2-3.4-.2-3.3 0-5.6 2-5.6 5.8V13H4.3v4H8v7h4.5v-7h3.7l.6-4h-4.3V10.5c0-1.2.3-2.5 1.5-2.5Z"/></svg></a>
+<a aria-label="YouTube Channel" class="youtube" href="https://www.youtube.com/@ReachEmpireBot" rel="noopener" target="_blank"><svg class="reb-social-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 12s0-3.4-.4-5c-.2-1-1-1.8-2-2C17.8 4.5 12 4.5 12 4.5s-5.8 0-7.6.5c-1 .2-1.8 1-2 2C2 8.6 2 12 2 12s0 3.4.4 5c.2 1 1 1.8 2 2 1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5c1-.2 1.8-1 2-2 .4-1.6.4-5 .4-5ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg></a>
+<a aria-label="Telegram Channel" class="telegram" href="https://t.me/ReachEmpireBot" rel="noopener" target="_blank"><svg class="reb-footer-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M21 4 9.2 16.1 8.7 21l3.4-3.1 4.6 3.4L21 4ZM3 11.2 21 4 7.1 14.1 3 11.2Z"/></svg></a>
+<a aria-label="TikTok" class="tiktok" href="https://www.tiktok.com/@reachempirebot" rel="noopener" target="_blank"><svg class="reb-social-icon-svg reb-tiktok-svg-v53" aria-hidden="true" viewBox="0 0 24 24"><path d="M16.7 4.2c.6 1.8 1.9 3.1 3.7 3.4v3.1c-1.5 0-2.8-.5-3.9-1.3v5.8c0 3.2-2.2 5.2-5.2 5.2-2.8 0-5-1.9-5-4.6 0-2.9 2.3-4.8 5.1-4.8.4 0 .8 0 1.1.1v3.2c-.3-.1-.7-.2-1.1-.2-1.2 0-2 .7-2 1.7 0 1 .8 1.6 1.8 1.6 1.2 0 2-.7 2-2.1V3.6h3.5v.6Z"/></svg></a>
+</div>
+</div>
+</div>
+<div class="reb-clean-footer-bottom">
+<span>Copyright © 2026 ReachEmpireBot. All rights reserved.</span>
+</div>
+</div>
+</footer>
+
+<!-- footer area end -->
+<style id="reb-mobile-footer-v32">
+@media (max-width:767px){
+  html body .reb-clean-footer .reb-clean-footer-grid{
+    display:grid!important;
+    grid-template-columns:minmax(0,1.25fr) minmax(131px,.75fr)!important;
+    gap:18px 14px!important;
+  }
+  html body .reb-clean-footer .reb-clean-footer-brand{
+    grid-column:1/-1!important;
+  }
+  html body .reb-clean-footer .reb-clean-contact,
+  html body .reb-clean-footer .reb-clean-follow{
+    grid-column:auto!important;
+    min-width:0!important;
+  }
+  html body .reb-clean-footer .reb-contact-row span{
+    overflow-wrap:normal!important;
+    word-break:normal!important;
+  }
+  html body .reb-clean-footer .reb-contact-row.email span{
+    white-space:nowrap!important;
+    font-size:10px!important;
+  }
+  html body .reb-clean-footer .reb-follow-social{
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+    gap:5px!important;
+    align-content:start!important;
+  }
+  html body .reb-clean-footer .reb-follow-social a{
+    display:inline-flex!important;
+    width:29px!important;
+    height:29px!important;
+    border-radius:8px!important;
+    font-size:12px!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  html body .reb-clean-footer .reb-follow-social .reb-tiktok-svg{
+    width:16px!important;
+    height:16px!important;
+  }
+}
+</style>
+<script id="reb-mobile-footer-runtime-v32">
+(function () {
+  var screenWidth = window.screen && window.screen.width ? window.screen.width : 9999;
+  var innerWidth = window.innerWidth || 9999;
+  var clientWidth = document.documentElement.clientWidth || 9999;
+  var mobileBrowser = /Android|Mobile/i.test(navigator.userAgent || '');
+  if (!mobileBrowser && Math.min(screenWidth, innerWidth, clientWidth) > 767) return;
+  var grids = document.querySelectorAll('.reb-clean-footer .reb-clean-footer-grid');
+  for (var g = 0; g < grids.length; g++) {
+    grids[g].style.setProperty('grid-template-columns', 'minmax(0,1.25fr) minmax(131px,.75fr)', 'important');
+  }
+  var emails = document.querySelectorAll('.reb-clean-footer .reb-contact-row.email span');
+  for (var e = 0; e < emails.length; e++) {
+    emails[e].style.setProperty('white-space', 'nowrap', 'important');
+    emails[e].style.setProperty('word-break', 'normal', 'important');
+    emails[e].style.setProperty('overflow-wrap', 'normal', 'important');
+    emails[e].style.setProperty('font-size', '10px', 'important');
+  }
+  var groups = document.querySelectorAll('.reb-clean-footer .reb-follow-social');
+  for (var i = 0; i < groups.length; i++) {
+    var group = groups[i];
+    group.style.setProperty('display', 'flex', 'important');
+    group.style.setProperty('flex-direction', 'row', 'important');
+    group.style.setProperty('flex-wrap', 'nowrap', 'important');
+    group.style.setProperty('gap', '5px', 'important');
+    group.style.setProperty('grid-template-columns', 'none', 'important');
+    var buttons = group.querySelectorAll('a');
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].style.setProperty('display', 'inline-flex', 'important');
+      buttons[j].style.setProperty('flex', '0 0 29px', 'important');
+      buttons[j].style.setProperty('width', '29px', 'important');
+      buttons[j].style.setProperty('height', '29px', 'important');
+      buttons[j].style.setProperty('min-width', '29px', 'important');
+      buttons[j].style.setProperty('min-height', '29px', 'important');
+      buttons[j].style.setProperty('max-width', '29px', 'important');
+      buttons[j].style.setProperty('max-height', '29px', 'important');
+      buttons[j].style.setProperty('font-size', '12px', 'important');
+      buttons[j].style.setProperty('border-radius', '8px', 'important');
+      buttons[j].style.setProperty('align-items', 'center', 'important');
+      buttons[j].style.setProperty('justify-content', 'center', 'important');
+    }
+  }
+})();
+</script>
+<script id="reb-ict-shared-master-ui-v16">
+(()=>{
+  const BACKEND='https://admin.reachempirebot.com';
+  const token=localStorage.getItem('REB_CLIENT_TOKEN')||'';
+  const APPROVED_SYMBOLS=['XAUUSD','BTCUSD','EURUSD','GBPUSD','USDJPY','AUDUSD','USDCAD','GBPJPY'];
+  const SELECTED_KEY='REB_ICT_SELECTED_SYMBOL';
+  const $=id=>document.getElementById(id);
+  const headers=()=>({'Authorization':'Bearer '+token,'X-Mobile-Token':token,'Accept':'application/json','Content-Type':'application/json'});
+  const cleanSymbol=value=>{const s=String(value||'').toUpperCase().replace(/[^A-Z0-9]/g,'');return APPROVED_SYMBOLS.find(x=>s===x||s.startsWith(x))||''};
+  const urlSymbol=cleanSymbol(new URLSearchParams(location.search).get('symbol'));
+  let selectedSymbol=urlSymbol||cleanSymbol(localStorage.getItem(SELECTED_KEY))||'XAUUSD';
+  let loading=false,lastSyncAt=null,activeSymbol=selectedSymbol,activeTimeframe='MTF';
+
+  if(!token) $('authOverlay').classList.add('show');
+  $('symbolSelect').value=selectedSymbol;
+
+  function setTheme(side){
+    const root=document.documentElement;
+    if(side==='BUY'){root.style.setProperty('--signal','#00a99d');root.style.setProperty('--signal-rgb','0,169,157')}
+    else if(side==='SELL'){root.style.setProperty('--signal','#ff3f54');root.style.setProperty('--signal-rgb','255,63,84')}
+    else{root.style.setProperty('--signal','#f5b026');root.style.setProperty('--signal-rgb','245,176,38')}
+  }
+  function deepFind(obj,key,seen=new Set()){
+    if(!obj||typeof obj!=='object'||seen.has(obj)) return undefined; seen.add(obj);
+    if(Object.prototype.hasOwnProperty.call(obj,key)) return obj[key];
+    for(const value of Object.values(obj)){if(value&&typeof value==='object'){const found=deepFind(value,key,seen);if(found!==undefined)return found}}
+    return undefined;
+  }
+  function containsSignalFields(data){return ['side','direction','signal','symbol','entry','entry_price','trend_dir','score'].some(k=>data&&data[k]!=null)}
+  function nestedMap(data,keys){for(const key of keys){const v=deepFind(data,key);if(v&&typeof v==='object'&&!Array.isArray(v))return {...v}}return null}
+  function signalText(data,keys,fallback='-'){for(const key of keys){const v=deepFind(data,key);if(v!==undefined&&v!==null&&String(v).trim()!=='')return String(v).trim()}return fallback}
+  function signalNumber(data,keys){for(const key of keys){const v=deepFind(data,key);const n=Number(String(v??'').replaceAll(',',''));if(Number.isFinite(n))return n}return 0}
+  function signalPrice(data,keys){for(const key of keys){const v=deepFind(data,key);const n=Number(String(v??'').replaceAll(',',''));if(Number.isFinite(n))return n.toFixed(2)}return '-'}
+  function signalEvents(data){
+    const raw=deepFind(data,'ict_events')??deepFind(data,'events')??deepFind(data,'recent_events');
+    const out=[];
+    if(Array.isArray(raw)) out.push(...raw.map(item=>item&&typeof item==='object'?String(item.type??item.event??item.name??''):String(item)).map(s=>s.trim()).filter(Boolean));
+    else if(raw!=null&&String(raw).trim()) out.push(...String(raw).split(/[,|]+/).map(s=>s.trim()).filter(Boolean));
+    const scoreMap=[['H1','score_h1'],['M30','score_m30'],['M5','score_m5'],['M1','score_m1']];
+    scoreMap.forEach(([label,key])=>{const v=deepFind(data,key);const n=Number(v);if(Number.isFinite(n))out.push(`${label} Score ${n>0?'+':''}${Math.round(n)}`)});
+    return [...new Set(out)];
+  }
+  function extractSignal(payload){
+    if(!payload||typeof payload!=='object'||Object.keys(payload).length===0)return null;
+    const ict=nestedMap(payload,['ict_state','ict','ict_strategy','strategy_state']);
+    if(ict){const nested=nestedMap(ict,['signal','latest_signal','current_signal']);if(nested)return {...ict,...nested,ict_events:ict.events};if(containsSignalFields(ict))return ict}
+    for(const key of ['latest_signal','ict_signal','buy_sell_zone_signal','zone_signal','current_signal','last_signal','signal','data','payload']){
+      const value=deepFind(payload,key);
+      if(value&&typeof value==='object'&&!Array.isArray(value)){const mapped={...value};const nested=extractSignal(mapped);return nested||mapped}
+      if(Array.isArray(value)&&value.length&&value[0]&&typeof value[0]==='object')return {...value[0]};
+    }
+    return containsSignalFields(payload)?{...payload}:null;
+  }
+  function extractSignalList(payload){
+    if(!payload||typeof payload!=='object')return [];
+    for(const key of ['signals','history','signal_history','items','rows','recent_signals']){const v=deepFind(payload,key);if(Array.isArray(v))return v.filter(x=>x&&typeof x==='object').map(x=>({...x}))}
+    const one=extractSignal(payload);return one?[one]:[];
+  }
+  function normalizeSignal(raw,fallbackSymbol='',fallbackTf='MTF'){
+    if(!raw||typeof raw!=='object'||Object.keys(raw).length===0)return null;
+    const read=(keys,f='')=>signalText(raw,keys,f);
+    const symbol=cleanSymbol(read(['symbol','market','pair'],fallbackSymbol))||fallbackSymbol;
+    const broker=read(['broker_symbol','chart_symbol'],symbol);
+    let side=read(['side','signal','direction','type'],'WAIT').toUpperCase();
+    if(!side.includes('BUY')&&!side.includes('SELL'))side='WAIT';else side=side.includes('BUY')?'BUY':'SELL';
+    const trendDir=signalNumber(raw,['trend_dir','trend_direction']);
+    const trend=read(['trend','trend_side','bias'],trendDir>0?'BULL':trendDir<0?'BEAR':'WAIT').toUpperCase();
+    const tf=read(['timeframe','tf','period'],fallbackTf).toUpperCase()||'MTF';
+    return {...raw,symbol,broker_symbol:broker,side,trend,timeframe:tf,
+      entry:read(['entry','entry_price'],'-'),sl:read(['sl','stop_loss'],'-'),tp:read(['tp','tp1','take_profit','take_profit_1'],'-'),tp2:read(['tp2','take_profit_2'],'-'),
+      status:read(['status','state'],side==='WAIT'?'WAITING':'READY').toUpperCase(),source:read(['source','strategy','signal_source'],'ict_master_shared_v1.6'),
+      signal_id:read(['signal_id','event_id'],''),event_type:read(['event_type'],side==='WAIT'?'WAIT':'SIGNAL_OPEN').toUpperCase(),
+      created_at:read(['updated_at','created_at','time','signal_time','timestamp'],'-'),events:signalEvents(raw)};
+  }
+  function dedupe(items){const seen=new Set();return items.filter(item=>{const key=[item.signal_id||'',item.symbol,item.side,item.created_at].join('|');if(seen.has(key))return false;seen.add(key);return true})}
+  async function apiGet(path){
+    if(!token)throw Error('Login required');const glue=path.includes('?')?'&':'?';
+    const r=await fetch(BACKEND+path+glue+'_t='+Date.now(),{cache:'no-store',headers:headers()});const j=await r.json().catch(()=>({}));
+    if(!r.ok||j.ok===false)throw Error(j.message||j.error||'API request failed');return j;
+  }
+  async function apiPost(path,body={}){
+    if(!token)throw Error('Login required');const glue=path.includes('?')?'&':'?';
+    const r=await fetch(BACKEND+path+glue+'_t='+Date.now(),{method:'POST',cache:'no-store',headers:headers(),body:JSON.stringify(body||{})});const j=await r.json().catch(()=>({}));
+    if(!r.ok||j.ok===false)throw Error(j.message||j.error||'API request failed');return j;
+  }
+  function apiState(online){const el=$('apiChip');el.classList.toggle('online',online);el.classList.toggle('offline',!online);el.querySelector('span').textContent=online?'API ONLINE':'API OFFLINE';el.querySelector('i').className=online?'fas fa-cloud-arrow-up':'fas fa-cloud-slash'}
+  function fmtPrice(v){const n=Number(String(v??'').replaceAll(',',''));return Number.isFinite(n)?n.toFixed(2):'WAIT'}
+  function ageText(){if(!lastSyncAt)return'WAITING';const sec=Math.floor((Date.now()-lastSyncAt)/1000);return sec<5?'NOW':sec+'S'}
+  function resetWaiting(message=`Waiting for Shared Master ICT analysis on ${selectedSymbol}.`){
+    setTheme('WAIT');$('market').textContent=selectedSymbol;$('bias').textContent='WAIT';$('chipTf').textContent='MTF';$('side').textContent='WAIT';$('signalStatus').textContent='AI SCANNING';
+    $('signalIcon').innerHTML='<i class="fas fa-satellite-dish"></i>';$('heroReason').textContent='SCANNING M1 · M5 · M30 · H1';$('signalAge').textContent='WAITING';
+    $('rr').textContent='WAIT';$('setupTitle').textContent=`Trade Setup: ${selectedSymbol} Waiting`;$('entry').textContent='WAIT';$('sl').textContent='WAIT';$('tp').textContent='WAIT';$('source').textContent='ict_master_shared_v1.6';
+    $('pipelineTitle').textContent='Waiting for shared ICT event';$('pipelineSub').textContent=`MASTER ICT EA · ${selectedSymbol} · MTF`;$('pipelineHint').textContent=message;
+    $('confirmSection').hidden=true;$('confirmations').innerHTML='';renderTradeMap(null);renderHistory([]);
+  }
+  function renderTradeMap(signal){
+    const wait=$('mapWait'),risk=$('riskZone'),reward=$('rewardZone'),slLine=$('slLine'),entryLine=$('entryLine'),tpLine=$('tpLine'),arrow=$('mapArrow');
+    const side=signal?.side||'WAIT';const entry=Number(String(signal?.entry??'').replaceAll(',',''));const sl=Number(String(signal?.sl??'').replaceAll(',',''));const tp=Number(String(signal?.tp??'').replaceAll(',',''));
+    const valid=(side==='BUY'||side==='SELL')&&[entry,sl,tp].every(Number.isFinite);
+    [risk,reward,slLine,entryLine,tpLine,arrow].forEach(x=>x.style.display=valid?'block':'none');wait.style.display=valid?'none':'grid';if(!valid)return;
+    const values=[entry,sl,tp];let min=Math.min(...values),max=Math.max(...values),span=max-min;if(span<=0)span=1;min-=span*.16;max+=span*.16;span=max-min;
+    const y=v=>100-((v-min)/span)*100;const ey=y(entry),sy=y(sl),ty=y(tp);const setLine=(el,pos)=>el.style.top=`calc(${pos}% - 1px)`;setLine(slLine,sy);setLine(entryLine,ey);setLine(tpLine,ty);
+    entryLine.style.color=side==='BUY'?'#ffffff':'#ff3f54';$('slMap').textContent='SL  '+sl.toFixed(3);$('entryMap').textContent='ENTRY  '+entry.toFixed(3);$('tpMap').textContent='TP  '+tp.toFixed(3);
+    risk.style.top=Math.min(ey,sy)+'%';risk.style.height=Math.abs(ey-sy)+'%';reward.style.top=Math.min(ey,ty)+'%';reward.style.height=Math.abs(ey-ty)+'%';arrow.style.top=Math.min(ey,ty)+'%';arrow.style.height=Math.abs(ey-ty)+'%';arrow.className='map-arrow '+(ty<ey?'up':'down');
+  }
+  function rr(signal){const e=Number(signal.entry),s=Number(signal.sl),t=Number(signal.tp);if(![e,s,t].every(Number.isFinite))return'WAIT';const risk=Math.abs(e-s),reward=Math.abs(t-e);return risk>0?'1:'+(reward/risk).toFixed(2):'WAIT'}
+  function render(signal){
+    const side=signal.side;setTheme(side);lastSyncAt=new Date();
+    $('market').textContent=signal.symbol||selectedSymbol;$('bias').textContent=signal.trend||'WAIT';$('chipTf').textContent='MTF';$('side').textContent=side;
+    $('signalStatus').textContent=(side==='BUY'||side==='SELL')?(signal.status||'READY'):'AI SCANNING';$('signalIcon').innerHTML=side==='BUY'?'<i class="fas fa-arrow-trend-up"></i>':side==='SELL'?'<i class="fas fa-arrow-trend-down"></i>':'<i class="fas fa-satellite-dish"></i>';
+    $('heroReason').textContent=(side==='BUY'||side==='SELL')?'MTF ICT CONFIRMATION LOCKED':'SCANNING M1 · M5 · M30 · H1';$('signalAge').textContent='NOW';
+    $('rr').textContent=(side==='BUY'||side==='SELL')?rr(signal):'WAIT';$('entry').textContent=signalPrice(signal,['entry']);$('sl').textContent=signalPrice(signal,['sl']);$('tp').textContent=signalPrice(signal,['tp']);$('source').textContent=signal.source||'ict_master_shared_v1.6';
+    $('setupTitle').textContent=side==='BUY'?`Trade Setup: ${signal.symbol} BUY NOW!`:side==='SELL'?`Trade Setup: ${signal.symbol} SELL NOW!`:`Trade Setup: ${signal.symbol} Waiting`;
+    const active=side==='BUY'||side==='SELL';$('pipelineTitle').textContent=active?'Shared ICT event confirmed':'Waiting for shared ICT event';$('pipelineSub').textContent=`MASTER ICT EA · ${signal.symbol||selectedSymbol} · M1/M5/M30/H1`;$('pipelineHint').textContent=active?'Entry / Stop Loss / Take Profit generated from the combined M1 / M5 / M30 / H1 Master analysis.':'Master ICT EA is scanning all four timeframes for this symbol.';
+    const events=Array.isArray(signal.events)?signal.events:[];$('confirmSection').hidden=events.length===0;$('confirmations').innerHTML=events.slice(0,8).map(e=>`<span class="event-chip">${escapeHtml(e)}</span>`).join('');renderTradeMap(signal);
+  }
+  function renderHistory(items){
+    const out=items.slice(0,12).map(item=>{const side=item.side||'WAIT';const rgb=side==='BUY'?'0,169,157':side==='SELL'?'255,63,84':'245,176,38';const entry=fmtPrice(item.entry);return `<div class="queue-item" style="--row-rgb:${rgb}"><div class="side-badge">${escapeHtml(side)}</div><div class="queue-main"><strong>${escapeHtml(item.symbol||selectedSymbol)}</strong><span>${escapeHtml(item.created_at||'-')}</span></div><div class="queue-price">${entry}</div></div>`}).join('');
+    $('history').innerHTML=out||`<div class="empty">No ${escapeHtml(selectedSymbol)} ICT signal history received yet.</div>`;
+  }
+  function escapeHtml(value){return String(value??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+  async function saveSelectedSymbol(symbol){
+    const clean=cleanSymbol(symbol);if(!clean)return;
+    selectedSymbol=clean;activeSymbol=clean;activeTimeframe='MTF';localStorage.setItem(SELECTED_KEY,clean);$('symbolSelect').value=clean;resetWaiting(`Loading shared ${clean} ICT signal…`);
+    try{await apiPost('/api/mobile/signals/preferences',{selected_symbol:clean,alert_symbols:[clean]})}catch(_e){}
+    await load({manual:true});
+  }
+  async function loadPreferences(){
+    if(!token||urlSymbol)return;
+    try{const p=await apiGet('/api/mobile/signals/preferences');const serverSymbol=cleanSymbol(p.selected_symbol);if(serverSymbol){selectedSymbol=serverSymbol;activeSymbol=serverSymbol;localStorage.setItem(SELECTED_KEY,serverSymbol);$('symbolSelect').value=serverSymbol}}catch(_e){}
+  }
+  async function load({manual=false}={}){
+    if(loading||!token)return;loading=true;$('refreshSetup').disabled=true;
+    try{
+      const q='?symbol='+encodeURIComponent(selectedSymbol);
+      if(manual)await apiPost('/api/mobile/signals/refresh'+q,{symbol:selectedSymbol}).catch(()=>{});
+      const latest=await apiGet('/api/mobile/signals/latest'+q);apiState(true);
+      const shared=latest.shared_master===true;const live=shared?latest.shared_master_live===true:latest.bridge_live===true;
+      activeSymbol=shared?selectedSymbol:String(latest.active_symbol||selectedSymbol).trim();activeTimeframe=shared?'MTF':String(latest.active_timeframe||'MTF').trim().toUpperCase();
+      if(!live){resetWaiting(latest.message||`Waiting for Shared Master ICT analysis on ${selectedSymbol}.`);return}
+      const raw=extractSignal(latest);const normalized=normalizeSignal(raw,selectedSymbol,'MTF');
+      const historyPayload=await apiGet('/api/mobile/signals/history?symbol='+encodeURIComponent(selectedSymbol)+'&limit=30');
+      const history=dedupe(extractSignalList(historyPayload).map(x=>normalizeSignal(x,selectedSymbol,'MTF')).filter(Boolean).filter(item=>cleanSymbol(item.symbol)===selectedSymbol));
+      if(normalized)render(normalized);else resetWaiting(`Master ICT EA is live; waiting for ${selectedSymbol} MTF analysis.`);renderHistory(history);
+    }catch(e){apiState(false);$('pipelineTitle').textContent='ICT Signal sync failed';$('pipelineHint').textContent=e.message||'API offline'}
+    finally{loading=false;$('refreshSetup').disabled=false}
+  }
+
+  $('symbolSelect').addEventListener('change',e=>saveSelectedSymbol(e.target.value));
+  $('refreshSetup').addEventListener('click',()=>load({manual:true}));
+  setInterval(()=>{$('signalAge').textContent=ageText()},1000);
+  (async()=>{await loadPreferences();resetWaiting(`Loading shared ${selectedSymbol} ICT signal…`);await load();setInterval(load,1000)})();
+})();
+</script>
+
+
+
+<script id="reb-live-chat-final-inline-js">
+(function(){
+  'use strict';
+  if(window.__REB_LIVE_CHAT_LOADED__) return;
+  window.__REB_LIVE_CHAT_LOADED__=true;
+
+  var API_BASE=String(window.REB_API_BASE||localStorage.getItem('REB_API_BASE')||'https://admin.reachempirebot.com').replace(/\/$/,'');
+  var TOKEN_KEY='REB_CLIENT_TOKEN', USER_KEY='REB_CLIENT_USER';
+  var pollTimer=null, unreadTimer=null, statusTimer=null;
+  var mediaRecorder=null, recordStream=null, recordChunks=[], recordHoldActive=false;
+  var busy=false, lastMessageId=0, initialLoaded=false, lastKnownUnread=0;
+  var objectUrls=[], previewCache=new Map(), ids={};
+
+  function token(){var t=(localStorage.getItem(TOKEN_KEY)||'').trim();return t&&t!=='null'&&t!=='undefined'&&t.indexOf('pending-')!==0?t:'';}
+  function authHeaders(extra){var h=extra||{};var t=token();if(t)h.Authorization='Bearer '+t;return h;}
+  function userName(){try{var d=JSON.parse(localStorage.getItem(USER_KEY)||'{}')||{},p=d.profile||{};return String(p.name||p.username||d.username||'Account');}catch(e){return 'Account';}}
+  function qs(s,r){return (r||document).querySelector(s)}
+  function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function formatBytes(n){n=Number(n||0);if(!n)return '0 KB';if(n<1024*1024)return Math.max(1,Math.round(n/1024))+' KB';return (n/1024/1024).toFixed(1)+' MB';}
+  function fmtTime(v){if(!v)return '';var d=new Date(v);if(isNaN(d.getTime()))return '';return d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});}
+  function fmtDay(v){if(!v)return '';var d=new Date(v);if(isNaN(d.getTime()))return '';var t=new Date(),y=new Date(t);y.setDate(t.getDate()-1);if(d.toDateString()===t.toDateString())return 'Today';if(d.toDateString()===y.toDateString())return 'Yesterday';return d.toLocaleDateString([],{month:'short',day:'numeric',year:d.getFullYear()===t.getFullYear()?undefined:'numeric'});}
+  function setStatus(msg,isError){var e=ids.status;if(!e)return;if(!msg){e.className='reb-chat-status';e.textContent='';return;}e.textContent=msg;e.className='reb-chat-status show'+(isError?' error':'');}
+  function setProgress(on){if(ids.progress)ids.progress.classList.toggle('show',!!on);}
+  function setBusy(on){busy=!!on;if(ids.send)ids.send.disabled=busy;if(ids.tools){Array.prototype.forEach.call(ids.tools.querySelectorAll('button'),function(b){b.disabled=busy&&!b.classList.contains('reb-chat-mic');});}}
+  function badge(n){n=Math.max(0,Number(n||0));lastKnownUnread=n;if(!ids.badge)return;ids.badge.textContent=n>99?'99+':String(n);ids.badge.classList.toggle('show',n>0);}
+
+  function supportIcon(){return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2Z"/><path d="M20 14h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2Z"/><path d="M17 20c-1 1-2.7 1-5 1"/></svg>';}
+  function chatIcon(name){
+    var common='viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+    var d={
+      text:'<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8M8 13h5"/>',
+      image:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m21 15-5-5L5 20"/>',
+      video:'<rect x="3" y="5" width="14" height="14" rx="2"/><path d="m17 10 4-2v8l-4-2z"/>',
+      file:'<path d="M6 2h8l4 4v16H6z"/><path d="M14 2v5h5M9 13h6M9 17h6"/>',
+      mic:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/>',
+      send:'<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>',
+      open:'<path d="M14 3h7v7M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/>'
+    };
+    return '<svg '+common+'>'+String(d[name]||d.text)+'</svg>';
+  }
+
+  function build(){
+    // Remove every legacy Telegram floating launcher. A fresh button prevents old mobile
+    // Telegram CSS from taking control of the Customer Service launcher again.
+    var legacy=Array.prototype.slice.call(document.querySelectorAll('.reb-floating-chat'));
+    var launcher=document.createElement('button');launcher.type='button';launcher.className='reb-customer-chat-launcher';launcher.setAttribute('aria-label','Open ReachEmpireBot Customer Service');
+    launcher.innerHTML='<img class="reb-support-launcher-image" src="data:image/png;base64,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" alt="Customer Support">'+'<b class="reb-chat-launcher-badge" aria-label="Unread messages">0</b>';
+    if(legacy.length&&legacy[0].parentNode) legacy[0].parentNode.insertBefore(launcher,legacy[0]); else document.body.appendChild(launcher);
+    legacy.forEach(function(el){try{el.remove();}catch(e){if(el.parentNode)el.parentNode.removeChild(el);}});
+    ids.launcher=launcher;ids.badge=qs('.reb-chat-launcher-badge',launcher);
+
+    var shell=document.createElement('section');shell.className='reb-chat-shell';shell.setAttribute('aria-label','ReachEmpireBot Customer Service Live Chat');
+    function isMobileChatClient(){
+      var ua=String(navigator.userAgent||'');
+      return /Android|iPhone|iPad|iPod|Mobile/i.test(ua) || window.innerWidth<=760 || (window.matchMedia&&window.matchMedia('(pointer:coarse)').matches);
+    }
+    function applyChatFloatingGeometry(){
+      if(!isMobileChatClient()){
+        ['left','top','right','bottom','width','max-width','min-width','height','max-height','min-height','border-radius'].forEach(function(k){shell.style.removeProperty(k);});
+        return;
+      }
+      shell.style.setProperty('position','fixed','important');
+      shell.style.setProperty('left','auto','important');
+      shell.style.setProperty('top','auto','important');
+      shell.style.setProperty('right','14px','important');
+      shell.style.setProperty('bottom','72px','important');
+      shell.style.setProperty('width','286px','important');
+      shell.style.setProperty('max-width','calc(100vw - 84px)','important');
+      shell.style.setProperty('min-width','0','important');
+      shell.style.setProperty('height','390px','important');
+      shell.style.setProperty('max-height','calc(100dvh - 180px)','important');
+      shell.style.setProperty('min-height','0','important');
+      shell.style.setProperty('border-radius','20px','important');
+    }
+    applyChatFloatingGeometry();
+    window.addEventListener('resize',applyChatFloatingGeometry,{passive:true});
+    window.addEventListener('orientationchange',function(){setTimeout(applyChatFloatingGeometry,120);},{passive:true});
+
+    shell.innerHTML='\
+      <header class="reb-chat-header">\
+        <div class="reb-chat-avatar">'+supportIcon()+'</div>\
+        <div class="reb-chat-headcopy"><strong>ReachEmpireBot Customer Service</strong><span>Live Chat • '+esc(userName())+'</span></div>\
+        <button type="button" class="reb-chat-close" aria-label="Close chat">×</button>\
+      </header>\
+      <div class="reb-chat-progress"></div>\
+      <div class="reb-chat-status" role="status" aria-live="polite"></div>\
+      <main class="reb-chat-body"></main>\
+      <div class="reb-chat-attach-preview"><span></span><button type="button" aria-label="Clear selected attachment">×</button></div>\
+      <footer class="reb-chat-composer">\
+        <div class="reb-chat-tools">\
+          <button type="button" class="reb-chat-tool reb-chat-mic" data-label="Voice" title="Hold to record voice" aria-label="Hold to record voice">'+chatIcon('mic')+'</button>\
+          <button type="button" class="reb-chat-tool reb-chat-media-picker" data-label="Photo / Video" title="Upload photo or video" aria-label="Upload photo or video">'+chatIcon('image')+'</button>\
+          <button type="button" class="reb-chat-tool reb-chat-file-tool" data-label="File" title="Upload file" aria-label="Upload file">'+chatIcon('file')+'</button>\
+          <span class="reb-chat-record-label">Recording… release to send</span>\
+        </div>\
+        <div class="reb-chat-native-picker-panel reb-chat-media-panel" hidden>\
+          <div class="reb-chat-native-picker-head"><strong>Upload Photo / Video</strong><button type="button" class="reb-chat-native-picker-close reb-chat-media-picker-close" aria-label="Close photo or video upload">×</button></div>\
+          <label class="reb-chat-native-picker-row"><span>Photo / Video</span><input class="reb-chat-media-input" type="file" accept="image/*,video/*"></label>\
+        </div>\
+        <div class="reb-chat-native-picker-panel reb-chat-file-panel" hidden>\
+          <div class="reb-chat-native-picker-head"><strong>Upload File</strong><button type="button" class="reb-chat-native-picker-close reb-chat-file-picker-close" aria-label="Close file upload">×</button></div>\
+          <label class="reb-chat-native-picker-row"><span>File</span><input class="reb-chat-file-input" type="file"></label>\
+        </div>\
+        <div class="reb-chat-tools reb-chat-tools-spacer" style="display:none">\
+          <span class="reb-chat-record-label">Recording… release to send</span>\
+        </div>\
+        <div class="reb-chat-compose-row"><span class="reb-chat-text-indicator" title="Text message" aria-hidden="true">'+chatIcon('text')+'</span><textarea class="reb-chat-input" rows="1" placeholder="Type a message…" aria-label="Text message"></textarea><button type="button" class="reb-chat-send" aria-label="Send text message">'+chatIcon('send')+'</button></div>\
+      </footer>';
+    document.body.appendChild(shell);
+    ids.shell=shell;ids.body=qs('.reb-chat-body',shell);ids.status=qs('.reb-chat-status',shell);ids.progress=qs('.reb-chat-progress',shell);ids.send=qs('.reb-chat-send',shell);ids.input=qs('.reb-chat-input',shell);ids.tools=qs('.reb-chat-tools',shell);ids.attach=qs('.reb-chat-attach-preview',shell);
+
+    launcher.addEventListener('click',function(ev){
+      var mobile=false;
+      try{
+        mobile=window.matchMedia('(max-width: 900px)').matches ||
+               window.matchMedia('(pointer: coarse)').matches ||
+               /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent||'');
+      }catch(_){ mobile=(window.innerWidth||0)<=900; }
+      if(mobile){
+        if(ev){ev.preventDefault();ev.stopPropagation();if(ev.stopImmediatePropagation)ev.stopImmediatePropagation();}
+        var from=window.location.pathname+window.location.search+window.location.hash;
+        window.location.href='/customer-service.html?v=20260915-chat-sync-v3&from='+encodeURIComponent(from);
+        return;
+      }
+      applyChatFloatingGeometry();toggle(true);
+    });
+    qs('.reb-chat-close',shell).addEventListener('click',function(){toggle(false);});
+    ids.send.addEventListener('click',sendText);
+    ids.input.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendText();}});
+    var mediaInput=qs('.reb-chat-media-input',shell), fileInput=qs('.reb-chat-file-input',shell);
+    var mediaPanel=qs('.reb-chat-media-panel',shell), filePanel=qs('.reb-chat-file-panel',shell);
+    var mediaBtn=qs('.reb-chat-media-picker',shell), fileBtn=qs('.reb-chat-file-tool',shell);
+    var mediaClose=qs('.reb-chat-media-picker-close',shell), fileClose=qs('.reb-chat-file-picker-close',shell);
+
+    function hideMediaPanel(){if(mediaPanel)mediaPanel.hidden=true;}
+    function hideFilePanel(){if(filePanel)filePanel.hidden=true;}
+
+    mediaBtn.addEventListener('click',function(e){
+      e.preventDefault();
+      hideFilePanel();
+      if(mediaPanel)mediaPanel.hidden=false;
+    });
+    fileBtn.addEventListener('click',function(e){
+      e.preventDefault();
+      hideMediaPanel();
+      if(filePanel)filePanel.hidden=false;
+    });
+    mediaClose.addEventListener('click',hideMediaPanel);
+    fileClose.addEventListener('click',hideFilePanel);
+
+    mediaInput.addEventListener('change',function(){
+      var f=this.files&&this.files[0];
+      if(f){hideMediaPanel();sendFile(f,this);}
+    });
+    fileInput.addEventListener('change',function(){
+      var f=this.files&&this.files[0];
+      if(f){hideFilePanel();sendFile(f,this);}
+    });
+    qs('button',ids.attach).addEventListener('click',function(){ids.attach.classList.remove('show');});
+
+    var mic=qs('.reb-chat-mic',shell);
+    mic.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'&&e.button!==0)return;e.preventDefault();recordHoldActive=true;try{mic.setPointerCapture(e.pointerId);}catch(_e){}startRecording();});
+    mic.addEventListener('pointerup',function(e){e.preventDefault();recordHoldActive=false;stopRecordingAndSend();});
+    mic.addEventListener('pointercancel',function(){recordHoldActive=false;cancelRecording();});
+    mic.addEventListener('lostpointercapture',function(){if(mediaRecorder&&mediaRecorder.state==='recording')stopRecordingAndSend();});
+    mic.addEventListener('contextmenu',function(e){e.preventDefault();});
+    renderLoggedOutOrEmpty();
+  }
+
+  function isOpen(){return !!(ids.shell&&ids.shell.classList.contains('open'));}
+  function toggle(open){if(!ids.shell)return;ids.shell.classList.toggle('open',open!==false);if(open!==false){if(!token()){renderLoggedOutOrEmpty();return;}loadInitial(true);startPolling();}else stopPolling();}
+  function renderLoggedOutOrEmpty(){
+    if(!ids.body)return;
+    var footer=qs('.reb-chat-composer',ids.shell);
+    if(!token()){ids.body.innerHTML='<div class="reb-chat-login"><div class="reb-empty-icon">'+supportIcon()+'</div><h4>Customer Service</h4><p>Please log in to your ReachEmpireBot account to start or continue your Live Chat.</p><a href="/login/">Log In</a></div>';if(footer)footer.style.display='none';return;}
+    if(footer)footer.style.display='block';
+    if(!initialLoaded)ids.body.innerHTML='<div class="reb-chat-empty"><div class="reb-empty-icon">'+supportIcon()+'</div><strong>ReachEmpireBot Customer Service</strong><p>Send text, voice, image, video or files. Web links can be pasted directly into a text message.</p></div>';
+  }
+
+  async function api(path,opts){opts=opts||{};opts.headers=authHeaders(opts.headers||{});var r=await fetch(API_BASE+path,opts);var d=await r.json().catch(function(){return {ok:false,message:'Invalid server response.'};});if(r.status===401){initialLoaded=false;renderLoggedOutOrEmpty();throw new Error(d.message||'Please log in again.');}if(!r.ok||d.ok===false)throw new Error(d.message||('Request failed ('+r.status+')'));return d;}
+
+  function maxMessageId(messages){var m=0;(messages||[]).forEach(function(x){m=Math.max(m,Number(x.id||0));});return m;}
+  async function loadInitial(markRead){
+    if(!token()||busy)return;
+    try{setProgress(true);var d=await api('/api/customer-chat/messages?after_id=0');renderMessages(d.messages||[]);lastMessageId=maxMessageId(d.messages||[]);initialLoaded=true;badge(d.unread||0);if(markRead&&Number(d.unread||0)>0){await api('/api/customer-chat/read',{method:'POST'});badge(0);}}
+    catch(e){setStatus(e.message,true);}finally{setProgress(false);}
+  }
+  async function pollNew(){
+    if(!isOpen()||!token()||busy)return;
+    try{var d=await api('/api/customer-chat/messages?after_id='+encodeURIComponent(lastMessageId));var msgs=d.messages||[];if(msgs.length){appendMessages(msgs);lastMessageId=Math.max(lastMessageId,maxMessageId(msgs));}badge(d.unread||0);if(Number(d.unread||0)>0){await api('/api/customer-chat/read',{method:'POST'});badge(0);}}
+    catch(_e){}
+  }
+  async function refreshStatuses(){
+    if(!isOpen()||!token()||busy)return;
+    try{var d=await api('/api/customer-chat/messages?after_id=0');patchMessageStatuses(d.messages||[]);}catch(_e){}
+  }
+  function startPolling(){stopPolling();pollTimer=setInterval(pollNew,2200);statusTimer=setInterval(refreshStatuses,12000);}
+  function stopPolling(){if(pollTimer){clearInterval(pollTimer);pollTimer=null;}if(statusTimer){clearInterval(statusTimer);statusTimer=null;}}
+  async function pollUnread(){if(!token()){badge(0);return;}try{var d=await api('/api/customer-chat/unread');badge(d.unread||0);}catch(_e){}}
+
+  function linkRegex(){return /(?:https?:\/\/|www\.)[^\s<>"']+|(?:\b[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+(?::\d+)?(?:\/[^\s<>"']*)?)/ig;}
+  function cleanUrlToken(v){return String(v||'').replace(/[),.;!?]+$/,'');}
+  function normalizeUrl(v){var u=cleanUrlToken(v).trim();if(!u)return '';return /^https?:\/\//i.test(u)?u:'https://'+u;}
+  function extractUrls(text){var raw=String(text||''),re=linkRegex(),out=[],m;while((m=re.exec(raw))){var shown=cleanUrlToken(m[0]);if(shown&&shown.indexOf('@')<0)out.push(normalizeUrl(shown));}return out;}
+  function linkifyText(text){
+    var raw=String(text||''),re=linkRegex(),html='',last=0,m;
+    while((m=re.exec(raw))){var shown=m[0],clean=cleanUrlToken(shown),href=normalizeUrl(clean);html+=esc(raw.slice(last,m.index));if(href){html+='<a class="reb-chat-inline-link" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+esc(clean)+'</a>';}else{html+=esc(clean);}if(shown.length>clean.length)html+=esc(shown.slice(clean.length));last=m.index+shown.length;}
+    html+=esc(raw.slice(last));return html;
+  }
+  function messageUrls(m){var display=String(m.message_text||m.link_url||'');return extractUrls(display);}
+
+  function renderMessages(messages){
+    if(!ids.body)return;
+    if(!messages.length){initialLoaded=true;ids.body.innerHTML='<div class="reb-chat-empty"><div class="reb-empty-icon">'+supportIcon()+'</div><strong>ReachEmpireBot Customer Service</strong><p>Send text, voice, image, video or files. Web links can be pasted directly into a text message.</p></div>';return;}
+    var html='',lastDay='';messages.forEach(function(m){var day=fmtDay(m.created_at);if(day!==lastDay){html+='<div class="reb-chat-day" data-chat-day="'+esc(day)+'"><span>'+esc(day)+'</span></div>';lastDay=day;}html+=messageHtml(m);});ids.body.innerHTML=html;hydrateNodes(ids.body);ids.body.scrollTop=ids.body.scrollHeight;
+  }
+  function appendMessages(messages){
+    if(!messages.length)return;
+    var atBottom=(ids.body.scrollHeight-ids.body.scrollTop-ids.body.clientHeight)<100;
+    if(qs('.reb-chat-empty',ids.body))ids.body.innerHTML='';
+    messages.forEach(function(m){var day=fmtDay(m.created_at),lastDay=ids.body.querySelector('.reb-chat-day:last-of-type');var dayExists=false;if(lastDay&&lastDay.dataset.chatDay===day)dayExists=true;if(!dayExists){var days=ids.body.querySelectorAll('.reb-chat-day');if(days.length&&days[days.length-1].dataset.chatDay===day)dayExists=true;}if(!dayExists)ids.body.insertAdjacentHTML('beforeend','<div class="reb-chat-day" data-chat-day="'+esc(day)+'"><span>'+esc(day)+'</span></div>');ids.body.insertAdjacentHTML('beforeend',messageHtml(m));var row=ids.body.querySelector('[data-message-id="'+Number(m.id||0)+'"]');if(row)hydrateNodes(row);});
+    if(atBottom)ids.body.scrollTop=ids.body.scrollHeight;
+  }
+  function patchMessageStatuses(messages){(messages||[]).forEach(function(m){if(m.sender_type!=='user')return;var row=ids.body&&ids.body.querySelector('[data-message-id="'+Number(m.id||0)+'"]');if(!row)return;var st=qs('.reb-chat-state',row);if(st)st.textContent=m.read_at?'Read':(m.delivered_at?'Delivered':'Sent');});}
+
+  function messageHtml(m){
+    var mine=m.sender_type==='user',att=m.attachment||null,status=mine?(m.read_at?'Read':(m.delivered_at?'Delivered':'Sent')):'',display=String(m.message_text||m.link_url||''),urls=extractUrls(display),content='';
+    if(display)content+='<div class="reb-chat-text">'+linkifyText(display)+'</div>';
+    if(urls.length===1)content+='<div class="reb-chat-rich-preview" data-link-preview="'+esc(urls[0])+'"><div class="reb-chat-link-skeleton">Loading link preview…</div></div>';
+    if(att){if(att.kind==='file')content+=fileCard(att);else content+='<div class="reb-chat-media" data-media-id="'+Number(att.id||0)+'" data-kind="'+esc(att.kind)+'" data-url="'+esc(att.url||'')+'"><div class="reb-chat-media-loading">Loading '+esc(att.kind)+'…</div></div>';}
+    var bubbleClass='reb-chat-bubble'+(att?' reb-chat-bubble-media reb-chat-bubble-'+esc(att.kind||'file'):'');return '<div class="reb-chat-row '+(mine?'user':'admin')+'" data-message-id="'+Number(m.id||0)+'"><div class="'+bubbleClass+'"><div class="reb-chat-sender">'+esc(mine?'You':(m.sender_name||'Customer Service'))+'</div>'+content+'<div class="reb-chat-meta"><span>'+esc(fmtTime(m.created_at))+'</span>'+(status?'<span>• <span class="reb-chat-state">'+esc(status)+'</span></span>':'')+'</div></div></div>';
+  }
+  function fileCard(att){return '<div class="reb-chat-file-card"><span class="reb-chat-file-icon">'+chatIcon('file')+'</span><span class="reb-chat-file-copy"><strong>'+esc(att.original_name||'File')+'</strong><span>'+esc(formatBytes(att.file_size))+'</span></span><button type="button" data-file-view="'+Number(att.id||0)+'" data-file-url="'+esc(att.url||'')+'" data-file-name="'+esc(att.original_name||'file')+'">View</button></div>';}
+  function hydrateNodes(root){Array.prototype.forEach.call(root.querySelectorAll('[data-media-id]'),loadMediaNode);Array.prototype.forEach.call(root.querySelectorAll('[data-file-view]'),function(btn){if(btn.dataset.bound)return;btn.dataset.bound='1';btn.addEventListener('click',function(){openProtectedFile(btn.dataset.fileUrl,btn.dataset.fileName);});});Array.prototype.forEach.call(root.querySelectorAll('[data-link-preview]'),loadLinkPreviewNode);}
+  async function mediaBlobUrl(rel){var r=await fetch(API_BASE+rel,{headers:authHeaders({})});if(!r.ok)throw new Error('Could not load attachment.');var blob=await r.blob(),u=URL.createObjectURL(blob);objectUrls.push(u);return u;}
+  async function loadMediaNode(node){if(node.dataset.loading)return;node.dataset.loading='1';try{var u=await mediaBlobUrl(node.dataset.url),kind=node.dataset.kind;if(kind==='image'){node.innerHTML='<img alt="Chat image">';qs('img',node).src=u;}else if(kind==='video'){node.innerHTML='<video controls playsinline preload="metadata"></video>';qs('video',node).src=u;}else if(kind==='audio'){node.innerHTML='<audio controls preload="metadata"></audio>';qs('audio',node).src=u;}}catch(e){node.innerHTML='<div class="reb-chat-media-loading">Attachment unavailable</div>';}}
+  async function openProtectedFile(rel,name){try{setProgress(true);var u=await mediaBlobUrl(rel),w=window.open(u,'_blank');if(!w){var a=document.createElement('a');a.href=u;a.download=name||'file';a.click();}}catch(e){setStatus(e.message,true);}finally{setProgress(false);}}
+  async function loadLinkPreviewNode(node){
+    if(node.dataset.loading)return;var url=node.dataset.linkPreview;if(!url)return;node.dataset.loading='1';
+    try{var p=previewCache.get(url);if(!p){var d=await api('/api/customer-chat/link-preview?url='+encodeURIComponent(url));p=d.preview||{};previewCache.set(url,p);}var href=p.final_url||url,img=p.image_url||p.icon_url||'',thumb=img?'<img src="'+esc(img)+'" alt="Link preview" loading="lazy">':'<span class="reb-chat-preview-thumb-fallback">'+chatIcon('open')+'</span>';node.innerHTML='<a class="reb-chat-preview-card" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+thumb+'<span class="reb-chat-preview-copy"><strong>'+esc(p.title||p.domain||url)+'</strong><small>'+esc(p.domain||url)+'</small></span><span class="reb-chat-preview-open">'+chatIcon('open')+'</span></a>';}
+    catch(_e){node.innerHTML='';}
+  }
+
+  async function sendText(){
+    var v=(ids.input.value||'').trim();if(!v||busy||!token())return;ids.input.value='';
+    try{setBusy(true);setProgress(true);var d=await api('/api/customer-chat/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:v})});setStatus('');if(d.message){if(qs('.reb-chat-empty',ids.body))ids.body.innerHTML='';appendMessages([d.message]);lastMessageId=Math.max(lastMessageId,Number(d.message.id||0));}else await pollNew();}
+    catch(e){ids.input.value=v;setStatus(e.message,true);}finally{setBusy(false);setProgress(false);}
+  }
+  async function sendFile(file,inputEl,forcedKind){
+    if(!file||busy||!token())return;var label=qs('span',ids.attach);label.textContent=file.name+' • '+formatBytes(file.size);ids.attach.classList.add('show');
+    try{setBusy(true);setProgress(true);var fd=new FormData();fd.append('file',file,file.name);if(forcedKind)fd.append('attachment_kind',forcedKind);var d=await api('/api/customer-chat/send',{method:'POST',body:fd});ids.attach.classList.remove('show');if(inputEl)inputEl.value='';setStatus('');if(d.message){if(qs('.reb-chat-empty',ids.body))ids.body.innerHTML='';appendMessages([d.message]);lastMessageId=Math.max(lastMessageId,Number(d.message.id||0));}else await pollNew();}
+    catch(e){setStatus(e.message,true);}finally{setBusy(false);setProgress(false);}
+  }
+
+  async function startRecording(){
+    var btn=qs('.reb-chat-mic',ids.shell),label=qs('.reb-chat-record-label',ids.shell);if(busy||!token()||(mediaRecorder&&mediaRecorder.state==='recording'))return;if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia||typeof MediaRecorder==='undefined'){setStatus('Voice recording is not supported by this browser.',true);return;}
+    try{recordStream=await navigator.mediaDevices.getUserMedia({audio:true});if(!recordHoldActive){recordStream.getTracks().forEach(function(t){t.stop();});recordStream=null;return;}recordChunks=[];var mime='';['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg;codecs=opus'].some(function(m){if(MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(m)){mime=m;return true;}return false;});mediaRecorder=mime?new MediaRecorder(recordStream,{mimeType:mime}):new MediaRecorder(recordStream);mediaRecorder.ondataavailable=function(e){if(e.data&&e.data.size)recordChunks.push(e.data);};mediaRecorder.onstop=async function(){btn.classList.remove('recording');label.classList.remove('show');if(recordStream)recordStream.getTracks().forEach(function(t){t.stop();});var recorder=mediaRecorder,type=(recorder&&recorder.mimeType)||mime||'audio/webm',chunks=recordChunks.slice();mediaRecorder=null;recordStream=null;recordChunks=[];if(!chunks.length)return;var ext=type.indexOf('mp4')>=0?'m4a':(type.indexOf('ogg')>=0?'ogg':'webm'),blob=new Blob(chunks,{type:type});if(blob.size<300)return;var f=new File([blob],'voice_'+Date.now()+'.'+ext,{type:type});await sendFile(f,null,'audio');};mediaRecorder.start(120);btn.classList.add('recording');label.classList.add('show');setStatus('');}
+    catch(e){setStatus('Microphone permission is required for voice messages.',true);if(recordStream)recordStream.getTracks().forEach(function(t){t.stop();});mediaRecorder=null;recordStream=null;recordChunks=[];btn.classList.remove('recording');label.classList.remove('show');}
+  }
+  function stopRecordingAndSend(){recordHoldActive=false;if(mediaRecorder&&mediaRecorder.state==='recording'){try{mediaRecorder.stop();}catch(e){}}}
+  function cancelRecording(){recordHoldActive=false;var btn=qs('.reb-chat-mic',ids.shell),label=qs('.reb-chat-record-label',ids.shell);if(mediaRecorder&&mediaRecorder.state==='recording'){try{mediaRecorder.onstop=null;mediaRecorder.stop();}catch(e){}}if(recordStream)recordStream.getTracks().forEach(function(t){t.stop();});mediaRecorder=null;recordStream=null;recordChunks=[];if(btn)btn.classList.remove('recording');if(label)label.classList.remove('show');}
+
+  function resetForAuth(){initialLoaded=false;lastMessageId=0;renderLoggedOutOrEmpty();pollUnread();}
+  function init(){build();pollUnread();unreadTimer=setInterval(pollUnread,5000);window.addEventListener('storage',function(e){if(e.key===TOKEN_KEY||e.key===USER_KEY)resetForAuth();});window.addEventListener('reb:auth-changed',resetForAuth);window.addEventListener('beforeunload',function(){stopPolling();objectUrls.forEach(function(u){try{URL.revokeObjectURL(u);}catch(e){}});});}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+
+</script>
+
+<script id="REB_MOBILE_CUSTOMER_SERVICE_ROUTE_ALL_PAGES_20260914">
+(function(){
+  'use strict';
+  if(/\/customer-service\.html$/i.test(window.location.pathname)) return;
+
+  function rebIsMobileCustomerService(){
+    try{
+      return window.matchMedia('(max-width: 900px)').matches ||
+             window.matchMedia('(pointer: coarse)').matches ||
+             /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || '');
+    }catch(_){
+      return (window.innerWidth || 0) <= 900;
+    }
+  }
+
+  function rebOpenDedicatedCustomerService(ev){
+    if(!rebIsMobileCustomerService()) return;
+    var target = ev.target && ev.target.closest ? ev.target.closest('.reb-customer-chat-launcher') : null;
+    if(!target) return;
+
+    ev.preventDefault();
+    ev.stopPropagation();
+    if(typeof ev.stopImmediatePropagation === 'function') ev.stopImmediatePropagation();
+
+    var from = window.location.pathname + window.location.search + window.location.hash;
+    window.location.assign('/customer-service.html?v=20260915-chat-sync-v3&from=' + encodeURIComponent(from));
+  }
+
+  document.addEventListener('click', rebOpenDedicatedCustomerService, true);
+})();
+</script>
+
+</body>
+</html>
