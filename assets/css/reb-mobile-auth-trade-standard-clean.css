@@ -1,0 +1,104 @@
+/* ReachEmpireBot — Mobile Auth Standard
+   Source of truth: Trade Account mobile header.
+   IMPORTANT: mobile-only. Desktop styles are intentionally untouched.
+*/
+@media (max-width: 767px) {
+  html body.reb-subpage .reb-top {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    min-height: 52px !important;
+    margin: 0 !important;
+    padding: 5px 14px !important;
+    background: #101312 !important;
+  }
+
+  html body.reb-subpage .reb-top > .reb-phone {
+    display: none !important;
+  }
+
+  html body.reb-subpage .reb-top > .reb-auth-trade-standard {
+    box-sizing: border-box !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: center !important;
+    gap: 4px !important;
+
+    /* Match the compact frame seen on Trade Account */
+    width: 244px !important;
+    min-width: 244px !important;
+    max-width: 244px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+
+    flex: 0 0 244px !important;
+    margin: 0 !important;
+    padding: 3px !important;
+
+    overflow: hidden !important;
+    border: 1px solid rgba(245, 176, 38, .42) !important;
+    border-radius: 10px !important;
+    background: #111513 !important;
+    box-shadow: none !important;
+  }
+
+  html body.reb-subpage .reb-top > .reb-auth-trade-standard > a {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+
+    margin: 0 !important;
+    padding: 0 10px !important;
+
+    border-radius: 7px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  html body.reb-subpage .reb-top > .reb-auth-trade-standard > a[href*="/signup/"] {
+    border: 1px solid #ffb11b !important;
+    background: #ffb11b !important;
+    background-image: none !important;
+    color: #080808 !important;
+  }
+
+  html body.reb-subpage .reb-top > .reb-auth-trade-standard > a[href*="/login/"] {
+    border: 1px solid #59605f !important;
+    background: #101413 !important;
+    background-image: none !important;
+    color: #fff !important;
+  }
+
+  html body.reb-subpage .reb-top > .reb-auth-trade-standard > a::before,
+  html body.reb-subpage .reb-top > .reb-auth-trade-standard > a::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+/* Narrow phones: keep the same proportions without horizontal overflow. */
+@media (max-width: 280px) {
+  html body.reb-subpage .reb-top > .reb-auth-trade-standard {
+    width: calc(100vw - 28px) !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 28px) !important;
+    flex-basis: auto !important;
+  }
+}

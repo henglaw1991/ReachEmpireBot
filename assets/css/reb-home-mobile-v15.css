@@ -1,0 +1,48 @@
+/* ReachEmpireBot Home V15 - phone visual refinement only. */
+@media (max-width:767px){
+  body.reb-home .reb-hero-bg-tv{display:none!important}
+  body.reb-home .reb-hero{background:radial-gradient(circle at 78% 76%,rgba(245,176,38,.18),transparent 36%),linear-gradient(145deg,#030303 0%,#0b0a07 100%)!important}
+  body.reb-home .reb-hero:before{opacity:.09!important}
+  body.reb-home .reb-hero-inner{gap:15px!important}
+  body.reb-home .reb-hero h1{font-size:30px!important;line-height:1.04!important}
+  body.reb-home .reb-hero-text{font-size:13.5px!important;line-height:1.5!important}
+  body.reb-home .reb-hero-visual{grid-template-rows:auto 184px!important;gap:8px!important}
+  body.reb-home img.reb-robot{width:176px!important;max-width:58vw!important;max-height:190px!important}
+  body.reb-home .reb-feature{min-height:39px!important;padding:6px 7px!important;font-size:9.5px!important}
+  body.reb-home .reb-feature i{width:19px!important;height:19px!important;flex-basis:19px!important}
+
+  body.reb-home .reb-trust-section{padding:14px 0 22px!important}
+  body.reb-home .reb-trust-lead{padding:15px!important}
+  body.reb-home .reb-trust-lead span{font-size:10px!important;line-height:1.3!important}
+  body.reb-home .reb-trust-lead strong{font-size:21px!important;line-height:1.18!important}
+  body.reb-home .reb-trust-item{min-height:78px!important;padding:12px!important}
+  body.reb-home .reb-trust-item strong{font-size:18px!important}
+  body.reb-home .reb-trust-item span{font-size:11px!important;line-height:1.3!important}
+
+  body.reb-home .reb-solutions,body.reb-home .reb-platform-section,body.reb-home .reb-markets,body.reb-home .reb-symbol-sync,body.reb-home .reb-process,body.reb-home .reb-apps,body.reb-home .reb-news{padding-top:42px!important;padding-bottom:42px!important}
+  body.reb-home .sec-title{padding-bottom:18px!important}
+  body.reb-home .sec-title .sub-title{font-size:11px!important;margin-bottom:9px!important}
+  body.reb-home .sec-title h2{font-size:26px!important;line-height:1.13!important}
+  body.reb-home .reb-solutions .account-block-one .inner-box{padding:16px!important}
+  body.reb-home .reb-solutions .account-block-one .inner-box .icon-box{margin-bottom:13px!important}
+  body.reb-home .reb-solutions .account-block-one .inner-box h3{font-size:19px!important;margin-bottom:7px!important}
+  body.reb-home .reb-solutions .account-block-one .inner-box p{font-size:13px!important;line-height:1.48!important}
+  body.reb-home .reb-platform-section .video-inner{min-height:225px!important}
+  body.reb-home .reb-symbol-grid{gap:10px!important}
+  body.reb-home .reb-symbol-card{padding:16px!important}
+  body.reb-home .reb-symbol-note{margin-top:18px!important;padding:15px!important}
+  body.reb-home .reb-process .image-box .image{min-height:280px!important}
+  body.reb-home .reb-process .image-box .image img{width:min(250px,72vw)!important}
+  body.reb-home .reb-news .news-block-one .inner-box{min-height:0!important}
+
+  body.reb-home #reb-live-ticker{animation-duration:58s!important}
+  body.reb-home #reb-live-ticker .reb-market-tick{padding-right:22px!important}
+  body.reb-home #reb-live-ticker strong{max-width:none!important;overflow:visible!important;text-overflow:clip!important}
+  body.reb-home .reb-market-dot{display:none!important}
+}
+
+@media (max-width:374px){
+  body.reb-home .reb-hero h1{font-size:28px!important}
+  body.reb-home .reb-hero-visual{grid-template-rows:auto 172px!important}
+  body.reb-home img.reb-robot{width:166px!important}
+}

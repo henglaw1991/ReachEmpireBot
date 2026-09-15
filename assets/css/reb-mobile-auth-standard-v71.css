@@ -1,0 +1,126 @@
+/* ReachEmpireBot Mobile Auth Standard V71
+   One standard for Username + Log Out on every public page.
+   Desktop is intentionally untouched. */
+
+@media (max-width: 767px) {
+  html.reb-client-logged-in body .reb-top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  html.reb-client-logged-in body .reb-top .reb-phone {
+    display: none !important;
+  }
+
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in,
+  html.reb-client-logged-in body .reb-top .reb-actions.reb-auth-logged-in,
+  html.reb-client-logged-in body .reb-top .reb-login.reb-auth-logged-in {
+    box-sizing: border-box !important;
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: center !important;
+
+    width: 264px !important;
+    min-width: 264px !important;
+    max-width: 264px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+
+    margin: 0 12px 0 auto !important;
+    padding: 3px !important;
+    gap: 5px !important;
+
+    background: #111514 !important;
+    background-image: none !important;
+    border: 1px solid rgba(245,176,38,.38) !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
+
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in > .language-picker {
+    display: none !important;
+  }
+
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in > .reb-session-account,
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in > .reb-session-logout,
+  html.reb-client-logged-in body .reb-top .reb-auth-logged-in > .reb-session-account,
+  html.reb-client-logged-in body .reb-top .reb-auth-logged-in > .reb-session-logout {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+
+    margin: 0 !important;
+    padding: 0 6px !important;
+
+    border-radius: 7px !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+
+    box-shadow: none !important;
+    transform: none !important;
+    background-image: none !important;
+  }
+
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in > .reb-session-account,
+  html.reb-client-logged-in body .reb-top .reb-auth-logged-in > .reb-session-account {
+    color: #fff !important;
+    background: #181b18 !important;
+    border: 1px solid #a27618 !important;
+  }
+
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in > .reb-session-logout,
+  html.reb-client-logged-in body .reb-top .reb-auth-logged-in > .reb-session-logout {
+    color: #fff !important;
+    background: #321919 !important;
+    border: 1px solid #8b3b3b !important;
+  }
+
+  html.reb-client-logged-in body .reb-session-account::before,
+  html.reb-client-logged-in body .reb-session-account::after,
+  html.reb-client-logged-in body .reb-session-logout::before,
+  html.reb-client-logged-in body .reb-session-logout::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+@media (max-width: 374px) {
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in,
+  html.reb-client-logged-in body .reb-top .reb-actions.reb-auth-logged-in,
+  html.reb-client-logged-in body .reb-top .reb-login.reb-auth-logged-in {
+    width: 248px !important;
+    min-width: 248px !important;
+    max-width: 248px !important;
+    margin-right: 10px !important;
+  }
+
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in > .reb-session-account,
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in > .reb-session-logout,
+  html.reb-client-logged-in body .reb-top .reb-auth-logged-in > .reb-session-account,
+  html.reb-client-logged-in body .reb-top .reb-auth-logged-in > .reb-session-logout {
+    font-size: 9.5px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+}

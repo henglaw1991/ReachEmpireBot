@@ -1,0 +1,130 @@
+/* ReachEmpireBot mobile auth standard v36 — mobile only. */
+@media (max-width: 767px) {
+  html body .reb-top,
+  html body .main-header .header-top {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
+    margin: 0 !important;
+    padding: 7px 14px !important;
+    overflow: hidden !important;
+    background: #101312 !important;
+  }
+
+  html body .reb-top .reb-phone,
+  html body .main-header .header-top .support-box,
+  html body .main-header .header-top .language-picker {
+    display: none !important;
+  }
+
+  html body .main-header .header-top .large-container,
+  html body .main-header .header-top .top-inner {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login,
+  html body .main-header .header-top .option-block {
+    box-sizing: border-box !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 112px !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: min(420px, 100%) !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+    margin: 0 !important;
+    padding: 4px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(245, 176, 38, .42) !important;
+    border-radius: 12px !important;
+    background: #111513 !important;
+    box-shadow: none !important;
+  }
+
+  html body .reb-top .reb-actions > a,
+  html body .reb-top .reb-login > a,
+  html body .main-header .header-top .option-block > a {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+    border-radius: 9px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  html body .reb-top .reb-actions > a[href*="/signup/"]:first-child,
+  html body .reb-top .reb-login > a[href*="/signup/"]:first-child,
+  html body .main-header .header-top .option-block > a[href*="/signup/"]:first-child {
+    border: 1px solid #ffb11b !important;
+    background: #ffb11b !important;
+    background-image: none !important;
+    color: #080808 !important;
+  }
+
+  html body .reb-top .reb-actions > a[href*="/login/"],
+  html body .reb-top .reb-login > a[href*="/login/"],
+  html body .main-header .header-top .option-block > a[href*="/login/"] {
+    border: 1px solid #59605f !important;
+    background: #101413 !important;
+    background-image: none !important;
+    color: #fff !important;
+  }
+
+  html body .reb-top .reb-actions.reb-auth-logged-in > a.reb-session-account:first-child,
+  html body .reb-top .reb-login.reb-auth-logged-in > a.reb-session-account:first-child,
+  html body .main-header .header-top .option-block.reb-auth-logged-in > a.reb-session-account:first-child {
+    border: 1px solid #a27618 !important;
+    background: #161914 !important;
+    background-image: none !important;
+    color: #fff !important;
+  }
+
+  html body .reb-top .reb-actions.reb-auth-logged-in > a.reb-session-logout,
+  html body .reb-top .reb-login.reb-auth-logged-in > a.reb-session-logout,
+  html body .main-header .header-top .option-block.reb-auth-logged-in > a.reb-session-logout {
+    border: 1px solid #8b3b3b !important;
+    background: #321919 !important;
+    background-image: none !important;
+    color: #fff !important;
+  }
+
+  html body .reb-top a::before,
+  html body .reb-top a::after,
+  html body .main-header .header-top .option-block > a::before,
+  html body .main-header .header-top .option-block > a::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+
+

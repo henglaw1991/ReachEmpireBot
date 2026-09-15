@@ -1,0 +1,131 @@
+/* Aligns the primary ReachEmpireBot pages so the menu does not jump between pages. */
+html{
+  scroll-behavior:auto !important;
+}
+
+@media (min-width: 901px){
+  .reb-top{
+    height:58px !important;
+    min-height:58px !important;
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+    display:flex !important;
+    align-items:center !important;
+  }
+
+  .reb-actions a,
+  .reb-login a{
+    min-height:36px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .reb-header{
+    height:120px !important;
+    min-height:120px !important;
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+    display:flex !important;
+    align-items:center !important;
+  }
+
+  .reb-logo{
+    display:flex;
+    align-items:center;
+    height:120px;
+  }
+
+  .reb-nav{
+    min-height:120px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+  }
+
+  .reb-nav a{
+    min-width:122px;
+    min-height:42px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    line-height:1.15;
+  }
+
+  .reb-nav a:first-child{
+    min-width:98px;
+  }
+
+  .reb-hero{
+    min-height:610px;
+    display:flex;
+    align-items:center;
+  }
+
+  .reb-hero-inner{
+    width:100%;
+  }
+
+  .reb-home .header-top{
+    height:58px !important;
+    min-height:58px !important;
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+  }
+
+  .reb-home .header-top .large-container,
+  .reb-home .header-top .top-inner{
+    height:58px !important;
+    min-height:58px !important;
+    display:flex !important;
+    align-items:center !important;
+  }
+
+  .reb-home .header-lower{
+    height:120px !important;
+    min-height:120px !important;
+  }
+
+  .reb-home .header-lower .outer-box{
+    height:120px !important;
+    min-height:120px !important;
+    display:flex !important;
+    align-items:center !important;
+  }
+
+  .reb-home .header-lower .menu-area{
+    display:flex !important;
+    align-items:center !important;
+    transform:translateX(-30px);
+  }
+
+  .reb-home .main-menu .navigation > li > a{
+    min-width:122px;
+    min-height:42px;
+    display:inline-flex !important;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    line-height:1.15;
+  }
+
+  .reb-home .main-menu .navigation > li:first-child > a{
+    min-width:98px;
+  }
+
+  .reb-home .header-bottom{
+    display:none !important;
+  }
+
+  .reb-home .banner-section{
+    padding-top:0 !important;
+  }
+}
+
+@media (max-width: 900px){
+  .reb-header{
+    position:relative !important;
+    top:auto !important;
+  }
+}

@@ -1,0 +1,43 @@
+/* ReachEmpireBot Home V30 - right aligned account controls and raised menu. */
+@media (max-width:767px){
+  html body.reb-home .main-header .header-top .large-container{
+    width:100%!important;
+    padding:0 12px!important;
+  }
+  html body.reb-home .main-header .header-top .top-inner{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    width:100%!important;
+    min-height:48px!important;
+  }
+  html body.reb-home .main-header .option-block{
+    position:relative!important;
+    inset:auto!important;
+    width:min(238px,68vw)!important;
+    max-width:238px!important;
+    margin:0!important;
+    align-self:center!important;
+  }
+
+  html body.reb-home .main-header .header-lower,
+  html body.reb-home .main-header .header-lower .outer-box{height:76px!important;min-height:76px!important}
+  html body.reb-home .main-header .menu-area{
+    position:relative!important;
+    align-self:center!important;
+    transform:translateY(-7px)!important;
+  }
+  html body.reb-home .main-header .mobile-nav-toggler{
+    position:relative!important;
+    top:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    margin:0!important;
+  }
+}
+
+@media (max-width:374px){
+  html body.reb-home .main-header .option-block{width:min(212px,70vw)!important}
+  html body.reb-home .main-header .menu-area{transform:translateY(-6px)!important}
+}
+

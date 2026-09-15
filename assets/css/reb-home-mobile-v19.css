@@ -1,0 +1,141 @@
+/* ReachEmpireBot Home V19 - compact Symbol Sync and Three Steps on phones. */
+@media (max-width:767px){
+  /* Multi-Market Symbol Sync: compact 2 x 2 cards. */
+  body.reb-home .reb-symbol-sync{
+    padding-top:36px!important;
+    padding-bottom:36px!important;
+  }
+  body.reb-home .reb-symbol-sync .sec-title{padding-bottom:16px!important}
+  body.reb-home .reb-symbol-sync .reb-symbol-grid{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+  }
+  body.reb-home .reb-symbol-sync .reb-symbol-card{
+    display:flex!important;
+    flex-direction:column!important;
+    min-width:0!important;
+    min-height:154px!important;
+    height:auto!important;
+    padding:13px!important;
+    border-radius:10px!important;
+  }
+  body.reb-home .reb-symbol-sync .reb-symbol-card span{
+    align-self:flex-start!important;
+    margin:0 0 7px!important;
+    padding:4px 8px!important;
+    font-size:9px!important;
+    line-height:1.1!important;
+  }
+  body.reb-home .reb-symbol-sync .reb-symbol-card h3{
+    margin:0 0 6px!important;
+    font-size:20px!important;
+    line-height:1.1!important;
+  }
+  body.reb-home .reb-symbol-sync .reb-symbol-card p{
+    display:-webkit-box!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:3!important;
+    overflow:hidden!important;
+    margin:0 0 9px!important;
+    font-size:10.5px!important;
+    line-height:1.35!important;
+  }
+  body.reb-home .reb-symbol-sync .reb-symbol-card strong{
+    margin-top:auto!important;
+    font-size:12px!important;
+    line-height:1.2!important;
+  }
+  body.reb-home .reb-symbol-sync .reb-symbol-note{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    margin-top:14px!important;
+    padding:13px!important;
+    text-align:left!important;
+  }
+  body.reb-home .reb-symbol-sync .reb-symbol-note p{
+    margin:0!important;
+    font-size:11px!important;
+    line-height:1.4!important;
+  }
+  body.reb-home .reb-symbol-sync .reb-symbol-note .theme-btn{
+    width:100%!important;
+    min-height:40px!important;
+    padding:9px 12px!important;
+    font-size:12px!important;
+  }
+
+  /* Launch Automation: concise list cards and no oversized robot frame. */
+  body.reb-home .reb-process{
+    padding-top:36px!important;
+    padding-bottom:36px!important;
+  }
+  body.reb-home .reb-process .inner-container{
+    padding-top:0!important;
+    padding-bottom:0!important;
+  }
+  body.reb-home .reb-process .sec-title{padding-bottom:16px!important}
+  body.reb-home .reb-process .row{margin:0!important}
+  body.reb-home .reb-process .content-column{
+    width:100%!important;
+    max-width:100%!important;
+    flex:0 0 100%!important;
+    padding:0!important;
+  }
+  body.reb-home .reb-process .content-box{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:9px!important;
+  }
+  body.reb-home .reb-process .process-block-one{margin:0!important}
+  body.reb-home .reb-process .process-block-one .inner-box{
+    display:grid!important;
+    grid-template-columns:38px minmax(0,1fr)!important;
+    column-gap:11px!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0!important;
+    padding:13px!important;
+    border-radius:10px!important;
+    text-align:left!important;
+  }
+  body.reb-home .reb-process .process-block-one .inner-box:before,
+  body.reb-home .reb-process .process-block-one .inner-box .shape{display:none!important}
+  body.reb-home .reb-process .process-block-one .inner-box .count-text{
+    position:relative!important;
+    inset:auto!important;
+    grid-column:1!important;
+    grid-row:1 / span 2!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:38px!important;
+    height:38px!important;
+    line-height:1!important;
+    margin:0!important;
+    font-size:15px!important;
+  }
+  body.reb-home .reb-process .process-block-one .inner-box h3{
+    grid-column:2!important;
+    margin:0 0 4px!important;
+    font-size:15px!important;
+    line-height:1.2!important;
+  }
+  body.reb-home .reb-process .process-block-one .inner-box p{
+    grid-column:2!important;
+    display:-webkit-box!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:2!important;
+    overflow:hidden!important;
+    margin:0!important;
+    font-size:10.5px!important;
+    line-height:1.4!important;
+  }
+  body.reb-home .reb-process .image-column{display:none!important}
+}
+
+@media (max-width:350px){
+  body.reb-home .reb-symbol-sync .reb-symbol-grid{grid-template-columns:1fr!important}
+  body.reb-home .reb-symbol-sync .reb-symbol-card{min-height:132px!important}
+}

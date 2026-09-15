@@ -1,0 +1,336 @@
+/* Download page: match the compact mobile standard used by Forex/Crypto/Metal pages. */
+@media (max-width: 767px) {
+  body.reb-download-page .reb-policy-modal {
+    z-index: 20000 !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+    background: rgba(0, 0, 0, .82) !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  body.reb-download-page .reb-policy-dialog {
+    position: relative !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  body.reb-download-page .reb-policy-head {
+    flex: 0 0 auto !important;
+    padding: 15px 16px 13px !important;
+    gap: 10px !important;
+  }
+
+  body.reb-download-page .reb-policy-head h2 {
+    padding-right: 42px !important;
+    font-size: 22px !important;
+    line-height: 1.18 !important;
+  }
+
+  body.reb-download-page .reb-policy-head p {
+    margin-top: 6px !important;
+    padding-right: 8px !important;
+    font-size: 13px !important;
+    line-height: 1.42 !important;
+  }
+
+  body.reb-download-page .reb-policy-close {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  body.reb-download-page .reb-policy-tools {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+    margin-top: 11px !important;
+  }
+
+  body.reb-download-page .reb-policy-tools label {
+    width: auto !important;
+    font-size: 11px !important;
+  }
+
+  body.reb-download-page .reb-locale-options {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    gap: 6px !important;
+  }
+
+  body.reb-download-page .reb-locale-button {
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 40px !important;
+    padding: 0 5px !important;
+    gap: 5px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+
+  body.reb-download-page .reb-locale-button .reb-flag-svg {
+    width: 22px !important;
+    min-width: 22px !important;
+  }
+
+  body.reb-download-page .reb-policy-body {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    padding: 18px 17px 22px !important;
+    overscroll-behavior: contain !important;
+  }
+
+  body.reb-download-page .reb-policy-content {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+  }
+
+  body.reb-download-page .reb-policy-content h3 {
+    font-size: 21px !important;
+    line-height: 1.2 !important;
+  }
+
+  body.reb-download-page .reb-policy-content .reb-policy-subtitle {
+    margin-bottom: 16px !important;
+    font-size: 14px !important;
+  }
+
+  body.reb-download-page .reb-policy-section {
+    margin-bottom: 18px !important;
+    padding-bottom: 14px !important;
+  }
+
+  body.reb-download-page .reb-policy-section h4 {
+    font-size: 17px !important;
+  }
+
+  body.reb-download-page .reb-policy-confirm {
+    flex: 0 0 auto !important;
+    gap: 10px !important;
+    padding: 11px 14px 12px !important;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, .08) !important;
+  }
+
+  body.reb-download-page .reb-policy-check {
+    gap: 9px !important;
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+  }
+
+  body.reb-download-page .reb-policy-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  body.reb-download-page .reb-policy-actions button {
+    width: 100% !important;
+    min-height: 43px !important;
+    padding: 0 8px !important;
+    font-size: 12.5px !important;
+  }
+
+  body.reb-download-page .reb-hero {
+    padding: 28px 18px 22px !important;
+  }
+
+  body.reb-download-page .reb-hero-inner {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  body.reb-download-page .reb-kicker {
+    margin-bottom: 10px !important;
+    font-size: 13px !important;
+  }
+
+  body.reb-download-page .reb-hero h1 {
+    margin: 0 0 14px !important;
+    font-size: clamp(19px, 5.35vw, 22px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -.025em !important;
+    white-space: nowrap !important;
+  }
+
+  body.reb-download-page .reb-hero p {
+    margin: 0 !important;
+    font-size: 15px !important;
+    line-height: 1.58 !important;
+  }
+
+  html body.reb-download-page .reb-hero .reb-standard-hero-frame {
+    width: 100% !important;
+    min-height: 0 !important;
+    height: 214px !important;
+    padding: 12px !important;
+    border-radius: 12px !important;
+  }
+
+  html body.reb-download-page .reb-hero .reb-standard-hero-frame > .reb-standard-hero-robot {
+    width: 184px !important;
+    height: 184px !important;
+    max-width: 184px !important;
+    max-height: 184px !important;
+  }
+
+  body.reb-download-page .reb-download {
+    padding: 32px 18px !important;
+  }
+
+  body.reb-download-page .reb-panel {
+    gap: 12px !important;
+  }
+
+  body.reb-download-page .reb-card {
+    padding: 18px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 12px 30px rgba(13, 13, 13, .065) !important;
+  }
+
+  body.reb-download-page .reb-card h2 {
+    margin: 0 0 10px !important;
+    font-size: 23px !important;
+    line-height: 1.2 !important;
+  }
+
+  body.reb-download-page .reb-card p {
+    margin: 0 !important;
+    font-size: 14.5px !important;
+    line-height: 1.58 !important;
+  }
+
+  body.reb-download-page .reb-file {
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 13px 0 !important;
+    padding: 12px !important;
+    border-radius: 10px !important;
+  }
+
+  body.reb-download-page .reb-file i {
+    width: 42px !important;
+    height: 42px !important;
+    flex: 0 0 42px !important;
+    font-size: 18px !important;
+  }
+
+  body.reb-download-page .reb-file strong {
+    font-size: 14.5px !important;
+    line-height: 1.3 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  body.reb-download-page .reb-file span {
+    display: block !important;
+    margin-top: 3px !important;
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+  }
+
+  body.reb-download-page .reb-btn {
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 0 18px !important;
+    font-size: 14px !important;
+  }
+
+  body.reb-download-page .reb-outline {
+    margin: 10px 0 0 !important;
+  }
+
+  body.reb-download-page .reb-note {
+    margin-top: 16px !important;
+    padding: 12px 14px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  body.reb-download-page .reb-direct-link {
+    margin-top: 9px !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+  }
+
+  body.reb-download-page .reb-steps {
+    padding: 30px 18px 32px !important;
+  }
+
+  body.reb-download-page .reb-title {
+    margin: 0 auto 18px !important;
+  }
+
+  body.reb-download-page .reb-title span {
+    padding: 6px 15px !important;
+    font-size: 10px !important;
+  }
+
+  body.reb-download-page .reb-title h2 {
+    margin: 11px 0 0 !important;
+    font-size: 24px !important;
+    line-height: 1.18 !important;
+  }
+
+  body.reb-download-page .reb-grid {
+    gap: 10px !important;
+  }
+
+  body.reb-download-page .reb-step {
+    display: grid !important;
+    grid-template-columns: 36px minmax(0, 1fr) !important;
+    column-gap: 12px !important;
+    align-items: start !important;
+    padding: 14px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 24px rgba(13, 13, 13, .05) !important;
+  }
+
+  body.reb-download-page .reb-step strong {
+    grid-row: 1 / span 2 !important;
+    width: 36px !important;
+    height: 36px !important;
+    margin: 0 !important;
+  }
+
+  body.reb-download-page .reb-step h3 {
+    margin: 0 0 4px !important;
+    font-size: 17px !important;
+    line-height: 1.25 !important;
+  }
+
+  body.reb-download-page .reb-step p {
+    font-size: 13.5px !important;
+    line-height: 1.42 !important;
+  }
+
+  body.reb-download-page main + .reb-footer,
+  body.reb-download-page .reb-steps + .reb-footer {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 374px) {
+  body.reb-download-page .reb-locale-button {
+    font-size: 10px !important;
+  }
+
+  body.reb-download-page .reb-locale-button .reb-flag-svg {
+    width: 19px !important;
+    min-width: 19px !important;
+  }
+}
+
+@media (max-width: 359px) {
+  body.reb-download-page .reb-hero h1 {
+    font-size: 18px !important;
+  }
+}

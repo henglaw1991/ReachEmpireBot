@@ -1,0 +1,323 @@
+/* Subtle shared hero motion and About page workflow polish. */
+.reb-about-page {
+  --reb-about-frame-gutter: clamp(24px, 4vw, 64px);
+  --reb-about-frame-gap: clamp(38px, 5vw, 56px);
+}
+
+.reb-about-page .reb-hero {
+  padding-left: var(--reb-about-frame-gutter) !important;
+  padding-right: var(--reb-about-frame-gutter) !important;
+}
+
+.reb-about-page .reb-hero .reb-hero-inner,
+.reb-about-page #mission .reb-story-grid {
+  width: min(1180px, 100%) !important;
+  max-width: 1180px !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .86fr) !important;
+  gap: var(--reb-about-frame-gap) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html body .reb-hero .reb-standard-hero-frame > .reb-standard-hero-robot {
+  animation: rebHeroRobotFloat 4.8s ease-in-out infinite !important;
+  transform-origin: 50% 56% !important;
+  will-change: translate, rotate;
+}
+
+@keyframes rebHeroRobotFloat {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  28% { translate: 0 -8px; rotate: -0.7deg; }
+  58% { translate: 0 -3px; rotate: 0.45deg; }
+  78% { translate: 0 -10px; rotate: 0.7deg; }
+}
+
+.reb-about-page .reb-portrait {
+  min-height: 410px !important;
+  padding: 24px 32px 104px !important;
+  background: radial-gradient(circle at 50% 32%, rgba(245,176,38,.17), transparent 42%), rgba(255,255,255,.075) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), 0 24px 54px rgba(0,0,0,.16) !important;
+}
+
+.reb-about-page .reb-portrait > .reb-standard-hero-robot {
+  width: min(292px, 76%) !important;
+  height: 236px !important;
+  max-height: 236px !important;
+  object-fit: contain !important;
+  align-self: flex-start !important;
+}
+
+.reb-about-page .reb-portrait .reb-badge {
+  left: 32px !important;
+  right: 32px !important;
+  bottom: 6px !important;
+  min-height: 58px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  text-align: center !important;
+  z-index: 3 !important;
+}
+
+.reb-about-page #mission {
+  padding: 80px var(--reb-about-frame-gutter) !important;
+  background: linear-gradient(180deg, #fff 0%, #fbfcfe 100%) !important;
+  overflow: hidden !important;
+}
+
+.reb-about-page #mission .reb-story-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .86fr) !important;
+  align-items: center !important;
+  gap: var(--reb-about-frame-gap) !important;
+  width: min(1180px, 100%) !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.reb-about-page #mission .reb-mission-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.reb-about-page #mission .reb-mission-copy > span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 34px !important;
+  padding: 0 18px !important;
+  border: 1px solid #f0cf8d !important;
+  border-radius: 999px !important;
+  background: #fff8ea !important;
+  color: #9a6900 !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  align-self: flex-start !important;
+  flex: 0 0 auto !important;
+}
+
+.reb-about-page #mission .reb-mission-copy h2 {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  color: #101010 !important;
+  font-size: clamp(34px, 3.4vw, 46px) !important;
+  line-height: 1.12 !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+.reb-about-page #mission .reb-mission-copy p {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  color: #596273 !important;
+  font-size: 16px !important;
+  line-height: 1.72 !important;
+}
+
+.reb-about-page #mission .reb-mission-cards {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: 18px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.reb-about-page #mission .reb-value {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 210px !important;
+  padding: 24px !important;
+  border: 1px solid #e6dfd1 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  box-shadow: 0 16px 38px rgba(15,23,42,.06) !important;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease !important;
+}
+
+.reb-about-page #mission .reb-value:hover {
+  transform: translateY(-4px) !important;
+  border-color: #e5bd66 !important;
+  box-shadow: 0 22px 48px rgba(15,23,42,.1) !important;
+}
+
+.reb-about-page #mission .reb-value i {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  margin: 0 0 18px !important;
+  border-radius: 12px !important;
+  background: #f5b026 !important;
+  color: #080808 !important;
+  font-size: 17px !important;
+  box-shadow: 0 9px 20px rgba(245,176,38,.23) !important;
+}
+
+.reb-about-page #mission .reb-value h3 {
+  margin: 0 0 9px !important;
+  color: #101010 !important;
+  font-size: 19px !important;
+  line-height: 1.2 !important;
+}
+
+.reb-about-page #mission .reb-value p {
+  margin: 0 !important;
+  color: #596273 !important;
+  font-size: 14px !important;
+  line-height: 1.58 !important;
+}
+
+.reb-about-page .reb-workflow {
+  padding: 72px 7vw 78px !important;
+  overflow: hidden !important;
+}
+
+.reb-about-page .reb-workflow-inner {
+  width: min(1180px, 100%) !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+.reb-about-page .reb-workflow .reb-section {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 auto 34px !important;
+  text-align: center !important;
+}
+
+.reb-about-page .reb-workflow .reb-section > span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 34px !important;
+  padding: 0 20px !important;
+  border: 1px solid #f0cf8d !important;
+  border-radius: 999px !important;
+  background: #fff8ea !important;
+  color: #9a6900 !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+}
+
+.reb-about-page .reb-workflow .reb-section h2 {
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 18px auto 0 !important;
+  color: #101010 !important;
+  font-size: clamp(34px, 4vw, 48px) !important;
+  line-height: 1.12 !important;
+  text-align: center !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+.reb-about-page .reb-workflow .reb-flow {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: 18px !important;
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+.reb-about-page .reb-workflow .reb-flow-card {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  min-height: 204px !important;
+  padding: 24px !important;
+  border: 1px solid #e7dfcf !important;
+  border-top: 3px solid #f5b026 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, .06) !important;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease !important;
+}
+
+.reb-about-page .reb-workflow .reb-flow-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #e5bd66 !important;
+  box-shadow: 0 22px 48px rgba(15, 23, 42, .1) !important;
+}
+
+.reb-about-page .reb-workflow .reb-flow-card strong {
+  flex: 0 0 auto !important;
+  margin-bottom: 18px !important;
+  box-shadow: 0 8px 18px rgba(245, 176, 38, .22) !important;
+}
+
+.reb-about-page .reb-workflow .reb-flow-card h3 {
+  min-height: 48px !important;
+  font-size: 19px !important;
+  line-height: 1.25 !important;
+}
+
+.reb-about-page .reb-workflow .reb-flow-card p {
+  margin-top: auto !important;
+  font-size: 14px !important;
+  line-height: 1.58 !important;
+}
+
+@media (max-width: 900px) {
+  .reb-about-page .reb-workflow { padding: 58px 20px 64px !important; }
+  .reb-about-page .reb-workflow .reb-flow { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .reb-about-page .reb-workflow .reb-flow-card { min-height: 190px !important; }
+  .reb-about-page .reb-portrait { min-height: 360px !important; padding: 22px 24px 94px !important; }
+  .reb-about-page .reb-portrait > .reb-standard-hero-robot { width: min(245px, 72%) !important; height: 210px !important; max-height: 210px !important; }
+  .reb-about-page .reb-portrait .reb-badge { left: 18px !important; right: 18px !important; bottom: 6px !important; }
+  .reb-about-page #mission { padding: 60px 20px 68px !important; }
+  .reb-about-page #mission .reb-story-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 34px !important; }
+  .reb-about-page #mission .reb-mission-copy { max-width: 100% !important; min-height: 0 !important; padding: 8px 0 !important; }
+  .reb-about-page #mission .reb-mission-copy h2,.reb-about-page #mission .reb-mission-copy p { max-width: 680px !important; }
+  .reb-about-page #mission .reb-value { min-height: 190px !important; }
+}
+
+@media (max-width: 560px) {
+  .reb-about-page .reb-workflow .reb-section { margin-bottom: 26px !important; }
+  .reb-about-page .reb-workflow .reb-section h2 { font-size: 31px !important; }
+  .reb-about-page .reb-workflow .reb-flow { grid-template-columns: minmax(0, 1fr) !important; gap: 14px !important; }
+  .reb-about-page .reb-workflow .reb-flow-card { min-height: 0 !important; padding: 20px !important; }
+  .reb-about-page .reb-workflow .reb-flow-card h3 { min-height: 0 !important; }
+  .reb-about-page #mission { padding: 48px 20px 56px !important; }
+  .reb-about-page #mission .reb-mission-copy h2 { font-size: 31px !important; }
+  .reb-about-page #mission .reb-mission-copy p { font-size: 15px !important; line-height: 1.65 !important; }
+  .reb-about-page #mission .reb-mission-cards { grid-template-columns: minmax(0, 1fr) !important; gap: 14px !important; }
+  .reb-about-page #mission .reb-value { min-height: 0 !important; padding: 20px !important; }
+  .reb-about-page #mission .reb-mission-copy { padding: 4px 0 !important; }
+  .reb-about-page .reb-portrait { min-height: 340px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .reb-hero .reb-standard-hero-frame > .reb-standard-hero-robot { animation: none !important; }
+  .reb-about-page .reb-workflow .reb-flow-card { transition: none !important; }
+}
