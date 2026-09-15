@@ -1,0 +1,143 @@
+/* One mobile navigation pattern for every market page. Desktop is unchanged. */
+@media (max-width: 860px) {
+  body.reb-market-drawer-open { overflow: hidden !important; }
+
+  .reb-market-nav {
+    display: flex !important;
+    position: fixed !important;
+    inset: 0 0 0 auto !important;
+    z-index: 10002 !important;
+    width: min(88vw, 390px) !important;
+    height: 100dvh !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 28px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #111214 !important;
+    box-shadow: -18px 0 48px rgba(0, 0, 0, .42) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    overflow-y: auto !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translate3d(102%, 0, 0) !important;
+    transition: transform .34s cubic-bezier(.22, .8, .25, 1), opacity .22s ease, visibility .34s !important;
+  }
+
+  body.reb-market-drawer-open .reb-market-nav {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  .reb-market-drawer-head {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 154px;
+    padding: 30px 72px 28px 26px;
+    border-bottom: 1px solid rgba(255, 255, 255, .10);
+  }
+
+  .reb-market-drawer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 18px;
+  }
+
+  .reb-market-drawer-brand img {
+    width: 66px;
+    height: 66px;
+    object-fit: contain;
+  }
+
+  .reb-market-drawer-brand small {
+    display: block;
+    margin-top: 3px;
+    color: #aeb2b8;
+    font-size: 9px;
+    font-weight: 500;
+  }
+
+  .reb-market-drawer-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 10px;
+    background: #191a1d;
+    color: #fff;
+    font-size: 27px;
+    line-height: 1;
+  }
+
+  .reb-market-nav > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    min-height: 60px !important;
+    padding: 0 28px !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .10) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    font-size: 15px !important;
+    font-weight: 750 !important;
+    letter-spacing: .02em !important;
+    text-align: left !important;
+  }
+
+  .reb-market-nav > a:hover,
+  .reb-market-nav > a:focus-visible,
+  .reb-market-nav > a.active {
+    color: #ffb321 !important;
+    background: rgba(255, 179, 33, .07) !important;
+  }
+
+  .reb-market-nav > a.active { box-shadow: inset 5px 0 0 #ffb321 !important; }
+
+  .reb-market-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 10001;
+    border: 0;
+    background: rgba(0, 0, 0, .62);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .24s ease, visibility .24s;
+  }
+
+  body.reb-market-drawer-open .reb-market-drawer-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 430px) {
+  .reb-market-nav { width: 88vw !important; }
+  .reb-market-drawer-head { min-height: 142px; padding-left: 22px; }
+  .reb-market-drawer-brand img { width: 58px; height: 58px; }
+  .reb-market-drawer-brand { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reb-market-nav,
+  .reb-market-drawer-backdrop { transition-duration: .01ms !important; }
+}
