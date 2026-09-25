@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="no-store,no-cache,must-revalidate,max-age=0" http-equiv="Cache-Control"/>
+<title>Social Settings · ReachEmpire Social</title>
+<link href="/assets/images/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/assets/css/font-awesome-all.css" rel="stylesheet"/>
+<link href="/assets/css/reb-social-settings-v1.css?v=20260918-social3j1" rel="stylesheet"/>
+<link href="/assets/css/reb-social-font-standard-v2.css?v=D20D2" rel="stylesheet"/>
+<link href="/assets/css/reb-social-global-nav-v1.css?v=20260920-d20f34" rel="stylesheet"/>
+<script id="reb-client-core-phase1f" src="/assets/js/reb-client-core-phase1f.js?v=20260917-phase1f"></script>
+
+<link href="/assets/css/reb-social-chat-actions-v86.css?v=20260925-v121-restore" media="(min-width: 768px)" rel="stylesheet"/>
+<style id="reb-mini-chat-critical-d20f88">@media(max-width:760px){.reb-social-mini-panel.open{inset:0 0 72px!important;width:auto!important;height:calc(100dvh - 72px)!important;border:0!important;border-radius:0!important}.reb-mini-composer{box-sizing:border-box!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;width:100%!important;overflow:hidden!important}.reb-mini-support-tools{display:flex!important;flex:0 0 auto!important}.reb-mini-support-tools[hidden]{display:none!important}.reb-mini-compose-row{box-sizing:border-box!important;display:block!important;position:relative!important;width:auto!important;min-width:0!important;align-self:stretch!important;margin-right:24px!important;padding-right:48px!important;overflow:hidden!important}.reb-mini-compose-row textarea{box-sizing:border-box!important;display:block!important;width:100%!important;min-width:0!important}.reb-mini-compose-row .reb-mini-send{position:absolute!important;right:0!important;bottom:0!important;display:grid!important;width:40px!important;min-width:40px!important;margin:0!important}}</style>
+<link href="/assets/css/reb-social-call-d20b2.css?v=20260919-d20c5-call-overlay" rel="stylesheet"/>
+<link href="/assets/css/reb-social-typography-d20d.css?v=20260919-d20f6-socialalign" rel="stylesheet"/>
+<link href="/assets/css/reb-global-font-standard-d20d4.css?v=D20D4" rel="stylesheet"/>
+<link href="/assets/css/reb-social-auth-d20f11.css?v=20260919-d20f23-noflash" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-unified-d20f28.css?v=20260920-d20f34" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-hamburger-d20f29.css?v=20260919-d20f29" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-social-mobile-d20f34.css?v=20260924-v102-verified-mobile" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-global-mobile-footer-d20f47.css?v=D20F73" media="(max-width: 767px)" rel="stylesheet"/>
+<!-- REB DESIGN SEPARATION: shared logic, isolated visual layers -->
+<link href="/assets/design/shared/shared-core.css?v=SEP1" rel="stylesheet"/>
+<link href="/assets/design/desktop/desktop.css?v=V43" media="(min-width: 768px)" rel="stylesheet"/>
+<link href="/assets/design/mobile/mobile.css?v=SEP1" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-social-user-search-v115.css?v=20260925-v122-right-rail" rel="stylesheet"/>
+</head>
+<body class="reb-settings-page">
+<header class="reb-social-global-topbar">
+<div class="reb-social-global-inner">
+<a aria-label="ReachEmpire Social" class="reb-social-global-brand" href="/">
+<img alt="ReachEmpireBot" class="reb-social-brand-robot" src="/assets/images/resource/reb-robot.png"/>
+<span class="reb-social-brand-copy"><strong>Reach<em>EmpireBot</em></strong><small>ReachEmpire Social</small></span>
+</a>
+<nav aria-label="ReachEmpire Social navigation" class="reb-social-global-nav">
+<a href="/social/"><i aria-hidden="true" class="fas fa-home"></i><span>Feed</span></a>
+<a href="/dashboard/"><i aria-hidden="true" class="fas fa-chart-line"></i><span>Trading</span></a>
+<a href="/social/community/"><i aria-hidden="true" class="fas fa-users"></i><span>Community</span></a>
+<a href="/social/notifications/"><i aria-hidden="true" class="far fa-bell"></i><span>Notifications</span><b class="reb-social-global-badge" data-social-activity-badge="" hidden="">0</b></a>
+<a href="/social/messages/"><i aria-hidden="true" class="far fa-comment-dots"></i><span>Messages</span><b class="reb-social-global-badge" data-social-message-badge="" hidden="">0</b></a>
+<a aria-current="page" class="active" href="/social/profile/"><i aria-hidden="true" class="far fa-user"></i><span>Profile</span></a>
+</nav>
+</div>
+</header>
+<main class="reb-settings-shell">
+<div class="reb-settings-heading"><div><span class="eyebrow">SOCIAL CENTER</span><h1>Settings &amp; Privacy</h1><p>Control notifications, messages, activity status, and blocked accounts.</p></div><a class="reb-settings-back" href="/social/profile/"><i class="fas fa-arrow-left"></i> Profile</a></div>
+<div class="reb-settings-grid">
+<section class="reb-settings-card">
+<h2><i class="far fa-bell"></i> Notifications</h2><p class="hint">Choose which Social activities create notifications for you.</p>
+<div class="reb-settings-list" id="rebSettingsNotifications"></div>
+</section>
+<section class="reb-settings-card">
+<h2><i class="fas fa-user-shield"></i> Privacy &amp; Messaging</h2>
+<label class="reb-settings-field"><span>Who can send you direct messages?</span><select id="rebDmPrivacy"><option value="everyone">Everyone</option><option value="following">People I follow</option><option value="none">No one</option></select></label>
+<label class="reb-settings-switch"><span><strong>Show activity status</strong><small>Allow members to see Online / Last Active and Typing status.</small></span><input id="rebActivityStatus" type="checkbox"/><i></i></label>
+</section>
+<section class="reb-settings-card reb-settings-wide">
+<div class="reb-settings-card-head"><div><h2><i class="fas fa-user-slash"></i> Blocked Accounts</h2><p class="hint">Blocked members cannot follow, message, or appear in your Social feed.</p></div><button id="rebBlockedRefresh" type="button"><i class="fas fa-sync-alt"></i> Refresh</button></div>
+<div class="reb-blocked-list" id="rebBlockedList"><div class="reb-settings-state">Loading blocked accounts…</div></div>
+</section>
+</div>
+</main>
+<div class="reb-settings-toast" hidden="" id="rebSettingsToast"></div>
+<script defer="" src="/assets/js/reb-social-nav-v1.js?v=20260918-social3i1"></script>
+<script defer="" src="/assets/js/reb-social-settings-v1.js?v=20260918-social3j1"></script>
+<script defer="" src="/assets/js/reb-social-call-d20c4.js?v=20260925-v41-call-push"></script>
+<script src="/assets/js/reb-client-access-enforcement-v1.js?v=D20F"></script>
+<script defer="" src="/assets/js/reb-social-auth-d20f11.js?v=20260919-d20f23-noflash"></script>
+<script src="/assets/js/reb-mobile-hamburger-d20f29.js?v=20260919-d20f29"></script>
+<script defer="" src="/assets/js/reb-social-mobile-d20f34.js?v=20260920-d20f46"></script>
+<nav aria-label="Social navigation" class="reb-social-bottom-nav reb-social-bottom-nav-d20f43">
+<a data-reb-nav="home" href="/"><i aria-hidden="true" class="fas fa-home"></i><span>Home</span></a>
+<a data-reb-nav="feed" href="/social/"><i aria-hidden="true" class="fas fa-stream"></i><span>Feed</span></a>
+<a data-reb-nav="trading" href="/dashboard/"><i aria-hidden="true" class="fas fa-chart-line"></i><span>Trading</span></a>
+<a data-reb-nav="community" href="/social/community/"><i aria-hidden="true" class="fas fa-users"></i><span>Community</span></a>
+<a data-reb-nav="notifications" href="/social/notifications/"><i aria-hidden="true" class="far fa-bell"></i><span>Notifications</span><b class="reb-social-bottom-badge" data-social-activity-badge="" hidden="">0</b></a>
+<a data-reb-nav="profile" href="/social/profile/"><i aria-hidden="true" class="far fa-user"></i><span>Profile</span></a>
+</nav>
+<script defer="" src="/assets/js/reb-social-footer-profile-d20f44.js?v=D20F56"></script>
+<script defer="" src="/assets/js/reb-global-mobile-footer-d20f57.js?v=D20F57"></script>
+
+
+
+
+
+
+<script defer src="/assets/js/reb-call-push-v41.js?v=20260925-v41"></script>
+<script defer src="/assets/js/reb-social-user-search-v115.js?v=20260925-v122-right-rail"></script>
+<script id="reb-floating-chat-hard-core-loader" defer src="/assets/js/reb-floating-chat-hard-core.js?v=20260925-v121"></script>
+</body></html>

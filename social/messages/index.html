@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="no-store,no-cache,must-revalidate,max-age=0" http-equiv="Cache-Control"/>
+<title>Messages · ReachEmpire Social</title>
+<link href="/assets/images/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/assets/css/font-awesome-all.css" rel="stylesheet"/>
+<link href="/assets/css/reb-social-messages-v1.css?v=20260924-v102-actions-isolation" rel="stylesheet"/>
+<link href="/assets/css/reb-social-font-standard-v2.css?v=D20D2" rel="stylesheet"/>
+<link href="/assets/css/reb-social-global-nav-v1.css?v=20260920-d20f34" rel="stylesheet"/>
+<script id="reb-client-core-phase1f" src="/assets/js/reb-client-core-phase1f.js?v=20260917-phase1f"></script>
+
+<link href="/assets/css/reb-social-chat-actions-v86.css?v=20260925-v121-restore" media="(min-width: 768px)" rel="stylesheet"/>
+<style id="reb-mini-chat-critical-d20f88">@media(max-width:760px){.reb-social-mini-panel.open{inset:0 0 72px!important;width:auto!important;height:calc(100dvh - 72px)!important;border:0!important;border-radius:0!important}.reb-mini-composer{box-sizing:border-box!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;width:100%!important;overflow:hidden!important}.reb-mini-support-tools{display:flex!important;flex:0 0 auto!important}.reb-mini-support-tools[hidden]{display:none!important}.reb-mini-compose-row{box-sizing:border-box!important;display:block!important;position:relative!important;width:auto!important;min-width:0!important;align-self:stretch!important;margin-right:24px!important;padding-right:48px!important;overflow:hidden!important}.reb-mini-compose-row textarea{box-sizing:border-box!important;display:block!important;width:100%!important;min-width:0!important}.reb-mini-compose-row .reb-mini-send{position:absolute!important;right:0!important;bottom:0!important;display:grid!important;width:40px!important;min-width:40px!important;margin:0!important}}</style>
+<link href="/assets/css/reb-social-call-d20b2.css?v=20260919-d20c5-call-overlay" rel="stylesheet"/>
+<link href="/assets/css/reb-social-typography-d20d.css?v=20260919-d20f6-socialalign" rel="stylesheet"/>
+<link href="/assets/css/reb-global-font-standard-d20d4.css?v=D20D4" rel="stylesheet"/>
+<link href="/assets/css/reb-social-auth-d20f11.css?v=20260919-d20f23-noflash" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-unified-d20f28.css?v=20260920-d20f34" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-hamburger-d20f29.css?v=20260919-d20f29" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-social-mobile-d20f34.css?v=20260924-v102-verified-mobile" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-global-mobile-footer-d20f47.css?v=D20F73" media="(max-width: 767px)" rel="stylesheet"/>
+<!-- REB DESIGN SEPARATION: shared logic, isolated visual layers -->
+<link href="/assets/design/shared/shared-core.css?v=SEP1" rel="stylesheet"/>
+<link href="/assets/design/desktop/desktop.css?v=V43" media="(min-width: 768px)" rel="stylesheet"/>
+<link href="/assets/design/mobile/mobile.css?v=SEP1" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-social-user-search-v115.css?v=20260925-v122-right-rail" rel="stylesheet"/>
+<link href="/assets/css/reb-social-desktop-v128-feed-header.css?v=20260925-v128" media="(min-width: 768px)" rel="stylesheet"/>
+</head>
+<body class="reb-msg-page">
+<header class="reb-social-global-topbar">
+<div class="reb-social-global-inner">
+<a aria-label="ReachEmpire Social" class="reb-social-global-brand" href="/">
+<img alt="ReachEmpireBot" class="reb-social-brand-robot" src="/assets/images/resource/reb-robot.png"/>
+<span class="reb-social-brand-copy"><strong>Reach<em>EmpireBot</em></strong><small>ReachEmpire Social</small></span>
+</a>
+<nav aria-label="ReachEmpire Social navigation" class="reb-social-global-nav">
+<a href="/social/"><i aria-hidden="true" class="fas fa-home"></i><span>Feed</span></a>
+<a href="/dashboard/"><i aria-hidden="true" class="fas fa-chart-line"></i><span>Trading</span></a>
+<a href="/social/community/"><i aria-hidden="true" class="fas fa-users"></i><span>Community</span></a>
+<a href="/social/notifications/"><i aria-hidden="true" class="far fa-bell"></i><span>Notifications</span><b class="reb-social-global-badge" data-social-activity-badge="" hidden="">0</b></a>
+<a aria-current="page" class="active" href="/social/messages/"><i aria-hidden="true" class="far fa-comment-dots"></i><span>Messages</span><b class="reb-social-global-badge" data-social-message-badge="" hidden="">0</b></a>
+<a href="/social/profile/"><i aria-hidden="true" class="far fa-user"></i><span>Profile</span></a>
+</nav>
+</div>
+</header>
+<main class="reb-msg-shell">
+<aside class="reb-msg-sidebar" id="rebMsgSidebar">
+<div class="reb-msg-side-head"><div><h1>Messages</h1><p>Direct messages &amp; community chat</p></div><button id="rebMsgNew" title="New message" type="button"><i class="fas fa-pen"></i></button></div>
+<div class="reb-msg-search" hidden="" id="rebMsgSearchWrap"><i class="fas fa-search"></i><input id="rebMsgSearch" placeholder="Search members…" type="search"/><button id="rebMsgSearchClose" type="button">×</button></div>
+<div class="reb-msg-search-results" hidden="" id="rebMsgSearchResults"></div>
+<button class="reb-msg-community-card" id="rebMsgCommunity" type="button"><span class="reb-msg-community-icon"><i class="fas fa-users"></i></span><span><strong>ReachEmpire Community</strong><small>Community Chat</small></span><b hidden="" id="rebMsgCommunityBadge">0</b></button>
+<div class="reb-msg-list-title">Direct messages</div>
+<div class="reb-msg-state" id="rebMsgListState">Loading conversations…</div>
+<div class="reb-msg-list" id="rebMsgList"></div>
+</aside>
+<section class="reb-msg-thread is-empty" id="rebMsgThread">
+<header class="reb-msg-thread-head"><button class="reb-msg-back" id="rebMsgBack" type="button"><i class="fas fa-arrow-left"></i></button><div class="reb-msg-avatar" id="rebMsgThreadAvatar">R</div><div class="reb-msg-thread-copy"><strong id="rebMsgThreadTitle">Select a conversation</strong><span id="rebMsgThreadSub">Choose a member or open Community Chat</span></div><button aria-label="Start voice call" class="reb-msg-thread-tool reb-msg-call-tool" hidden="" id="rebMsgVoiceCall" title="Voice call" type="button"><i class="fas fa-phone"></i></button><button aria-label="Start video call" class="reb-msg-thread-tool reb-msg-call-tool reb-msg-video-call-tool" hidden="" id="rebMsgVideoCall" title="Video call" type="button"><i class="fas fa-video"></i></button><button class="reb-msg-thread-tool" hidden="" id="rebMsgThreadMute" title="Mute conversation" type="button"><i class="far fa-bell"></i></button><a hidden="" href="#" id="rebMsgThreadProfile">Profile</a></header>
+<div class="reb-msg-typing" hidden="" id="rebMsgTyping"><span></span><span></span><span></span><em>Typing…</em></div>
+<div class="reb-msg-load-old" hidden="" id="rebMsgLoadOlderWrap"><button id="rebMsgLoadOlder" type="button">Load older messages</button></div>
+<div class="reb-msg-messages" id="rebMsgMessages"><div class="reb-msg-empty"><i class="far fa-comment-dots"></i><h2>ReachEmpire Messages</h2><p>Start a direct conversation or join the community chat.</p></div></div>
+<div class="reb-msg-replybar" hidden="" id="rebMsgReplyBar"><div><b>Replying to <span id="rebMsgReplyName">member</span></b><p id="rebMsgReplyText"></p></div><button id="rebMsgReplyCancel" title="Cancel reply" type="button">×</button></div>
+<div class="reb-msg-attachments" hidden="" id="rebMsgAttachments"></div>
+<footer class="reb-msg-composer" hidden="" id="rebMsgComposer">
+<div class="reb-msg-tools"><button id="rebMsgImage" title="Image" type="button"><i class="far fa-image"></i></button><button id="rebMsgVideo" title="Video" type="button"><i class="fas fa-video"></i></button><button id="rebMsgFile" title="File" type="button"><i class="fas fa-paperclip"></i></button></div>
+<textarea id="rebMsgText" maxlength="3000" placeholder="Write a message…" rows="1"></textarea>
+<button class="reb-msg-send" id="rebMsgSend" title="Send" type="button"><i class="fas fa-paper-plane"></i></button>
+<input accept="image/png,image/jpeg,image/webp" hidden="" id="rebMsgImageInput" multiple="" type="file"/>
+<input accept="video/mp4,video/webm,video/quicktime" hidden="" id="rebMsgVideoInput" type="file"/>
+<input accept=".pdf,.txt,.csv,.doc,.docx,.xls,.xlsx,.zip" hidden="" id="rebMsgFileInput" multiple="" type="file"/>
+</footer>
+</section>
+</main>
+<div class="reb-msg-toast" hidden="" id="rebMsgToast"></div>
+<script id="reb-v88-msg-nav-loader">(function(){var mobile=window.matchMedia&&window.matchMedia('(max-width:767px)').matches,s=document.createElement('script');s.src=mobile?'/assets/js/reb-social-nav-v1.js?v=20260918-social3i1':'/assets/js/reb-social-nav-v88-desktop.js?v=20260923-v88-priority';document.body.appendChild(s)})();</script>
+<script id="reb-v83-messages-core-loader">
+(function(){
+  var mobile=window.matchMedia&&window.matchMedia('(max-width:767px)').matches;
+  var s=document.createElement('script');s.defer=true;
+  s.src=mobile?'/assets/js/reb-social-messages-v1.js?v=20260924-v102-actions-isolation':'/assets/js/reb-social-messages-v88-desktop.js?v=20260925-v4-performance';
+  document.body.appendChild(s);
+})();
+</script>
+<script defer="" src="/assets/js/reb-social-call-d20c4.js?v=20260925-v41-call-push"></script>
+<script src="/assets/js/reb-client-access-enforcement-v1.js?v=D20F"></script>
+<script id="reb-v88-msg-auth-loader">(function(){var mobile=window.matchMedia&&window.matchMedia('(max-width:767px)').matches,s=document.createElement('script');s.src=mobile?'/assets/js/reb-social-auth-d20f11.js?v=20260919-d20f23-noflash':'/assets/js/reb-social-auth-v88-desktop.js?v=20260923-v88-priority';document.body.appendChild(s)})();</script>
+<script src="/assets/js/reb-mobile-hamburger-d20f29.js?v=20260919-d20f29"></script>
+<script defer="" src="/assets/js/reb-social-mobile-d20f34.js?v=20260920-d20f46"></script>
+<nav aria-label="Social navigation" class="reb-social-bottom-nav reb-social-bottom-nav-d20f43">
+<a data-reb-nav="home" href="/"><i aria-hidden="true" class="fas fa-home"></i><span>Home</span></a>
+<a data-reb-nav="feed" href="/social/"><i aria-hidden="true" class="fas fa-stream"></i><span>Feed</span></a>
+<a data-reb-nav="trading" href="/dashboard/"><i aria-hidden="true" class="fas fa-chart-line"></i><span>Trading</span></a>
+<a data-reb-nav="community" href="/social/community/"><i aria-hidden="true" class="fas fa-users"></i><span>Community</span></a>
+<a data-reb-nav="notifications" href="/social/notifications/"><i aria-hidden="true" class="far fa-bell"></i><span>Notifications</span><b class="reb-social-bottom-badge" data-social-activity-badge="" hidden="">0</b></a>
+<a data-reb-nav="profile" href="/social/profile/"><i aria-hidden="true" class="far fa-user"></i><span>Profile</span></a>
+</nav>
+<style id="reb-v82-messages-desktop-mobile-nav-hide">
+@media (min-width:768px){
+  html body .reb-social-bottom-nav.reb-social-bottom-nav-d20f43,
+  html body .reb-social-bottom-nav.reb-global-mobile-footer-d20f45{display:none!important;visibility:hidden!important;}
+}
+</style>
+<script id="reb-v88-msg-mobile-profile-loader">(function(){if(!(window.matchMedia&&window.matchMedia('(max-width:767px)').matches))return;var s=document.createElement('script');s.src='/assets/js/reb-social-footer-profile-d20f44.js?v=D20F56';document.body.appendChild(s)})();</script>
+<script defer="" src="/assets/js/reb-global-mobile-footer-d20f57.js?v=D20F57"></script>
+
+
+
+
+
+<script defer src="/assets/js/reb-call-push-v41.js?v=20260925-v41"></script>
+<script defer src="/assets/js/reb-social-user-search-v115.js?v=20260925-v122-right-rail"></script>
+<script id="reb-floating-chat-hard-core-loader" defer src="/assets/js/reb-floating-chat-hard-core.js?v=20260925-v121"></script>
+</body></html>
