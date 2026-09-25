@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="no-store, no-cache, must-revalidate, max-age=0" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<link href="/assets/css/reb-desktop-auth-stable-v3.css?v=20260812-3" media="(min-width: 768px)" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<base href="/"/>
+<script id="reb-client-core-phase1f" src="/assets/js/reb-client-core-phase1f.js?v=20260917-phase1f"></script>
+<title>Trade Account - ReachEmpireBot</title>
+<link href="/assets/images/favicon.ico" rel="icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="/assets/css/font-awesome-all.css" rel="stylesheet"/>
+<style>
+:root{--gold:#f5b026;--black:#070707;--ink:#101010;--muted:#666;--line:#e8e1d2;--dark:#0a0a08;--panel:#151512}
+*{box-sizing:border-box}html,body{width:100%;max-width:100%;overflow-x:hidden}body{margin:0;font-family:Ubuntu,Arial,sans-serif;color:var(--ink);background:#fff}a{text-decoration:none;color:inherit}
+.reb-top{background:#101312;color:#fff;padding:16px 7vw;display:flex;align-items:center;justify-content:space-between;gap:18px}.reb-phone{font-size:20px;font-weight:700}.reb-phone i{color:var(--gold);margin-right:10px}.reb-actions{display:flex;gap:10px}.reb-actions a{border:1px solid rgba(255,255,255,.45);border-radius:8px;padding:10px 22px;font-weight:700}.reb-actions a:first-child{background:var(--gold);border-color:var(--gold);color:#070707}
+.reb-header{padding:18px 7vw;border-bottom:1px solid #eee;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:26px;position:sticky;top:0;z-index:20}.reb-logo img{width:260px;max-width:52vw;height:auto;display:block}.reb-nav{display:flex;align-items:center;gap:10px;flex-wrap:nowrap}.reb-nav a{border:1px solid var(--black);border-radius:999px;padding:8px 16px;font-weight:700;white-space:nowrap;line-height:1.1}.reb-nav a.trade-account-link{font-size:14px;padding:8px 13px;min-width:188px;text-align:center;white-space:nowrap;line-height:1.08}.reb-nav a.active,.reb-nav a:hover{border-color:var(--gold);background:#fff9ed}
+.reb-hero{background:radial-gradient(circle at 82% 20%,rgba(245,176,38,.34),transparent 32%),linear-gradient(135deg,#050505,#1b1406 78%);color:#fff;padding:76px 7vw}.reb-hero-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr .84fr;gap:46px;align-items:center}.reb-kicker{color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin:0}.reb-hero h1{font-size:60px;line-height:1.05;margin:16px 0}.reb-hero p{font-size:20px;line-height:1.65;color:rgba(255,255,255,.78);max-width:680px}.reb-hero-card{border:1px solid rgba(245,176,38,.28);background:rgba(255,255,255,.07);border-radius:8px;padding:28px;min-height:390px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.reb-hero-card img{width:min(340px,82%);filter:drop-shadow(0 26px 40px rgba(0,0,0,.45))}.reb-hero-card:after{content:"";position:absolute;inset:auto -15% -34% 18%;height:240px;background:rgba(245,176,38,.12);border-radius:50%}
+.reb-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;border-radius:8px;padding:0 28px;font-weight:700;background:var(--gold);color:#070707}.reb-btn.dark{background:#050505;color:#fff;border:1px solid rgba(255,255,255,.25);margin-left:10px}.reb-action-icon{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;flex:0 0 18px;line-height:1;vertical-align:middle}.reb-action-icon svg{display:block;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.reb-action-icon-fill svg{fill:currentColor;stroke:none}@media(min-width:768px){.reb-hero .reb-btn{vertical-align:middle;line-height:1;margin-top:0}.reb-hero .reb-btn.dark{margin-top:0!important}.copy-trading-actions .reb-btn{vertical-align:middle;line-height:1}.copy-trading-actions .reb-btn.dark{margin-top:0!important}}
+.reb-section{padding:68px 7vw}.reb-section.dark{background:#050505;color:#fff}.reb-title{max-width:1180px;margin:0 auto 28px}.reb-title h2{font-size:44px;line-height:1.1;margin:8px 0}.reb-title p{color:var(--muted);font-size:18px;line-height:1.6}.reb-section.dark .reb-title p{color:rgba(255,255,255,.68)}
+.broker-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.broker-card{border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:0 18px 44px rgba(0,0,0,.07);padding:0;display:flex;flex-direction:column;min-height:315px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.broker-card:hover{transform:translateY(-3px);box-shadow:0 24px 56px rgba(0,0,0,.12);border-color:#e7c26a}.broker-logo{height:112px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:18px}.broker-logo img{position:relative;z-index:1;display:block;max-width:78%;max-height:76px;object-fit:contain}.broker-logo span{position:absolute;right:16px;bottom:12px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.72}.broker-logo:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;right:-58px;bottom:-98px;background:rgba(255,255,255,.18)}.broker-logo.exness{background:linear-gradient(135deg,#ffdd00,#f4b000);color:#090909}.broker-logo.exness:before{content:"";position:absolute;inset:14px;border:1px solid rgba(0,0,0,.16);border-radius:8px}.broker-logo.exness img{max-width:82%;max-height:86px}.broker-logo.investizo{background:linear-gradient(135deg,#050505,#101312 58%,#122600);border-bottom:1px solid rgba(81,240,34,.35)}.broker-logo.investizo img{max-width:84%;max-height:54px}.broker-logo.custom{background:linear-gradient(135deg,#101312,#050505);color:#fff}.broker-logo.custom strong{position:relative;z-index:1;font-size:26px;font-weight:700;letter-spacing:.07em}.broker-body{padding:22px;display:flex;flex-direction:column;gap:14px;flex:1}.broker-card h3{font-size:26px;margin:0}.broker-card p{color:var(--muted);line-height:1.55;margin:0}.broker-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}.broker-meta span{border:1px solid #f1d59d;background:#fff8ea;border-radius:999px;padding:7px 10px;font-size:13px;font-weight:700;color:#8a5d00}.broker-card .reb-btn{width:100%;min-height:48px;padding:0 16px}
+.step-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.step-card{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);border-radius:8px;padding:22px}.step-card strong{width:42px;height:42px;background:var(--gold);color:#080808;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px}.step-card h3{font-size:22px;margin:0 0 8px}.step-card p{color:rgba(255,255,255,.68);line-height:1.55;margin:0}
+.reb-note{max-width:1180px;margin:26px auto 0;border-left:4px solid var(--gold);background:#fff8ea;padding:16px 18px;border-radius:0 8px 8px 0;color:#6c5218;line-height:1.55}.reb-footer{background:#050505;color:#fff;padding:38px 7vw;display:flex;justify-content:space-between;gap:20px;align-items:center}.reb-footer img{width:220px}.reb-footer p{color:rgba(255,255,255,.68);margin:0}.reb-footer strong{color:var(--gold)}
+@media(max-width:900px){.reb-nav{flex-wrap:wrap!important;}.reb-nav a.trade-account-link{min-width:0;white-space:normal;font-size:15px;}.reb-top,.reb-header,.reb-footer{padding-left:20px;padding-right:20px}.reb-top{align-items:flex-end}.reb-phone{display:none}.reb-actions{display:flex;justify-content:flex-end}.reb-actions a{padding:9px 18px}.reb-header{align-items:flex-start;flex-direction:column}.reb-logo img{width:240px}.reb-nav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.reb-nav a{text-align:center;padding:12px 10px;white-space:normal}.reb-hero,.reb-section{padding:42px 20px}.reb-hero-inner,.broker-grid,.step-grid{grid-template-columns:1fr}.reb-hero h1{font-size:42px}.reb-hero p,.reb-title p{font-size:17px}.reb-hero-card{min-height:260px;padding:20px}.reb-hero-card img{width:min(260px,78%)}.reb-title h2{font-size:34px}.broker-card{min-height:0}.broker-logo{height:82px}.broker-logo strong{font-size:25px}.broker-body{padding:20px}.reb-btn,.reb-btn.dark{width:100%;margin:8px 0 0}.reb-footer{flex-direction:column;align-items:flex-start}}
+@media(max-width:520px){.reb-nav{flex-wrap:wrap!important;}.reb-nav a.trade-account-link{min-width:0;white-space:normal;font-size:15px;}.reb-actions{width:100%;display:grid;grid-template-columns:1fr 1fr}.reb-actions a{text-align:center}.reb-logo img{width:230px}.reb-hero h1{font-size:38px}.reb-title h2{font-size:31px}.reb-nav{grid-template-columns:1fr 1fr}.reb-nav a{font-size:16px}.reb-section{padding-top:36px;padding-bottom:36px}}
+</style>
+<link href="/assets/css/standard-font-safe.css?v=20260518-font3" rel="stylesheet"/>
+<link href="/assets/css/reb-page-stability.css" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-responsive.css?v=20260519-dense-space1" media="(max-width: 767px)" rel="stylesheet"/>
+<style id="reb-broker-logo-polish">
+.broker-logo .broker-wordmark{position:relative;z-index:1;font-size:30px;font-weight:700;letter-spacing:.02em;line-height:1;color:inherit}
+.broker-logo.exness .broker-wordmark{font-size:34px;color:#111820}
+.broker-logo.investizo .broker-wordmark{font-size:32px;color:#51f022;text-transform:uppercase}
+.broker-logo.lirunex{background:linear-gradient(135deg,#101312,#0a0a08 62%,#2b2107);color:#f5b026;border-bottom:1px solid rgba(245,176,38,.36)}
+.broker-logo.lirunex .broker-wordmark{font-size:33px;color:#f5b026;text-transform:uppercase}
+.broker-logo.cmx{background:linear-gradient(135deg,#071421,#0c2135 58%,#f5b026);color:#fff;border-bottom:1px solid rgba(245,176,38,.4)}
+.broker-logo.cmx .broker-wordmark{font-size:31px;color:#fff;text-transform:uppercase}
+@media(min-width:1080px){.broker-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}.broker-body{padding:20px}.broker-card h3{font-size:24px}.broker-card p{font-size:15px}}
+</style>
+<style id="reb-copy-trading-section">
+.copy-trading-panel{max-width:1180px;margin:auto;border:1px solid rgba(245,176,38,.26);border-radius:8px;background:linear-gradient(135deg,#101312,#070707 62%,#241a05);color:#fff;box-shadow:0 24px 62px rgba(0,0,0,.18);overflow:hidden}.copy-trading-inner{display:grid;grid-template-columns:1fr .82fr;gap:26px;align-items:center;padding:30px}.copy-trading-panel h3{font-size:34px;line-height:1.1;margin:8px 0 12px}.copy-trading-panel p{color:rgba(255,255,255,.72);line-height:1.65;margin:0}.copy-trading-points{display:grid;gap:12px}.copy-trading-point{display:grid;grid-template-columns:42px minmax(0,1fr);gap:12px;align-items:start;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);border-radius:8px;padding:14px}.copy-trading-point i{width:42px;height:42px;border-radius:8px;background:var(--gold);color:#080808;display:flex;align-items:center;justify-content:center}.copy-trading-point strong{display:block;margin-bottom:4px}.copy-trading-point span{display:block;color:rgba(255,255,255,.68);line-height:1.45}.copy-trading-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.copy-trading-actions .reb-btn.dark{background:rgba(255,255,255,.08);margin-left:0}
+@media(max-width:900px){.copy-trading-inner{grid-template-columns:1fr}.copy-trading-panel h3{font-size:30px}.copy-trading-actions .reb-btn,.copy-trading-actions .reb-btn.dark{width:100%;margin-left:0}}
+@media(max-width:640px){.copy-trading-panel{width:350px;max-width:calc(100vw - 40px);margin-left:0;margin-right:auto}.copy-trading-inner{padding:18px;gap:16px}.copy-trading-panel h3{font-size:26px}.copy-trading-panel p{font-size:14px}.copy-trading-point{grid-template-columns:36px minmax(0,1fr);padding:12px}.copy-trading-point i{width:36px;height:36px}.copy-trading-point span{font-size:13px}}
+.copy-widget-grid{max-width:1180px;margin:18px auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.copy-widget-card{border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:0 18px 44px rgba(0,0,0,.07);overflow:hidden}.copy-widget-head{padding:18px 18px 14px;border-bottom:1px solid #eee}.copy-widget-head span{display:inline-flex;margin-bottom:8px;border-radius:999px;background:#fff8ea;border:1px solid #f1d59d;color:#8a5d00;padding:6px 10px;font-size:12px;font-weight:900}.copy-widget-head h3{font-size:24px;margin:0 0 8px}.copy-widget-head p{color:var(--muted);line-height:1.55;margin:0}.copy-widget-frame{width:100%;height:430px;border:0;display:block;background:#f7f7f7}.copy-risk-note{max-width:1180px;margin:18px auto 0;border-left:4px solid var(--gold);background:#fff8ea;border-radius:0 8px 8px 0;padding:15px 18px;color:#6c5218;line-height:1.55}.copy-risk-note strong{color:#080808}@media(max-width:900px){.copy-widget-grid{grid-template-columns:1fr}.copy-widget-frame{height:460px}}@media(max-width:640px){.copy-widget-grid,.copy-risk-note{width:350px;max-width:calc(100vw - 40px);margin-left:0;margin-right:auto}.copy-widget-head{padding:14px}.copy-widget-head h3{font-size:20px}.copy-widget-head p,.copy-risk-note{font-size:13px}.copy-widget-frame{height:420px}}
+</style>
+<style id="reb-taskbar-nav-style">
+.reb-subpage .reb-header{padding:14px 7vw!important;background:#fff!important;border-bottom:1px solid #ececec!important;gap:24px!important;align-items:center!important;}
+.reb-subpage .reb-nav{display:flex!important;align-items:center!important;align-self:center!important;justify-content:flex-end!important;gap:3px!important;flex-wrap:nowrap!important;background:#101312!important;border:1px solid rgba(245,176,38,.24)!important;border-radius:14px!important;padding:5px!important;box-shadow:0 14px 30px rgba(0,0,0,.12)!important;min-width:0!important;width:auto!important;height:auto!important;min-height:0!important;max-height:54px!important;overflow:visible!important;}
+.reb-subpage .reb-nav a{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:40px!important;padding:0 16px!important;border:0!important;border-radius:10px!important;color:#fff!important;background:transparent!important;font-size:14px!important;font-weight:700!important;line-height:1!important;white-space:nowrap!important;text-align:center!important;transition:background .18s ease,color .18s ease,box-shadow .18s ease!important;}
+.reb-subpage .reb-nav a + a{border-left:0!important;}
+.reb-subpage .reb-nav a.active,.reb-subpage .reb-nav a:hover{background:var(--gold)!important;color:#070707!important;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)!important;}
+.reb-subpage .reb-nav a.trade-account-link{min-width:118px!important;padding-left:14px!important;padding-right:14px!important;font-size:14px!important;letter-spacing:0!important;}
+@media(max-width:1180px){.reb-subpage .reb-header{align-items:flex-start!important;flex-direction:column!important;}.reb-subpage .reb-nav{width:100%!important;max-height:none!important;justify-content:flex-start!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;}.reb-subpage .reb-nav::-webkit-scrollbar{display:none!important;}.reb-subpage .reb-nav a{flex:0 0 auto!important;}}
+@media(max-width:640px){.reb-subpage .reb-header{padding:14px 20px!important;}.reb-subpage .reb-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;background:#101312!important;border-radius:10px!important;padding:6px!important;overflow:visible!important;}.reb-subpage .reb-nav a,.reb-subpage .reb-nav a.trade-account-link{width:100%!important;min-width:0!important;min-height:42px!important;font-size:14px!important;white-space:normal!important;line-height:1.08!important;padding:0 8px!important;border-left:0!important;}}
+</style>
+<style id="reb-trade-account-mobile-fix">
+@media(max-width:640px){
+  body.reb-trade-account-page{overflow-x:hidden!important}
+  .reb-trade-account-page .reb-top{
+    padding:12px 20px!important;
+    justify-content:flex-end!important;
+    gap:0!important;
+  }
+  .reb-trade-account-page .reb-actions{
+    width:auto!important;
+    max-width:100%!important;
+    display:flex!important;
+    justify-content:center!important;
+    gap:8px!important;
+    flex:0 0 auto!important;
+    margin-left:auto!important;
+    margin-right:0!important;
+  }
+  .reb-trade-account-page .reb-actions a{
+    min-width:86px!important;
+    min-height:40px!important;
+    padding:0 14px!important;
+    font-size:15px!important;
+    border-radius:8px!important;
+  }
+  .reb-trade-account-page .reb-header,
+  .reb-trade-account-page .reb-hero,
+  .reb-trade-account-page .reb-section,
+  .reb-trade-account-page .reb-footer{
+    width:100%!important;
+    max-width:100%!important;
+  }
+  .reb-trade-account-page .reb-header{
+    padding:14px 20px!important;
+    gap:14px!important;
+  }
+  .reb-trade-account-page .reb-logo img{
+    width:214px!important;
+    max-width:82vw!important;
+  }
+  .reb-trade-account-page .reb-nav{
+    width:min(100%,350px)!important;
+    max-width:min(100%,350px)!important;
+    box-sizing:border-box!important;
+  }
+  .reb-trade-account-page .reb-nav a,
+  .reb-trade-account-page .reb-nav a.trade-account-link{
+    min-width:0!important;
+    max-width:100%!important;
+    font-size:13px!important;
+    padding-left:6px!important;
+    padding-right:6px!important;
+    overflow:hidden!important;
+  }
+  .reb-trade-account-page .reb-hero{
+    padding:34px 20px 30px!important;
+    overflow:hidden!important;
+  }
+  .reb-trade-account-page .reb-hero-inner{
+    width:min(100%,350px)!important;
+    max-width:min(100%,350px)!important;
+    margin-left:0!important;
+    margin-right:auto!important;
+    gap:18px!important;
+  }
+  .reb-trade-account-page .reb-hero-inner > *,
+  .reb-trade-account-page .reb-title,
+  .reb-trade-account-page .broker-card,
+  .reb-trade-account-page .step-card{
+    min-width:0!important;
+  }
+  .reb-trade-account-page .reb-hero h1{
+    font-size:38px!important;
+    line-height:1.04!important;
+    margin:12px 0!important;
+    overflow-wrap:anywhere!important;
+  }
+  .reb-trade-account-page .reb-hero p{
+    max-width:100%!important;
+    font-size:16px!important;
+    line-height:1.55!important;
+    overflow-wrap:break-word!important;
+  }
+  .reb-trade-account-page .reb-btn,
+  .reb-trade-account-page .reb-btn.dark{
+    min-height:48px!important;
+    padding:0 16px!important;
+    margin-top:8px!important;
+    font-size:15px!important;
+  }
+  .reb-trade-account-page .reb-btn i{
+    width:18px!important;
+    min-width:18px!important;
+    text-align:center!important;
+  }
+  .reb-trade-account-page .reb-hero-card{
+    min-height:230px!important;
+    padding:16px!important;
+  }
+  .reb-trade-account-page .reb-hero-card img{
+    width:min(235px,76%)!important;
+  }
+  .reb-trade-account-page .reb-section{
+    padding:34px 20px!important;
+  }
+  .reb-trade-account-page .reb-title{
+    width:min(100%,350px)!important;
+    max-width:min(100%,350px)!important;
+    margin-left:0!important;
+    margin-right:auto!important;
+    margin-bottom:18px!important;
+  }
+  .reb-trade-account-page .reb-title h2{
+    font-size:29px!important;
+    line-height:1.12!important;
+    overflow-wrap:break-word!important;
+    word-break:normal!important;
+  }
+  .reb-trade-account-page .reb-title p{
+    font-size:15px!important;
+    line-height:1.5!important;
+  }
+  .reb-trade-account-page .broker-grid{
+    width:min(100%,350px)!important;
+    max-width:min(100%,350px)!important;
+    margin-left:0!important;
+    margin-right:auto!important;
+    gap:12px!important;
+  }
+  .reb-trade-account-page .broker-card{
+    display:grid!important;
+    grid-template-columns:96px minmax(0,1fr)!important;
+    min-height:0!important;
+  }
+  .reb-trade-account-page .broker-logo{
+    height:auto!important;
+    min-height:100%!important;
+    padding:12px!important;
+    border-radius:0!important;
+  }
+  .reb-trade-account-page .broker-logo:before,
+  .reb-trade-account-page .broker-logo:after{
+    display:none!important;
+  }
+  .reb-trade-account-page .broker-logo .broker-wordmark,
+  .reb-trade-account-page .broker-logo.custom strong{
+    font-size:16px!important;
+    line-height:1.08!important;
+    letter-spacing:.01em!important;
+    text-align:center!important;
+    overflow-wrap:anywhere!important;
+  }
+  .reb-trade-account-page .broker-body{
+    min-width:0!important;
+    padding:13px!important;
+    gap:8px!important;
+  }
+  .reb-trade-account-page .broker-card h3{
+    font-size:19px!important;
+  }
+  .reb-trade-account-page .broker-card p{
+    font-size:13px!important;
+    line-height:1.42!important;
+  }
+  .reb-trade-account-page .broker-card .reb-btn{
+    min-height:40px!important;
+    font-size:13px!important;
+    margin-top:2px!important;
+  }
+  .reb-trade-account-page .step-grid{
+    width:min(100%,350px)!important;
+    max-width:min(100%,350px)!important;
+    margin-left:0!important;
+    margin-right:auto!important;
+    gap:10px!important;
+  }
+  .reb-trade-account-page .step-card{
+    display:grid!important;
+    grid-template-columns:38px minmax(0,1fr)!important;
+    column-gap:12px!important;
+    padding:14px!important;
+  }
+  .reb-trade-account-page .step-card strong{
+    width:34px!important;
+    height:34px!important;
+    margin:0!important;
+    grid-row:1 / span 2!important;
+  }
+  .reb-trade-account-page .step-card h3{
+    font-size:18px!important;
+  }
+  .reb-trade-account-page .step-card p{
+    font-size:13px!important;
+    line-height:1.42!important;
+  }
+  .reb-trade-account-page .reb-note{
+    margin-top:16px!important;
+    padding:12px 14px!important;
+    font-size:13px!important;
+  }
+  .reb-trade-account-page .reb-actions,
+  .reb-trade-account-page .reb-nav,
+  .reb-trade-account-page .reb-hero-inner,
+  .reb-trade-account-page .reb-title,
+  .reb-trade-account-page .broker-grid,
+  .reb-trade-account-page .step-grid,
+  .reb-trade-account-page .reb-note{
+    width:350px!important;
+    max-width:calc(100vw - 40px)!important;
+    margin-left:0!important;
+    margin-right:auto!important;
+  }
+  .reb-trade-account-page .reb-actions{
+    justify-content:flex-start!important;
+  }
+  .reb-trade-account-page .reb-btn i,
+  .reb-trade-account-page .broker-card .reb-btn i{
+    display:none!important;
+  }
+}
+</style>
+<style id="reb-standard-mobile-menu">
+@media(max-width:767px){
+  body{overflow-x:hidden!important}
+  .reb-top{display:flex!important;justify-content:flex-end!important;align-items:center!important;width:100%!important;padding:12px 18px!important;background:#101312!important;box-sizing:border-box!important}
+  .reb-top .reb-phone{display:none!important}
+  .reb-top .reb-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;width:min(280px,calc(100vw - 36px))!important;margin-left:auto!important;margin-right:auto!important}
+  .reb-top .reb-actions a{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;min-height:44px!important;padding:0 14px!important;border-radius:9px!important;font-size:15px!important;font-weight:800!important;line-height:1!important;white-space:nowrap!important;text-align:center!important}
+  .reb-header{position:relative!important;top:auto!important;display:grid!important;grid-template-columns:1fr!important;width:100%!important;max-width:100%!important;padding:18px!important;gap:18px!important;background:#fff!important;border-bottom:1px solid #ececec!important;box-sizing:border-box!important;overflow:hidden!important}
+  .reb-header .reb-logo,.reb-logo{display:flex!important;align-items:center!important;justify-content:flex-start!important;width:100%!important;max-width:100%!important;margin:0!important}
+  .reb-header .reb-logo img,.reb-logo img{width:min(245px,72vw)!important;max-width:72vw!important;height:auto!important;display:block!important}
+  .reb-nav{display:flex!important;flex-wrap:nowrap!important;align-items:center!important;width:100%!important;max-width:100%!important;min-width:0!important;gap:8px!important;margin:0!important;padding:8px!important;background:#101312!important;border:1px solid rgba(245,176,38,.24)!important;border-radius:12px!important;box-shadow:0 12px 24px rgba(0,0,0,.12)!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;box-sizing:border-box!important;-webkit-overflow-scrolling:touch!important} .reb-nav::-webkit-scrollbar{display:none!important}
+  .reb-nav a,.reb-nav a.trade-account-link{display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;width:auto!important;min-width:112px!important;min-height:46px!important;padding:0 14px!important;border:0!important;border-radius:9px!important;background:transparent!important;color:#fff!important;font-size:14px!important;font-weight:800!important;line-height:1.08!important;white-space:nowrap!important;text-align:center!important;box-sizing:border-box!important}
+  .reb-nav a.active,.reb-nav a:hover{background:var(--gold,#f5b026)!important;color:#070707!important;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)!important}
+}
+@media(max-width:380px){
+  .reb-top{padding-left:14px!important;padding-right:14px!important}
+  .reb-header{padding:16px 14px!important}
+  .reb-nav{gap:7px!important;padding:7px!important} .reb-nav a,.reb-nav a.trade-account-link{font-size:13px!important;min-width:104px!important;min-height:44px!important;padding:0 12px!important}
+}
+</style>
+<link href="/assets/css/reb-font-scale-polish.css?v=20260530-fontscale1" rel="stylesheet"/>
+<link href="/assets/css/reb-global-page-align.css?v=20260531-marketbanner1" rel="stylesheet"/>
+<style id="reb-broker-button-align-final">
+@media (min-width: 901px){
+  .reb-trade-account-page .broker-grid{
+    align-items: stretch!important;
+  }
+  .reb-trade-account-page .broker-card{
+    height: 100%!important;
+    min-height: 404px!important;
+  }
+  .reb-trade-account-page .broker-body{
+    display: grid!important;
+    grid-template-rows: auto minmax(112px,1fr) auto!important;
+    align-content: stretch!important;
+    gap: 14px!important;
+    height: 100%!important;
+  }
+  .reb-trade-account-page .broker-card p{
+    min-height: 0!important;
+  }
+  .reb-trade-account-page .broker-card .reb-btn{
+    align-self: end!important;
+    margin-top: 0!important;
+  }
+}
+@media (max-width: 900px){
+  .reb-trade-account-page .broker-body{
+    display: flex!important;
+    flex-direction: column!important;
+  }
+}
+</style>
+<style id="reb-standard-hero-robot-style">
+html body .reb-hero .reb-standard-hero-frame{width:100%!important;height:390px!important;min-height:390px!important;max-height:none!important;padding:28px!important;display:flex!important;align-items:center!important;justify-content:center!important;position:relative!important;overflow:hidden!important;box-sizing:border-box!important}
+html body .reb-hero .reb-standard-hero-frame>.reb-standard-hero-robot{display:block!important;width:300px!important;height:300px!important;min-width:0!important;min-height:0!important;max-width:calc(100% - 44px)!important;max-height:300px!important;object-fit:contain!important;object-position:center center!important;margin:0 auto!important;inset:auto!important;transform:none!important;position:relative!important;z-index:1!important;flex:0 0 auto!important}
+html body .reb-hero .reb-standard-hero-frame>.reb-mini-grid{width:100%!important;position:relative!important;z-index:2!important}
+html body .reb-hero .reb-standard-hero-frame.reb-standard-hero-stats{flex-direction:column!important;justify-content:space-between!important;gap:14px!important;height:auto!important}
+@media(max-width:900px){html body .reb-hero .reb-standard-hero-frame{height:300px!important;min-height:300px!important;max-height:none!important;padding:22px!important}html body .reb-hero .reb-standard-hero-frame>.reb-standard-hero-robot{width:220px!important;height:220px!important;max-width:calc(100% - 36px)!important;max-height:220px!important}html body .reb-hero .reb-standard-hero-frame.reb-standard-hero-stats{height:auto!important;gap:12px!important}}
+</style>
+<link href="/assets/css/reb-hero-motion-polish.css?v=20260724-4" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-professional-v1.css?v=20260809-auth28" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-trade-account-v65.css?v=20260726-trade65" rel="stylesheet"/>
+<link href="/assets/css/reb-copy-trading-video-v66.css?v=20260726-copy66" rel="stylesheet"/>
+<link href="/assets/css/reb-broker-mobile-premium-v67.css?v=20260726-broker67" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-broker-mobile-compact-v68.css?v=20260726-broker68" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-broker-logo-images-v69.css?v=20260726-broker69" rel="stylesheet"/>
+<link href="/assets/css/reb-broker-card-polish-v70.css?v=20260726-broker70" rel="stylesheet"/>
+<link href="/assets/css/reb-desktop-broker-mobile-auth-v71.css?v=20260727-v71" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-auth-home-standard-v74.css?v=20260727-v78" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/trade-account-video-v1.css?v=20260808-mobile5" rel="stylesheet"/>
+<style id="reb-ios-mobile-scale-final-v1">
+@media (max-width:640px){
+  body.reb-trade-account-page .reb-hero,
+  body.reb-trade-account-page .reb-section{
+    width:100%!important;
+    max-width:100%!important;
+    padding-left:max(20px,env(safe-area-inset-left))!important;
+    padding-right:max(20px,env(safe-area-inset-right))!important;
+  }
+  body.reb-trade-account-page .reb-hero-inner,
+  body.reb-trade-account-page .reb-title,
+  body.reb-trade-account-page .broker-grid,
+  body.reb-trade-account-page .step-grid,
+  body.reb-trade-account-page .copy-trading-panel,
+  body.reb-trade-account-page .copy-widget-grid,
+  body.reb-trade-account-page .copy-risk-note,
+  body.reb-trade-account-page .reb-note{
+    width:100%!important;
+    max-width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  body.reb-trade-account-page .reb-hero-inner > *,
+  body.reb-trade-account-page .broker-grid > *,
+  body.reb-trade-account-page .step-grid > *{
+    min-width:0!important;
+    max-width:100%!important;
+  }
+}
+</style>
+<link href="/assets/css/reb-mobile-auth-standard-v71.css?v=20260917-phase1f" id="reb-mobile-auth-standard-v71-css" media="(max-width: 767px)" rel="stylesheet"/>
+<script defer="" id="reb-mobile-auth-standard-v71-js" src="/assets/js/reb-mobile-auth-standard-v71.js?v=D20F60"></script>
+<link href="/assets/css/reb-global-font-standard-d20d4.css?v=D20D4" rel="stylesheet"/>
+<script id="reb-d20f19-font-guard">
+(function(){
+  var r=document.documentElement;
+  r.classList.add('reb-menu-font-loading');
+  function done(){r.classList.remove('reb-menu-font-loading');r.classList.add('reb-menu-font-ready');}
+  if(document.fonts&&document.fonts.load){
+    Promise.all([document.fonts.load('700 14px Ubuntu'),document.fonts.load('900 17px "Font Awesome 5 Free"')]).then(done,done);
+    setTimeout(done,1800);
+  }else{done();}
+})();
+</script>
+<link href="/assets/css/reb-website-social-header-d20f13.css?v=20260919-d20f19" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-unified-d20f28.css?v=20260920-d20f33-notification-label" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-hamburger-d20f29.css?v=20260919-d20f29" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-main-mobile-bottom-d20f31.css?v=20260920-d20f31" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-social-mobile-d20f34.css?v=20260924-v102-verified-mobile" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-global-mobile-footer-d20f47.css?v=D20F73" media="(max-width: 767px)" rel="stylesheet"/>
+<!-- REB D20F58: remove duplicate top account controls on public pages; account access remains in mobile Profile -->
+<style id="reb-d20f58-public-top-auth-cleanup">
+html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in,
+html.reb-client-logged-in body .reb-top .reb-auth-logged-in,
+html body .main-header .header-top .option-block.reb-auth-logged-in,
+html body .reb-top .reb-auth-logged-in {
+  display:none !important;
+}
+</style>
+<!-- REB D20F60: hard-remove duplicate top auth/account controls on mobile public pages -->
+<style id="reb-d20f60-mobile-public-top-auth-hard-remove">
+@media (max-width: 767px) {
+  html body .main-header .header-top .option-block,
+  html body .main-header .header-top .option-block.reb-auth-logged-in,
+  html body .main-header .header-top .option-block.reb-mobile-public-auth-hidden,
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login,
+  html body .reb-top .reb-actions.reb-auth-logged-in,
+  html body .reb-top .reb-login.reb-auth-logged-in {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    overflow: hidden !important;
+  }
+}
+</style>
+<link href="/assets/css/reb-mobile-classic-d20f30.css?v=D20F72" media="(max-width: 767px)" rel="stylesheet"/>
+<style id="reb-d20f75-trade-copyright-center">
+.reb-trade-account-page .reb-clean-footer-bottom{width:100%!important;display:flex!important;justify-content:center!important;align-items:center!important;text-align:center!important;}
+.reb-trade-account-page .reb-clean-footer-bottom>span{display:block!important;width:100%!important;margin:0 auto!important;text-align:center!important;}
+@media(max-width:640px){.reb-trade-account-page .reb-clean-footer-bottom{flex-direction:row!important;align-items:center!important;justify-content:center!important;text-align:center!important;}.reb-trade-account-page .reb-clean-footer-bottom>span{width:100%!important;text-align:center!important;}}
+</style>
+<link href="/assets/css/reb-website-global-menu-d20f17.css?v=20260921-v46-menu-standard" rel="stylesheet"/>
+
+<link href="/assets/css/reb-social-call-d20b2.css?v=20260921-unified1" rel="stylesheet"/>
+<!-- REB DESIGN SEPARATION: shared logic, isolated visual layers -->
+<link href="/assets/design/shared/shared-core.css?v=SEP1" rel="stylesheet"/>
+<link href="/assets/design/desktop/desktop.css?v=V43" media="(min-width: 768px)" rel="stylesheet"/>
+<link href="/assets/design/mobile/mobile.css?v=SEP1" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-home-master-header-v40.css?v=20260921-v45" rel="stylesheet"/>
+<link id="reb-desktop-header-safe-v62" href="/assets/css/reb-desktop-header-safe-v63.css?v=20260921-v63-width-align" rel="stylesheet"/>
+
+<link rel="stylesheet" href="/assets/css/reb-desktop-footer-icon-fix-v72.css?v=72" media="(min-width: 901px)">
+</head>
+<body class="reb-hide-desktop-account-avatar reb-subpage reb-trade-account-page reb-v62-public reb-v62-subpage">
+<div class="reb-v62-header" data-reb-desktop-header="v62-safe">
+  <div class="reb-v62-top"><div class="reb-v62-frame">
+    <a class="reb-v62-phone" href="tel:+85593525363"><i class="fas fa-headset" aria-hidden="true"></i><span>+855 93 525 363</span></a>
+    <div class="reb-v62-auth" aria-label="Account"></div>
+  </div></div>
+  <div class="reb-v62-nav"><div class="reb-v62-frame">
+    <a class="reb-v62-brand" href="/" aria-label="ReachEmpireBot Home"><img src="/assets/images/logo.png" alt="ReachEmpireBot"></a>
+    <nav class="reb-v62-menu" aria-label="Primary navigation"><a href="/social/"><i class="fas fa-globe" aria-hidden="true"></i><span>Social</span></a><a href="/"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a><a href="/download/"><i class="fas fa-download" aria-hidden="true"></i><span>Download</span></a><a href="/markets/"><i class="fas fa-shopping-cart" aria-hidden="true"></i><span>EA Bot Market</span></a><a href="/create-trade-account/" class="active" aria-current="page"><i class="fas fa-chart-line" aria-hidden="true"></i><span>Trade Account</span></a><a href="/contact/"><i class="fas fa-headset" aria-hidden="true"></i><span>Contact Us</span></a><a href="/about/"><i class="fas fa-users" aria-hidden="true"></i><span>About Us</span></a></nav>
+  </div></div>
+</div>
+
+<div class="reb-global-master-header" data-reb-header-standard="home-v40">
+<div class="header-top"><div class="large-container"><div class="top-inner">
+<div class="support-box"><div class="icon-box"><i aria-hidden="true" class="fas fa-headset"></i></div><a href="tel:+85593525363">+855 93 525 363</a></div>
+<div class="option-block" data-reb-auth-mount="1"><div class="language-picker"></div></div>
+</div></div></div>
+<header class="reb-web-menu"><div class="reb-web-menu-inner"><a class="reb-web-brand" href="/"><img alt="ReachEmpireBot" src="/assets/images/logo.png"/></a><nav aria-label="Primary navigation" class="reb-web-nav"><a class="reb-web-social-link" href="/social/"><i aria-hidden="true" class="fas fa-globe"></i><span>Social</span></a><a href="/"><i aria-hidden="true" class="fas fa-home"></i><span>Home</span></a><a href="/download/"><i aria-hidden="true" class="fas fa-download"></i><span>Download</span></a><a href="/markets/"><i aria-hidden="true" class="fas fa-shopping-cart"></i><span>EA Bot Market</span></a><a aria-current="page" class="active" href="/create-trade-account/"><i aria-hidden="true" class="fas fa-chart-line"></i><span>Trade Account</span></a><a href="/contact/"><i aria-hidden="true" class="fas fa-headset"></i><span>Contact Us</span></a><a href="/about/"><i aria-hidden="true" class="fas fa-users"></i><span>About Us</span></a></nav><div aria-label="Account" class="reb-web-account"></div><button aria-expanded="false" aria-label="Open menu" class="reb-classic-mobile-toggle" type="button"><span class="reb-hamb-line"></span><span class="reb-hamb-line"></span><span class="reb-hamb-line"></span></button></div></header>
+</div>
+<section class="reb-hero">
+<div class="reb-hero-inner">
+<div>
+<p class="reb-kicker">Broker account setup</p>
+<h1>Trade Account</h1>
+<p>Choose a supported broker, open your trading account, then connect the account to ReachEmpireBot so your dashboard can show the right broker, login account, account type, and report data.</p>
+<a class="reb-btn" data-smooth-target="brokers" href="/create-trade-account/#brokers">View Brokers</a>
+<a class="reb-btn dark" href="/contact/"><span aria-hidden="true" class="reb-action-icon"><svg focusable="false" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2Zm16 0h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2ZM17 20c-1 1-2.7 1-5 1"></path></svg></span><span>Contact Support</span></a>
+</div>
+<div aria-hidden="true" class="reb-hero-card reb-standard-hero-frame reb-standard-hero-stats">
+<img alt="ReachEmpireBot robot" class="reb-standard-hero-robot" src="/assets/images/resource/reb-robot.png"/>
+</div>
+</div>
+</section>
+<section class="reb-section" id="brokers">
+<div class="reb-title">
+<p class="reb-kicker">Broker directory</p>
+<h2>Start with a broker that fits your trading plan.</h2>
+<p>Select a supported broker to open your MT5 trading account. After registration, keep your broker server and MT5 login details ready so ReachEmpireBot can be connected correctly.</p>
+</div>
+<div class="broker-grid">
+<article class="broker-card">
+<div class="broker-logo exness"><img alt="Exness logo" class="broker-brand-logo" src="/assets/images/brokers/exness.png"/></div>
+<div class="broker-body">
+<h3>Exness</h3>
+<p>Open a trading account with Exness and prepare your account details for ReachEmpireBot setup and dashboard monitoring.</p>
+<a class="reb-btn" href="https://one.exnessonelink.com/a/bv8g4ygg8u" rel="noopener" target="_blank">Open Exness</a>
+</div>
+</article>
+<article class="broker-card">
+<div class="broker-logo investizo"><img alt="Investizo logo" class="broker-brand-logo" src="/assets/images/brokers/investizo.png"/></div>
+<div class="broker-body">
+<h3>Investizo</h3>
+<p>Create a supported trading account with Investizo and prepare your login details for ReachEmpireBot connection.</p>
+<a class="reb-btn" href="https://investizo.com/?pid=953427&amp;cid=17834" rel="noopener" target="_blank">Open Investizo</a>
+</div>
+</article>
+<article class="broker-card">
+<div class="broker-logo lirunex"><img alt="Lirunex logo" class="broker-brand-logo" src="/assets/images/brokers/lirunex.png"/></div>
+<div class="broker-body">
+<h3>Lirunex</h3>
+<p>Open a Lirunex trading account and prepare your server, login account, and account type for ReachEmpireBot connection.</p>
+<a class="reb-btn" href="https://client.lirunex.co/partner/signup?partnerId=361864" rel="noopener" target="_blank">Open Lirunex</a>
+</div>
+</article>
+<article class="broker-card">
+<div class="broker-logo cmx"><img alt="CXM Direct logo" class="broker-brand-logo" src="/assets/images/brokers/cmx-direct.jpg"/></div>
+<div class="broker-body">
+<h3>CXM Direct</h3>
+<p>Open a CXM Direct trading account with the ReachEmpireBot referral link and prepare your MT5 login details for setup.</p>
+<a class="reb-btn" href="https://secure.cxmys.com/links/go/417067" rel="noopener" target="_blank">Open CXM Direct</a>
+</div>
+</article>
+</div>
+<div class="reb-note"><strong>Important:</strong> Use official broker registration pages only. If you are not sure which broker or account type to choose, contact ReachEmpireBot support before opening a live account.</div>
+</section>
+<section class="reb-section" id="copy-trading">
+<div class="reb-title">
+<p class="reb-kicker">Copy Trading</p>
+<h2>Connect to a Copy Trading master account.</h2>
+<p>Log in to the CXM Social Trading portal to connect your follower account with a ReachEmpireBot master. Master share links will be available in the cards below.</p>
+</div>
+<div class="copy-trading-panel">
+<div class="copy-trading-inner">
+<div>
+<p class="reb-kicker">Managed strategy support</p>
+<h3>Connect your broker account and follow a selected master strategy.</h3>
+<p>Use the official CXM Social Trading portal to log in or register as a follower. Then select one of the three ReachEmpireBot master profiles below when its Broker Share Link becomes available.</p>
+<div class="copy-trading-actions">
+<a class="reb-btn reb-copy-login" href="https://socialtradingregister.cxmys.com/portal/login" rel="noopener noreferrer" target="_blank"><i class="fas fa-sign-in-alt"></i> Login / Connect Copy Trading</a>
+<a class="reb-btn dark" href="/contact/"><span aria-hidden="true" class="reb-action-icon"><svg focusable="false" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2Zm16 0h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2ZM17 20c-1 1-2.7 1-5 1"></path></svg></span><span>Ask Support</span></a>
+</div>
+</div>
+<div class="copy-trading-points">
+<div class="copy-trading-point"><i class="fas fa-user-check"></i><div><strong>Minimum capital</strong><span>Recommended starting capital from the strategy profile: $1,000 or 100,000 USC.</span></div></div>
+<div class="copy-trading-point"><i class="fas fa-sliders-h"></i><div><strong>Risk setup</strong><span>Set copying scale, lot limits, maximum exposure, and stop rules before activation.</span></div></div>
+<div class="copy-trading-point"><i class="fas fa-chart-line"></i><div><strong>Live monitoring</strong><span>Review copied trades, equity movement, drawdown behavior, and dashboard status.</span></div></div>
+</div>
+</div>
+</div>
+<section aria-labelledby="copy-trading-video-title" class="copy-trading-video">
+<div class="copy-trading-video-head">
+<h3 id="copy-trading-video-title">See Copy Trading in Action</h3>
+<p>Watch how a master strategy can be followed while account activity and risk remain visible.</p>
+</div>
+<div class="copy-trading-video-frame">
+<video controls="" playsinline="" preload="metadata">
+<source src="/assets/videos/copy-trading.mp4" type="video/mp4"/>
+        Your browser does not support this video.
+      </video>
+</div>
+</section>
+<div aria-label="ReachEmpireBot Copy Trading master data cards" class="copy-widget-grid reb-master-grid">
+<article class="copy-widget-card reb-master-card reb-master-slot" data-link="https://www.reachempirebot.com/" data-master="ReachEmpireBot_24h">
+<!-- MASTER_LINK_01 (ReachEmpireBot_24h): Replace the URL inside data-link="" -->
+<iframe class="reb-master-data-frame" loading="lazy" title="ReachEmpireBot_24h Master Data"></iframe>
+<a aria-label="Open ReachEmpireBot_24h direct link" class="reb-master-direct-link" href="https://www.reachempirebot.com/" rel="noopener noreferrer" target="_blank"></a>
+</article>
+<article class="copy-widget-card reb-master-card reb-master-slot" data-link="https://www.reachempirebot.com/" data-master="ReachEmpireBot_SmartProfit">
+<!-- MASTER_LINK_02 (ReachEmpireBot_SmartProfit): Replace the URL inside data-link="" -->
+<iframe class="reb-master-data-frame" loading="lazy" title="ReachEmpireBot_SmartProfit Master Data"></iframe>
+<a aria-label="Open ReachEmpireBot_SmartProfit direct link" class="reb-master-direct-link" href="https://www.reachempirebot.com/" rel="noopener noreferrer" target="_blank"></a>
+</article>
+<article class="copy-widget-card reb-master-card reb-master-slot" data-link="https://www.reachempirebot.com/" data-master="ReachEmpireBot_OnePosition5%">
+<!-- MASTER_LINK_03 (ReachEmpireBot_OnePosition5%): Replace the URL inside data-link="" -->
+<iframe class="reb-master-data-frame" loading="lazy" title="ReachEmpireBot_OnePosition5% Master Data"></iframe>
+<a aria-label="Open ReachEmpireBot_OnePosition5% direct link" class="reb-master-direct-link" href="https://www.reachempirebot.com/" rel="noopener noreferrer" target="_blank"></a>
+</article>
+</div><div class="copy-risk-note"><strong>Risk note:</strong> Copy Trading results can change with market conditions. Daily profit percentages shown in strategy profiles are not guaranteed. Use demo testing, small copying scale, and clear drawdown limits before running on a live account.</div>
+</section>
+<section class="reb-section dark">
+<div class="reb-title">
+<p class="reb-kicker">Setup flow</p>
+<h2>From broker account to dashboard monitoring.</h2>
+<p>A clear setup flow helps your trading account connect smoothly with ReachEmpireBot monitoring and reports.</p>
+</div>
+<div class="step-grid">
+<article class="step-card"><strong>1</strong><h3>Create broker account</h3><p>Open demo or real account with your selected broker and keep the MT5 login/server details ready.</p></article>
+<article class="step-card"><strong>2</strong><h3>Send setup details</h3><p>Share your username, broker, MT5 login account, server, account type, and preferred symbols with support.</p></article>
+<article class="step-card"><strong>3</strong><h3>Connect dashboard</h3><p>After setup, your dashboard can show broker, login account, balance, profit, loss, trades, and package status.</p></article>
+</div>
+</section>
+<style id="reb-trade-footer-match-home">
+.reb-trade-account-page .reb-clean-footer{display:block!important;width:100%!important;max-width:100%!important;padding:58px 7vw 24px!important;background:linear-gradient(135deg,#050505 0%,#0a0a0a 58%,#1d1506 100%)!important}
+.reb-trade-account-page .reb-clean-footer-grid{display:grid!important;grid-template-columns:1.2fr .78fr .78fr 1fr!important;gap:34px!important;align-items:start!important;width:100%!important;max-width:1320px!important;margin:0 auto!important}
+.reb-trade-account-page .reb-clean-footer-bottom{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important}
+@media(max-width:1024px){.reb-trade-account-page .reb-clean-footer-grid{grid-template-columns:1fr 1fr!important}.reb-trade-account-page .reb-clean-footer-brand{grid-column:1/-1!important}}
+@media(max-width:640px){.reb-trade-account-page .reb-clean-footer{padding:38px 18px 22px!important}.reb-trade-account-page .reb-clean-footer-grid{grid-template-columns:1fr!important;gap:26px!important}.reb-trade-account-page .reb-clean-footer-bottom{flex-direction:column!important;align-items:flex-start!important}.reb-trade-account-page .reb-clean-footer-actions{display:grid!important;grid-template-columns:1fr!important}.reb-trade-account-page .reb-clean-footer-btn{width:100%!important}}
+</style>
+<style id="reb-mobile-menu-one-row-final">
+@media(max-width:767px){
+  body .reb-header .reb-nav, body .reb-nav{
+    display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;grid-template-columns:none!important;
+    align-items:center!important;justify-content:flex-start!important;width:100%!important;max-width:100%!important;
+    gap:8px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;
+    padding:8px!important;background:#101312!important;border-radius:12px!important;box-sizing:border-box!important;
+    -webkit-overflow-scrolling:touch!important;
+  }
+  body .reb-header .reb-nav::-webkit-scrollbar, body .reb-nav::-webkit-scrollbar{display:none!important}
+  body .reb-header .reb-nav a, body .reb-nav a, body .reb-nav a.trade-account-link{
+    flex:0 0 auto!important;width:auto!important;min-width:108px!important;max-width:none!important; min-height:44px!important;padding:0 13px!important;font-size:14px!important;line-height:1.08!important;white-space:nowrap!important;text-align:center!important;
+  }
+}
+</style>
+<style id="reb-home-clean-footer">
+.reb-clean-footer{background:linear-gradient(135deg,#050505 0%,#0a0a0a 58%,#1d1506 100%);color:#fff;border-top:1px solid rgba(245,176,38,.2);padding:58px 6vw 24px}.reb-clean-footer-inner{max-width:1480px;margin:0 auto}.reb-clean-footer .reb-clean-footer-grid{display:grid;grid-template-columns:minmax(310px,1.45fr) minmax(135px,.64fr) minmax(155px,.72fr) minmax(230px,.9fr) minmax(230px,.95fr)!important;gap:34px;align-items:start}.reb-clean-footer-logo{width:245px;max-width:74vw;height:auto;display:block;margin-bottom:16px}.reb-clean-footer p{color:rgba(255,255,255,.7);line-height:1.65;margin:0;font-size:15px}.reb-clean-footer h3{color:#f5b026;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin:0}.reb-clean-footer-links{display:grid;gap:11px;margin-top:15px}.reb-clean-footer-links a{color:rgba(255,255,255,.82);font-weight:700;text-decoration:none}.reb-clean-footer-links a:hover{color:#f5b026}.reb-contact-list{display:grid;gap:10px;margin-top:15px}.reb-contact-row{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:center;color:rgba(255,255,255,.82)!important;text-decoration:none;font-weight:700;line-height:1.35}.reb-contact-row:hover{color:#f5b026!important}.reb-contact-row i{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;transition:transform .18s ease,box-shadow .18s ease}.reb-contact-row:hover i{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.25)}.reb-contact-row.phone i{background:#f5b026;color:#050505}.reb-contact-row.email i{background:#6b7280}.reb-contact-row.telegram i{background:#229ed9}.reb-contact-row span{display:block;min-width:0;overflow-wrap:anywhere}.reb-contact-help{margin-top:14px!important;color:rgba(255,255,255,.62)!important;font-size:14px!important;line-height:1.55!important}.reb-follow-social{display:grid;grid-template-columns:repeat(4,44px);gap:10px;margin-top:15px}.reb-follow-social a{width:44px;height:44px;border-radius:10px;color:#fff!important;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}.reb-follow-social a:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(0,0,0,.28);filter:saturate(1.08)}.reb-follow-social .facebook{background:#1877f2}.reb-follow-social .youtube{background:#ff0000}.reb-follow-social .telegram{background:#229ed9}.reb-follow-social .tiktok{background:linear-gradient(135deg,#050505 0%,#101010 56%,#25f4ee 100%);border:1px solid rgba(255,255,255,.24);position:relative;overflow:hidden}.reb-follow-social .tiktok:after{content:"";position:absolute;right:4px;bottom:4px;width:11px;height:11px;border-radius:50%;background:#fe2c55;opacity:.82}.reb-tiktok-svg{width:21px;height:21px;position:relative;z-index:1;filter:drop-shadow(1px 1px 0 #fe2c55)}.reb-clean-footer-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.reb-clean-footer-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 16px;border-radius:8px;background:#f5b026;color:#050505!important;font-weight:900;text-decoration:none}.reb-clean-footer-btn.secondary{background:rgba(255,255,255,.08);border:1px solid rgba(245,176,38,.24);color:#fff!important}.reb-clean-footer-bottom{margin-top:38px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:flex-start;gap:26px;color:rgba(255,255,255,.6);font-size:14px}.reb-floating-chat{position:fixed;right:26px;bottom:96px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 18px;border-radius:999px;background:#229ed9;color:#fff!important;font-weight:900;text-decoration:none;box-shadow:0 18px 42px rgba(34,158,217,.36);border:1px solid rgba(255,255,255,.28);animation:rebFloatChat 3.2s ease-in-out infinite,rebChatPulse 2.4s ease-in-out infinite;transition:transform .18s ease,background .18s ease}.reb-floating-chat i{font-size:20px}.reb-floating-chat:hover{background:#1b8fc6;color:#fff!important;transform:translateY(-3px)}@keyframes rebFloatChat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes rebChatPulse{0%,100%{box-shadow:0 18px 42px rgba(34,158,217,.36),0 0 0 0 rgba(34,158,217,.28)}50%{box-shadow:0 22px 48px rgba(34,158,217,.42),0 0 0 10px rgba(34,158,217,0)}}
+@media(max-width:1180px){.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1.2fr .8fr .8fr!important}.reb-clean-footer-brand{grid-column:1/-1}.reb-clean-follow{grid-column:auto}.reb-follow-social{grid-template-columns:repeat(4,42px)}.reb-follow-social a{width:42px;height:42px}}
+@media(max-width:760px){.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1fr 1fr!important}.reb-clean-footer-brand{grid-column:1/-1}.reb-clean-contact,.reb-clean-follow{grid-column:auto}}
+@media(max-width:640px){.reb-clean-footer{padding:38px 18px 22px}.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1fr!important;gap:26px}.reb-clean-footer-logo{width:220px}.reb-contact-list{gap:9px}.reb-contact-row{grid-template-columns:32px minmax(0,1fr)}.reb-contact-row i{width:32px;height:32px}.reb-follow-social{grid-template-columns:repeat(4,40px);gap:9px}.reb-follow-social a{width:40px;height:40px}.reb-clean-footer-actions{display:grid;grid-template-columns:1fr;gap:10px}.reb-clean-footer-btn{width:100%;min-width:0}.reb-clean-footer-bottom{flex-direction:column;align-items:flex-start;font-size:13px;gap:18px}.reb-floating-chat{right:14px;bottom:84px;min-height:50px;padding:0 14px;font-size:13px}.reb-floating-chat span{max-width:96px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-floating-chat i{font-size:18px}}
+</style>
+<!-- footer area start -->
+<footer class="reb-clean-footer">
+<div class="reb-clean-footer-inner">
+<div class="reb-clean-footer-grid">
+<div class="reb-clean-footer-brand">
+<a href="/"><img alt="ReachEmpireBot" class="reb-clean-footer-logo" src="/assets/images/logo-2.png"/></a>
+<p>AI-assisted auto trading software for disciplined MT5 execution, setup guidance, copy trading information, and risk-aware automation support.</p>
+<div class="reb-clean-footer-actions">
+<a class="reb-clean-footer-btn" href="/download/"><i aria-hidden="true" class="fas fa-download reb-inline-icon"><svg focusable="false" viewbox="0 0 24 24"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14"></path></svg></i> Download</a>
+<a class="reb-clean-footer-btn secondary" href="/contact/"><i aria-hidden="true" class="fas fa-headset reb-inline-icon"><svg focusable="false" viewbox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2Zm16 0h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2ZM17 20c-1 1-2.7 1-5 1"></path></svg></i> Contact Support</a>
+</div>
+</div>
+<div>
+<h3>Main Pages</h3>
+<nav aria-label="Footer main pages" class="reb-clean-footer-links">
+<a href="/">Home</a>
+<a href="/download/">Download</a>
+<a href="/markets/">EA Bot Market</a>
+<a href="/create-trade-account/">Trade Account</a>
+<a href="/about/">About Us</a>
+</nav>
+</div>
+<div>
+<h3>Markets</h3>
+<nav aria-label="Footer market pages" class="reb-clean-footer-links">
+<a href="/forex-trading/">Forex Trading</a>
+<a href="/crypto-trading/">Crypto Trading</a>
+<a href="/metal-trading/">Metal Trading</a>
+</nav>
+</div>
+<div class="reb-clean-contact">
+<h3>Contact Info</h3>
+<div aria-label="Contact links" class="reb-contact-list">
+<a aria-label="Call ReachEmpireBot" class="reb-contact-row phone" href="tel:+85593525363"><i aria-hidden="true" class="fas fa-phone reb-inline-icon"><svg focusable="false" viewbox="0 0 24 24"><path d="M7.2 3.5 10 8 7.8 10c1.2 2.7 3.4 4.9 6.2 6.2l2-2.2 4.5 2.8-.8 3.1c-.3 1-1.3 1.7-2.4 1.5C9.7 20.1 3.9 14.3 2.6 6.7c-.2-1.1.5-2.1 1.5-2.4l3.1-.8Z"></path></svg></i><span>093 525 363</span></a>
+<a aria-label="Email ReachEmpireBot" class="reb-contact-row email" href="mailto:reachempirebot@gmail.com"><i aria-hidden="true" class="fas fa-envelope reb-inline-icon"><svg focusable="false" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg></i><span>reachempirebot@gmail.com</span></a>
+<a aria-label="Telegram Channel" class="reb-contact-row telegram" href="https://t.me/ReachEmpireBot" rel="noopener" target="_blank"><i class="fab fa-telegram-plane"></i><span>Telegram Channel</span></a>
+</div>
+<p class="reb-contact-help">For direct questions, use the Live Chat button.</p>
+</div>
+<div class="reb-clean-follow">
+<h3>Follow Us On</h3>
+<div aria-label="Social links" class="reb-follow-social">
+<a aria-label="Facebook Page" class="facebook" href="https://web.facebook.com/ReachEmpireBot" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="YouTube Channel" class="youtube" href="https://www.youtube.com/@ReachEmpireBot" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+<a aria-label="Telegram Channel" class="telegram" href="https://t.me/ReachEmpireBot" rel="noopener" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+<a aria-label="TikTok" class="tiktok" href="https://www.tiktok.com/@reachempirebot" rel="noopener" target="_blank"><svg aria-hidden="true" class="reb-tiktok-svg" focusable="false" viewbox="0 0 24 24"><path d="M16.7 4.2c.6 1.8 1.9 3.1 3.7 3.4v3.1c-1.5 0-2.8-.5-3.9-1.3v5.8c0 3.2-2.2 5.2-5.2 5.2-2.8 0-5-1.9-5-4.6 0-2.9 2.3-4.8 5.1-4.8.4 0 .8 0 1.1.1v3.2c-.3-.1-.7-.2-1.1-.2-1.2 0-2 .7-2 1.7 0 1 .8 1.6 1.8 1.6 1.2 0 2-.7 2-2.1V3.6h3.5v.6z" fill="currentColor"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="reb-clean-footer-bottom">
+<span>Copyright © 2026 ReachEmpireBot. All rights reserved.</span>
+</div>
+</div>
+</footer>
+<!-- footer area end -->
+<style id="reb-trade-account-frame-standard">
+.reb-trade-account-page .reb-section{scroll-margin-top:96px}.reb-trade-account-page .reb-section>.reb-title,.reb-trade-account-page .broker-grid,.reb-trade-account-page .reb-note,.reb-trade-account-page .copy-trading-panel,.reb-trade-account-page .copy-widget-grid,.reb-trade-account-page .copy-risk-note,.reb-trade-account-page .step-grid{width:min(1180px,100%)!important;max-width:1180px!important;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box}.reb-trade-account-page #brokers.reb-scroll-focus .broker-grid{animation:rebBrokerFocus 1.2s ease-out}@keyframes rebBrokerFocus{0%{filter:brightness(.94);transform:translateY(8px)}55%{filter:brightness(1.03)}100%{filter:brightness(1);transform:none}}@media(max-width:900px){.reb-trade-account-page .reb-section>.reb-title,.reb-trade-account-page .broker-grid,.reb-trade-account-page .reb-note,.reb-trade-account-page .copy-trading-panel,.reb-trade-account-page .copy-widget-grid,.reb-trade-account-page .copy-risk-note,.reb-trade-account-page .step-grid{width:100%!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important}.reb-trade-account-page .copy-trading-panel,.reb-trade-account-page .copy-widget-grid,.reb-trade-account-page .copy-risk-note{max-width:100%!important}}
+</style>
+<script id="reb-broker-smooth-scroll">
+(function(){
+  function scrollToBrokers(){
+    var target=document.getElementById('brokers');if(!target)return;
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var header=document.querySelector('.reb-header');
+    var offset=(header&&getComputedStyle(header).position==='sticky'?header.offsetHeight:0)+22;
+    var start=window.pageYOffset;
+    var end=Math.max(0,target.getBoundingClientRect().top+start-offset);
+    var distance=end-start;
+    var duration=reduce?0:1050;
+    target.classList.remove('reb-scroll-focus');void target.offsetWidth;target.classList.add('reb-scroll-focus');
+    if(!duration){window.scrollTo(0,end);return;}
+    var begin=performance.now();
+    function step(now){var t=Math.min(1,(now-begin)/duration);var eased=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;window.scrollTo(0,start+distance*eased);if(t<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  document.addEventListener('click',function(event){var link=event.target.closest&&event.target.closest('[data-smooth-target="brokers"]');if(!link)return;event.preventDefault();if(location.hash!=='#brokers')history.pushState(null,'','#brokers');scrollToBrokers();});
+  if(location.hash==='#brokers'){window.scrollTo(0,0);setTimeout(scrollToBrokers,180);}
+})();
+</script>
+<script src="/assets/js/trade-account-video-v1.js?v=20260808-mobile5"></script>
+<style id="reb-master-empty-cards-v2">
+.reb-trade-account-page .reb-master-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important;align-items:stretch}
+.reb-trade-account-page .reb-master-slot{position:relative;min-width:0;min-height:430px;padding:0!important;border:1px solid rgba(245,176,38,.32);border-radius:14px;background:linear-gradient(145deg,#fff 0%,#fffaf0 100%);box-shadow:0 18px 44px rgba(26,18,3,.08);overflow:hidden}
+.reb-trade-account-page .reb-master-slot:before{content:"";position:absolute;z-index:2;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#f5b026,#ffd978);pointer-events:none}
+.reb-master-data-frame{display:none;width:100%;height:100%;min-height:430px;border:0;background:#fff}
+.reb-master-slot.has-data .reb-master-data-frame{display:block}
+.reb-master-direct-link{position:absolute;z-index:6;inset:0;display:block;cursor:pointer;background:transparent}
+.reb-master-slot:hover{border-color:rgba(245,176,38,.7);box-shadow:0 24px 52px rgba(26,18,3,.16)}
+@media(max-width:1000px){.reb-trade-account-page .reb-master-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.reb-master-slot:last-child{grid-column:1/-1}}
+@media(max-width:640px){.reb-trade-account-page .reb-master-grid{grid-template-columns:1fr!important}.reb-master-slot:last-child{grid-column:auto}.reb-trade-account-page .reb-master-slot,.reb-master-data-frame{min-height:460px}}
+</style>
+<script id="reb-master-link-loader-v2">
+(function(){
+  function loadMasterCards(){
+    document.querySelectorAll('.reb-master-slot[data-link]').forEach(function(card){
+      var link=(card.getAttribute('data-link')||'').trim();
+      if(!link)return;
+      var frame=card.querySelector('.reb-master-data-frame');
+      var directLink=card.querySelector('.reb-master-direct-link');
+      if(!frame||!directLink)return;
+      frame.src=link;
+      directLink.href=link;
+      card.classList.add('has-data');
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',loadMasterCards);
+  else loadMasterCards();
+})();
+</script>
+<style id="reb-mobile-auth-hardfix-v33">
+@media(max-width:767px){
+ html body .main-header .header-top .option-block,html body .reb-top .reb-actions,html body .reb-top .reb-login{box-sizing:border-box!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;width:min(300px,calc(100vw - 28px))!important;margin-left:auto!important;margin-right:14px!important;padding:0!important;background:transparent!important;border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important}
+ html body .main-header .header-top .option-block .language-picker{display:none!important}
+ html body .main-header .header-top .option-block a[href*="/signup/"],html body .reb-top .reb-actions a[href*="/signup/"],html body .reb-top .reb-login a[href*="/signup/"]{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;margin:0!important;padding:0 8px!important;border:1px solid #ffb11b!important;border-radius:9px!important;background:#ffb11b!important;background-image:none!important;color:#090909!important;font-size:13px!important;font-weight:800!important;line-height:1!important;box-shadow:none!important;transform:none!important}
+ html body .main-header .header-top .option-block a[href*="/signup/"]::before,html body .main-header .header-top .option-block a[href*="/signup/"]::after,html body .reb-top a[href*="/signup/"]::before,html body .reb-top a[href*="/signup/"]::after{content:none!important;display:none!important;opacity:0!important;visibility:hidden!important;transform:none!important;background:transparent!important}
+ html body .main-header .header-top .option-block a[href*="/login/"],html body .reb-top .reb-actions a[href*="/login/"],html body .reb-top .reb-login a[href*="/login/"]{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;margin:0!important;padding:0 8px!important;border:1px solid #59605f!important;border-radius:9px!important;background:#101413!important;background-image:none!important;color:#fff!important;font-size:13px!important;font-weight:800!important;line-height:1!important;box-shadow:none!important}
+ html body .main-header .header-top .option-block.reb-auth-logged-in .reb-session-account,html body .reb-top .reb-auth-logged-in .reb-session-account{background:#181b18!important;border-color:#a27618!important;color:#fff!important}
+ html body .main-header .header-top .option-block.reb-auth-logged-in .reb-session-logout,html body .reb-top .reb-auth-logged-in .reb-session-logout{background:#321919!important;border-color:#8b3b3b!important;color:#fff!important}
+}
+</style>
+<script id="reb-mobile-auth-hardfix-v33-runtime">
+(function(){function run(){if(Math.min(innerWidth||9999,document.documentElement.clientWidth||9999)>767&&!/Android|iPhone|Mobile/i.test(navigator.userAgent||''))return;var a=document.querySelectorAll('a[href*="/login/"]');for(var i=0;i<a.length;i++)if(!a[i].classList.contains('reb-session-logout'))a[i].textContent='Log In';var s=document.querySelectorAll('a[href*="/signup/"]');for(var j=0;j<s.length;j++)s[j].textContent='Sign Up'}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();setTimeout(run,300)})();
+</script>
+<link href="/assets/css/reb-mobile-auth-home-v36.css?v=20260809-v36" id="reb-mobile-auth-home-v36" media="(max-width: 767px)" rel="stylesheet"/>
+<!-- REB TRADE ACCOUNT AUTH STANDARD - copied 1:1 geometry to all pages -->
+<style id="reb-trade-account-auth-standard-all-pages">
+@media(max-width:640px){
+  html body .reb-top{padding:12px 20px!important;justify-content:flex-end!important;gap:0!important;}
+  html body .reb-top .reb-phone{display:none!important;}
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login{
+    width:auto!important;max-width:100%!important;display:flex!important;grid-template-columns:none!important;
+    justify-content:center!important;gap:8px!important;flex:0 0 auto!important;
+    margin-left:auto!important;margin-right:0!important;padding:0!important;
+    background:transparent!important;border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important;
+  }
+  html body .reb-top .reb-actions a,
+  html body .reb-top .reb-login a{
+    box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;
+    width:auto!important;min-width:86px!important;max-width:none!important;height:40px!important;min-height:40px!important;max-height:40px!important;
+    margin:0!important;padding:0 14px!important;border-radius:8px!important;font-size:15px!important;font-weight:800!important;
+    line-height:1!important;white-space:nowrap!important;text-align:center!important;box-shadow:none!important;transform:none!important;
+  }
+  html body .reb-top .reb-actions a[href*="/signup/"],
+  html body .reb-top .reb-login a[href*="/signup/"]{background:#f5b026!important;background-image:none!important;border:1px solid #f5b026!important;color:#070707!important;}
+  html body .reb-top .reb-actions a[href*="/login/"],
+  html body .reb-top .reb-login a[href*="/login/"]{background:#101312!important;background-image:none!important;border:1px solid rgba(255,255,255,.45)!important;color:#fff!important;}
+  html body .reb-top a[href*="/signup/"]::before,html body .reb-top a[href*="/signup/"]::after,
+  html body .reb-top a[href*="/login/"]::before,html body .reb-top a[href*="/login/"]::after{content:none!important;display:none!important;}
+}
+</style>
+<style id="reb-inline-desktop-menu-final-v6">
+@media (min-width:768px){
+html body.reb-subpage header.reb-header{
+  display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;
+  gap:28px!important;width:100%!important;max-width:100%!important;min-height:136px!important;height:auto!important;
+  margin:0!important;padding:22px 5.5vw!important;box-sizing:border-box!important;overflow:visible!important;background:#fff!important;
+}
+html body.reb-subpage header.reb-header>a.reb-logo{display:flex!important;align-items:center!important;flex:0 0 auto!important;width:auto!important;margin:0!important;padding:0!important}
+html body.reb-subpage header.reb-header>a.reb-logo img{display:block!important;width:245px!important;max-width:245px!important;height:auto!important}
+html body.reb-subpage header.reb-header>button.reb-mobile-menu-toggle{display:none!important}
+html body.reb-subpage header.reb-header>nav.reb-nav{
+  display:flex!important;visibility:visible!important;opacity:1!important;position:static!important;inset:auto!important;transform:none!important;
+  flex:0 0 auto!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;
+  gap:4px!important;width:auto!important;min-width:760px!important;max-width:calc(100vw - 390px)!important;height:56px!important;min-height:56px!important;
+  margin:0 0 0 auto!important;padding:6px!important;box-sizing:border-box!important;overflow:visible!important;
+  background:#101312!important;border:1px solid rgba(245,176,38,.24)!important;border-radius:14px!important;box-shadow:0 14px 30px rgba(0,0,0,.12)!important;
+  font-family:Ubuntu,Arial,sans-serif!important;
+}
+html body.reb-subpage header.reb-header>nav.reb-nav>a,
+html body.reb-subpage header.reb-header>nav.reb-nav>a.trade-account-link{
+  display:inline-flex!important;visibility:visible!important;opacity:1!important;align-items:center!important;justify-content:center!important;flex:1 1 auto!important;
+  width:auto!important;min-width:100px!important;max-width:none!important;height:44px!important;min-height:44px!important;margin:0!important;padding:0 14px!important;
+  box-sizing:border-box!important;border:0!important;border-radius:10px!important;background:transparent!important;color:#fff!important;
+  font-family:Ubuntu,Arial,sans-serif!important;font-size:14px!important;font-style:normal!important;font-weight:700!important;letter-spacing:0!important;line-height:1!important;
+  text-align:center!important;text-transform:none!important;text-decoration:none!important;white-space:nowrap!important;
+}
+html body.reb-subpage header.reb-header>nav.reb-nav>a.active,
+html body.reb-subpage header.reb-header>nav.reb-nav>a:hover{background:#f5b026!important;color:#070707!important}
+}
+@media (min-width:768px) and (max-width:1180px){
+html body.reb-subpage header.reb-header{padding-left:28px!important;padding-right:28px!important;gap:18px!important}
+html body.reb-subpage header.reb-header>a.reb-logo img{width:205px!important;max-width:205px!important}
+html body.reb-subpage header.reb-header>nav.reb-nav{min-width:0!important;max-width:calc(100vw - 275px)!important;overflow-x:auto!important;justify-content:flex-start!important}
+html body.reb-subpage header.reb-header>nav.reb-nav>a,html body.reb-subpage header.reb-header>nav.reb-nav>a.trade-account-link{flex:0 0 auto!important;min-width:105px!important;font-size:13px!important;padding:0 12px!important}
+}
+</style><!-- REB desktop auth: final cascade override. Keep immediately before <script src="/assets/js/reb-client-access-enforcement-v1.js?v=D20F"></script>
+
+<script defer src="/assets/js/reb-website-social-header-d20f13.js?v=20260919-d20f16"></script>
+
+<script defer src="/assets/js/reb-main-mobile-bottom-d20f31.js?v=20260920-d20f31"></script>
+
+
+<script src="/assets/js/reb-website-global-menu-d20f17.js?v=20260921-home-match"></script>
+<script defer src="/assets/js/reb-social-call-d20c4.js?v=20260925-v41-call-push"></script>
+
+
+<script defer src="/assets/js/reb-social-call-d20c4.js?v=20260925-v41-call-push"></script>
+
+
+<style id="reb-v44-static-topbar-fix">
+@media (min-width:768px){
+.main-header .header-top .support-box .icon-box{display:flex!important;align-items:center!important;justify-content:center!important;color:#f5a800!important;margin-right:10px!important}
+.main-header .header-top .support-box .icon-box i{display:inline-block!important;color:#f5a800!important;font-size:18px!important}
+.main-header .header-top .option-block.reb-auth-logged-in{display:flex!important;align-items:center!important}
+.main-header .header-top .option-block.reb-auth-logged-in .reb-v44-static-logout{display:inline-flex!important;align-items:center!important;gap:8px!important;color:#fff!important;background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important}
+.main-header .header-top .option-block.reb-auth-logged-in .reb-v44-static-logout i{color:#f5a800!important}
+}
+</style>
+
+
+<script src="/assets/js/reb-auth-state.js?v=V58-AUTH-VISIBLE"></script>
+<script src="/assets/js/reb-desktop-header-auth-v62.js?v=20260923-v79-account-style"></script>
+
+<script defer src="/assets/js/reb-call-push-v41.js?v=20260925-v41"></script>
+</body>. -->
+<style id="reb-desktop-auth-final-override-v3">
+@media (min-width:768px){
+  html body .reb-top{
+    box-sizing:border-box!important;
+    width:100%!important;
+    padding:12px 5.5vw!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:18px!important;
+    position:relative!important;
+  }
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login,
+  html body.reb-home .main-header .header-top .option-block{
+    box-sizing:border-box!important;
+    display:flex!important;
+    grid-template-columns:none!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:14px!important;
+    width:auto!important;
+    max-width:none!important;
+    flex:0 0 auto!important;
+    position:absolute!important;
+    top:50%!important;
+    left:auto!important;
+    bottom:auto!important;
+    margin:0!important;
+    padding:0!important;
+    background:transparent!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    transform:translateY(-50%)!important;
+  }
+  html body:not(.reb-home) .reb-top .reb-actions,
+  html body:not(.reb-home) .reb-top .reb-login{right:5.5vw!important}
+  html body.reb-home .main-header .header-top .large-container,
+  html body.reb-home .main-header .header-top .top-inner{position:relative!important}
+  html body.reb-home .main-header .header-top .option-block{right:0!important}
+  html body .reb-top .reb-actions>a,
+  html body .reb-top .reb-login>a,
+  html body.reb-home .main-header .header-top .option-block>a{
+    box-sizing:border-box!important;
+    display:inline-flex!important;
+    visibility:visible!important;
+    opacity:1!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:44px!important;
+    min-height:44px!important;
+    max-height:44px!important;
+    margin:0!important;
+    padding:0 20px!important;
+    border-radius:8px!important;
+    background-image:none!important;
+    font-family:Ubuntu,Arial,sans-serif!important;
+    font-size:15px!important;
+    font-style:normal!important;
+    font-weight:800!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    text-align:center!important;
+    text-decoration:none!important;
+    text-transform:none!important;
+    white-space:nowrap!important;
+    box-shadow:none!important;
+    transform:none!important;
+  }
+  html body .reb-top .reb-actions>a[href*="/signup/"],
+  html body .reb-top .reb-login>a[href*="/signup/"],
+  html body.reb-home .main-header .header-top .option-block>a[href*="/signup/"]{
+    width:104px!important;
+    background:#f5b026!important;
+    border:1px solid #f5b026!important;
+    color:#070707!important;
+  }
+  html body .reb-top .reb-actions>a[href*="/login/"],
+  html body .reb-top .reb-login>a[href*="/login/"],
+  html body.reb-home .main-header .header-top .option-block>a[href*="/login/"]{
+    width:92px!important;
+    background:#101312!important;
+    border:1px solid rgba(255,255,255,.45)!important;
+    color:#fff!important;
+  }
+  html body .reb-top a[href*="/signup/"]::before,
+  html body .reb-top a[href*="/signup/"]::after,
+  html body .reb-top a[href*="/login/"]::before,
+  html body .reb-top a[href*="/login/"]::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body.reb-home .main-header .header-top .option-block .language-picker{display:none!important}
+  html body .reb-top .reb-auth-logged-in>.reb-session-account{
+    background:#181b18!important;
+    border:1px solid #a27618!important;
+    color:#fff!important;
+  }
+  html body .reb-top .reb-auth-logged-in>.reb-session-logout{
+    background:#321919!important;
+    border:1px solid #8b3b3b!important;
+    color:#fff!important;
+  }
+}
+</style>
+<script defer="" src="/assets/js/reb-global-mobile-footer-d20f57.js?v=D20F57"></script>
+<script src="/assets/js/reb-mobile-classic-d20f70.js?v=D20F72"></script>
+<!-- REB Unified Floating Chat: active shared core -->
+<script defer="" src="/assets/js/reb-social-call-d20c4.js?v=20260925-v41-call-push"></script>
+
+<style id="reb-v44-static-topbar-fix">
+@media (min-width:768px){
+.main-header .header-top .support-box .icon-box{display:flex!important;align-items:center!important;justify-content:center!important;color:#f5a800!important;margin-right:10px!important}
+.main-header .header-top .support-box .icon-box i{display:inline-block!important;color:#f5a800!important;font-size:18px!important}
+.main-header .header-top .option-block.reb-auth-logged-in{display:flex!important;align-items:center!important}
+.main-header .header-top .option-block.reb-auth-logged-in .reb-v44-static-logout{display:inline-flex!important;align-items:center!important;gap:8px!important;color:#fff!important;background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important}
+.main-header .header-top .option-block.reb-auth-logged-in .reb-v44-static-logout i{color:#f5a800!important}
+}
+</style>
+
+
+
+
+<script id="reb-floating-chat-hard-core-loader" defer src="/assets/js/reb-floating-chat-hard-core.js?v=20260925-v121"></script>
+</body>
+<script src="/assets/js/reb-client-access-enforcement-v1.js?v=D20F2"></script>
+<script src="/assets/js/reb-desktop-header-auth-v62.js?v=20260923-v79-account-style"></script>
+</html>
