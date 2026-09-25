@@ -1,0 +1,3 @@
+/* REB SHARED DESIGN CORE
+   Structural/shared tokens only. Do NOT put viewport-specific layout here. */
+:root { --reb-desktop-breakpoint: 768px; }
