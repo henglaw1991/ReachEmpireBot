@@ -1,0 +1,73 @@
+@media (max-width: 767px) {
+  .reb-about-v86-section {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .reb-about-v86-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    margin-top: 16px !important;
+  }
+
+  .reb-about-v86-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 14px 12px !important;
+    gap: 7px !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  .reb-about-v86-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    margin: 0 0 3px !important;
+    padding: 0 !important;
+    border-radius: 11px !important;
+  }
+
+  .reb-about-v86-icon svg,
+  .reb-about-v86-icon i {
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 18px !important;
+  }
+
+  .reb-about-v86-title {
+    margin: 0 !important;
+    font-size: 15px !important;
+    line-height: 1.25 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .reb-about-v86-copy {
+    margin: 0 !important;
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+
+@media (max-width: 389px) {
+  .reb-about-v86-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .reb-about-v86-card {
+    padding: 13px !important;
+  }
+}

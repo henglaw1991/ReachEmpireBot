@@ -1,0 +1,141 @@
+/* Contact page final visual standard — desktop photo + compact mobile layout. */
+.reb-contact-page .reb-contact-team-frame {
+  padding: 0 !important;
+  height: 390px !important;
+  min-height: 390px !important;
+  overflow: hidden !important;
+  background: #17120a !important;
+}
+.reb-contact-page .reb-contact-team-photo {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center 48% !important;
+  filter: none !important;
+}
+.reb-contact-page .reb-info-card > .reb-inline-icon svg {
+  width: 21px !important;
+  height: 21px !important;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.reb-contact-page .reb-info-card > .reb-telegram-icon svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+@media (max-width: 640px) {
+  .reb-contact-page .reb-hero { padding: 28px 18px 0 !important; overflow: hidden !important; }
+  .reb-contact-page .reb-hero-inner { display: block !important; width: 100% !important; max-width: none !important; }
+  .reb-contact-page .reb-kicker { font-size: 12px !important; line-height: 1.3 !important; }
+  .reb-contact-page .reb-hero h1 { font-size: 34px !important; line-height: 1.08 !important; margin: 10px 0 12px !important; }
+  .reb-contact-page .reb-hero p { font-size: 15px !important; line-height: 1.55 !important; margin: 0 !important; }
+  .reb-contact-page .reb-contact-team-frame {
+    width: 100vw !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 3 / 4 !important;
+    margin: 22px calc(50% - 50vw) 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .reb-contact-page .reb-contact-team-photo {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: 58% center !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .reb-contact-page .reb-contact { padding: 24px 16px 28px !important; }
+  .reb-contact-page .reb-contact-grid { gap: 14px !important; }
+  .reb-contact-page .reb-info { gap: 10px !important; }
+  .reb-contact-page .reb-info-card {
+    grid-template-columns: 44px minmax(0,1fr) !important;
+    gap: 12px !important;
+    padding: 14px !important;
+    border-radius: 12px !important;
+    align-items: start !important;
+    box-shadow: 0 8px 22px rgba(15,23,42,.05) !important;
+  }
+  .reb-contact-page .reb-info-card > i {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    border-radius: 11px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .reb-contact-page .reb-info-card h3 { font-size: 17px !important; line-height: 1.25 !important; margin: 1px 0 3px !important; }
+  .reb-contact-page .reb-info-card p { font-size: 13px !important; line-height: 1.4 !important; margin: 0 !important; overflow-wrap: anywhere; }
+  .reb-contact-page .reb-info-card .reb-contact-note { font-size: 12.5px !important; line-height: 1.4 !important; margin-top: 2px !important; color: #687386 !important; }
+
+  .reb-contact-page .reb-form { padding: 18px 15px !important; border-radius: 14px !important; }
+  .reb-contact-page .reb-form-head { margin: 0 0 16px !important; }
+  .reb-contact-page .reb-form h2 { font-size: 26px !important; line-height: 1.1 !important; margin: 0 0 8px !important; }
+  .reb-contact-page .reb-form-head p { font-size: 14px !important; line-height: 1.5 !important; margin: 0 !important; }
+  .reb-contact-page .reb-fields { gap: 12px !important; }
+  .reb-contact-page .reb-field { gap: 6px !important; }
+  .reb-contact-page .reb-field label { font-size: 13.5px !important; line-height: 1.25 !important; }
+  .reb-contact-page .reb-field input,
+  .reb-contact-page .reb-field select {
+    min-height: 48px !important;
+    height: 48px !important;
+    padding: 10px 13px !important;
+    font-size: 15px !important;
+    border-radius: 10px !important;
+  }
+  .reb-contact-page .reb-field textarea {
+    min-height: 120px !important;
+    padding: 12px 13px !important;
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    border-radius: 10px !important;
+  }
+  .reb-contact-page .reb-submit-row { gap: 10px !important; }
+  .reb-contact-page .reb-submit-row > * {
+    min-height: 50px !important;
+    font-size: 14px !important;
+    border-radius: 10px !important;
+  }
+  .reb-contact-page .reb-form-status { font-size: 12px !important; line-height: 1.45 !important; margin-top: 10px !important; }
+
+  .reb-contact-page .reb-support { padding: 26px 16px 30px !important; }
+  .reb-contact-page .reb-support-inner { grid-template-columns: 1fr !important; gap: 10px !important; }
+  .reb-contact-page .reb-support-card {
+    position: static !important;
+    min-height: 0 !important;
+    padding: 14px 15px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 22px rgba(15,23,42,.05) !important;
+  }
+  .reb-contact-page .reb-support-card::before,
+  .reb-contact-page .reb-support-card::after { content: none !important; display: none !important; }
+  .reb-contact-page .reb-support-card strong {
+    display: block !important;
+    margin: 0 0 4px !important;
+    padding: 0 !important;
+    transform: none !important;
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+  }
+  .reb-contact-page .reb-support-card p {
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    font-size: 13px !important;
+    line-height: 1.42 !important;
+  }
+}

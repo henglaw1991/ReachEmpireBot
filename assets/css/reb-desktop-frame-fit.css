@@ -1,0 +1,116 @@
+/* Desktop-only alignment for the home ticker, menu, and hero frame. */
+@media (min-width: 1200px){
+  .reb-home{
+    --reb-frame-width:1376px;
+  }
+
+  .reb-home .main-header .header-top .large-container,
+  .reb-home .main-header .header-lower .large-container,
+  .reb-home .main-header .header-bottom .large-container,
+  .reb-home .banner-section .large-container{
+    width:min(var(--reb-frame-width), calc(100vw - 64px)) !important;
+    max-width:min(var(--reb-frame-width), calc(100vw - 64px)) !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .reb-home .main-header .header-lower .outer-box{
+    width:100% !important;
+    justify-content:space-between !important;
+    gap:28px !important;
+  }
+
+  .reb-home .main-header .header-lower .menu-area{
+    margin-left:auto !important;
+    transform:none !important;
+    max-width:calc(100% - 300px) !important;
+    overflow:visible !important;
+  }
+
+  .reb-home .main-menu .navigation{
+    width:auto !important;
+    max-width:100% !important;
+    justify-content:flex-end !important;
+    gap:4px !important;
+    padding:5px !important;
+  }
+
+  .reb-home .main-menu .navigation > li > a{
+    min-width:104px !important;
+    width:104px !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    font-size:13px !important;
+  }
+
+  .reb-home .main-menu .navigation > li:first-child > a{
+    min-width:84px !important;
+    width:84px !important;
+  }
+
+  .reb-home .main-menu .navigation > li > a.trade-account-link{
+    min-width:118px !important;
+    width:118px !important;
+  }
+
+  .reb-home .main-header .header-bottom{
+    overflow:hidden !important;
+  }
+
+  .reb-home .main-header .header-bottom .bottom-inner,
+  .reb-home .main-header .header-bottom .bottom-inner .inner-box{
+    width:100% !important;
+    max-width:100% !important;
+    overflow:hidden !important;
+  }
+
+  .reb-home .header-bottom .stock-list,
+  .reb-home .header-bottom .reb-live-widget + .stock-list{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    border-radius:8px !important;
+    overflow:hidden !important;
+    justify-content:flex-start !important;
+  }
+
+  .reb-home .header-bottom .stock-list li,
+  .reb-home .header-bottom .stock-list li.reb-market-tick{
+    flex:0 0 auto !important;
+    min-width:auto !important;
+    max-width:none !important;
+  }
+
+  .reb-home .reb-hero{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1420px){
+  .reb-home{
+    --reb-frame-width:calc(100vw - 48px);
+  }
+
+  .reb-home .main-menu .navigation > li > a{
+    min-width:96px !important;
+    width:96px !important;
+    font-size:12px !important;
+  }
+
+  .reb-home .main-menu .navigation > li:first-child > a{
+    min-width:78px !important;
+    width:78px !important;
+  }
+
+  .reb-home .main-menu .navigation > li > a.trade-account-link{
+    min-width:112px !important;
+    width:112px !important;
+  }
+}

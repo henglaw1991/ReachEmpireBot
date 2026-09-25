@@ -1,0 +1,31 @@
+/* REB Home market feed V74 final */
+html body.reb-home .main-header .header-bottom{position:relative!important;overflow:hidden!important;background:#050505!important}
+html body.reb-home .main-header .header-bottom .reb-live-widget{
+ display:block!important;visibility:visible!important;position:absolute!important;left:-200vw!important;top:0!important;
+ width:100%!important;height:52px!important;opacity:0!important;pointer-events:none!important;overflow:hidden!important
+}
+html body.reb-home .reb-live-widget .tradingview-widget-container,
+html body.reb-home .reb-live-widget .tradingview-widget-container__widget,
+html body.reb-home .reb-live-widget iframe{display:block!important;width:100%!important;min-width:100%!important;max-width:100%!important;height:52px!important;min-height:52px!important;max-height:52px!important;border:0!important}
+html body.reb-market-tv-fallback #reb-live-ticker{display:none!important;visibility:hidden!important}
+html body.reb-market-tv-fallback .main-header .header-bottom .reb-live-widget{
+ position:static!important;left:auto!important;opacity:1!important;pointer-events:auto!important;visibility:visible!important;width:100%!important;height:52px!important
+}
+html body.reb-home #reb-live-ticker .reb-market-status{color:#13cdb8!important;font-size:12px!important;font-weight:800!important}
+
+@media(min-width:768px){
+ html body.reb-home #reb-live-ticker{display:flex!important;flex-flow:row nowrap!important;width:max-content!important;min-width:100%!important;height:52px!important;overflow:hidden!important;background:#050505!important}
+ html body.reb-home #reb-live-ticker>li.reb-market-tick{display:flex!important;flex:0 0 auto!important;min-width:245px!important;height:52px!important;align-items:center!important;justify-content:center!important;gap:7px!important;padding:0 15px!important;border-right:1px solid rgba(255,255,255,.14)!important;white-space:nowrap!important}
+}
+@media(max-width:767px){
+ html body.reb-home .main-header .header-bottom,
+ html body.reb-home .main-header .header-bottom .large-container,
+ html body.reb-home .main-header .header-bottom .bottom-inner,
+ html body.reb-home .main-header .header-bottom .inner-box{display:block!important;width:100%!important;height:52px!important;min-height:52px!important;max-height:52px!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#050505!important}
+ html body.reb-home #reb-live-ticker{display:flex!important;flex-flow:row nowrap!important;width:100%!important;min-width:100%!important;max-width:100%!important;height:52px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;background:#050505!important}
+ html body.reb-home #reb-live-ticker::-webkit-scrollbar{display:none!important}
+ html body.reb-home #reb-live-ticker>li.reb-market-tick{display:flex!important;flex:0 0 100%!important;width:100%!important;min-width:100%!important;max-width:100%!important;height:52px!important;align-items:center!important;justify-content:center!important;gap:6px!important;padding:0 10px!important;overflow:hidden!important;white-space:nowrap!important;font-size:12px!important}
+ html body.reb-home #reb-live-ticker>li.reb-market-tick strong,
+ html body.reb-home #reb-live-ticker>li.reb-market-tick em{font-size:12px!important}
+ html body.reb-home #reb-live-ticker>li.reb-market-tick .reb-market-icon{flex:0 0 24px!important;width:24px!important;height:24px!important}
+}

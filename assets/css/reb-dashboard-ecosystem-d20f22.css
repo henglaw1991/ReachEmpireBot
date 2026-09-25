@@ -1,0 +1,19 @@
+/* D20F22 Dashboard desktop header standardization. Mobile intentionally deferred. */
+@media(min-width:941px){
+ body.reb-main-dashboard .reb-topbar.reb-dashboard-standard-header{display:flex!important;flex-direction:row!important;align-items:center!important;gap:26px!important;width:100%!important;max-width:1430px!important;margin:0 auto 26px!important;padding:8px 0!important;background:transparent!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-header .reb-brand{display:grid!important;grid-template-columns:92px minmax(0,1fr)!important;align-items:center!important;gap:12px!important;flex:0 0 330px!important;min-width:0!important;margin:0!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-header .reb-brand img{display:block!important;width:92px!important;height:92px!important;max-width:92px!important;object-fit:contain!important;margin:0!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-header .reb-dashboard-hero-copy-d20f50{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;min-width:0!important;line-height:1.05!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-header .reb-dashboard-hero-copy-d20f50 strong{display:block!important;margin:0!important;color:#fff!important;font-size:19px!important;font-weight:900!important;line-height:1.05!important;white-space:nowrap!important;letter-spacing:-.2px!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-header .reb-dashboard-hero-copy-d20f50 strong em{font-style:normal!important;color:#ffb11b!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-header .reb-dashboard-hero-copy-d20f50 small{display:block!important;margin:6px 0 0!important;color:#d7d9d7!important;font-size:11px!important;font-weight:600!important;line-height:1.1!important;white-space:nowrap!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-nav{display:flex!important;flex:1!important;align-items:center!important;justify-content:flex-end!important;gap:5px!important;flex-wrap:nowrap!important;width:auto!important;margin-left:auto!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-nav>a{display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;height:46px!important;min-height:46px!important;padding:0 14px!important;border:0!important;border-radius:12px!important;background:transparent!important;box-shadow:none!important;color:#f3f4f6!important;text-decoration:none!important;white-space:nowrap!important;font-size:15px!important;font-weight:700!important;line-height:1!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-nav>a:hover{background:rgba(255,255,255,.08)!important;color:#ffb51f!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-nav>a i{font-size:17px!important;color:inherit!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-nav>a:first-child{color:#ffb51f!important;}
+ body.reb-main-dashboard .reb-dashboard-standard-header>.reb-web-account{margin-left:6px!important;flex:0 0 auto!important;}
+ body.reb-main-dashboard .reb-web-account-trigger{background:transparent!important;}
+ body.reb-main-dashboard .reb-web-dropdown{font-family:Ubuntu,Arial,sans-serif!important;text-align:left!important;}
+ body.reb-main-dashboard .reb-dashboard-menu-clean-v35{display:none!important;}
+}
