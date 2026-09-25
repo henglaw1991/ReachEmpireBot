@@ -1,0 +1,39 @@
+<link href="/assets/css/reb-global-mobile-footer-d20f47.css?v=D20F73" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-live-chat-center.css?v=20260917-phase1e" rel="stylesheet"/>
+<meta content="no-store, no-cache, must-revalidate, max-age=0" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<link href="assets/css/standard-font-safe.css" rel="stylesheet"/>
+<?php
+
+// Define some constants
+define("RECIPIENT_NAME", "John Doe");
+define("RECIPIENT_EMAIL", "youremail@mail.com");
+
+
+// Read the form values
+$success = false;
+$userName = isset($_POST['username']) ? preg_replace("/[^\s\S\.\-\_\@a-zA-Z0-9]/", "", $_POST['username']) : "";
+$senderEmail = isset($_POST['email']) ? preg_replace("/[^\.\-\_\@a-zA-Z0-9]/", "", $_POST['email']) : "";
+$userPhone = isset($_POST['phone']) ? preg_replace("/[^\s\S\.\-\_\@a-zA-Z0-9]/", "", $_POST['phone']) : "";
+$userSubject = isset($_POST['subject']) ? preg_replace("/[^\s\S\.\-\_\@a-zA-Z0-9]/", "", $_POST['subject']) : "";
+$message = isset($_POST['message']) ? preg_replace("/(From:|To:|BCC:|CC:|Subject:|Content-Type:)/", "", $_POST['message']) : "";
+
+// If all values exist, send the email
+if ($userName && $senderEmail && $userPhone && $userSubject && $message) {
+  $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
+  $headers = "From: " . $userName . "";
+  $msgBody = " Name: " . $userName . " Email: " . $senderEmail . " Phone: " . $userPhone . " Subject: " . $userSubject . " Message: " . $message . "";
+  $success = mail($recipient, $headers, $msgBody);
+
+  //Set Location After Successsfull Submission
+  header('Location: contact.php?message=Successfull');
+} else {
+  //Set Location After Unsuccesssfull Submission
+  header('Location: contact.php?message=Failed');
+}
+
+<link href="/assets/css/reb-mobile-auth-home-v36.css?v=20260809-v36" id="reb-mobile-auth-home-v36" media="(max-width: 767px)" rel="stylesheet"/>
+<script defer="" src="/assets/js/reb-live-chat-center.js?v=20260917-phase1f"></script>
+<script defer="" src="/assets/js/reb-global-mobile-footer-d20f57.js?v=D20F57"></script>
+<script id="reb-floating-chat-hard-core-loader" defer src="/assets/js/reb-floating-chat-hard-core.js?v=20260925-v121"></script>

@@ -1,0 +1,2340 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="no-store, no-cache, must-revalidate, max-age=0" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<link href="/assets/css/reb-desktop-auth-stable-v3.css?v=20260812-3" media="(min-width: 768px)" rel="stylesheet"/>
+<base href="/"/>
+<script id="reb-client-core-phase1f" src="/assets/js/reb-client-core-phase1f.js?v=20260917-phase1f"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Checkout - ReachEmpireBot</title>
+<link href="/assets/images/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="/assets/css/standard-font-safe.css?v=20260518-font3" rel="stylesheet"/>
+<link href="/assets/css/reb-font-scale-polish.css?v=20260530-fontscale1" rel="stylesheet"/>
+<style>
+:root{--gold:#f5b026;--black:#050505;--ink:#101828;--muted:#667085;--line:#dfe6ef;--soft:#fff8ea;--blue:#1d4ed8}
+*{box-sizing:border-box}html,body{width:100%;max-width:100%;overflow-x:hidden}body{margin:0;font-family:Ubuntu,Arial,sans-serif;color:var(--ink);background:#f3f6fb}a{text-decoration:none;color:inherit}img{max-width:100%}
+.reb-top{background:#101312;color:#fff;padding:16px 7vw;display:flex;align-items:center;justify-content:space-between;gap:18px}.reb-phone{font-size:20px;font-weight:700}.reb-phone .reb-icon{color:var(--gold);margin-right:10px;width:18px;height:18px}.reb-actions{display:flex;gap:10px}.reb-actions a{border:1px solid rgba(255,255,255,.45);border-radius:8px;padding:10px 22px;font-weight:700}.reb-actions a:first-child{background:var(--gold);border-color:var(--gold);color:#070707}
+.reb-header{padding:18px 7vw;border-bottom:1px solid #eee;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:26px;position:sticky;top:0;z-index:20}.reb-logo img{width:250px;max-width:52vw;height:auto;display:block}.reb-nav{display:flex;align-items:center;justify-content:flex-end;gap:4px;flex-wrap:nowrap;max-width:100%;min-width:0;background:#101312;border:1px solid rgba(245,176,38,.24);border-radius:14px;padding:6px;box-shadow:0 14px 30px rgba(0,0,0,.12)}.reb-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;border:0;border-radius:10px;color:#fff;font-size:15px;font-weight:800;line-height:1;white-space:nowrap}.reb-nav a.active,.reb-nav a:hover{background:var(--gold);color:#070707;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)}
+.reb-icon{width:1em;height:1em;display:inline-block;vertical-align:-.14em;fill:currentColor;flex:0 0 auto}.reb-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:10px;padding:0 22px;font-weight:900;border:0;cursor:pointer}.reb-btn.gold{background:var(--gold);color:#070707}.reb-btn.dark{background:#050505;color:#fff}.reb-btn.blue{background:var(--blue);color:#fff}.reb-btn.light{border:1px solid #dfe6ef;background:#fff;color:#111}
+.pay-hero{padding:56px 7vw 36px;background:radial-gradient(circle at 15% 8%,rgba(245,176,38,.12),transparent 32%),linear-gradient(180deg,#fff 0%,#f5f7fb 100%)}.pay-wrap{max-width:1320px;margin:auto}.pay-crumb{display:flex;align-items:center;gap:10px;color:#667085;font-size:14px;margin-bottom:24px}.pay-crumb a{color:#a36f00;font-weight:900}.pay-title{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px}.pay-title h1{font-size:46px;line-height:1.02;margin:0;letter-spacing:-.03em}.pay-title p{max-width:650px;margin:12px 0 0;color:#667085;line-height:1.6;font-size:17px}.paypal-wordmark{display:inline-flex;align-items:center;gap:0;font-weight:900;letter-spacing:-.04em;font-family:Arial,Helvetica,sans-serif}.paypal-wordmark .pay-pal-blue{color:#003087}.paypal-wordmark .pay-pal-light{color:#009cde}.paypal-wordmark.small{font-size:16px}.paypal-wordmark.large{font-size:18px}
+.pay-layout{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:30px;align-items:start}.pay-card{border:1px solid rgba(148,163,184,.28);border-radius:22px;background:rgba(255,255,255,.92);box-shadow:0 24px 70px rgba(15,23,42,.1);backdrop-filter:blur(10px)}.pay-card-inner{padding:32px}.pay-product{display:grid;grid-template-columns:108px minmax(0,1fr);gap:20px;align-items:center;border-bottom:1px solid #e8eef6;padding-bottom:26px;margin-bottom:28px}.pay-product-icon{width:108px;height:108px;border-radius:22px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;border:1px solid #e4e7ec;box-shadow:0 16px 30px rgba(15,23,42,.1)}.pay-product-icon img{width:92px;height:92px;object-fit:cover;display:block;border-radius:18px}.pay-product h2{font-size:30px;line-height:1.12;margin:0 0 8px;letter-spacing:-.02em}.pay-product p{margin:0;color:#667085;line-height:1.5;font-size:16px}.pay-plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.pay-plan{position:relative;border:1px solid #d7e0ec;border-radius:22px;background:linear-gradient(180deg,#fff 0%,#f8fafc 100%);padding:24px;cursor:pointer;min-height:250px;display:grid;grid-template-rows:auto 1fr auto auto;gap:15px;text-align:left;font:inherit;overflow:hidden;box-shadow:0 14px 30px rgba(15,23,42,.055);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease}.pay-plan:before{content:"";position:absolute;right:18px;top:18px;width:20px;height:20px;border-radius:50%;border:2px solid #cbd5e1;background:#fff;box-shadow:inset 0 0 0 4px #fff}.pay-plan:after{content:"";position:absolute;left:24px;right:24px;bottom:74px;height:1px;background:#e8eef6}.pay-plan:hover{transform:translateY(-3px);box-shadow:0 24px 50px rgba(15,23,42,.12);border-color:#f5b026}.pay-plan.selected{border-color:#f5b026;background:linear-gradient(145deg,#fff8e8 0%,#fff 52%,#f8fbff 100%);box-shadow:0 28px 56px rgba(245,176,38,.24)}.pay-plan.selected:before{border-color:#101312;background:#f5b026;box-shadow:inset 0 0 0 5px #fff}.pay-plan.featured .plan-badge,.pay-plan.featured:before{} .pay-plan.featured:after{background:#ead9b4}.pay-plan.featured .plan-badge{display:none}.pay-plan.featured span:after{content:"Best Value";display:inline-flex;margin-left:8px;vertical-align:middle;background:#101312;color:#fff;border-radius:999px;padding:5px 8px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.pay-plan span{display:block;color:#101828;font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;padding-right:34px}.pay-plan small{display:block;color:#5f6b7d;line-height:1.5;font-size:13px;max-width:190px}.pay-plan b{display:block;font-size:44px;line-height:.95;color:#050b18;letter-spacing:-.05em}.pay-plan em{font-style:normal;display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:999px;padding:0 16px;background:#101312;color:#fff;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.pay-plan[data-kind="one_time"] em{background:#f5b026;color:#050505}.pay-plan.selected em{box-shadow:0 12px 24px rgba(15,23,42,.16)}.summary{position:sticky;top:116px;overflow:hidden}.summary:before{content:"";display:block;height:6px;background:linear-gradient(90deg,#f5b026,#101312)}.summary h3{font-size:26px;margin:0 0 20px;letter-spacing:-.02em}.summary-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0;border-top:1px solid #eef2f6;color:#667085}.summary-row:first-of-type{border-top:0}.summary-row b{color:#101828;text-align:right}.summary-total{margin-top:18px;padding:22px;border-radius:18px;background:linear-gradient(135deg,#101312,#050505);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 18px 36px rgba(15,19,18,.22)}.summary-total span{color:rgba(255,255,255,.7);font-size:13px}.summary-total b{font-size:38px;letter-spacing:-.04em}.summary-actions{display:grid;gap:12px;margin-top:20px}.summary-actions .reb-btn.gold{min-height:60px;border-radius:14px;box-shadow:0 16px 30px rgba(245,176,38,.28)}.summary-actions .reb-btn.light{min-height:58px;border-radius:14px}.pay-status{display:none;margin-top:12px;padding:13px 14px;border-radius:12px;background:#ecfdf5;border:1px solid #bbf7d0;color:#047857;font-weight:800;line-height:1.45}.pay-status.show{display:block}
+.reb-clean-footer{background:linear-gradient(135deg,#050505 0%,#0a0a0a 58%,#1d1506 100%);color:#fff;border-top:1px solid rgba(245,176,38,.2);padding:58px 6vw 24px}.reb-clean-footer-inner{max-width:1480px;margin:0 auto}.reb-clean-footer .reb-clean-footer-grid{display:grid;grid-template-columns:minmax(310px,1.45fr) minmax(135px,.64fr) minmax(155px,.72fr) minmax(230px,.9fr) minmax(230px,.95fr);gap:34px;align-items:start}.reb-clean-footer-logo{width:245px;max-width:74vw;height:auto;display:block;margin-bottom:16px}.reb-clean-footer p{color:rgba(255,255,255,.7);line-height:1.65;margin:0;font-size:15px}.reb-clean-footer h3{color:#f5b026;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin:0}.reb-clean-footer-links{display:grid;gap:11px;margin-top:15px}.reb-clean-footer-links a{color:rgba(255,255,255,.82);font-weight:700}.reb-contact-list{display:grid;gap:10px;margin-top:15px}.reb-contact-row{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:center;color:rgba(255,255,255,.82)!important;font-weight:700;line-height:1.35}.reb-contact-row .contact-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}.reb-contact-row .contact-icon .reb-icon{width:14px;height:14px}.reb-contact-row.phone .contact-icon{background:#f5b026;color:#050505}.reb-contact-row.email .contact-icon{background:#6b7280}.reb-contact-row.telegram .contact-icon{background:#229ed9}.reb-follow-social{display:grid;grid-template-columns:repeat(4,44px);gap:10px;margin-top:15px}.reb-follow-social a{width:44px;height:44px;border-radius:10px;color:#fff!important;display:flex;align-items:center;justify-content:center;font-size:18px}.reb-follow-social .reb-icon{width:20px;height:20px}.reb-follow-social .facebook{background:#1877f2}.reb-follow-social .youtube{background:#ff0000}.reb-follow-social .telegram{background:#229ed9}.reb-follow-social .tiktok{background:linear-gradient(135deg,#050505,#101010 56%,#25f4ee);border:1px solid rgba(255,255,255,.24)}.reb-tiktok-svg{width:21px;height:21px;filter:drop-shadow(1px 1px 0 #fe2c55)}.reb-clean-footer-bottom{margin-top:38px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:14px}.reb-floating-chat{position:fixed;right:26px;bottom:96px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 18px;border-radius:999px;background:#229ed9;color:#fff!important;font-weight:900;box-shadow:0 18px 42px rgba(34,158,217,.36);border:1px solid rgba(255,255,255,.28);animation:rebFloatChat 3.2s ease-in-out infinite}.reb-floating-chat .reb-icon{width:20px;height:20px}@keyframes rebFloatChat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(max-width:1080px){.pay-layout{grid-template-columns:1fr}.summary{position:relative;top:auto}.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1fr 1fr}.reb-clean-footer-brand{grid-column:1/-1}}
+@media(max-width:767px){.reb-top{display:none}.reb-header{position:relative;top:auto;display:grid;grid-template-columns:1fr;padding:18px;gap:18px}.reb-logo img{width:min(245px,72vw)}.reb-nav{width:100%;justify-content:flex-start;overflow-x:auto;background:#101312;border-radius:12px;padding:8px}.reb-nav a{flex:0 0 auto;min-width:112px;min-height:46px}.pay-hero{padding:30px 18px}.pay-title{display:block}.pay-title h1{font-size:32px}.pay-title p{font-size:15px}.pay-layout,.pay-plan-grid{grid-template-columns:1fr}.pay-card-inner{padding:20px}.pay-product{grid-template-columns:78px 1fr;gap:14px}.pay-product-icon{width:78px;height:78px;border-radius:18px}.pay-product-icon img{width:66px;height:66px}.pay-product h2{font-size:24px}.pay-plan{min-height:210px}.pay-plan b{font-size:38px}.reb-clean-footer{padding:38px 18px 22px}.reb-clean-footer .reb-clean-footer-grid{grid-template-columns:1fr;gap:26px}.reb-floating-chat{right:14px;bottom:84px;min-height:50px;padding:0 14px;font-size:13px}}
+.pay-hero{padding:42px 7vw 42px!important;background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%)!important}
+.pay-title{margin-bottom:24px!important}
+.pay-title h1{max-width:720px;font-size:48px!important}
+.pay-layout{margin-top:0!important;display:grid!important;grid-template-columns:minmax(0,1fr) 390px!important;gap:30px!important;align-items:start!important}
+.pay-layout>.pay-card{margin:0!important;padding:0!important}
+.pay-card{border:1px solid #dbe4ef!important;border-radius:20px!important;background:#fff!important;box-shadow:0 22px 60px rgba(15,23,42,.08)!important}
+.pay-card-inner{padding:32px!important}
+.pay-product{grid-template-columns:96px minmax(0,1fr)!important;padding-bottom:24px!important;margin-bottom:24px!important}
+.pay-product-icon{width:96px!important;height:96px!important;border-radius:18px!important;background:linear-gradient(145deg,#fff,#f8fafc)!important}
+.pay-product-icon img{width:82px!important;height:82px!important;border-radius:14px!important}
+.pay-plan-grid{gap:16px!important}
+.pay-plan{min-height:230px!important;padding:22px!important;border-radius:20px!important;background:#fff!important}
+.pay-plan.selected{background:linear-gradient(180deg,#fffaf0 0%,#fff 100%)!important}
+.pay-plan b{font-size:42px!important}
+.pay-plan em{min-height:46px!important}
+.summary{position:sticky!important;top:108px!important}
+.summary h3{font-size:28px!important}
+.summary-actions .reb-btn.gold{background:linear-gradient(135deg,#ffc23a,#f5a90f)!important;color:#050505!important}
+@media(max-width:1080px){.pay-layout{grid-template-columns:1fr!important}.summary{position:relative!important;top:auto!important}}
+@media(max-width:767px){.pay-hero{padding:28px 16px 34px!important}.pay-title{margin-bottom:18px!important}.pay-title h1{font-size:34px!important}.pay-layout{gap:18px!important}.pay-card-inner{padding:20px!important}.pay-product{grid-template-columns:76px 1fr!important}.pay-product-icon{width:76px!important;height:76px!important}.pay-product-icon img{width:64px!important;height:64px!important}.pay-plan-grid{grid-template-columns:1fr!important}.pay-plan{min-height:190px!important}}
+.pay-wrap{max-width:1360px!important}
+.pay-crumb{margin-bottom:18px!important}
+.pay-title{display:block!important;max-width:820px!important}
+.pay-title p{max-width:560px!important}
+.pay-title+.pay-layout{position:relative!important;top:auto!important;transform:none!important}
+.pay-layout{min-height:0!important;visibility:visible!important;opacity:1!important}
+.pay-main-card{display:block!important;overflow:hidden!important;background:linear-gradient(180deg,#fff 0%,#fbfcff 100%)!important}
+.pay-main-card:before{content:"";display:block;height:7px;background:linear-gradient(90deg,#101312 0%,#f5b026 48%,#101312 100%)}
+.pay-product{background:linear-gradient(135deg,#fffaf0 0%,#fff 48%,#f8fbff 100%)!important;border:1px solid #edf1f7!important;border-radius:18px!important;padding:18px!important;margin-bottom:24px!important}
+.pay-product h2{font-size:32px!important}
+.pay-plan-grid{align-items:stretch!important}
+.pay-plan{border-color:#dce5ef!important}
+.pay-plan span{font-size:16px!important}
+.pay-plan small{font-size:14px!important;color:#5f6b7d!important}
+.pay-plan.selected{background:linear-gradient(145deg,#111615 0%,#050505 100%)!important;border-color:#101312!important;box-shadow:0 28px 54px rgba(16,19,18,.28)!important}
+.pay-plan.selected span,.pay-plan.selected small,.pay-plan.selected b{color:#fff!important}
+.pay-plan.selected small{color:rgba(255,255,255,.72)!important}
+.pay-plan.selected:before{border-color:#f5b026!important;background:#f5b026!important}
+.pay-plan.selected em{background:#f5b026!important;color:#050505!important}
+.pay-plan.featured span:after{background:#f5b026!important;color:#050505!important}
+.summary{background:linear-gradient(180deg,#fff 0%,#fbfcff 100%)!important}
+.summary-row{font-size:15px!important}
+.summary-total{background:linear-gradient(135deg,#050505 0%,#101312 100%)!important}
+.summary-actions .reb-btn{width:100%!important}
+@media(max-width:767px){.pay-product{padding:14px!important}.pay-product h2{font-size:24px!important}.pay-plan.selected{box-shadow:0 18px 34px rgba(16,19,18,.22)!important}}
+main.pay-hero,
+main.pay-hero .pay-wrap,
+main.pay-hero .pay-title,
+main.pay-hero .pay-title > div{
+  display:block!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+  margin-top:0!important;
+}
+main.pay-hero{
+  padding-top:34px!important;
+}
+main.pay-hero .pay-crumb{
+  margin-bottom:16px!important;
+}
+main.pay-hero .pay-title{
+  margin:0 0 22px!important;
+}
+main.pay-hero .pay-title h1{
+  margin:0!important;
+}
+main.pay-hero .pay-title p{
+  margin:10px 0 0!important;
+}
+main.pay-hero .pay-layout,
+main.pay-hero .pay-title + .pay-layout{
+  clear:both!important;
+  position:relative!important;
+  inset:auto!important;
+  top:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  left:auto!important;
+  transform:none!important;
+  margin:0!important;
+  padding:0!important;
+  min-height:0!important;
+}
+main.pay-hero .pay-layout{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 390px!important;
+  gap:30px!important;
+  align-items:start!important;
+}
+@media(max-width:1080px){
+  main.pay-hero .pay-layout{grid-template-columns:1fr!important}
+}
+@media(max-width:767px){
+  main.pay-hero{padding-top:24px!important}
+  main.pay-hero .pay-title{margin-bottom:18px!important}
+}
+/* Premium payment page refresh */
+body{background:#f5f7fb!important}
+main.pay-hero{
+  padding:38px 7vw 58px!important;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(245,176,38,.12),transparent 30%),
+    radial-gradient(circle at 84% 8%,rgba(16,19,18,.06),transparent 28%),
+    linear-gradient(180deg,#fff 0%,#f7f9fc 42%,#f4f7fb 100%)!important;
+}
+main.pay-hero .pay-wrap{max-width:1420px!important}
+main.pay-hero .pay-crumb{
+  margin-bottom:18px!important;
+  font-size:14px!important;
+  font-weight:800!important;
+}
+main.pay-hero .pay-title{
+  max-width:none!important;
+  margin:0 0 28px!important;
+}
+main.pay-hero .pay-title h1{
+  max-width:820px!important;
+  font-size:clamp(42px,4.2vw,64px)!important;
+  line-height:.98!important;
+  letter-spacing:-.055em!important;
+  color:#0b1220!important;
+}
+main.pay-hero .pay-title p{
+  max-width:620px!important;
+  margin-top:14px!important;
+  color:#5f6b7d!important;
+  font-size:18px!important;
+}
+main.pay-hero .pay-layout{
+  display:grid!important;
+  grid-template-columns:minmax(720px,1fr) 420px!important;
+  gap:32px!important;
+  align-items:start!important;
+}
+.pay-card{
+  border:1px solid rgba(148,163,184,.24)!important;
+  border-radius:28px!important;
+  background:rgba(255,255,255,.96)!important;
+  box-shadow:0 34px 90px rgba(15,23,42,.12)!important;
+  backdrop-filter:blur(12px)!important;
+}
+.pay-card-inner{padding:34px!important}
+.pay-main-card{
+  position:relative!important;
+  overflow:hidden!important;
+}
+.pay-main-card:before{
+  content:""!important;
+  display:block!important;
+  height:9px!important;
+  background:linear-gradient(90deg,#101312 0%,#f5b026 38%,#ffd36c 52%,#101312 100%)!important;
+}
+.pay-product{
+  display:grid!important;
+  grid-template-columns:120px minmax(0,1fr)!important;
+  gap:24px!important;
+  align-items:center!important;
+  margin:0 0 30px!important;
+  padding:26px!important;
+  border:0!important;
+  border-radius:24px!important;
+  background:
+    radial-gradient(circle at 90% 0%,rgba(245,176,38,.32),transparent 34%),
+    linear-gradient(135deg,#101312 0%,#151917 58%,#2b1e05 100%)!important;
+  color:#fff!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 24px 50px rgba(16,19,18,.2)!important;
+}
+.pay-product-icon{
+  width:120px!important;
+  height:120px!important;
+  border-radius:24px!important;
+  background:rgba(255,255,255,.08)!important;
+  border:1px solid rgba(245,176,38,.38)!important;
+  box-shadow:0 18px 34px rgba(0,0,0,.22)!important;
+}
+.pay-product-icon img{
+  width:104px!important;
+  height:104px!important;
+  border-radius:20px!important;
+  object-fit:cover!important;
+}
+.pay-product h2{
+  color:#fff!important;
+  font-size:34px!important;
+  line-height:1.05!important;
+  letter-spacing:-.035em!important;
+}
+.pay-product p{
+  color:rgba(255,255,255,.72)!important;
+  font-size:16px!important;
+}
+.pay-plan-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:18px!important;
+}
+.pay-plan{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:292px!important;
+  padding:26px!important;
+  border-radius:24px!important;
+  border:1px solid #dce6f2!important;
+  background:linear-gradient(180deg,#fff 0%,#f8fafc 100%)!important;
+  box-shadow:0 18px 42px rgba(15,23,42,.08)!important;
+  overflow:visible!important;
+}
+.pay-plan:after{display:none!important}
+.pay-plan:before{
+  right:24px!important;
+  top:24px!important;
+  width:18px!important;
+  height:18px!important;
+  border-color:#c7d2e2!important;
+}
+.pay-plan span{
+  padding-right:34px!important;
+  color:#475467!important;
+  font-size:13px!important;
+  line-height:1!important;
+  letter-spacing:.13em!important;
+}
+.pay-plan small{
+  max-width:none!important;
+  margin-top:20px!important;
+  min-height:48px!important;
+  color:#5f6b7d!important;
+  font-size:14px!important;
+}
+.pay-plan b{
+  margin-top:auto!important;
+  margin-bottom:22px!important;
+  color:#07111f!important;
+  font-size:50px!important;
+  line-height:.9!important;
+  letter-spacing:-.06em!important;
+}
+.pay-plan em{
+  min-height:50px!important;
+  width:100%!important;
+  border-radius:14px!important;
+  background:#101312!important;
+  color:#fff!important;
+  font-size:12px!important;
+  letter-spacing:.08em!important;
+}
+.pay-plan:hover{
+  transform:translateY(-5px)!important;
+  border-color:#f5b026!important;
+  box-shadow:0 30px 64px rgba(15,23,42,.14)!important;
+}
+.pay-plan.selected{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(245,176,38,.34),transparent 38%),
+    linear-gradient(145deg,#111615 0%,#050505 64%,#261902 100%)!important;
+  border-color:#f5b026!important;
+  box-shadow:0 34px 78px rgba(16,19,18,.32)!important;
+}
+.pay-plan.selected:before{
+  border-color:#f5b026!important;
+  background:#f5b026!important;
+  box-shadow:inset 0 0 0 5px #101312!important;
+}
+.pay-plan.selected span,.pay-plan.selected small,.pay-plan.selected b{color:#fff!important}
+.pay-plan.selected small{color:rgba(255,255,255,.72)!important}
+.pay-plan.selected em{
+  background:#f5b026!important;
+  color:#050505!important;
+  box-shadow:0 14px 30px rgba(245,176,38,.24)!important;
+}
+.pay-plan.featured span:after{
+  position:absolute!important;
+  right:18px!important;
+  top:-15px!important;
+  margin:0!important;
+  padding:7px 12px!important;
+  border-radius:999px!important;
+  background:#050505!important;
+  color:#fff!important;
+  box-shadow:0 12px 24px rgba(0,0,0,.22)!important;
+}
+.summary{
+  position:sticky!important;
+  top:112px!important;
+  overflow:hidden!important;
+  background:#fff!important;
+}
+.summary:before{
+  content:""!important;
+  display:block!important;
+  height:9px!important;
+  background:linear-gradient(90deg,#f5b026,#101312)!important;
+}
+.summary .pay-card-inner{padding:30px!important}
+.summary h3{
+  font-size:30px!important;
+  line-height:1!important;
+  margin-bottom:22px!important;
+}
+.summary-row{
+  padding:16px 0!important;
+  font-size:16px!important;
+  border-color:#e8eef6!important;
+}
+.summary-row span{color:#667085!important}
+.summary-row b{
+  color:#07111f!important;
+  font-size:16px!important;
+}
+.summary-total{
+  margin-top:22px!important;
+  padding:26px!important;
+  border-radius:22px!important;
+  background:
+    radial-gradient(circle at 90% 0%,rgba(245,176,38,.2),transparent 35%),
+    linear-gradient(135deg,#050505 0%,#101312 100%)!important;
+}
+.summary-total b{font-size:44px!important}
+.summary-actions{gap:14px!important;margin-top:22px!important}
+.summary-actions .reb-btn.gold{
+  min-height:64px!important;
+  border-radius:18px!important;
+  background:linear-gradient(135deg,#ffc84d 0%,#f5b026 58%,#e99c05 100%)!important;
+  color:#050505!important;
+  box-shadow:0 20px 42px rgba(245,176,38,.34)!important;
+}
+.summary-actions .reb-btn.light{
+  min-height:60px!important;
+  border-radius:18px!important;
+  background:#fff!important;
+}
+.summary-actions .reb-btn:hover{transform:translateY(-2px)}
+.paypal-wordmark.large{font-size:22px!important;letter-spacing:-.055em!important}
+@media(max-width:1180px){
+  main.pay-hero .pay-layout{grid-template-columns:1fr!important}
+  .summary{position:relative!important;top:auto!important}
+}
+@media(max-width:860px){
+  .pay-plan-grid{grid-template-columns:1fr!important}
+  .pay-plan{min-height:auto!important}
+  .pay-plan small{min-height:0!important}
+}
+@media(max-width:767px){
+  main.pay-hero{padding:24px 16px 40px!important}
+  main.pay-hero .pay-title h1{font-size:38px!important}
+  main.pay-hero .pay-title p{font-size:16px!important}
+  .pay-card-inner{padding:20px!important}
+  .pay-product{grid-template-columns:82px minmax(0,1fr)!important;padding:18px!important;border-radius:20px!important}
+  .pay-product-icon{width:82px!important;height:82px!important;border-radius:18px!important}
+  .pay-product-icon img{width:70px!important;height:70px!important;border-radius:14px!important}
+  .pay-product h2{font-size:26px!important}
+  .pay-plan{padding:22px!important;border-radius:20px!important}
+  .pay-plan b{font-size:44px!important}
+  .summary .pay-card-inner{padding:22px!important}
+}
+/* Modern checkout cards v2 */
+main.pay-hero{
+  padding:36px 7vw 64px!important;
+  background:
+    linear-gradient(180deg,#ffffff 0%,#f8fafc 42%,#eef3f8 100%)!important;
+}
+main.pay-hero .pay-wrap{max-width:1400px!important}
+main.pay-hero .pay-title{margin-bottom:30px!important}
+main.pay-hero .pay-title h1{
+  font-size:clamp(42px,4vw,58px)!important;
+  letter-spacing:-.045em!important;
+}
+main.pay-hero .pay-layout{
+  grid-template-columns:minmax(720px,1fr) 410px!important;
+  gap:30px!important;
+}
+.pay-card{
+  border-radius:24px!important;
+  border:1px solid #dce5ef!important;
+  background:#fff!important;
+  box-shadow:0 26px 70px rgba(16,24,40,.09)!important;
+}
+.pay-main-card:before,
+.summary:before{
+  height:6px!important;
+  background:linear-gradient(90deg,#f5b026 0%,#171a18 100%)!important;
+}
+.pay-main-card .pay-card-inner{padding:30px!important}
+.pay-product{
+  grid-template-columns:92px minmax(0,1fr)!important;
+  gap:20px!important;
+  min-height:132px!important;
+  padding:20px!important;
+  border-radius:20px!important;
+  background:
+    linear-gradient(135deg,#101312 0%,#141816 58%,#3a2704 100%)!important;
+  box-shadow:none!important;
+}
+.pay-product-icon{
+  width:92px!important;
+  height:92px!important;
+  border-radius:18px!important;
+  background:rgba(255,255,255,.1)!important;
+  border:1px solid rgba(245,176,38,.42)!important;
+  box-shadow:0 12px 24px rgba(0,0,0,.18)!important;
+}
+.pay-product-icon img{
+  width:78px!important;
+  height:78px!important;
+  border-radius:14px!important;
+}
+.pay-product h2{
+  font-size:32px!important;
+  letter-spacing:-.035em!important;
+}
+.pay-product p{
+  font-size:15px!important;
+  color:rgba(255,255,255,.74)!important;
+}
+.pay-plan-grid{
+  gap:16px!important;
+}
+.pay-plan{
+  min-height:252px!important;
+  padding:22px!important;
+  border-radius:20px!important;
+  background:#ffffff!important;
+  border:1px solid #dbe5f0!important;
+  box-shadow:0 14px 34px rgba(16,24,40,.065)!important;
+}
+.pay-plan:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 22px 52px rgba(16,24,40,.12)!important;
+}
+.pay-plan:before{
+  width:17px!important;
+  height:17px!important;
+  top:22px!important;
+  right:22px!important;
+  border:2px solid #b9c7d9!important;
+}
+.pay-plan span{
+  color:#344054!important;
+  font-size:13px!important;
+  letter-spacing:.12em!important;
+}
+.pay-plan small{
+  margin-top:18px!important;
+  min-height:42px!important;
+  color:#667085!important;
+  font-size:14px!important;
+}
+.pay-plan b{
+  font-size:46px!important;
+  color:#0b1220!important;
+  margin-bottom:18px!important;
+}
+.pay-plan em{
+  min-height:48px!important;
+  border-radius:14px!important;
+  background:#101312!important;
+  color:#fff!important;
+}
+.pay-plan.selected{
+  background:
+    radial-gradient(circle at 88% 0%,rgba(255,255,255,.38),transparent 30%),
+    linear-gradient(145deg,#ffc44b 0%,#f5b026 62%,#e79b05 100%)!important;
+  border-color:#e39a05!important;
+  color:#050505!important;
+  box-shadow:0 28px 64px rgba(245,176,38,.24)!important;
+}
+.pay-plan.selected:before{
+  border-color:#101312!important;
+  background:#101312!important;
+  box-shadow:inset 0 0 0 5px #f5b026!important;
+}
+.pay-plan.selected span,
+.pay-plan.selected small,
+.pay-plan.selected b{
+  color:#050505!important;
+}
+.pay-plan.selected small{color:rgba(5,5,5,.68)!important}
+.pay-plan.selected em{
+  background:#101312!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+.pay-plan.featured span:after{
+  top:-13px!important;
+  right:18px!important;
+  background:#101312!important;
+  color:#fff!important;
+  box-shadow:0 10px 24px rgba(16,19,18,.22)!important;
+}
+.summary{
+  top:104px!important;
+  border-radius:24px!important;
+  box-shadow:0 26px 70px rgba(16,24,40,.1)!important;
+}
+.summary .pay-card-inner{padding:32px!important}
+.summary h3{
+  font-size:32px!important;
+  margin-bottom:24px!important;
+}
+.summary-row{
+  padding:15px 0!important;
+  font-size:15px!important;
+}
+.summary-total{
+  margin-top:20px!important;
+  border-radius:20px!important;
+  padding:24px!important;
+  background:linear-gradient(135deg,#101312 0%,#050505 62%,#2c1f05 100%)!important;
+  box-shadow:0 18px 42px rgba(16,19,18,.22)!important;
+}
+.summary-total b{font-size:42px!important}
+.summary-actions .reb-btn.gold{
+  min-height:62px!important;
+  border-radius:16px!important;
+  background:linear-gradient(135deg,#f9c044,#f5a90f)!important;
+  box-shadow:0 18px 34px rgba(245,176,38,.24)!important;
+}
+.summary-actions .reb-btn.light{
+  min-height:58px!important;
+  border-radius:16px!important;
+  border-color:#dbe5f0!important;
+}
+@media(max-width:1180px){
+  main.pay-hero .pay-layout{grid-template-columns:1fr!important}
+  .summary{position:relative!important;top:auto!important}
+}
+@media(max-width:900px){
+  .pay-plan-grid{grid-template-columns:1fr!important}
+  .pay-plan{min-height:auto!important}
+}
+@media(max-width:767px){
+  main.pay-hero{padding:24px 16px 44px!important}
+  .pay-main-card .pay-card-inner,.summary .pay-card-inner{padding:20px!important}
+  .pay-product{grid-template-columns:74px minmax(0,1fr)!important;min-height:0!important}
+  .pay-product-icon{width:74px!important;height:74px!important}
+  .pay-product-icon img{width:62px!important;height:62px!important}
+  .pay-product h2{font-size:24px!important}
+  .pay-plan b{font-size:40px!important}
+}
+/* Modern checkout plan cards v3 */
+main.pay-hero{
+  background:
+    radial-gradient(circle at 78% 8%,rgba(34,158,217,.12),transparent 30%),
+    radial-gradient(circle at 18% 16%,rgba(245,176,38,.13),transparent 28%),
+    linear-gradient(180deg,#fff 0%,#f6f9fc 48%,#eef4f8 100%)!important;
+}
+main.pay-hero .pay-layout{
+  grid-template-columns:minmax(760px,1fr) 420px!important;
+  gap:32px!important;
+}
+.pay-main-card{
+  border-radius:30px!important;
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%)!important;
+  border:1px solid #dbe5ef!important;
+  box-shadow:0 30px 80px rgba(15,23,42,.1)!important;
+}
+.pay-main-card:before{
+  height:8px!important;
+  background:linear-gradient(90deg,#101312 0%,#f5b026 52%,#dff7f5 100%)!important;
+}
+.pay-main-card .pay-card-inner{padding:38px!important}
+.pay-product{
+  min-height:150px!important;
+  padding:26px 30px!important;
+  border-radius:24px!important;
+  background:linear-gradient(135deg,#111614 0%,#171b18 55%,#5a3a07 100%)!important;
+  border:0!important;
+  margin-bottom:52px!important;
+}
+.pay-product-icon{
+  width:104px!important;
+  height:104px!important;
+  border-radius:22px!important;
+  background:rgba(255,255,255,.1)!important;
+  border:1px solid rgba(245,176,38,.48)!important;
+}
+.pay-product-icon img{
+  width:88px!important;
+  height:88px!important;
+  border-radius:18px!important;
+}
+.pay-product h2{
+  color:#fff!important;
+  font-size:38px!important;
+  letter-spacing:-.04em!important;
+}
+.pay-product p{
+  color:rgba(255,255,255,.76)!important;
+  font-size:16px!important;
+}
+.pay-plan-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:24px!important;
+  align-items:stretch!important;
+}
+.pay-plan{
+  position:relative!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  min-height:342px!important;
+  padding:70px 24px 22px!important;
+  border-radius:0 0 18px 18px!important;
+  background:#fff!important;
+  border:0!important;
+  overflow:visible!important;
+  text-align:center!important;
+  box-shadow:0 24px 52px rgba(15,23,42,.12)!important;
+  clip-path:polygon(12% 0,88% 0,100% 12%,100% 88%,88% 100%,12% 100%,0 88%,0 12%)!important;
+  transition:transform .2s ease,box-shadow .2s ease!important;
+}
+.pay-plan:before{
+  content:""!important;
+  position:absolute!important;
+  inset:10px!important;
+  width:auto!important;
+  height:auto!important;
+  border:1px solid #edf1f6!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  clip-path:polygon(12% 0,88% 0,100% 12%,100% 88%,88% 100%,12% 100%,0 88%,0 12%)!important;
+  pointer-events:none!important;
+}
+.pay-plan:after{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  left:50%!important;
+  top:-30px!important;
+  width:92px!important;
+  height:78px!important;
+  transform:translateX(-50%)!important;
+  background:#344765!important;
+  clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)!important;
+  box-shadow:0 18px 26px rgba(52,71,101,.22)!important;
+  z-index:0!important;
+}
+.pay-plan:nth-child(2):after{background:#13b8ae!important;box-shadow:0 18px 26px rgba(19,184,174,.24)!important}
+.pay-plan:nth-child(3):after{background:#f15a24!important;box-shadow:0 18px 26px rgba(241,90,36,.24)!important}
+.pay-plan:hover{
+  transform:translateY(-7px)!important;
+  box-shadow:0 34px 70px rgba(15,23,42,.17)!important;
+}
+.pay-plan.selected{
+  background:#fffaf0!important;
+  border:0!important;
+  box-shadow:0 34px 76px rgba(245,176,38,.22)!important;
+}
+.pay-plan.selected:before{border-color:#f5b026!important;background:transparent!important;box-shadow:none!important}
+.pay-plan b{
+  position:absolute!important;
+  top:-10px!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  z-index:1!important;
+  margin:0!important;
+  color:#fff!important;
+  font-size:26px!important;
+  line-height:1!important;
+  letter-spacing:-.03em!important;
+  text-shadow:0 2px 8px rgba(0,0,0,.18)!important;
+}
+.pay-plan.selected b{color:#fff!important}
+.pay-plan span{
+  padding:0!important;
+  color:#8a93a1!important;
+  font-size:17px!important;
+  font-weight:500!important;
+  letter-spacing:.28em!important;
+  text-transform:uppercase!important;
+}
+.pay-plan small{
+  display:block!important;
+  max-width:none!important;
+  min-height:44px!important;
+  margin:14px auto 16px!important;
+  color:#667085!important;
+  font-size:13px!important;
+  line-height:1.45!important;
+}
+.pay-plan span:after,.pay-plan.featured span:after{display:none!important}
+.plan-features{
+  list-style:none!important;
+  display:grid!important;
+  gap:10px!important;
+  padding:14px 0 18px!important;
+  margin:0 0 auto!important;
+  border-top:1px solid #e7edf5!important;
+  border-bottom:1px solid #e7edf5!important;
+  text-align:left!important;
+}
+.plan-features li{
+  position:relative!important;
+  padding-left:24px!important;
+  color:#344054!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+}
+.plan-features li:before{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  color:#249b3e!important;
+  font-weight:900!important;
+}
+.pay-plan:nth-child(1) .plan-features li:nth-child(3):before{
+  content:""!important;
+  color:#ef4444!important;
+}
+.pay-plan em{
+  min-height:48px!important;
+  margin-top:18px!important;
+  border-radius:8px!important;
+  background:#344765!important;
+  color:#fff!important;
+  box-shadow:0 14px 24px rgba(52,71,101,.22)!important;
+}
+.pay-plan:nth-child(2) em{background:#13b8ae!important;box-shadow:0 14px 24px rgba(19,184,174,.22)!important}
+.pay-plan:nth-child(3) em{background:#f15a24!important;color:#fff!important;box-shadow:0 14px 24px rgba(241,90,36,.22)!important}
+.pay-plan.selected em{background:#f5b026!important;color:#050505!important;box-shadow:0 14px 24px rgba(245,176,38,.24)!important}
+.summary{
+  border-radius:30px!important;
+  background:#fff!important;
+  box-shadow:0 30px 80px rgba(15,23,42,.11)!important;
+}
+.summary:before{height:8px!important;background:linear-gradient(90deg,#f5b026,#101312)!important}
+.summary-total{
+  border-radius:22px!important;
+  background:linear-gradient(135deg,#101312 0%,#050505 55%,#3b2806 100%)!important;
+}
+.summary-actions .reb-btn.gold{
+  border-radius:16px!important;
+  background:linear-gradient(135deg,#ffc947 0%,#f5b026 100%)!important;
+}
+@media(max-width:1180px){
+  main.pay-hero .pay-layout{grid-template-columns:1fr!important}
+}
+@media(max-width:900px){
+  .pay-plan-grid{grid-template-columns:1fr!important;gap:44px!important}
+  .pay-plan{min-height:auto!important}
+}
+@media(max-width:767px){
+  .pay-main-card .pay-card-inner{padding:24px 18px!important}
+  .pay-product{grid-template-columns:78px minmax(0,1fr)!important;padding:18px!important;margin-bottom:46px!important}
+  .pay-product-icon{width:78px!important;height:78px!important}
+  .pay-product-icon img{width:64px!important;height:64px!important}
+  .pay-product h2{font-size:26px!important}
+  .pay-plan{padding:64px 22px 22px!important}
+}
+/* Payment plan cards final premium compact */
+main.pay-hero{
+  padding:30px 6vw 58px!important;
+  background:
+    radial-gradient(circle at 18% 6%,rgba(245,176,38,.12),transparent 30%),
+    radial-gradient(circle at 86% 12%,rgba(34,158,217,.11),transparent 32%),
+    linear-gradient(180deg,#fff 0%,#f8fbfd 48%,#eef5f8 100%)!important;
+}
+main.pay-hero .pay-wrap{max-width:1320px!important}
+main.pay-hero .pay-title{margin-bottom:22px!important}
+main.pay-hero .pay-title h1{
+  font-size:clamp(38px,3.45vw,54px)!important;
+  letter-spacing:-.045em!important;
+}
+main.pay-hero .pay-layout{
+  grid-template-columns:minmax(0,1fr) 370px!important;
+  gap:24px!important;
+  align-items:start!important;
+}
+.pay-main-card,
+.pay-main-card .pay-card-inner,
+.pay-plan-grid{
+  overflow:visible!important;
+}
+.pay-main-card{
+  border-radius:28px!important;
+  background:rgba(255,255,255,.94)!important;
+  box-shadow:0 28px 70px rgba(15,23,42,.10)!important;
+}
+.pay-main-card:before{height:6px!important;border-radius:28px 28px 0 0!important}
+.pay-main-card .pay-card-inner{padding:24px 28px 30px!important}
+.pay-product{
+  min-height:112px!important;
+  margin-bottom:44px!important;
+  padding:18px 22px!important;
+  grid-template-columns:82px minmax(0,1fr)!important;
+  gap:18px!important;
+  border-radius:20px!important;
+}
+.pay-product-icon{width:82px!important;height:82px!important;border-radius:18px!important}
+.pay-product-icon img{width:68px!important;height:68px!important;border-radius:14px!important}
+.pay-product h2{font-size:30px!important;line-height:1.05!important}
+.pay-product p{font-size:15px!important}
+.pay-plan-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:18px!important;
+  padding-top:30px!important;
+}
+.pay-plan{
+  min-height:284px!important;
+  padding:60px 18px 18px!important;
+  border-radius:18px!important;
+  clip-path:none!important;
+  background:#fff!important;
+  border:1px solid #e2e8f0!important;
+  box-shadow:0 18px 38px rgba(15,23,42,.085)!important;
+}
+.pay-plan:before{
+  inset:0!important;
+  border-radius:18px!important;
+  clip-path:none!important;
+  border:1px solid rgba(255,255,255,.78)!important;
+}
+.pay-plan:after{
+  top:-28px!important;
+  width:78px!important;
+  height:64px!important;
+  border-radius:13px 13px 17px 17px!important;
+  clip-path:polygon(18% 0,82% 0,100% 46%,74% 100%,26% 100%,0 46%)!important;
+  box-shadow:0 18px 28px rgba(15,23,42,.18)!important;
+}
+.pay-plan:nth-child(1):after{background:#344966!important}
+.pay-plan:nth-child(2):after{background:#19b8ad!important}
+.pay-plan:nth-child(3):after{background:#f4511e!important}
+.pay-plan b{
+  top:-6px!important;
+  font-size:23px!important;
+  letter-spacing:-.04em!important;
+}
+.pay-plan span:not(.plan-features){
+  font-size:15px!important;
+  letter-spacing:.24em!important;
+  color:#667085!important;
+  text-align:center!important;
+  padding-right:0!important;
+}
+.pay-plan small{
+  min-height:38px!important;
+  margin:12px auto 14px!important;
+  color:#5f6b7d!important;
+  font-size:12.5px!important;
+  line-height:1.45!important;
+  text-align:center!important;
+}
+.plan-features{
+  display:grid!important;
+  gap:8px!important;
+  margin:0 0 auto!important;
+  padding:13px 0!important;
+  border-top:1px solid #e7edf5!important;
+  border-bottom:1px solid #e7edf5!important;
+  text-align:left!important;
+}
+.plan-features li,
+.plan-features i{
+  display:block!important;
+  position:relative!important;
+  padding-left:22px!important;
+  color:#344054!important;
+  font-size:12.5px!important;
+  font-style:normal!important;
+  line-height:1.35!important;
+}
+.plan-features li:before,
+.plan-features i:before{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  color:#17a34a!important;
+  font-weight:900!important;
+}
+.pay-plan:nth-child(1) .plan-features li:nth-child(3):before,
+.pay-plan:nth-child(1) .plan-features i:nth-child(3):before{
+  content:""!important;
+  color:#ef4444!important;
+}
+.pay-plan em{
+  min-height:44px!important;
+  margin-top:14px!important;
+  border-radius:10px!important;
+  font-size:12px!important;
+  letter-spacing:.06em!important;
+}
+.pay-plan:nth-child(1) em{background:#344966!important;color:#fff!important}
+.pay-plan:nth-child(2) em{background:#19b8ad!important;color:#fff!important}
+.pay-plan:nth-child(3) em{background:#f4511e!important;color:#fff!important}
+.pay-plan.selected{
+  background:#fffaf0!important;
+  border-color:#f5b026!important;
+  box-shadow:0 24px 54px rgba(245,176,38,.22)!important;
+}
+.pay-plan.selected:before{border-color:rgba(245,176,38,.35)!important}
+.summary{
+  width:auto!important;
+  border-radius:28px!important;
+  box-shadow:0 28px 70px rgba(15,23,42,.10)!important;
+}
+.summary .pay-card-inner{padding:28px!important}
+.summary h3{font-size:30px!important}
+.summary-total{padding:20px!important;border-radius:18px!important}
+.summary-total b{font-size:38px!important}
+.summary-actions .reb-btn.gold{min-height:56px!important;border-radius:14px!important}
+.summary-actions .reb-btn.light{min-height:56px!important;border-radius:14px!important}
+@media(max-width:1180px){
+  main.pay-hero .pay-layout{grid-template-columns:1fr!important}
+  .summary{position:relative!important;top:auto!important}
+}
+@media(max-width:900px){
+  .pay-plan-grid{grid-template-columns:1fr!important;gap:42px!important}
+  .pay-plan{min-height:auto!important}
+}
+@media(max-width:767px){
+  main.pay-hero{padding:24px 16px 44px!important}
+  .pay-main-card .pay-card-inner,.summary .pay-card-inner{padding:18px!important}
+  .pay-product{
+    grid-template-columns:70px minmax(0,1fr)!important;
+    padding:16px!important;
+    margin-bottom:38px!important;
+  }
+  .pay-product-icon{width:70px!important;height:70px!important}
+  .pay-product-icon img{width:58px!important;height:58px!important}
+  .pay-product h2{font-size:24px!important}
+  .pay-plan{padding:54px 18px 18px!important}
+  .pay-plan-grid{gap:38px!important;padding-top:24px!important}
+  .pay-plan b{font-size:21px!important}
+  .pay-plan:after{width:72px!important;height:58px!important;top:-24px!important}
+}
+/* Payment plan typography final standard */
+.pay-plan,
+.pay-plan *{
+  font-family:inherit!important;
+}
+.pay-plan b{
+  font-weight:900!important;
+  letter-spacing:-.025em!important;
+  line-height:1!important;
+}
+.pay-plan span:not(.plan-features){
+  display:block!important;
+  padding-right:0!important;
+  color:#344054!important;
+  font-size:17px!important;
+  font-weight:900!important;
+  line-height:1.15!important;
+  letter-spacing:.045em!important;
+  text-align:center!important;
+  text-transform:uppercase!important;
+}
+.pay-plan small{
+  display:block!important;
+  max-width:230px!important;
+  min-height:40px!important;
+  margin:12px auto 14px!important;
+  color:#5f6b7d!important;
+  font-size:14px!important;
+  font-weight:500!important;
+  line-height:1.45!important;
+  letter-spacing:0!important;
+  text-align:center!important;
+  text-transform:none!important;
+}
+.plan-features{
+  display:grid!important;
+  gap:9px!important;
+  margin:0 0 auto!important;
+  padding:14px 0!important;
+  border-top:1px solid #e7edf5!important;
+  border-bottom:1px solid #e7edf5!important;
+  text-align:left!important;
+}
+.plan-features li,
+.plan-features i{
+  display:block!important;
+  position:relative!important;
+  padding-left:22px!important;
+  color:#344054!important;
+  font-size:14px!important;
+  font-weight:700!important;
+  font-style:normal!important;
+  line-height:1.35!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+  word-spacing:0!important;
+}
+.plan-features li:before,
+.plan-features i:before{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  color:#16a34a!important;
+  font-weight:900!important;
+}
+.pay-plan:nth-child(1) .plan-features li:nth-child(3):before,
+.pay-plan:nth-child(1) .plan-features i:nth-child(3):before{
+  content:""!important;
+  color:#ef4444!important;
+}
+.pay-plan em{
+  font-size:13px!important;
+  font-weight:900!important;
+  letter-spacing:.035em!important;
+  line-height:1!important;
+  text-transform:uppercase!important;
+}
+.pay-product h2{
+  font-size:32px!important;
+  font-weight:900!important;
+  letter-spacing:-.025em!important;
+}
+.pay-product p{
+  font-size:16px!important;
+  font-weight:700!important;
+  letter-spacing:0!important;
+}
+@media(max-width:767px){
+  .pay-plan span:not(.plan-features){font-size:16px!important;letter-spacing:.035em!important}
+  .pay-plan small{font-size:13.5px!important}
+  .plan-features li,.plan-features i{font-size:13.5px!important}
+  .pay-product h2{font-size:24px!important}
+  .pay-product p{font-size:14px!important}
+}
+/* Store Packages-inspired plan cards */
+.pay-plan-grid{
+  gap:18px!important;
+  padding-top:0!important;
+  align-items:stretch!important;
+}
+.pay-plan{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:430px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:1px solid #eadfcd!important;
+  border-radius:8px!important;
+  background:#fff!important;
+  box-shadow:0 18px 44px rgba(13,13,13,.08)!important;
+  text-align:left!important;
+}
+.pay-plan:before,.pay-plan:after{display:none!important}
+.pay-plan-top{
+  min-height:116px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:linear-gradient(135deg,#080807 0%,#171108 58%,#5a3d08 100%)!important;
+  color:#f5b026!important;
+}
+.pay-plan-top svg{width:52px!important;height:52px!important;display:block!important;fill:#f5b026!important}
+.pay-plan-body{
+  display:flex!important;
+  flex:1!important;
+  flex-direction:column!important;
+  width:100%!important;
+  padding:20px 22px 20px!important;
+  box-sizing:border-box!important;
+}
+.pay-plan .pay-plan-body .plan-name{
+  display:block!important;
+  padding:0!important;
+  color:#080808!important;
+  font-size:22px!important;
+  font-weight:900!important;
+  letter-spacing:-.02em!important;
+  text-align:left!important;
+  text-transform:none!important;
+}
+.pay-plan small{
+  max-width:none!important;
+  min-height:42px!important;
+  margin:7px 0 13px!important;
+  color:#6b7280!important;
+  font-size:13.5px!important;
+  font-weight:500!important;
+  line-height:1.55!important;
+  text-align:left!important;
+}
+.pay-plan .plan-price{
+  display:flex!important;
+  align-items:flex-end!important;
+  gap:7px!important;
+  margin:0 0 14px!important;
+}
+.pay-plan .plan-price b{
+  position:static!important;
+  left:auto!important;
+  top:auto!important;
+  transform:none!important;
+  display:block!important;
+  margin:0!important;
+  color:#050505!important;
+  font-size:32px!important;
+  font-weight:900!important;
+  line-height:1!important;
+}
+.pay-plan .plan-price span{
+  padding:0 0 4px!important;
+  color:#888!important;
+  font-size:12px!important;
+  font-weight:500!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-plan.featured span:after{content:none!important;display:none!important}
+.plan-features{
+  gap:0!important;
+  margin:0 0 22px!important;
+  padding:0!important;
+  border:0!important;
+}
+.plan-features i{
+  padding:9px 0 9px 22px!important;
+  border-top:1px solid #f1ede4!important;
+  color:#303030!important;
+  font-size:13px!important;
+  font-weight:500!important;
+}
+.plan-features i:before{color:#f5a900!important}
+.pay-plan:nth-child(1) .plan-features i:nth-child(3):before{
+  content:"\2713"!important;
+  color:#f5a900!important;
+}
+.pay-plan em{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  min-height:46px!important;
+  margin-top:auto!important;
+  border-radius:7px!important;
+  background:#f5b026!important;
+  color:#080808!important;
+  font-size:13px!important;
+  font-weight:900!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-plan:nth-child(1) em,
+.pay-plan:nth-child(2) em,
+.pay-plan:nth-child(3) em,
+.pay-plan.selected em{
+  background:#f5b026!important;
+  color:#080808!important;
+  box-shadow:none!important;
+}
+.pay-plan:hover,.pay-plan.selected{
+  transform:translateY(-4px)!important;
+  border-color:#f5b026!important;
+  background:#fff!important;
+  box-shadow:0 22px 52px rgba(245,176,38,.20)!important;
+}
+.pay-plan.selected .pay-plan-top{
+  box-shadow:inset 0 -4px 0 #f5b026!important;
+}
+@media(max-width:900px){
+  .pay-plan{min-height:0!important}
+  .pay-plan-top{min-height:108px!important}
+}
+/* Pricing cards v3: compact, balanced and decision-focused */
+main.pay-hero .pay-layout{grid-template-columns:minmax(0,1fr) 360px!important;gap:24px!important}
+.pay-main-card .pay-card-inner{padding:26px!important}
+.pay-main-card .pay-product{margin-bottom:24px!important;padding:18px 22px!important}
+.pay-main-card .pay-plan-grid{gap:14px!important}
+.pay-main-card .pay-plan{
+  min-height:416px!important;
+  border-radius:14px!important;
+  border:1px solid #e7dfd1!important;
+  box-shadow:0 12px 30px rgba(15,23,42,.07)!important;
+}
+.pay-main-card .pay-plan .pay-plan-top{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:92px!important;
+  padding:0!important;
+  background:linear-gradient(135deg,#0b0d0c 0%,#211807 68%,#513706 100%)!important;
+  border-bottom:3px solid #f5b026!important;
+}
+.pay-main-card .pay-plan .pay-plan-top svg{
+  width:42px!important;
+  height:42px!important;
+  margin:0!important;
+  filter:drop-shadow(0 5px 12px rgba(245,176,38,.22))!important;
+}
+.pay-main-card .pay-plan .pay-plan-body{
+  display:flex!important;
+  flex:1!important;
+  flex-direction:column!important;
+  padding:18px!important;
+}
+.pay-main-card .pay-plan .plan-name{
+  font-size:20px!important;
+  line-height:1.2!important;
+}
+.pay-main-card .pay-plan small{
+  min-height:40px!important;
+  margin:6px 0 12px!important;
+  font-size:12.5px!important;
+  line-height:1.45!important;
+}
+.pay-main-card .pay-plan .plan-price{
+  display:flex!important;
+  align-items:flex-end!important;
+  justify-content:flex-start!important;
+  gap:7px!important;
+  min-height:38px!important;
+  margin:0 0 13px!important;
+}
+.pay-main-card .pay-plan .plan-price b{
+  position:static!important;
+  inset:auto!important;
+  transform:none!important;
+  margin:0!important;
+  color:#090909!important;
+  font-size:34px!important;
+  line-height:1!important;
+  text-shadow:none!important;
+}
+.pay-main-card .pay-plan .plan-price span{
+  display:block!important;
+  padding:0 0 3px!important;
+  color:#818181!important;
+  font-size:11px!important;
+  font-weight:600!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan .plan-features{margin-bottom:16px!important}
+.pay-main-card .pay-plan .plan-features i{
+  padding:8px 0 8px 20px!important;
+  font-size:12px!important;
+  line-height:1.3!important;
+}
+.pay-main-card .pay-plan em{
+  min-height:44px!important;
+  border-radius:8px!important;
+  font-size:12px!important;
+}
+.pay-main-card .pay-plan .plan-recommend{
+  position:absolute!important;
+  top:10px!important;
+  right:10px!important;
+  z-index:2!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  width:auto!important;
+  min-height:25px!important;
+  padding:0 9px!important;
+  border:1px solid rgba(245,176,38,.5)!important;
+  border-radius:999px!important;
+  background:#fff8e8!important;
+  color:#8a5b00!important;
+  font-size:9px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+}
+.pay-main-card .pay-plan .plan-recommend:after{display:none!important;content:none!important}
+.pay-main-card .pay-plan:hover{transform:translateY(-3px)!important}
+.pay-main-card .pay-plan.selected{
+  border-color:#f5b026!important;
+  box-shadow:0 0 0 2px rgba(245,176,38,.15),0 18px 38px rgba(109,76,10,.16)!important;
+}
+.pay-main-card .pay-plan.selected em{background:#0e1110!important;color:#fff!important}
+@media(max-width:1180px){main.pay-hero .pay-layout{grid-template-columns:1fr!important}}
+@media(max-width:900px){
+  .pay-main-card .pay-plan-grid{grid-template-columns:1fr!important;gap:16px!important}
+  .pay-main-card .pay-plan{min-height:0!important}
+}
+/* Final visual polish and responsive pass */
+.pay-title{margin-bottom:26px!important}
+.pay-card{border-color:#e7e0d5!important}
+.pay-main-card{overflow:hidden!important}
+.pay-main-card .pay-product{
+  grid-template-columns:74px minmax(0,1fr)!important;
+  min-height:96px!important;
+  gap:16px!important;
+  margin-bottom:24px!important;
+  border:0!important;
+  border-radius:16px!important;
+}
+.pay-main-card .pay-product-icon{width:64px!important;height:64px!important;border-radius:14px!important}
+.pay-main-card .pay-product-icon img{width:56px!important;height:56px!important;border-radius:11px!important}
+.pay-main-card .pay-product h2{font-size:27px!important;margin-bottom:4px!important}
+.pay-main-card .pay-product p{font-size:13px!important}
+.pay-main-card .pay-plan .pay-plan-body{background:linear-gradient(180deg,#fff 0%,#fffdf8 100%)!important}
+.pay-main-card .pay-plan.selected .pay-plan-body{background:linear-gradient(180deg,#fffdf7 0%,#fff8e8 100%)!important}
+.pay-main-card .pay-plan.selected .plan-name{color:#805500!important}
+.pay-main-card .pay-plan .plan-features i:last-child{border-bottom:1px solid #f1ede4!important}
+.summary{border-radius:22px!important}
+.summary .pay-card-inner{padding:25px!important}
+.summary h3{font-size:27px!important;margin-bottom:18px!important}
+.summary-row{padding:13px 0!important;font-size:13px!important}
+.summary-total{margin-top:16px!important;padding:18px!important;border-radius:15px!important}
+.summary-total b{font-size:34px!important}
+.summary-actions{gap:10px!important;margin-top:16px!important}
+.summary-actions .reb-btn.gold,.summary-actions .reb-btn.light{min-height:52px!important;border-radius:11px!important}
+.pay-status{font-size:13px!important;line-height:1.5!important}
+@media(max-width:767px){
+  main.pay-hero{padding:20px 12px 36px!important}
+  .pay-wrap{width:100%!important}
+  .pay-crumb{gap:7px!important;margin-bottom:14px!important;font-size:11px!important;white-space:nowrap!important;overflow-x:auto!important}
+  .pay-title{margin-bottom:20px!important}
+  .pay-title h1{font-size:31px!important;line-height:1.08!important;letter-spacing:-.035em!important}
+  .pay-title p{margin-top:8px!important;font-size:14px!important;line-height:1.45!important}
+  .pay-card{border-radius:18px!important}
+  .pay-main-card .pay-card-inner{padding:14px!important}
+  .pay-main-card .pay-product{
+    grid-template-columns:58px minmax(0,1fr)!important;
+    min-height:82px!important;
+    gap:12px!important;
+    margin-bottom:16px!important;
+    padding:12px!important;
+    border-radius:13px!important;
+  }
+  .pay-main-card .pay-product-icon{width:52px!important;height:52px!important;border-radius:11px!important}
+  .pay-main-card .pay-product-icon img{width:46px!important;height:46px!important;border-radius:9px!important}
+  .pay-main-card .pay-product h2{font-size:20px!important;line-height:1.15!important}
+  .pay-main-card .pay-product p{font-size:11.5px!important;line-height:1.4!important}
+  .pay-main-card .pay-plan-grid{gap:14px!important}
+  .pay-main-card .pay-plan{border-radius:13px!important}
+  .pay-main-card .pay-plan .pay-plan-top{min-height:72px!important;border-bottom-width:2px!important}
+  .pay-main-card .pay-plan .pay-plan-top svg{width:34px!important;height:34px!important}
+  .pay-main-card .pay-plan .pay-plan-body{padding:15px!important}
+  .pay-main-card .pay-plan .plan-name{font-size:19px!important}
+  .pay-main-card .pay-plan small{min-height:0!important;margin:5px 0 10px!important;font-size:12px!important}
+  .pay-main-card .pay-plan .plan-price{margin-bottom:10px!important}
+  .pay-main-card .pay-plan .plan-price b{font-size:31px!important}
+  .pay-main-card .pay-plan .plan-features{margin-bottom:13px!important}
+  .pay-main-card .pay-plan .plan-features i{padding-top:7px!important;padding-bottom:7px!important;font-size:11.5px!important}
+  .pay-main-card .pay-plan em{min-height:42px!important}
+  .pay-main-card .pay-plan .plan-recommend{top:8px!important;right:8px!important;min-height:22px!important;font-size:8px!important}
+  .summary{position:relative!important;top:auto!important;margin-top:16px!important}
+  .summary .pay-card-inner{padding:18px!important}
+  .summary h3{font-size:24px!important}
+  .summary-row{padding:12px 0!important}
+  .summary-total{padding:16px!important}
+  .summary-total b{font-size:31px!important}
+  .summary-actions .reb-btn.gold,.summary-actions .reb-btn.light{min-height:50px!important;font-size:13px!important}
+}
+@media(max-width:380px){
+  .pay-title h1{font-size:28px!important}
+  .pay-main-card .pay-product h2{font-size:18px!important}
+  .pay-main-card .pay-plan .plan-price b{font-size:29px!important}
+}
+/* Final typography system — aligned with surrounding marketplace UI */
+.pay-main-card .pay-plan,
+.pay-main-card .pay-plan *{
+  font-family:Ubuntu,Arial,sans-serif!important;
+  font-style:normal!important;
+}
+.pay-main-card .pay-plan .plan-name,
+.pay-main-card .pay-plan.selected .plan-name{
+  color:#15171a!important;
+  font-size:19px!important;
+  font-weight:700!important;
+  line-height:1.25!important;
+  letter-spacing:-.015em!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan small{
+  color:#667085!important;
+  font-size:13px!important;
+  font-weight:400!important;
+  line-height:1.5!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan .plan-price b,
+.pay-main-card .pay-plan.selected .plan-price b{
+  color:#101312!important;
+  font-size:33px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:-.035em!important;
+}
+.pay-main-card .pay-plan .plan-price span{
+  color:#7b8493!important;
+  font-size:11px!important;
+  font-weight:500!important;
+  line-height:1.2!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan .plan-features i{
+  color:#30343a!important;
+  font-size:12px!important;
+  font-weight:500!important;
+  line-height:1.4!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan em,
+.pay-main-card .pay-plan.selected em{
+  font-size:12px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.pay-main-card .pay-plan .plan-recommend{
+  font-size:9px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:.045em!important;
+}
+.pay-main-card .pay-product h2{
+  font-weight:700!important;
+  letter-spacing:-.02em!important;
+}
+.pay-main-card .pay-product p{
+  font-weight:500!important;
+  letter-spacing:0!important;
+}
+.summary h3{font-weight:700!important;letter-spacing:-.02em!important}
+.summary-row{font-weight:400!important}
+.summary-row b{font-weight:700!important}
+.summary-total span{font-weight:400!important}
+.summary-total b{font-weight:700!important}
+.summary-actions .reb-btn{font-weight:700!important;letter-spacing:0!important}
+@media(max-width:767px){
+  .pay-main-card .pay-plan .plan-name,
+  .pay-main-card .pay-plan.selected .plan-name{font-size:18px!important}
+  .pay-main-card .pay-plan small{font-size:12.5px!important}
+  .pay-main-card .pay-plan .plan-price b,
+  .pay-main-card .pay-plan.selected .plan-price b{font-size:30px!important}
+  .pay-main-card .pay-plan .plan-features i{font-size:12px!important}
+  .pay-main-card .pay-plan em,
+  .pay-main-card .pay-plan.selected em{font-size:12px!important}
+}
+/* Product identity and plan icon polish */
+.pay-main-card .pay-product{
+  position:relative!important;
+  grid-template-columns:94px minmax(0,1fr)!important;
+  min-height:126px!important;
+  gap:20px!important;
+  padding:17px 22px!important;
+  background:
+    radial-gradient(circle at 88% 20%,rgba(245,176,38,.14),transparent 28%),
+    linear-gradient(112deg,#101513 0%,#14160f 48%,#4d3406 100%)!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 14px 30px rgba(17,18,14,.13)!important;
+}
+.pay-main-card .pay-product:after{
+  content:""!important;
+  position:absolute!important;
+  right:22px!important;
+  top:50%!important;
+  width:74px!important;
+  height:74px!important;
+  transform:translateY(-50%)!important;
+  border:1px solid rgba(245,176,38,.13)!important;
+  border-radius:50%!important;
+  box-shadow:0 0 0 16px rgba(245,176,38,.035)!important;
+  pointer-events:none!important;
+}
+.pay-main-card .pay-product-icon{
+  position:relative!important;
+  z-index:1!important;
+  width:88px!important;
+  height:88px!important;
+  padding:4px!important;
+  border:1px solid rgba(245,176,38,.7)!important;
+  border-radius:18px!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.04))!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.3),inset 0 0 0 3px rgba(255,255,255,.08)!important;
+}
+.pay-main-card .pay-product-icon img{
+  width:78px!important;
+  height:78px!important;
+  border-radius:13px!important;
+  object-fit:cover!important;
+}
+.pay-main-card .pay-product>div:last-child{position:relative!important;z-index:1!important;min-width:0!important}
+.pay-main-card .pay-product h2{
+  margin:0 0 7px!important;
+  color:#fff!important;
+  font-size:31px!important;
+  font-weight:700!important;
+  line-height:1.1!important;
+}
+.pay-main-card .pay-product p{
+  display:inline-flex!important;
+  align-items:center!important;
+  width:auto!important;
+  min-height:29px!important;
+  margin:0!important;
+  padding:0 11px!important;
+  border:1px solid rgba(245,176,38,.28)!important;
+  border-radius:999px!important;
+  background:rgba(245,176,38,.1)!important;
+  color:#f8d47e!important;
+  font-size:12px!important;
+  font-weight:500!important;
+  line-height:1.2!important;
+}
+.pay-main-card .pay-plan .pay-plan-top{overflow:hidden!important}
+.pay-main-card .pay-plan .pay-plan-top:before{
+  content:""!important;
+  position:absolute!important;
+  width:118px!important;
+  height:118px!important;
+  border-radius:50%!important;
+  background:radial-gradient(circle,rgba(245,176,38,.16) 0%,rgba(245,176,38,0) 68%)!important;
+  pointer-events:none!important;
+}
+.pay-main-card .pay-plan .pay-plan-top svg{
+  position:relative!important;
+  z-index:1!important;
+  width:34px!important;
+  height:34px!important;
+  padding:8px!important;
+  box-sizing:content-box!important;
+  border:1px solid rgba(245,176,38,.45)!important;
+  border-radius:50%!important;
+  background:linear-gradient(145deg,rgba(245,176,38,.18),rgba(245,176,38,.05))!important;
+  box-shadow:0 8px 20px rgba(0,0,0,.28),inset 0 0 0 3px rgba(245,176,38,.05)!important;
+}
+.pay-main-card .pay-plan:hover .pay-plan-top svg,
+.pay-main-card .pay-plan.selected .pay-plan-top svg{
+  transform:translateY(-2px) scale(1.04)!important;
+  border-color:#f5b026!important;
+  background:linear-gradient(145deg,rgba(245,176,38,.28),rgba(245,176,38,.09))!important;
+}
+@media(max-width:767px){
+  .pay-main-card .pay-product{
+    grid-template-columns:70px minmax(0,1fr)!important;
+    min-height:100px!important;
+    gap:14px!important;
+    padding:14px!important;
+  }
+  .pay-main-card .pay-product:after{right:14px!important;width:54px!important;height:54px!important;box-shadow:0 0 0 11px rgba(245,176,38,.035)!important}
+  .pay-main-card .pay-product-icon{width:66px!important;height:66px!important;padding:3px!important;border-radius:14px!important}
+  .pay-main-card .pay-product-icon img{width:58px!important;height:58px!important;border-radius:10px!important}
+  .pay-main-card .pay-product h2{font-size:22px!important;margin-bottom:6px!important}
+  .pay-main-card .pay-product p{min-height:25px!important;padding:0 8px!important;font-size:10.5px!important}
+  .pay-main-card .pay-plan .pay-plan-top svg{width:29px!important;height:29px!important;padding:7px!important}
+}
+@media(max-width:380px){
+  .pay-main-card .pay-product{grid-template-columns:62px minmax(0,1fr)!important;gap:11px!important;padding:12px!important}
+  .pay-main-card .pay-product-icon{width:58px!important;height:58px!important}
+  .pay-main-card .pay-product-icon img{width:50px!important;height:50px!important}
+  .pay-main-card .pay-product h2{font-size:20px!important}
+  .pay-main-card .pay-product p{max-width:100%!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+}
+/* Verified PayPal return and secure auto-download status */
+.pay-status.is-checking{display:block;background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
+.pay-status.is-complete{display:block;background:#ecfdf5;border-color:#86efac;color:#047857}
+.pay-status.is-error{display:block;background:#fff7ed;border-color:#fed7aa;color:#c2410c}
+.pay-status a{display:inline-flex;margin-top:8px;color:inherit;font-weight:900;text-decoration:underline}
+</style>
+<link href="/assets/css/reb-mobile-professional-v1.css?v=20260809-auth28" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-unified-drawer-v41.css?v=20260917-phase1c" rel="stylesheet"/>
+<link href="/assets/css/reb-desktop-broker-mobile-auth-v71.css?v=20260727-v71" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-auth-home-standard-v74.css?v=20260727-v78" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/trade-account-video-v1.css?v=1" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-auth-standard-v71.css?v=20260917-phase1f" id="reb-mobile-auth-standard-v71-css" media="(max-width: 767px)" rel="stylesheet"/>
+<script defer="" id="reb-mobile-auth-standard-v71-js" src="/assets/js/reb-mobile-auth-standard-v71.js?v=20260917-phase1f"></script>
+<link href="/assets/css/reb-live-chat-center.css?v=20260917-phase1e" rel="stylesheet"/>
+<link href="/assets/css/reb-global-font-standard-d20d4.css?v=D20D4" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-unified-d20f28.css?v=20260920-d20f33-notification-label" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-hamburger-d20f29.css?v=20260919-d20f29" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-social-mobile-d20f34.css?v=20260924-v102-verified-mobile" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-global-mobile-footer-d20f47.css?v=D20F73" media="(max-width: 767px)" rel="stylesheet"/>
+<!-- REB DESIGN SEPARATION: shared logic, isolated visual layers -->
+<link href="/assets/design/shared/shared-core.css?v=SEP1" rel="stylesheet"/>
+<link href="/assets/design/desktop/desktop.css?v=V43" media="(min-width: 768px)" rel="stylesheet"/>
+<link href="/assets/design/mobile/mobile.css?v=SEP1" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-global-home-header-v35.css?v=20260921-standard-v36" rel="stylesheet"/>
+
+<link rel="stylesheet" href="/assets/css/reb-desktop-footer-icon-fix-v72.css?v=72" media="(min-width: 901px)">
+<link href="/assets/css/font-awesome-all.css" rel="stylesheet"/>
+<link id="reb-desktop-header-safe-v62" href="/assets/css/reb-desktop-header-safe-v63.css?v=20260921-v63-width-align" rel="stylesheet"/>
+<link href="/assets/css/reb-desktop-market-detail-header-v73.css?v=73" rel="stylesheet"/>
+</head>
+<body class="reb-subpage reb-payment-page reb-hide-desktop-account-avatar reb-v62-public reb-v62-subpage reb-v73-payment">
+<div class="reb-v62-header" data-reb-desktop-header="v62-safe">
+  <div class="reb-v62-top"><div class="reb-v62-frame">
+    <a class="reb-v62-phone" href="tel:+85593525363"><i class="fas fa-headset" aria-hidden="true"></i><span>+855 93 525 363</span></a>
+    <div class="reb-v62-auth" aria-label="Account"></div>
+  </div></div>
+  <div class="reb-v62-nav"><div class="reb-v62-frame">
+    <a class="reb-v62-brand" href="/" aria-label="ReachEmpireBot Home"><img src="/assets/images/logo.png" alt="ReachEmpireBot"></a>
+    <nav class="reb-v62-menu" aria-label="Primary navigation"><a href="/social/"><i class="fas fa-globe" aria-hidden="true"></i><span>Social</span></a><a href="/"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a><a href="/download/"><i class="fas fa-download" aria-hidden="true"></i><span>Download</span></a><a href="/markets/" class="active" aria-current="page"><i class="fas fa-shopping-cart" aria-hidden="true"></i><span>EA Bot Market</span></a><a href="/create-trade-account/"><i class="fas fa-chart-line" aria-hidden="true"></i><span>Trade Account</span></a><a href="/contact/"><i class="fas fa-headset" aria-hidden="true"></i><span>Contact Us</span></a><a href="/about/"><i class="fas fa-users" aria-hidden="true"></i><span>About Us</span></a></nav>
+  </div></div>
+</div>
+
+<div class="reb-top"><div class="reb-phone"><svg aria-hidden="true" class="reb-icon" viewbox="0 0 24 24"><path d="M6.6 10.8c1.5 2.9 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.4 22 2 13.6 2 3.4 2 2.7 2.5 2.2 3.2 2.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.7.6 4 .1.4 0 .8-.3 1.2l-1.7 2.2z"></path></svg>+855 93 525 363</div><div class="reb-actions reb-auth-trade-standard" data-reb-auth-mount="1"></div></div>
+<header class="reb-header"><a class="reb-logo" href="/"><img alt="ReachEmpireBot" src="/assets/images/logo.png"/></a><button aria-expanded="false" aria-label="Open navigation" class="reb-mobile-menu-toggle" onclick="var n=this.nextElementSibling,o=n.classList.toggle('is-open');this.classList.toggle('is-open',o);this.setAttribute('aria-expanded',o?'true':'false')" type="button"><span></span><span></span><span></span></button>
+<nav class="reb-nav"><a href="/">Home</a><a href="/download/">Download</a><a class="active" href="/markets/">EA Bot Market</a>
+<a href="/create-trade-account/">Trade Account</a><a href="/contact/">Contact Us</a><a href="/about/">About Us</a></nav></header>
+<main class="pay-hero">
+<div class="pay-wrap">
+<div class="pay-crumb"><a href="/markets/">EA Bot Market</a>
+<span>/</span><a href="/markets/" id="backToEa">EA Details</a><span>/</span><b>Payment</b></div>
+<div class="pay-title">
+<div><h1>Complete Your EA License</h1><p>Choose your EA license plan and continue to checkout.</p></div>
+</div>
+<div class="pay-layout">
+<div class="pay-card pay-main-card">
+<div class="pay-card-inner">
+<div class="pay-product">
+<div class="pay-product-icon"><img alt="EA Bot image" id="productImage" src="/assets/images/resource/reb-robot.png"/></div>
+<div><h2 id="productTitle">EA Bot Package</h2><p id="productMeta">MT5 Expert Advisor license from ReachEmpireBot Marketplace.</p></div>
+</div>
+<div class="pay-plan-grid">
+<button class="pay-plan" data-kind="subscription" data-plan="Monthly" type="button"><span class="pay-plan-top"><svg aria-hidden="true" viewbox="0 0 64 64"><path d="M32 6c-12 0-22 4.5-22 10s10 10 22 10 22-4.5 22-10S44 6 32 6Zm-22 20v8c0 5.5 10 10 22 10 12 0 22-4.5 22-10v-8c-5 4-13 6-22 6s-17-2-22-6Zm0 18v4c0 5.5 10 10 22 10 12 0 22-4.5 22-10v-4c-5 4-13 6-22 6s-17-2-22-6Z"></path></svg></span><span class="pay-plan-body"><span class="plan-name">Monthly Plan</span><small>Flexible access with monthly renewal.</small><span class="plan-price"><b id="monthlyPrice">$0</b><span>/ month</span></span><span class="plan-features"><i>EA license access</i><i>Setup support</i><i>Manual activation</i></span><em>Choose Monthly</em></span></button>
+<button class="pay-plan" data-kind="subscription" data-plan="Annual" type="button"><span class="pay-plan-top"><span class="plan-recommend">Best Value</span><svg aria-hidden="true" viewbox="0 0 64 64"><path d="M32 4 8 14v16c0 15 10 25 24 30 14-5 24-15 24-30V14L32 4Zm0 10 14 6v10c0 9-5 16-14 20-9-4-14-11-14-20V20l14-6Zm-3 8v8h-8v6h8v8h6v-8h8v-6h-8v-8h-6Z"></path></svg></span><span class="pay-plan-body"><span class="plan-name">Annual Plan</span><small>Best for long-term EA operation.</small><span class="plan-price"><b id="annualPrice">$0</b><span>/ year</span></span><span class="plan-features"><i>EA license access</i><i>Priority setup help</i><i>Lower yearly cost</i></span><em>Choose Annual</em></span></button>
+<button class="pay-plan featured selected" data-kind="one_time" data-plan="Lifetime" type="button"><span class="pay-plan-top"><svg aria-hidden="true" viewbox="0 0 64 64"><path d="m12 12-8 14 28 34 28-34-8-14H12Zm5 8h10l-5 8H12l5-8Zm16 0h10l5 8H28l5-8Zm15 14L35 50l5-16h8Zm-24 0 5 16-13-16h8Zm8-15 5 9H27l5-9Z"></path></svg></span><span class="pay-plan-body"><span class="plan-name">Lifetime Plan</span><small>One-time payment for permanent package access.</small><span class="plan-price"><b id="lifetimePrice">$0</b><span>/ one-time</span></span><span class="plan-features"><i>Lifetime package access</i><i>Setup support</i><i>Best long-term value</i></span><em>Choose Lifetime</em></span></button>
+</div>
+</div>
+</div>
+<aside class="pay-card summary">
+<div class="pay-card-inner">
+<h3>Order Summary</h3>
+<div class="summary-row"><span>EA Bot</span><b id="summaryTitle">EA Bot Package</b></div>
+<div class="summary-row"><span>Category</span><b id="summaryCategory">Forex</b></div>
+<div class="summary-row"><span>Plan</span><b id="summaryPlan">Lifetime</b></div>
+<div class="summary-row"><span>Payment Type</span><b id="summaryKind">One-time</b></div>
+<div class="summary-total"><span>Total Due</span><b id="summaryAmount">$0</b></div>
+<div class="summary-actions">
+<button class="reb-btn gold" id="continuePayPal" type="button"><span class="paypal-wordmark large"><span class="pay-pal-blue">Pay</span><span class="pay-pal-light">Pal</span></span> Continue to PayPal</button>
+<a class="reb-btn light" href="/markets/" id="editPlan"><svg aria-hidden="true" class="reb-icon" viewbox="0 0 24 24"><path d="M10.8 19.2 3.6 12l7.2-7.2 1.5 1.5L7.7 11H21v2H7.7l4.6 4.7-1.5 1.5z"></path></svg> Back to EA Details</a>
+</div>
+<div class="pay-status" id="payStatus"></div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<footer class="reb-clean-footer">
+<div class="reb-clean-footer-inner">
+<div class="reb-clean-footer-grid">
+<div class="reb-clean-footer-brand"><a href="/"><img alt="ReachEmpireBot" class="reb-clean-footer-logo" src="/assets/images/logo-2.png"/></a><p>AI-assisted auto trading software for disciplined MT5 execution, setup guidance, copy trading information, and risk-aware automation support.</p></div>
+<div><h3>Main Pages</h3><nav class="reb-clean-footer-links"><a href="/">Home</a><a href="/download/">Download</a><a href="/markets/">EA Bot Market</a>
+<a href="/create-trade-account/">Trade Account</a><a href="/about/">About Us</a></nav></div>
+<div><h3>Markets</h3><nav class="reb-clean-footer-links"><a href="/forex-trading/">Forex Trading</a><a href="/crypto-trading/">Crypto Trading</a><a href="/metal-trading/">Metal Trading</a></nav></div>
+<div><h3>Contact Info</h3><div class="reb-contact-list"><a class="reb-contact-row phone" href="tel:+85593525363"><span class="contact-icon"><svg aria-hidden="true" class="reb-icon" viewbox="0 0 24 24"><path d="M6.6 10.8c1.5 2.9 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.4 22 2 13.6 2 3.4 2 2.7 2.5 2.2 3.2 2.2h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.7.6 4 .1.4 0 .8-.3 1.2l-1.7 2.2z"></path></svg></span><span>093 525 363</span></a><a class="reb-contact-row email" href="mailto:reachempirebot@gmail.com"><span class="contact-icon"><svg aria-hidden="true" class="reb-icon" viewbox="0 0 24 24"><path d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1zm9 8.1L4.7 7H4v10h16V7h-.7L12 13.1zM6.7 7l5.3 4.4L17.3 7H6.7z"></path></svg></span><span>reachempirebot@gmail.com</span></a><a class="reb-contact-row telegram" href="https://t.me/ReachEmpireBot" rel="noopener" target="_blank"><span class="contact-icon"><svg aria-hidden="true" class="reb-icon" viewbox="0 0 24 24"><path d="M21.7 3.3 18.4 20c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.9.4l.3-4.6L18 7.8c.4-.3-.1-.5-.5-.2L7 14.2 2.5 12.8c-1-.3-1-.9.2-1.3L20.5 2.7c.8-.3 1.5.2 1.2.6z"></path></svg></span><span>Telegram Channel</span></a></div></div>
+<div><h3>Follow Us On</h3><div class="reb-follow-social"><a class="facebook" href="https://web.facebook.com/ReachEmpireBot" rel="noopener" target="_blank"><svg aria-hidden="true" class="reb-icon" viewbox="0 0 24 24"><path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v2H6v4h3v7h4v-7h3.2l.8-4h-4V9c0-.7.3-1 1-1z"></path></svg></a><a class="youtube" href="https://www.youtube.com/@ReachEmpireBot" rel="noopener" target="_blank"><svg aria-hidden="true" class="reb-icon" viewbox="0 0 24 24"><path d="M21.6 7.2s-.2-1.5-.8-2.1c-.8-.8-1.7-.8-2.1-.9C15.8 4 12 4 12 4s-3.8 0-6.7.2c-.4 0-1.3.1-2.1.9-.6.6-.8 2.1-.8 2.1S2.2 9 2.2 10.9v1.8c0 1.9.2 3.7.2 3.7s.2 1.5.8 2.1c.8.8 1.9.8 2.4.9 1.7.2 6.4.2 6.4.2s3.8 0 6.7-.2c.4 0 1.3-.1 2.1-.9.6-.6.8-2.1.8-2.1s.2-1.9.2-3.7v-1.8c0-1.9-.2-3.7-.2-3.7zM10.2 14.9V8.5l5.8 3.2-5.8 3.2z"></path></svg></a><a class="telegram" href="https://t.me/ReachEmpireBot" rel="noopener" target="_blank"><span class="contact-icon"><svg aria-hidden="true" class="reb-icon" viewbox="0 0 24 24"><path d="M21.7 3.3 18.4 20c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.9.4l.3-4.6L18 7.8c.4-.3-.1-.5-.5-.2L7 14.2 2.5 12.8c-1-.3-1-.9.2-1.3L20.5 2.7c.8-.3 1.5.2 1.2.6z"></path></svg></span></a><a class="tiktok" href="https://www.tiktok.com/@reachempirebot" rel="noopener" target="_blank"><svg class="reb-tiktok-svg" viewbox="0 0 24 24"><path d="M16.7 4.2c.6 1.8 1.9 3.1 3.7 3.4v3.1c-1.5 0-2.8-.5-3.9-1.3v5.8c0 3.2-2.2 5.2-5.2 5.2-2.8 0-5-1.9-5-4.6 0-2.9 2.3-4.8 5.1-4.8.4 0 .8 0 1.1.1v3.2c-.3-.1-.7-.2-1.1-.2-1.2 0-2 .7-2 1.7 0 1 .8 1.6 1.8 1.6 1.2 0 2-.7 2-2.1V3.6h3.5v.6z" fill="currentColor"></path></svg></a></div></div>
+</div>
+<div class="reb-clean-footer-bottom">Copyright © 2026 ReachEmpireBot. All rights reserved.</div>
+</div>
+</footer>
+<script>
+(function(){
+  var qs=new URLSearchParams(window.location.search);
+  var apiBase=(window.REBClientCore?window.REBClientCore.apiBase():(window.REB_API_BASE||'https://admin.reachempirebot.com')).replace(/\/$/,'');
+  function clean(v,fallback){return String(v||fallback||'').replace(/[<>]/g,'').trim();}
+  function money(v){var s=clean(v,'0').replace(/^\$/,'');return '$'+(s||'0');}
+  var state={
+    bot_id:clean(qs.get('bot_id')||qs.get('id'),''),
+    title:clean(qs.get('title'),'EA Bot Package'),
+    category:clean(qs.get('category'),'Forex'),
+    plan:clean(qs.get('plan'),'Lifetime'),
+    payment_type:clean(qs.get('payment_type'),'one_time'),
+    amount:clean(qs.get('amount'),'0'),
+    image:clean(qs.get('image'),'/assets/images/resource/reb-robot.png'),
+    currency:'USD'
+  };
+  var prices={Monthly:clean(qs.get('monthly'),state.amount),Annual:clean(qs.get('annual'),state.amount),Lifetime:clean(qs.get('lifetime'),state.amount)};
+  function setText(id,value){var el=document.getElementById(id);if(el)el.textContent=value;}
+  function detailUrl(){return '/markets-details/?id='+encodeURIComponent(state.bot_id||state.title);}
+  function update(){
+    setText('productTitle',state.title);
+    var img=document.getElementById('productImage');
+    if(img){img.src=state.image||'/assets/images/resource/reb-robot.png';img.alt=state.title+' image';}
+    setText('productMeta',state.category+' EA | '+state.plan+' license');
+    setText('summaryTitle',state.title);
+    setText('summaryCategory',state.category);
+    setText('summaryPlan',state.plan);
+    setText('summaryKind',state.payment_type==='subscription'?'Subscription':'One-time');
+    setText('summaryAmount',money(state.amount));
+    setText('monthlyPrice',money(prices.Monthly));
+    setText('annualPrice',money(prices.Annual));
+    setText('lifetimePrice',money(prices.Lifetime));
+    document.querySelectorAll('.pay-plan').forEach(function(btn){btn.classList.toggle('selected',btn.getAttribute('data-plan')===state.plan);});
+    document.getElementById('backToEa').href=detailUrl();
+    document.getElementById('editPlan').href=detailUrl();
+  }
+  document.querySelectorAll('.pay-plan').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      state.plan=this.getAttribute('data-plan')||'Lifetime';
+      state.payment_type=this.getAttribute('data-kind')==='subscription'?'subscription':'one_time';
+      state.amount=prices[state.plan]||state.amount;
+      update();
+    });
+  });
+  document.getElementById('continuePayPal').addEventListener('click',async function(){
+    var button=this;
+    var status=document.getElementById('payStatus');
+    var payload={bot_id:state.bot_id,title:state.title,category:state.category,image:state.image,plan:state.plan,payment_type:state.payment_type,amount:state.amount,currency:state.currency};
+    button.setAttribute('disabled','disabled');
+    status.className='pay-status show';
+    status.textContent='Preparing secure checkout...';
+    try{
+      var res=await fetch(apiBase+'/api/paypal/create-checkout',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},mode:'cors',credentials:'include',body:JSON.stringify(payload)});
+      if(!res.ok) throw new Error('Payment checkout is unavailable.');
+      var data=await res.json();
+      var url=data.approval_url||data.approve_url||data.checkout_url||data.url;
+      if(!url) throw new Error('Missing PayPal approval URL from server.');
+      try{localStorage.setItem('REB_PENDING_PAYMENT',JSON.stringify(Object.assign({created:new Date().toISOString(),status:'paypal_opened',order_id:data.order_id||data.id||''},payload)));}catch(e){}
+      window.location.href=url;
+    }catch(err){
+      try{localStorage.setItem('REB_PENDING_PAYMENT',JSON.stringify(Object.assign({created:new Date().toISOString(),status:'gateway_pending'},payload)));}catch(e){}
+      status.textContent='Unable to open payment checkout right now. Please try again or contact support.';
+      button.removeAttribute('disabled');
+    }
+  });
+  async function verifyCompletedPayment(){
+    var paypalToken=clean(qs.get('token')||qs.get('order_id')||qs.get('orderId'),'');
+    var cancelled=qs.get('cancel')==='1'||qs.get('cancelled')==='true';
+    if(cancelled){
+      var cancelledStatus=document.getElementById('payStatus');
+      cancelledStatus.className='pay-status show is-error';
+      cancelledStatus.textContent='Payment was cancelled. No file has been downloaded.';
+      return;
+    }
+    if(!paypalToken)return;
+
+    var status=document.getElementById('payStatus');
+    var button=document.getElementById('continuePayPal');
+    var downloadKey='REB_DOWNLOADED_ORDER_'+paypalToken;
+    status.className='pay-status show is-checking';
+    status.textContent='Payment received. Verifying securely before download...';
+    button.setAttribute('disabled','disabled');
+
+    try{
+      var response=await fetch(apiBase+'/api/paypal/capture-order',{
+        method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',
+        body:JSON.stringify({order_id:paypalToken,token:paypalToken,bot_id:state.bot_id,plan:state.plan})
+      });
+      if(!response.ok)throw new Error('Payment verification is not available yet.');
+      var result=await response.json();
+      var paymentStatus=clean(result.status||result.payment_status,'').toUpperCase();
+      var downloadUrl=clean(result.signed_download_url||result.download_url||result.file_url,'');
+      if(paymentStatus!=='COMPLETED')throw new Error('Payment has not been completed yet.');
+      if(!downloadUrl)throw new Error('Payment completed, but the secure download is not ready. Please contact Admin.');
+
+      status.className='pay-status show is-complete';
+      status.innerHTML='Payment completed. Your EA download will start automatically.<br><a id="manualSecureDownload" href="#">Download again</a>';
+      var manual=document.getElementById('manualSecureDownload');
+      manual.href=downloadUrl;
+      manual.setAttribute('download','');
+      try{localStorage.removeItem('REB_PENDING_PAYMENT');}catch(e){}
+      if(!sessionStorage.getItem(downloadKey)){
+        sessionStorage.setItem(downloadKey,'1');
+        window.setTimeout(function(){
+          var link=document.createElement('a');
+          link.href=downloadUrl;link.setAttribute('download','');link.style.display='none';
+          document.body.appendChild(link);link.click();link.remove();
+        },900);
+      }
+    }catch(error){
+      status.className='pay-status show is-error';
+      status.textContent=error.message||'Unable to verify payment. No file was downloaded.';
+      button.removeAttribute('disabled');
+    }
+  }
+  update();
+  verifyCompletedPayment();
+})();
+</script>
+<script src="/assets/js/reb-auth-state.js?v=V58-AUTH-VISIBLE"></script>
+<script src="/assets/js/reb-unified-drawer-v41.js?v=20260917-social2a"></script>
+<script src="/assets/js/trade-account-video-v1.js?v=1"></script>
+<link href="/assets/css/reb-mobile-footer-phase1d.css?v=20260917-phase1d" media="(max-width: 767px)" rel="stylesheet"/>
+<script src="/assets/js/reb-mobile-footer-phase1d.js?v=20260917-phase1d"></script>
+<style id="reb-mobile-auth-hardfix-v33">
+@media(max-width:767px){
+ html body .main-header .header-top .option-block,html body .reb-top .reb-actions,html body .reb-top .reb-login{box-sizing:border-box!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;width:min(300px,calc(100vw - 28px))!important;margin-left:auto!important;margin-right:14px!important;padding:0!important;background:transparent!important;border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important}
+ html body .main-header .header-top .option-block .language-picker{display:none!important}
+ html body .main-header .header-top .option-block a[href*="/signup/"],html body .reb-top .reb-actions a[href*="/signup/"],html body .reb-top .reb-login a[href*="/signup/"]{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;margin:0!important;padding:0 8px!important;border:1px solid #ffb11b!important;border-radius:9px!important;background:#ffb11b!important;background-image:none!important;color:#090909!important;font-size:13px!important;font-weight:800!important;line-height:1!important;box-shadow:none!important;transform:none!important}
+ html body .main-header .header-top .option-block a[href*="/signup/"]::before,html body .main-header .header-top .option-block a[href*="/signup/"]::after,html body .reb-top a[href*="/signup/"]::before,html body .reb-top a[href*="/signup/"]::after{content:none!important;display:none!important;opacity:0!important;visibility:hidden!important;transform:none!important;background:transparent!important}
+ html body .main-header .header-top .option-block a[href*="/login/"],html body .reb-top .reb-actions a[href*="/login/"],html body .reb-top .reb-login a[href*="/login/"]{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;margin:0!important;padding:0 8px!important;border:1px solid #59605f!important;border-radius:9px!important;background:#101413!important;background-image:none!important;color:#fff!important;font-size:13px!important;font-weight:800!important;line-height:1!important;box-shadow:none!important}
+ html body .main-header .header-top .option-block.reb-auth-logged-in .reb-session-account,html body .reb-top .reb-auth-logged-in .reb-session-account{background:#181b18!important;border-color:#a27618!important;color:#fff!important}
+ html body .main-header .header-top .option-block.reb-auth-logged-in .reb-session-logout,html body .reb-top .reb-auth-logged-in .reb-session-logout{background:#321919!important;border-color:#8b3b3b!important;color:#fff!important}
+}
+</style>
+<script id="reb-mobile-auth-hardfix-v33-runtime">
+(function(){function run(){if(Math.min(innerWidth||9999,document.documentElement.clientWidth||9999)>767&&!/Android|iPhone|Mobile/i.test(navigator.userAgent||''))return;var a=document.querySelectorAll('a[href*="/login/"]');for(var i=0;i<a.length;i++)if(!a[i].classList.contains('reb-session-logout'))a[i].textContent='Log In';var s=document.querySelectorAll('a[href*="/signup/"]');for(var j=0;j<s.length;j++)s[j].textContent='Sign Up'}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();setTimeout(run,300)})();
+</script>
+<link href="/assets/css/reb-mobile-auth-home-v36.css?v=20260809-v36" id="reb-mobile-auth-home-v36" media="(max-width: 767px)" rel="stylesheet"/>
+<!-- REB TRADE ACCOUNT AUTH STANDARD - copied 1:1 geometry to all pages -->
+<style id="reb-trade-account-auth-standard-all-pages">
+@media(max-width:640px){
+  html body .reb-top{padding:12px 20px!important;justify-content:flex-end!important;gap:0!important;}
+  html body .reb-top .reb-phone{display:none!important;}
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login{
+    width:auto!important;max-width:100%!important;display:flex!important;grid-template-columns:none!important;
+    justify-content:center!important;gap:8px!important;flex:0 0 auto!important;
+    margin-left:auto!important;margin-right:0!important;padding:0!important;
+    background:transparent!important;border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important;
+  }
+  html body .reb-top .reb-actions a,
+  html body .reb-top .reb-login a{
+    box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;
+    width:auto!important;min-width:86px!important;max-width:none!important;height:40px!important;min-height:40px!important;max-height:40px!important;
+    margin:0!important;padding:0 14px!important;border-radius:8px!important;font-size:15px!important;font-weight:800!important;
+    line-height:1!important;white-space:nowrap!important;text-align:center!important;box-shadow:none!important;transform:none!important;
+  }
+  html body .reb-top .reb-actions a[href*="/signup/"],
+  html body .reb-top .reb-login a[href*="/signup/"]{background:#f5b026!important;background-image:none!important;border:1px solid #f5b026!important;color:#070707!important;}
+  html body .reb-top .reb-actions a[href*="/login/"],
+  html body .reb-top .reb-login a[href*="/login/"]{background:#101312!important;background-image:none!important;border:1px solid rgba(255,255,255,.45)!important;color:#fff!important;}
+  html body .reb-top a[href*="/signup/"]::before,html body .reb-top a[href*="/signup/"]::after,
+  html body .reb-top a[href*="/login/"]::before,html body .reb-top a[href*="/login/"]::after{content:none!important;display:none!important;}
+}
+</style><!-- REB desktop auth: final cascade override. Keep immediately before <script src="/assets/js/reb-client-access-enforcement-v1.js?v=D20F"></script>
+<script src="/assets/js/reb-mobile-hamburger-d20f29.js?v=20260919-d20f29"></script>
+
+<script defer src="/assets/js/reb-global-home-header-v35.js?v=20260921-v56-auth-single"></script>
+<script defer src="/assets/js/reb-call-push-v41.js?v=20260925-v41"></script>
+
+</body>. -->
+<style id="reb-desktop-auth-final-override-v3">
+@media (min-width:768px){
+  html body .reb-top{
+    box-sizing:border-box!important;
+    width:100%!important;
+    padding:12px 5.5vw!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:18px!important;
+    position:relative!important;
+  }
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login,
+  html body.reb-home .main-header .header-top .option-block{
+    box-sizing:border-box!important;
+    display:flex!important;
+    grid-template-columns:none!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:14px!important;
+    width:auto!important;
+    max-width:none!important;
+    flex:0 0 auto!important;
+    position:absolute!important;
+    top:50%!important;
+    left:auto!important;
+    bottom:auto!important;
+    margin:0!important;
+    padding:0!important;
+    background:transparent!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    transform:translateY(-50%)!important;
+  }
+  html body:not(.reb-home) .reb-top .reb-actions,
+  html body:not(.reb-home) .reb-top .reb-login{right:5.5vw!important}
+  html body.reb-home .main-header .header-top .large-container,
+  html body.reb-home .main-header .header-top .top-inner{position:relative!important}
+  html body.reb-home .main-header .header-top .option-block{right:0!important}
+  html body .reb-top .reb-actions>a,
+  html body .reb-top .reb-login>a,
+  html body.reb-home .main-header .header-top .option-block>a{
+    box-sizing:border-box!important;
+    display:inline-flex!important;
+    visibility:visible!important;
+    opacity:1!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:44px!important;
+    min-height:44px!important;
+    max-height:44px!important;
+    margin:0!important;
+    padding:0 20px!important;
+    border-radius:8px!important;
+    background-image:none!important;
+    font-family:Ubuntu,Arial,sans-serif!important;
+    font-size:15px!important;
+    font-style:normal!important;
+    font-weight:800!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    text-align:center!important;
+    text-decoration:none!important;
+    text-transform:none!important;
+    white-space:nowrap!important;
+    box-shadow:none!important;
+    transform:none!important;
+  }
+  html body .reb-top .reb-actions>a[href*="/signup/"],
+  html body .reb-top .reb-login>a[href*="/signup/"],
+  html body.reb-home .main-header .header-top .option-block>a[href*="/signup/"]{
+    width:104px!important;
+    background:#f5b026!important;
+    border:1px solid #f5b026!important;
+    color:#070707!important;
+  }
+  html body .reb-top .reb-actions>a[href*="/login/"],
+  html body .reb-top .reb-login>a[href*="/login/"],
+  html body.reb-home .main-header .header-top .option-block>a[href*="/login/"]{
+    width:92px!important;
+    background:#101312!important;
+    border:1px solid rgba(255,255,255,.45)!important;
+    color:#fff!important;
+  }
+  html body .reb-top a[href*="/signup/"]::before,
+  html body .reb-top a[href*="/signup/"]::after,
+  html body .reb-top a[href*="/login/"]::before,
+  html body .reb-top a[href*="/login/"]::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body.reb-home .main-header .header-top .option-block .language-picker{display:none!important}
+  html body .reb-top .reb-auth-logged-in>.reb-session-account{
+    background:#181b18!important;
+    border:1px solid #a27618!important;
+    color:#fff!important;
+  }
+  html body .reb-top .reb-auth-logged-in>.reb-session-logout{
+    background:#321919!important;
+    border:1px solid #8b3b3b!important;
+    color:#fff!important;
+  }
+}
+</style>
+<style id="reb-payment-feature-check-v90">
+/* V90 — Payment plan feature icons: CSS-drawn check marks, no encoded glyphs. */
+.pay-main-card .pay-plan .plan-features i{
+  position:relative!important;
+  padding-left:22px!important;
+}
+
+.pay-main-card .pay-plan .plan-features i::before{
+  content:""!important;
+  position:absolute!important;
+  left:3px!important;
+  top:50%!important;
+  width:6px!important;
+  height:10px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-right:2px solid #f5a900!important;
+  border-bottom:2px solid #f5a900!important;
+  background:transparent!important;
+  color:transparent!important;
+  font-size:0!important;
+  line-height:0!important;
+  transform:translateY(-60%) rotate(45deg)!important;
+  transform-origin:center!important;
+  box-shadow:none!important;
+}
+
+/* Keep the same clean feature rows on mobile and desktop. */
+@media(max-width:767px){
+  .pay-main-card .pay-plan .plan-features i::before{
+    left:3px!important;
+    width:5px!important;
+    height:9px!important;
+  }
+}
+</style>
+<style id="reb-payment-mobile-header-standard-v91">
+/* V91 — Payment mobile header follows the same standard as public subpages. */
+@media (max-width:767px){
+  html body.reb-payment-page .reb-top{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    width:100%!important;
+  }
+
+  html body.reb-payment-page .reb-top .reb-phone{
+    display:none!important;
+  }
+
+  html body.reb-payment-page .reb-header{
+    box-sizing:border-box!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) 50px!important;
+    align-items:center!important;
+    gap:12px!important;
+    width:100%!important;
+    padding:12px 16px!important;
+    overflow:visible!important;
+  }
+
+  html body.reb-payment-page .reb-header .reb-logo{
+    display:block!important;
+    min-width:0!important;
+    width:auto!important;
+    max-width:220px!important;
+  }
+
+  html body.reb-payment-page .reb-header .reb-logo img{
+    display:block!important;
+    width:min(200px,62vw)!important;
+    max-width:100%!important;
+    height:auto!important;
+  }
+
+  html body.reb-payment-page .reb-header > button.reb-mobile-menu-toggle{
+    box-sizing:border-box!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:5px!important;
+    width:50px!important;
+    height:48px!important;
+    min-width:50px!important;
+    min-height:48px!important;
+    margin:0!important;
+    padding:0!important;
+    border:1px solid rgba(255,177,22,.45)!important;
+    border-radius:11px!important;
+    background:#10130f!important;
+    box-shadow:0 8px 18px rgba(0,0,0,.12)!important;
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+  }
+
+  html body.reb-payment-page .reb-header > button.reb-mobile-menu-toggle span{
+    display:block!important;
+    width:22px!important;
+    height:2px!important;
+    min-height:2px!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:2px!important;
+    background:#ffb11b!important;
+    opacity:1!important;
+  }
+
+  html body.reb-payment-page .reb-header > button.reb-mobile-menu-toggle.is-open span:nth-child(1){
+    transform:translateY(7px) rotate(45deg)!important;
+  }
+  html body.reb-payment-page .reb-header > button.reb-mobile-menu-toggle.is-open span:nth-child(2){
+    opacity:0!important;
+  }
+  html body.reb-payment-page .reb-header > button.reb-mobile-menu-toggle.is-open span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg)!important;
+  }
+}
+</style>
+<style id="reb-payment-desktop-top-align-v92">
+/* V92 — Payment desktop top bar aligns exactly with Logo (left) and Menu Bar (right). */
+@media (min-width:768px){
+  html body.reb-payment-page .reb-top{
+    box-sizing:border-box!important;
+    width:100%!important;
+    padding:12px 7vw!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:18px!important;
+    position:relative!important;
+  }
+
+  html body.reb-payment-page .reb-top .reb-phone{
+    display:flex!important;
+    align-items:center!important;
+    margin:0!important;
+    padding:0!important;
+    position:static!important;
+    transform:none!important;
+  }
+
+  html body.reb-payment-page .reb-top .reb-actions,
+  html body.reb-payment-page .reb-top .reb-login{
+    right:7vw!important;
+  }
+}
+</style>
+<style id="reb-payment-mobile-auth-title-standard-v93">
+/* V93 — Payment mobile auth now uses the exact approved Home-page standard. */
+@media (max-width:767px){
+
+  html body.reb-payment-page .reb-top{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    width:100%!important;
+    height:50px!important;
+    min-height:50px!important;
+    max-height:50px!important;
+    margin:0!important;
+    padding:4px 11px!important;
+    overflow:hidden!important;
+    background:#101312!important;
+  }
+
+  html body.reb-payment-page .reb-top > .reb-phone{
+    display:none!important;
+  }
+
+  /* Logged-out: EXACT shared Home-page Sign Up / Log In geometry. */
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-actions,
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-login{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    align-items:center!important;
+    justify-content:initial!important;
+    flex:0 0 auto!important;
+    width:238px!important;
+    min-width:238px!important;
+    max-width:68vw!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0 0 0 auto!important;
+    padding:4px!important;
+    gap:5px!important;
+    border:1px solid rgba(244,174,27,.34)!important;
+    border-radius:11px!important;
+    background:#111514!important;
+    background-image:none!important;
+    box-shadow:none!important;
+    transform:none!important;
+    overflow:hidden!important;
+  }
+
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-actions > a,
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-login > a{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:32px!important;
+    min-height:32px!important;
+    max-height:32px!important;
+    margin:0!important;
+    padding:6px 9px!important;
+    border-radius:7px!important;
+    font-family:Ubuntu,Arial,sans-serif!important;
+    font-size:11px!important;
+    font-style:normal!important;
+    font-weight:800!important;
+    line-height:20px!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+    text-align:center!important;
+    box-shadow:none!important;
+    transform:none!important;
+  }
+
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-actions > a[href*="/signup/"],
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-login > a[href*="/signup/"]{
+    border:1px solid #f5ab1b!important;
+    background:#ffb321!important;
+    background-image:none!important;
+    color:#0c0f0e!important;
+  }
+
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-actions > a[href*="/login/"],
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-login > a[href*="/login/"]{
+    border:1px solid rgba(255,255,255,.28)!important;
+    background:#101312!important;
+    background-image:none!important;
+    color:#fff!important;
+  }
+
+  /* Logged-in: preserve the approved Username / Log Out mobile standard. */
+  html.reb-client-logged-in body.reb-payment-page .reb-top > .reb-actions.reb-auth-logged-in,
+  html.reb-client-logged-in body.reb-payment-page .reb-top > .reb-login.reb-auth-logged-in{
+    box-sizing:border-box!important;
+    position:static!important;
+    inset:auto!important;
+    transform:none!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    align-items:center!important;
+    width:264px!important;
+    min-width:264px!important;
+    max-width:264px!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0 12px 0 auto!important;
+    padding:3px!important;
+    gap:5px!important;
+    background:#111514!important;
+    background-image:none!important;
+    border:1px solid rgba(245,176,38,.38)!important;
+    border-radius:10px!important;
+    box-shadow:none!important;
+    overflow:hidden!important;
+  }
+
+  html.reb-client-logged-in body.reb-payment-page .reb-top .reb-auth-logged-in > .reb-session-account,
+  html.reb-client-logged-in body.reb-payment-page .reb-top .reb-auth-logged-in > .reb-session-logout{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:34px!important;
+    min-height:34px!important;
+    max-height:34px!important;
+    margin:0!important;
+    padding:0 6px!important;
+    border-radius:7px!important;
+    font-family:Ubuntu,Arial,sans-serif!important;
+    font-size:10px!important;
+    font-weight:800!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    box-shadow:none!important;
+    transform:none!important;
+    background-image:none!important;
+  }
+
+  html.reb-client-logged-in body.reb-payment-page .reb-top .reb-auth-logged-in > .reb-session-account{
+    color:#fff!important;
+    background:#181b18!important;
+    border:1px solid #a27618!important;
+  }
+
+  html.reb-client-logged-in body.reb-payment-page .reb-top .reb-auth-logged-in > .reb-session-logout{
+    color:#fff!important;
+    background:#321919!important;
+    border:1px solid #8b3b3b!important;
+  }
+
+  html body.reb-payment-page .reb-top a::before,
+  html body.reb-payment-page .reb-top a::after{
+    content:none!important;
+    display:none!important;
+  }
+
+  /* Smaller, cleaner Payment title on phones. */
+  html body.reb-payment-page main.pay-hero .pay-title h1{
+    font-size:27px!important;
+    line-height:1.06!important;
+    letter-spacing:-.035em!important;
+    margin:0!important;
+  }
+
+  html body.reb-payment-page main.pay-hero .pay-title p{
+    margin-top:8px!important;
+    font-size:14px!important;
+    line-height:1.45!important;
+  }
+}
+
+@media (max-width:374px){
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-actions,
+  html:not(.reb-client-logged-in) body.reb-payment-page .reb-top > .reb-login{
+    width:min(212px,70vw)!important;
+    min-width:0!important;
+  }
+
+  html.reb-client-logged-in body.reb-payment-page .reb-top > .reb-actions.reb-auth-logged-in,
+  html.reb-client-logged-in body.reb-payment-page .reb-top > .reb-login.reb-auth-logged-in{
+    width:248px!important;
+    min-width:248px!important;
+    max-width:248px!important;
+    margin-right:10px!important;
+  }
+
+  html body.reb-payment-page main.pay-hero .pay-title h1{
+    font-size:24px!important;
+  }
+}
+</style>
+<style id="reb-v82-payment-legacy-header-desktop-hide">
+@media (min-width:901px){
+  html body.reb-v73-payment > .reb-top,
+  html body.reb-v73-payment > header.reb-header{
+    display:none!important;
+    visibility:hidden!important;
+    position:absolute!important;
+    width:0!important;
+    height:0!important;
+    min-width:0!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+    pointer-events:none!important;
+  }
+}
+</style>
+<script defer="" src="/assets/js/reb-live-chat-center.js?v=20260917-phase1f"></script>
+<script defer="" src="/assets/js/reb-global-mobile-footer-d20f57.js?v=D20F57"></script>
+<script src="/assets/js/reb-desktop-header-auth-v62.js?v=20260923-v79-account-style"></script>
+<script id="reb-floating-chat-hard-core-loader" defer src="/assets/js/reb-floating-chat-hard-core.js?v=20260925-v121"></script>
+</body>
+</html>

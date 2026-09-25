@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" name="viewport"/>
+<script id="reb-client-core-phase1f" src="/assets/js/reb-client-core-phase1f.js?v=20260917-phase1f"></script>
+<meta content="no-store, no-cache, must-revalidate, max-age=0" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta content="#1d1f23" name="theme-color"/>
+<title>ReachEmpireBot Customer Service</title>
+<meta content="MOBILE-CHAT-SYNC-V3-20260915" name="reb-customer-service-revision"/>
+<style>
+:root{
+  --gold:#f5b326;
+  --ink:#18212b;
+  --blue1:#087fa8;
+  --blue2:#0aa0cb;
+  --font:Ubuntu,"Noto Sans Khmer","Khmer OS",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:100%;height:100%;min-height:100%;overflow:hidden;background:#f4f6f8;font-family:var(--font)}
+body{position:fixed;inset:0}
+.reb-customer-chat-launcher{display:none!important}
+.reb-chat-shell,.reb-chat-shell.open{
+  position:fixed!important;inset:0!important;left:0!important;top:0!important;right:0!important;bottom:0!important;
+  width:100vw!important;height:100%!important;min-width:100vw!important;min-height:100%!important;max-width:100vw!important;max-height:100%!important;
+  margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden!important;
+  display:grid!important;grid-template-rows:68px auto auto minmax(0,1fr) auto auto!important;background:#f4f6f8!important;color:var(--ink)!important;z-index:1!important;
+}
+.reb-chat-shell,.reb-chat-shell *{box-sizing:border-box;font-family:var(--font)!important}
+.reb-chat-header{grid-row:1;display:flex!important;align-items:center!important;gap:10px!important;padding:8px 12px!important;background:#1d1f23!important;color:#fff!important}
+.reb-chat-close{order:-1;width:42px!important;height:42px!important;flex:0 0 42px!important;border:0!important;background:transparent!important;color:#fff!important;font-size:0!important;border-radius:12px!important}
+.reb-chat-close:before{content:"←";font-size:31px;line-height:42px;font-weight:400}
+.reb-chat-avatar{order:2;width:42px!important;height:42px!important;flex:0 0 42px!important;border-radius:12px!important;background:var(--gold)!important;display:flex!important;align-items:center!important;justify-content:center!important;color:#111!important}
+.reb-chat-headcopy{order:1;flex:1!important;min-width:0!important}.reb-chat-headcopy strong{display:block;font-size:15px!important;font-weight:800!important;line-height:1.15}.reb-chat-headcopy span{display:block;margin-top:3px;font-size:10px!important;color:#cbd0d5!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reb-chat-progress{grid-row:2;display:none;height:2px;background:#eee}.reb-chat-progress.show{display:block}
+.reb-chat-status{grid-row:3;display:none;padding:5px 10px;background:#fff7df;color:#7a5a00;font-size:10px}.reb-chat-status.show{display:block}.reb-chat-status.error{background:#fff0f0;color:#a82727}
+.reb-chat-body{grid-row:4;min-height:0!important;height:auto!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch;padding:12px 10px 14px!important;background:linear-gradient(180deg,#f7f8fa,#f2f5f7)!important}
+.reb-chat-empty,.reb-chat-login{height:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;padding:20px!important;color:#7a858f!important}.reb-chat-empty strong{color:#27313b!important;margin-bottom:6px!important}.reb-chat-empty p,.reb-chat-login p{margin:0!important;font-size:11px!important;line-height:1.5!important}.reb-empty-icon{width:48px!important;height:48px!important;border-radius:14px!important;background:#fff1c4!important;color:#b77b00!important;display:flex!important;align-items:center!important;justify-content:center!important;margin-bottom:12px!important}
+.reb-chat-day{text-align:center;margin:7px 0}.reb-chat-day span{display:inline-block;background:#e7ebef;border-radius:999px;padding:3px 7px;font-size:9px;color:#6f7983}
+.reb-chat-row{display:flex;margin:7px 0}.reb-chat-row.user{justify-content:flex-end}.reb-chat-row.admin{justify-content:flex-start}.reb-chat-bubble{display:inline-block;width:auto;max-width:88%;padding:8px 10px;border-radius:15px;overflow:hidden}.reb-chat-row.user .reb-chat-bubble{background:linear-gradient(145deg,var(--blue1),var(--blue2));color:#fff;border-bottom-right-radius:5px}.reb-chat-row.admin .reb-chat-bubble{background:#fff;color:#202832;border:1px solid #e3e8ec;border-bottom-left-radius:5px}.reb-chat-sender{font-size:10px;font-weight:800;margin-bottom:4px;color:#a87600}.reb-chat-row.user .reb-chat-sender{color:#e9fbff;text-align:right}.reb-chat-text{font-size:12px;line-height:1.45;white-space:pre-wrap;word-break:break-word}.reb-chat-meta{margin-top:4px;display:flex;justify-content:flex-end;gap:4px;font-size:9px;color:#919ba4}.reb-chat-row.user .reb-chat-meta{color:rgba(255,255,255,.8)}
+.reb-chat-inline-link{color:#eaffff;text-decoration:underline;overflow-wrap:anywhere}.reb-chat-row.admin .reb-chat-inline-link{color:#136fca}
+.reb-chat-media{display:block;width:max-content;max-width:min(82vw,340px);margin-top:5px;border-radius:10px;overflow:hidden}.reb-chat-media img,.reb-chat-media video{display:block;max-width:min(82vw,340px);max-height:42vh;width:auto;height:auto;object-fit:contain;border-radius:10px}.reb-chat-media audio{display:block;width:min(78vw,320px);max-width:100%;height:40px}.reb-chat-file-card{display:flex;align-items:center;gap:7px;margin-top:5px;width:min(80vw,330px);max-width:100%;padding:7px;border-radius:10px;background:rgba(255,255,255,.1);border:1px solid rgba(150,160,170,.25)}.reb-chat-file-icon{width:31px;height:31px;flex:0 0 31px;border-radius:8px;background:var(--gold);display:flex;align-items:center;justify-content:center}.reb-chat-file-copy{min-width:0;flex:1}.reb-chat-file-copy strong{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}.reb-chat-file-copy span{font-size:8.5px;color:#8e98a3;display:block}.reb-chat-file-card button{border:0;background:#111;color:#fff;border-radius:7px;padding:6px 7px;font-size:9px}
+.reb-chat-rich-preview{margin-top:6px}.reb-chat-preview-card{display:flex;width:min(80vw,330px);max-width:100%;min-height:62px;border-radius:10px;overflow:hidden;text-decoration:none;border:1px solid rgba(150,160,170,.25);background:rgba(255,255,255,.09);color:inherit}.reb-chat-row.admin .reb-chat-preview-card{background:#f7f8fa;color:#1f2933}.reb-chat-preview-card>img{width:76px;height:64px;object-fit:cover;flex:0 0 76px}.reb-chat-preview-thumb-fallback{width:64px;flex:0 0 64px;display:flex;align-items:center;justify-content:center;background:#dff5fb;color:#087fa8}.reb-chat-preview-copy{min-width:0;flex:1;padding:7px}.reb-chat-preview-copy strong{font-size:10px;line-height:1.25}.reb-chat-preview-copy small{display:block;margin-top:3px;font-size:8px;opacity:.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-chat-preview-open{width:26px;display:flex;align-items:center;justify-content:center}
+.reb-chat-attach-preview{grid-row:5;display:none;padding:6px 8px;border-top:1px solid #e7e9ed;background:#fff;font-size:10px}.reb-chat-attach-preview.show{display:flex;align-items:center;justify-content:space-between}
+.reb-chat-composer{grid-row:6;background:#fff;border-top:1px solid #e5e9ed;padding:8px 10px calc(10px + env(safe-area-inset-bottom,0px))!important;box-shadow:0 -6px 18px rgba(17,24,39,.08)}.reb-chat-tools{display:flex;align-items:center;gap:8px;margin-bottom:8px;overflow:visible}.reb-chat-tool{position:relative;width:40px;height:40px;flex:0 0 40px;border:1px solid #e2e6ea;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#526170;padding:0;cursor:pointer}.reb-chat-tool svg{width:18px;height:18px;pointer-events:none}.reb-chat-mic{color:#a62f2f;background:#fff8f8;border-color:#efd5d5;touch-action:none}.reb-chat-mic.recording{background:#d92d2d;color:#fff}.reb-chat-record-label{display:none;color:#c43333;font-size:9px;font-weight:800}.reb-chat-mic.recording~.reb-chat-record-label{display:inline}
+.reb-chat-compose-row{display:flex;align-items:center;gap:8px}.reb-chat-text-indicator{width:42px;height:48px;flex:0 0 42px;border:1px solid #e3e7eb;background:#f7f8fa;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#64717e}.reb-chat-input{flex:1;min-height:48px;max-height:96px;resize:none;border:1px solid #dfe4e8;background:#f8f9fa;border-radius:14px;padding:13px;font-size:14px;outline:none}.reb-chat-send{width:48px!important;height:48px!important;flex:0 0 48px!important;border:0!important;border-radius:50%!important;background:#f5b326!important;color:#111!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;box-shadow:0 6px 14px rgba(245,179,38,.28)!important;padding:0!important}.reb-chat-send svg{width:20px!important;height:20px!important;stroke:#111!important;stroke-width:2.2!important}
+.reb-chat-record-label{font-size:9px}
+.reb-chat-native-picker-panel[hidden]{display:none!important}.reb-chat-native-picker-panel{margin:0 0 7px;padding:8px;border:1px solid #dfe5ea;border-radius:11px;background:#f8fafb;box-shadow:0 6px 18px rgba(0,0,0,.08)}.reb-chat-native-picker-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}.reb-chat-native-picker-head strong{font-size:11px;color:#28333d}.reb-chat-native-picker-close{width:26px;height:26px;border:0;border-radius:7px;background:#eceff2;color:#333;font-size:16px;cursor:pointer}.reb-chat-native-picker-row{display:block;margin-top:6px}.reb-chat-native-picker-row span{display:block;margin-bottom:5px;font-size:10.5px;font-weight:700;color:#46525e}.reb-chat-native-picker-row input[type=file]{position:static!important;display:block!important;width:100%!important;height:auto!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;font-size:10px;color:#333;background:transparent}
+</style>
+<link href="/assets/css/reb-global-font-standard-d20d4.css?v=D20D4" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-unified-d20f28.css?v=20260920-d20f33-notification-label" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-mobile-hamburger-d20f29.css?v=20260919-d20f29" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-social-mobile-d20f34.css?v=20260924-v102-verified-mobile" media="(max-width: 767px)" rel="stylesheet"/>
+<link href="/assets/css/reb-global-mobile-footer-d20f47.css?v=D20F73" media="(max-width: 767px)" rel="stylesheet"/>
+<!-- REB DESIGN SEPARATION: shared logic, isolated visual layers -->
+<link href="/assets/design/shared/shared-core.css?v=SEP1" rel="stylesheet"/>
+<link href="/assets/design/desktop/desktop.css?v=V43" media="(min-width: 768px)" rel="stylesheet"/>
+<link href="/assets/design/mobile/mobile.css?v=SEP1" media="(max-width: 767px)" rel="stylesheet"/>
+</head>
+<body class="reb-customer-service-page">
+<script defer="" src="/assets/js/reb-live-chat-center.js?v=20260917-phase1f"></script>
+<script src="/assets/js/reb-client-access-enforcement-v1.js?v=D20F"></script>
+<script src="/assets/js/reb-mobile-hamburger-d20f29.js?v=20260919-d20f29"></script>
+<script defer="" src="/assets/js/reb-global-mobile-footer-d20f57.js?v=D20F57"></script>
+<script defer src="/assets/js/reb-call-push-v41.js?v=20260925-v41"></script>
+
+<script id="reb-floating-chat-hard-core-loader" defer src="/assets/js/reb-floating-chat-hard-core.js?v=20260925-v121"></script>
+</body>
+</html>
