@@ -1,0 +1,146 @@
+/* ReachEmpireBot V78
+   Exact shared mobile Sign Up / Login geometry copied from the Home page.
+   This file intentionally keeps its V74 filename because every current page
+   already loads it last. Desktop is intentionally unchanged. */
+@media (max-width: 767px) {
+  html body.reb-trade-account-page div.reb-top {
+    height: 50px !important;
+    min-height: 50px !important;
+    padding: 4px 11px !important;
+  }
+
+  html body .reb-top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    padding: 4px 11px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .reb-top > .reb-phone {
+    display: none !important;
+  }
+
+  html body div.reb-top > div.reb-actions,
+  html body div.reb-top > div.reb-login {
+    position: relative !important;
+    inset: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: center !important;
+    justify-content: initial !important;
+    flex: 0 0 auto !important;
+    width: 238px !important;
+    max-width: 68vw !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    margin: 0 0 0 auto !important;
+    padding: 4px !important;
+    gap: 5px !important;
+    border: 1px solid rgba(244, 174, 27, 0.34) !important;
+    border-radius: 11px !important;
+    background: #111514 !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    overflow: hidden !important;
+    contain: layout paint !important;
+    -webkit-box-reflect: none !important;
+  }
+
+  /* Stop legacy mobile rules from painting a second auth row underneath. */
+  html body div.reb-top > div.reb-actions::before,
+  html body div.reb-top > div.reb-actions::after,
+  html body div.reb-top > div.reb-login::before,
+  html body div.reb-top > div.reb-login::after,
+  html body div.reb-top > div.reb-actions > a::before,
+  html body div.reb-top > div.reb-actions > a::after,
+  html body div.reb-top > div.reb-login > a::before,
+  html body div.reb-top > div.reb-login > a::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  html body div.reb-top > div.reb-actions > :nth-child(n + 3),
+  html body div.reb-top > div.reb-login > :nth-child(n + 3) {
+    display: none !important;
+  }
+
+  html body div.reb-top > div.reb-actions > a,
+  html body div.reb-top > div.reb-login > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    margin: 0 !important;
+    padding: 6px 9px !important;
+    border-radius: 7px !important;
+    box-sizing: border-box !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    line-height: 20px !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    transform: none !important;
+    -webkit-box-reflect: none !important;
+  }
+
+  html body .reb-top > .reb-actions > a:first-child,
+  html body .reb-top > .reb-login > a:first-child {
+    border-color: #f5ab1b !important;
+    background: #ffb321 !important;
+    color: #0c0f0e !important;
+  }
+
+  html body .reb-top > .reb-actions > a:last-child,
+  html body .reb-top > .reb-login > a:last-child {
+    border-color: rgba(255, 255, 255, 0.28) !important;
+    background: #101312 !important;
+    color: #fff !important;
+  }
+
+  /* Trade Account carried an older 350px left-aligned rule with higher
+     specificity. These selectors ensure it uses the same Home standard. */
+  html body.reb-trade-account-page div.reb-top > div.reb-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-content: initial !important;
+    width: 238px !important;
+    max-width: 68vw !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    margin: 0 0 0 auto !important;
+    padding: 4px !important;
+    gap: 5px !important;
+  }
+
+  html body.reb-trade-account-page div.reb-top > div.reb-actions > a {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    padding: 6px 9px !important;
+    font-size: 11px !important;
+  }
+
+  /* Match the Trade Account top strip to the exact Home-page geometry. */
+  html body.reb-trade-account-page div.reb-top {
+    height: 50px !important;
+    min-height: 50px !important;
+    padding: 4px 11px !important;
+  }
+}
+
+@media (max-width: 374px) {
+  html body div.reb-top > div.reb-actions,
+  html body div.reb-top > div.reb-login,
+  html body.reb-trade-account-page div.reb-top > div.reb-actions {
+    width: min(212px, 70vw) !important;
+  }
+}
