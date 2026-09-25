@@ -1,0 +1,291 @@
+/* EA Bot Market — compact, content-driven mobile layout. Desktop stays unchanged. */
+.reb-market-pagination {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  margin: 26px auto 0;
+}
+
+.reb-market-pagination.show {
+  display: flex;
+}
+
+.reb-page-btn {
+  min-width: 42px;
+  height: 42px;
+  padding: 0 13px;
+  border: 1px solid #eadbc0;
+  border-radius: 8px;
+  background: #fff;
+  color: #17130b;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.reb-page-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: #f5b026;
+}
+
+.reb-page-btn.active {
+  border-color: #f5b026;
+  background: #f5b026;
+  color: #080808;
+}
+
+.reb-page-btn:disabled {
+  cursor: not-allowed;
+  opacity: .42;
+}
+
+.reb-page-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 42px;
+  color: #776a55;
+  font-weight: 900;
+}
+
+@media (max-width: 640px) {
+  body.reb-markets-page .reb-store {
+    padding: 26px 14px 44px !important;
+  }
+
+  body.reb-markets-page .reb-section-title {
+    margin-bottom: 16px !important;
+  }
+
+  body.reb-markets-page .reb-section-title > span {
+    margin-bottom: 10px !important;
+    padding: 8px 20px !important;
+    font-size: 11px !important;
+  }
+
+  body.reb-markets-page .reb-section-title h2 {
+    margin: 0 0 6px !important;
+    font-size: clamp(27px, 7.6vw, 32px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -.02em !important;
+  }
+
+  body.reb-markets-page .reb-section-title p {
+    margin: 0 !important;
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+
+  body.reb-markets-page .reb-market-controls {
+    margin: 0 0 14px !important;
+    padding: 10px !important;
+    gap: 10px !important;
+    border: 1px solid #eadfca !important;
+    border-radius: 12px !important;
+    background: #fff !important;
+    box-shadow: 0 12px 30px rgba(32, 25, 12, .07) !important;
+  }
+
+  body.reb-markets-page .reb-market-search {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 0 13px !important;
+    gap: 10px !important;
+    border: 1px solid #e9dcc3 !important;
+    border-radius: 9px !important;
+    background: #fffaf1 !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9) !important;
+    overflow: hidden !important;
+  }
+
+  body.reb-markets-page .reb-market-search i {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    flex: 0 0 auto !important;
+    color: #b97800 !important;
+    font-size: 16px !important;
+  }
+
+  body.reb-markets-page .reb-market-search input {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    min-width: 0 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #1c1914 !important;
+  }
+
+  body.reb-markets-page .reb-market-search input:focus {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body.reb-markets-page .reb-market-search input::placeholder {
+    color: #7c756b !important;
+    opacity: 1 !important;
+  }
+
+  body.reb-markets-page .reb-market-filters {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 4px !important;
+    width: 100% !important;
+    padding: 4px !important;
+    border: 1px solid #eee4d2 !important;
+    border-radius: 10px !important;
+    background: #faf7f1 !important;
+  }
+
+  body.reb-markets-page .reb-filter-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 38px !important;
+    padding: 0 5px !important;
+    border: 0 !important;
+    border-radius: 7px !important;
+    background: transparent !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  body.reb-markets-page .reb-filter-btn.active {
+    background: #f5b026 !important;
+    color: #090806 !important;
+    box-shadow: 0 5px 12px rgba(245, 176, 38, .24) !important;
+  }
+
+  body.reb-markets-page .reb-market-count {
+    margin: 0 2px 10px !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+  }
+
+  body.reb-markets-page .reb-products {
+    grid-auto-rows: auto !important;
+    gap: 12px !important;
+    align-items: start !important;
+  }
+
+  body.reb-markets-page .reb-products .reb-product {
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: start !important;
+    overflow: hidden !important;
+  }
+
+  body.reb-markets-page .reb-ea-card-link {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  body.reb-markets-page .reb-ea-card-link .reb-product-body,
+  body.reb-markets-page .reb-products .reb-product-body.reb-compact-ea-body {
+    height: auto !important;
+    min-height: 0 !important;
+    grid-template-rows: auto auto auto !important;
+    align-content: start !important;
+    gap: 10px !important;
+    padding: 13px !important;
+  }
+
+  body.reb-markets-page .reb-ea-card-head {
+    grid-template-columns: 88px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+
+  body.reb-markets-page .reb-ea-thumb {
+    width: 88px !important;
+    height: 88px !important;
+  }
+
+  body.reb-markets-page .reb-products .reb-product .reb-ea-head-copy h3 {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 42px !important;
+    margin: 0 0 6px !important;
+    font-size: 17px !important;
+    line-height: 1.18 !important;
+  }
+
+  body.reb-markets-page .reb-products .reb-ea-price-line {
+    min-height: 0 !important;
+  }
+
+  body.reb-markets-page .reb-products .reb-ea-price-line strong {
+    font-size: 23px !important;
+  }
+
+  body.reb-markets-page .reb-products .reb-product .reb-ea-desc {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 42px !important;
+    -webkit-line-clamp: 2 !important;
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  body.reb-markets-page .reb-card-view-hint {
+    margin-top: 0 !important;
+    padding-top: 9px !important;
+    font-size: 12px !important;
+  }
+
+  body.reb-markets-page .reb-market-pagination {
+    gap: 6px !important;
+    margin-top: 18px !important;
+  }
+
+  body.reb-markets-page .reb-page-btn {
+    min-width: 38px !important;
+    height: 38px !important;
+    padding: 0 10px !important;
+    font-size: 12px !important;
+  }
+
+  body.reb-markets-page .reb-page-nav {
+    flex: 1 1 118px !important;
+    max-width: 150px !important;
+  }
+
+  body.reb-markets-page .reb-page-ellipsis {
+    height: 38px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  body.reb-markets-page .reb-market-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body.reb-markets-page .reb-ea-card-head {
+    grid-template-columns: 78px minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  body.reb-markets-page .reb-ea-thumb {
+    width: 78px !important;
+    height: 78px !important;
+  }
+}

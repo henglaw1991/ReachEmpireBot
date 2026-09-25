@@ -1,0 +1,175 @@
+/* ReachEmpire Social D11 — Community = Group. Uses the shared Website/Social font contract. */
+.reb-community-page-wrap{width:min(1320px,calc(100% - 48px));margin:28px auto 90px}.reb-community-hero{background:#fff;border:1px solid #dfe3e8;border-radius:22px;overflow:hidden;box-shadow:0 14px 34px rgba(17,24,39,.05)}
+.reb-community-cover{height:260px;position:relative;overflow:hidden;background:radial-gradient(circle at 74% 32%,rgba(255,180,31,.32),transparent 26%),linear-gradient(115deg,#080b0d 0%,#11171b 52%,#2d2108 100%);display:flex;align-items:center;padding:38px 52px;color:#fff}.reb-community-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.12),transparent 55%,rgba(0,0,0,.18))}.reb-community-cover>img{position:absolute;right:7%;bottom:-42px;height:275px;filter:drop-shadow(0 18px 20px rgba(0,0,0,.35));z-index:1}.reb-community-cover-copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:8px}.reb-community-cover-copy span{font:700 14px/1 var(--reb-title-font,"Ubuntu",sans-serif);color:#ffb41f;letter-spacing:.06em}.reb-community-cover-copy strong{font:700 38px/1.15 var(--reb-title-font,"Ubuntu",sans-serif);max-width:620px}
+.reb-community-identity-row{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:20px 28px}.reb-community-avatar{width:92px;height:92px;border-radius:50%;background:#fff6dd;border:5px solid #fff;margin-top:-54px;z-index:3;box-shadow:0 7px 18px rgba(0,0,0,.14);overflow:hidden}.reb-community-avatar img{width:100%;height:100%;object-fit:cover}.reb-community-identity-copy h1{margin:0 0 8px;font:700 30px/1.1 var(--reb-title-font,"Ubuntu",sans-serif);color:#111}.reb-community-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;color:#657080;font-size:14px}.reb-community-meta span{display:inline-flex;align-items:center;gap:6px}.reb-community-meta .is-online{color:#128743}.reb-community-chat-cta{display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:#111513;color:#fff;border:1px solid #1b211e;border-radius:12px;padding:12px 17px;font:700 14px/1 var(--reb-title-font,"Ubuntu",sans-serif)}.reb-community-chat-cta:hover{background:#ffb41f;color:#101010}
+.reb-community-tabs{display:flex;gap:6px;border-top:1px solid #edf0f2;padding:0 24px}.reb-community-tabs button,.reb-community-tabs a{appearance:none;border:0;background:transparent;color:#596473;text-decoration:none;padding:16px 18px;display:inline-flex;align-items:center;gap:8px;font:700 14px/1 var(--reb-title-font,"Ubuntu",sans-serif);border-bottom:3px solid transparent;cursor:pointer}.reb-community-tabs button.active,.reb-community-tabs a.active{color:#a46a00;border-bottom-color:#ffb41f}.reb-community-tabs button:hover,.reb-community-tabs a:hover{color:#111}
+.reb-community-view{margin-top:22px}.reb-community-content-grid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px;align-items:start}.reb-community-main-column{min-width:0}.reb-community-main-column>.reb-social-card,.reb-community-main-column>.reb-social-feed-section{margin-bottom:20px}.reb-community-right-column{display:flex;flex-direction:column;gap:16px;position:sticky;top:18px}.reb-community-account-card{display:grid!important;grid-template-columns:auto 1fr;grid-template-areas:"avatar copy" "action action";gap:10px 12px;padding:18px!important}.reb-community-account-card .reb-social-avatar{grid-area:avatar}.reb-community-account-card .reb-social-account-copy{grid-area:copy}.reb-community-account-card .reb-social-small-btn{grid-area:action;width:100%;text-align:center}
+.reb-community-side-card,.reb-community-section-card{background:#fff;border:1px solid #dfe3e8;border-radius:18px;padding:20px;box-shadow:0 10px 26px rgba(17,24,39,.04)}.reb-community-side-card h3,.reb-community-section-card h3{margin:0 0 12px;font:700 18px/1.2 var(--reb-title-font,"Ubuntu",sans-serif)}.reb-community-side-card p{margin:0;color:#687483;line-height:1.6}.reb-community-side-meta{margin-top:16px;display:flex;flex-direction:column;gap:10px}.reb-community-side-meta span{display:flex;align-items:center;gap:9px;color:#4f5c69}.reb-community-side-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.reb-community-side-head button{border:0;background:transparent;color:#a66b00;font-weight:700;cursor:pointer}.reb-community-member-preview{display:flex;align-items:center;gap:0;min-height:50px;margin-top:10px}.reb-community-member-preview .reb-community-preview-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;border:3px solid #fff;margin-left:-8px;background:#f2f4f6;display:grid;place-items:center;font-weight:700}.reb-community-member-preview .reb-community-preview-avatar:first-child{margin-left:0}.reb-community-preview-avatar img{width:100%;height:100%;object-fit:cover}.reb-community-side-chat{display:flex;align-items:center;gap:13px;text-decoration:none;background:#111513;color:#fff;border-radius:16px;padding:16px 18px}.reb-community-side-chat>i{width:40px;height:40px;border-radius:12px;background:#ffb41f;color:#111;display:grid;place-items:center}.reb-community-side-chat div{display:flex;flex-direction:column;gap:3px}.reb-community-side-chat strong{font-family:var(--reb-title-font,"Ubuntu",sans-serif)}.reb-community-side-chat span{color:#c8cfd4;font-size:12px}
+.reb-community-section-card{padding:24px}.reb-community-section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:20px}.reb-community-section-head h2,.reb-community-about-grid h2{margin:4px 0 0;font:700 26px/1.15 var(--reb-title-font,"Ubuntu",sans-serif)}.reb-community-member-search{width:min(360px,100%);height:44px;border:1px solid #d9dee4;background:#f7f8f9;border-radius:12px;display:flex;align-items:center;gap:10px;padding:0 14px;color:#6c7784}.reb-community-member-search input{border:0;outline:0;background:transparent;width:100%;font:400 15px/1.2 var(--reb-text-font,"IBM Plex Sans",sans-serif)}.reb-community-members-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.reb-community-member-card{border:1px solid #e1e5e9;border-radius:15px;padding:16px;display:flex;align-items:center;gap:12px;background:#fff}.reb-community-member-avatar{width:52px;height:52px;border-radius:50%;overflow:hidden;background:#f4f5f6;display:grid;place-items:center;font-weight:700;flex:0 0 auto}.reb-community-member-avatar img{width:100%;height:100%;object-fit:cover}.reb-community-member-copy{min-width:0;display:flex;flex-direction:column}.reb-community-member-copy strong{font:700 15px/1.2 var(--reb-title-font,"Ubuntu",sans-serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-community-member-copy span{font-size:12px;color:#7a8490;margin-top:3px}.reb-community-inline-state{padding:20px;text-align:center;color:#71808e}.reb-community-about-grid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px}.reb-community-about-grid p{color:#657180;line-height:1.7}.reb-community-about-row{display:flex;gap:14px;margin-top:18px}.reb-community-about-row>i{width:40px;height:40px;border-radius:12px;background:#fff3d4;color:#a76b00;display:grid;place-items:center;flex:0 0 auto}.reb-community-about-row div{display:flex;flex-direction:column;gap:4px}.reb-community-about-row span{color:#6a7580}.reb-community-tool-link{display:flex;align-items:center;gap:10px;text-decoration:none;color:#182028;padding:12px;border-radius:10px}.reb-community-tool-link:hover{background:#f7f4ec;color:#a66b00}
+@media(max-width:1199px){.reb-community-page-wrap{width:min(100% - 28px,900px);margin-top:18px}.reb-community-content-grid,.reb-community-about-grid{grid-template-columns:1fr}.reb-community-right-column{position:static;display:grid;grid-template-columns:1fr 1fr}.reb-community-account-card{display:none!important}.reb-community-cover{height:220px}.reb-community-members-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.reb-community-page-wrap{width:100%;margin:0 0 80px}.reb-community-hero{border-radius:0;border-left:0;border-right:0}.reb-community-cover{height:170px;padding:24px}.reb-community-cover>img{height:180px;right:-10px;bottom:-22px}.reb-community-cover-copy strong{font-size:25px;max-width:65%}.reb-community-identity-row{grid-template-columns:auto 1fr;padding:15px}.reb-community-avatar{width:70px;height:70px;margin-top:-40px}.reb-community-identity-copy h1{font-size:22px}.reb-community-chat-cta{grid-column:1/-1;justify-content:center}.reb-community-tabs{overflow-x:auto;padding:0 8px}.reb-community-tabs button,.reb-community-tabs a{white-space:nowrap;padding:14px 13px}.reb-community-view{margin-top:12px}.reb-community-content-grid{display:block}.reb-community-right-column{display:none}.reb-community-main-column>.reb-social-card{border-radius:0}.reb-community-section-card{border-radius:0;border-left:0;border-right:0}.reb-community-section-head{align-items:stretch;flex-direction:column}.reb-community-member-search{width:100%}.reb-community-members-grid{grid-template-columns:1fr}.reb-community-about-grid{display:block}.reb-community-about-grid>aside{margin-top:12px}}
+
+
+/* ==========================================================================
+   D12 — Community Members Directory + Community Admin Center
+   Desktop-first list/detail member management. Existing mobile group layout is
+   preserved; new controls collapse cleanly below desktop widths.
+   ========================================================================== */
+.reb-community-member-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0 12px;border-top:1px solid #edf0f2}
+.reb-community-member-summary{color:#687483;font-size:14px}
+.reb-community-member-toolbar-controls{display:flex;align-items:center;gap:12px}
+.reb-community-member-toolbar-controls label{display:flex;align-items:center;gap:8px;color:#596473;font-size:13px;font-weight:600}
+.reb-community-member-toolbar-controls select,.reb-community-admin-card-head select{height:38px;border:1px solid #d9dee4;border-radius:10px;background:#fff;color:#1d252c;padding:0 32px 0 11px;font:600 13px/1 var(--reb-text-font,"IBM Plex Sans",sans-serif)}
+.reb-community-members-list{border:1px solid #dfe3e8;border-radius:14px;overflow:hidden;background:#fff}
+.reb-community-member-list-head,.reb-community-member-list-row{display:grid;grid-template-columns:minmax(260px,2fr) minmax(135px,1fr) minmax(145px,1fr) 110px minmax(190px,1.15fr);gap:14px;align-items:center}
+.reb-community-member-list-head{padding:11px 16px;background:#f6f7f8;color:#66717d;border-bottom:1px solid #e4e7ea;font:700 12px/1.2 var(--reb-title-font,"Ubuntu",sans-serif);text-transform:uppercase;letter-spacing:.035em}
+.reb-community-member-list-row{min-height:78px;padding:12px 16px;border-bottom:1px solid #edf0f2}
+.reb-community-member-list-row:last-child{border-bottom:0}
+.reb-community-member-list-row:hover{background:#fffdfa}
+.reb-community-member-list-row.is-removed{background:#fff8f7}
+.reb-community-member-main{display:flex;align-items:center;gap:13px;min-width:0}
+.reb-community-member-name{color:#111820;text-decoration:none;font:700 15px/1.25 var(--reb-title-font,"Ubuntu",sans-serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reb-community-member-name:hover{color:#a66b00}
+.reb-community-member-copy span{font-size:12px;color:#7a8490;margin-top:4px}
+.reb-community-member-date{display:flex;flex-direction:column;gap:3px;min-width:0}
+.reb-community-member-date strong{font:600 13px/1.25 var(--reb-text-font,"IBM Plex Sans",sans-serif);color:#28323b}
+.reb-community-mobile-label{display:none;color:#78838e;font-size:11px;font-weight:600}
+.reb-community-member-role-cell{display:flex;align-items:center}
+.reb-community-role-badge{display:inline-flex;align-items:center;justify-content:center;min-width:72px;height:28px;border-radius:999px;padding:0 10px;background:#eef1f3;color:#59636e;font:700 11px/1 var(--reb-title-font,"Ubuntu",sans-serif)}
+.reb-community-role-badge.is-owner{background:#111513;color:#fff5d8}
+.reb-community-role-badge.is-admin{background:#fff0c7;color:#915e00}
+.reb-community-role-badge.is-removed{background:#ffe4e1;color:#b32318}
+.reb-community-member-actions{display:flex;align-items:center;justify-content:flex-end;gap:7px;flex-wrap:wrap}
+.reb-community-member-action{border:1px solid #d9dee4;border-radius:9px;background:#fff;color:#27313a;min-height:32px;padding:0 10px;font:700 11px/1 var(--reb-title-font,"Ubuntu",sans-serif);cursor:pointer}
+.reb-community-member-action:hover{border-color:#ffb41f;color:#8e5b00;background:#fffbf2}
+.reb-community-member-action.is-danger{border-color:#f0c5c1;color:#b42318;background:#fff}
+.reb-community-member-action.is-danger:hover{background:#fff1ef}
+.reb-community-member-action.is-success{border-color:#b8dfc7;color:#14763d;background:#f5fff8}
+.reb-community-protected-label{font-size:12px;color:#7a8490}
+.reb-community-member-view{color:#8f6000;text-decoration:none;font-weight:700;font-size:12px}
+.reb-community-pagination{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:18px;flex-wrap:wrap}
+.reb-community-page-btn{height:36px;min-width:36px;border:1px solid #dce1e5;border-radius:9px;background:#fff;color:#38434d;padding:0 11px;font:700 12px/1 var(--reb-title-font,"Ubuntu",sans-serif);cursor:pointer}
+.reb-community-page-btn:hover:not(:disabled){border-color:#ffb41f;color:#9a6300}
+.reb-community-page-btn.active{background:#111513;color:#fff;border-color:#111513}
+.reb-community-page-btn:disabled{opacity:.45;cursor:not-allowed}
+.reb-community-page-dots{padding:0 4px;color:#7c8791}
+
+.reb-community-admin-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}
+.reb-community-admin-head h2{margin:5px 0 4px;font:700 28px/1.15 var(--reb-title-font,"Ubuntu",sans-serif)}
+.reb-community-admin-head p{margin:0;color:#697581}
+.reb-community-admin-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}
+.reb-community-admin-stats>div{border:1px solid #dfe3e8;border-radius:15px;background:#fff;padding:17px 18px;box-shadow:0 7px 20px rgba(17,24,39,.035)}
+.reb-community-admin-stats strong{display:block;font:700 24px/1 var(--reb-title-font,"Ubuntu",sans-serif);color:#111820}
+.reb-community-admin-stats span{display:block;margin-top:7px;color:#6e7984;font-size:12px}
+.reb-community-admin-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.35fr);gap:18px;align-items:start}
+.reb-community-admin-history-card{grid-column:1/-1}
+.reb-community-admin-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:16px}
+.reb-community-admin-card-head h3{margin:4px 0 0!important}
+.reb-community-admin-field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;color:#4f5b65;font-weight:700;font-size:13px}
+.reb-community-admin-field input,.reb-community-admin-field textarea{width:100%;border:1px solid #d9dee4;border-radius:11px;background:#fff;padding:11px 12px;color:#151b20;font:400 14px/1.45 var(--reb-text-font,"IBM Plex Sans",sans-serif);outline:0}
+.reb-community-admin-field input:focus,.reb-community-admin-field textarea:focus{border-color:#ffb41f;box-shadow:0 0 0 3px rgba(255,180,31,.13)}
+.reb-community-admin-actions{display:flex;align-items:center;justify-content:flex-end;gap:12px;min-height:42px}
+.reb-community-admin-actions>span{margin-right:auto;color:#65717c;font-size:12px}
+.reb-community-admin-post-list{display:flex;flex-direction:column;gap:10px}
+.reb-community-admin-post{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;border:1px solid #e2e6e9;border-radius:12px;padding:13px 14px;background:#fff}
+.reb-community-admin-post-main{min-width:0;display:flex;flex-direction:column;gap:4px}
+.reb-community-admin-post-main strong{font:700 14px/1.2 var(--reb-title-font,"Ubuntu",sans-serif)}
+.reb-community-admin-post-main span{font-size:11px;color:#7b8590}
+.reb-community-admin-post-main p{margin:3px 0 0;color:#3d4852;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reb-community-admin-history{display:flex;flex-direction:column}
+.reb-community-admin-history-row{padding:12px 0;border-top:1px solid #edf0f2}
+.reb-community-admin-history-row:first-child{border-top:0}
+.reb-community-admin-history-row div{display:flex;flex-direction:column;gap:4px}
+.reb-community-admin-history-row strong{font:700 13px/1.3 var(--reb-title-font,"Ubuntu",sans-serif)}
+.reb-community-admin-history-row span{font-size:11px;color:#78838d}
+
+@media(max-width:1199px){
+  .reb-community-member-list-head{display:none}
+  .reb-community-member-list-row{grid-template-columns:minmax(0,1fr) minmax(150px,.6fr) minmax(150px,.6fr);grid-template-areas:"member role actions" "opened joined actions"}
+  .reb-community-member-main{grid-area:member}.reb-community-member-date:nth-child(2){grid-area:opened}.reb-community-member-date:nth-child(3){grid-area:joined}.reb-community-member-role-cell{grid-area:role}.reb-community-member-actions{grid-area:actions}
+  .reb-community-mobile-label{display:block}
+  .reb-community-admin-grid{grid-template-columns:1fr}
+  .reb-community-admin-history-card{grid-column:auto}
+}
+@media(max-width:760px){
+  .reb-community-member-toolbar{align-items:stretch;flex-direction:column}
+  .reb-community-member-toolbar-controls{justify-content:space-between}
+  .reb-community-member-list-row{display:flex;align-items:flex-start;flex-wrap:wrap;gap:10px;padding:14px}
+  .reb-community-member-main{width:100%}
+  .reb-community-member-date{width:calc(50% - 5px)}
+  .reb-community-member-role-cell{width:auto}
+  .reb-community-member-actions{width:100%;justify-content:flex-start}
+  .reb-community-admin-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reb-community-admin-head{align-items:stretch;flex-direction:column}
+  .reb-community-admin-post{grid-template-columns:1fr}
+}
+
+
+/* ==========================================================================
+   D13 — Professional Member Management + Real Avatar Sync
+   Desktop member directory is intentionally compact; mobile rules remain intact.
+   ========================================================================== */
+@media(min-width:1200px){
+  #rebCommunityMembersView .reb-community-section-card{max-width:1160px;margin-left:auto;margin-right:auto;padding:22px 24px}
+  #rebCommunityMembersView .reb-community-section-head h2{font-size:26px}
+  .reb-community-member-list-head,.reb-community-member-list-row{grid-template-columns:minmax(250px,1.8fr) minmax(130px,.85fr) minmax(130px,.85fr) 100px minmax(150px,.85fr);gap:12px}
+  .reb-community-member-list-row{min-height:64px;padding:9px 14px}
+  .reb-community-member-list-head{padding:10px 14px}
+}
+.reb-community-member-avatar,.reb-community-preview-avatar{background:#eef1f3;color:#3b4650;font:700 13px/1 var(--reb-title-font,"Ubuntu",sans-serif);display:grid;place-items:center;overflow:hidden}
+.reb-community-member-avatar{width:42px;height:42px;border-radius:50%;flex:0 0 42px}
+.reb-community-member-avatar img,.reb-community-preview-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.reb-community-member-avatar.is-initials,.reb-community-preview-avatar.is-initials{background:linear-gradient(145deg,#f2f4f6,#e5e9ed);color:#4c5965}
+.reb-community-role-badge.is-banned{background:#262626;color:#fff}
+.reb-community-member-list-row:has(.reb-community-role-badge.is-banned){background:#fbfbfb}
+.reb-community-member-actions{position:relative;overflow:visible}
+.reb-community-member-manage{height:32px;border:1px solid #d7dce1;border-radius:9px;background:#fff;color:#26313a;padding:0 10px;display:inline-flex;align-items:center;gap:7px;font:700 11px/1 var(--reb-title-font,"Ubuntu",sans-serif);cursor:pointer}
+.reb-community-member-manage:hover{border-color:#ffb41f;color:#8a5900;background:#fffaf0}
+.reb-community-member-menu-wrap{position:relative;display:inline-flex}
+.reb-community-member-menu{position:absolute;right:0;top:calc(100% + 7px);z-index:30;width:220px;padding:7px;border:1px solid #dde2e6;border-radius:12px;background:#fff;box-shadow:0 14px 34px rgba(17,24,39,.16);display:none}
+.reb-community-member-menu.is-open{display:flex;flex-direction:column}
+.reb-community-member-menu-item{width:100%;min-height:38px;border:0;background:transparent;color:#27323b;text-decoration:none;border-radius:8px;padding:0 10px;display:flex;align-items:center;gap:10px;text-align:left;font:600 12px/1.25 var(--reb-text-font,"IBM Plex Sans",sans-serif);cursor:pointer}
+.reb-community-member-menu-item:hover{background:#f5f7f8;color:#111}
+.reb-community-member-menu-item i{width:16px;text-align:center;color:#65717c}
+.reb-community-member-menu-item.is-danger{color:#b42318}
+.reb-community-member-menu-item.is-danger i{color:#b42318}
+.reb-community-member-menu-item.is-success{color:#14763d}
+.reb-community-member-menu-item.is-success i{color:#14763d}
+.reb-community-admin-stats{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:1199px){.reb-community-admin-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.reb-community-members-list{overflow:visible}.reb-community-member-list-head{border-radius:13px 13px 0 0}.reb-community-member-list-row:last-child{border-radius:0 0 13px 13px}
+
+
+/* D13.1 — Member action menu hardening */
+.reb-community-member-menu{display:none!important}
+.reb-community-member-menu.is-open{display:flex!important;flex-direction:column}
+.reb-community-member-menu-wrap{position:relative;z-index:2}
+.reb-community-member-list-row:has(.reb-community-member-menu.is-open){position:relative;z-index:20}
+.reb-community-member-manage{white-space:nowrap}
+
+
+/* Phase 3N-D14: Community Admin profile + cover photo management */
+.reb-community-cover-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.reb-community-cover-photo:not([hidden])~.reb-community-cover-default-robot,.reb-community-cover-photo:not([hidden])~.reb-community-cover-copy{display:none!important}
+.reb-community-cover-default-robot{position:absolute;right:7%;bottom:-42px;height:275px;filter:drop-shadow(0 18px 20px rgba(0,0,0,.35));z-index:1}
+.reb-community-photo-edit{font-family:var(--reb-title-font,"Ubuntu",sans-serif);font-weight:700;cursor:pointer}
+.reb-community-cover-edit{position:absolute;right:22px;bottom:20px;z-index:4;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.45);background:rgba(8,12,13,.86);color:#fff;border-radius:11px;padding:10px 14px;box-shadow:0 8px 20px rgba(0,0,0,.16)}
+.reb-community-cover-edit:hover{background:#ffb41f;color:#111;border-color:#ffb41f}
+.reb-community-avatar{position:relative;overflow:visible}
+.reb-community-avatar>img{border-radius:50%;overflow:hidden}
+.reb-community-avatar-edit{position:absolute;right:-3px;bottom:0;z-index:5;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;border:3px solid #fff;background:#101513;color:#fff;padding:0;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.reb-community-avatar-edit:hover{background:#ffb41f;color:#111}
+.reb-community-admin-appearance{display:flex;flex-direction:column;gap:10px;margin:4px 0 15px;padding-top:4px}
+.reb-community-admin-photo-row{display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;border:1px solid #e2e6ea;border-radius:12px;padding:10px;background:#fafbfc}
+.reb-community-admin-photo-row.is-cover{grid-template-columns:96px 1fr auto}
+.reb-community-admin-photo-row>div:nth-child(2){display:flex;flex-direction:column;gap:3px;min-width:0}
+.reb-community-admin-photo-row strong{font:700 13px/1.25 var(--reb-title-font,"Ubuntu",sans-serif);color:#171d22}
+.reb-community-admin-photo-row span{font:400 12px/1.35 var(--reb-text-font,"IBM Plex Sans",sans-serif);color:#6a7580}
+.reb-community-admin-avatar-preview{width:52px;height:52px;border-radius:50%;overflow:hidden;background:#eef1f4;border:1px solid #dce1e5}
+.reb-community-admin-avatar-preview img{width:100%;height:100%;object-fit:cover}
+.reb-community-admin-cover-preview{width:90px;height:52px;border-radius:9px;overflow:hidden;background:linear-gradient(135deg,#0d1215,#4d3510);border:1px solid #dce1e5;display:grid;place-items:center;color:#fff;text-align:center}
+.reb-community-admin-cover-preview img{width:100%;height:100%;object-fit:cover}
+.reb-community-admin-cover-preview span{color:#fff;font-size:10px}
+.reb-community-photo-upload-state{min-height:18px;color:#6b7580;font-size:12px}
+@media(max-width:760px){.reb-community-cover-edit{right:12px;bottom:12px;padding:9px 11px}.reb-community-cover-edit span{display:none}.reb-community-avatar-edit{width:28px;height:28px}.reb-community-admin-photo-row,.reb-community-admin-photo-row.is-cover{grid-template-columns:52px 1fr}.reb-community-admin-photo-row.is-cover{grid-template-columns:84px 1fr}.reb-community-admin-photo-row>button{grid-column:1/-1;width:100%}}

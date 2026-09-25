@@ -1,0 +1,95 @@
+/* D20F28 — ReachEmpireBot unified mobile site
+   Mobile-only pass. Desktop (>= 941px) is intentionally untouched. */
+@media (max-width:940px){
+  html,body{max-width:100%!important;overflow-x:hidden!important}
+
+  /* MAIN WEBSITE — same visual language as Social, two clean rows */
+  .reb-web-menu{height:auto!important;min-height:0!important;position:sticky!important;top:0!important;background:#fff!important;z-index:5000!important}
+  .reb-web-menu-inner{width:100%!important;height:auto!important;min-height:0!important;padding:8px 12px 7px!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"brand account" "nav nav"!important;gap:7px 10px!important}
+  .reb-web-brand{grid-area:brand!important;min-width:0!important;width:max-content!important;max-width:calc(100vw - 78px)!important}
+  .reb-web-brand img{width:148px!important;max-width:48vw!important;max-height:48px!important;object-fit:contain!important;object-position:left center!important}
+  .reb-web-account{grid-area:account!important;margin:0!important;justify-self:end!important;align-self:center!important}
+  .reb-web-account-trigger{width:42px!important;height:42px!important}.reb-web-avatar{width:38px!important;height:38px!important}
+  .reb-web-nav{grid-area:nav!important;width:100%!important;display:flex!important;justify-content:flex-start!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;padding:1px 0!important;-webkit-overflow-scrolling:touch!important}
+  .reb-web-nav::-webkit-scrollbar{display:none!important}
+  .reb-web-nav a{flex:0 0 auto!important;width:auto!important;min-width:48px!important;height:42px!important;min-height:42px!important;padding:0 11px!important;border-radius:11px!important;gap:7px!important;font-size:13px!important}
+  .reb-web-nav a span{display:inline!important}.reb-web-nav a i{font-size:15px!important}
+  .reb-web-dropdown{position:fixed!important;top:58px!important;right:8px!important;width:min(350px,calc(100vw - 16px))!important;max-height:calc(100dvh - 72px)!important;overflow:auto!important}
+
+  /* SOCIAL — brand/profile row + centered, scroll-safe navigation row */
+  .reb-social-global-topbar{height:auto!important;min-height:0!important;position:sticky!important;top:0!important;z-index:5000!important}
+  .reb-social-global-inner{width:100%!important;height:auto!important;padding:8px 12px 7px!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"sbrand saccount" "snav snav"!important;gap:7px 10px!important}
+  .reb-social-global-brand{grid-area:sbrand!important;width:max-content!important;max-width:calc(100vw - 78px)!important;min-width:0!important;gap:0!important}
+  .reb-social-global-brand img{width:148px!important;max-width:48vw!important;max-height:48px!important;object-fit:contain!important;object-position:left center!important}
+  .reb-social-global-brand span{display:none!important}
+  .reb-social-global-nav{grid-area:snav!important;width:100%!important;display:flex!important;justify-content:flex-start!important;gap:4px!important;overflow-x:auto!important;scrollbar-width:none!important;padding:1px 0!important;-webkit-overflow-scrolling:touch!important}
+  .reb-social-global-nav::-webkit-scrollbar{display:none!important}
+  .reb-social-global-nav a{flex:0 0 auto!important;width:auto!important;min-width:48px!important;height:42px!important;min-height:42px!important;padding:0 11px!important;border-radius:11px!important;gap:7px!important;font-size:13px!important}
+  .reb-social-global-nav a span{display:inline!important}.reb-social-global-nav i{font-size:15px!important}
+  .reb-social-account-control{grid-area:saccount!important;width:auto!important;margin:0!important;justify-self:end!important;align-self:center!important}
+  .reb-social-account-control .reb-web-account{margin:0!important}
+  .reb-social-shell{padding-top:0!important}
+  .reb-msg-page .reb-msg-shell{height:calc(100dvh - 106px)!important}
+
+  /* SOCIAL CONTENT — single clean mobile column; desktop rails stay desktop-only */
+  .reb-social-main{width:100%!important;max-width:100%!important;padding-left:12px!important;padding-right:12px!important;grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+  .reb-social-desktop-rail,.reb-social-desktop-left,.reb-social-desktop-right{display:none!important}
+  .reb-social-account-card,.reb-social-composer,.reb-social-feed,.reb-social-center-column{width:100%!important;max-width:100%!important;min-width:0!important}
+
+  /* DASHBOARD — replace old boxed/mobile menu with the same compact ecosystem header */
+  body.reb-main-dashboard .reb-shell{width:100%!important;max-width:100%!important;padding-left:12px!important;padding-right:12px!important}
+  body.reb-main-dashboard .reb-topbar.reb-dashboard-standard-header{width:100%!important;max-width:100%!important;margin:0 0 12px!important;padding:8px 0 7px!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"dbrand daccount" "dnav dnav"!important;gap:7px 10px!important;align-items:center!important}
+  body.reb-main-dashboard .reb-dashboard-standard-header .reb-brand{grid-area:dbrand!important;margin:0!important;width:max-content!important;max-width:calc(100vw - 78px)!important}
+  body.reb-main-dashboard .reb-dashboard-standard-header .reb-brand img{width:148px!important;max-width:48vw!important;height:auto!important}
+  body.reb-main-dashboard .reb-dashboard-standard-header>.reb-web-account{grid-area:daccount!important;margin:0!important;justify-self:end!important}
+  body.reb-main-dashboard .reb-dashboard-standard-nav{grid-area:dnav!important;display:flex!important;width:100%!important;justify-content:flex-start!important;gap:4px!important;overflow-x:auto!important;scrollbar-width:none!important;padding:1px 0!important;flex-wrap:nowrap!important}
+  body.reb-main-dashboard .reb-dashboard-standard-nav::-webkit-scrollbar{display:none!important}
+  body.reb-main-dashboard .reb-dashboard-standard-nav>a{flex:0 0 auto!important;width:auto!important;min-width:48px!important;height:42px!important;min-height:42px!important;padding:0 11px!important;border:0!important;border-radius:11px!important;background:transparent!important;box-shadow:none!important;gap:7px!important;font-size:13px!important;white-space:nowrap!important}
+  body.reb-main-dashboard .reb-dashboard-standard-nav>a i{font-size:15px!important}
+  body.reb-main-dashboard .reb-dashboard-menu-clean-v35{display:none!important}
+  body.reb-main-dashboard .reb-hero{grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+  body.reb-main-dashboard .reb-card{border-radius:16px!important}
+}
+
+@media (max-width:560px){
+  .reb-web-menu-inner,.reb-social-global-inner{padding-left:10px!important;padding-right:10px!important}
+  .reb-web-brand img,.reb-social-global-brand img,body.reb-main-dashboard .reb-dashboard-standard-header .reb-brand img{width:136px!important;max-width:46vw!important}
+  .reb-web-nav a,.reb-social-global-nav a,body.reb-main-dashboard .reb-dashboard-standard-nav>a{height:40px!important;min-height:40px!important;padding:0 10px!important;font-size:12.5px!important}
+  .reb-web-nav a i,.reb-social-global-nav i,body.reb-main-dashboard .reb-dashboard-standard-nav>a i{font-size:14px!important}
+  .reb-social-main{padding-left:10px!important;padding-right:10px!important}
+}
+
+@media (max-width:390px){
+  .reb-web-nav a,.reb-social-global-nav a,body.reb-main-dashboard .reb-dashboard-standard-nav>a{padding-left:9px!important;padding-right:9px!important;font-size:12px!important}
+}
+
+/* D20F33 MOBILE SOCIAL — notification-only top nav, preserve original label/icon/badge.
+   Keep it on the right side of the second header row. Desktop untouched. */
+@media (max-width:760px){
+  body.reb-social-page .reb-social-global-nav,
+  body.reb-msg-page .reb-social-global-nav{
+    justify-content:flex-end!important;
+    overflow:visible!important;
+  }
+  body.reb-social-page .reb-social-global-nav a[href="/social/notifications/"],
+  body.reb-msg-page .reb-social-global-nav a[href="/social/notifications/"]{
+    width:auto!important;
+    min-width:0!important;
+    height:40px!important;
+    min-height:40px!important;
+    padding:0 10px!important;
+    gap:7px!important;
+  }
+  body.reb-social-page .reb-social-global-nav a[href="/social/notifications/"] span,
+  body.reb-msg-page .reb-social-global-nav a[href="/social/notifications/"] span{
+    display:inline!important;
+  }
+}
+
+
+/* D20F33 MOBILE SOCIAL — notification-only top nav, preserve original label/icon/badge. */
+@media (max-width:760px){
+  body.reb-social-page .reb-social-global-nav, body.reb-msg-page .reb-social-global-nav{justify-content:flex-end!important;overflow:visible!important;}
+  body.reb-social-page .reb-social-global-nav a[href="/social/notifications/"], body.reb-msg-page .reb-social-global-nav a[href="/social/notifications/"]{width:auto!important;min-width:0!important;height:40px!important;min-height:40px!important;padding:0 10px!important;gap:7px!important;}
+  body.reb-social-page .reb-social-global-nav a[href="/social/notifications/"] span, body.reb-msg-page .reb-social-global-nav a[href="/social/notifications/"] span{display:inline!important;}
+}

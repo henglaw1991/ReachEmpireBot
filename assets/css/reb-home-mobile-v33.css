@@ -1,0 +1,41 @@
+/* ReachEmpireBot Home V33 - extra compact Insights typography for narrow phones. */
+@media (max-width:767px){
+  html body.reb-home .reb-news{
+    padding-top:16px!important;
+    padding-bottom:18px!important;
+  }
+  html body.reb-home .reb-news .sec-title{padding-bottom:11px!important}
+  html body.reb-home .reb-news .sec-title .sub-title{
+    margin-bottom:6px!important;
+    padding:5px 11px!important;
+    font-size:8px!important;
+  }
+  html body.reb-home .reb-news .sec-title h2{
+    font-size:20px!important;
+    line-height:1.08!important;
+    letter-spacing:-.01em!important;
+  }
+  html body.reb-home .reb-news .row{row-gap:8px!important}
+  html body.reb-home .reb-news .news-block-one .inner-box{
+    min-height:82px!important;
+    padding:10px 11px!important;
+  }
+  html body.reb-home .reb-news .news-block-one h3{
+    margin-bottom:4px!important;
+    font-size:15px!important;
+    line-height:1.15!important;
+    letter-spacing:0!important;
+  }
+  html body.reb-home .reb-news .news-block-one p{
+    font-size:11.5px!important;
+    line-height:1.3!important;
+    -webkit-line-clamp:2!important;
+  }
+}
+
+@media (max-width:350px){
+  html body.reb-home .reb-news .sec-title h2{font-size:19px!important}
+  html body.reb-home .reb-news .news-block-one h3{font-size:14px!important}
+  html body.reb-home .reb-news .news-block-one p{font-size:11px!important}
+}
+

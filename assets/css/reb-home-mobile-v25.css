@@ -1,0 +1,57 @@
+/* ReachEmpireBot Home V25 - full monitor robot, clean platform icons and tighter transition. */
+@media (max-width:767px){
+  html body.reb-home .reb-process{padding-top:26px!important;padding-bottom:10px!important}
+  html body.reb-home .reb-process .inner-container{border-bottom:0!important}
+  html body.reb-home .reb-apps{padding-top:10px!important;padding-bottom:28px!important}
+
+  html body.reb-home .reb-apps .inner-container{
+    grid-template-columns:minmax(0,1fr) 104px!important;
+    gap:8px!important;
+    padding:14px!important;
+  }
+  html body.reb-home .reb-apps .image-layer{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:104px!important;
+    min-width:0!important;
+    height:124px!important;
+    overflow:visible!important;
+  }
+  html body.reb-home .reb-apps .image-layer img{
+    display:block!important;
+    float:none!important;
+    width:100px!important;
+    min-width:0!important;
+    max-width:100%!important;
+    height:118px!important;
+    max-height:118px!important;
+    margin:0 auto!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    transform:none!important;
+  }
+
+  html body.reb-home .reb-apps .download-list li,
+  html body.reb-home .reb-apps .download-list li a{
+    width:31px!important;
+    height:31px!important;
+    min-width:31px!important;
+    border-radius:8px!important;
+  }
+  html body.reb-home .reb-apps .download-list li a{font-size:17px!important}
+  html body.reb-home .reb-apps .download-list li:nth-child(2) a{
+    background:#1877d2!important;
+    color:#fff!important;
+  }
+  html body.reb-home .reb-apps .download-list li:nth-child(2) a i{
+    color:#fff!important;
+    font-size:17px!important;
+  }
+}
+
+@media (max-width:350px){
+  html body.reb-home .reb-apps .inner-container{grid-template-columns:minmax(0,1fr) 86px!important;padding:12px!important}
+  html body.reb-home .reb-apps .image-layer{width:86px!important;height:112px!important}
+  html body.reb-home .reb-apps .image-layer img{width:84px!important;height:106px!important}
+}

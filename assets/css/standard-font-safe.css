@@ -1,0 +1,47 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+:root{
+  --reb-text-font: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+  --reb-title-font: "Ubuntu", Arial, Helvetica, sans-serif;
+}
+
+body,
+p, a, button, input, textarea, select, option, label,
+th, td, li,
+.title, .subtitle, .text, .content,
+.navbar a, .menu a, .theme-btn, .btn,
+.logo-text, .ticker-item,
+.form-panel, .form-card, .help-box,
+.reb-hero-content, .reb-feature-list, .reb-chart-card,
+.reb-top, .reb-header, .reb-nav, .reb-footer,
+.reb-section, .reb-card, .reb-panel, .reb-table,
+.reb-shell, .reb-shell p, .reb-shell td, .reb-shell th,
+.reb-shell label, .reb-shell input, .reb-shell button,
+.main-header, .main-header p, .main-header a,
+.main-footer, .main-footer p, .main-footer a {
+  font-family: var(--reb-text-font) !important;
+  letter-spacing: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+button,
+.main-menu .navigation > li > a,
+.reb-nav a,
+.theme-btn, .btn,
+.reb-btn, .reb-actions a, .reb-login a,
+.reb-kicker, .reb-section-title span,
+.reb-mini strong, .reb-stat strong, .reb-feature strong,
+.reb-card h2, .reb-card h3, .reb-panel h3,
+.reb-hero h1, .reb-page h1, .reb-page h2,
+.reb-shell h1, .reb-shell h2, .reb-shell h3,
+.reb-shell .reb-btn,
+.sec-title h2, .sub-title, .footer-widget h3 {
+  font-family: var(--reb-title-font) !important;
+  letter-spacing: 0 !important;
+}
+
+.fa, .fas, .far, .fal { font-family: "Font Awesome 5 Free" !important; }
+.fab { font-family: "Font Awesome 5 Brands" !important; }
+[class^="flaticon-"], [class*=" flaticon-"] { font-family: "Flaticon" !important; }
+
+

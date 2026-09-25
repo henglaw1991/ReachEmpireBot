@@ -1,0 +1,11 @@
+/* D20F8 Social header account controls - matches ReachEmpire website auth actions */
+.reb-social-global-inner{gap:18px}
+.reb-social-global-nav{margin-left:auto}
+.reb-social-auth-actions{display:flex;align-items:center;gap:10px;flex:0 0 auto;margin-left:2px;white-space:nowrap}
+.reb-social-auth-btn{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;height:44px;min-height:44px;padding:0 18px;border-radius:9px;font-family:inherit;font-size:15px;font-weight:800;line-height:1;text-decoration:none!important;white-space:nowrap;transition:background .18s ease,border-color .18s ease,transform .18s ease}
+.reb-social-auth-btn:hover{transform:translateY(-1px)}
+.reb-social-auth-account{max-width:210px;overflow:hidden;text-overflow:ellipsis;background:#fff8e8;border:1px solid #e5ad35;color:#8d5a00!important}
+.reb-social-auth-logout,.reb-social-auth-login{background:#101312;border:1px solid #3f4744;color:#fff!important}
+.reb-social-auth-signup{background:#f5b026;border:1px solid #f5b026;color:#111!important}
+@media(max-width:1280px){.reb-social-auth-btn{height:40px;min-height:40px;padding:0 13px;font-size:14px}.reb-social-auth-account{max-width:150px}.reb-social-global-nav{gap:2px}.reb-social-global-nav a{padding-left:8px!important;padding-right:8px!important}}
+@media(max-width:1024px){.reb-social-auth-actions{display:none}}

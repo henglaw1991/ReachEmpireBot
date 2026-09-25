@@ -1,0 +1,77 @@
+/* REB Social V116 — layout-safe Facebook-style member search, Desktop + Mobile */
+.reb-social-user-search{box-sizing:border-box;z-index:1400}
+.reb-social-user-search *{box-sizing:border-box}
+.reb-social-user-search-box{height:40px;border:1px solid #dfe3e8;border-radius:999px;background:#f0f2f5;display:flex;align-items:center;gap:9px;padding:0 13px;color:#65717d;transition:background .15s,border-color .15s,box-shadow .15s}
+.reb-social-user-search-box:focus-within{background:#fff;border-color:#e7ad2b;box-shadow:0 0 0 3px rgba(229,154,0,.09)}
+.reb-social-user-search-box i{flex:0 0 auto;font-size:13px}
+.reb-social-user-search-box input{width:100%;min-width:0;border:0!important;outline:0!important;background:transparent!important;color:#17191c;font:500 12.5px/1.2 var(--reb-social-text-font,"IBM Plex Sans",Arial,sans-serif)!important;padding:0!important;box-shadow:none!important}
+.reb-social-user-search-box input::placeholder{color:#78838e}
+.reb-social-user-search-results{position:absolute;left:0;right:0;top:46px;max-height:min(460px,70vh);overflow:auto;background:#fff;border:1px solid #e0e4e8;border-radius:14px;box-shadow:0 18px 42px rgba(15,23,42,.18);padding:7px;z-index:2147482500}
+.reb-social-user-search-results[hidden]{display:none!important}
+.reb-social-search-state{padding:18px 14px;text-align:center;color:#737e89;font-size:12px}
+.reb-social-search-user{width:100%;border:0;background:#fff;border-radius:11px;padding:8px;display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:10px;text-align:left;color:#17191c;cursor:pointer}
+.reb-social-search-user:hover,.reb-social-search-user:focus{background:#f4f6f8;outline:0}
+.reb-social-search-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#f5b326;color:#111;font-weight:800}
+.reb-social-search-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.reb-social-search-copy{min-width:0;display:flex;flex-direction:column}
+.reb-social-search-copy strong{font:800 13px/1.25 var(--reb-social-title-font,"Ubuntu",Arial,sans-serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reb-social-search-copy span{margin-top:3px;color:#737e89;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reb-social-search-actions{display:flex;gap:5px}
+.reb-social-search-action{width:32px;height:32px;border:0;border-radius:50%;display:grid;place-items:center;background:#eef1f4;color:#596674;cursor:pointer}
+.reb-social-search-action.message{background:#fff1c9;color:#986400}
+
+/* V122 Desktop Feed: Search People belongs to the right rail, directly above
+   Quick Access. Keep the existing 40px search height. The rail itself begins in
+   the same grid row as Create Post, so their top edges stay aligned. */
+@media(min-width:1181px){
+  .reb-social-desktop-right>.reb-social-user-search{
+    position:relative!important;left:auto!important;right:auto!important;top:auto!important;
+    transform:none!important;width:100%!important;max-width:none!important;margin:0 0 13px!important;
+    z-index:1400;
+  }
+  .reb-social-desktop-right>.reb-social-user-search .reb-social-user-search-box{width:100%!important;height:40px!important}
+}
+@media(min-width:768px) and (max-width:1180px){
+  .reb-social-desktop-right>.reb-social-user-search{
+    position:relative!important;left:auto!important;right:auto!important;top:auto!important;
+    transform:none!important;width:100%!important;max-width:none!important;margin:0 0 13px!important;
+    z-index:1400;
+  }
+  .reb-social-desktop-right>.reb-social-user-search .reb-social-user-search-box{width:100%!important;height:40px!important;padding:0 11px}
+  .reb-social-desktop-right>.reb-social-user-search .reb-social-user-search-box input{font-size:11.5px!important}
+  /* Pages without a desktop right rail keep the compact header search. */
+  .reb-social-global-inner>.reb-social-user-search{position:absolute;left:155px;top:50%;transform:translateY(-50%);width:205px;margin:0}
+}
+@media(min-width:1181px){
+  /* Pages without a desktop right rail keep the existing header search. */
+  .reb-social-global-inner>.reb-social-user-search{position:absolute;left:205px;top:50%;transform:translateY(-50%);width:285px;margin:0}
+}
+
+/* V116: Social menu/header belongs to the page flow. It must NOT chase the user
+   while scrolling and must never paint over feed/profile cover content. */
+.reb-social-global-topbar{position:relative!important;top:auto!important}
+
+/* Mobile: a real full-width search row below the Social header. No floating
+   magnifier, no overlap with the Android/mobile top bar or bottom navigation. */
+@media(max-width:767px){
+  .reb-social-user-search{
+    position:relative!important;left:auto!important;right:auto!important;top:auto!important;
+    transform:none!important;width:min(100% - 24px,520px)!important;max-width:none!important;
+    min-width:0!important;margin:10px auto 12px!important;padding:0!important;pointer-events:auto!important;
+  }
+  .reb-social-user-search-box{
+    width:100%!important;height:44px!important;margin:0!important;padding:0 14px!important;
+    justify-content:flex-start!important;background:#f0f2f5!important;border-color:#dfe3e8!important;
+    box-shadow:none!important;overflow:visible!important;
+  }
+  .reb-social-user-search-box input{
+    width:auto!important;flex:1 1 auto!important;opacity:1!important;pointer-events:auto!important;
+    font-size:13px!important;
+  }
+  .reb-social-user-search-results{
+    position:absolute!important;top:50px!important;left:0!important;right:0!important;
+    max-height:min(420px,58dvh)!important;pointer-events:auto!important;
+  }
+  .reb-social-search-user{grid-template-columns:42px minmax(0,1fr) auto}
+  .reb-social-search-avatar{width:42px;height:42px}
+}

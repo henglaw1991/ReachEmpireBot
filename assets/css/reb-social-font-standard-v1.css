@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+:root{
+  --reb-social-text-font:"IBM Plex Sans",Arial,Helvetica,sans-serif;
+  --reb-social-title-font:"Ubuntu",Arial,Helvetica,sans-serif;
+}
+
+html,body,p,a,input,textarea,select,option,label,small,span,li,td,th,
+.reb-social-page,.reb-profile-page,.reb-msg-page,
+.reb-social-card,.reb-profile-card,.reb-msg-shell,
+.reb-post-content,.reb-msg-bubble,.reb-msg-meta,.reb-profile-bio,
+.reb-profile-username,.reb-profile-counts,.reb-social-draft-state,
+.reb-social-feed-state,.reb-msg-state,.reb-msg-thread-copy span,
+.reb-msg-conv-copy span,.reb-msg-side-head p{
+  font-family:var(--reb-social-text-font)!important;
+  letter-spacing:0!important;
+}
+
+h1,h2,h3,h4,h5,h6,button,strong,b,
+.reb-social-brand,.reb-profile-brand,.reb-msg-brand,
+.reb-social-bottom-nav,.reb-profile-topnav,.reb-msg-topbar nav,
+.reb-social-primary-btn,.reb-social-secondary-btn,.reb-social-small-btn,
+.reb-btn-primary,.reb-btn-secondary,.reb-profile-tabs,
+.reb-msg-list-title,.reb-msg-thread-copy strong,.reb-msg-conv-copy strong,
+.reb-social-eyebrow,.reb-social-tool-btn{
+  font-family:var(--reb-social-title-font)!important;
+  letter-spacing:0!important;
+}
+
+/* Keep icon glyphs on the Font Awesome family shipped with the website.
+   Phase 3F must standardize text fonts without overriding icon fonts. */
+.fa,.fas,.far,.fal{font-family:"Font Awesome 5 Pro"!important}
+.fa,.fas{font-weight:900!important}
+.far{font-weight:400!important}
+.fal{font-weight:300!important}
+.fab{font-family:"Font Awesome 5 Brands"!important;font-weight:400!important}
+
+/* Match the typography scale/weight used across ReachEmpire pages. */
+.reb-social-page,.reb-profile-page,.reb-msg-page{font-weight:400}
+.reb-social-brand,.reb-profile-brand,.reb-msg-brand{font-weight:700!important}
+.reb-profile-topnav a,.reb-msg-topbar nav a,.reb-social-bottom-nav a,.reb-social-bottom-nav button{font-weight:600!important}
+.reb-social-card h1,.reb-social-feed-head h2,.reb-profile-name-row h1,.reb-profile-card h2,.reb-profile-section-title h2,.reb-msg-side-head h1,.reb-msg-empty h2{font-weight:700!important}
+.reb-social-account-copy strong,.reb-post-head strong,.reb-member-copy strong,.reb-msg-conv-copy strong,.reb-msg-thread-copy strong{font-weight:600!important}
+.reb-social-primary-btn,.reb-social-secondary-btn,.reb-social-small-btn,.reb-social-tool-btn,.reb-btn-primary,.reb-btn-secondary,.reb-profile-tabs button,.reb-msg-composer button,.reb-msg-side-head button{font-weight:600!important}
+.reb-msg-list-title,.reb-social-eyebrow{font-weight:600!important}
+
+/* Phase 3J settings page uses the same Social typography contract. */
+.reb-settings-page,.reb-settings-card,.reb-settings-heading p,.reb-settings-field,.reb-settings-state,.reb-blocked-copy span{font-family:var(--reb-social-text-font)!important;letter-spacing:0!important}
+.reb-settings-brand,.reb-settings-topbar nav,.reb-settings-heading h1,.reb-settings-card h2,.reb-settings-card button,.reb-settings-switch strong,.reb-blocked-copy strong{font-family:var(--reb-social-title-font)!important;letter-spacing:0!important}
+
+/* Phase 3L: strict shared typography contract for all Social screens. */
+.reb-notif-page,.reb-notif-shell,.reb-notif-card,.reb-notif-copy,.reb-notif-state,.reb-notif-summary,
+.reb-msg-sidebar,.reb-msg-thread,.reb-msg-search,.reb-msg-search-results,.reb-msg-list,.reb-msg-messages,
+.reb-profile-shell,.reb-profile-hero,.reb-profile-layout,.reb-profile-posts,
+.reb-settings-shell,.reb-settings-list{font-family:var(--reb-social-text-font)!important;letter-spacing:0!important}
+.reb-notif-brand,.reb-notif-nav,.reb-notif-title h1,.reb-notif-mark,.reb-notif-tabs button,.reb-notif-state h2,
+.reb-msg-side-head h1,.reb-msg-list-title,.reb-msg-thread-head a,
+.reb-profile-name-row h1,.reb-profile-tabs,.reb-profile-card h2,.reb-profile-section-title h2{font-family:var(--reb-social-title-font)!important;letter-spacing:0!important}

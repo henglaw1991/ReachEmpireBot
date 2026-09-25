@@ -1,0 +1,127 @@
+/* ReachEmpireBot Home V23 - final compact hero composition from phone screenshot. */
+@media (max-width:767px){
+  /* Avoid repeating the same 24/7, AI and MT5 information above the trust strip. */
+  html body.reb-home section.banner-section .reb-hero-stats{display:none!important}
+
+  html body.reb-home section.banner-section .reb-hero-inner{
+    display:flex!important;
+    flex-direction:column!important;
+    width:100%!important;
+    max-width:100%!important;
+    gap:15px!important;
+  }
+  html body.reb-home section.banner-section .reb-hero-inner > .reb-hero-copy,
+  html body.reb-home section.banner-section .reb-hero-inner > .reb-hero-visual{
+    width:100%!important;
+    max-width:100%!important;
+    flex:0 0 auto!important;
+  }
+  html body.reb-home section.banner-section .reb-hero-inner > .reb-hero-visual{
+    position:relative!important;
+    display:grid!important;
+    grid-template-columns:minmax(112px,42%) minmax(0,58%)!important;
+    grid-template-rows:206px!important;
+    align-items:center!important;
+    gap:8px!important;
+    min-height:206px!important;
+    height:206px!important;
+    max-height:206px!important;
+    padding:9px!important;
+    overflow:hidden!important;
+  }
+  html body.reb-home section.banner-section .reb-hero-visual > img.reb-robot{
+    position:relative!important;
+    inset:auto!important;
+    grid-column:1!important;
+    grid-row:1!important;
+    align-self:end!important;
+    justify-self:center!important;
+    display:block!important;
+    width:142px!important;
+    max-width:100%!important;
+    height:auto!important;
+    max-height:178px!important;
+    margin:0!important;
+    object-fit:contain!important;
+    transform:none!important;
+    z-index:2!important;
+  }
+  html body.reb-home section.banner-section .reb-hero-visual > .reb-feature-list{
+    position:relative!important;
+    inset:auto!important;
+    grid-column:2!important;
+    grid-row:1!important;
+    align-self:center!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:7px!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    height:auto!important;
+    margin:0!important;
+    z-index:3!important;
+  }
+  html body.reb-home section.banner-section .reb-hero-visual .reb-feature{
+    display:flex!important;
+    align-items:center!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:38px!important;
+    height:38px!important;
+    padding:6px 7px!important;
+    gap:6px!important;
+    border-radius:8px!important;
+    font-size:9px!important;
+    line-height:1.15!important;
+    overflow:hidden!important;
+  }
+  html body.reb-home section.banner-section .reb-hero-visual .reb-feature span{
+    display:block!important;
+    min-width:0!important;
+    white-space:normal!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+
+  /* Compact the trust summary immediately beneath the hero. */
+  html body.reb-home .reb-trust-section{padding:9px 0 16px!important}
+  html body.reb-home .reb-trust-panel{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    min-height:0!important;
+    height:auto!important;
+    gap:0!important;
+  }
+  html body.reb-home .reb-trust-panel > .reb-trust-lead{
+    grid-column:1/-1!important;
+    min-height:0!important;
+    height:auto!important;
+    padding:10px 12px!important;
+  }
+  html body.reb-home .reb-trust-lead span{margin:0 0 3px!important;font-size:8px!important;line-height:1.15!important}
+  html body.reb-home .reb-trust-lead strong{margin:0!important;font-size:15px!important;line-height:1.17!important}
+  html body.reb-home .reb-trust-panel > .reb-trust-item{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    min-width:0!important;
+    min-height:58px!important;
+    height:58px!important;
+    padding:6px 3px!important;
+    text-align:center!important;
+  }
+  html body.reb-home .reb-trust-item strong{margin:0 0 3px!important;font-size:14px!important;line-height:1!important}
+  html body.reb-home .reb-trust-item span{margin:0!important;font-size:7.5px!important;line-height:1.15!important;overflow-wrap:anywhere!important}
+}
+
+@media (max-width:350px){
+  html body.reb-home section.banner-section .reb-hero-inner > .reb-hero-visual{
+    grid-template-columns:104px minmax(0,1fr)!important;
+    grid-template-rows:196px!important;
+    min-height:196px!important;height:196px!important;max-height:196px!important;
+  }
+  html body.reb-home section.banner-section .reb-hero-visual > img.reb-robot{width:128px!important;max-height:164px!important}
+  html body.reb-home section.banner-section .reb-hero-visual .reb-feature{font-size:8.5px!important}
+}

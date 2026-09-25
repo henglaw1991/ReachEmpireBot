@@ -1,0 +1,63 @@
+/* ReachEmpire Social V128 — Desktop header consistency.
+   Feed is the reference. Community / Notifications / Messages use the same
+   desktop header geometry, and the global People Search is hidden on those
+   three pages only. Mobile and in-page member/message search are untouched. */
+@media (min-width:768px){
+  body.reb-community-page .reb-social-global-inner>.reb-social-user-search,
+  body.reb-notif-page .reb-social-global-inner>.reb-social-user-search,
+  body.reb-msg-page .reb-social-global-inner>.reb-social-user-search{display:none!important;}
+}
+@media (min-width:1200px){
+  body.reb-community-page .reb-social-global-topbar,
+  body.reb-notif-page .reb-social-global-topbar,
+  body.reb-msg-page .reb-social-global-topbar{
+    position:relative!important;top:auto!important;height:76px!important;background:#fff!important;
+    border-bottom:1px solid #e1e5e9!important;overflow:visible!important;
+  }
+  body.reb-community-page .reb-social-global-inner,
+  body.reb-notif-page .reb-social-global-inner,
+  body.reb-msg-page .reb-social-global-inner{
+    width:min(1390px,calc(100% - 64px))!important;max-width:1390px!important;height:76px!important;
+    margin:0 auto!important;padding:0!important;display:grid!important;
+    grid-template-columns:230px minmax(0,820px) 280px!important;column-gap:30px!important;
+    align-items:center!important;justify-content:center!important;
+  }
+  body.reb-community-page .reb-social-global-brand,
+  body.reb-notif-page .reb-social-global-brand,
+  body.reb-msg-page .reb-social-global-brand{
+    grid-column:1!important;width:230px!important;min-width:0!important;height:60px!important;margin:0!important;
+    padding:0!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;
+    gap:9px!important;text-decoration:none!important;overflow:visible!important;
+  }
+  body.reb-community-page .reb-social-brand-robot,body.reb-notif-page .reb-social-brand-robot,body.reb-msg-page .reb-social-brand-robot{
+    width:46px!important;height:46px!important;max-width:46px!important;max-height:46px!important;object-fit:contain!important;flex:0 0 46px!important;
+  }
+  body.reb-community-page .reb-social-brand-copy,body.reb-notif-page .reb-social-brand-copy,body.reb-msg-page .reb-social-brand-copy{
+    display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;
+    min-width:0!important;height:auto!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;
+    background:transparent!important;color:#151719!important;white-space:nowrap!important;
+  }
+  body.reb-community-page .reb-social-brand-copy strong,body.reb-notif-page .reb-social-brand-copy strong,body.reb-msg-page .reb-social-brand-copy strong{
+    display:block!important;margin:0!important;font-size:15px!important;line-height:1.1!important;font-weight:800!important;color:#17191c!important;
+  }
+  body.reb-community-page .reb-social-brand-copy strong em,body.reb-notif-page .reb-social-brand-copy strong em,body.reb-msg-page .reb-social-brand-copy strong em{font-style:normal!important;color:#e59a00!important;}
+  body.reb-community-page .reb-social-brand-copy small,body.reb-notif-page .reb-social-brand-copy small,body.reb-msg-page .reb-social-brand-copy small{
+    display:block!important;margin-top:4px!important;font-size:9px!important;line-height:1!important;font-weight:500!important;color:#737b84!important;
+  }
+  body.reb-community-page .reb-social-global-nav,body.reb-notif-page .reb-social-global-nav,body.reb-msg-page .reb-social-global-nav{
+    grid-column:2!important;width:820px!important;max-width:820px!important;height:60px!important;margin:0!important;padding:0!important;
+    display:flex!important;align-items:center!important;justify-content:space-between!important;gap:6px!important;overflow:visible!important;
+  }
+  body.reb-community-page .reb-social-global-nav a,body.reb-notif-page .reb-social-global-nav a,body.reb-msg-page .reb-social-global-nav a{
+    flex:0 0 auto!important;min-width:0!important;min-height:42px!important;height:42px!important;padding:0 13px!important;margin:0!important;
+    border-radius:11px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;
+    font-size:14px!important;line-height:1!important;font-weight:700!important;white-space:nowrap!important;
+  }
+  body.reb-community-page .reb-social-global-nav a[href="/social/profile/"],
+  body.reb-notif-page .reb-social-global-nav a[href="/social/profile/"],
+  body.reb-msg-page .reb-social-global-nav a[href="/social/profile/"]{display:none!important;}
+  body.reb-community-page .reb-social-account-control,body.reb-notif-page .reb-social-account-control,body.reb-msg-page .reb-social-account-control{
+    grid-column:3!important;width:280px!important;height:60px!important;margin:0!important;padding:0!important;justify-self:stretch!important;
+    display:flex!important;align-items:center!important;justify-content:flex-end!important;
+  }
+}

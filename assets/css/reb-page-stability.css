@@ -1,0 +1,239 @@
+﻿/* Keeps the main page navigation at one fixed visual position across core pages. */
+html{
+  scroll-behavior:auto !important;
+}
+
+@media (min-width: 901px){
+  .reb-top{
+    height:58px !important;
+    min-height:58px !important;
+    padding-left:15px !important;
+    padding-right:15px !important;
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:12px !important;
+  }
+
+  .reb-actions,
+  .reb-login{
+    margin-left:auto !important;
+    display:flex !important;
+    align-items:center !important;
+    gap:10px !important;
+  }
+
+  .reb-actions a,
+  .reb-login a{
+    height:38px !important;
+    min-height:38px !important;
+    padding:0 28px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    font-family:Ubuntu, Arial, sans-serif !important;
+    font-size:16px !important;
+    font-weight:700 !important;
+    line-height:1 !important;
+  }
+
+  .reb-header{
+    height:120px !important;
+    min-height:120px !important;
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+    display:flex !important;
+    align-items:center !important;
+  }
+
+  .reb-logo{
+    display:flex;
+    align-items:center;
+    height:120px !important;
+    min-height:120px !important;
+  }
+
+  .reb-nav{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end;
+    min-height:120px !important;
+    transform:translateX(-29px);
+  }
+
+  .reb-nav a{
+    width:122px !important;
+    min-width:122px !important;
+    height:42px !important;
+    min-height:42px !important;
+    padding:0 !important;
+    display:inline-flex !important;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    line-height:1.15 !important;
+    font-family:Ubuntu, Arial, sans-serif !important;
+    font-size:16px !important;
+    font-weight:700 !important;
+    font-style:normal !important;
+    letter-spacing:0 !important;
+  }
+
+  .reb-nav a:first-child{
+    width:98px !important;
+    min-width:98px !important;
+  }
+
+  .reb-hero{
+    min-height:610px;
+    display:flex;
+    align-items:center;
+  }
+
+  .reb-hero h1,
+  .reb-hero h1 span,
+  .reb-home .reb-hero h1,
+  .reb-home .reb-hero h1 span{
+    font-weight:800 !important;
+  }
+
+  .reb-hero-inner{
+    width:100%;
+  }
+
+  .reb-home .header-top{
+    height:58px !important;
+    min-height:58px !important;
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+  }
+
+  .reb-home .header-top .theme-btn{
+    height:38px !important;
+    min-height:38px !important;
+    padding:0 28px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    font-family:Ubuntu, Arial, sans-serif !important;
+    font-size:16px !important;
+    font-weight:700 !important;
+    line-height:1 !important;
+  }
+
+  .reb-home .header-top .large-container,
+  .reb-home .header-top .top-inner{
+    height:58px !important;
+    min-height:58px !important;
+    width:100% !important;
+    display:flex !important;
+    align-items:center !important;
+  }
+
+  .reb-home .header-top .top-inner{
+    justify-content:space-between !important;
+    gap:12px !important;
+  }
+
+  .reb-home .header-top .option-block{
+    margin-left:auto !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+    gap:10px !important;
+  }
+
+  .reb-home .header-lower{
+    height:120px !important;
+    min-height:120px !important;
+  }
+
+  .reb-home .header-lower .outer-box{
+    height:120px !important;
+    min-height:120px !important;
+    display:flex !important;
+    align-items:center !important;
+  }
+
+  .reb-home .header-lower .menu-area{
+    display:flex !important;
+    align-items:center !important;
+    transform:translateX(-40px);
+  }
+
+  .reb-home .main-menu .navigation{
+    display:flex !important;
+    align-items:center !important;
+    gap:14px !important;
+  }
+
+  .reb-home .main-menu .navigation > li{
+    margin:0 !important;
+    padding:0 !important;
+  }
+
+  .reb-home .main-menu .navigation > li > a{
+    width:122px !important;
+    min-width:122px !important;
+    height:42px !important;
+    min-height:42px !important;
+    padding:0 !important;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    line-height:1.15 !important;
+    font-family:Ubuntu, Arial, sans-serif !important;
+    font-size:16px !important;
+    font-weight:700 !important;
+    font-style:normal !important;
+    letter-spacing:0 !important;
+  }
+
+  .reb-home .main-menu .navigation > li:first-child > a{
+    width:98px !important;
+    min-width:98px !important;
+  }
+
+  .reb-home .header-bottom{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .reb-home .header-bottom .reb-live-widget{
+    display:none !important;
+    height:0 !important;
+    overflow:hidden !important;
+  }
+
+  .reb-home .header-bottom .reb-live-widget + .stock-list{
+    display:flex !important;
+    visibility:visible !important;
+    opacity:1 !important;
+  }
+
+  .reb-home.reb-tv-fallback .header-bottom .reb-live-widget{
+    display:none !important;
+  }
+
+  .reb-home.reb-tv-fallback .header-bottom .reb-live-widget + .stock-list{
+    display:flex !important;
+  }
+
+  .reb-home .banner-section{
+    padding-top:0 !important;
+  }
+}
+
+@media (max-width: 900px){
+  .reb-header{
+    position:relative !important;
+    top:auto !important;
+  }
+}
+
