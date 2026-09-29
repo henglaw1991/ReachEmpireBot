@@ -1,0 +1,73 @@
+/* ReachEmpireBot Home V29 - mobile header polish and reliable market symbol badges. */
+@media (max-width:767px){
+  /* Account controls are centred as one complete box, never clipped at the edge. */
+  html body.reb-home .main-header .header-top .large-container{padding:0 10px!important}
+  html body.reb-home .main-header .header-top .top-inner{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    overflow:visible!important;
+  }
+  html body.reb-home .main-header .header-top .support-box{display:none!important}
+  html body.reb-home .main-header .option-block{
+    position:relative!important;
+    inset:auto!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    width:min(238px,72vw)!important;
+    max-width:238px!important;
+    margin:0 auto!important;
+    padding:4px!important;
+    gap:5px!important;
+    border-radius:11px!important;
+  }
+  html body.reb-home .main-header .option-block .theme-btn{
+    min-height:32px!important;
+    height:32px!important;
+    padding:6px 9px!important;
+    font-size:11px!important;
+    overflow:visible!important;
+  }
+
+  /* Clean logo/menu row. */
+  html body.reb-home .main-header .header-lower .large-container{padding:0 12px!important}
+  html body.reb-home .main-header .logo-box img{width:min(184px,58vw)!important;height:auto!important}
+  html body.reb-home .main-header .mobile-nav-toggler{width:45px!important;height:42px!important}
+
+  /* Market bar: every symbol receives a distinct, readable badge. */
+  html body.reb-home #reb-live-ticker .reb-market-tick{
+    display:flex!important;
+    align-items:center!important;
+    gap:7px!important;
+    padding:0 15px 0 7px!important;
+  }
+  html body.reb-home .reb-market-icon{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:30px!important;
+    height:30px!important;
+    flex:0 0 30px!important;
+    border-radius:50%!important;
+    border:1px solid rgba(255,255,255,.25)!important;
+    color:#fff!important;
+    font-family:Arial,'Segoe UI',sans-serif!important;
+    font-size:15px!important;
+    font-weight:900!important;
+    line-height:1!important;
+    box-shadow:0 4px 12px rgba(0,0,0,.28)!important;
+  }
+  html body.reb-home .reb-market-icon.forex-eur{background:linear-gradient(135deg,#244aa5 0 58%,#f3c623 58%)!important}
+  html body.reb-home .reb-market-icon.forex-gbp{background:linear-gradient(135deg,#15377b 0 46%,#fff 46% 56%,#c8102e 56%)!important}
+  html body.reb-home .reb-market-icon.forex-jpy{background:#fff!important;color:#bc002d!important;border-color:#d9d9d9!important}
+  html body.reb-home .reb-market-icon.crypto-btc{background:#f7931a!important;color:#fff!important;font-size:19px!important}
+  html body.reb-home .reb-market-icon.crypto-eth{background:linear-gradient(145deg,#627eea,#313a5f)!important;color:#fff!important;font-size:18px!important}
+  html body.reb-home .reb-market-icon.metal-gold{background:linear-gradient(145deg,#f7ca4b,#a66b00)!important;color:#15110a!important;font-size:11px!important}
+  html body.reb-home .reb-market-icon.metal-silver{background:linear-gradient(145deg,#f3f4f6,#777b86)!important;color:#171717!important;font-size:11px!important}
+  html body.reb-home .reb-market-icon.market-default{background:#25282b!important}
+  html body.reb-home #reb-live-ticker strong{font-size:12px!important;line-height:1!important}
+  html body.reb-home #reb-live-ticker em,
+  html body.reb-home #reb-live-ticker .reb-market-change{font-size:11.5px!important;line-height:1!important}
+}
+

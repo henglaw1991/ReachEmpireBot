@@ -1,0 +1,510 @@
+/* REB DESKTOP DESIGN LAYER
+   DESKTOP ONLY: loaded only at min-width:768px.
+   Future desktop visual changes go here. Do not add mobile rules. */
+
+/* Desktop lock fix V6: hide legacy/mobile text navigation above the Market Price Bar.
+   Desktop only because this stylesheet is loaded with media=(min-width: 768px).
+   Mobile markup/design remains untouched. */
+.reb-home-mobile-nav {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* V7 HOME DESKTOP ALIGNMENT — Desktop only. Mobile remains locked. */
+@media (min-width: 768px) {
+  /* One desktop frame: same left/right edges as the Robot/menu row. */
+  body.reb-home .main-header .header-top .large-container,
+  body.reb-home .main-header .header-bottom .large-container,
+  body.reb-home .reb-trust-section > .large-container {
+    box-sizing: border-box !important;
+    width: min(1440px, calc(100% - 36px)) !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Top phone row: align phone with Robot and Log Out at the same right edge. */
+  body.reb-home .main-header .header-top {
+    display: block !important;
+    visibility: visible !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #111614 !important;
+  }
+  body.reb-home .main-header .header-top .top-inner {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+  }
+  body.reb-home .main-header .header-top .support-box {
+    display: flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body.reb-home .main-header .header-top .option-block {
+    position: static !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 48px !important;
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    background: transparent !important;
+  }
+  /* Logged-in top row only needs the requested Log Out control. */
+  html.reb-client-logged-in body.reb-home .main-header .header-top .option-block .reb-session-account {
+    display: none !important;
+  }
+  html.reb-client-logged-in body.reb-home .main-header .header-top .option-block .reb-session-logout {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: auto !important;
+    min-width: 104px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+    margin: 0 !important;
+    padding: 0 14px !important;
+    border: 1px solid rgba(245,176,38,.55) !important;
+    border-radius: 8px !important;
+    background: #1b1f1d !important;
+    color: #fff !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+  }
+  html.reb-client-logged-in body.reb-home .main-header .header-top .option-block .reb-session-logout::before {
+    content: "\f2f5" !important;
+    display: inline-block !important;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+    color: #f5b026 !important;
+    font-size: 13px !important;
+  }
+  /* When logged out, preserve existing Sign Up / Log In behavior. */
+
+  /* Market Price Bar: black bar itself is constrained to the Robot/menu frame. */
+  body.reb-home .main-header .header-bottom {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    overflow: visible !important;
+  }
+  body.reb-home .main-header .header-bottom .bottom-inner,
+  body.reb-home .main-header .header-bottom .inner-box {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #050505 !important;
+    overflow: hidden !important;
+  }
+
+  /* Built for disciplined automation: exactly the same desktop frame. */
+  body.reb-home .reb-trust-section > .large-container,
+  body.reb-home .reb-trust-panel {
+    box-sizing: border-box !important;
+    width: min(1440px, calc(100% - 36px)) !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  body.reb-home .reb-trust-section > .large-container {
+    width: min(1440px, calc(100% - 36px)) !important;
+  }
+  body.reb-home .reb-trust-panel {
+    width: 100% !important;
+  }
+}
+
+/* Match the menu's narrower desktop frame at <=1180 without touching Mobile. */
+@media (min-width: 768px) and (max-width: 1180px) {
+  body.reb-home .main-header .header-top .large-container,
+  body.reb-home .main-header .header-bottom .large-container,
+  body.reb-home .reb-trust-section > .large-container {
+    width: min(1100px, calc(100% - 24px)) !important;
+    max-width: 1100px !important;
+  }
+}
+
+/* V8 HOME DESKTOP FRAME FINAL — desktop only; Mobile remains locked. */
+@media (min-width: 768px) {
+  /* The global desktop web menu is the single source of truth for frame width. */
+  body.reb-home .main-header .header-top > .large-container,
+  body.reb-home .main-header .header-bottom > .large-container,
+  body.reb-home .reb-trust-section > .large-container {
+    width: min(1440px, calc(100% - 36px)) !important;
+    max-width: 1440px !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Price strip must stop at the same left/right edges as the Robot/menu row. */
+  body.reb-home .main-header .header-bottom {
+    background: #fff !important;
+    padding: 0 !important;
+  }
+  body.reb-home .main-header .header-bottom > .large-container {
+    overflow: hidden !important;
+  }
+  body.reb-home .main-header .header-bottom .bottom-inner,
+  body.reb-home .main-header .header-bottom .inner-box,
+  body.reb-home .main-header .header-bottom .reb-live-widget,
+  body.reb-home .main-header .header-bottom .tradingview-widget-container,
+  body.reb-home .main-header .header-bottom .tradingview-widget-container__widget,
+  body.reb-home .main-header .header-bottom iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Explicit desktop top-row logout injected by V8 JS. */
+  body.reb-home .reb-desktop-top-logout-v8 {
+    margin-left: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 34px !important;
+    padding: 0 14px !important;
+    border: 1px solid rgba(245,176,38,.58) !important;
+    border-radius: 8px !important;
+    background: #1b1f1d !important;
+    color: #fff !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+  }
+  body.reb-home .reb-desktop-top-logout-v8 i { color:#f5b026 !important; }
+}
+
+/* V9 HOME DESKTOP PRECISION ALIGNMENT — Desktop only. Mobile is locked. */
+@media (min-width: 768px) {
+  body.reb-home {
+    --reb-desk-left: max(18px, var(--reb-menu-left, 18px));
+    --reb-desk-right: max(18px, var(--reb-menu-right-gap, 18px));
+    --reb-trust-right: max(18px, var(--reb-about-right-gap, var(--reb-menu-right-gap, 18px)));
+  }
+
+  /* Phone / logout row follows the exact desktop menu frame. */
+  body.reb-home .main-header .header-top > .large-container {
+    width: auto !important;
+    max-width: none !important;
+    margin-left: var(--reb-desk-left) !important;
+    margin-right: var(--reb-desk-right) !important;
+    padding: 0 !important;
+  }
+  body.reb-home .main-header .header-top .top-inner {
+    height: 48px !important;
+    min-height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  body.reb-home .main-header .header-top .support-box {
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 9px !important;
+    height: 48px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+  }
+  body.reb-home .main-header .header-top .support-box .icon-box {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 22px !important;
+    width: 22px !important;
+    min-width: 22px !important;
+    height: 22px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body.reb-home .main-header .header-top .support-box .icon-box i,
+  body.reb-home .main-header .header-top .support-box .icon-box i::before {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    line-height: 22px !important;
+  }
+  body.reb-home .main-header .header-top .support-box > a {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 48px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+  }
+
+  /* Logout: icon + text only, no box/border. */
+  body.reb-home .reb-desktop-top-logout-v8,
+  html.reb-client-logged-in body.reb-home .main-header .header-top .option-block .reb-session-logout {
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    min-width: 0 !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 8px !important;
+  }
+
+  /* Market Price Bar: black strip itself is clipped to the exact menu frame. */
+  body.reb-home .main-header .header-bottom {
+    width: 100% !important;
+    background: #fff !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  body.reb-home .main-header .header-bottom > .large-container {
+    width: auto !important;
+    max-width: none !important;
+    margin-left: var(--reb-desk-left) !important;
+    margin-right: var(--reb-desk-right) !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #1d1d1f !important;
+  }
+  body.reb-home .main-header .header-bottom .bottom-inner,
+  body.reb-home .main-header .header-bottom .inner-box,
+  body.reb-home .main-header .header-bottom .reb-live-widget,
+  body.reb-home .main-header .header-bottom .tradingview-widget-container,
+  body.reb-home .main-header .header-bottom .tradingview-widget-container__widget,
+  body.reb-home .main-header .header-bottom iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Trust/discipline panel: left edge = Robot; right edge = About Us. */
+  body.reb-home .reb-trust-section > .large-container {
+    width: auto !important;
+    max-width: none !important;
+    margin-left: var(--reb-desk-left) !important;
+    margin-right: var(--reb-trust-right) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* V10 HOME DESKTOP MARKET BAR HARD FRAME FIX
+   Desktop only. Constrain the OUTER header-bottom itself so no legacy
+   background/iframe rule can paint edge-to-edge. Mobile is untouched. */
+@media (min-width: 768px) {
+  html body.reb-home .main-header > .header-bottom {
+    box-sizing: border-box !important;
+    width: auto !important;
+    max-width: none !important;
+    margin-left: var(--reb-desk-left) !important;
+    margin-right: var(--reb-desk-right) !important;
+    padding: 0 !important;
+    background: #1d1d1f !important;
+    overflow: hidden !important;
+  }
+  html body.reb-home .main-header > .header-bottom > .large-container,
+  html body.reb-home .main-header > .header-bottom .bottom-inner,
+  html body.reb-home .main-header > .header-bottom .inner-box,
+  html body.reb-home .main-header > .header-bottom .reb-live-widget,
+  html body.reb-home .main-header > .header-bottom .tradingview-widget-container,
+  html body.reb-home .main-header > .header-bottom .tradingview-widget-container__widget {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: hidden !important;
+  }
+  html body.reb-home .main-header > .header-bottom iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+
+/* V11 Desktop only: signed-in avatar/robot account button is replaced by top Log Out. Social keeps its account button. */
+@media (min-width:768px){
+  body.reb-hide-desktop-account-avatar .reb-web-account-trigger,
+  body.reb-hide-desktop-account-avatar .reb-web-dropdown{display:none!important;}
+}
+
+/* V12 DESKTOP MASTER FRAME — Desktop only. Mobile is locked.
+   One shared frame for utility content, brand/menu, market bar, trust panel,
+   and Solutions cards. About Us terminates at the same right edge as ticker. */
+@media (min-width: 768px) {
+  body.reb-home {
+    --reb-desktop-master-width: min(1440px, calc(100vw - 36px));
+  }
+
+  /* Utility row: content aligns to the same master frame. */
+  html body.reb-home .main-header .header-top > .large-container {
+    width: var(--reb-desktop-master-width) !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Brand + navigation: exact same frame. Remove the now-unused account column,
+     then push the whole nav group right so About Us lands on the frame edge. */
+  html body.reb-home .reb-web-menu-inner {
+    width: var(--reb-desktop-master-width) !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    gap: 24px !important;
+    box-sizing: border-box !important;
+  }
+  html body.reb-home .reb-web-menu-inner > .reb-web-account {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  html body.reb-home .reb-web-nav {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    justify-content: flex-end !important;
+    flex: 0 0 auto !important;
+  }
+  html body.reb-home .reb-web-nav > a:last-child {
+    margin-right: 0 !important;
+  }
+
+  /* Market Price Bar: exact same left/right master frame. */
+  html body.reb-home .main-header > .header-bottom {
+    width: var(--reb-desktop-master-width) !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  html body.reb-home .main-header > .header-bottom > .large-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Built for disciplined automation: same exact frame. */
+  html body.reb-home .reb-trust-section > .large-container {
+    width: var(--reb-desktop-master-width) !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Solutions: black section remains full bleed, but its heading/cards use
+     the identical master frame so upper and lower boxes align 100%. */
+  html body.reb-home .reb-solutions > .auto-container {
+    width: var(--reb-desktop-master-width) !important;
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  html body.reb-home .reb-solutions > .auto-container > .row {
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+  }
+  html body.reb-home .reb-solutions .account-block {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+/* V13 SURGICAL DESKTOP FIX — no shared/mobile/function changes.
+   Markets Supported cards: identical button baseline and geometry. */
+@media (min-width: 768px) {
+  html body.reb-home .reb-markets .inner-container {
+    display: flex !important;
+    align-items: stretch !important;
+  }
+  html body.reb-home .reb-markets .trading-block-one {
+    display: flex !important;
+    height: auto !important;
+  }
+  html body.reb-home .reb-markets .trading-block-one > .inner-box {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  html body.reb-home .reb-markets .trading-block-one > .inner-box > .btn-box {
+    margin-top: auto !important;
+  }
+  html body.reb-home .reb-markets .trading-block-one > .inner-box > .btn-box > .theme-btn {
+    width: 100% !important;
+    min-height: 56px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* V43 public desktop top bar: Home-standard phone + exit/logout. */
+@media (min-width:768px){
+ body:not(.reb-home) .main-header .header-top .support-box .icon-box{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:20px!important;height:20px!important;margin-right:8px!important;}
+ .reb-standard-phone-svg{display:block!important;width:19px!important;height:19px!important;fill:#f5b026!important;}
+ .main-header .header-top .option-block .reb-standard-force-logout{display:inline-flex!important;align-items:center!important;gap:8px!important;width:auto!important;min-width:0!important;height:auto!important;padding:0!important;border:0!important;background:transparent!important;color:#fff!important;font-size:15px!important;font-weight:800!important;text-decoration:none!important;}
+ .main-header .header-top .option-block .reb-standard-force-logout:before{content:"\f2f5"!important;display:inline-block!important;font-family:"Font Awesome 5 Free"!important;font-weight:900!important;color:#f5b026!important;font-size:16px!important;}
+}

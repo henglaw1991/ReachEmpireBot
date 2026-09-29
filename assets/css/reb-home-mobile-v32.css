@@ -1,0 +1,108 @@
+/* ReachEmpireBot Home V32 - compact Monitor and Automation Insights after viewport measurement. */
+@media (max-width:767px){
+  /* Monitor card: reserve a real column for the robot so the title cannot overlap it. */
+  html body.reb-home .reb-apps .inner-container{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) 105px!important;
+    align-items:center!important;
+    min-height:126px!important;
+    height:126px!important;
+    padding:12px!important;
+    gap:8px!important;
+  }
+  html body.reb-home .reb-apps .content_block_two{
+    grid-column:1!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+  }
+  html body.reb-home .reb-apps .content-box,
+  html body.reb-home .reb-apps .sec-title{width:100%!important;max-width:100%!important;min-width:0!important}
+  html body.reb-home .reb-apps .sec-title .sub-title{
+    margin:0 0 6px!important;
+    padding:5px 10px!important;
+    font-size:8px!important;
+    line-height:1!important;
+  }
+  html body.reb-home .reb-apps .sec-title h2{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0 0 10px!important;
+    font-size:16px!important;
+    line-height:1.12!important;
+    white-space:normal!important;
+    overflow-wrap:normal!important;
+  }
+  html body.reb-home .reb-apps .image-layer{
+    grid-column:2!important;
+    left:auto!important;
+    right:7px!important;
+    top:50%!important;
+    width:100px!important;
+    height:116px!important;
+  }
+  html body.reb-home .reb-apps .download-list{
+    grid-template-columns:repeat(4,30px)!important;
+    gap:4px!important;
+  }
+  html body.reb-home .reb-apps .download-list li,
+  html body.reb-home .reb-apps .download-list li a{width:30px!important;height:30px!important}
+  html body.reb-home .reb-apps .download-list li a{font-size:16px!important}
+
+  /* Automation Insights: smaller section heading and shorter professional cards. */
+  html body.reb-home .reb-news{
+    padding-top:20px!important;
+    padding-bottom:22px!important;
+  }
+  html body.reb-home .reb-news .sec-title{padding-bottom:14px!important}
+  html body.reb-home .reb-news .sec-title .sub-title{
+    margin:0 0 8px!important;
+    padding:6px 13px!important;
+    font-size:9px!important;
+    line-height:1!important;
+  }
+  html body.reb-home .reb-news .sec-title h2{
+    font-size:24px!important;
+    line-height:1.08!important;
+  }
+  html body.reb-home .reb-news .row{row-gap:10px!important}
+  html body.reb-home .reb-news .news-block{margin:0!important;padding-bottom:0!important}
+  html body.reb-home .reb-news .news-block-one{
+    min-height:0!important;
+    height:auto!important;
+    border-radius:12px!important;
+  }
+  html body.reb-home .reb-news .news-block-one .inner-box{
+    min-height:102px!important;
+    height:auto!important;
+    padding:12px 13px!important;
+  }
+  html body.reb-home .reb-news .news-block-one h3{
+    margin:0 0 5px!important;
+    font-size:17px!important;
+    line-height:1.15!important;
+  }
+  html body.reb-home .reb-news .news-block-one p{
+    display:-webkit-box!important;
+    margin:0!important;
+    font-size:13px!important;
+    line-height:1.35!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:2!important;
+    overflow:hidden!important;
+  }
+  html body.reb-home .reb-news .post-date,
+  html body.reb-home .reb-news .author-box{display:none!important}
+}
+
+@media (max-width:350px){
+  html body.reb-home .reb-apps .inner-container{grid-template-columns:minmax(0,1fr) 92px!important}
+  html body.reb-home .reb-apps .image-layer{width:90px!important;height:108px!important}
+  html body.reb-home .reb-apps .sec-title h2{font-size:15px!important}
+  html body.reb-home .reb-apps .download-list{grid-template-columns:repeat(4,27px)!important}
+  html body.reb-home .reb-apps .download-list li,
+  html body.reb-home .reb-apps .download-list li a{width:27px!important;height:27px!important}
+}
+

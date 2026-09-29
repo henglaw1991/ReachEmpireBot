@@ -1,0 +1,149 @@
+:root{--reb-gold:#ffb31a;--reb-ink:#121418;--reb-muted:#657080;--reb-line:#dde3ea;--reb-bg:#f2f4f7;--reb-card:#fff;--reb-soft:#f6f7f9}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:var(--reb-social-text-font,"IBM Plex Sans",Arial,Helvetica,sans-serif);color:var(--reb-ink);background:var(--reb-bg)}button,input,textarea{font:inherit}button,a{ -webkit-tap-highlight-color:transparent}.reb-profile-topbar{height:64px;position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e4e7eb;display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100vw - 1180px)/2))}.reb-profile-brand{display:flex;align-items:center;gap:10px;color:#111;text-decoration:none;font-weight:800}.reb-profile-brand img{width:38px;height:38px;object-fit:contain}.reb-profile-topnav{display:flex;gap:8px}.reb-profile-topnav a{height:44px;min-width:86px;border-radius:10px;color:#5b6471;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:7px;font-weight:700}.reb-profile-topnav a.active,.reb-profile-topnav a:hover{background:#fff4d8;color:#9a6500}.reb-profile-shell{max-width:1080px;margin:18px auto 70px;padding:0 14px}.reb-profile-hero{background:#fff;border:1px solid var(--reb-line);border-radius:18px;overflow:hidden;box-shadow:0 6px 22px rgba(15,23,42,.05)}.reb-profile-cover{height:300px;position:relative;background:linear-gradient(135deg,#0d2740,#1f5e85 50%,#f6b21b);overflow:hidden}.reb-profile-cover>img{width:100%;height:100%;object-fit:cover;display:block}.reb-profile-cover-fallback{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 75% 25%,rgba(255,179,26,.5),transparent 35%),linear-gradient(120deg,#0b1d2c,#173c55 52%,#0f2638)}.reb-profile-cover-fallback span{color:rgba(255,255,255,.12);font-size:72px;font-weight:900;letter-spacing:-4px}
+/* Hide the decorative fallback as soon as a real cover image is present. */
+.reb-profile-cover>img+.reb-profile-cover-fallback{display:none}.reb-cover-edit{position:absolute;right:18px;bottom:18px;border:0;border-radius:10px;background:#fff;color:#111;padding:11px 14px;font-weight:800;display:flex;gap:8px;align-items:center;box-shadow:0 3px 16px rgba(0,0,0,.18);cursor:pointer}.reb-cover-progress{position:absolute;inset:auto 18px 18px auto;background:rgba(17,17,17,.88);color:#fff;border-radius:10px;padding:10px 14px;display:flex;gap:12px}.reb-profile-identity-row{display:grid;grid-template-columns:auto 1fr auto;gap:20px;padding:0 26px 18px;align-items:end}.reb-profile-avatar-wrap{position:relative;width:154px;height:86px}.reb-profile-avatar{position:absolute;left:0;bottom:0;width:154px;height:154px;border-radius:50%;border:5px solid #fff;background:#ffbf3f;overflow:hidden;display:grid;place-items:center;font-size:44px;font-weight:900;box-shadow:0 2px 10px rgba(0,0,0,.13)}.reb-profile-avatar img,.reb-mini-avatar img{width:100%;height:100%;object-fit:cover}.reb-avatar-edit{position:absolute;right:2px;bottom:2px;width:38px;height:38px;border:3px solid #fff;border-radius:50%;background:#eef1f5;cursor:pointer}.reb-profile-main-copy{padding-top:14px}.reb-profile-name-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.reb-profile-name-row h1{margin:0;font-size:30px;line-height:1.1}.reb-profile-username{color:var(--reb-muted);font-size:15px;margin-top:4px}.reb-public-pill{display:inline-flex;gap:5px;align-items:center;padding:6px 9px;border-radius:999px;background:#f0f2f5;color:#555;font-size:12px;font-weight:700}.reb-profile-bio{margin:8px 0 8px;color:#343b45;max-width:650px}.reb-profile-counts{display:flex;align-items:center;gap:14px;color:#505865;font-size:14px}.reb-profile-counts button{border:0;background:none;padding:0;cursor:pointer;color:inherit}.reb-profile-counts strong{color:#111}.reb-profile-actions{display:flex;gap:8px;padding-bottom:6px}.reb-btn-primary,.reb-btn-secondary{border:0;border-radius:10px;padding:11px 16px;font-weight:800;cursor:pointer}.reb-btn-primary{background:var(--reb-gold);color:#111}.reb-btn-secondary{background:#edf0f4;color:#222}.reb-profile-tabs{display:flex;gap:4px;border-top:1px solid var(--reb-line);padding:0 24px}.reb-profile-tabs button{border:0;background:transparent;padding:16px 18px;font-weight:800;color:#5d6673;border-bottom:3px solid transparent;cursor:pointer}.reb-profile-tabs button.active{color:#9c6900;border-bottom-color:var(--reb-gold)}.reb-profile-content-grid{display:grid;grid-template-columns:340px 1fr;gap:16px;margin-top:16px;align-items:start}.reb-profile-sidebar{position:sticky;top:80px;display:grid;gap:14px}.reb-profile-card{background:#fff;border:1px solid var(--reb-line);border-radius:14px;padding:16px}.reb-profile-card h2{margin:0 0 12px;font-size:19px}.reb-profile-card p{white-space:pre-wrap}.reb-intro-row{display:flex;gap:10px;align-items:flex-start;color:#4f5967;margin:11px 0}.reb-intro-row i{width:20px;text-align:center;margin-top:2px}.reb-profile-links-card a{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1f5e8a;margin:11px 0;font-weight:700}.reb-profile-composer{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center}.reb-mini-avatar{width:42px;height:42px;border-radius:50%;background:#ffbf3f;overflow:hidden;display:grid;place-items:center;font-weight:900}.reb-profile-composer button{border:0;background:#f0f2f5;border-radius:999px;text-align:left;padding:12px 16px;color:#66717e;cursor:pointer}.reb-profile-composer a{color:#596574;text-decoration:none;display:flex;gap:6px;align-items:center;font-weight:700}.reb-profile-section-title{display:flex;align-items:center;justify-content:space-between;padding:10px 2px 8px}.reb-profile-section-title h2{margin:0;font-size:20px}.reb-profile-section-title a{color:#9c6900;text-decoration:none;font-weight:700}.reb-profile-state{background:#fff;border:1px dashed #ccd3db;border-radius:12px;padding:28px;text-align:center;color:#67717d}.reb-profile-posts{display:grid;gap:14px}.reb-post-card{background:#fff;border:1px solid var(--reb-line);border-radius:14px;padding:15px;overflow:hidden}.reb-post-head{display:flex;gap:10px;align-items:center}.reb-post-avatar{width:42px;height:42px;border-radius:50%;background:#ffbf3f;overflow:hidden;display:grid;place-items:center;font-weight:900;flex:none}.reb-post-head strong{display:block}.reb-post-head small{display:block;color:#7a8490;margin-top:2px}.reb-post-content{white-space:pre-wrap;margin:13px 0;font-size:15px;line-height:1.45}.reb-post-media{display:grid;gap:6px;border-radius:12px;overflow:hidden}.reb-post-media img,.reb-post-media video{width:100%;max-height:640px;object-fit:cover;background:#111;border-radius:10px}.reb-file-attachment{display:flex;align-items:center;gap:10px;background:#f2f4f7;padding:13px;border-radius:10px;color:#333;text-decoration:none}.reb-shared-card{border:1px solid #dfe4ea;border-radius:12px;padding:12px;margin:10px 0;background:#fbfcfd}.reb-post-actions-row{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;border-top:1px solid #e7eaee;margin-top:12px;padding-top:10px}.reb-post-actions-row button,.reb-post-actions-row a{border:0;border-radius:9px;background:#f4f5f7;min-height:40px;display:flex;align-items:center;justify-content:center;gap:6px;color:#343b44;text-decoration:none;font-weight:700;cursor:pointer}.reb-post-actions-row .liked{background:#fff2cf;color:#9b6700}.reb-load-more{width:100%;margin-top:14px;border:0;border-radius:10px;background:#fff;border:1px solid var(--reb-line);padding:12px;font-weight:800;cursor:pointer}.reb-about-panel{line-height:1.6}.reb-modal-backdrop{position:fixed;inset:0;z-index:100;background:rgba(13,18,25,.58);display:grid;place-items:center;padding:14px}.reb-modal{width:min(560px,100%);max-height:min(760px,90vh);overflow:hidden;background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.28)}.reb-modal>header{height:58px;border-bottom:1px solid var(--reb-line);display:flex;align-items:center;justify-content:center;position:relative}.reb-modal>header h2{margin:0;font-size:19px}.reb-modal>header button{position:absolute;right:12px;border:0;border-radius:50%;width:38px;height:38px;background:#eff1f4;cursor:pointer}.reb-modal-body{padding:16px;max-height:calc(90vh - 58px);overflow:auto}.reb-edit-form{display:grid;gap:12px}.reb-edit-form label{font-weight:700}.reb-edit-form input,.reb-edit-form textarea{width:100%;margin-top:6px;border:1px solid #cfd6df;border-radius:10px;padding:11px}.reb-edit-form textarea{min-height:110px;resize:vertical}.reb-member-row{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #eef0f3}.reb-member-row:last-child{border-bottom:0}.reb-member-copy strong,.reb-member-copy span{display:block}.reb-member-copy span{font-size:13px;color:#74808c}.reb-profile-toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:200;background:#15171a;color:#fff;border-radius:10px;padding:12px 18px;box-shadow:0 8px 30px rgba(0,0,0,.25)}.is-clickable{cursor:pointer}.reb-profile-error{color:#b42318;background:#fff1f1;border:1px solid #ffd0d0;border-radius:10px;padding:14px}
+@media(max-width:800px){.reb-profile-topbar{padding:0 12px}.reb-profile-brand span{display:none}.reb-profile-topnav a{min-width:48px}.reb-profile-topnav a span{display:none}.reb-profile-shell{margin-top:8px;padding:0 8px}.reb-profile-cover{height:200px}.reb-cover-edit span{display:none}.reb-cover-edit{right:10px;bottom:10px}.reb-profile-identity-row{grid-template-columns:1fr;padding:0 16px 15px;gap:8px;align-items:start}.reb-profile-avatar-wrap{width:112px;height:56px}.reb-profile-avatar{width:112px;height:112px;font-size:34px}.reb-avatar-edit{right:-2px}.reb-profile-name-row h1{font-size:24px}.reb-profile-actions{padding:4px 0}.reb-profile-tabs{overflow-x:auto;padding:0 8px}.reb-profile-tabs button{padding:13px 14px;white-space:nowrap}.reb-profile-content-grid{grid-template-columns:1fr}.reb-profile-sidebar{position:static}.reb-profile-composer{grid-template-columns:40px 1fr}.reb-profile-composer>a{display:none}.reb-post-card{padding:12px}.reb-profile-cover-fallback span{font-size:42px}.reb-profile-actions .reb-btn-primary,.reb-profile-actions .reb-btn-secondary{padding:10px 12px}.reb-profile-counts{flex-wrap:wrap}}
+
+/* Phase 3E modal safety: hidden dialogs must never render on page load. */
+.reb-modal-backdrop[hidden],.reb-profile-toast[hidden],.reb-cover-progress[hidden]{display:none!important}
+
+/* Phase 3F — normalized social navigation */
+.reb-profile-topnav a{position:relative}
+.reb-nav-unread{position:absolute;right:2px;top:3px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:#d92d20;color:#fff;display:grid;place-items:center;font-size:10px;line-height:1}
+@media(max-width:900px){.reb-profile-topnav a{min-width:44px;padding:0 10px}.reb-profile-topnav a span{display:none}.reb-nav-unread{right:0;top:1px}}
+
+
+/* ============================================================
+   Phase 3N-D6 — Desktop Feed/Profile Unified Scale
+   DESKTOP ONLY (>=1200px). Mobile/tablet rules above remain unchanged.
+   Feed desktop shell uses 1320px; Profile now uses the same desktop width.
+   ============================================================ */
+.reb-default-avatar-image{width:100%;height:100%;display:block;object-fit:contain!important;padding:6px;background:#fff2c9;border-radius:inherit}
+@media (min-width:1200px){
+  .reb-profile-page{font-size:16px;line-height:1.55;background:#fff}
+  .reb-profile-topbar{
+    height:72px;
+    padding-left:max(24px,calc((100vw - 1320px)/2));
+    padding-right:max(24px,calc((100vw - 1320px)/2));
+  }
+  .reb-profile-brand{font-size:18px;gap:12px}
+  .reb-profile-brand img{width:42px;height:42px}
+  .reb-profile-topnav{gap:6px}
+  .reb-profile-topnav a{height:46px;min-width:92px;padding:0 13px;font-size:15px;line-height:1.1}
+  .reb-profile-shell{
+    width:min(1320px,calc(100% - 48px));
+    max-width:1320px;
+    margin:30px auto 72px;
+    padding:0;
+  }
+  .reb-profile-cover{height:320px}
+  .reb-profile-identity-row{padding-left:30px;padding-right:30px;gap:22px}
+  .reb-profile-name-row h1{font-size:32px;line-height:1.12}
+  .reb-profile-username{font-size:16px}
+  .reb-profile-bio{font-size:16px;line-height:1.5}
+  .reb-profile-counts{font-size:15px}
+  .reb-profile-tabs{padding:0 28px}
+  .reb-profile-tabs button{font-size:15px;padding:17px 20px}
+  .reb-profile-content-grid{grid-template-columns:320px minmax(0,1fr);gap:22px;margin-top:22px}
+  .reb-profile-sidebar{top:94px;gap:16px}
+  .reb-profile-card{border-radius:12px;padding:18px}
+  .reb-profile-card h2,.reb-profile-section-title h2{font-size:21px;line-height:1.25}
+  .reb-profile-composer{grid-template-columns:46px minmax(0,1fr) auto;gap:12px}
+  .reb-mini-avatar{width:46px;height:46px}
+  .reb-profile-composer button{font-size:15px;padding:13px 17px}
+  .reb-profile-composer a{font-size:14px}
+  .reb-post-card{border-radius:12px;padding:17px}
+  .reb-post-head strong{font-size:15px}
+  .reb-post-head small{font-size:13px}
+  .reb-post-content{font-size:16px;line-height:1.55}
+  .reb-post-actions-row button,.reb-post-actions-row a{font-size:14px}
+}
+
+
+/* ============================================================
+   Phase 3N-D7 — Profile Desktop Standard Alignment
+   DESKTOP ONLY (>=1200px). Mobile/tablet profile header remains unchanged.
+   Uses the exact Feed desktop header/menu language via reb-social-desktop-v1.css.
+   ============================================================ */
+.reb-profile-desktop-header{display:none}
+@media (min-width:1200px){
+  .reb-profile-desktop-header{display:block}
+  .reb-profile-mobile-topbar{display:none!important}
+
+  /* Keep Feed and Profile on the exact same outer desktop rhythm. */
+  .reb-profile-shell{
+    width:min(1320px,calc(100% - 48px));
+    max-width:1320px;
+    margin:30px auto 72px;
+    padding:0;
+  }
+  .reb-profile-hero,.reb-profile-content-grid{width:100%;max-width:none}
+
+  /* Hero/profile scale tuned to the same desktop visual density as Feed. */
+  .reb-profile-cover{height:320px}
+  .reb-profile-avatar-wrap{width:154px;height:86px}
+  .reb-profile-avatar{width:154px;height:154px}
+  .reb-profile-name-row h1{font-size:32px}
+  .reb-profile-main-copy{min-width:0}
+
+  /* Ensure all avatar image states fill their circles cleanly. */
+  .reb-profile-avatar img,
+  .reb-mini-avatar img,
+  .reb-post-avatar img,
+  .reb-member-row .reb-post-avatar img{
+    width:100%!important;height:100%!important;display:block!important;
+    object-fit:cover!important;padding:0!important;border-radius:inherit!important;background:transparent!important
+  }
+  .reb-profile-avatar img.reb-default-avatar-image,
+  .reb-mini-avatar img.reb-default-avatar-image,
+  .reb-post-avatar img.reb-default-avatar-image,
+  .reb-member-row .reb-post-avatar img.reb-default-avatar-image{
+    object-fit:contain!important;padding:5px!important;background:#fff2c9!important
+  }
+}
+
+
+/* Desktop D8 — Post privacy metadata (profile page). */
+@media (min-width:1200px){
+  .reb-post-meta{display:flex!important;align-items:center!important;gap:7px!important;flex-wrap:wrap!important}
+  .reb-post-privacy{display:inline-flex;align-items:center;gap:4px;color:#7a8490;font-size:12px;font-weight:600}
+  .reb-post-privacy i{font-size:11px}
+}
+
+/* Phase 3N-D17 — profile post options + pinned timeline */
+.reb-post-head{position:relative}
+.reb-profile-post-more{
+  margin-left:auto;width:36px;height:36px;border:0;border-radius:50%;background:#f1f3f5;color:#606872;
+  display:grid;place-items:center;cursor:pointer;font-size:15px
+}
+.reb-profile-post-more:hover,.reb-profile-post-more[aria-expanded="true"]{background:#e7eaee;color:#111}
+.reb-profile-post-menu{
+  position:absolute;top:44px;right:0;z-index:70;width:min(290px,calc(100vw - 42px));padding:8px;border:1px solid #e0e4e8;
+  border-radius:14px;background:#fff;box-shadow:0 16px 44px rgba(15,23,42,.18)
+}
+.reb-profile-post-menu[hidden]{display:none!important}
+.reb-profile-post-menu-item{
+  width:100%;min-height:52px;border:0;border-radius:10px;background:transparent;color:#1f2328;display:grid;
+  grid-template-columns:38px minmax(0,1fr);gap:9px;align-items:center;padding:7px 9px;text-align:left;cursor:pointer
+}
+.reb-profile-post-menu-item:hover,.reb-profile-post-menu-item:focus-visible{background:#f2f4f6;outline:0}
+.reb-profile-post-menu-item:disabled{opacity:.55;cursor:not-allowed}
+.reb-profile-post-menu-icon{width:38px;height:38px;border-radius:50%;background:#eef1f4;display:grid;place-items:center;font-size:16px}
+.reb-profile-post-menu-copy{min-width:0;display:flex;flex-direction:column}
+.reb-profile-post-menu-copy strong{font:800 13px/1.2 var(--reb-title-font,"Ubuntu",Arial,sans-serif)!important;color:#15191e}
+.reb-profile-post-menu-copy small{margin-top:3px;color:#747d87;font-size:10.5px;line-height:1.3}
+.reb-profile-post-menu-item.is-danger .reb-profile-post-menu-icon{background:#fff0f0;color:#c62828}
+.reb-profile-post-menu-item.is-danger strong{color:#b42318}
+.reb-profile-pinned-label{display:inline-flex;align-items:center;gap:4px;margin-left:8px;color:#9b6800;font-weight:800}
+.reb-profile-pinned-label i{font-size:9px}
+.reb-profile-post-edit-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:4px}
+@media(max-width:800px){.reb-profile-post-menu{top:42px;right:0;width:min(270px,calc(100vw - 30px));padding:7px}}
+
+/* Phase 3N-D18 — body-portal profile post actions dropdown */
+.reb-profile-post-menu{
+  position:fixed!important;right:auto!important;bottom:auto!important;z-index:10050!important;
+  width:290px;max-width:calc(100vw - 20px);padding:8px;border:1px solid #e0e4e8;border-radius:14px;background:#fff;
+  box-shadow:0 18px 48px rgba(15,23,42,.22);
+}
+.reb-profile-post-menu.is-open{display:block!important}
+@media(max-width:800px){.reb-profile-post-menu{width:min(280px,calc(100vw - 20px))}}

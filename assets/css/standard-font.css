@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ReachEmpireBot Global Font Lock — One Website, One Font */
+html, body, body *,
+button, input, select, textarea,
+a, p, span, div, section, article, header, footer, nav, main,
+h1, h2, h3, h4, h5, h6,
+ul, ol, li, table, thead, tbody, tr, th, td,
+label, strong, b, small, em, i {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
+}

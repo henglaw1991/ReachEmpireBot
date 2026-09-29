@@ -1,0 +1,31 @@
+:root{--reb-call-gold:#ffb51f;--reb-call-ink:#111719;--reb-call-muted:#6f7882;--reb-call-line:#e3e7eb;--reb-call-danger:#e5484d;--reb-call-success:#19a463}
+.reb-call-layer{position:fixed;z-index:10050;right:24px;bottom:96px;width:min(370px,calc(100vw - 28px));pointer-events:none;font-family:var(--reb-social-text-font,"IBM Plex Sans",Arial,Helvetica,sans-serif)}
+.reb-call-card{pointer-events:auto;overflow:hidden;border:1px solid rgba(17,23,25,.12);border-radius:24px;background:#fff;box-shadow:0 24px 70px rgba(14,19,24,.26);transform-origin:bottom right;animation:rebCallIn .22s ease-out}
+.reb-call-hero{position:relative;display:grid;place-items:center;min-height:246px;padding:28px 24px 22px;text-align:center;background:radial-gradient(circle at 50% 28%,#fff8e7 0,#fff 48%,#f5f7f9 100%)}
+.reb-call-avatar{position:relative;width:108px;height:108px;border-radius:50%;display:grid;place-items:center;overflow:hidden;background:#ffbd35;color:#111;font:900 30px var(--reb-social-title-font,"Ubuntu",Arial,sans-serif);box-shadow:0 12px 30px rgba(20,24,27,.12)}
+.reb-call-avatar img{width:100%;height:100%;object-fit:cover}.reb-call-ring{position:absolute;width:126px;height:126px;border:2px solid rgba(255,181,31,.5);border-radius:50%;animation:rebCallRing 1.7s ease-out infinite;pointer-events:none}.reb-call-ring.r2{animation-delay:.55s}
+.reb-call-name{margin:18px 0 5px;font:900 24px/1.15 var(--reb-social-title-font,"Ubuntu",Arial,sans-serif);color:var(--reb-call-ink)}
+.reb-call-status{min-height:21px;margin:0;color:var(--reb-call-muted);font-size:14px}.reb-call-status.connected{color:var(--reb-call-success);font-weight:800}
+.reb-call-actions{display:flex;align-items:center;justify-content:center;gap:18px;padding:18px 20px 22px;border-top:1px solid #edf0f2;background:#fff}
+.reb-call-action{width:58px;height:58px;border:0;border-radius:50%;display:grid;place-items:center;cursor:pointer;font-size:19px;transition:transform .16s ease,filter .16s ease;background:#edf1f4;color:#27313a}.reb-call-action:hover{transform:translateY(-2px);filter:brightness(.98)}
+.reb-call-action.accept{background:var(--reb-call-success);color:#fff}.reb-call-action.end,.reb-call-action.decline{background:var(--reb-call-danger);color:#fff}.reb-call-action.muted{background:#20262c;color:#fff}
+.reb-call-action[hidden]{display:none!important}.reb-call-action-labels{display:flex;justify-content:center;gap:24px;padding:0 18px 18px;margin-top:-12px;color:#727c85;font-size:10px}.reb-call-audio{display:none}
+.reb-call-mini-status{position:absolute;left:14px;top:14px;padding:5px 9px;border-radius:999px;background:rgba(17,23,25,.78);color:#fff;font-size:10px;font-weight:800}
+@keyframes rebCallRing{0%{transform:scale(.86);opacity:.75}100%{transform:scale(1.25);opacity:0}}@keyframes rebCallIn{from{opacity:0;transform:scale(.94) translateY(12px)}to{opacity:1;transform:none}}
+.reb-msg-call-event{align-self:center;max-width:90%;margin:5px auto;padding:8px 14px;border-radius:999px;background:#eef1f4;color:#606a74;font-size:11px;font-weight:800;display:flex;align-items:center;gap:7px}.reb-msg-call-event i{color:#9b6900}
+.reb-msg-thread-tool.reb-msg-call-tool{background:#fff1c7;color:#966500}.reb-msg-thread-tool.reb-msg-call-tool:hover{background:#ffe4a1}.reb-msg-thread-tool.reb-msg-call-tool[hidden]{display:none!important}
+@media(max-width:760px){.reb-call-layer{left:0;right:0;bottom:0;width:100%;padding:0 8px calc(8px + env(safe-area-inset-bottom))}.reb-call-card{border-radius:24px 24px 18px 18px}.reb-call-hero{min-height:300px}.reb-call-avatar{width:118px;height:118px}.reb-call-name{font-size:26px}.reb-call-actions{padding-bottom:24px}}
+@media(prefers-reduced-motion:reduce){.reb-call-card,.reb-call-ring{animation:none!important}}
+
+/* D20-B video call extension: additive to D20-A voice UI. */
+.reb-call-video{display:none;background:#111;object-fit:cover}
+.reb-call-layer.is-video .reb-call-card{background:#111}
+.reb-call-layer.is-video .reb-call-hero{min-height:360px;background:#111;overflow:hidden}
+.reb-call-layer.is-video .reb-call-video.remote{display:block;position:absolute;inset:0;width:100%;height:100%}
+.reb-call-layer.is-video .reb-call-video.local{display:block;position:absolute;right:14px;bottom:14px;width:96px;height:128px;border-radius:14px;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 20px rgba(0,0,0,.35);z-index:3}
+.reb-call-layer.is-video .reb-call-avatar{z-index:2;background:#ffbd35}
+.reb-call-layer.is-video .reb-call-name,.reb-call-layer.is-video .reb-call-status{position:relative;z-index:4;color:#fff;text-shadow:0 1px 5px rgba(0,0,0,.8)}
+.reb-call-layer.is-video .reb-call-ring{z-index:2}
+.reb-call-layer.is-video .reb-call-mini-status{z-index:5}
+.reb-msg-video-call-tool{background:#eaf1ff!important;color:#315ea8!important}
+@media(max-width:760px){.reb-call-layer.is-video .reb-call-hero{min-height:430px}.reb-call-layer.is-video .reb-call-video.local{width:92px;height:124px}}

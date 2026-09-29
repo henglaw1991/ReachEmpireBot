@@ -1,0 +1,183 @@
+/* ReachEmpireBot Mobile Navigation Phase 1C
+   Shared mobile drawer for subpages. Desktop navigation is restored untouched. */
+@media (max-width: 860px) {
+  body.reb-unified-drawer-open {
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+  }
+
+  html body > nav.reb-unified-drawer {
+    display: flex !important;
+    position: fixed !important;
+    inset: 0 auto 0 0 !important;
+    z-index: 11002 !important;
+    width: min(85vw, 395px) !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 max(28px, env(safe-area-inset-bottom)) !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #111214 !important;
+    box-shadow: 18px 0 48px rgba(0,0,0,.44) !important;
+    flex-flow: column nowrap !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translate3d(100vw,0,0) !important;
+    transition: transform .34s cubic-bezier(.22,.8,.25,1), opacity .22s ease, visibility .34s !important;
+  }
+
+  html body.reb-unified-drawer-open > nav.reb-unified-drawer {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translate3d(0,0,0) !important;
+  }
+
+  html body > nav.reb-unified-drawer > .reb-unified-drawer-head {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: calc(82px + env(safe-area-inset-top)) !important;
+    margin: 0 !important;
+    padding: env(safe-area-inset-top) 0 0 !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,.10) !important;
+    border-radius: 0 !important;
+    background: #111214 !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+  }
+
+  html body > nav.reb-unified-drawer .reb-unified-drawer-close {
+    position: absolute !important;
+    top: calc(18px + env(safe-area-inset-top)) !important;
+    right: 18px !important;
+    left: auto !important;
+    display: grid !important;
+    place-items: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 10px !important;
+    background: #191a1d !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    font: 400 28px/1 Arial,sans-serif !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+  }
+
+  html body > nav.reb-unified-drawer > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+    margin: 0 !important;
+    padding: 0 28px !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,.10) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+    font-size: 15px !important;
+    font-weight: 750 !important;
+    letter-spacing: .02em !important;
+    text-align: left !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  html body > nav.reb-unified-drawer > a::before,
+  html body > nav.reb-unified-drawer > a::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  html body > nav.reb-unified-drawer > a:hover,
+  html body > nav.reb-unified-drawer > a:focus-visible,
+  html body > nav.reb-unified-drawer > a.active,
+  html body > nav.reb-unified-drawer > a[aria-current="page"] {
+    color: #ffb321 !important;
+    background: rgba(255,179,33,.07) !important;
+  }
+
+  html body > nav.reb-unified-drawer > a.active,
+  html body > nav.reb-unified-drawer > a[aria-current="page"] {
+    box-shadow: inset 5px 0 0 #ffb321 !important;
+  }
+
+  .reb-unified-drawer-close:focus-visible,
+  .reb-mobile-menu-toggle:focus-visible,
+  .reb-market-menu-toggle:focus-visible {
+    outline: 2px solid #ffb321 !important;
+    outline-offset: 3px !important;
+  }
+
+  .reb-unified-drawer-backdrop {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 11001 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: rgba(0,0,0,.64) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity .24s ease, visibility .24s !important;
+    cursor: default !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  body.reb-unified-drawer-open .reb-unified-drawer-backdrop {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+@media (max-width: 430px) {
+  html body > nav.reb-unified-drawer { width: 85vw !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reb-unified-drawer,
+  .reb-unified-drawer-backdrop { transition-duration: .01ms !important; }
+}

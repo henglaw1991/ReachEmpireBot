@@ -1,0 +1,256 @@
+/* ReachEmpire Social D15 — unified Social menu bar
+   One visual/navigation standard for Feed, Community, Notifications, Messages,
+   Profile and Social Settings. Page-specific content/layout remains untouched. */
+:root{
+  --reb-social-nav-gold:#ffb51f;
+  --reb-social-nav-gold-soft:#fff3d3;
+  --reb-social-nav-ink:#17191c;
+  --reb-social-nav-muted:#5e6874;
+  --reb-social-nav-line:#e1e5e9;
+}
+.reb-social-global-topbar{
+  position:sticky;top:0;z-index:80;width:100%;height:76px;
+  display:flex;align-items:center;background:#fff;
+  border-bottom:1px solid var(--reb-social-nav-line);
+  box-shadow:0 1px 0 rgba(15,23,42,.02);
+}
+.reb-social-global-inner{
+  width:min(1440px,calc(100% - 36px));height:100%;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:28px;
+}
+.reb-social-global-brand{
+  flex:none;display:flex;align-items:center;gap:13px;min-width:255px;
+  color:#111;text-decoration:none;
+  font-family:var(--reb-social-title-font,"Ubuntu",Arial,sans-serif)!important;
+  font-size:15px;font-weight:800;line-height:1;
+}
+.reb-social-global-brand img{
+  width:178px;height:auto;max-height:61px;display:block;object-fit:contain;flex:none;
+}
+.reb-social-global-brand span{
+  display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 12px;
+  border:1px solid #e8c267;border-radius:999px;background:#fffaf0;color:#9a6500;white-space:nowrap;
+}
+.reb-social-global-nav{
+  min-width:0;display:flex;align-items:center;justify-content:flex-end;gap:5px;
+}
+.reb-social-global-nav a{
+  position:relative;display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:46px;padding:0 15px;border-radius:12px;
+  color:var(--reb-social-nav-muted);text-decoration:none;white-space:nowrap;
+  font-family:var(--reb-social-title-font,"Ubuntu",Arial,sans-serif)!important;
+  font-size:16px;font-weight:700;line-height:1;
+  transition:background .15s ease,color .15s ease,transform .15s ease;
+}
+.reb-social-global-nav a:hover{background:#f5f6f8;color:#2f3740}
+.reb-social-global-nav a.active{
+  background:var(--reb-social-nav-gold-soft);color:#936000;
+}
+.reb-social-global-nav a:active{transform:translateY(1px)}
+.reb-social-global-nav i{font-size:17px;line-height:1}
+.reb-social-global-badge{
+  position:absolute;right:2px;top:1px;min-width:19px;height:19px;padding:0 5px;
+  display:grid;place-items:center;border-radius:999px;background:#df352c;color:#fff;
+  font-family:var(--reb-social-title-font,"Ubuntu",Arial,sans-serif)!important;
+  font-size:10px;font-weight:800;line-height:19px;
+  box-shadow:0 0 0 2px #fff;
+}
+.reb-social-global-badge[hidden]{display:none!important}
+
+/* The Messages page is the visual source of truth; enlarge/fix its brand and
+   recalculate its viewport shell for the unified 76px Social header. */
+.reb-msg-page .reb-msg-shell{height:calc(100vh - 76px)}
+
+/* Remove desktop-header artifacts from earlier website-style Social phases. */
+.reb-profile-desktop-header,.reb-profile-mobile-topbar{display:none!important}
+
+@media(max-width:1180px){
+  .reb-social-global-inner{width:min(100% - 24px,1100px);gap:14px}
+  .reb-social-global-brand{min-width:auto}
+  .reb-social-global-brand img{width:154px;height:auto}
+  .reb-social-global-brand span{min-height:30px;padding:0 9px;font-size:13px}
+  .reb-social-global-nav{gap:2px}
+  .reb-social-global-nav a{padding:0 10px;font-size:14px}
+}
+@media(max-width:940px){
+  .reb-social-global-topbar{height:68px}
+  .reb-social-global-inner{width:calc(100% - 18px);gap:8px}
+  .reb-social-global-brand{gap:8px}
+  .reb-social-global-brand img{width:142px;height:auto}
+  .reb-social-global-brand span{display:none}
+  .reb-social-global-nav{flex:1;justify-content:flex-end}
+  .reb-social-global-nav a{width:44px;min-width:44px;height:44px;padding:0}
+  .reb-social-global-nav a span{display:none}
+  .reb-social-global-nav i{font-size:18px}
+  .reb-social-global-badge{right:-1px;top:0}
+  .reb-msg-page .reb-msg-shell{height:calc(100vh - 68px)}
+}
+@media(max-width:560px){
+  .reb-social-global-inner{width:calc(100% - 12px)}
+  .reb-social-global-brand img{width:100px;height:auto}
+  .reb-social-global-nav{gap:0;justify-content:space-between}
+  .reb-social-global-nav a{width:39px;min-width:39px}
+}
+
+/* D20F22 Desktop ecosystem alignment — nav centered over Social main/Create Post column */
+@media(min-width:1181px){
+ .reb-social-global-inner{width:min(1580px,calc(100% - 72px));display:grid;grid-template-columns:260px minmax(760px,930px) 260px;column-gap:28px;justify-content:center;}
+ .reb-social-global-brand{min-width:0;justify-self:start;}
+ .reb-social-global-nav{width:100%;justify-content:center;justify-self:center;margin:0;}
+ .reb-social-account-control{margin-left:0!important;justify-self:end;}
+}
+@media(min-width:941px) and (max-width:1180px){.reb-social-global-inner{padding-left:8px;padding-right:8px}.reb-social-account-control{margin-left:8px!important}}
+
+
+/* D20F23 — exact desktop alignment with the Social content grid.
+   Header center column now matches Create Post/feed center column. */
+@media (min-width:1600px){
+  .reb-social-global-inner{
+    width:min(1390px,calc(100% - 72px))!important;
+    grid-template-columns:230px minmax(0,820px) 280px!important;
+    column-gap:30px!important;
+  }
+  .reb-social-global-nav{
+    grid-column:2!important;
+    width:820px!important;
+    justify-content:center!important;
+    justify-self:center!important;
+  }
+  .reb-social-account-control{
+    grid-column:3!important;
+    justify-self:end!important;
+    margin-left:0!important;
+  }
+}
+/* Never paint the old Profile text before the photo-account control is mounted. */
+@media (min-width:941px){
+  .reb-social-global-nav a[href="/social/profile/"]{display:none!important}
+}
+
+/* D20F24 — pixel-aligned Social desktop header.
+   Use the exact same three columns as the Social body:
+   left account rail | Create Post/feed | Quick access rail. */
+@media (min-width:1200px){
+  .reb-social-global-inner{
+    width:min(1380px,calc(100% - 72px))!important;
+    max-width:1380px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:220px minmax(0,790px) 265px!important;
+    column-gap:26px!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  .reb-social-global-brand{
+    grid-column:1!important;
+    width:220px!important;
+    min-width:0!important;
+    justify-self:stretch!important;
+    justify-content:flex-start!important;
+    margin:0!important;
+  }
+  .reb-social-global-nav{
+    grid-column:2!important;
+    width:790px!important;
+    max-width:790px!important;
+    min-width:0!important;
+    margin:0!important;
+    justify-self:stretch!important;
+    justify-content:space-between!important;
+    gap:0!important;
+  }
+  .reb-social-global-nav a{
+    flex:0 0 auto!important;
+    padding-left:13px!important;
+    padding-right:13px!important;
+  }
+  .reb-social-account-control{
+    grid-column:3!important;
+    width:265px!important;
+    margin:0!important;
+    justify-self:stretch!important;
+    justify-content:flex-end!important;
+  }
+}
+@media (min-width:1600px){
+  .reb-social-global-inner{
+    width:min(1380px,calc(100% - 72px))!important;
+    grid-template-columns:220px minmax(0,790px) 265px!important;
+    column-gap:26px!important;
+  }
+  .reb-social-global-nav{width:790px!important;max-width:790px!important;}
+  .reb-social-account-control{width:265px!important;}
+}
+
+/* D20F25 — ONE desktop alignment rail for every Social page.
+   Header outer edges = Social content outer edges.
+   Brand aligns to left cards; account avatar aligns to right cards. */
+@media (min-width:1200px){
+  .reb-social-global-inner{
+    width:min(1390px,calc(100% - 64px))!important;
+    max-width:1390px!important;
+    margin:0 auto!important;
+    padding-left:0!important;
+    padding-right:0!important;
+    display:grid!important;
+    grid-template-columns:230px minmax(0,820px) 280px!important;
+    column-gap:30px!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  .reb-social-global-brand{
+    grid-column:1!important;
+    width:230px!important;
+    min-width:0!important;
+    margin:0!important;
+    justify-self:stretch!important;
+    justify-content:flex-start!important;
+  }
+  .reb-social-global-nav{
+    grid-column:2!important;
+    width:820px!important;
+    max-width:820px!important;
+    min-width:0!important;
+    margin:0!important;
+    justify-self:stretch!important;
+    justify-content:space-between!important;
+    gap:0!important;
+  }
+  .reb-social-global-nav a{flex:0 0 auto!important;padding-left:14px!important;padding-right:14px!important;}
+  .reb-social-account-control{
+    grid-column:3!important;
+    width:280px!important;
+    margin:0!important;
+    justify-self:stretch!important;
+    justify-content:flex-end!important;
+  }
+}
+
+/* D20F32 MOBILE ONLY — simplify Social top header.
+   Keep only Notifications in the top navigation; Feed/Trading/Community/Messages
+   remain available from the mobile bottom navigation. Desktop is untouched. */
+@media (max-width: 760px){
+  .reb-social-global-nav a:not([href="/social/notifications/"]){
+    display:none!important;
+  }
+  .reb-social-global-nav{
+    flex:1!important;
+    display:flex!important;
+    justify-content:flex-end!important;
+    align-items:center!important;
+    gap:0!important;
+    margin-left:auto!important;
+  }
+  .reb-social-global-nav a[href="/social/notifications/"]{
+    display:flex!important;
+    width:44px!important;
+    min-width:44px!important;
+    height:44px!important;
+    padding:0!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  .reb-social-global-nav a[href="/social/notifications/"] span{
+    display:none!important;
+  }
+}

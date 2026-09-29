@@ -1,0 +1,40 @@
+/* D20-D3 — Social typography unified to the Main Home Page typography system.
+   Home source of truth: assets/css/style.css
+   --title-font: Ubuntu; --text-font: IBM Plex Sans.
+*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,400;0,500;0,700&display=swap');
+:root{
+  --reb-social-text-font:var(--text-font,"Ubuntu",Arial,Helvetica,sans-serif);
+  --reb-social-title-font:var(--title-font,"Ubuntu",Arial,Helvetica,sans-serif);
+  --reb-text-font:var(--text-font,"Ubuntu",Arial,Helvetica,sans-serif);
+  --reb-title-font:var(--title-font,"Ubuntu",Arial,Helvetica,sans-serif);
+}
+html,body,.reb-social-page,.reb-profile-page,.reb-msg-page,.reb-notif-page,.reb-settings-page,
+p,a,button,input,textarea,select,option,label,small,li,td,th,
+span:not(.fa):not(.fas):not(.far):not(.fal):not(.fab):not([class^="icon-"]):not([class*=" icon-"]),
+div:not([class^="icon-"]):not([class*=" icon-"]){
+  font-family:var(--reb-social-text-font)!important;
+  letter-spacing:0!important;
+}
+h1,h2,h3,h4,h5,h6,strong,b,
+.reb-social-brand,.reb-profile-brand,.reb-msg-brand,.reb-notif-brand,.reb-settings-brand,
+.reb-social-feed-head h2,.reb-profile-name-row h1,.reb-profile-card h2,.reb-profile-section-title h2,
+.reb-msg-side-head h1,.reb-msg-empty h2,.reb-notif-title h1,.reb-notif-state h2,
+.reb-settings-heading h1,.reb-settings-card h2,
+.reb-social-topbar nav,.reb-profile-topbar nav,.reb-msg-topbar nav,.reb-notif-topbar nav,.reb-settings-topbar nav,
+.reb-social-btn,.reb-social-action,.reb-social-post-actions button,.reb-mini-chat button,.reb-call-actions button{
+  font-family:var(--reb-social-title-font)!important;
+  letter-spacing:0!important;
+}
+/* Match Home hierarchy: strong titles, readable body, without changing Social layout geometry. */
+h1,.reb-social-feed-head h2,.reb-profile-name-row h1,.reb-msg-side-head h1,.reb-notif-title h1,.reb-settings-heading h1{font-weight:700!important}
+h2,h3,h4,h5,h6,.reb-profile-card h2,.reb-settings-card h2{font-weight:700!important}
+button,.reb-social-topbar nav,.reb-profile-topbar nav,.reb-msg-topbar nav,.reb-notif-topbar nav,.reb-settings-topbar nav{font-weight:700!important}
+input,textarea,select,p,li{font-weight:400}
+/* Calls + mini chat inherit the same Home typography while preserving icon fonts. */
+.reb-call-layer,.reb-call-card,.reb-mini-chat,.reb-mini-chat *{font-family:var(--reb-social-text-font)!important}
+.reb-call-name,.reb-call-actions button,.reb-mini-chat strong,.reb-mini-chat button{font-family:var(--reb-social-title-font)!important}
+/* Never replace icon glyph fonts. */
+.fa,.fas,.far,.fal{font-family:"Font Awesome 5 Pro"!important}
+.fab{font-family:"Font Awesome 5 Brands"!important;font-weight:400!important}
+[class^="icon-"],[class*=" icon-"]{font-family:'icomoon'!important}

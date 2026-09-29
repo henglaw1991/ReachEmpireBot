@@ -1,0 +1,186 @@
+/* ReachEmpireBot About Us video + spacing standard v85 */
+.reb-about-v85 .reb-about-hide-badge { display: none !important; }
+
+.reb-about-v85 .reb-about-hero-media {
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(250, 177, 27, .34) !important;
+  border-radius: 16px !important;
+  background: #090b0a !important;
+  line-height: 0 !important;
+}
+
+.reb-about-v85 .reb-about-video {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border: 0 !important;
+  border-radius: 15px !important;
+  background: #050505 !important;
+}
+
+.reb-about-v85 .reb-about-mission-card,
+.reb-about-v85 .reb-about-workflow-card,
+.reb-about-v85 .reb-about-stat {
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+@media (max-width: 767px) {
+  .reb-about-v85 .reb-about-hero {
+    padding: 26px 20px 28px !important;
+    min-height: 0 !important;
+    gap: 20px !important;
+  }
+
+  .reb-about-v85 .reb-about-hero > * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .reb-about-v85 .reb-about-hero h1 {
+    font-size: clamp(29px, 8.2vw, 34px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -.45px !important;
+    margin: 8px 0 12px !important;
+  }
+
+  .reb-about-v85 .reb-about-hero p {
+    font-size: 15px !important;
+    line-height: 1.52 !important;
+    margin: 0 0 16px !important;
+  }
+
+  .reb-about-v85 .reb-about-hero a,
+  .reb-about-v85 .reb-about-hero button {
+    min-height: 48px !important;
+    padding: 12px 18px !important;
+    font-size: 14px !important;
+  }
+
+  .reb-about-v85 .reb-about-hero-media {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 18px 0 0 !important;
+  }
+
+  .reb-about-v85 .reb-about-video {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .reb-about-v85 .reb-about-mission,
+  .reb-about-v85 .reb-about-workflow {
+    padding: 30px 20px !important;
+    margin: 0 !important;
+    gap: 12px !important;
+  }
+
+  .reb-about-v85 .reb-about-mission h2,
+  .reb-about-v85 .reb-about-workflow h2 {
+    font-size: clamp(26px, 7.5vw, 31px) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -.35px !important;
+    margin: 8px 0 10px !important;
+  }
+
+  .reb-about-v85 .reb-about-mission > p,
+  .reb-about-v85 .reb-about-workflow > p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin: 0 0 14px !important;
+  }
+
+  .reb-about-v85 .reb-about-mission-card,
+  .reb-about-v85 .reb-about-workflow-card {
+    padding: 15px !important;
+    margin: 0 !important;
+    border-radius: 13px !important;
+    gap: 7px !important;
+  }
+
+  .reb-about-v85 .reb-about-mission-card h3,
+  .reb-about-v85 .reb-about-mission-card h4,
+  .reb-about-v85 .reb-about-workflow-card h3,
+  .reb-about-v85 .reb-about-workflow-card h4 {
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    margin: 7px 0 4px !important;
+  }
+
+  .reb-about-v85 .reb-about-mission-card p,
+  .reb-about-v85 .reb-about-workflow-card p {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    margin: 0 !important;
+  }
+
+  .reb-about-v85 .reb-about-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    padding: 18px 20px !important;
+    margin: 0 !important;
+  }
+
+  .reb-about-v85 .reb-about-stat {
+    padding: 12px 10px !important;
+    margin: 0 !important;
+    border-radius: 11px !important;
+  }
+
+  .reb-about-v85 .reb-about-stat h3,
+  .reb-about-v85 .reb-about-stat h4,
+  .reb-about-v85 .reb-about-stat strong {
+    font-size: 16px !important;
+    line-height: 1.15 !important;
+  }
+
+  .reb-about-v85 .reb-about-stat p,
+  .reb-about-v85 .reb-about-stat span {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+
+  .reb-about-v85 .reb-about-cta {
+    padding: 24px 20px !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .reb-about-v85 .reb-about-cta h2 {
+    font-size: 26px !important;
+    line-height: 1.12 !important;
+    margin: 0 0 10px !important;
+  }
+
+  .reb-about-v85 .reb-about-cta p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin: 0 0 14px !important;
+  }
+
+  .reb-about-v85 section {
+    scroll-margin-top: 100px;
+  }
+}
+
+@media (max-width: 390px) {
+  .reb-about-v85 .reb-about-mission,
+  .reb-about-v85 .reb-about-workflow {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .reb-about-v85 .reb-about-stats {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reb-about-v85 .reb-about-video { animation: none !important; }
+}

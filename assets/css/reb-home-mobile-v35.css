@@ -1,0 +1,17 @@
+/* ReachEmpireBot Home V35 - illustrated market-symbol artwork. */
+@media (max-width:767px){
+  html body.reb-home #reb-live-ticker .reb-market-icon.reb-market-art{
+    padding:0!important;
+    overflow:visible!important;
+    border:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+  }
+  html body.reb-home #reb-live-ticker .reb-market-icon.reb-market-art svg{
+    display:block!important;
+    width:30px!important;
+    height:30px!important;
+    overflow:visible!important;
+    filter:drop-shadow(0 3px 5px rgba(0,0,0,.38));
+  }
+}

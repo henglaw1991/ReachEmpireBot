@@ -1,0 +1,76 @@
+
+/* ReachEmpireBot AUTO FIX PATCH */
+
+.hero-feature-box,
+.feature-box,
+.hero-right-card,
+.reb-feature-card {
+    width: 100% !important;
+    min-height: 52px !important;
+    padding: 0 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important;
+}
+
+.hero-feature-box *,
+.feature-box *,
+.hero-right-card *,
+.reb-feature-card * {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.hero-feature-box h4,
+.feature-box h4,
+.hero-right-card h4,
+.reb-feature-card h4,
+.hero-feature-box span,
+.feature-box span,
+.hero-right-card span,
+.reb-feature-card span {
+    font-size: 15px !important;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+}
+
+/* Chart Card Fix */
+.reb-chart-card,
+.live-monitor-card,
+.market-chart-card {
+    margin-top: 10px !important;
+    max-width: 285px !important;
+    min-height: 175px !important;
+    max-height: 175px !important;
+    overflow: hidden !important;
+}
+
+.reb-chart-card canvas,
+.live-monitor-card canvas,
+.market-chart-card canvas {
+    max-height: 95px !important;
+}
+
+.reb-chart-card h4,
+.live-monitor-card h4,
+.market-chart-card h4 {
+    font-size: 13px !important;
+    white-space: nowrap !important;
+}
+
+.reb-monitor-subtitle,
+.live-monitor-card small {
+    display: block !important;
+    white-space: nowrap !important;
+    font-size: 10px !important;
+}
+
+/* Prevent overlap with phone/footer */
+.hero-contact-row,
+.contact-row,
+.hero-bottom-contact {
+    position: relative !important;
+    z-index: 5 !important;
+    margin-top: 14px !important;
+}
