@@ -1,0 +1,94 @@
+/* Broker card visual polish: consistent logos and readable mobile copy */
+@media (max-width:640px){
+  .reb-trade-account-page .broker-grid{
+    align-items:stretch!important;
+    gap:12px!important;
+  }
+  .reb-trade-account-page .broker-card{
+    min-height:278px!important;
+    height:auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+  }
+  .reb-trade-account-page .broker-logo{
+    height:78px!important;
+    min-height:78px!important;
+    padding:9px!important;
+    align-items:center!important;
+    overflow:hidden!important;
+  }
+  .reb-trade-account-page .broker-logo:before,
+  .reb-trade-account-page .broker-logo:after{
+    display:none!important;
+  }
+  .reb-trade-account-page .broker-logo .broker-brand-logo,
+  .reb-trade-account-page .broker-logo.exness .broker-brand-logo,
+  .reb-trade-account-page .broker-logo.investizo .broker-brand-logo,
+  .reb-trade-account-page .broker-logo.lirunex .broker-brand-logo,
+  .reb-trade-account-page .broker-logo.cmx .broker-brand-logo{
+    width:58px!important;
+    height:58px!important;
+    max-width:58px!important;
+    max-height:58px!important;
+    padding:4px!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    border:1px solid rgba(255,255,255,.72)!important;
+    border-radius:14px!important;
+    background:#fff!important;
+    box-sizing:border-box!important;
+    filter:drop-shadow(0 5px 9px rgba(0,0,0,.2))!important;
+  }
+  .reb-trade-account-page .broker-logo.exness .broker-brand-logo,
+  .reb-trade-account-page .broker-logo.cmx .broker-brand-logo{
+    border-radius:50%!important;
+  }
+  .reb-trade-account-page .broker-body{
+    flex:1 1 auto!important;
+    padding:12px 10px 11px!important;
+    gap:7px!important;
+  }
+  .reb-trade-account-page .broker-card h3{
+    margin:0!important;
+    font-size:15px!important;
+    line-height:1.22!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    text-align:center!important;
+  }
+  .reb-trade-account-page .broker-card p{
+    display:block!important;
+    min-height:47px!important;
+    max-height:none!important;
+    margin:0!important;
+    overflow:visible!important;
+    -webkit-line-clamp:unset!important;
+    -webkit-box-orient:unset!important;
+    font-size:10.5px!important;
+    line-height:1.48!important;
+    text-align:center!important;
+    word-break:normal!important;
+    overflow-wrap:break-word!important;
+    hyphens:none!important;
+  }
+  .reb-trade-account-page .broker-card .reb-btn{
+    width:100%!important;
+    min-height:36px!important;
+    margin-top:auto!important;
+    font-size:10.5px!important;
+  }
+}
+
+@media (max-width:350px){
+  .reb-trade-account-page .broker-card{min-height:270px!important}
+  .reb-trade-account-page .broker-logo{height:72px!important;min-height:72px!important}
+  .reb-trade-account-page .broker-logo .broker-brand-logo,
+  .reb-trade-account-page .broker-logo.exness .broker-brand-logo,
+  .reb-trade-account-page .broker-logo.investizo .broker-brand-logo,
+  .reb-trade-account-page .broker-logo.lirunex .broker-brand-logo,
+  .reb-trade-account-page .broker-logo.cmx .broker-brand-logo{
+    width:54px!important;height:54px!important;max-width:54px!important;max-height:54px!important
+  }
+  .reb-trade-account-page .broker-card p{font-size:10px!important}
+}

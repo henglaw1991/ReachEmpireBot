@@ -1,0 +1,200 @@
+/* D20F30 — Classic V1.2 mobile hamburger restored. Desktop (>=941px) untouched. */
+@media (max-width:940px){
+  /* Disable newer experimental mobile navigation surfaces */
+  .reb-home-mobile-nav,.reb-web-mobile-nav-backdrop,.reb-web-mobile-nav-title,.reb-web-mobile-nav-close{display:none!important}
+  .reb-web-nav{display:none!important}
+  body.reb-web-mobile-nav-open{overflow:auto!important}
+
+  /* Compact classic header: brand left, hamburger right */
+  .reb-web-menu{background:#fff!important;border-bottom:1px solid #eceff2!important}
+  .reb-web-menu-inner{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;min-height:88px!important;padding:10px 16px!important}
+  .reb-web-brand{display:flex!important;align-items:center!important;min-width:0!important;flex:1 1 auto!important}
+  .reb-web-brand img{display:block!important;width:auto!important;height:58px!important;max-width:210px!important;object-fit:contain!important;object-position:left center!important}
+  .reb-web-account{display:none!important}
+  .reb-classic-mobile-toggle{display:grid!important;place-items:center!important;flex:0 0 54px!important;width:54px!important;height:54px!important;margin:0!important;padding:0!important;border:1px solid #d99a13!important;border-radius:12px!important;background:#101313!important;color:#e7a91d!important;box-shadow:0 0 0 2px rgba(218,158,27,.12)!important;cursor:pointer!important}
+  .reb-classic-mobile-toggle i{font-size:24px!important;line-height:1!important}
+
+  /* Use the original V1.2 drawer already present in the site */
+  .mobile-menu{display:block!important;position:fixed!important;left:0!important;right:auto!important;top:0!important;width:min(78vw,460px)!important;max-width:calc(100vw - 54px)!important;height:100dvh!important;padding:0!important;z-index:999999!important;opacity:0!important;visibility:hidden!important;transition:all .35s ease!important}
+  body.mobile-menu-visible .mobile-menu{opacity:1!important;visibility:visible!important}
+  .mobile-menu .menu-backdrop{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;background:#000!important;opacity:0!important;visibility:hidden!important;z-index:1!important;transition:opacity .3s ease!important}
+  body.mobile-menu-visible .mobile-menu .menu-backdrop{opacity:.70!important;visibility:visible!important}
+  .mobile-menu .menu-box{position:absolute!important;left:0!important;right:auto!important;top:0!important;width:100%!important;height:100dvh!important;max-height:100dvh!important;overflow-y:auto!important;overflow-x:hidden!important;background:#141417!important;padding:0!important;z-index:5!important;opacity:0!important;visibility:hidden!important;transform:translateX(-100%)!important;transition:transform .35s ease,opacity .25s ease!important;border-radius:0!important}
+  body.mobile-menu-visible .mobile-menu .menu-box{opacity:1!important;visibility:visible!important;transform:translateX(0)!important}
+  .mobile-menu .close-btn{position:absolute!important;right:18px!important;top:16px!important;width:42px!important;height:42px!important;display:grid!important;place-items:center!important;color:#fff!important;font-size:24px!important;z-index:10!important;cursor:pointer!important}
+  .mobile-menu .nav-logo{padding:72px 30px 92px!important;text-align:left!important;border-bottom:1px solid rgba(255,255,255,.10)!important}
+  .mobile-menu .nav-logo img{width:auto!important;height:auto!important;max-width:260px!important;max-height:92px!important;object-fit:contain!important;object-position:left center!important}
+  .mobile-menu .menu-outer{display:block!important}
+  .mobile-menu .navigation{display:block!important;margin:0!important;padding:0!important;border-top:0!important}
+  .mobile-menu .navigation li{display:block!important;position:relative!important;border-bottom:1px solid rgba(255,255,255,.10)!important;margin:0!important;padding:0!important}
+  .mobile-menu .navigation li a{display:flex!important;align-items:center!important;width:100%!important;min-height:70px!important;padding:0 32px!important;color:#fff!important;background:transparent!important;font-size:17px!important;font-weight:600!important;letter-spacing:.2px!important;text-transform:uppercase!important;text-decoration:none!important;border-radius:0!important}
+  .mobile-menu .navigation li.current>a,.mobile-menu .navigation li>a.active{color:#fff!important;background:rgba(255,255,255,.02)!important;box-shadow:inset 6px 0 0 #fff!important}
+  .mobile-menu .navigation li a i{display:none!important}
+  .mobile-menu .contact-info{padding:130px 34px 24px!important}
+  .mobile-menu .contact-info h4{color:#fff!important;font-size:23px!important;font-weight:700!important;margin:0 0 24px!important}
+  .mobile-menu .contact-info ul{margin:0!important;padding:0!important;list-style:none!important}
+  .mobile-menu .contact-info ul li,.mobile-menu .contact-info ul li a{color:#d8d8dc!important;font-size:16px!important;line-height:1.7!important}
+  .mobile-menu .social-links{padding:0 34px 30px!important}
+}
+@media (max-width:520px){
+  .reb-web-menu-inner{min-height:86px!important;padding:9px 14px!important}
+  .reb-web-brand img{height:54px!important;max-width:190px!important}
+  .reb-classic-mobile-toggle{flex-basis:52px!important;width:52px!important;height:52px!important}
+  .mobile-menu{width:78vw!important;max-width:calc(100vw - 54px)!important}
+  .mobile-menu .nav-logo{padding:70px 24px 88px!important}
+  .mobile-menu .nav-logo img{max-width:230px!important;max-height:84px!important}
+  .mobile-menu .navigation li a{min-height:70px!important;padding:0 32px!important;font-size:16px!important}
+  .mobile-menu .contact-info{padding:120px 34px 26px!important}
+}
+@media (min-width:941px){.reb-classic-mobile-toggle{display:none!important}}
+
+/* D20F62 — Mobile public header final: remove legacy black top strip / auth flash.
+   Mobile only. Desktop remains unchanged. Hamburger geometry intentionally unchanged. */
+@media (max-width:767px){
+  html body.reb-home .main-header{
+    margin:0!important;
+    padding:0!important;
+    min-height:0!important;
+    background:#fff!important;
+  }
+  html body.reb-home .main-header>.header-top,
+  html body.reb-home .main-header .header-top{
+    display:none!important;
+    visibility:hidden!important;
+    position:absolute!important;
+    left:-99999px!important;
+    top:-99999px!important;
+    width:0!important;
+    height:0!important;
+    min-height:0!important;
+    max-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    overflow:hidden!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  html body.reb-home .reb-web-menu{
+    margin:0!important;
+    padding:0!important;
+    top:0!important;
+    min-height:86px!important;
+    height:86px!important;
+    background:#fff!important;
+  }
+  html body.reb-home .reb-web-menu-inner{
+    min-height:86px!important;
+    height:86px!important;
+    margin:0 auto!important;
+    padding:9px 14px!important;
+  }
+  /* Modest logo/robot enlargement requested; do not oversize. */
+  html body.reb-home .reb-web-brand img{
+    width:178px!important;
+    max-width:48vw!important;
+    height:auto!important;
+    max-height:64px!important;
+    object-fit:contain!important;
+    object-position:left center!important;
+  }
+  /* Keep approved hamburger button size exactly as before. */
+  html body.reb-home .reb-classic-mobile-toggle{
+    flex:0 0 52px!important;
+    width:52px!important;
+    height:52px!important;
+    min-width:52px!important;
+    min-height:52px!important;
+    max-width:52px!important;
+    max-height:52px!important;
+  }
+}
+
+/* D20F63 — Approved mobile public header scale across core public pages.
+   Applies to Home, Download, EA Bot Market, Trade Account, Contact Us, About Us.
+   Desktop untouched. Hamburger remains exactly 52x52. */
+@media (max-width:767px){
+  html body .reb-web-menu{
+    margin:0!important;padding:0!important;top:0!important;
+    min-height:104px!important;height:104px!important;background:#fff!important;
+  }
+  html body .reb-web-menu-inner{
+    min-height:104px!important;height:104px!important;
+    margin:0 auto!important;padding:10px 16px!important;
+    display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;
+  }
+  html body .reb-web-brand{display:flex!important;align-items:center!important;min-width:0!important;flex:1 1 auto!important;overflow:visible!important}
+  html body .reb-web-brand img{
+    display:block!important;width:230px!important;max-width:calc(100vw - 100px)!important;
+    height:auto!important;max-height:78px!important;object-fit:contain!important;object-position:left center!important;
+  }
+  html body .reb-classic-mobile-toggle{
+    display:grid!important;place-items:center!important;
+    flex:0 0 52px!important;width:52px!important;height:52px!important;
+    min-width:52px!important;min-height:52px!important;max-width:52px!important;max-height:52px!important;
+    margin:0!important;padding:0!important;
+  }
+}
+
+/* D20F67 — exact shared mobile public header geometry. No page-specific header variant. */
+@media (max-width:767px){
+  html body .reb-top,
+  html body.reb-home .main-header>.header-top,
+  html body.reb-home .main-header .header-top{
+    display:none!important;visibility:hidden!important;position:absolute!important;
+    left:-99999px!important;top:-99999px!important;width:0!important;height:0!important;
+    min-height:0!important;max-height:0!important;margin:0!important;padding:0!important;
+    border:0!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important;
+  }
+  html body .reb-web-menu{
+    display:block!important;position:relative!important;top:auto!important;
+    width:100%!important;min-height:96px!important;height:96px!important;
+    margin:0!important;padding:0!important;border-top:0!important;background:#fff!important;
+  }
+  html body .reb-web-menu-inner{
+    width:100%!important;max-width:none!important;min-height:96px!important;height:96px!important;
+    margin:0!important;padding:8px 16px!important;box-sizing:border-box!important;
+    display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;
+  }
+  html body .reb-web-brand{display:flex!important;align-items:center!important;flex:1 1 auto!important;min-width:0!important;margin:0!important;padding:0!important;}
+  html body .reb-web-brand img{
+    display:block!important;width:210px!important;max-width:calc(100vw - 92px)!important;
+    height:auto!important;max-height:72px!important;margin:0!important;object-fit:contain!important;object-position:left center!important;
+  }
+  html body .reb-web-account{display:none!important;}
+  html body .reb-classic-mobile-toggle{
+    display:grid!important;place-items:center!important;visibility:visible!important;opacity:1!important;
+    flex:0 0 52px!important;width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;
+    max-width:52px!important;max-height:52px!important;margin:0!important;padding:0!important;
+    border:1px solid #d99a13!important;border-radius:12px!important;background:#101313!important;color:#e7a91d!important;
+    box-shadow:0 0 0 2px rgba(218,158,27,.12)!important;position:relative!important;z-index:30!important;
+  }
+  html body .reb-classic-mobile-toggle i{font-size:24px!important;line-height:1!important;}
+}
+
+/* D20F67 — static hamburger bars; no Font Awesome dependency. */
+@media (max-width:940px){
+ html body .reb-classic-mobile-toggle{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:5px!important;}
+ html body .reb-classic-mobile-toggle .reb-hamb-line{display:block!important;width:25px!important;height:3px!important;min-height:3px!important;border-radius:3px!important;background:#e7a91d!important;margin:0!important;padding:0!important;opacity:1!important;visibility:visible!important;}
+}
+
+/* D20F71 — compact clean drawer brand/header, shared by all public mobile pages */
+@media (max-width:940px){
+  .mobile-menu .menu-box{width:min(340px,82vw)!important;}
+  .mobile-menu .close-btn{top:16px!important;right:18px!important;width:36px!important;height:36px!important;line-height:34px!important;font-size:28px!important;color:#fff!important;}
+  .mobile-menu .nav-logo.reb-drawer-brand{
+    min-height:0!important;height:auto!important;
+    padding:18px 54px 18px 22px!important;
+    margin:0!important;
+    display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:11px!important;
+    border-bottom:1px solid rgba(255,255,255,.10)!important;
+    text-align:left!important;
+  }
+  .mobile-menu .reb-drawer-brand .reb-drawer-robot{width:62px!important;height:62px!important;max-width:62px!important;max-height:62px!important;object-fit:contain!important;flex:0 0 62px!important;}
+  .mobile-menu .reb-drawer-wordmark{display:flex!important;align-items:baseline!important;gap:4px!important;white-space:nowrap!important;line-height:1!important;font-size:18px!important;font-weight:800!important;letter-spacing:-.35px!important;}
+  .mobile-menu .reb-drawer-wordmark .reb-word-reach{color:#fff!important;}
+  .mobile-menu .reb-drawer-wordmark .reb-word-empire{color:#f5a623!important;}
+  .mobile-menu .reb-drawer-tagline{display:block!important;margin-top:6px!important;color:rgba(255,255,255,.68)!important;font-size:9px!important;font-weight:500!important;line-height:1.2!important;white-space:nowrap!important;}
+  .mobile-menu .menu-outer{padding-top:0!important;margin-top:0!important;}
+  .mobile-menu .navigation li a{min-height:62px!important;padding:0 28px!important;font-size:15px!important;}
+}

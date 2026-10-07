@@ -1,0 +1,476 @@
+.ea-content-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px;padding:8px;border:1px solid #dfe6ef;border-radius:14px;background:#fff;box-shadow:0 12px 30px rgba(15,23,42,.05)}
+.ea-content-tabs a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;border-radius:10px;color:#475467;font-weight:900;text-decoration:none;transition:.18s ease}
+.ea-content-tabs a:hover,.ea-content-tabs a.active{background:#f5b026;color:#080808}
+.ea-content-panel{scroll-margin-top:120px}
+.ea-content-panel[hidden]{display:none!important}
+.ea-gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ea-gallery-item{border:1px solid #e3e8ef;border-radius:12px;overflow:hidden;background:#f8fafc;aspect-ratio:4/3;cursor:zoom-in}
+.ea-gallery-item img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+.ea-gallery-item:hover img{transform:scale(1.035)}
+.ea-gallery-note{margin:0 0 18px!important;color:#667085!important;font-size:14px!important}
+.ea-video-wrap{aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#050505}
+.ea-gallery-video-title{margin:26px 0 12px;font-size:20px;color:#101828}
+.ea-youtube-placeholder{display:grid;gap:6px;padding:28px!important}.ea-youtube-placeholder strong{color:#101828;font-size:17px}.ea-youtube-placeholder span{color:#667085;line-height:1.5}
+.admin-buy-actions{display:grid!important;grid-template-columns:1fr!important;width:100%!important}.buy-with-admin{display:flex!important;width:100%!important;min-height:54px!important;align-items:center!important;justify-content:center!important;gap:10px!important;background:linear-gradient(135deg,#229ed9,#1686bc)!important;border:1px solid #1686bc!important;color:#fff!important;box-shadow:0 14px 28px rgba(34,158,217,.24)!important}.buy-with-admin:hover{filter:brightness(.96);transform:translateY(-1px)}
+.ea-video-wrap iframe{display:block;width:100%;height:100%;border:0}
+.ea-video-link{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:0 20px;border-radius:10px;background:#ff0000;color:#fff!important;font-weight:900;text-decoration:none}
+.ea-media-empty{padding:22px;border:1px dashed #d0d5dd;border-radius:12px;background:#f8fafc;color:#667085;text-align:center}
+@media(max-width:760px){.ea-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ea-content-tabs{display:grid;grid-template-columns:1fr}.ea-content-tabs a{width:100%}}
+@media(max-width:480px){.ea-gallery-grid{grid-template-columns:1fr}}
+
+/* Compact professional EA details layout on phones. */
+@media (max-width: 767px) {
+  .detail-hero {
+    padding: 18px 14px 26px !important;
+  }
+
+  .detail-crumb {
+    gap: 6px !important;
+    margin-bottom: 12px !important;
+    font-size: 12px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
+
+  .detail-product-shell,
+  .detail-left-stack,
+  .detail-inline-info {
+    gap: 12px !important;
+  }
+
+  .ea-content-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+    margin: 0 0 10px !important;
+    padding: 5px !important;
+    border-radius: 11px !important;
+  }
+
+  .ea-content-tabs a {
+    min-height: 36px !important;
+    width: 100% !important;
+    padding: 0 10px !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+  }
+
+  .detail-inline-info .info-card,
+  .ea-content-panel {
+    padding: 18px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, .05) !important;
+  }
+
+  .detail-inline-info .info-card h3,
+  .ea-content-panel > h3 {
+    margin: 0 0 12px !important;
+    font-size: 23px !important;
+    line-height: 1.18 !important;
+  }
+
+  .product-copy,
+  .ea-description-content,
+  .ea-info-line {
+    font-size: 15px !important;
+    line-height: 1.52 !important;
+  }
+
+  .ea-description-content {
+    gap: 6px !important;
+  }
+
+  .disclaimer-divider {
+    margin: 18px 0 !important;
+  }
+
+  .disclaimer-block h3 {
+    margin: 0 0 12px !important;
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+
+  .disclaimer-block h4 {
+    margin: 14px 0 7px !important;
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+  }
+
+  .disclaimer-block p {
+    margin: 0 0 11px !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+
+  .disclaimer-block ul {
+    gap: 6px !important;
+    margin: 10px 0 13px !important;
+    padding-left: 19px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  .disclaimer-block .final-note {
+    margin-top: 13px !important;
+  }
+
+  .ea-gallery-note {
+    margin-bottom: 12px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  .ea-gallery-video-title {
+    margin: 18px 0 9px !important;
+    font-size: 17px !important;
+  }
+
+  .ea-media-empty {
+    padding: 16px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .detail-inline-info .info-card,
+  .ea-content-panel {
+    padding: 15px !important;
+  }
+
+  .detail-inline-info .info-card h3,
+  .ea-content-panel > h3,
+  .disclaimer-block h3 {
+    font-size: 20px !important;
+  }
+}
+
+/* EA details sidebar: compact, consistent mobile cards. */
+@media (max-width: 767px) {
+  .price-panel {
+    padding: 17px !important;
+    border-radius: 14px !important;
+  }
+
+  .price-panel .badge {
+    padding: 6px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .payment-plan-head {
+    align-items: center !important;
+    margin: 12px 0 10px !important;
+  }
+
+  .payment-plan-head span { font-size: 10px !important; }
+  .payment-plan-head h3 { font-size: 20px !important; }
+  .selected-plan-pill { padding: 6px 8px !important; font-size: 9px !important; }
+
+  .payment-plan-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .pay-plan-card {
+    min-height: 142px !important;
+    gap: 8px !important;
+    padding: 11px 8px !important;
+    border-radius: 11px !important;
+  }
+
+  .pay-plan-card .plan-name { font-size: 11px !important; }
+  .pay-plan-card .plan-desc {
+    min-height: 38px !important;
+    margin-top: 4px !important;
+    font-size: 9.5px !important;
+    line-height: 1.32 !important;
+  }
+  .pay-plan-card .plan-price { font-size: 20px !important; }
+  .pay-plan-card .plan-type {
+    min-height: 31px !important;
+    padding: 5px 3px !important;
+    border-radius: 7px !important;
+    font-size: 8.5px !important;
+  }
+  .pay-plan-card.featured:after {
+    right: 4px !important;
+    top: -8px !important;
+    padding: 3px 6px !important;
+    font-size: 7px !important;
+  }
+
+  .price-note,
+  .paypal-inline-note {
+    margin-bottom: 10px !important;
+    padding: 9px 10px !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+
+  .detail-meta {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    margin-top: 12px !important;
+  }
+  .detail-meta div {
+    min-height: 64px !important;
+    padding: 9px 4px !important;
+  }
+  .detail-meta span { font-size: 8.5px !important; }
+  .detail-meta b { margin-top: 4px !important; font-size: 13px !important; }
+
+  .price-panel .sidebar-stack {
+    gap: 12px !important;
+    margin-top: 12px !important;
+  }
+  .price-panel .spec-card {
+    padding: 17px !important;
+    border-radius: 12px !important;
+  }
+  .spec-card h3 { margin-bottom: 8px !important; font-size: 20px !important; }
+  .spec-row { padding: 9px 0 !important; font-size: 13px !important; }
+  .spec-row b { font-size: 13px !important; }
+
+  .price-panel .broker-reco {
+    gap: 11px !important;
+    padding: 17px !important;
+    border-radius: 12px !important;
+  }
+  .broker-reco-head {
+    grid-template-columns: 48px minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+  .broker-reco-logo { width: 48px !important; height: 48px !important; }
+  .broker-reco-logo img { width: 39px !important; height: 39px !important; }
+  .broker-reco small { font-size: 9px !important; }
+  .broker-reco h3 { font-size: 19px !important; line-height: 1.18 !important; }
+  .broker-reco p { font-size: 13px !important; line-height: 1.45 !important; }
+  .broker-reco-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+  }
+  .broker-reco-stats div { padding: 8px 3px !important; }
+  .broker-reco-stats span { font-size: 8px !important; }
+  .broker-reco-stats b { font-size: 12px !important; }
+  .broker-reco .reb-btn { min-height: 46px !important; font-size: 13px !important; }
+  .broker-risk { font-size: 10px !important; line-height: 1.4 !important; }
+}
+
+@media (max-width: 380px) {
+  .pay-plan-card { min-height: 116px !important; }
+  .pay-plan-card .plan-desc { display: none !important; }
+  .pay-plan-card .plan-price { font-size: 18px !important; }
+}
+
+/* Top Selling EA: compact two-way horizontal carousel, up to 10 cards. */
+.top-selling-row {
+  display: flex !important;
+  max-width: 1180px;
+  gap: 14px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 4px 3px 14px !important;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #f5b026 #eef1f5;
+}
+
+.top-selling-row::-webkit-scrollbar { height: 7px; }
+.top-selling-row::-webkit-scrollbar-track { background: #eef1f5; border-radius: 999px; }
+.top-selling-row::-webkit-scrollbar-thumb { background: #f5b026; border-radius: 999px; }
+.top-selling-row .mini-card {
+  flex: 0 0 245px;
+  scroll-snap-align: start;
+}
+.top-selling-row .mini-card img { aspect-ratio: 4 / 3 !important; }
+
+@media (max-width: 767px) {
+  .top-selling-section {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+  .top-selling-section .section-head {
+    gap: 7px !important;
+    margin-bottom: 14px !important;
+  }
+  .top-selling-section .section-head h2 {
+    font-size: 25px !important;
+    line-height: 1.16 !important;
+  }
+  .top-selling-section .section-head p {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+  .top-selling-row {
+    width: calc(100% + 18px) !important;
+    margin-right: -18px !important;
+    gap: 10px !important;
+    padding: 2px 18px 12px 0 !important;
+  }
+  .top-selling-row .mini-card {
+    flex-basis: min(70vw, 250px) !important;
+    gap: 8px !important;
+    padding: 10px !important;
+    border-radius: 11px !important;
+  }
+  .top-selling-row .mini-card img {
+    aspect-ratio: 4 / 3 !important;
+    max-height: 150px !important;
+  }
+  .top-selling-row .mini-card h3 {
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+  }
+  .top-selling-row .mini-card p {
+    min-height: 34px !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+  .top-selling-row .mini-card .mini-price { font-size: 18px !important; }
+  .top-selling-row .mini-card .reb-btn {
+    min-height: 38px !important;
+    padding: 0 10px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* Continuous Top Selling motion, matching the calm market-bar speed. */
+.top-selling-row {
+  display: block !important;
+  max-width: 1180px !important;
+  overflow: hidden !important;
+  padding: 4px 0 14px !important;
+  scrollbar-width: none !important;
+}
+.top-selling-row::-webkit-scrollbar { display: none !important; }
+.top-selling-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: rebTopSellingSlide 42s linear infinite;
+}
+.top-selling-group {
+  display: flex;
+  flex: none;
+  gap: 14px;
+  padding-right: 14px;
+}
+.top-selling-row:hover .top-selling-track,
+.top-selling-row:focus-within .top-selling-track {
+  animation-play-state: paused;
+}
+@keyframes rebTopSellingSlide {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (max-width: 767px) {
+  .top-selling-row {
+    width: calc(100% + 18px) !important;
+    margin-right: -18px !important;
+    padding: 2px 0 12px !important;
+  }
+  .top-selling-track { animation-duration: 36s; }
+  .top-selling-group { gap: 10px; padding-right: 10px; }
+  .top-selling-group .mini-card {
+    flex: 0 0 min(70vw, 250px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .top-selling-row { overflow-x: auto !important; }
+  .top-selling-track { animation: none !important; }
+  .top-selling-group[aria-hidden="true"] { display: none !important; }
+}
+
+/* Force the same automatic carousel experience on desktop screens. */
+@media (min-width: 768px) {
+  .top-selling-section .section-head {
+    max-width: 1180px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .top-selling-row {
+    position: relative !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    mask-image: linear-gradient(90deg, transparent 0, #000 3%, #000 97%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 3%, #000 97%, transparent 100%);
+  }
+  .top-selling-track {
+    display: flex !important;
+    width: max-content !important;
+    animation: rebTopSellingSlide 42s linear infinite !important;
+  }
+  .top-selling-group {
+    display: flex !important;
+    flex: none !important;
+    gap: 16px !important;
+    padding-right: 16px !important;
+  }
+  .top-selling-group .mini-card {
+    flex: 0 0 220px !important;
+    width: 220px !important;
+  }
+  .top-selling-group .mini-card img {
+    max-height: 155px !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .top-selling-row { overflow-x: auto !important; mask-image: none !important; -webkit-mask-image: none !important; }
+  .top-selling-track { animation: none !important; }
+  .top-selling-group[aria-hidden="true"] { display: none !important; }
+}
+
+/* Similar EA Bots: manual left/right carousel on phone and desktop. */
+.similar-ea-section .section-head { max-width: 1180px !important; margin-left: auto !important; margin-right: auto !important; }
+.similar-ea-row {
+  display: flex !important;
+  max-width: 1180px !important;
+  gap: 14px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 4px 3px 14px !important;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #f5b026 #eef1f5;
+}
+.similar-ea-row::-webkit-scrollbar { height: 7px; }
+.similar-ea-row::-webkit-scrollbar-track { background: #eef1f5; border-radius: 999px; }
+.similar-ea-row::-webkit-scrollbar-thumb { background: #f5b026; border-radius: 999px; }
+.similar-ea-row .mini-card { flex: 0 0 220px !important; width: 220px !important; scroll-snap-align: start; }
+.similar-ea-row .mini-card img { max-height: 155px !important; aspect-ratio: 4 / 3 !important; }
+
+@media (max-width: 767px) {
+  .similar-ea-section { padding-top: 30px !important; padding-bottom: 30px !important; }
+  .similar-ea-section .section-head { gap: 7px !important; margin-bottom: 14px !important; }
+  .similar-ea-section .section-head h2 { font-size: 25px !important; line-height: 1.16 !important; }
+  .similar-ea-section .section-head p { font-size: 13px !important; line-height: 1.45 !important; }
+  .similar-ea-row {
+    width: calc(100% + 18px) !important;
+    margin-right: -18px !important;
+    gap: 10px !important;
+    padding: 2px 18px 12px 0 !important;
+  }
+  .similar-ea-row .mini-card {
+    flex: 0 0 min(70vw, 250px) !important;
+    width: min(70vw, 250px) !important;
+    gap: 8px !important;
+    padding: 10px !important;
+    border-radius: 11px !important;
+  }
+  .similar-ea-row .mini-card img { max-height: 150px !important; aspect-ratio: 4 / 3 !important; }
+  .similar-ea-row .mini-card h3 { font-size: 15px !important; line-height: 1.2 !important; }
+  .similar-ea-row .mini-card p { min-height: 34px !important; font-size: 11px !important; line-height: 1.4 !important; }
+  .similar-ea-row .mini-card .mini-price { font-size: 18px !important; }
+  .similar-ea-row .mini-card .reb-btn { min-height: 38px !important; padding: 0 10px !important; font-size: 11px !important; }
+}

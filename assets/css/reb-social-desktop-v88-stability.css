@@ -1,0 +1,10 @@
+/* V88 desktop-only Social first-paint stability. Mobile untouched. */
+@media (min-width:768px){
+  .reb-social-account-card .reb-social-account-copy strong{
+    font-size:13.5px!important;line-height:1.25!important;letter-spacing:-.18px!important;
+    white-space:nowrap!important;overflow:visible!important;text-overflow:clip!important;max-width:none!important;
+  }
+  .reb-social-account-card .reb-social-account-copy{overflow:visible!important;}
+  body.reb-social-page .reb-social-feed, body.reb-social-page .reb-social-post{overflow-anchor:none;}
+}
+@media (min-width:1200px){.reb-social-account-card .reb-social-account-copy strong{font-size:14px!important;}}

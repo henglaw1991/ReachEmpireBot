@@ -1,0 +1,178 @@
+/* Trade Account broker directory v65: balanced desktop and compact mobile cards */
+.reb-trade-account-page #brokers{
+  padding-top:64px!important;
+  padding-bottom:64px!important;
+  background:linear-gradient(180deg,#fff 0%,#fbfaf7 100%)!important;
+}
+.reb-trade-account-page #brokers>.reb-title{
+  width:min(1180px,100%)!important;
+  max-width:1180px!important;
+  margin:0 auto 28px!important;
+  text-align:left!important;
+}
+.reb-trade-account-page #brokers>.reb-title h2{
+  max-width:790px!important;
+  margin:12px 0 10px!important;
+  font-size:clamp(32px,3vw,45px)!important;
+  line-height:1.08!important;
+}
+.reb-trade-account-page #brokers>.reb-title>p:last-child{
+  max-width:880px!important;
+  margin:0!important;
+  font-size:16px!important;
+  line-height:1.6!important;
+}
+.reb-trade-account-page .broker-grid{
+  width:min(1180px,100%)!important;
+  max-width:1180px!important;
+  margin:0 auto!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:18px!important;
+  align-items:stretch!important;
+}
+.reb-trade-account-page .broker-card{
+  display:flex!important;
+  flex-direction:column!important;
+  min-width:0!important;
+  min-height:326px!important;
+  overflow:hidden!important;
+  border:1px solid #eadfca!important;
+  border-radius:16px!important;
+  background:#fff!important;
+  box-shadow:0 12px 30px rgba(28,22,12,.075)!important;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease!important;
+}
+.reb-trade-account-page .broker-card:hover{
+  transform:translateY(-4px)!important;
+  border-color:#e5ba5e!important;
+  box-shadow:0 18px 38px rgba(28,22,12,.12)!important;
+}
+.reb-trade-account-page .broker-logo{
+  width:100%!important;
+  height:94px!important;
+  min-height:94px!important;
+  padding:16px!important;
+  border-radius:15px 15px 0 0!important;
+  border:0!important;
+  border-bottom:1px solid rgba(0,0,0,.08)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.reb-trade-account-page .broker-logo .broker-wordmark,
+.reb-trade-account-page .broker-logo.custom strong{
+  max-width:100%!important;
+  font-size:25px!important;
+  line-height:1!important;
+  text-align:center!important;
+  overflow-wrap:anywhere!important;
+}
+.reb-trade-account-page .broker-logo.cmx .broker-wordmark{font-size:22px!important}
+.reb-trade-account-page .broker-body{
+  flex:1!important;
+  display:flex!important;
+  flex-direction:column!important;
+  gap:9px!important;
+  padding:18px!important;
+}
+.reb-trade-account-page .broker-card h3{
+  margin:0!important;
+  font-size:20px!important;
+  line-height:1.18!important;
+}
+.reb-trade-account-page .broker-card p{
+  margin:0!important;
+  display:-webkit-box!important;
+  -webkit-box-orient:vertical!important;
+  -webkit-line-clamp:4!important;
+  overflow:hidden!important;
+  font-size:13px!important;
+  line-height:1.5!important;
+}
+.reb-trade-account-page .broker-card .reb-btn{
+  width:100%!important;
+  min-height:42px!important;
+  margin-top:auto!important;
+  padding:0 12px!important;
+  border-radius:9px!important;
+  font-size:13px!important;
+  box-shadow:none!important;
+}
+.reb-trade-account-page #brokers>.reb-note{
+  width:min(1180px,100%)!important;
+  max-width:1180px!important;
+  margin:20px auto 0!important;
+  padding:13px 16px!important;
+  border-radius:9px!important;
+  font-size:13px!important;
+}
+
+@media(max-width:1060px){
+  .reb-trade-account-page .broker-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .reb-trade-account-page .broker-card{min-height:290px!important}
+}
+
+@media(max-width:640px){
+  .reb-trade-account-page #brokers{
+    padding:28px 16px 32px!important;
+  }
+  .reb-trade-account-page #brokers>.reb-title{
+    margin:0 0 18px!important;
+  }
+  .reb-trade-account-page #brokers>.reb-title h2{
+    max-width:360px!important;
+    margin:10px 0 8px!important;
+    font-size:25px!important;
+    line-height:1.12!important;
+  }
+  .reb-trade-account-page #brokers>.reb-title>p:last-child{
+    max-width:390px!important;
+    font-size:13px!important;
+    line-height:1.48!important;
+  }
+  .reb-trade-account-page .broker-grid{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+  .reb-trade-account-page .broker-card{
+    min-height:0!important;
+    border-radius:14px!important;
+  }
+  .reb-trade-account-page .broker-logo{
+    height:68px!important;
+    min-height:68px!important;
+    padding:10px 16px!important;
+    border-radius:13px 13px 0 0!important;
+    justify-content:flex-start!important;
+  }
+  .reb-trade-account-page .broker-logo .broker-wordmark,
+  .reb-trade-account-page .broker-logo.custom strong{
+    font-size:20px!important;
+    text-align:left!important;
+  }
+  .reb-trade-account-page .broker-logo.cmx .broker-wordmark{font-size:19px!important}
+  .reb-trade-account-page .broker-body{
+    gap:7px!important;
+    padding:13px 15px 15px!important;
+  }
+  .reb-trade-account-page .broker-card h3{
+    font-size:18px!important;
+  }
+  .reb-trade-account-page .broker-card p{
+    -webkit-line-clamp:2!important;
+    font-size:12px!important;
+    line-height:1.42!important;
+  }
+  .reb-trade-account-page .broker-card .reb-btn{
+    min-height:38px!important;
+    margin-top:4px!important;
+    font-size:12px!important;
+  }
+  .reb-trade-account-page #brokers>.reb-note{
+    margin-top:14px!important;
+    padding:11px 12px!important;
+    font-size:11.5px!important;
+    line-height:1.45!important;
+  }
+}

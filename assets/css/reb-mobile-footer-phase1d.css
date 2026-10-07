@@ -1,0 +1,46 @@
+/* ReachEmpireBot Mobile Phase 1D — shared footer layout
+   Extracted from the identical inline reb-mobile-footer-v32 overrides.
+   Mobile-only; desktop footer layout remains controlled by existing page styles. */
+@media (max-width:767px){
+  html body .reb-clean-footer .reb-clean-footer-grid{
+    display:grid!important;
+    grid-template-columns:minmax(0,1.25fr) minmax(131px,.75fr)!important;
+    gap:18px 14px!important;
+  }
+  html body .reb-clean-footer .reb-clean-footer-brand{
+    grid-column:1/-1!important;
+  }
+  html body .reb-clean-footer .reb-clean-contact,
+  html body .reb-clean-footer .reb-clean-follow{
+    grid-column:auto!important;
+    min-width:0!important;
+  }
+  html body .reb-clean-footer .reb-contact-row span{
+    overflow-wrap:normal!important;
+    word-break:normal!important;
+  }
+  html body .reb-clean-footer .reb-contact-row.email span{
+    white-space:nowrap!important;
+    font-size:10px!important;
+  }
+  html body .reb-clean-footer .reb-follow-social{
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+    gap:5px!important;
+    align-content:start!important;
+  }
+  html body .reb-clean-footer .reb-follow-social a{
+    display:inline-flex!important;
+    width:29px!important;
+    height:29px!important;
+    border-radius:8px!important;
+    font-size:12px!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  html body .reb-clean-footer .reb-follow-social .reb-tiktok-svg{
+    width:16px!important;
+    height:16px!important;
+  }
+}

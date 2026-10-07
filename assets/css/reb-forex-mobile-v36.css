@@ -1,0 +1,42 @@
+/* ReachEmpireBot Forex V36 - professional phone typography, cards and setup table. */
+body .reb-hero-actions,
+body .reb-clean-footer-actions{display:none!important}
+@media (max-width:767px){
+  body .reb-hero{padding:34px 18px 28px!important}
+  body .reb-hero-inner{gap:24px!important}
+  body .reb-kicker{margin-bottom:10px!important;font-size:13px!important}
+  body .reb-hero h1{margin:0 0 14px!important;font-size:clamp(20px,6vw,24px)!important;line-height:1.15!important;letter-spacing:-.025em!important;white-space:nowrap!important}
+  body .reb-hero p{margin:0!important;font-size:15px!important;line-height:1.58!important}
+  body .reb-hero-actions{display:none!important}
+  html body .reb-hero .reb-standard-hero-frame.reb-standard-hero-stats{min-height:0!important;height:auto!important;padding:18px!important;gap:15px!important}
+  html body .reb-hero .reb-standard-hero-frame>.reb-standard-hero-robot{width:190px!important;height:190px!important;max-height:190px!important}
+  body .reb-hero .reb-mini-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
+  body .reb-hero .reb-mini{min-width:0!important;padding:11px 8px!important;text-align:center!important}
+  body .reb-hero .reb-mini strong{font-size:18px!important;line-height:1.1!important}
+  body .reb-hero .reb-mini span{font-size:11px!important;line-height:1.25!important}
+  body .reb-section{padding:42px 18px!important}
+  body .reb-section-title{margin:0 auto 26px!important}
+  body .reb-section-title span{padding:6px 15px!important;font-size:10px!important}
+  body .reb-section-title h2{margin:14px 0 10px!important;font-size:26px!important;line-height:1.18!important}
+  body .reb-section-title p{margin:0!important;font-size:14.5px!important;line-height:1.55!important}
+  body .reb-grid{gap:14px!important}
+  body .reb-card{padding:20px!important;border-radius:12px!important;box-shadow:0 12px 30px rgba(13,13,13,.065)!important}
+  body .reb-card i.reb-icon{width:48px!important;height:48px!important;margin:0 0 15px!important;font-size:20px!important}
+  body .reb-card h3{margin:0 0 10px!important;font-size:20px!important;line-height:1.25!important}
+  body .reb-card p{margin:0 0 14px!important;font-size:14.5px!important;line-height:1.55!important}
+  body .reb-list{margin:0 0 16px!important}
+  body .reb-list li{padding:10px 0!important;font-size:14px!important;line-height:1.35!important}
+  body .reb-card .reb-btn{min-height:46px!important;font-size:14px!important}
+  body .reb-plan{gap:14px!important}
+  body .reb-panel{min-width:0!important;padding:20px!important;border-radius:12px!important;overflow:hidden!important}
+  body .reb-panel h3{margin:0 0 14px!important;font-size:25px!important;line-height:1.18!important}
+  body .reb-recommended-setup{overflow:visible!important}
+  body .reb-table{display:block!important;width:100%!important;table-layout:auto!important}
+  body .reb-table tbody{display:grid!important;gap:10px!important;width:100%!important}
+  body .reb-table tr{display:block!important;width:100%!important;padding:12px 14px!important;border:1px solid #eee4d3!important;border-radius:10px!important;background:#fffaf0!important}
+  body .reb-table td{display:block!important;width:100%!important;min-width:0!important;padding:0!important;border:0!important;overflow-wrap:anywhere!important;text-align:left!important}
+  body .reb-table td:first-child{margin-bottom:5px!important;color:#946300!important;font-size:11px!important;font-weight:800!important;line-height:1.25!important;text-transform:uppercase!important;letter-spacing:.035em!important}
+  body .reb-table td:last-child{color:#171717!important;font-size:14px!important;font-weight:700!important;line-height:1.42!important;visibility:visible!important;opacity:1!important}
+  body .reb-panel p{margin:0 0 18px!important;font-size:14.5px!important;line-height:1.6!important}
+  body .reb-panel .reb-btn{min-height:46px!important;font-size:14px!important}
+}

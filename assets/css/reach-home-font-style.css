@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ReachEmpireBot Font Style Like Main Hero
+   Standard font: Poppins
+   Do not override icon fonts. */
+
+body,
+p,
+a,
+button,
+input,
+textarea,
+select,
+option,
+label,
+li,
+td,
+th,
+span:not([class*="icon"]):not([class*="fa-"]):not([class^="fa"]),
+div:not([class*="icon"]):not([class*="fa-"]):not([class^="fa"]) {
+    font-family: 'Poppins', Arial, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-title,
+.title,
+.section-title {
+    font-family: 'Poppins', Arial, sans-serif !important;
+    font-weight: 300 !important;
+    letter-spacing: -1.5px !important;
+    line-height: 1.05 !important;
+}
+
+h1 strong,
+h2 strong,
+.hero-title strong,
+.title strong,
+.heading-bold,
+.bold-title {
+    font-family: 'Poppins', Arial, sans-serif !important;
+    font-weight: 800 !important;
+}
+
+p,
+.hero-text,
+.subtitle,
+.section-text {
+    font-family: 'Poppins', Arial, sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.55 !important;
+}
+
+button,
+.btn,
+.theme-btn,
+input,
+select,
+textarea {
+    font-family: 'Poppins', Arial, sans-serif !important;
+    font-weight: 700 !important;
+}
+
+/* Keep icons working */
+i,
+.fa,
+.fas,
+.far,
+.fab,
+.fa-solid,
+.fa-regular,
+.fa-brands,
+[class^="fa-"],
+[class*=" fa-"],
+[class^="flaticon-"],
+[class*=" flaticon-"],
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: inherit;
+}

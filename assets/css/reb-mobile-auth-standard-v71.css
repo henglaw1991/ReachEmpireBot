@@ -1,0 +1,198 @@
+/* ReachEmpireBot Mobile Header/Auth — Phase 1B
+   Shared mobile source of truth for public-page top auth UI.
+   File name is kept for backward compatibility with existing pages.
+   Desktop (>=768px) is intentionally untouched.
+*/
+
+@media (max-width: 767px) {
+  /* ---------- Top bar ---------- */
+  html body .reb-top,
+  html body .main-header .header-top {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    height: 56px !important;
+    min-height: 56px !important;
+    max-height: 56px !important;
+    margin: 0 !important;
+    padding: 7px 14px !important;
+    overflow: hidden !important;
+    background: #101312 !important;
+  }
+
+  html body .reb-top .reb-phone,
+  html body .main-header .header-top .support-box,
+  html body .main-header .header-top .language-picker {
+    display: none !important;
+  }
+
+  html body .main-header .header-top .large-container,
+  html body .main-header .header-top .top-inner {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ---------- Shared auth frame: logged out ---------- */
+  html body .main-header .header-top .option-block,
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login {
+    box-sizing: border-box !important;
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: center !important;
+    width: 244px !important;
+    min-width: 244px !important;
+    max-width: 244px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+    margin: 0 0 0 auto !important;
+    padding: 3px !important;
+    gap: 4px !important;
+    overflow: hidden !important;
+    background: #111514 !important;
+    background-image: none !important;
+    border: 1px solid rgba(245, 176, 38, .40) !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+  }
+
+  /* Username auto-fits up to a safe mobile maximum; Log Out stays stable. */
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in,
+  html.reb-client-logged-in body .reb-top .reb-actions.reb-auth-logged-in,
+  html.reb-client-logged-in body .reb-top .reb-login.reb-auth-logged-in {
+    grid-template-columns: minmax(112px, auto) 84px !important;
+    width: max-content !important;
+    min-width: 220px !important;
+    max-width: calc(100vw - 28px) !important;
+  }
+
+  /* ---------- Shared buttons ---------- */
+  html body .main-header .header-top .option-block > a,
+  html body .reb-top .reb-actions > a,
+  html body .reb-top .reb-login > a {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+    margin: 0 !important;
+    padding: 0 9px !important;
+    border-radius: 7px !important;
+    font-family: inherit !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    box-shadow: none !important;
+    transform: none !important;
+    background-image: none !important;
+    text-decoration: none !important;
+  }
+
+  html body .main-header .header-top .option-block > a[href*="/signup/"],
+  html body .reb-top .reb-actions > a[href*="/signup/"],
+  html body .reb-top .reb-login > a[href*="/signup/"] {
+    color: #080808 !important;
+    background: #ffb11b !important;
+    border: 1px solid #ffb11b !important;
+  }
+
+  html body .main-header .header-top .option-block > a[href*="/login/"],
+  html body .reb-top .reb-actions > a[href*="/login/"],
+  html body .reb-top .reb-login > a[href*="/login/"] {
+    color: #fff !important;
+    background: #101413 !important;
+    border: 1px solid #59605f !important;
+  }
+
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in > .reb-session-account,
+  html.reb-client-logged-in body .reb-top .reb-auth-logged-in > .reb-session-account {
+    min-width: 112px !important;
+    max-width: 174px !important;
+    color: #fff !important;
+    background: #181b18 !important;
+    border: 1px solid #a27618 !important;
+  }
+
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in > .reb-session-logout,
+  html.reb-client-logged-in body .reb-top .reb-auth-logged-in > .reb-session-logout {
+    width: 84px !important;
+    min-width: 84px !important;
+    max-width: 84px !important;
+    color: #fff !important;
+    background: #321919 !important;
+    border: 1px solid #8b3b3b !important;
+  }
+
+  html body .main-header .header-top .option-block > a::before,
+  html body .main-header .header-top .option-block > a::after,
+  html body .reb-top .reb-actions > a::before,
+  html body .reb-top .reb-actions > a::after,
+  html body .reb-top .reb-login > a::before,
+  html body .reb-top .reb-login > a::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+@media (max-width: 359px) {
+  html body .main-header .header-top .option-block,
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login {
+    width: 232px !important;
+    min-width: 232px !important;
+    max-width: 232px !important;
+  }
+
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in,
+  html.reb-client-logged-in body .reb-top .reb-actions.reb-auth-logged-in,
+  html.reb-client-logged-in body .reb-top .reb-login.reb-auth-logged-in {
+    grid-template-columns: minmax(104px, auto) 78px !important;
+    width: max-content !important;
+    min-width: 210px !important;
+    max-width: calc(100vw - 20px) !important;
+  }
+
+  html body .main-header .header-top .option-block > a,
+  html body .reb-top .reb-actions > a,
+  html body .reb-top .reb-login > a {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    font-size: 12px !important;
+  }
+
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in > .reb-session-account,
+  html.reb-client-logged-in body .reb-top .reb-auth-logged-in > .reb-session-account {
+    min-width: 104px !important;
+    max-width: 156px !important;
+  }
+
+  html.reb-client-logged-in body .main-header .header-top .option-block.reb-auth-logged-in > .reb-session-logout,
+  html.reb-client-logged-in body .reb-top .reb-auth-logged-in > .reb-session-logout {
+    width: 78px !important;
+    min-width: 78px !important;
+    max-width: 78px !important;
+  }
+}

@@ -1,0 +1,16 @@
+/* REB V73 — Desktop-only standard header for EA Market Detail + Payment Detail.
+   Keeps each page's legacy header untouched for mobile <=900px. */
+@media (min-width:901px){
+  body.reb-v73-market-detail > .reb-top,
+  body.reb-v73-market-detail > .reb-market-header,
+  body.reb-v73-payment > .reb-top,
+  body.reb-v73-payment > header.reb-header{
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+  }
+}

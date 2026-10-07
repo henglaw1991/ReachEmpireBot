@@ -1,0 +1,599 @@
+/* ReachEmpire Social — Desktop UI D3
+   WEBSITE-STANDARD ALIGNMENT, DESKTOP ONLY (>=1200px).
+   Mobile/tablet remain owned by reb-social-center-v1.css and are untouched.
+*/
+.reb-social-desktop-rail,.reb-social-desktop-topnav,.reb-social-site-utility{display:none}
+
+@media (min-width:1200px){
+  :root{
+    --reb-site-black:#101312;
+    --reb-site-black-2:#171a19;
+    --reb-site-gold:#f5b026;
+    --reb-site-gold-soft:#fff3d3;
+    --reb-site-border:#e3e6e8;
+    --reb-site-muted:#6b7280;
+    --reb-site-bg:#f7f8f9;
+  }
+
+  html,body{background:#fff}
+  body.reb-social-page{padding-bottom:0;background:#fff;color:#111}
+  .reb-social-shell{width:100%;max-width:none;min-height:100vh;margin:0;background:#fff}
+
+  /* Website-standard utility strip, matching public pages. */
+  .reb-social-site-utility{
+    display:flex;align-items:center;justify-content:space-between;width:100%;height:54px;
+    padding:0 32px;background:var(--reb-site-black);color:#fff;border-bottom:1px solid rgba(255,255,255,.06)
+  }
+  .reb-social-site-support{display:inline-flex;align-items:center;gap:10px;color:#fff;font-family:var(--reb-social-title-font,"Ubuntu",Arial,sans-serif)!important;font-size:15px;font-weight:800;text-decoration:none}
+  .reb-social-site-support i{color:var(--reb-site-gold);font-size:18px}
+  .reb-social-site-links{display:flex;align-items:center;gap:10px}
+  .reb-social-site-links a{
+    display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 17px;
+    border:1px solid #555;border-radius:8px;background:#141716;color:#fff;text-decoration:none;
+    font-family:var(--reb-social-title-font,"Ubuntu",Arial,sans-serif)!important;font-size:12px;font-weight:800
+  }
+  .reb-social-site-links a:first-child{border-color:#9b6e10;background:#191b19}
+  .reb-social-site-links a:hover{border-color:var(--reb-site-gold);color:var(--reb-site-gold)}
+
+  /* Public-website style brand/header row. */
+  .reb-social-topbar{
+    position:sticky;top:0;z-index:90;display:grid;grid-template-columns:minmax(280px,1fr) auto;
+    align-items:center;gap:22px;min-height:112px;padding:18px 32px;background:#fff;border-bottom:1px solid #dedede;
+    box-shadow:none
+  }
+  .reb-social-brand{justify-self:start;display:flex;align-items:center;gap:18px;text-decoration:none}
+  .reb-social-brand img{width:250px;max-width:250px;height:auto;display:block}
+  .reb-social-brand span{
+    padding:7px 13px;border:1px solid #8f6917;border-radius:999px;background:#151715;color:var(--reb-site-gold);
+    font-family:var(--reb-social-title-font,"Ubuntu",Arial,sans-serif)!important;font-size:11px;font-weight:800;letter-spacing:.01em
+  }
+
+  /* Same black rounded menu language used by the website header. */
+  .reb-social-desktop-topnav{
+    display:flex;align-items:center;justify-content:center;gap:0;padding:6px;border:1px solid #8c681a;
+    border-radius:18px;background:var(--reb-site-black);box-shadow:0 9px 24px rgba(0,0,0,.08)
+  }
+  .reb-social-desktop-topnav a{
+    position:relative;display:flex;align-items:center;justify-content:center;gap:8px;min-width:112px;height:48px;
+    padding:0 17px;border-radius:11px;color:#fff;text-decoration:none;
+    font-family:var(--reb-social-title-font,"Ubuntu",Arial,sans-serif)!important;font-size:12px;font-weight:800;
+    transition:background .15s ease,color .15s ease,transform .15s ease
+  }
+  .reb-social-desktop-topnav a i{font-size:14px;color:#fff}
+  .reb-social-desktop-topnav a:hover{background:#232725;color:#fff}
+  .reb-social-desktop-topnav a.active{background:var(--reb-site-gold);color:#111}
+  .reb-social-desktop-topnav a.active i{color:#111}
+  .reb-social-desktop-topnav a.active:after{display:none}
+
+  .reb-social-top-actions{justify-self:end;display:flex;align-items:center;gap:9px}
+  .reb-social-icon-btn{
+    width:42px;height:42px;border:1px solid #d7dade;border-radius:10px;background:#fff;color:#151715;
+    box-shadow:none
+  }
+  .reb-social-icon-btn:hover{border-color:#a97a15;background:#fff8e7;color:#8a5c00}
+
+  /* Mobile/Web-App navigation must not appear on desktop. */
+  .reb-social-bottom-nav{display:none!important}
+
+  /* Desktop page body uses the same clean container rhythm as the public site. */
+  .reb-social-main{
+    width:min(1320px,calc(100% - 48px));max-width:1320px;margin:0 auto;padding:30px 0 64px;
+    display:grid;grid-template-columns:215px minmax(0,760px) 255px;
+    grid-template-areas:"account composer right" "left feed right";
+    gap:22px 24px;align-items:start;justify-content:center
+  }
+
+  .reb-social-account-card,
+  .reb-social-composer,
+  .reb-social-post,
+  .reb-social-guest-card{
+    background:#fff;border:1px solid var(--reb-site-border);border-radius:12px;
+    box-shadow:0 8px 24px rgba(16,19,18,.045)
+  }
+
+  /* Account card */
+  .reb-social-account-card{
+    grid-area:account;display:grid;grid-template-columns:52px minmax(0,1fr);gap:11px;padding:14px
+  }
+  .reb-social-account-card .reb-social-avatar{width:52px;height:52px}
+  .reb-social-account-copy{min-width:0;padding-top:2px}
+  .reb-social-account-copy strong{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .reb-social-account-copy span{display:block;margin-top:3px;font-size:10px;line-height:1.4;color:#727980}
+  .reb-social-account-card .reb-social-small-btn{
+    grid-column:1/-1;width:100%;min-height:36px;margin-top:2px;border-radius:8px;background:var(--reb-site-black);color:#fff;font-size:10px
+  }
+
+  /* Composer styled as a website content panel, not a mobile app card. */
+  .reb-social-composer,.reb-social-guest-card{grid-area:composer;margin:0}
+  .reb-social-composer{padding:20px 20px 17px}
+  .reb-social-card-head{align-items:flex-start}
+  .reb-social-card-head h1{margin-top:3px;font-size:22px;line-height:1.25;color:#111}
+  .reb-social-eyebrow{font-size:10px;color:#a36c00;letter-spacing:.02em}
+  .reb-social-draft-state{font-size:10px;color:#7e858d}
+  .reb-social-composer textarea{
+    min-height:104px;margin-top:13px;padding:15px 16px;border:1px solid #d9dde1;border-radius:10px;background:#fbfbfb;
+    font-size:14px;line-height:1.55;color:#202020;transition:border-color .15s ease,background .15s ease,box-shadow .15s ease
+  }
+  .reb-social-composer textarea:focus{background:#fff;border-color:#c18a17;box-shadow:0 0 0 3px rgba(245,176,38,.11)}
+  .reb-social-composer-meta{margin-top:7px}
+  .reb-social-composer-actions{margin-top:11px;padding-top:13px;border-top:1px solid #eceeef}
+  .reb-social-tool-btn{
+    min-height:38px;padding:0 12px;border:1px solid #dfe3e6;border-radius:8px;background:#fff;color:#242424;font-size:11px
+  }
+  .reb-social-tool-btn:hover{border-color:#c9972d;background:#fff9ea}
+  .reb-social-primary-btn{min-height:40px;border-radius:8px;background:var(--reb-site-gold);color:#111;font-size:11px}
+
+  /* Feed heading */
+  .reb-social-feed-section{grid-area:feed;min-width:0;padding:0}
+  .reb-social-feed-head{align-items:center;padding:0 0 12px}
+  .reb-social-feed-head h2{font-size:22px;color:#111}
+  .reb-social-feed-tabs{padding:3px;border:1px solid #e1e4e6;border-radius:9px;background:#fff}
+  .reb-social-feed-tabs button{min-height:34px;padding:0 14px;border-radius:7px;background:transparent;color:#596069;font-size:10px}
+  .reb-social-feed-tabs button.active{background:var(--reb-site-black);color:#fff}
+  .reb-social-feed{gap:16px}
+
+  /* Post cards */
+  .reb-social-post{padding:17px;overflow:visible}
+  .reb-social-post-head{grid-template-columns:45px minmax(0,1fr) auto;gap:10px}
+  .reb-social-post-avatar{width:45px;height:45px}
+  .reb-social-author-link,.reb-social-post-author strong{font-size:13px;color:#111}
+  .reb-social-post-author span{font-size:10px;color:#7a8188}
+  .reb-social-post-more{width:36px;height:36px;border-radius:8px;background:#f5f6f7;color:#5e656d}
+  .reb-social-post-more:hover{background:#eceeef;color:#111}
+  .reb-social-post-text{margin-top:12px;font-size:14px;line-height:1.55;color:#202020}
+  .reb-social-post-media-wrap{margin-top:12px}
+  .reb-social-post-media,.reb-social-post-video{border-radius:9px}
+  .reb-social-media-count-1 .reb-social-media-cell,.reb-social-post-video{max-height:680px}
+
+  /* Clean reaction/count summary. */
+  .reb-social-reaction-summary{
+    min-height:31px;margin:10px 0 0;padding:3px 2px 9px;border-bottom:1px solid #eceeef;color:#6b7279;font-size:12px
+  }
+  .reb-social-reaction-summary-icons>span{width:23px;height:23px;font-size:15px;border-width:2px}
+  .reb-social-reaction-summary-count{font-weight:500}
+
+  .reb-social-post-actions{gap:4px;margin-top:0;padding:6px 0;border-top:0;border-bottom:1px solid #eceeef}
+  .reb-social-post-actions>.reb-social-reaction-wrap{flex:1}
+  .reb-social-post-actions button,
+  .reb-social-reaction-main,
+  .reb-social-reaction-main[data-reaction="LIKE"],
+  .reb-social-reaction-main[data-reaction="LOVE"],
+  .reb-social-reaction-main[data-reaction="HAHA"],
+  .reb-social-reaction-main[data-reaction="WOW"],
+  .reb-social-reaction-main[data-reaction="SAD"],
+  .reb-social-reaction-main[data-reaction="PRAY"]{
+    min-height:38px;border-radius:7px;background:transparent!important;color:#5c646b;font-size:12px;font-weight:600
+  }
+  .reb-social-post-actions button:hover{background:#f3f4f5!important;color:#151515}
+  .reb-social-post-actions button.is-active{color:#a66e00}
+  .reb-social-reaction-emoji{font-size:17px}
+  .reb-social-reaction-picker{bottom:calc(100% + 7px);padding:6px 8px;border-color:#e0e3e6;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+
+  /* Comments */
+  .reb-social-inline-comments{padding-top:8px;border-top:0}
+  .reb-social-comment-toggle{padding:2px 2px 8px;color:#616970;font-size:11px;font-weight:600}
+  .reb-social-comment-toggle:hover{text-decoration:underline}
+  .reb-social-inline-comments-list{gap:9px;padding:0 0 10px}
+  .reb-social-comment{padding:9px 11px;border-radius:11px;background:#f5f6f7}
+  .reb-social-comment.is-reply{background:#f8f8f8}
+  .reb-social-comment-top strong{font-size:11px}
+  .reb-social-comment-main p{margin-top:3px;font-size:12px;line-height:1.45}
+  .reb-social-inline-comment-composer{grid-template-columns:36px minmax(0,1fr);gap:8px;padding-top:4px}
+  .reb-social-inline-composer-avatar{width:36px;height:36px}
+  .reb-social-inline-composer-field{min-height:40px;padding:4px 5px 4px 13px;border:1px solid #e2e5e7;border-radius:20px;background:#fafafa}
+  .reb-social-inline-composer-field:focus-within{background:#fff;border-color:#d6a033;box-shadow:0 0 0 2px rgba(245,176,38,.12)}
+  .reb-social-inline-composer-field textarea{min-height:26px;font-size:12px;resize:none}
+  .reb-social-inline-comment-submit{min-height:31px;padding:0 13px;border-radius:16px;font-size:10px;background:var(--reb-site-gold);color:#111}
+
+  /* Side rails retain social utility but inherit the website's flatter visual language. */
+  .reb-social-desktop-rail{display:block;min-width:0}
+  .reb-social-desktop-left{grid-area:left;position:sticky;top:138px}
+  .reb-social-desktop-right{grid-area:right;position:sticky;top:138px}
+  .reb-social-desktop-card{padding:9px;border:0;border-radius:0;background:transparent;box-shadow:none}
+  .reb-social-desktop-card + .reb-social-desktop-card{margin-top:13px;padding-top:16px;border-top:1px solid #e2e4e6}
+  .reb-social-desktop-card h3{margin:2px 8px 9px;font-size:12px;color:#2c3033}
+  .reb-social-desktop-card p{margin:0 8px 9px;font-size:10px;line-height:1.45;color:#858b91}
+  .reb-social-desktop-link{min-height:44px;padding:7px 9px;border-radius:8px;color:#34383b;font-size:11px}
+  .reb-social-desktop-link i{width:29px;height:29px;flex-basis:29px;border-radius:8px;background:#f1f2f3;color:#6d747a}
+  .reb-social-desktop-link:hover{background:#f2f3f4}
+  .reb-social-desktop-link.active{background:var(--reb-site-gold-soft);color:#855700}
+  .reb-social-desktop-link.active i{background:var(--reb-site-gold);color:#111}
+  .reb-social-desktop-status{background:#fff;border:1px solid #e5e7e9;border-radius:10px;box-shadow:none}
+
+  .reb-social-toast{bottom:28px}
+}
+
+@media (min-width:1600px){
+  .reb-social-main{width:min(1380px,calc(100% - 72px));max-width:1380px;grid-template-columns:220px minmax(0,790px) 265px;gap:22px 26px}
+}
+
+/* Phase 3N-D4 — Desktop rail/layout cleanup.
+   Desktop only. Mobile/tablet remain untouched. */
+@media (min-width:1200px){
+  .reb-social-main{
+    grid-template-columns:220px minmax(0,780px) 270px;
+    gap:24px 28px;
+  }
+
+  /* Make desktop side rails true stacked desktop panels. */
+  .reb-social-desktop-rail{
+    width:100%;
+    min-width:0;
+  }
+  .reb-social-desktop-left,
+  .reb-social-desktop-right{
+    align-self:start;
+  }
+  .reb-social-desktop-card{
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+    padding:15px;
+    border:1px solid var(--reb-site-border);
+    border-radius:12px;
+    background:#fff;
+    box-shadow:0 7px 22px rgba(16,19,18,.04);
+    overflow:hidden;
+  }
+  .reb-social-desktop-card + .reb-social-desktop-card{
+    margin-top:16px;
+    padding-top:15px;
+    border-top:1px solid var(--reb-site-border);
+  }
+  .reb-social-desktop-card h3{
+    display:block;
+    margin:0 0 10px;
+    font-size:13px;
+    line-height:1.3;
+    color:#181b1d;
+  }
+  .reb-social-desktop-card p{
+    display:block;
+    margin:0 0 12px;
+    font-size:10.5px;
+    line-height:1.55;
+    color:#7b8289;
+  }
+
+  /* Prevent the shortcut anchors from behaving like inline text. */
+  .reb-social-desktop-link{
+    display:flex!important;
+    width:100%;
+    min-width:0;
+    box-sizing:border-box;
+    align-items:center;
+    justify-content:flex-start;
+    gap:10px;
+    min-height:42px;
+    margin:0 0 4px;
+    padding:6px 8px;
+    border-radius:9px;
+    text-decoration:none;
+    white-space:normal;
+    overflow:hidden;
+  }
+  .reb-social-desktop-link:last-child{margin-bottom:0}
+  .reb-social-desktop-link i{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 30px;
+    width:30px;
+    height:30px;
+    margin:0;
+  }
+  .reb-social-desktop-link span{
+    display:block;
+    flex:1 1 auto;
+    min-width:0;
+    margin:0;
+    line-height:1.35;
+    overflow-wrap:anywhere;
+  }
+
+  /* Right-side status card: icon and copy must not collapse into one line. */
+  .reb-social-desktop-status{
+    display:flex!important;
+    width:100%;
+    box-sizing:border-box;
+    align-items:flex-start;
+    gap:10px;
+    padding:11px;
+    border:1px solid #e7e9eb;
+    border-radius:10px;
+    background:#fafafa;
+    overflow:hidden;
+  }
+  .reb-social-desktop-status-icon{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 36px;
+    width:36px;
+    height:36px;
+    border-radius:9px;
+    background:var(--reb-site-gold-soft);
+    color:#9a6700;
+  }
+  .reb-social-desktop-status>div:last-child{
+    display:block;
+    flex:1 1 auto;
+    min-width:0;
+  }
+  .reb-social-desktop-status strong{
+    display:block;
+    margin:0 0 3px;
+    font-size:11.5px;
+    line-height:1.35;
+    color:#1b1e20;
+  }
+  .reb-social-desktop-status span{
+    display:block;
+    margin:0;
+    font-size:10px;
+    line-height:1.45;
+    color:#7d848b;
+    overflow-wrap:anywhere;
+  }
+
+  /* Keep the content column visually dominant and aligned. */
+  .reb-social-composer,
+  .reb-social-feed-section{
+    width:100%;
+    min-width:0;
+  }
+  .reb-social-feed-head{
+    min-height:48px;
+  }
+  .reb-social-post{
+    box-sizing:border-box;
+  }
+
+  /* Account card stays compact and readable in the left column. */
+  .reb-social-account-card{
+    width:100%;
+    box-sizing:border-box;
+    overflow:hidden;
+  }
+  .reb-social-account-copy strong,
+  .reb-social-account-copy span{
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+}
+
+@media (min-width:1600px){
+  .reb-social-main{
+    grid-template-columns:230px minmax(0,820px) 280px;
+    gap:24px 30px;
+  }
+}
+
+/* ============================================================
+   ReachEmpire Social — Desktop D5 Typography Scale Alignment
+   Desktop only (>=1200px). Mobile/tablet remain untouched.
+   Matches the public Website's readable desktop scale.
+   ============================================================ */
+@media (min-width:1200px){
+  body.reb-social-page{
+    font-size:16px!important;
+    line-height:1.55!important;
+  }
+
+  /* Utility/header typography — align with Website Standard */
+  .reb-social-site-support{
+    font-size:18px!important;
+    line-height:1.15!important;
+  }
+  .reb-social-site-support i{font-size:20px!important}
+  .reb-social-site-links a{
+    font-size:15px!important;
+    line-height:1.1!important;
+  }
+  .reb-social-brand span{
+    font-size:14px!important;
+    line-height:1.1!important;
+  }
+  .reb-social-desktop-topnav a{
+    font-size:15px!important;
+    line-height:1.12!important;
+  }
+  .reb-social-desktop-topnav a i{font-size:16px!important}
+  .reb-social-icon-btn{font-size:17px!important}
+
+  /* Account / left rail */
+  .reb-social-account-copy strong{
+    font-size:16px!important;
+    line-height:1.25!important;
+  }
+  .reb-social-account-copy span{
+    font-size:13px!important;
+    line-height:1.45!important;
+  }
+  .reb-social-account-card .reb-social-small-btn{
+    font-size:14px!important;
+    line-height:1.1!important;
+  }
+
+  /* Composer */
+  .reb-social-card-head h1{
+    font-size:28px!important;
+    line-height:1.18!important;
+  }
+  .reb-social-eyebrow{
+    font-size:12px!important;
+    line-height:1.2!important;
+  }
+  .reb-social-draft-state,
+  .reb-social-composer-meta{
+    font-size:13px!important;
+    line-height:1.4!important;
+  }
+  .reb-social-composer textarea{
+    font-size:16px!important;
+    line-height:1.55!important;
+  }
+  .reb-social-tool-btn,
+  .reb-social-primary-btn{
+    font-size:14px!important;
+    line-height:1.1!important;
+  }
+
+  /* Feed heading / filters */
+  .reb-social-feed-head h2{
+    font-size:28px!important;
+    line-height:1.18!important;
+  }
+  .reb-social-feed-tabs button{
+    font-size:14px!important;
+    line-height:1.1!important;
+  }
+
+  /* Post typography */
+  .reb-social-author-link,
+  .reb-social-post-author strong{
+    font-size:15px!important;
+    line-height:1.25!important;
+  }
+  .reb-social-post-author span{
+    font-size:13px!important;
+    line-height:1.35!important;
+  }
+  .reb-social-post-text{
+    font-size:16px!important;
+    line-height:1.58!important;
+  }
+  .reb-social-reaction-summary{
+    font-size:14px!important;
+    line-height:1.35!important;
+  }
+  .reb-social-post-actions button,
+  .reb-social-reaction-main,
+  .reb-social-reaction-main[data-reaction="LIKE"],
+  .reb-social-reaction-main[data-reaction="LOVE"],
+  .reb-social-reaction-main[data-reaction="HAHA"],
+  .reb-social-reaction-main[data-reaction="WOW"],
+  .reb-social-reaction-main[data-reaction="SAD"],
+  .reb-social-reaction-main[data-reaction="PRAY"]{
+    font-size:15px!important;
+    line-height:1.1!important;
+  }
+  .reb-social-reaction-emoji{font-size:19px!important}
+
+  /* Comments */
+  .reb-social-comment-toggle{
+    font-size:14px!important;
+    line-height:1.35!important;
+  }
+  .reb-social-comment-top strong{
+    font-size:14px!important;
+    line-height:1.3!important;
+  }
+  .reb-social-comment-main p{
+    font-size:14px!important;
+    line-height:1.5!important;
+  }
+  .reb-social-comment-meta,
+  .reb-social-comment-actions button{
+    font-size:12.5px!important;
+    line-height:1.3!important;
+  }
+  .reb-social-inline-comment-form textarea,
+  .reb-social-inline-comment-form input{
+    font-size:14px!important;
+    line-height:1.45!important;
+  }
+  .reb-social-inline-comment-form button{
+    font-size:13px!important;
+    line-height:1.1!important;
+  }
+
+  /* Desktop side rails */
+  .reb-social-desktop-card h3{
+    font-size:16px!important;
+    line-height:1.3!important;
+  }
+  .reb-social-desktop-card p{
+    font-size:13px!important;
+    line-height:1.55!important;
+  }
+  .reb-social-desktop-link span{
+    font-size:14px!important;
+    line-height:1.35!important;
+  }
+  .reb-social-desktop-status strong{
+    font-size:15px!important;
+    line-height:1.35!important;
+  }
+  .reb-social-desktop-status span{
+    font-size:13px!important;
+    line-height:1.45!important;
+  }
+}
+
+
+/* ============================================================
+   Desktop D8 — Menu badges + post privacy indicator
+   Desktop only; mobile/tablet remain untouched.
+   ============================================================ */
+@media (min-width:1200px){
+  .reb-social-topbar{grid-template-columns:minmax(300px,1fr) auto!important}
+  .reb-social-desktop-topnav{justify-self:end}
+  .reb-social-desktop-topnav a{position:relative}
+  .reb-social-desktop-topnav .reb-social-nav-badge{
+    position:absolute!important;top:-7px!important;right:3px!important;min-width:20px!important;height:20px!important;
+    padding:0 5px!important;border:2px solid #fff!important;border-radius:999px!important;background:#e33227!important;
+    color:#fff!important;font:800 10px/16px var(--reb-social-text-font,"IBM Plex Sans",Arial,sans-serif)!important;text-align:center!important;
+    box-sizing:border-box!important;z-index:2
+  }
+  .reb-social-post-meta{display:flex!important;align-items:center!important;gap:7px!important;flex-wrap:wrap!important}
+  .reb-social-post-privacy{display:inline-flex;align-items:center;gap:4px;color:#747b84;font-size:12px;font-weight:600}
+  .reb-social-post-privacy i{font-size:11px}
+}
+
+/* Phase 3N-D10: post-owner/admin hidden-comment moderation. Desktop only. */
+@media (min-width:1200px){
+  .reb-social-comment-thread-item.is-hidden-comment>.reb-social-comment{background:#fff9e8;border:1px dashed rgba(181,126,0,.42)}
+  .reb-social-comment-thread-item.is-hidden-comment>.reb-social-comment .reb-social-comment-main>p{opacity:.72}
+  .reb-social-hidden-comment-badge{display:inline-flex;align-items:center;gap:6px;width:max-content;margin:0 0 5px;padding:3px 7px;border-radius:999px;background:#fff0bd;color:#7a5600;font-size:11px;font-weight:800}
+  .reb-social-comment-visibility-action{color:#5b6470}
+}
+\n/* D20-C: Facebook-style clean engagement summary */
+.reb-social-reaction-summary{display:flex!important;align-items:center;justify-content:space-between;gap:12px;min-height:38px;padding:7px 2px 8px!important}
+.reb-social-engagement-left{display:flex;align-items:center;min-width:0}
+.reb-social-reaction-icons-host{display:flex;align-items:center;gap:5px;color:#656b72}
+.reb-social-reaction-icons-host[hidden]{display:none!important}
+.reb-social-reaction-icons-host .reb-social-reaction-summary-icons{display:inline-flex;align-items:center;padding-left:2px}
+.reb-social-reaction-icons-host .reb-social-reaction-summary-icons>span{position:relative;margin-left:-5px;width:21px;height:21px;display:grid;place-items:center;border:2px solid #fff;border-radius:50%;background:#fff;font-size:14px;line-height:1}
+.reb-social-reaction-icons-host .reb-social-reaction-summary-icons>span:first-child{margin-left:0;z-index:3}.reb-social-reaction-icons-host .reb-social-reaction-summary-icons>span:nth-child(2){z-index:2}.reb-social-reaction-icons-host .reb-social-reaction-summary-icons>span:nth-child(3){z-index:1}
+.reb-social-reaction-icons-host .reb-social-reaction-summary-count{margin-left:5px;font-size:13px;color:#656b72;font-weight:400}
+.reb-social-engagement-right{margin-left:auto;display:flex;align-items:center;gap:13px;color:#656b72;font-size:13px;white-space:nowrap}
+.reb-social-engagement-stat{border:0!important;background:transparent!important;padding:0!important;color:inherit!important;font:inherit!important;min-height:0!important;border-radius:0!important}.reb-social-engagement-stat:not(span):hover{text-decoration:underline;cursor:pointer}
+.reb-social-post-actions .reb-social-reaction-label{white-space:nowrap}
+@media(max-width:600px){.reb-social-engagement-right{gap:9px;font-size:12px}.reb-social-reaction-icons-host .reb-social-reaction-summary-count{font-size:12px}.reb-social-reaction-summary{gap:7px}}
+
+/* D20-C6: Facebook-reference engagement strip — counts left, reaction faces right */
+.reb-social-reaction-summary-fb{padding:8px 10px 9px!important;min-height:42px!important;border-bottom:0!important}
+.reb-social-engagement-counts{display:flex!important;align-items:center!important;gap:22px!important;color:#68717b!important}
+.reb-social-engagement-icon-stat{display:inline-flex!important;align-items:center!important;gap:7px!important;color:#68717b!important;font-size:14px!important;line-height:1!important;white-space:nowrap!important}
+.reb-social-engagement-icon-stat i{font-size:21px!important;line-height:1!important;color:#7b858f!important}
+.reb-social-engagement-icon-stat[data-engagement="shares"] i{font-size:20px!important}
+.reb-social-engagement-icon-stat[hidden]{display:none!important}
+.reb-social-engagement-reactions{margin-left:auto!important;display:flex!important;align-items:center!important;gap:0!important}
+.reb-social-engagement-reactions .reb-social-reaction-icons-host{gap:0!important}
+.reb-social-engagement-reactions .reb-social-reaction-summary-icons{display:inline-flex!important;align-items:center!important;padding:0!important}
+.reb-social-engagement-reactions .reb-social-reaction-summary-icons>span{width:23px!important;height:23px!important;margin-left:-4px!important;border:2px solid #fff!important;border-radius:50%!important;background:#fff!important;font-size:16px!important;line-height:1!important}
+.reb-social-engagement-reactions .reb-social-reaction-summary-icons>span:first-child{margin-left:0!important}
+.reb-social-engagement-reactions .reb-social-reaction-summary-count{display:none!important}
+@media(max-width:600px){.reb-social-engagement-counts{gap:15px!important}.reb-social-engagement-icon-stat{gap:5px!important;font-size:13px!important}.reb-social-engagement-icon-stat i{font-size:19px!important}.reb-social-reaction-summary-fb{padding-left:5px!important;padding-right:5px!important}}
+
+/* D20F25 — body uses the identical 1390px desktop rail as the global header. */
+@media (min-width:1200px){
+  .reb-social-main{
+    width:min(1390px,calc(100% - 64px))!important;
+    max-width:1390px!important;
+    grid-template-columns:230px minmax(0,820px) 280px!important;
+    column-gap:30px!important;
+    row-gap:24px!important;
+  }
+}

@@ -1,0 +1,29 @@
+/* ReachEmpireBot Home V24 - slightly larger hero robot on phones. */
+@media (max-width:767px){
+  html body.reb-home section.banner-section .reb-hero-inner > .reb-hero-visual{
+    grid-template-columns:minmax(142px,46%) minmax(0,54%)!important;
+    grid-template-rows:218px!important;
+    min-height:218px!important;
+    height:218px!important;
+    max-height:218px!important;
+  }
+  html body.reb-home section.banner-section .reb-hero-visual > img.reb-robot{
+    width:176px!important;
+    max-width:112%!important;
+    max-height:196px!important;
+  }
+}
+
+@media (max-width:350px){
+  html body.reb-home section.banner-section .reb-hero-inner > .reb-hero-visual{
+    grid-template-columns:122px minmax(0,1fr)!important;
+    grid-template-rows:206px!important;
+    min-height:206px!important;
+    height:206px!important;
+    max-height:206px!important;
+  }
+  html body.reb-home section.banner-section .reb-hero-visual > img.reb-robot{
+    width:154px!important;
+    max-height:182px!important;
+  }
+}

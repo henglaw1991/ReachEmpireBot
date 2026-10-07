@@ -1,0 +1,71 @@
+/* Copy Trading video showcase — desktop and mobile */
+.reb-trade-account-page .copy-trading-video{
+  width:min(1180px,100%);
+  max-width:1180px;
+  margin:18px auto 0;
+  padding:20px;
+  border:1px solid #eadfca;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 16px 40px rgba(25,20,10,.08);
+  box-sizing:border-box;
+}
+.reb-trade-account-page .copy-trading-video-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:14px;
+}
+.reb-trade-account-page .copy-trading-video-head h3{
+  margin:0;
+  font-size:25px;
+  line-height:1.18;
+}
+.reb-trade-account-page .copy-trading-video-head p{
+  max-width:620px;
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+}
+.reb-trade-account-page .copy-trading-video-frame{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  aspect-ratio:848/464;
+  border:1px solid rgba(245,176,38,.35);
+  border-radius:12px;
+  background:#050505;
+}
+.reb-trade-account-page .copy-trading-video-frame video{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#050505;
+}
+@media(max-width:640px){
+  .reb-trade-account-page .copy-trading-video{
+    width:100%!important;
+    max-width:100%!important;
+    margin:13px auto 0!important;
+    padding:10px!important;
+    border-radius:13px!important;
+  }
+  .reb-trade-account-page .copy-trading-video-head{
+    display:block!important;
+    margin-bottom:9px!important;
+  }
+  .reb-trade-account-page .copy-trading-video-head h3{
+    font-size:18px!important;
+  }
+  .reb-trade-account-page .copy-trading-video-head p{
+    margin-top:4px!important;
+    font-size:11.5px!important;
+    line-height:1.4!important;
+  }
+  .reb-trade-account-page .copy-trading-video-frame{
+    border-radius:9px!important;
+  }
+}

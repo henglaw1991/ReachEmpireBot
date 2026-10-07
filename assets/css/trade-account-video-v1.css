@@ -1,0 +1,47 @@
+/* Trade Account hero video — desktop and mobile */
+.trade-account-hero-media {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 0 !important;
+  border: 1px solid rgba(247, 174, 26, 0.38);
+  border-radius: 12px;
+  background: #080907;
+}
+
+.trade-account-hero-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+@media (max-width: 768px) {
+  .trade-account-hero-media {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    margin-top: 18px;
+    border-radius: 10px;
+    background: #080907;
+  }
+
+  .trade-account-hero-video {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: center center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trade-account-hero-video {
+    animation: none !important;
+  }
+}
