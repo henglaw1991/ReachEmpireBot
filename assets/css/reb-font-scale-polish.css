@@ -1,0 +1,360 @@
+/* ReachEmpireBot global font scale polish */
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+
+body{
+  font-size:16px !important;
+  line-height:1.55 !important;
+}
+
+.reb-top .reb-actions a,
+.reb-login a,
+.header-top .theme-btn,
+.reb-btn,
+button.reb-btn,
+.theme-btn,
+.btn{
+  font-size:15px !important;
+  line-height:1.1 !important;
+}
+
+.reb-nav a,
+.main-menu .navigation > li > a{
+  font-size:15px !important;
+  line-height:1.12 !important;
+}
+
+.reb-hero h1,
+.banner-section h1,
+.page-title h1,
+.reb-page h1{
+  font-size:clamp(42px,4.8vw,58px) !important;
+  line-height:1.08 !important;
+  letter-spacing:0 !important;
+}
+
+.reb-home .reb-hero h1,
+.reb-home .banner-section h1{
+  font-size:clamp(44px,5.2vw,62px) !important;
+}
+
+.reb-hero p,
+.reb-hero-text,
+.banner-section p{
+  font-size:18px !important;
+  line-height:1.58 !important;
+}
+
+.sec-title h2,
+.title-box h2,
+.reb-title h2,
+.reb-section-title h2,
+.reb-card h2,
+.content-box h2,
+.reb-commit h2,
+.subscribe-section h2{
+  font-size:clamp(30px,3vw,40px) !important;
+  line-height:1.16 !important;
+  letter-spacing:0 !important;
+}
+
+.reb-card h3,
+.reb-step h3,
+.reb-product h3,
+.account-block-one .inner-box h3,
+.trading-block-one .inner-box h3,
+.footer-widget h3{
+  font-size:clamp(18px,1.55vw,22px) !important;
+  line-height:1.25 !important;
+}
+
+.reb-card p,
+.reb-step p,
+.reb-product p,
+.reb-list li,
+.content-box p,
+.text,
+.footer-widget p{
+  font-size:15.5px !important;
+  line-height:1.6 !important;
+}
+
+.reb-file strong,
+.reb-badge strong,
+.reb-value h3,
+.reb-flow-card h3,
+.reb-metric strong{
+  font-size:18px !important;
+  line-height:1.24 !important;
+}
+
+.reb-file > div{
+  min-width:0 !important;
+}
+
+.reb-file strong{
+  overflow-wrap:anywhere !important;
+  word-break:break-word !important;
+}
+
+.reb-file span,
+.reb-badge span,
+.reb-value p,
+.reb-flow-card p,
+.reb-metric span{
+  font-size:14px !important;
+  line-height:1.5 !important;
+}
+
+.login-wrap h1,
+.signup-wrap h1,
+.auth-card h1,
+.form-panel h1,
+.panel h1,
+.reb-shell h1{
+  font-size:clamp(30px,3.8vw,42px) !important;
+  line-height:1.12 !important;
+}
+
+@media (max-width: 900px){
+  .reb-nav a,
+  .main-menu .navigation > li > a{
+    font-size:14px !important;
+  }
+}
+
+@media (max-width: 767px){
+  html,
+  body{
+    max-width:100% !important;
+    overflow-x:hidden !important;
+  }
+
+  body{
+    font-size:15px !important;
+    line-height:1.5 !important;
+  }
+
+  .auto-container,
+  .large-container,
+  .container,
+  .reb-panel,
+  .reb-grid,
+  .reb-title,
+  .reb-card,
+  .reb-step,
+  .reb-product,
+  .content-box{
+    max-width:100% !important;
+    min-width:0 !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  strong,
+  a,
+  li{
+    overflow-wrap:break-word !important;
+  }
+
+  .reb-top .reb-actions a,
+  .reb-login a,
+  .header-top .theme-btn,
+  .reb-btn,
+  button.reb-btn,
+  .theme-btn,
+  .btn{
+    font-size:14px !important;
+  }
+
+  .header-top .top-inner,
+  .main-header .header-top .top-inner,
+  .reb-top{
+    justify-content:center !important;
+  }
+
+  .header-top .option-block,
+  .main-header .header-top .option-block,
+  .reb-top .reb-actions,
+  .reb-login{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    width:min(282px,calc(100vw - 36px)) !important;
+    max-width:calc(100vw - 36px) !important;
+    gap:10px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  .header-top .option-block .theme-btn,
+  .main-header .header-top .option-block .theme-btn,
+  .reb-top .reb-actions a,
+  .reb-login a{
+    width:100% !important;
+    min-width:0 !important;
+    padding-left:12px !important;
+    padding-right:12px !important;
+    text-align:center !important;
+  }
+
+  .reb-nav a,
+  .reb-nav a.trade-account-link,
+  .main-menu .navigation > li > a{
+    font-size:14px !important;
+  }
+
+  .reb-hero h1,
+  .banner-section h1,
+  .page-title h1,
+  .reb-page h1{
+    font-size:clamp(29px,7.9vw,35px) !important;
+    line-height:1.08 !important;
+  }
+
+  .reb-home .reb-hero h1,
+  .reb-home .banner-section h1{
+    font-size:clamp(31px,8.4vw,37px) !important;
+    line-height:1.07 !important;
+  }
+
+  .reb-hero p,
+  .reb-hero-text,
+  .banner-section p{
+    font-size:15px !important;
+    line-height:1.5 !important;
+  }
+
+  .sec-title h2,
+  .title-box h2,
+  .reb-title h2,
+  .reb-section-title h2,
+  .reb-card h2,
+  .content-box h2,
+  .reb-commit h2,
+  .subscribe-section h2{
+    font-size:clamp(24px,6.2vw,29px) !important;
+    line-height:1.14 !important;
+  }
+
+  .reb-card h3,
+  .reb-step h3,
+  .reb-product h3,
+  .account-block-one .inner-box h3,
+  .trading-block-one .inner-box h3,
+  .footer-widget h3{
+    font-size:17px !important;
+    line-height:1.24 !important;
+  }
+
+  .reb-card p,
+  .reb-step p,
+  .reb-product p,
+  .reb-list li,
+  .content-box p,
+  .text,
+  .footer-widget p{
+    font-size:14px !important;
+    line-height:1.5 !important;
+  }
+
+  .reb-file strong,
+  .reb-badge strong,
+  .reb-value h3,
+  .reb-flow-card h3,
+  .reb-metric strong{
+    font-size:15.5px !important;
+  }
+
+  .reb-download-page .reb-file{
+    display:grid !important;
+    grid-template-columns:48px minmax(0,1fr) !important;
+    align-items:center !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .reb-download-page .reb-download{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .reb-download-page .reb-panel,
+  .reb-download-page .reb-card{
+    width:100% !important;
+    max-width:calc(100vw - 36px) !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+  }
+
+  .reb-download-page .reb-card *{
+    max-width:100% !important;
+  }
+
+  .reb-download-page .reb-file i{
+    width:48px !important;
+    height:48px !important;
+  }
+
+  .reb-download-page .reb-file strong{
+    font-size:14.5px !important;
+    line-height:1.24 !important;
+    white-space:normal !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  .reb-download-page .reb-card,
+  .reb-download-page .reb-panel{
+    overflow:hidden !important;
+  }
+
+  .reb-download-page .reb-btn,
+  .reb-download-page button.reb-btn{
+    width:100% !important;
+  }
+
+  .reb-file span,
+  .reb-badge span,
+  .reb-value p,
+  .reb-flow-card p,
+  .reb-metric span{
+    font-size:13px !important;
+  }
+
+  .login-wrap h1,
+  .signup-wrap h1,
+  .auth-card h1,
+  .form-panel h1,
+  .panel h1,
+  .reb-shell h1{
+    font-size:28px !important;
+    line-height:1.12 !important;
+  }
+}
+
+@media (max-width: 380px){
+  .reb-nav a,
+  .reb-nav a.trade-account-link,
+  .main-menu .navigation > li > a{
+    font-size:13px !important;
+  }
+
+  .reb-hero h1,
+  .banner-section h1,
+  .page-title h1,
+  .reb-page h1{
+    font-size:28px !important;
+  }
+
+  .reb-home .reb-hero h1,
+  .reb-home .banner-section h1{
+    font-size:29px !important;
+  }
+}

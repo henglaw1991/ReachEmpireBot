@@ -1,0 +1,8 @@
+/* D20F9 compact Social auth control: one Log In / Log Out button only */
+.reb-social-auth-actions{display:flex;align-items:center;justify-content:flex-end;flex:0 0 auto;margin-left:8px;white-space:nowrap}
+.reb-social-auth-btn{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:9px;height:44px;min-height:44px;padding:0 17px;border:1px solid #e2e6ea;border-radius:12px;background:#fff;color:#17191b!important;font-family:inherit;font-size:15px;font-weight:700;line-height:1;text-decoration:none!important;white-space:nowrap;transition:background .16s ease,border-color .16s ease,box-shadow .16s ease}
+.reb-social-auth-btn:hover{background:#f7f8f9;border-color:#d7dce1;box-shadow:0 3px 10px rgba(15,23,42,.06)}
+.reb-social-auth-icon{display:inline-flex;align-items:center;justify-content:center;width:29px;height:29px;border-radius:50%;background:#eef0f2;color:#252a2e;font-size:14px;line-height:1}
+.reb-social-auth-btn span:last-child{display:inline-flex;align-items:center;line-height:1}
+@media(max-width:1280px){.reb-social-auth-actions{margin-left:4px}.reb-social-auth-btn{height:40px;min-height:40px;padding:0 13px;font-size:14px;gap:7px}.reb-social-auth-icon{width:27px;height:27px;font-size:13px}.reb-social-global-nav{gap:2px}.reb-social-global-nav a{padding-left:8px!important;padding-right:8px!important}}
+@media(max-width:1024px){.reb-social-auth-actions{display:none}}

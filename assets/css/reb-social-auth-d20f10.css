@@ -1,0 +1,12 @@
+/* D20F10 — Social auth lives on its own slim top row, above the Social menu. */
+.reb-social-global-topbar{height:102px!important;align-items:stretch!important;position:sticky!important}
+.reb-social-global-topbar>.reb-social-auth-toprow{position:absolute;top:0;left:0;right:0;height:30px;display:flex;align-items:center;justify-content:flex-end;padding:0 max(18px,calc((100% - 1440px)/2));background:#fff;z-index:2;pointer-events:none}
+.reb-social-auth-actions{display:flex;align-items:center;justify-content:flex-end;white-space:nowrap;pointer-events:auto}
+.reb-social-auth-btn{display:inline-flex;align-items:center;gap:7px;padding:0;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#5e6874!important;font-family:var(--reb-social-title-font,"Ubuntu",Arial,sans-serif)!important;font-size:13px;font-weight:700;line-height:1;text-decoration:none!important;white-space:nowrap;transition:color .15s ease}
+.reb-social-auth-btn:hover{color:#17191c!important;background:transparent!important;box-shadow:none!important}
+.reb-social-auth-icon{display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;border:0;border-radius:0;background:transparent!important;color:inherit;font-size:14px;line-height:1}
+.reb-social-global-topbar>.reb-social-global-inner{height:72px!important;margin-top:30px!important}
+.reb-msg-page .reb-msg-shell{height:calc(100vh - 102px)!important}
+@media(max-width:1180px){.reb-social-global-topbar>.reb-social-auth-toprow{padding-left:12px;padding-right:12px}}
+@media(max-width:940px){.reb-social-global-topbar{height:92px!important}.reb-social-global-topbar>.reb-social-auth-toprow{height:26px;padding:0 10px}.reb-social-global-topbar>.reb-social-global-inner{height:66px!important;margin-top:26px!important}.reb-social-auth-btn{font-size:12px}.reb-social-auth-icon{font-size:13px}.reb-msg-page .reb-msg-shell{height:calc(100vh - 92px)!important}}
+@media(max-width:560px){.reb-social-global-topbar{height:88px!important}.reb-social-global-topbar>.reb-social-auth-toprow{height:24px;padding:0 7px}.reb-social-global-topbar>.reb-social-global-inner{height:64px!important;margin-top:24px!important}.reb-social-auth-btn{font-size:11px;gap:5px}.reb-social-auth-icon{font-size:12px}.reb-msg-page .reb-msg-shell{height:calc(100vh - 88px)!important}}

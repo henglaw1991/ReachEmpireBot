@@ -1,0 +1,53 @@
+/* v127: left account: one row without clipping. Only desktop Feed grid. */
+@media(min-width:768px){
+  body.reb-social-page .reb-social-main>.reb-social-account-card .reb-social-account-copy strong{
+    white-space:nowrap!important;overflow:visible!important;text-overflow:clip!important;
+    overflow-wrap:normal!important;word-break:normal!important;
+  }
+}
+
+@media(min-width:1200px){
+  body.reb-social-page .reb-social-main{
+    grid-template-columns:315px minmax(0,735px) 280px!important;
+  }
+  body.reb-social-page .reb-social-global-inner{
+    grid-template-columns:315px minmax(0,735px) 280px!important;
+  }
+  body.reb-social-page .reb-social-global-nav{
+    width:750px!important;max-width:750px!important;
+  }
+  body.reb-social-page .reb-social-global-brand{
+    width:315px!important;
+  }
+  body.reb-social-page .reb-social-main>.reb-social-account-card .reb-social-account-copy strong{
+    display:block!important;white-space:nowrap!important;overflow:visible!important;
+    text-overflow:clip!important;max-width:none!important;font-size:14px!important;
+    overflow-wrap:normal!important;word-break:normal!important;
+  }
+}
+@media(min-width:1600px){
+  body.reb-social-page .reb-social-main,body.reb-social-page .reb-social-global-inner{
+    width:min(1475px,calc(100% - 64px))!important;
+    max-width:1475px!important;
+    grid-template-columns:315px minmax(0,820px) 280px!important;
+  }
+  body.reb-social-page .reb-social-global-nav{
+    width:820px!important;max-width:820px!important;
+  }
+}
+@media(min-width:1200px) and (max-width:1453px){
+  body.reb-social-page .reb-social-main{
+    grid-template-columns:315px minmax(0,1fr) 245px!important;
+    column-gap:24px!important;
+  }
+  /* Keep the header in its legacy responsive layout at narrow desktop widths. */
+  body.reb-social-page .reb-social-global-inner{
+    grid-template-columns:315px minmax(0,1fr) 245px!important;
+    column-gap:24px!important;
+  }
+  body.reb-social-page .reb-social-global-nav{width:100%!important;max-width:none!important;}
+  body.reb-social-page .reb-social-account-control{width:245px!important;}
+}
+body.reb-social-page .reb-social-avatar-pending{background:#edf0f3!important;color:transparent!important;}
+body.reb-social-page .reb-social-account-copy strong{min-height:1.3em;}
+/* Flex/tablet layouts retain their original widths; no username-as-placeholder paint. */

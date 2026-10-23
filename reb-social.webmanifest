@@ -1,0 +1,19 @@
+{
+  "id": "/social/",
+  "name": "ReachEmpire Social",
+  "short_name": "ReachEmpire",
+  "description": "ReachEmpireBot social messaging and calls",
+  "start_url": "/social/messages/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c98812",
+  "icons": [
+    {
+      "src": "/assets/images/resource/reb-robot.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+/* V89 desktop-only Social identity polish. Mobile intentionally untouched. */
+@media (min-width:768px){
+  /* The compact image picker is a mobile control. Desktop already has Image/Video buttons below. */
+  body.reb-social-page .reb-social-compact-image{display:none!important;}
+
+  /* Keep every profile photo inside a true circle and stop global image rules from stretching it. */
+  body.reb-social-page .reb-social-avatar,
+  body.reb-social-page .reb-social-post-avatar,
+  body.reb-social-page .reb-social-shared-avatar,
+  body.reb-social-page .reb-social-community-avatar,
+  body.reb-social-page .reb-social-comment-avatar,
+  body.reb-social-page .reb-social-notification-avatar{
+    overflow:hidden!important;
+    border-radius:50%!important;
+    flex-shrink:0!important;
+    aspect-ratio:1 / 1!important;
+  }
+  body.reb-social-page .reb-social-post-avatar{width:45px!important;height:45px!important;min-width:45px!important;min-height:45px!important;max-width:45px!important;max-height:45px!important;}
+  body.reb-social-page .reb-social-shared-avatar{width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;max-width:34px!important;max-height:34px!important;}
+  body.reb-social-page .reb-social-community-avatar{width:50px!important;height:50px!important;min-width:50px!important;min-height:50px!important;max-width:50px!important;max-height:50px!important;}
+  body.reb-social-page .reb-social-avatar img:not(.reb-default-avatar-image),
+  body.reb-social-page .reb-social-post-avatar img:not(.reb-default-avatar-image),
+  body.reb-social-page .reb-social-shared-avatar img:not(.reb-default-avatar-image),
+  body.reb-social-page .reb-social-community-avatar img:not(.reb-default-avatar-image),
+  body.reb-social-page .reb-social-comment-avatar img:not(.reb-default-avatar-image),
+  body.reb-social-page .reb-social-notification-avatar img:not(.reb-default-avatar-image){
+    display:block!important;
+    width:100%!important;height:100%!important;
+    min-width:100%!important;min-height:100%!important;
+    max-width:100%!important;max-height:100%!important;
+    object-fit:cover!important;object-position:center center!important;
+    border-radius:50%!important;
+    margin:0!important;padding:0!important;
+    position:static!important;transform:none!important;
+  }
+  body.reb-social-page .reb-default-avatar-image{
+    width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;
+    object-fit:contain!important;object-position:center!important;border-radius:50%!important;
+    margin:0!important;position:static!important;transform:none!important;
+  }
+
+  /* Verified identity stays attached to the author name in nested shares and Community rows. */
+  body.reb-social-page .reb-social-shared-name-line,
+  body.reb-social-page .reb-social-community-name-line{
+    display:flex!important;align-items:center!important;min-width:0!important;max-width:100%!important;
+  }
+  body.reb-social-page .reb-social-shared-name-line .reb-social-shared-author-link,
+  body.reb-social-page .reb-social-community-name-line strong{min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;}
+  body.reb-social-page .reb-social-shared-name-line .reb-blue-verified,
+  body.reb-social-page .reb-social-community-name-line .reb-blue-verified{
+    width:16px!important;height:16px!important;min-width:16px!important;flex:0 0 16px!important;margin-left:5px!important;
+  }
+  body.reb-social-page .reb-social-shared-name-line .reb-blue-verified svg,
+  body.reb-social-page .reb-social-community-name-line .reb-blue-verified svg{width:16px!important;height:16px!important;}
+  body.reb-social-page .reb-social-community-name-line{width:100%!important;}
+  body.reb-social-page .reb-social-community-name-line + span{margin-top:2px!important;}
+}

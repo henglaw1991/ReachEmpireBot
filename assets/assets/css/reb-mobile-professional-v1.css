@@ -1,0 +1,565 @@
+/* ReachEmpireBot professional responsive standard — final cascade */
+:root{--reb-mobile-gutter:18px;--reb-mobile-radius:14px;--reb-mobile-gap:14px}
+html,body{max-width:100%;overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box}
+img,svg,video,iframe,canvas{max-width:100%;height:auto}
+input,select,textarea,button{max-width:100%}
+
+@media (max-width:991px){
+  .auto-container,.large-container,.container,.reb-container,.reb-inner{max-width:100%!important;padding-left:24px!important;padding-right:24px!important}
+  .row{margin-left:-7px!important;margin-right:-7px!important}
+  [class*="col-"]{padding-left:7px!important;padding-right:7px!important}
+  .reb-grid,.reb-hero-inner,.reb-contact-grid,.reb-story-grid,.reb-store-grid,.reb-download-grid,.reb-payment-layout,.reb-detail-layout{gap:20px!important}
+  table{width:100%}
+}
+
+/* Home professional refresh v13 - FINAL cascade guard. */
+@media (min-width:992px){
+  html body.reb-home .banner-section{padding-top:0!important}
+  html body.reb-home .reb-hero{min-height:590px!important;padding:58px 58px 42px!important}
+  html body.reb-home .reb-hero-inner{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(390px,490px)!important;gap:34px!important;align-items:center!important}
+  html body.reb-home .reb-hero h1{font-size:clamp(54px,5vw,70px)!important;line-height:.98!important}
+  html body.reb-home .reb-hero-visual{position:relative!important;min-height:500px!important}
+  html body.reb-home .reb-robot{position:absolute!important;left:-175px!important;bottom:76px!important;width:min(390px,80%)!important;transform:none!important}
+  html body.reb-home .reb-feature-list{position:absolute!important;right:0!important;top:10px!important;width:min(300px,70%)!important}
+  html body.reb-home .reb-chart-card{display:block!important;position:absolute!important;right:0!important;top:238px!important;width:300px!important;min-height:202px!important;max-height:202px!important}
+  html body.reb-home .main-header .header-lower{padding-top:20px!important;padding-bottom:20px!important}
+  html body.reb-home .main-header .header-bottom{min-height:54px!important;height:54px!important}
+}
+
+@media (max-width:767px){
+  html body.reb-home .banner-section{min-height:0!important;padding:0 0 10px!important}
+  html body.reb-home .banner-section .large-container{padding-left:10px!important;padding-right:10px!important}
+  html body.reb-home .reb-hero{display:block!important;min-height:0!important;height:auto!important;padding:30px 16px 26px!important}
+  html body.reb-home .reb-hero-inner{display:flex!important;flex-direction:column!important;gap:22px!important;width:100%!important}
+  html body.reb-home .reb-hero-copy{order:1!important;width:100%!important}
+  html body.reb-home .reb-hero h1{font-size:36px!important;line-height:1.02!important;margin-bottom:16px!important}
+  html body.reb-home .reb-hero-text{max-width:none!important;font-size:15px!important;line-height:1.55!important;margin-bottom:20px!important}
+  html body.reb-home .reb-hero-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
+  html body.reb-home .reb-stat{padding:10px 6px!important;text-align:center!important}
+  html body.reb-home .reb-stat strong{font-size:18px!important}
+  html body.reb-home .reb-stat span{font-size:10px!important;line-height:1.25!important}
+  html body.reb-home .reb-hero-visual{order:2!important;position:relative!important;display:grid!important;grid-template-rows:auto 280px!important;gap:12px!important;width:100%!important;min-height:0!important;height:auto!important}
+  html body.reb-home .reb-feature-list{position:relative!important;inset:auto!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%!important;gap:8px!important;margin:0!important}
+  html body.reb-home .reb-feature{min-height:46px!important;padding:8px 9px!important;gap:7px!important;font-size:11px!important;box-shadow:none!important}
+  html body.reb-home img.reb-robot{position:absolute!important;left:50%!important;right:auto!important;top:auto!important;bottom:6px!important;width:min(250px,76%)!important;max-width:250px!important;height:auto!important;max-height:270px!important;margin:0!important;transform:translateX(-50%)!important;animation:rebFloat 5s ease-in-out infinite!important}
+  html body.reb-home .reb-chart-card{display:none!important}
+  html body.reb-home .reb-trust-panel{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  html body.reb-home .reb-trust-lead{grid-column:1/-1!important;padding:18px!important}
+  html body.reb-home .reb-trust-item{padding:16px!important;min-height:98px!important}
+  html body.reb-home .reb-solutions,
+  html body.reb-home .reb-platform-section,
+  html body.reb-home .reb-markets,
+  html body.reb-home .reb-symbol-sync,
+  html body.reb-home .reb-process,
+  html body.reb-home .reb-apps,
+  html body.reb-home .reb-news{padding-top:54px!important;padding-bottom:54px!important}
+  html body.reb-home .reb-solutions .account-block-one .inner-box{min-height:0!important;padding:20px!important}
+  html body.reb-home .reb-platform-section .video-inner{min-height:285px!important}
+  html body.reb-home .reb-metrics .row{display:flex!important;flex-wrap:nowrap!important;gap:0!important}
+  html body.reb-home .reb-metrics .funfact-block{width:33.333%!important;max-width:33.333%!important;flex:0 0 33.333%!important;padding:0!important}
+  html body.reb-home .reb-metrics .funfact-block-one .inner-box{padding:22px 6px!important;text-align:center!important}
+  html body.reb-home .reb-metrics .funfact-block-one .inner-box .count-outer{font-size:25px!important;white-space:nowrap!important}
+  html body.reb-home .reb-metrics .funfact-block-one .inner-box .count-outer .text{display:block!important;margin:5px 0 0!important;font-size:10px!important}
+  html body.reb-home .reb-metrics .funfact-block-one .inner-box p{display:none!important}
+  html body.reb-home .reb-markets .trading-block-one .inner-box{min-height:0!important;padding:22px 18px!important}
+  html body.reb-home .reb-symbol-card{min-height:0!important;padding:20px!important}
+  html body.reb-home .reb-clean-footer{padding-top:34px!important;padding-bottom:20px!important}
+  html body.reb-home .reb-clean-footer .reb-clean-footer-grid{gap:22px!important}
+}
+
+/* Home professional refresh v13: one final layout authority for desktop and mobile. */
+.reb-home .banner-section{padding-top:0!important}
+.reb-home .reb-hero{min-height:590px;padding:58px 58px 42px}
+.reb-home .reb-hero-inner{grid-template-columns:minmax(0,1fr) minmax(390px,490px);gap:34px}
+.reb-home .reb-hero h1{font-size:clamp(54px,5vw,70px);line-height:.98}
+.reb-home .reb-hero-text{font-size:18px;line-height:1.55}
+.reb-home .reb-hero-visual{min-height:500px!important}
+.reb-home .reb-feature-list{top:10px!important;width:min(300px,70%)!important}
+.reb-home .reb-feature{min-height:48px;padding:9px 14px}
+.reb-home .reb-chart-card{top:238px!important;width:300px!important;min-height:202px!important;max-height:202px!important}
+.reb-home .reb-chart-line,
+.reb-home .reb-market-watch-widget,
+.reb-home .reb-market-watch-widget .tradingview-widget-container,
+.reb-home .reb-market-watch-widget .tradingview-widget-container__widget{height:146px!important;max-height:146px!important}
+.reb-home .reb-robot{left:-175px!important;bottom:76px!important;width:min(390px,80%)!important}
+.reb-home .reb-hero-contact{bottom:20px!important}
+.reb-home .reb-trust-section{padding:28px 0 34px}
+.reb-home .reb-solutions{padding-top:68px!important;padding-bottom:46px!important}
+.reb-home .reb-solutions .sec-title{padding-bottom:28px!important}
+.reb-home .reb-solutions .account-block-one .inner-box{min-height:220px;padding-top:26px;padding-bottom:24px}
+.reb-home .reb-platform-section,
+.reb-home .reb-markets,
+.reb-home .reb-symbol-sync,
+.reb-home .reb-news{padding-top:72px!important;padding-bottom:72px!important}
+.reb-home .reb-platform-section .video-inner{min-height:410px}
+.reb-home .reb-markets .trading-block-one .inner-box{min-height:330px;padding:26px 22px}
+.reb-home .reb-markets .trading-block-one .inner-box p{margin-bottom:60px}
+.reb-home .reb-symbol-card{min-height:185px;padding:22px}
+.reb-home .reb-process{padding-top:72px!important;padding-bottom:72px!important}
+.reb-home .reb-apps{padding-top:68px!important;padding-bottom:68px!important}
+.reb-home .reb-metrics .odometer{transition:none!important}
+
+@media (min-width:992px){
+  .reb-home .main-header .header-lower{padding-top:20px!important;padding-bottom:20px!important}
+  .reb-home .main-header .header-bottom{min-height:54px!important;height:54px!important}
+}
+
+@media (max-width:991px){
+  .reb-home .reb-hero{min-height:0;padding:40px 24px 30px}
+  .reb-home .reb-hero-inner{grid-template-columns:1fr;gap:26px}
+  .reb-home .reb-hero-copy{max-width:100%}
+  .reb-home .reb-hero h1{font-size:clamp(40px,8vw,54px)}
+  .reb-home .reb-hero-visual{min-height:420px!important}
+  .reb-home .reb-robot{left:5%!important;bottom:36px!important;width:min(330px,68%)!important}
+  .reb-home .reb-feature-list{right:0!important;top:0!important;width:min(300px,60%)!important}
+  .reb-home .reb-chart-card{right:0!important;top:216px!important;width:280px!important}
+  .reb-home .reb-hero-contact{display:none!important}
+}
+
+@media (max-width:767px){
+  .reb-home .main-header .header-lower{min-height:78px!important;height:78px!important;padding:8px 14px!important}
+  .reb-home .main-header .logo-box .logo img{max-width:174px!important;max-height:58px!important}
+  .reb-home .main-header .header-bottom{min-height:54px!important;height:54px!important}
+  .reb-home .reb-hero{padding:30px 18px 26px!important}
+  .reb-home .reb-hero-inner{gap:22px!important}
+  .reb-home .reb-hero-kicker{margin-bottom:13px;font-size:12px}
+  .reb-home .reb-hero-kicker:before{width:28px}
+  .reb-home .reb-hero h1{font-size:39px!important;line-height:1.02!important;margin-bottom:16px}
+  .reb-home .reb-hero-text{max-width:none!important;font-size:15px!important;line-height:1.55!important;margin-bottom:20px}
+  .reb-home .reb-hero-actions{margin-bottom:18px}
+  .reb-home .reb-hero-actions .theme-btn{min-height:50px!important}
+  .reb-home .reb-hero-stats{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
+  .reb-home .reb-stat{padding:10px 7px!important;text-align:center}
+  .reb-home .reb-stat strong{font-size:18px}
+  .reb-home .reb-stat span{font-size:10px;line-height:1.25}
+  .reb-home .reb-hero-visual{display:grid!important;grid-template-rows:auto 280px;gap:12px;min-height:0!important}
+  .reb-home .reb-feature-list{position:relative!important;inset:auto!important;width:100%!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0!important}
+  .reb-home .reb-feature{min-height:46px;padding:8px 9px;gap:7px;font-size:11px;box-shadow:none}
+  .reb-home .reb-feature i{flex-basis:23px;width:23px;height:23px;font-size:11px}
+  .reb-home .reb-robot{left:50%!important;bottom:6px!important;width:min(250px,76%)!important;transform:translateX(-50%)!important;animation:rebFloat 5s ease-in-out infinite!important}
+  .reb-home .reb-chart-card{display:none!important}
+  .reb-home .reb-trust-section{padding:18px 0 28px}
+  .reb-home .reb-trust-panel{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .reb-home .reb-trust-lead{grid-column:1/-1!important;padding:18px!important}
+  .reb-home .reb-trust-item{padding:16px!important;min-height:98px}
+  .reb-home .reb-solutions,
+  .reb-home .reb-platform-section,
+  .reb-home .reb-markets,
+  .reb-home .reb-symbol-sync,
+  .reb-home .reb-process,
+  .reb-home .reb-apps,
+  .reb-home .reb-news{padding-top:54px!important;padding-bottom:54px!important}
+  .reb-home .sec-title{padding-bottom:26px!important}
+  .reb-home .sec-title h2{font-size:31px!important;line-height:1.12!important}
+  .reb-home .reb-solutions .row{row-gap:12px}
+  .reb-home .reb-solutions .account-block-one .inner-box{min-height:0!important;padding:20px!important}
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-btn{padding:17px 16px 17px 64px}
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-btn .icon-box{left:16px;top:14px}
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-content .content{padding:0 16px 18px 64px}
+  .reb-home .reb-platform-section .video-inner{min-height:285px!important}
+  .reb-home .reb-metrics .inner-container{padding-top:8px;padding-bottom:8px}
+  .reb-home .reb-metrics .funfact-block{width:33.333%!important;flex:0 0 33.333%!important;padding:0!important}
+  .reb-home .reb-metrics .funfact-block-one .inner-box{padding:22px 8px!important;text-align:center}
+  .reb-home .reb-metrics .funfact-block-one .inner-box .count-outer{font-size:26px!important}
+  .reb-home .reb-metrics .funfact-block-one .inner-box .count-outer .text{display:block!important;margin:5px 0 0!important;font-size:10px!important}
+  .reb-home .reb-metrics .funfact-block-one .inner-box p{display:none!important}
+  .reb-home .reb-markets .trading-block-one .inner-box{min-height:0;padding:22px 18px}
+  .reb-home .reb-markets .trading-block-one .inner-box p{margin-bottom:24px}
+  .reb-home .reb-symbol-card{min-height:0!important;padding:20px}
+  .reb-home .reb-clean-footer{padding-top:34px!important;padding-bottom:20px!important}
+  .reb-home .reb-clean-footer .reb-clean-footer-grid{gap:22px!important}
+  .reb-home .reb-clean-footer-logo{width:190px!important;margin-bottom:10px}
+  .reb-home .reb-clean-footer-links{gap:8px;margin-top:11px}
+  .reb-home .reb-clean-footer-bottom{margin-top:26px;padding-top:15px}
+}
+
+@media (max-width:420px){
+  .reb-home .banner-section .large-container{padding-left:10px!important;padding-right:10px!important}
+  .reb-home .reb-hero{padding-left:16px!important;padding-right:16px!important}
+  .reb-home .reb-hero h1{font-size:36px!important}
+  .reb-home .reb-feature span{line-height:1.2}
+}
+
+@media (max-width:767px){
+  :root{--reb-mobile-gutter:18px}
+  body{min-width:0!important;font-size:15px;line-height:1.55}
+  .auto-container,.large-container,.container,.reb-container,.reb-inner{
+    width:100%!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important;
+    padding-left:var(--reb-mobile-gutter)!important;padding-right:var(--reb-mobile-gutter)!important
+  }
+  .row{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:var(--reb-mobile-gap)!important;margin:0!important}
+  [class*="col-"]{width:100%!important;max-width:100%!important;flex:0 0 100%!important;padding:0!important;margin:0!important}
+
+  h1,.reb-hero h1,.banner-section h1,.page-title h1{font-size:clamp(32px,9.5vw,42px)!important;line-height:1.08!important;overflow-wrap:break-word}
+  h2,.sec-title h2,.reb-section-title h2{font-size:clamp(26px,7.5vw,34px)!important;line-height:1.13!important;overflow-wrap:break-word}
+  h3{line-height:1.2!important;overflow-wrap:break-word}
+  p,li,a,span,strong{overflow-wrap:break-word}
+  section,.reb-section{scroll-margin-top:18px}
+
+  .main-header .header-top{min-height:52px!important}
+  .main-header .support-box,.main-header .language-picker{display:none!important}
+  .main-header .header-top .top-inner{display:flex!important;justify-content:flex-end!important;align-items:center!important;padding:7px 0!important}
+  .main-header .option-block{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;width:min(230px,100%)!important;margin-left:auto!important;position:static!important;transform:none!important}
+  .main-header .option-block .theme-btn{width:100%!important;min-width:0!important;min-height:38px!important;padding:8px 10px!important;font-size:13px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+  .main-header .header-lower .outer-box{display:grid!important;grid-template-columns:minmax(0,1fr) 48px!important;align-items:center!important;gap:12px!important;padding:12px 0!important}
+  .main-header .logo-box img{width:min(205px,65vw)!important;height:auto!important}
+  .main-header .menu-area{margin:0!important;transform:none!important;justify-self:end!important}
+  .main-header .mobile-nav-toggler{width:46px!important;height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+  .main-menu{display:none!important}
+  .mobile-menu .menu-box{width:min(330px,88vw)!important}
+  .mobile-menu .nav-logo img{width:210px!important}
+  .mobile-menu .navigation li a{padding:13px 24px!important;font-size:15px!important}
+
+  .reb-top{padding:8px var(--reb-mobile-gutter)!important;min-height:52px!important;justify-content:flex-end!important}
+  .reb-phone{display:none!important}
+  .reb-actions,.reb-login{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;width:min(230px,100%)!important;margin-left:auto!important}
+  .reb-actions a,.reb-login a{width:100%!important;min-width:0!important;min-height:38px!important;padding:8px!important;font-size:13px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+  .reb-header{padding:12px var(--reb-mobile-gutter)!important;display:grid!important;grid-template-columns:minmax(0,1fr) 46px!important;align-items:center!important;gap:12px!important}
+  .reb-logo img,.reb-header .reb-logo img{width:min(205px,67vw)!important;height:auto!important}
+  .reb-nav{display:none!important}
+
+  .banner-section,.reb-hero,.reb-subpage .reb-hero{min-height:0!important;padding-top:28px!important;padding-bottom:28px!important}
+  .reb-hero-inner,.reb-hero-content,.reb-hero-copy,.reb-hero-visual,.reb-download-grid,.reb-store-grid,.reb-contact-grid,.reb-story-grid,.reb-flow-grid,.reb-payment-layout,.reb-detail-layout{
+    width:100%!important;max-width:100%!important;min-width:0!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:18px!important;margin:0!important
+  }
+  .reb-hero-copy,.reb-hero-content{order:1!important}
+  .reb-hero-visual,.reb-device,.reb-robot,.reb-hero-card,.reb-portrait{order:2!important;width:100%!important;max-width:100%!important;margin:0 auto!important;position:relative!important;inset:auto!important;transform:none!important}
+  .reb-hero-visual img,.reb-device img,.reb-robot img,.reb-hero-card img,.reb-portrait img{display:block!important;width:min(300px,82vw)!important;max-height:300px!important;object-fit:contain!important;margin:0 auto!important}
+  .reb-hero p,.banner-section p{font-size:15px!important;line-height:1.55!important;max-width:100%!important}
+  .reb-hero-actions,.btn-box,.reb-buttons{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:10px!important;width:100%!important}
+  .theme-btn,.reb-btn,.btn-box a,.reb-buttons a,.reb-buttons button{width:100%!important;max-width:100%!important;min-width:0!important;min-height:46px!important;display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;padding:11px 14px!important}
+
+  .reb-grid,.reb-steps,.reb-values,.reb-flow,.reb-products,.reb-card-grid,.broker-grid,.step-grid,.team-grid,.news-grid,.pricing-grid{
+    display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:var(--reb-mobile-gap)!important;width:100%!important;max-width:100%!important
+  }
+  .reb-card,.reb-info-card,.reb-form,.reb-support-card,.reb-step,.reb-value,.reb-flow-card,.reb-product,.reb-bundle,.broker-card,.step-card,.pricing-block,.news-block-one .inner-box{
+    width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;min-height:0!important;padding:16px!important;margin:0!important;border-radius:var(--reb-mobile-radius)!important
+  }
+  .reb-product img,.broker-card img,.team-block-one img,.news-block-one img{width:100%!important;max-height:280px!important;object-fit:cover!important}
+
+  .reb-fields,.form-grid,.auth-grid,.reb-form-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+  input[type="text"],input[type="email"],input[type="password"],input[type="tel"],input[type="number"],select,textarea{
+    width:100%!important;min-width:0!important;font-size:16px!important;border-radius:10px!important
+  }
+  input[type="text"],input[type="email"],input[type="password"],input[type="tel"],input[type="number"],select{min-height:48px!important}
+  textarea{min-height:120px!important;padding:12px!important}
+  form button[type="submit"]{width:100%!important;min-height:48px!important}
+
+  .table-responsive,.reb-table-wrap,.table-outer{width:100%!important;max-width:100%!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+  table{min-width:620px;font-size:13px}
+
+  .reb-clean-footer,.main-footer,.reb-footer{max-width:100%!important;overflow:hidden!important}
+  .reb-clean-footer{padding:34px var(--reb-mobile-gutter) 20px!important}
+  .reb-clean-footer-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:24px!important}
+  .reb-clean-footer-logo{width:min(220px,75vw)!important}
+  .reb-clean-footer-bottom{margin-top:24px!important;padding-top:16px!important;display:grid!important;grid-template-columns:1fr!important;gap:10px!important;text-align:center!important}
+  .main-footer .widget-section{padding:34px var(--reb-mobile-gutter)!important}
+  .main-footer .widget-section .row{grid-template-columns:minmax(0,1fr)!important}
+
+  .reb-floating-chat{right:14px!important;bottom:14px!important;width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;padding:0!important;border-radius:50%!important;z-index:9999!important}
+  .reb-floating-chat span{display:none!important}
+  .reb-floating-chat i{display:flex!important;align-items:center!important;justify-content:center!important;font-size:19px!important}
+
+  .modal,.popup-box,.policy-modal{padding:12px!important}
+  .modal-dialog,.popup-inner,.policy-dialog{width:100%!important;max-width:100%!important;max-height:calc(100vh - 24px)!important;margin:0!important}
+}
+
+@media (max-width:420px){
+  :root{--reb-mobile-gutter:14px;--reb-mobile-gap:12px}
+  h1,.reb-hero h1,.banner-section h1,.page-title h1{font-size:31px!important}
+  h2,.sec-title h2,.reb-section-title h2{font-size:26px!important}
+  .reb-card,.reb-info-card,.reb-form,.reb-support-card,.reb-step,.reb-value,.reb-flow-card,.reb-product,.reb-bundle,.broker-card,.step-card{padding:14px!important}
+  .reb-mini-grid,.reb-hero-stats{grid-template-columns:minmax(0,1fr)!important}
+}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+/* Redmi 6A verified mobile corrections — 2026-07-26 */
+@media (max-width:767px){
+  /* One navigation system only: hamburger + slide-out menu. */
+  .reb-home-mobile-nav{display:none!important}
+  .main-header .header-lower{background:#fff!important}
+  .main-header .header-lower .large-container{padding-left:16px!important;padding-right:16px!important}
+  .main-header .header-lower .outer-box{min-height:92px!important;padding:12px 0!important}
+  .main-header .logo-box{position:static!important;float:none!important;margin:0!important;width:auto!important}
+  .main-header .logo-box img{display:block!important;width:min(200px,66vw)!important;max-height:68px!important;object-fit:contain!important;object-position:left center!important}
+  .main-header .menu-area{display:flex!important;align-items:center!important;justify-content:flex-end!important;width:48px!important}
+  .main-header .mobile-nav-toggler{background:#0d1110!important;border-radius:10px!important;margin:0!important;padding:10px!important}
+  .main-header .mobile-nav-toggler .icon-bar{display:block!important;width:26px!important;height:3px!important;margin:3px auto!important;background:#f5b026!important;border-radius:3px!important}
+  .main-header .search-btn{display:none!important}
+
+  /* Keep secondary-page headers compact, but retain the live Home market bar. */
+  .main-header .header-bottom{display:none!important}
+  .reb-home .main-header .header-bottom{
+    display:block!important;
+    width:100%!important;
+    padding:0 16px 12px!important;
+    background:#fff!important;
+    overflow:hidden!important;
+  }
+  .reb-home .main-header .header-bottom .large-container{
+    width:100%!important;
+    max-width:100%!important;
+    padding:0!important;
+    overflow:hidden!important;
+  }
+  .reb-home .main-header .header-bottom .bottom-inner,
+  .reb-home .main-header .header-bottom .bottom-inner .inner-box{
+    display:flex!important;
+    align-items:center!important;
+    width:100%!important;
+    height:58px!important;
+    min-height:58px!important;
+    overflow:hidden!important;
+    border-radius:10px!important;
+    background:#050505!important;
+  }
+  .reb-home .main-header .header-bottom #reb-live-ticker{
+    display:flex!important;
+    visibility:visible!important;
+    opacity:1!important;
+    width:max-content!important;
+    min-width:max-content!important;
+    height:58px!important;
+    margin:0!important;
+    padding:0!important;
+    animation:rebTickerMobile 70s linear infinite!important;
+    transform:translate3d(0,0,0);
+    will-change:transform;
+  }
+  .reb-home .main-header .header-bottom #reb-live-ticker .reb-market-tick{
+    display:inline-flex!important;
+    align-items:center!important;
+    width:auto!important;
+    min-width:max-content!important;
+    height:58px!important;
+    padding:0 15px!important;
+    white-space:nowrap!important;
+  }
+  .reb-home .main-header .header-bottom #reb-live-ticker .reb-market-icon{
+    width:24px!important;
+    height:24px!important;
+    min-width:24px!important;
+    margin-right:7px!important;
+    font-size:10px!important;
+  }
+  .reb-home .main-header .header-bottom #reb-live-ticker strong{font-size:11px!important;margin-right:5px!important}
+  .reb-home .main-header .header-bottom #reb-live-ticker em{font-size:14px!important;margin-left:4px!important}
+  .reb-home .main-header .header-bottom #reb-live-ticker .reb-market-change{font-size:12px!important;margin-left:6px!important}
+
+  /* Mobile hero becomes a clean document flow. */
+  .reb-home .banner-section,.reb-home .reb-hero-single,.reb-home .reb-hero-slide{margin:0!important;padding:0!important}
+  .reb-home .reb-hero{width:100%!important;border-radius:0!important;padding:34px 20px 30px!important;overflow:hidden!important}
+  .reb-home .reb-hero-inner{display:flex!important;flex-direction:column!important;gap:24px!important}
+  .reb-home .reb-hero-copy{width:100%!important;max-width:100%!important;padding:0!important}
+  .reb-home .reb-hero-kicker{font-size:13px!important;line-height:1.35!important;letter-spacing:.02em!important}
+  .reb-home .reb-hero h1{font-size:clamp(36px,11vw,44px)!important;line-height:1.02!important;margin:16px 0 20px!important}
+  .reb-home .reb-hero-text{font-size:16px!important;line-height:1.6!important;margin:0 0 22px!important}
+  .reb-home .reb-hero-actions{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+  .reb-home .reb-hero-actions a{width:100%!important;min-height:52px!important;margin:0!important}
+  .reb-home .reb-hero-stats{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;margin-top:18px!important}
+  .reb-home .reb-hero-visual{width:100%!important;min-height:360px!important;height:auto!important;overflow:hidden!important;margin:0!important}
+  .reb-home .reb-robot-wrap,.reb-home .reb-hero-robot{max-width:100%!important;inset:auto!important;transform:none!important}
+  .reb-home .reb-hero-contact{display:none!important}
+
+  /* Keep chat reachable without covering primary content. */
+  a.reb-floating-chat{right:14px!important;bottom:18px!important;width:54px!important;height:54px!important;min-width:54px!important;min-height:54px!important;padding:0!important;border-radius:50%!important;gap:0!important}
+  a.reb-floating-chat span{display:none!important}
+  a.reb-floating-chat i{margin:0!important;font-size:20px!important}
+
+  /* Prevent common page-level horizontal overflow. */
+  .boxed_wrapper,.page-wrapper,main{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
+  .reb-section,.content_block_one,.content-box,.inner-box{min-width:0!important}
+}
+
+@media (max-width:380px){
+  :root{--reb-mobile-gutter:14px}
+  .main-header .option-block{width:100%!important}
+  .main-header .header-top .top-inner{justify-content:stretch!important}
+  .reb-home .reb-hero{padding-left:16px!important;padding-right:16px!important}
+  .reb-home .reb-hero h1{font-size:36px!important}
+}
+
+/* Reliable inline SVG icons used when webfonts are unavailable. */
+i.reb-inline-icon{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  font-style:normal!important;
+  line-height:1!important;
+  vertical-align:middle!important;
+}
+i.reb-inline-icon::before{
+  content:none!important;
+  display:none!important;
+}
+i.reb-inline-icon svg{
+  display:block!important;
+  width:1em!important;
+  height:1em!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:1.9!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+
+/* The hamburger belongs to phone navigation only. */
+@media (min-width:768px){
+  html body .reb-mobile-menu-toggle{
+    display:none!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+  }
+}
+
+/* Redmi/mobile audit v3: real collapsible navigation and page-specific fixes. */
+@media (max-width:767px){
+  html body.reb-subpage .reb-header{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) 48px!important;
+    align-items:center!important;
+    gap:12px!important;
+    width:100%!important;
+    padding:12px 16px!important;
+    overflow:visible!important;
+  }
+  html body.reb-subpage .reb-header .reb-brand{min-width:0!important;max-width:220px!important}
+  html body.reb-subpage .reb-header .reb-brand img{max-width:100%!important;height:auto!important}
+  html body.reb-subpage .reb-header .reb-mobile-menu-toggle{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:5px!important;
+    width:48px!important;
+    height:44px!important;
+    padding:0!important;
+    border:1px solid rgba(255,177,22,.45)!important;
+    border-radius:11px!important;
+    background:#10130f!important;
+    box-shadow:0 8px 18px rgba(0,0,0,.12)!important;
+    cursor:pointer!important;
+  }
+  html body.reb-subpage .reb-header .reb-mobile-menu-toggle span{
+    display:block!important;
+    width:21px!important;
+    height:2px!important;
+    margin:0!important;
+    border-radius:2px!important;
+    background:#ffb11b!important;
+    transition:transform .22s ease,opacity .22s ease!important;
+  }
+  html body.reb-subpage .reb-header .reb-mobile-menu-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}
+  html body.reb-subpage .reb-header .reb-mobile-menu-toggle.is-open span:nth-child(2){opacity:0!important}
+  html body.reb-subpage .reb-header .reb-mobile-menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}
+  html body.reb-subpage .reb-header .reb-nav:not(.is-open){display:none!important}
+  html body.reb-subpage .reb-header .reb-nav.is-open{
+    grid-column:1/-1!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:8px!important;
+    position:static!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:auto!important;
+    margin:2px 0 0!important;
+    padding:10px!important;
+    overflow:visible!important;
+    white-space:normal!important;
+    border-radius:14px!important;
+    background:#10130f!important;
+  }
+  html body.reb-subpage .reb-header .reb-nav.is-open a{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:44px!important;
+    margin:0!important;
+    padding:9px 6px!important;
+    border-radius:9px!important;
+    font-size:12px!important;
+    line-height:1.25!important;
+    text-align:center!important;
+    white-space:normal!important;
+  }
+  html body.reb-subpage .reb-header .reb-nav.is-open a:last-child:nth-child(odd){grid-column:1/-1!important}
+
+  /* About hero must never be squeezed into two columns on a phone. */
+  html body.reb-about-page .reb-hero{padding:34px 20px!important;min-height:0!important;height:auto!important}
+  html body.reb-about-page .reb-hero .reb-hero-inner{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:24px!important;
+    width:100%!important;
+    max-width:100%!important;
+  }
+  html body.reb-about-page .reb-hero .reb-hero-inner>*{width:100%!important;max-width:100%!important;min-width:0!important}
+  html body.reb-about-page .reb-hero-copy{padding:0!important;text-align:left!important}
+  html body.reb-about-page .reb-portrait{min-height:330px!important;height:330px!important;padding:16px 16px 76px!important;overflow:hidden!important}
+  html body.reb-about-page .reb-portrait img{display:block!important;width:min(260px,78vw)!important;height:auto!important;max-height:225px!important;margin:0 auto!important;object-fit:contain!important}
+  html body.reb-about-page .reb-badge{left:16px!important;right:16px!important;bottom:14px!important;width:auto!important;max-width:none!important;min-height:54px!important;padding:10px 12px!important;white-space:normal!important}
+  html body.reb-about-page .reb-mission-inner{display:flex!important;flex-direction:column!important;gap:26px!important;align-items:stretch!important}
+  html body.reb-about-page .reb-mission-copy,html body.reb-about-page .reb-value-grid{width:100%!important;max-width:100%!important;min-width:0!important}
+
+  /* Signup: prioritize the form on small screens. */
+  html body .auth-page{display:block!important;min-height:100svh!important;padding:12px!important}
+  html body .auth-shell{display:block!important;width:100%!important;max-width:620px!important;margin:0 auto!important;padding:0!important;border-radius:18px!important}
+  html body .auth-shell .brand-panel{display:none!important}
+  html body .auth-shell .form-panel{width:100%!important;min-height:0!important;padding:22px 16px!important;border-radius:18px!important}
+  html body .auth-shell .form-card{width:100%!important;padding:18px 14px!important}
+  html body .auth-shell .form-row{grid-template-columns:1fr!important;gap:12px!important}
+}
+
+/* Home professional refresh v13 - must remain last. */
+@media (min-width:992px){
+  html body.reb-home .banner-section{padding-top:0!important}
+  html body.reb-home .reb-hero{min-height:590px!important;padding:58px 58px 42px!important}
+  html body.reb-home .reb-hero-inner{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(390px,490px)!important;gap:34px!important;align-items:center!important}
+  html body.reb-home .reb-hero h1{font-size:clamp(54px,5vw,70px)!important;line-height:.98!important}
+  html body.reb-home .reb-hero-visual{position:relative!important;min-height:500px!important}
+  html body.reb-home .reb-robot{position:absolute!important;left:-175px!important;bottom:76px!important;width:min(390px,80%)!important;transform:none!important}
+  html body.reb-home .reb-feature-list{position:absolute!important;right:0!important;top:10px!important;width:min(300px,70%)!important}
+  html body.reb-home .reb-chart-card{display:block!important;position:absolute!important;right:0!important;top:238px!important;width:300px!important;min-height:202px!important;max-height:202px!important}
+  html body.reb-home .main-header .header-lower{padding-top:20px!important;padding-bottom:20px!important}
+  html body.reb-home .main-header .header-bottom{min-height:54px!important;height:54px!important}
+}
+@media (max-width:767px){
+  html body.reb-home .banner-section{min-height:0!important;padding:0 0 10px!important}
+  html body.reb-home .banner-section .large-container{padding-left:10px!important;padding-right:10px!important}
+  html body.reb-home .reb-hero{display:block!important;min-height:0!important;height:auto!important;padding:30px 16px 26px!important}
+  html body.reb-home .reb-hero-inner{display:flex!important;flex-direction:column!important;gap:22px!important;width:100%!important}
+  html body.reb-home .reb-hero-copy{order:1!important;width:100%!important}
+  html body.reb-home .reb-hero h1{font-size:36px!important;line-height:1.02!important;margin-bottom:16px!important}
+  html body.reb-home .reb-hero-text{max-width:none!important;font-size:15px!important;line-height:1.55!important;margin-bottom:20px!important}
+  html body.reb-home .reb-hero-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
+  html body.reb-home .reb-stat{padding:10px 6px!important;text-align:center!important}
+  html body.reb-home .reb-stat strong{font-size:18px!important}
+  html body.reb-home .reb-stat span{font-size:10px!important;line-height:1.25!important}
+  html body.reb-home .reb-hero-visual{order:2!important;position:relative!important;display:grid!important;grid-template-rows:auto 280px!important;gap:12px!important;width:100%!important;min-height:0!important;height:auto!important}
+  html body.reb-home .reb-feature-list{position:relative!important;inset:auto!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%!important;gap:8px!important;margin:0!important}
+  html body.reb-home .reb-feature{min-height:46px!important;padding:8px 9px!important;gap:7px!important;font-size:11px!important;box-shadow:none!important}
+  html body.reb-home img.reb-robot{position:absolute!important;left:50%!important;right:auto!important;top:auto!important;bottom:6px!important;width:min(250px,76%)!important;max-width:250px!important;height:auto!important;max-height:270px!important;margin:0!important;transform:translateX(-50%)!important;animation:rebFloat 5s ease-in-out infinite!important}
+  html body.reb-home .reb-chart-card{display:none!important}
+  html body.reb-home .reb-trust-panel{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  html body.reb-home .reb-trust-lead{grid-column:1/-1!important;padding:18px!important}
+  html body.reb-home .reb-trust-item{padding:16px!important;min-height:98px!important}
+  html body.reb-home .reb-solutions,html body.reb-home .reb-platform-section,html body.reb-home .reb-markets,html body.reb-home .reb-symbol-sync,html body.reb-home .reb-process,html body.reb-home .reb-apps,html body.reb-home .reb-news{padding-top:54px!important;padding-bottom:54px!important}
+  html body.reb-home .reb-solutions .account-block-one .inner-box{min-height:0!important;padding:20px!important}
+  html body.reb-home .reb-platform-section .video-inner{min-height:285px!important}
+  html body.reb-home .reb-metrics .row{display:flex!important;flex-wrap:nowrap!important;gap:0!important}
+  html body.reb-home .reb-metrics .funfact-block{width:33.333%!important;max-width:33.333%!important;flex:0 0 33.333%!important;padding:0!important}
+  html body.reb-home .reb-metrics .funfact-block-one .inner-box{padding:22px 6px!important;text-align:center!important}
+  html body.reb-home .reb-metrics .funfact-block-one .inner-box .count-outer{font-size:25px!important;white-space:nowrap!important}
+  html body.reb-home .reb-metrics .funfact-block-one .inner-box .count-outer .text{display:block!important;margin:5px 0 0!important;font-size:10px!important}
+  html body.reb-home .reb-metrics .funfact-block-one .inner-box p{display:none!important}
+  html body.reb-home .reb-markets .trading-block-one .inner-box{min-height:0!important;padding:22px 18px!important}
+  html body.reb-home .reb-symbol-card{min-height:0!important;padding:20px!important}
+  html body.reb-home .reb-clean-footer{padding-top:34px!important;padding-bottom:20px!important}
+  html body.reb-home .reb-clean-footer .reb-clean-footer-grid{gap:22px!important}
+}

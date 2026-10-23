@@ -1,0 +1,1777 @@
+/* Global desktop alignment so every ReachEmpireBot page uses the same frame. */
+.reb-home-mobile-nav{
+  display:none;
+}
+
+/* Final home desktop fit: keep the original rich hero while fitting 1280/1366x768 screens. */
+@media (min-width: 1200px) and (max-height: 850px){
+  .reb-home .header-lower,
+  .reb-home .header-lower .outer-box{
+    height:84px !important;
+    min-height:84px !important;
+  }
+
+  .reb-home .header-lower .logo-box img{
+    width:188px !important;
+    max-width:188px !important;
+  }
+
+  .reb-home .header-bottom{
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+  }
+
+  .reb-home .reb-hero{
+    height:500px !important;
+    max-height:500px !important;
+    padding:40px 54px 24px !important;
+    overflow:hidden !important;
+  }
+
+  .reb-home .reb-hero-inner{
+    max-width:1180px !important;
+    grid-template-columns:minmax(0, 490px) minmax(0, 560px) !important;
+    gap:58px !important;
+    height:100% !important;
+  }
+
+  .reb-home .reb-hero-copy{
+    position:relative !important;
+    height:100% !important;
+    min-height:0 !important;
+  }
+
+  .reb-home .reb-hero h1{
+    font-size:48px !important;
+    line-height:1.02 !important;
+    margin-bottom:18px !important;
+  }
+
+  .reb-home .reb-hero-text{
+    display:block !important;
+    max-width:460px !important;
+    font-size:15px !important;
+    line-height:1.55 !important;
+    margin:0 0 20px !important;
+  }
+
+  .reb-home .reb-hero-actions{
+    position:absolute !important;
+    left:0 !important;
+    bottom:148px !important;
+    margin:0 !important;
+    z-index:9 !important;
+  }
+
+  .reb-home .reb-hero-stats{
+    display:grid !important;
+    position:absolute !important;
+    left:0 !important;
+    bottom:54px !important;
+    grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+    gap:10px !important;
+    max-width:410px !important;
+    margin:0 !important;
+  }
+
+  .reb-home .reb-stat{
+    min-height:58px !important;
+    padding:10px 14px !important;
+  }
+
+  .reb-home .reb-stat strong{
+    font-size:22px !important;
+    line-height:1 !important;
+  }
+
+  .reb-home .reb-stat span{
+    font-size:11px !important;
+    line-height:1.2 !important;
+  }
+
+  .reb-home .reb-hero-visual{
+    min-height:400px !important;
+    height:400px !important;
+  }
+
+  .reb-home .reb-robot{
+    width:300px !important;
+    max-width:300px !important;
+    top:58px !important;
+    bottom:auto !important;
+    left:-10px !important;
+    right:auto !important;
+    height:auto !important;
+    transform:none !important;
+    animation:none !important;
+  }
+
+  .reb-home .reb-feature-list{
+    width:230px !important;
+    top:22px !important;
+    right:0 !important;
+    gap:7px !important;
+    z-index:7 !important;
+  }
+
+  .reb-home .reb-feature{
+    min-height:38px !important;
+    padding:0 12px !important;
+    font-size:12px !important;
+  }
+
+  .reb-home .reb-chart-card{
+    display:block !important;
+    width:218px !important;
+    top:188px !important;
+    right:0 !important;
+    bottom:auto !important;
+    padding:10px !important;
+    z-index:6 !important;
+  }
+
+  .reb-home .reb-chart-line,
+  .reb-home .reb-market-watch-widget,
+  .reb-home .reb-chart-card .tradingview-widget-container,
+  .reb-home .reb-chart-card .tradingview-widget-container__widget{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    height:126px !important;
+    max-height:126px !important;
+    overflow:hidden !important;
+    background:#101112 url("/assets/images/resource/reb-mini-chart.svg") center / cover no-repeat !important;
+  }
+
+  .reb-home .reb-chart-line iframe{
+    display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+    width:100% !important;
+    height:178px !important;
+    top:-50px !important;
+  }
+
+  .reb-home .reb-hero-contact{
+    display:flex !important;
+    left:auto !important;
+    right:254px !important;
+    bottom:20px !important;
+    width:auto !important;
+    min-height:48px !important;
+    justify-content:flex-end !important;
+    gap:14px !important;
+    z-index:8 !important;
+  }
+
+  .reb-home .reb-contact-item{
+    gap:8px !important;
+  }
+
+  .reb-home .reb-contact-item i{
+    width:28px !important;
+    height:28px !important;
+    min-width:28px !important;
+    font-size:12px !important;
+  }
+
+  .reb-home .reb-contact-item strong{
+    font-size:12px !important;
+    line-height:1.1 !important;
+  }
+
+  .reb-home .reb-contact-item span{
+    font-size:11px !important;
+    line-height:1.15 !important;
+  }
+}
+
+/* Last word: classic slim scrolling market ticker and clean hero spacing. */
+@keyframes rebTickerClassicScrollFinal{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+@media (min-width: 1200px){
+  .reb-home .header-bottom,
+  .reb-home .header-bottom .large-container,
+  .reb-home .header-bottom .bottom-inner,
+  .reb-home .header-bottom .inner-box{
+    height:44px !important;
+    min-height:44px !important;
+    overflow:hidden !important;
+  }
+
+  .reb-home .header-bottom .stock-list,
+  .reb-home .header-bottom .reb-live-widget + .stock-list,
+  .reb-home:not(.reb-tv-fallback) #reb-live-ticker,
+  .reb-home.reb-tv-fallback #reb-live-ticker,
+  body.reb-tv-fallback .reb-home #reb-live-ticker,
+  .reb-home #reb-live-ticker{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    width:max-content !important;
+    min-width:max-content !important;
+    max-width:none !important;
+    height:44px !important;
+    min-height:44px !important;
+    padding:0 !important;
+    margin:0 !important;
+    overflow:visible !important;
+    white-space:nowrap !important;
+    animation:rebTickerClassicScrollFinal 72s linear infinite !important;
+  }
+
+  .reb-home #reb-live-ticker .reb-market-tick,
+  .reb-home #reb-live-ticker .reb-market-tick:nth-child(n+5),
+  .reb-home .header-bottom .stock-list li.reb-market-tick{
+    display:inline-flex !important;
+    flex:0 0 auto !important;
+    flex-basis:auto !important;
+    flex-grow:0 !important;
+    flex-shrink:0 !important;
+    width:auto !important;
+    min-width:0 !important;
+    max-width:none !important;
+    height:44px !important;
+    min-height:44px !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:8px !important;
+    padding:0 22px !important;
+    border-right:1px solid rgba(255,255,255,.16) !important;
+    white-space:nowrap !important;
+  }
+
+  .reb-home #reb-live-ticker .reb-market-tick strong,
+  .reb-home #reb-live-ticker .reb-market-tick em,
+  .reb-home #reb-live-ticker .reb-market-tick .reb-market-change{
+    display:inline-flex !important;
+    flex:0 0 auto !important;
+    font-size:13px !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-height: 850px){
+  .reb-home .reb-hero-actions{
+    bottom:148px !important;
+  }
+
+  .reb-home .reb-hero-stats{
+    bottom:54px !important;
+  }
+}
+
+@keyframes rebTickerClassicScroll{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+/* Restore the home market bar as a classic ticker, not four fixed cards. */
+@media (min-width: 1200px){
+  .reb-home .header-bottom{
+    overflow:hidden !important;
+  }
+
+  .reb-home .header-bottom .bottom-inner,
+  .reb-home .header-bottom .inner-box{
+    overflow:hidden !important;
+  }
+
+  .reb-home .header-bottom .stock-list,
+  .reb-home .header-bottom .reb-live-widget + .stock-list,
+  .reb-home #reb-live-ticker{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    width:max-content !important;
+    min-width:2200px !important;
+    max-width:none !important;
+    height:44px !important;
+    min-height:44px !important;
+    padding:0 !important;
+    margin:0 !important;
+    overflow:visible !important;
+    white-space:nowrap !important;
+    animation:rebTickerClassicScroll 65s linear infinite !important;
+    transform:none;
+  }
+
+  .reb-home #reb-live-ticker:hover{
+    animation-play-state:paused !important;
+  }
+
+  .reb-home #reb-live-ticker .reb-market-tick,
+  .reb-home #reb-live-ticker .reb-market-tick:nth-child(n+5){
+    display:inline-flex !important;
+    flex:0 0 auto !important;
+    width:auto !important;
+    min-width:auto !important;
+    height:44px !important;
+    min-height:44px !important;
+    align-items:center !important;
+    gap:8px !important;
+    padding:0 28px !important;
+    border-right:1px solid rgba(255,255,255,.16) !important;
+    overflow:hidden !important;
+  }
+
+  .reb-home #reb-live-ticker .reb-market-icon{
+    flex:0 0 24px !important;
+    width:24px !important;
+    height:24px !important;
+    min-width:24px !important;
+    border-radius:50% !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    font-size:10px !important;
+    font-weight:800 !important;
+    line-height:1 !important;
+  }
+
+  .reb-home #reb-live-ticker .reb-market-tick strong,
+  .reb-home #reb-live-ticker .reb-market-tick em,
+  .reb-home #reb-live-ticker .reb-market-tick .reb-market-change{
+    font-size:13px !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+  }
+}
+
+/* Home hero final polish: reduce clutter and prevent overlap on the first screen. */
+@media (min-width: 1200px){
+  .reb-home .reb-hero{
+    width:min(100% - 48px, var(--reb-page-frame)) !important;
+    max-width:var(--reb-page-frame) !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding:56px 70px 44px !important;
+    min-height:0 !important;
+    border-radius:0 !important;
+  }
+
+  .reb-home .reb-hero-inner{
+    max-width:1180px !important;
+    grid-template-columns:minmax(0, 560px) minmax(0, 520px) !important;
+    gap:42px !important;
+    align-items:center !important;
+  }
+
+  .reb-home .reb-hero h1{
+    font-size:62px !important;
+    line-height:1.04 !important;
+    margin:0 0 22px !important;
+  }
+
+  .reb-home .reb-hero h1 span{
+    display:block !important;
+    white-space:nowrap !important;
+  }
+
+  .reb-home .reb-hero-kicker{
+    margin-bottom:18px !important;
+    white-space:nowrap !important;
+  }
+
+  .reb-home .reb-hero-text{
+    max-width:520px !important;
+    font-size:18px !important;
+    line-height:1.58 !important;
+    margin:0 0 26px !important;
+  }
+
+  .reb-home .reb-hero-actions{
+    margin-bottom:28px !important;
+  }
+
+  .reb-home .reb-hero-stats{
+    width:420px !important;
+    max-width:100% !important;
+    grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+    gap:12px !important;
+  }
+
+  .reb-home .reb-stat{
+    min-height:88px !important;
+    padding:16px 18px !important;
+  }
+
+  .reb-home .reb-hero-visual{
+    min-height:470px !important;
+    display:block !important;
+    position:relative !important;
+  }
+
+  .reb-home .reb-robot{
+    width:300px !important;
+    left:0 !important;
+    right:auto !important;
+    top:120px !important;
+    bottom:auto !important;
+    transform:none !important;
+    z-index:3 !important;
+  }
+
+  .reb-home .reb-feature-list{
+    width:330px !important;
+    top:18px !important;
+    right:0 !important;
+    left:auto !important;
+    gap:10px !important;
+    z-index:5 !important;
+  }
+
+  .reb-home .reb-feature{
+    min-height:52px !important;
+    padding:0 18px !important;
+    border-radius:6px !important;
+  }
+
+  .reb-home .reb-chart-card{
+    width:300px !important;
+    top:286px !important;
+    right:0 !important;
+    left:auto !important;
+    bottom:auto !important;
+    z-index:6 !important;
+  }
+
+  .reb-home .reb-hero-contact{
+    display:none !important;
+  }
+
+  .reb-home .reb-trust-section{
+    padding-top:34px !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1450px){
+  .reb-home .reb-hero{
+    padding-left:52px !important;
+    padding-right:52px !important;
+  }
+
+  .reb-home .reb-hero-inner{
+    grid-template-columns:minmax(0, 520px) minmax(0, 500px) !important;
+    gap:34px !important;
+  }
+
+  .reb-home .reb-hero h1{
+    font-size:58px !important;
+  }
+
+  .reb-home .reb-robot{
+    width:280px !important;
+    top:132px !important;
+  }
+
+  .reb-home .reb-feature-list{
+    width:320px !important;
+  }
+
+  .reb-home .reb-chart-card{
+    width:290px !important;
+  }
+}
+
+@media (max-width: 767px){
+  .reb-home .reb-hero-contact{
+    display:none !important;
+  }
+}
+
+/* Fit the home first screen on common 1366x768 desktop browsers. */
+@media (min-width: 1200px) and (max-height: 850px){
+  .reb-home .banner-carousel,
+  .reb-home .reb-hero-single,
+  .reb-home .reb-hero-slide,
+  .reb-home .reb-hero-slide .slide-item{
+    min-height:0 !important;
+    height:auto !important;
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+  }
+
+  .reb-home .header-top{
+    height:44px !important;
+    min-height:44px !important;
+  }
+
+  .reb-home .header-top .large-container,
+  .reb-home .header-top .top-inner{
+    height:44px !important;
+    min-height:44px !important;
+  }
+
+  .reb-home .header-lower{
+    height:84px !important;
+    min-height:84px !important;
+  }
+
+  .reb-home .header-lower .outer-box{
+    height:84px !important;
+    min-height:84px !important;
+  }
+
+  .reb-home .header-lower .logo-box img{
+    width:188px !important;
+    max-width:188px !important;
+  }
+
+  .reb-home .header-bottom{
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+  }
+
+  .reb-home .header-bottom .stock-list,
+  .reb-home #reb-live-ticker{
+    min-height:44px !important;
+    height:44px !important;
+  }
+
+  .reb-home .banner-section,
+  .reb-home .banner-carousel,
+  .reb-home .reb-hero-single,
+  .reb-home .reb-hero-slide,
+  .reb-home .reb-hero-slide .slide-item{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+
+  .reb-home .reb-hero{
+    padding:40px 54px 24px !important;
+    height:500px !important;
+    max-height:500px !important;
+    overflow:hidden !important;
+  }
+
+  .reb-home .reb-hero-bg-tv,
+  .reb-home .reb-hero-bg-tv *{
+    display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+  }
+
+  .reb-home .reb-hero-inner{
+    max-width:1180px !important;
+    grid-template-columns:minmax(0, 490px) minmax(0, 560px) !important;
+    gap:58px !important;
+    height:100% !important;
+  }
+
+  .reb-home .reb-hero-copy{
+    position:relative !important;
+    height:100% !important;
+    min-height:0 !important;
+  }
+
+  .reb-home .reb-hero-kicker{
+    margin-bottom:10px !important;
+    font-size:12px !important;
+  }
+
+  .reb-home .reb-hero h1{
+    font-size:48px !important;
+    line-height:1.02 !important;
+    margin-bottom:18px !important;
+  }
+
+  .reb-home .reb-hero-text{
+    display:block !important;
+    max-width:460px !important;
+    font-size:15px !important;
+    line-height:1.55 !important;
+    margin:0 0 20px !important;
+  }
+
+  .reb-home .reb-hero-actions{
+    position:absolute !important;
+    left:0 !important;
+    bottom:112px !important;
+    margin:0 !important;
+    z-index:9 !important;
+  }
+
+  .reb-home .reb-hero-actions .theme-btn{
+    min-height:42px !important;
+    padding:11px 28px !important;
+    font-size:13px !important;
+  }
+
+  .reb-home .reb-hero-stats{
+    display:grid !important;
+    position:absolute !important;
+    left:0 !important;
+    bottom:34px !important;
+    grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+    gap:10px !important;
+    max-width:410px !important;
+    margin:0 !important;
+  }
+
+  .reb-home .reb-stat{
+    min-height:58px !important;
+    padding:10px 14px !important;
+  }
+
+  .reb-home .reb-stat strong{
+    font-size:22px !important;
+    line-height:1 !important;
+  }
+
+  .reb-home .reb-stat span{
+    font-size:11px !important;
+    line-height:1.2 !important;
+  }
+
+  .reb-home .reb-hero-visual{
+    min-height:400px !important;
+    height:400px !important;
+  }
+
+  .reb-home .reb-robot{
+    width:300px !important;
+    max-width:300px !important;
+    top:58px !important;
+    bottom:auto !important;
+    left:-10px !important;
+    right:auto !important;
+    height:auto !important;
+    transform:none !important;
+    animation:none !important;
+  }
+
+  .reb-home .reb-feature-list{
+    width:230px !important;
+    top:22px !important;
+    right:0 !important;
+    gap:7px !important;
+  }
+
+  .reb-home .reb-feature{
+    min-height:38px !important;
+    padding:0 12px !important;
+    font-size:12px !important;
+  }
+
+  .reb-home .reb-feature i{
+    width:24px !important;
+    height:24px !important;
+    min-width:24px !important;
+    font-size:11px !important;
+  }
+
+  .reb-home .reb-chart-card{
+    display:block !important;
+    width:218px !important;
+    top:188px !important;
+    right:0 !important;
+    bottom:auto !important;
+    padding:10px !important;
+    z-index:6 !important;
+  }
+
+  .reb-home .reb-chart-card span{
+    font-size:11px !important;
+    line-height:1.1 !important;
+  }
+
+  .reb-home .reb-chart-line,
+  .reb-home .reb-market-watch-widget,
+  .reb-home .reb-chart-card .tradingview-widget-container,
+  .reb-home .reb-chart-card .tradingview-widget-container__widget{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    height:126px !important;
+    max-height:126px !important;
+    pointer-events:auto !important;
+    overflow:hidden !important;
+  }
+
+  .reb-home .reb-chart-line iframe{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    width:100% !important;
+    height:178px !important;
+    top:-50px !important;
+    pointer-events:auto !important;
+  }
+
+  .reb-home .reb-hero-contact{
+    display:flex !important;
+    left:170px !important;
+    right:16px !important;
+    bottom:8px !important;
+    min-height:48px !important;
+    justify-content:flex-end !important;
+    gap:18px !important;
+  }
+
+  .reb-home .reb-contact-item{
+    min-width:0 !important;
+    gap:9px !important;
+  }
+
+  .reb-home .reb-contact-item i{
+    width:28px !important;
+    height:28px !important;
+    min-width:28px !important;
+    font-size:12px !important;
+  }
+
+  .reb-home .reb-contact-item strong{
+    font-size:12px !important;
+    line-height:1.1 !important;
+  }
+
+  .reb-home .reb-contact-item span{
+    font-size:11px !important;
+    line-height:1.15 !important;
+  }
+
+  .reb-home .reb-trust-section{
+    padding-top:24px !important;
+  }
+}
+
+.reb-home .main-header,
+.reb-home .header-top,
+.reb-home .header-lower,
+.reb-home .header-bottom{
+  position:relative !important;
+  top:auto !important;
+  transform:none !important;
+}
+
+.reb-home .sticky-header,
+.reb-home .fixed-header .sticky-header,
+.reb-home .main-header .sticky-header{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+  pointer-events:none !important;
+}
+
+.reb-legacy-static-header{
+  position:relative;
+  z-index:5;
+  background:#fff;
+  border-bottom:1px solid rgba(17,17,17,.08);
+}
+
+.reb-legacy-static-header .reb-legacy-top{
+  background:#111613;
+  color:#fff;
+  padding:10px max(20px, calc((100vw - 1376px) / 2));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.reb-legacy-static-header .reb-legacy-phone{
+  color:#fff;
+  font-size:15px;
+  font-weight:800;
+  line-height:1;
+}
+
+.reb-legacy-static-header .reb-legacy-actions{
+  display:flex;
+  gap:10px;
+}
+
+.reb-legacy-static-header .reb-legacy-actions a,
+.reb-legacy-static-header .reb-legacy-nav a{
+  text-decoration:none;
+}
+
+.reb-legacy-static-header .reb-legacy-signup,
+.reb-legacy-static-header .reb-legacy-login{
+  min-width:84px;
+  min-height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:7px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.reb-legacy-static-header .reb-legacy-signup{
+  background:#f5b026;
+  color:#050505;
+}
+
+.reb-legacy-static-header .reb-legacy-login{
+  border:1px solid rgba(255,255,255,.62);
+  color:#fff;
+}
+
+.reb-legacy-static-header .reb-legacy-main{
+  padding:28px max(20px, calc((100vw - 1376px) / 2));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+
+.reb-legacy-static-header .reb-legacy-logo img{
+  width:245px;
+  max-width:245px;
+  height:auto;
+}
+
+.reb-legacy-static-header .reb-legacy-nav{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:6px;
+  background:#101312;
+  border:1px solid rgba(245,176,38,.24);
+  border-radius:12px;
+  box-shadow:0 14px 30px rgba(0,0,0,.12);
+}
+
+.reb-legacy-static-header .reb-legacy-nav a{
+  min-width:96px;
+  min-height:40px;
+  padding:0 12px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:9px;
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  line-height:1;
+  white-space:nowrap;
+}
+
+.reb-legacy-static-header .reb-legacy-nav a.active,
+.reb-legacy-static-header .reb-legacy-nav a:hover{
+  background:#f5b026;
+  color:#070707;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .page-title{
+  background:linear-gradient(110deg,#050606 0%,#15110a 58%,#4b3408 100%);
+  padding:82px 20px 74px !important;
+  margin:0 !important;
+  color:#fff;
+  text-align:center;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .page-title .pattern-layer{
+  display:none !important;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .page-title h1{
+  color:#fff;
+  font-size:clamp(34px, 4vw, 58px);
+  line-height:1.06;
+  margin:0 0 14px;
+  letter-spacing:0;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .bread-crumb{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .bread-crumb,
+.boxed_wrapper:has(.reb-legacy-static-header) .bread-crumb a{
+  color:rgba(255,255,255,.78);
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .auto-container{
+  width:min(100% - 40px, 1376px);
+  max-width:1376px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .row{
+  display:flex;
+  flex-wrap:wrap;
+  margin-left:-12px;
+  margin-right:-12px;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) [class*="col-"]{
+  padding-left:12px;
+  padding-right:12px;
+  box-sizing:border-box;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .col-lg-8{width:66.666%;}
+.boxed_wrapper:has(.reb-legacy-static-header) .col-lg-6{width:50%;}
+.boxed_wrapper:has(.reb-legacy-static-header) .col-lg-4{width:33.333%;}
+.boxed_wrapper:has(.reb-legacy-static-header) .col-lg-3{width:25%;}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .sidebar-page-container,
+.boxed_wrapper:has(.reb-legacy-static-header) .pricing-section,
+.boxed_wrapper:has(.reb-legacy-static-header) .faq-section,
+.boxed_wrapper:has(.reb-legacy-static-header) .team-section{
+  padding-top:70px !important;
+  padding-bottom:80px !important;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .news-block-two .inner-box,
+.boxed_wrapper:has(.reb-legacy-static-header) .pricing-block-one .inner-box,
+.boxed_wrapper:has(.reb-legacy-static-header) .team-block-one .inner-box,
+.boxed_wrapper:has(.reb-legacy-static-header) .accordion.block,
+.boxed_wrapper:has(.reb-legacy-static-header) .blog-sidebar > div{
+  background:#fff;
+  border:1px solid rgba(17,17,17,.1);
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 14px 40px rgba(0,0,0,.07);
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .news-block,
+.boxed_wrapper:has(.reb-legacy-static-header) .pricing-block,
+.boxed_wrapper:has(.reb-legacy-static-header) .team-block{
+  margin-bottom:24px;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .news-block-two .image-box img,
+.boxed_wrapper:has(.reb-legacy-static-header) .pricing-block-one .image-box img,
+.boxed_wrapper:has(.reb-legacy-static-header) .team-block-one img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .news-block-two .image-box,
+.boxed_wrapper:has(.reb-legacy-static-header) .pricing-block-one .image-box,
+.boxed_wrapper:has(.reb-legacy-static-header) .blog-details-content .image-box,
+.boxed_wrapper:has(.reb-legacy-static-header) .team-details-content .image-box,
+.boxed_wrapper:has(.reb-legacy-static-header) .team-block-one .image-box{
+  position:relative;
+  min-height:190px;
+  background:
+    linear-gradient(115deg, rgba(0,0,0,.72), rgba(245,176,38,.18)),
+    url("/assets/images/banner/reb-ai-trading-banner.png") center/cover no-repeat;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .blog-details-content .image-box,
+.boxed_wrapper:has(.reb-legacy-static-header) .team-details-content .image-box{
+  min-height:320px;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .team-block-one .image-box{
+  min-height:170px;
+  background:
+    radial-gradient(circle at center, rgba(245,176,38,.28), rgba(0,0,0,.72)),
+    url("/assets/images/resource/reb-robot.png") center/contain no-repeat,
+    #111613;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .image-box img[src*="/news/"],
+.boxed_wrapper:has(.reb-legacy-static-header) .image-box img[src*="/book-"],
+.boxed_wrapper:has(.reb-legacy-static-header) .image-box img[src*="/team/"],
+.boxed_wrapper:has(.reb-legacy-static-header) .blog-details-content .image-box img,
+.boxed_wrapper:has(.reb-legacy-static-header) .team-details-content .image-box img{
+  opacity:0 !important;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .overlay-image{
+  display:none !important;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .lower-content,
+.boxed_wrapper:has(.reb-legacy-static-header) .blog-sidebar > div,
+.boxed_wrapper:has(.reb-legacy-static-header) .accordion.block{
+  padding:22px;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) h2,
+.boxed_wrapper:has(.reb-legacy-static-header) h3,
+.boxed_wrapper:has(.reb-legacy-static-header) h4,
+.boxed_wrapper:has(.reb-legacy-static-header) h5{
+  letter-spacing:0;
+}
+
+.boxed_wrapper:has(.reb-legacy-static-header) .subscribe-section{
+  display:none;
+}
+
+@media (max-width: 1199px){
+  .reb-legacy-static-header .reb-legacy-main{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .reb-legacy-static-header .reb-legacy-nav{
+    width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+
+  .reb-legacy-static-header .reb-legacy-nav::-webkit-scrollbar{
+    display:none;
+  }
+}
+
+@media (max-width: 767px){
+  .reb-legacy-static-header .reb-legacy-top{
+    padding:14px 20px;
+    justify-content:center;
+  }
+
+  .reb-legacy-static-header .reb-legacy-phone{
+    display:none;
+  }
+
+  .reb-legacy-static-header .reb-legacy-main{
+    padding:28px 20px 18px;
+    gap:14px;
+  }
+
+  .reb-legacy-static-header .reb-legacy-logo img{
+    width:190px;
+    max-width:82vw;
+  }
+
+  .reb-legacy-static-header .reb-legacy-nav a{
+    flex:0 0 auto;
+    min-width:98px;
+    font-size:13px;
+  }
+
+  .boxed_wrapper:has(.reb-legacy-static-header) .page-title{
+    padding:56px 20px 50px !important;
+    text-align:left;
+  }
+
+  .boxed_wrapper:has(.reb-legacy-static-header) .page-title h1{
+    font-size:38px;
+  }
+
+  .boxed_wrapper:has(.reb-legacy-static-header) .bread-crumb{
+    justify-content:flex-start;
+  }
+
+  .boxed_wrapper:has(.reb-legacy-static-header) .auto-container{
+    width:calc(100% - 32px);
+  }
+
+  .boxed_wrapper:has(.reb-legacy-static-header) .row{
+    display:block;
+    margin-left:0;
+    margin-right:0;
+  }
+
+  .boxed_wrapper:has(.reb-legacy-static-header) [class*="col-"]{
+    width:100% !important;
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .boxed_wrapper:has(.reb-legacy-static-header) .sidebar-page-container,
+  .boxed_wrapper:has(.reb-legacy-static-header) .pricing-section,
+  .boxed_wrapper:has(.reb-legacy-static-header) .faq-section,
+  .boxed_wrapper:has(.reb-legacy-static-header) .team-section{
+    padding-top:44px !important;
+    padding-bottom:54px !important;
+  }
+}
+
+@media (min-width: 1200px){
+  :root{
+    --reb-page-frame:1376px;
+    --reb-page-gutter:max(24px, calc((100vw - var(--reb-page-frame)) / 2));
+  }
+
+  .reb-top,
+  .reb-subpage .reb-top,
+  .reb-header,
+  .reb-subpage .reb-header,
+  .reb-hero,
+  .reb-subpage .reb-hero,
+  .reb-download,
+  .reb-steps,
+  .reb-story,
+  .reb-band,
+  .reb-workflow,
+  .reb-commit,
+  .reb-contact,
+  .reb-section,
+  .reb-footer{
+    padding-left:var(--reb-page-gutter) !important;
+    padding-right:var(--reb-page-gutter) !important;
+  }
+
+  .reb-header,
+  .reb-subpage .reb-header{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:28px !important;
+    position:relative !important;
+    top:auto !important;
+  }
+
+  .reb-home .main-header,
+  .reb-home .main-header .sticky-header,
+  .reb-home .sticky-header,
+  .reb-home .fixed-header .sticky-header{
+    position:relative !important;
+  }
+
+  .reb-home .main-header .sticky-header,
+  .reb-home .sticky-header,
+  .reb-home .fixed-header .sticky-header{
+    display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+    height:0 !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+    transform:none !important;
+  }
+
+  .reb-header .reb-logo,
+  .reb-subpage .reb-header .reb-logo,
+  .reb-logo{
+    flex:0 0 auto !important;
+  }
+
+  .reb-header .reb-logo img,
+  .reb-subpage .reb-header .reb-logo img,
+  .reb-logo img{
+    width:245px !important;
+    max-width:245px !important;
+  }
+
+  .reb-nav,
+  .reb-subpage .reb-nav{
+    margin-left:auto !important;
+    justify-content:flex-end !important;
+    max-width:calc(100vw - 620px) !important;
+    overflow:visible !important;
+  }
+
+  .reb-subpage .reb-nav{
+    width:auto !important;
+  }
+
+  .reb-nav a,
+  .reb-nav a.trade-account-link,
+  .reb-subpage .reb-nav a,
+  .reb-subpage .reb-nav a.trade-account-link{
+    min-width:104px !important;
+    width:104px !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    font-size:13px !important;
+  }
+
+  .reb-nav a:first-child,
+  .reb-subpage .reb-nav a:first-child{
+    min-width:84px !important;
+    width:84px !important;
+  }
+
+  .reb-nav a.trade-account-link,
+  .reb-subpage .reb-nav a.trade-account-link{
+    min-width:118px !important;
+    width:118px !important;
+  }
+
+  .reb-hero-inner,
+  .reb-subpage .reb-hero-inner,
+  .reb-panel,
+  .reb-grid,
+  .reb-story-grid,
+  .reb-band-inner,
+  .reb-workflow-inner,
+  .reb-commit-inner,
+  .reb-contact-grid,
+  .broker-grid,
+  .step-grid{
+    max-width:var(--reb-page-frame) !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  .reb-home .header-bottom .reb-live-widget,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container__widget,
+  .reb-home .header-bottom .reb-live-widget iframe{
+    display:none !important;
+    visibility:hidden !important;
+    width:0 !important;
+    height:0 !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+  }
+
+  .reb-home .header-bottom .stock-list,
+  .reb-home .header-bottom .reb-live-widget + .stock-list,
+  .reb-home:not(.reb-tv-fallback) #reb-live-ticker,
+  .reb-home.reb-tv-fallback #reb-live-ticker,
+  body.reb-tv-fallback .reb-home #reb-live-ticker{
+    display:flex !important;
+    visibility:visible !important;
+    opacity:1 !important;
+  }
+
+  .reb-home #reb-live-ticker{
+    animation:none !important;
+    transform:none !important;
+    gap:0 !important;
+  }
+
+  .reb-home #reb-live-ticker .reb-market-tick{
+    flex:1 1 25% !important;
+    width:25% !important;
+    min-width:0 !important;
+    max-width:25% !important;
+    overflow:hidden !important;
+    white-space:nowrap !important;
+    text-overflow:ellipsis !important;
+  }
+
+  .reb-home #reb-live-ticker .reb-market-tick strong,
+  .reb-home #reb-live-ticker .reb-market-tick em,
+  .reb-home #reb-live-ticker .reb-market-tick .reb-market-change{
+    font-size:13px !important;
+  }
+
+  .reb-home #reb-live-ticker .reb-market-icon{
+    flex:0 0 24px !important;
+    width:24px !important;
+    height:24px !important;
+    margin-right:8px !important;
+  }
+
+  .reb-home #reb-live-ticker .reb-market-tick:nth-child(n+5){
+    display:none !important;
+  }
+
+  .reb-home .reb-hero-inner{
+    max-width:1240px !important;
+    grid-template-columns:minmax(0,560px) minmax(430px,560px) !important;
+    gap:28px !important;
+    align-items:center !important;
+  }
+
+  .reb-home .reb-robot{
+    left:18px !important;
+    bottom:106px !important;
+    width:min(320px, 60%) !important;
+    z-index:3 !important;
+  }
+
+  .reb-home .reb-hero{
+    min-height:0 !important;
+    padding-top:54px !important;
+    padding-bottom:34px !important;
+  }
+
+  .reb-home .reb-hero h1{
+    font-size:62px !important;
+    line-height:1.04 !important;
+    margin-bottom:22px !important;
+  }
+
+  .reb-home .reb-hero h1 span,
+  .reb-home .reb-hero-kicker{
+    white-space:nowrap !important;
+  }
+
+  .reb-home .reb-hero-text{
+    font-size:18px !important;
+    line-height:1.55 !important;
+    margin-bottom:26px !important;
+    max-width:470px !important;
+  }
+
+  .reb-home .reb-hero-visual{
+    min-height:500px !important;
+  }
+
+  .reb-home .reb-feature-list{
+    top:18px !important;
+    right:0 !important;
+    width:320px !important;
+    gap:10px !important;
+    z-index:5 !important;
+  }
+
+  .reb-home .reb-feature{
+    min-height:52px !important;
+    padding:0 18px !important;
+  }
+
+  .reb-home .reb-chart-card{
+    top:266px !important;
+    right:0 !important;
+    width:300px !important;
+    z-index:6 !important;
+  }
+
+  .reb-home .reb-hero-contact{
+    left:auto !important;
+    right:auto !important;
+    bottom:28px !important;
+    transform:none !important;
+    width:auto !important;
+    justify-content:center !important;
+    gap:28px !important;
+    z-index:8 !important;
+  }
+
+  .reb-home .reb-hero-contact{
+    right:96px !important;
+  }
+
+  .reb-home .reb-trust-section{
+    padding-top:34px !important;
+    padding-bottom:46px !important;
+  }
+
+  .reb-home .reb-trust-section .large-container{
+    width:min(100% - 48px, var(--reb-page-frame)) !important;
+    max-width:var(--reb-page-frame) !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .reb-home .reb-trust-panel{
+    width:100% !important;
+    max-width:100% !important;
+    grid-template-columns:1.2fr repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1420px){
+  :root{
+    --reb-page-frame:calc(100vw - 48px);
+    --reb-page-gutter:24px;
+  }
+
+  .reb-nav a,
+  .reb-nav a.trade-account-link,
+  .reb-subpage .reb-nav a,
+  .reb-subpage .reb-nav a.trade-account-link{
+    min-width:96px !important;
+    width:96px !important;
+    font-size:12px !important;
+  }
+
+  .reb-nav a:first-child,
+  .reb-subpage .reb-nav a:first-child{
+    min-width:78px !important;
+    width:78px !important;
+  }
+
+  .reb-nav a.trade-account-link,
+  .reb-subpage .reb-nav a.trade-account-link{
+    min-width:112px !important;
+    width:112px !important;
+  }
+}
+
+@media (max-width: 767px){
+  html,
+  body,
+  .boxed_wrapper,
+  .reb-home{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:hidden !important;
+  }
+
+  .reb-header,
+  .reb-subpage .reb-header{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:14px !important;
+    padding-left:20px !important;
+    padding-right:20px !important;
+    overflow-x:hidden !important;
+  }
+
+  .reb-home .main-menu,
+  .reb-home .navbar-collapse,
+  .reb-home .main-menu .navigation,
+  .reb-nav,
+  .reb-subpage .reb-nav{
+    display:flex !important;
+    visibility:visible !important;
+    opacity:1 !important;
+  }
+
+  .reb-home .main-menu,
+  .reb-nav,
+  .reb-subpage .reb-nav{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+    scrollbar-width:none !important;
+  }
+
+  .reb-home .main-menu::-webkit-scrollbar,
+  .reb-home .main-menu .navigation::-webkit-scrollbar,
+  .reb-nav::-webkit-scrollbar,
+  .reb-subpage .reb-nav::-webkit-scrollbar{
+    display:none !important;
+  }
+
+  .reb-home .main-menu .navigation,
+  .reb-nav,
+  .reb-subpage .reb-nav{
+    grid-template-columns:none !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:6px !important;
+    background:#101312 !important;
+    border:1px solid rgba(245,176,38,.24) !important;
+    border-radius:12px !important;
+    padding:6px !important;
+    min-height:54px !important;
+  }
+
+  .reb-home .main-menu .navigation > li{
+    flex:0 0 auto !important;
+    display:block !important;
+    width:auto !important;
+    margin:0 !important;
+    padding:0 !important;
+  }
+
+  .reb-home .main-menu .navigation > li > a,
+  .reb-home .main-menu .navigation > li > a.trade-account-link,
+  .reb-nav a,
+  .reb-nav a.trade-account-link,
+  .reb-subpage .reb-nav a,
+  .reb-subpage .reb-nav a.trade-account-link{
+    flex:0 0 auto !important;
+    width:auto !important;
+    min-width:98px !important;
+    min-height:42px !important;
+    padding:0 14px !important;
+    font-size:13px !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    text-align:center !important;
+  }
+
+  .reb-home .header-bottom .large-container{
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+
+  .reb-home .reb-trust-section .large-container,
+  .reb-home .reb-trust-panel{
+    width:calc(100vw - 32px) !important;
+    max-width:calc(100vw - 32px) !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+  }
+
+  .reb-home .reb-trust-section .large-container{
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+
+  .reb-home .reb-trust-panel{
+    grid-template-columns:1fr !important;
+    overflow:hidden !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  .reb-home .reb-trust-lead{
+    grid-column:1 / -1 !important;
+  }
+
+  .reb-home .reb-trust-lead,
+  .reb-home .reb-trust-item{
+    min-width:0 !important;
+    box-sizing:border-box !important;
+  }
+
+  .reb-home .reb-trust-lead span,
+  .reb-home .reb-trust-lead strong,
+  .reb-home .reb-trust-item span,
+  .reb-home .reb-trust-item strong{
+    max-width:100% !important;
+    white-space:normal !important;
+    overflow-wrap:break-word !important;
+  }
+
+  .reb-home .reb-trust-lead strong{
+    font-size:21px !important;
+    line-height:1.2 !important;
+    display:block !important;
+    width:100% !important;
+    max-width:300px !important;
+    overflow:visible !important;
+    word-break:break-word !important;
+  }
+
+  .reb-home .reb-trust-item span{
+    display:block !important;
+    width:100% !important;
+    font-size:13px !important;
+    line-height:1.25 !important;
+    word-break:break-word !important;
+  }
+
+  .reb-home-mobile-nav{
+    display:flex !important;
+    align-items:center !important;
+    gap:6px !important;
+    width:calc(100% - 40px) !important;
+    max-width:calc(100% - 40px) !important;
+    margin:0 20px 18px !important;
+    padding:6px !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+    scrollbar-width:none !important;
+    background:#101312 !important;
+    border:1px solid rgba(245,176,38,.24) !important;
+    border-radius:12px !important;
+    box-sizing:border-box !important;
+  }
+
+  .reb-home-mobile-nav::-webkit-scrollbar{
+    display:none !important;
+  }
+
+  .reb-home-mobile-nav a{
+    flex:0 0 auto !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-width:98px !important;
+    min-height:42px !important;
+    padding:0 14px !important;
+    border-radius:9px !important;
+    color:#fff !important;
+    font-size:13px !important;
+    font-weight:700 !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    text-align:center !important;
+  }
+
+  .reb-home-mobile-nav a.active,
+  .reb-home-mobile-nav a:hover{
+    background:#f5b026 !important;
+    color:#070707 !important;
+  }
+}
+
+/* Final home desktop fit: keep the original rich hero while fitting 1280/1366x768 screens. */
+@media (min-width: 1200px) and (max-height: 850px){
+  .reb-home .header-lower,
+  .reb-home .header-lower .outer-box{
+    height:84px !important;
+    min-height:84px !important;
+  }
+
+  .reb-home .header-lower .logo-box img{
+    width:188px !important;
+    max-width:188px !important;
+  }
+
+  .reb-home .header-bottom{
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+  }
+
+  .reb-home .reb-hero{
+    height:500px !important;
+    max-height:500px !important;
+    padding:40px 54px 24px !important;
+    overflow:hidden !important;
+  }
+
+  .reb-home .reb-hero-inner{
+    max-width:1180px !important;
+    grid-template-columns:minmax(0, 490px) minmax(0, 560px) !important;
+    gap:58px !important;
+    height:100% !important;
+  }
+
+  .reb-home .reb-hero-copy{
+    position:relative !important;
+    height:100% !important;
+    min-height:0 !important;
+  }
+
+  .reb-home .reb-hero h1{
+    font-size:48px !important;
+    line-height:1.02 !important;
+    margin-bottom:18px !important;
+  }
+
+  .reb-home .reb-hero-text{
+    display:block !important;
+    max-width:460px !important;
+    font-size:15px !important;
+    line-height:1.55 !important;
+    margin:0 0 20px !important;
+  }
+
+  .reb-home .reb-hero-actions{
+    position:absolute !important;
+    left:0 !important;
+    bottom:124px !important;
+    margin:0 !important;
+    z-index:9 !important;
+  }
+
+  .reb-home .reb-hero-stats{
+    display:grid !important;
+    position:absolute !important;
+    left:0 !important;
+    bottom:54px !important;
+    grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+    gap:10px !important;
+    max-width:410px !important;
+    margin:0 !important;
+  }
+
+  .reb-home .reb-stat{
+    min-height:58px !important;
+    padding:10px 14px !important;
+  }
+
+  .reb-home .reb-stat strong{
+    font-size:22px !important;
+    line-height:1 !important;
+  }
+
+  .reb-home .reb-stat span{
+    font-size:11px !important;
+    line-height:1.2 !important;
+  }
+
+  .reb-home .reb-hero-visual{
+    min-height:400px !important;
+    height:400px !important;
+  }
+
+  .reb-home .reb-robot{
+    width:300px !important;
+    max-width:300px !important;
+    top:58px !important;
+    bottom:auto !important;
+    left:-10px !important;
+    right:auto !important;
+    height:auto !important;
+    transform:none !important;
+    animation:none !important;
+  }
+
+  .reb-home .reb-feature-list{
+    width:230px !important;
+    top:22px !important;
+    right:0 !important;
+    gap:7px !important;
+    z-index:7 !important;
+  }
+
+  .reb-home .reb-feature{
+    min-height:38px !important;
+    padding:0 12px !important;
+    font-size:12px !important;
+  }
+
+  .reb-home .reb-chart-card{
+    display:block !important;
+    width:218px !important;
+    top:188px !important;
+    right:0 !important;
+    bottom:auto !important;
+    padding:10px !important;
+    z-index:6 !important;
+  }
+
+  .reb-home .reb-chart-line,
+  .reb-home .reb-market-watch-widget,
+  .reb-home .reb-chart-card .tradingview-widget-container,
+  .reb-home .reb-chart-card .tradingview-widget-container__widget{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    height:126px !important;
+    max-height:126px !important;
+    overflow:hidden !important;
+  }
+
+  .reb-home .reb-chart-line iframe{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    width:100% !important;
+    height:178px !important;
+    top:-50px !important;
+  }
+
+  .reb-home .reb-hero-contact{
+    display:flex !important;
+    left:auto !important;
+    right:254px !important;
+    bottom:20px !important;
+    width:auto !important;
+    min-height:48px !important;
+    justify-content:flex-end !important;
+    gap:14px !important;
+    z-index:8 !important;
+  }
+
+  .reb-home .reb-contact-item{
+    gap:8px !important;
+  }
+
+  .reb-home .reb-contact-item i{
+    width:28px !important;
+    height:28px !important;
+    min-width:28px !important;
+    font-size:12px !important;
+  }
+
+  .reb-home .reb-contact-item strong{
+    font-size:12px !important;
+    line-height:1.1 !important;
+  }
+
+  .reb-home .reb-contact-item span{
+    font-size:11px !important;
+    line-height:1.15 !important;
+  }
+}

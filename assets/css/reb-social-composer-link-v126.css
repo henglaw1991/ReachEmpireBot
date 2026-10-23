@@ -1,0 +1,19 @@
+/* Social Composer link attachment v126; mobile and desktop */
+.reb-composer-link-preview{margin:6px 0 14px;min-width:0;max-width:100%}
+.reb-composer-link-preview[hidden]{display:none!important}
+.reb-composer-link-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 1px 7px;font-size:12px;font-weight:650;color:#6a4a08}
+.reb-composer-link-remove{border:1px solid #e2e4e7;background:#fff;border-radius:8px;padding:6px 10px;font-size:12px;cursor:pointer;color:#494e57}
+.reb-composer-link-remove:hover{background:#faf3e4}
+.reb-composer-link-preview .reb-social-link-preview{margin:0!important}
+.reb-composer-link-preview .reb-social-link-preview-info small{overflow-wrap:anywhere}
+.reb-social-post-text a.reb-social-external-link,.reb-social-shared-text a.reb-social-external-link,.reb-post-content a.reb-social-external-link{color:#1764a8!important;text-decoration:underline!important;text-underline-offset:2px;overflow-wrap:anywhere;word-break:break-word}
+/* Desktop Account card: one profile name only, no truncation/overlay */
+@media(min-width:768px){
+ body.reb-social-page .reb-social-account-card{height:auto!important;min-height:0!important;overflow:visible!important;align-content:start!important}
+ body.reb-social-page .reb-social-account-card .reb-social-account-copy{min-width:0!important;max-width:100%!important;overflow:visible!important}
+ body.reb-social-page .reb-social-account-card .reb-social-account-copy strong{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;overflow-wrap:anywhere!important;word-break:normal!important;max-width:100%!important;line-height:1.35!important}
+ body.reb-social-page .reb-social-account-card .reb-social-account-copy span{white-space:normal!important;overflow-wrap:anywhere!important;overflow:visible!important;text-overflow:clip!important}
+}
+
+/* R132: source URL only when image/video attachments are primary. */
+.reb-composer-source-link{display:block;max-width:100%;overflow-wrap:anywhere;word-break:break-word;color:#1767bb;text-decoration:underline;font-size:13px;padding:7px 1px 10px}

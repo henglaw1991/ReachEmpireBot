@@ -1,0 +1,430 @@
+/* D20F34 — Mobile Social polish. Desktop rules intentionally untouched. */
+@media (max-width:760px){
+  /* Top nav: keep Notifications only and pin it to the right on EVERY Social page. */
+  .reb-social-global-topbar .reb-social-global-inner{position:relative!important;display:flex!important;align-items:flex-start!important;min-height:118px!important;width:100%!important;}
+  .reb-social-global-topbar .reb-social-global-brand{margin-right:auto!important;}
+  .reb-social-global-topbar .reb-social-global-nav{position:absolute!important;right:10px!important;left:auto!important;bottom:10px!important;width:auto!important;display:flex!important;justify-content:flex-end!important;align-items:center!important;margin:0!important;padding:0!important;overflow:visible!important;}
+  .reb-social-global-topbar .reb-social-global-nav a{display:none!important;}
+  .reb-social-global-topbar .reb-social-global-nav a[href="/social/notifications/"]{display:inline-flex!important;position:relative!important;width:auto!important;min-width:0!important;height:40px!important;min-height:40px!important;padding:0 10px!important;gap:7px!important;align-items:center!important;justify-content:center!important;white-space:nowrap!important;}
+  .reb-social-global-topbar .reb-social-global-nav a[href="/social/notifications/"] span{display:inline!important;}
+
+  /* Composer: compact by default; tools appear only after the text area is engaged. */
+  .reb-social-composer textarea{min-height:58px!important;height:58px!important;resize:none!important;overflow-y:hidden!important;transition:min-height .18s ease,height .18s ease!important;}
+  .reb-social-composer:not(.reb-composer-engaged) .reb-social-composer-meta,
+  .reb-social-composer:not(.reb-composer-engaged) .reb-social-composer-actions{display:none!important;}
+  .reb-social-composer.reb-composer-engaged textarea{min-height:82px!important;}
+  .reb-social-composer.reb-composer-engaged .reb-social-composer-meta{display:flex!important;}
+  .reb-social-composer.reb-composer-engaged .reb-social-composer-actions{display:flex!important;}
+
+  /* Standard avatars: never let source-image dimensions change UI geometry. */
+  .reb-social-avatar{width:50px!important;height:50px!important;min-width:50px!important;min-height:50px!important;max-width:50px!important;max-height:50px!important;overflow:hidden!important;flex:0 0 50px!important;}
+  .reb-social-post-avatar,.reb-post-avatar{width:42px!important;height:42px!important;min-width:42px!important;min-height:42px!important;max-width:42px!important;max-height:42px!important;overflow:hidden!important;flex:0 0 42px!important;border-radius:50%!important;}
+  .reb-social-comment-avatar,.reb-social-notification-avatar,.reb-social-user-avatar{overflow:hidden!important;border-radius:50%!important;}
+  .reb-social-avatar img,.reb-social-post-avatar img,.reb-post-avatar img,.reb-social-comment-avatar img,.reb-social-notification-avatar img,.reb-social-user-avatar img{display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:cover!important;object-position:center!important;border-radius:50%!important;}
+
+  /* One persistent Social footer across Social sub-pages. */
+  body.reb-social-page,body.reb-notif-page,body.reb-settings-page,body.reb-profile-page,body.reb-msg-page{padding-bottom:78px!important;}
+  .reb-social-bottom-nav{display:grid!important;position:fixed!important;left:50%!important;right:auto!important;bottom:0!important;z-index:12000!important;transform:translateX(-50%)!important;width:min(760px,100%)!important;grid-template-columns:repeat(5,1fr)!important;}
+}
+@media (max-width:760px){
+ .reb-social-bottom-nav>a:nth-child(3){justify-self:center;width:52px;height:52px;margin-top:-15px;border-radius:17px;background:var(--reb-social-gold,#f5b026);color:#111;box-shadow:0 8px 22px rgba(245,176,38,.28)}
+ .reb-social-bottom-nav>a:nth-child(3) i{font-size:19px}.reb-social-bottom-nav>a:nth-child(3) span{display:none}
+}
+
+
+/* D20F35 CLEAN MOBILE SOCIAL — deterministic header/footer/avatar geometry */
+@media (max-width:760px){
+  /* Notification rail: same exact right anchor on every Social page. */
+  .reb-social-global-topbar .reb-social-global-inner{
+    position:relative!important; display:block!important; width:100%!important;
+    min-height:118px!important; height:118px!important;
+  }
+  .reb-social-global-topbar .reb-social-global-brand{
+    position:absolute!important; left:10px!important; top:10px!important; margin:0!important;
+  }
+  .reb-social-global-topbar .reb-social-global-nav{
+    position:absolute!important; left:auto!important; right:8px!important; top:66px!important; bottom:auto!important;
+    display:flex!important; width:auto!important; height:42px!important; min-height:42px!important;
+    margin:0!important; padding:0!important; align-items:center!important; justify-content:flex-end!important;
+    overflow:visible!important; transform:none!important;
+  }
+  .reb-social-global-topbar .reb-social-global-nav>a{display:none!important; margin:0!important;}
+  .reb-social-global-topbar .reb-social-global-nav>a[href="/social/notifications/"]{
+    display:inline-flex!important; position:relative!important; align-items:center!important; justify-content:center!important;
+    width:auto!important; min-width:0!important; height:40px!important; min-height:40px!important;
+    padding:0 10px!important; gap:7px!important; white-space:nowrap!important;
+  }
+
+  /* Composer remains compact until the user actually starts composing. */
+  .reb-social-composer textarea{min-height:58px!important;height:58px!important;max-height:220px!important;overflow-y:hidden!important;}
+  .reb-social-composer:not(.reb-composer-engaged) .reb-social-composer-meta,
+  .reb-social-composer:not(.reb-composer-engaged) .reb-social-composer-actions{display:none!important;}
+  .reb-social-composer.reb-composer-engaged .reb-social-composer-meta,
+  .reb-social-composer.reb-composer-engaged .reb-social-composer-actions{display:flex!important;}
+
+  /* Self-contained footer styling, so every Social sub-page looks identical even when page CSS differs. */
+  .reb-social-bottom-nav{
+    box-sizing:border-box!important; display:grid!important; position:fixed!important; z-index:12000!important;
+    left:50%!important; right:auto!important; bottom:0!important; transform:translateX(-50%)!important;
+    width:min(760px,100%)!important; min-height:72px!important;
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    padding:7px 5px calc(7px + env(safe-area-inset-bottom))!important;
+    background:rgba(17,18,20,.985)!important; border-top:1px solid rgba(245,176,38,.20)!important;
+    backdrop-filter:blur(16px)!important; -webkit-backdrop-filter:blur(16px)!important;
+  }
+  .reb-social-bottom-nav>a{
+    box-sizing:border-box!important; display:flex!important; flex-direction:column!important; align-items:center!important;
+    justify-content:center!important; gap:4px!important; min-width:0!important; min-height:54px!important;
+    margin:0!important; padding:3px 2px!important; border:0!important; background:transparent!important;
+    color:#c2c7cc!important; text-decoration:none!important; font-size:10px!important; font-weight:700!important; line-height:1.1!important;
+  }
+  .reb-social-bottom-nav>a i{font-size:18px!important; line-height:1!important;}
+  .reb-social-bottom-nav>a span{display:block!important; white-space:nowrap!important;}
+  .reb-social-bottom-nav>a[href="/social/#composer"]{
+    justify-self:center!important; align-self:start!important; width:56px!important; min-width:56px!important; height:56px!important;
+    min-height:56px!important; margin-top:-17px!important; padding:0!important; border-radius:17px!important;
+    background:var(--reb-social-gold,#f5b026)!important; color:#111!important; box-shadow:0 8px 22px rgba(245,176,38,.30)!important;
+  }
+  .reb-social-bottom-nav>a[href="/social/#composer"] i{font-size:20px!important;}
+  .reb-social-bottom-nav>a[href="/social/#composer"] span{display:none!important;}
+
+  /* One avatar geometry per context; source photo dimensions can never stretch a card. */
+  .reb-social-avatar{width:50px!important;height:50px!important;min-width:50px!important;max-width:50px!important;min-height:50px!important;max-height:50px!important;border-radius:50%!important;overflow:hidden!important;}
+  .reb-social-post-avatar,.reb-post-avatar{width:42px!important;height:42px!important;min-width:42px!important;max-width:42px!important;min-height:42px!important;max-height:42px!important;border-radius:50%!important;overflow:hidden!important;}
+  .reb-social-comment-avatar,.reb-social-notification-avatar,.reb-social-user-avatar,.reb-mini-avatar{border-radius:50%!important;overflow:hidden!important;}
+  .reb-profile-avatar{width:96px!important;height:96px!important;min-width:96px!important;max-width:96px!important;min-height:96px!important;max-height:96px!important;border-radius:50%!important;overflow:hidden!important;}
+  .reb-social-avatar img,.reb-social-post-avatar img,.reb-post-avatar img,.reb-social-comment-avatar img,
+  .reb-social-notification-avatar img,.reb-social-user-avatar img,.reb-mini-avatar img,.reb-profile-avatar img{
+    display:block!important;width:100%!important;height:100%!important;min-width:100%!important;min-height:100%!important;
+    max-width:100%!important;max-height:100%!important;object-fit:cover!important;object-position:center!important;border-radius:50%!important;
+  }
+  body.reb-social-page,body.reb-notif-page,body.reb-settings-page,body.reb-profile-page,body.reb-msg-page,body.reb-community-page{padding-bottom:84px!important;}
+}
+
+
+/* D20F37 — Mobile Social compact header correction. Desktop untouched. */
+@media (max-width:760px){
+  /* Compact top area: brand left, Notifications fixed right. */
+  .reb-social-global-topbar .reb-social-global-inner{
+    position:relative!important;
+    display:block!important;
+    width:100%!important;
+    height:76px!important;
+    min-height:76px!important;
+    padding:0!important;
+  }
+  .reb-social-global-topbar .reb-social-global-brand{
+    position:absolute!important;
+    left:10px!important;
+    top:10px!important;
+    margin:0!important;
+  }
+  .reb-social-global-topbar .reb-social-global-nav{
+    position:absolute!important;
+    right:8px!important;
+    left:auto!important;
+    top:26px!important;
+    bottom:auto!important;
+    width:auto!important;
+    height:40px!important;
+    min-height:40px!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+  .reb-social-global-topbar .reb-social-global-nav>a{display:none!important;}
+  .reb-social-global-topbar .reb-social-global-nav>a[href="/social/notifications/"]{
+    display:inline-flex!important;
+    position:relative!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:auto!important;
+    min-width:0!important;
+    height:40px!important;
+    min-height:40px!important;
+    padding:0 8px!important;
+    gap:7px!important;
+    white-space:nowrap!important;
+  }
+  .reb-social-global-topbar .reb-social-global-nav>a[href="/social/notifications/"] span{display:inline!important;}
+
+  /* Remove only the upper-right profile robot on mobile. */
+  .reb-social-global-topbar .reb-social-account-control{display:none!important;}
+
+  /* Account/Dashboard card starts immediately below the compact header. */
+  body.reb-social-page .reb-social-shell{padding-top:0!important;margin-top:0!important;}
+  body.reb-social-page .reb-social-main{padding-top:10px!important;margin-top:0!important;}
+  body.reb-social-page .reb-social-account-card{margin-top:0!important;}
+
+  /* Compact composer state. */
+  #rebSocialDraftState,.reb-social-draft-state{display:none!important;}
+}
+
+/* D20F38 — Correct mobile Social header architecture.
+   Keep signed-in Profile control on the RIGHT; remove only decorative LEFT brand robot. Desktop untouched. */
+@media (max-width:760px){
+  .reb-social-global-topbar .reb-social-global-inner{
+    position:relative!important;
+    display:block!important;
+    width:100%!important;
+    height:118px!important;
+    min-height:118px!important;
+    padding:0!important;
+  }
+
+  /* LEFT decorative robot only — remove it. */
+  .reb-social-global-topbar .reb-social-global-brand .reb-social-brand-robot{display:none!important;}
+  .reb-social-global-topbar .reb-social-global-brand{display:none!important;}
+
+  /* RIGHT signed-in Profile robot/account trigger — always preserve it. */
+  .reb-social-global-topbar .reb-social-account-control{
+    display:flex!important;
+    position:absolute!important;
+    top:8px!important;
+    right:10px!important;
+    left:auto!important;
+    margin:0!important;
+    width:auto!important;
+    height:48px!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    z-index:1202!important;
+  }
+
+  /* Notification remains fixed on the right, directly below Profile. */
+  .reb-social-global-topbar .reb-social-global-nav{
+    position:absolute!important;
+    top:61px!important;
+    right:8px!important;
+    left:auto!important;
+    bottom:auto!important;
+    width:auto!important;
+    height:42px!important;
+    min-height:42px!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+  .reb-social-global-topbar .reb-social-global-nav>a{display:none!important;}
+  .reb-social-global-topbar .reb-social-global-nav>a[href="/social/notifications/"]{
+    display:inline-flex!important;
+    position:relative!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:auto!important;
+    min-width:0!important;
+    height:40px!important;
+    min-height:40px!important;
+    padding:0 8px!important;
+    gap:7px!important;
+    white-space:nowrap!important;
+  }
+  .reb-social-global-topbar .reb-social-global-nav>a[href="/social/notifications/"] span{display:inline!important;}
+
+  /* Feed content begins cleanly after header. */
+  body.reb-social-page .reb-social-shell{padding-top:0!important;margin-top:0!important;}
+  body.reb-social-page .reb-social-main{padding-top:10px!important;margin-top:0!important;}
+  body.reb-social-page .reb-social-account-card{margin-top:0!important;}
+}
+
+
+/* D20F39 — requested mobile Social polish. Desktop remains untouched. */
+@media (max-width:760px){
+  /* 1) No Profile/avatar dropdown in the mobile header. Notification stays right. */
+  .reb-social-global-topbar .reb-social-account-control{display:none!important;}
+  .reb-social-global-topbar .reb-social-global-inner{height:88px!important;min-height:88px!important;}
+  .reb-social-global-topbar .reb-social-global-nav{top:28px!important;right:8px!important;}
+
+  /* 2/3) Compact composer: one image shortcut at right before focus. */
+  .reb-social-text-wrap{position:relative!important;width:100%!important;}
+  .reb-social-text-wrap textarea{width:100%!important;box-sizing:border-box!important;padding-right:48px!important;}
+  .reb-social-compact-image{display:grid!important;place-items:center!important;position:absolute!important;right:10px!important;top:50%!important;transform:translateY(-50%)!important;width:34px!important;height:34px!important;border:0!important;border-radius:10px!important;background:#f1f3f5!important;color:#a86d00!important;font-size:16px!important;cursor:pointer!important;}
+  .reb-social-composer.reb-composer-engaged .reb-social-compact-image{display:none!important;}
+
+  /* Expanded tools: Image + Video + Trading Card + Post, evenly spaced and never crowded. */
+  .reb-social-composer.reb-composer-engaged .reb-social-composer-actions{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:10px!important;align-items:center!important;width:100%!important;}
+  .reb-social-composer.reb-composer-engaged .reb-social-media-tools{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important;min-width:0!important;}
+  .reb-social-composer .reb-social-media-tools #rebSocialPickFile{display:none!important;}
+  .reb-social-composer .reb-social-tool-btn{min-width:0!important;width:100%!important;padding:0 8px!important;gap:5px!important;white-space:nowrap!important;}
+  .reb-social-composer .reb-social-tool-btn span{overflow:hidden!important;text-overflow:ellipsis!important;}
+  .reb-social-composer #rebSocialPublish{min-width:64px!important;margin:0!important;}
+
+  /* 4) Keep floating chat safely above the persistent footer / profile controls. */
+  .reb-social-mini-launcher{bottom:92px!important;right:14px!important;}
+  body.reb-profile-page .reb-social-mini-launcher{bottom:94px!important;right:14px!important;}
+
+  /* 5) Profile page: the account dropdown is represented by a clean ... button below cover. */
+  body.reb-profile-page .reb-profile-more-slot{position:relative!important;display:flex!important;justify-content:flex-end!important;height:0!important;z-index:50!important;padding:0 14px!important;}
+  body.reb-profile-page .reb-profile-more-slot .reb-social-account-control{display:block!important;position:absolute!important;right:14px!important;top:10px!important;width:42px!important;height:42px!important;margin:0!important;z-index:80!important;}
+  body.reb-profile-page .reb-profile-more-slot .reb-social-account-trigger{display:grid!important;place-items:center!important;width:42px!important;height:42px!important;border-radius:12px!important;background:#f2f4f6!important;color:#4f5965!important;font-size:18px!important;box-shadow:none!important;}
+  body.reb-profile-page .reb-profile-more-slot .reb-social-account-dropdown{position:absolute!important;right:0!important;top:48px!important;width:min(340px,calc(100vw - 28px))!important;max-height:65vh!important;overflow:auto!important;}
+}
+
+/* D20F40 — mobile profile dropdown must escape the profile hero clipping. */
+@media (max-width:760px){
+  body.reb-profile-page .reb-profile-hero{overflow:visible!important;}
+  body.reb-profile-page .reb-profile-more-slot{overflow:visible!important;z-index:5000!important;}
+  body.reb-profile-page .reb-profile-more-slot .reb-social-account-control{overflow:visible!important;z-index:5001!important;}
+  body.reb-profile-page .reb-profile-more-slot .reb-social-account-dropdown{
+    position:fixed!important;
+    z-index:99999!important;
+    width:min(340px,calc(100vw - 28px))!important;
+    max-height:min(520px,calc(100dvh - 120px))!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain!important;
+  }
+}
+
+
+/* D20F41 — clean in-box composer actions on mobile. */
+@media (max-width:760px){
+ .reb-social-composer{overflow:visible!important;}
+ .reb-social-composer-actions{margin-top:10px!important;padding-top:10px!important;border-top:1px solid #edf0f3!important;grid-template-columns:minmax(0,1fr) auto!important;gap:12px!important;align-items:center!important;}
+ .reb-social-composer.reb-composer-engaged .reb-social-media-tools{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}
+ .reb-social-composer .reb-social-tool-btn{height:42px!important;min-height:42px!important;border-radius:11px!important;}
+ .reb-social-composer #rebSocialPublish{height:42px!important;min-height:42px!important;min-width:68px!important;border-radius:11px!important;}
+ .reb-social-composer:not(.reb-composer-engaged) .reb-social-composer-actions,.reb-social-composer:not(.reb-composer-engaged) .reb-social-composer-meta{display:none!important;}
+}
+
+
+/* D20F43 — Mobile Social architecture: content to top + six-item footer. Desktop untouched. */
+@media (max-width:760px){
+  /* Feed: remove the upper Notification/header zone and move Account/Dashboard card to the top. */
+  body.reb-social-page .reb-social-global-topbar{display:none!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;}
+  body.reb-social-page .reb-social-shell{padding-top:0!important;margin-top:0!important;}
+  body.reb-social-page .reb-social-main{padding-top:10px!important;margin-top:0!important;}
+  body.reb-social-page .reb-social-account-card{margin-top:0!important;}
+
+  /* Profile: remove the upper Notification/header zone and let Cover begin at the top. */
+  body.reb-profile-page .reb-social-global-topbar{display:none!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;}
+  body.reb-profile-page .reb-profile-shell{padding-top:0!important;margin-top:0!important;}
+  body.reb-profile-page .reb-profile-hero{margin-top:0!important;}
+  body.reb-profile-page .reb-profile-cover{margin-top:0!important;}
+
+  /* Persistent footer: Home + Feed + Trading + Community + Notifications + Profile. */
+  .reb-social-bottom-nav.reb-social-bottom-nav-d20f43{
+    display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;
+    position:fixed!important;left:50%!important;right:auto!important;bottom:0!important;
+    transform:translateX(-50%)!important;width:min(760px,100%)!important;height:72px!important;
+    padding:7px 4px max(7px,env(safe-area-inset-bottom))!important;box-sizing:border-box!important;
+    background:#15191b!important;z-index:12000!important;gap:0!important;
+  }
+  .reb-social-bottom-nav.reb-social-bottom-nav-d20f43>a{
+    position:relative!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;
+    min-width:0!important;width:auto!important;height:58px!important;margin:0!important;padding:4px 1px!important;border-radius:10px!important;
+    background:transparent!important;box-shadow:none!important;color:#c4cbd1!important;text-decoration:none!important;gap:4px!important;
+  }
+  .reb-social-bottom-nav.reb-social-bottom-nav-d20f43>a i{font-size:17px!important;line-height:18px!important;width:22px!important;text-align:center!important;}
+  .reb-social-bottom-nav.reb-social-bottom-nav-d20f43>a span{display:block!important;font-size:9px!important;line-height:11px!important;font-weight:700!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;max-width:100%!important;}
+  .reb-social-bottom-nav.reb-social-bottom-nav-d20f43>a.active{color:var(--reb-social-gold,#f5b026)!important;}
+  .reb-social-bottom-badge{position:absolute!important;top:2px!important;left:calc(50% + 5px)!important;min-width:16px!important;height:16px!important;padding:0 4px!important;border-radius:9px!important;background:#ef3e2f!important;color:#fff!important;font-size:9px!important;line-height:16px!important;text-align:center!important;}
+  body.reb-social-page,body.reb-notif-page,body.reb-settings-page,body.reb-profile-page,body.reb-msg-page,body.reb-community-page{padding-bottom:82px!important;}
+  .reb-social-mini-launcher{bottom:88px!important;right:12px!important;}
+}
+
+/* D20F44 — footer Profile is the user's actual Social profile photo; label remains below. */
+@media (max-width:760px){
+ .reb-social-bottom-nav.reb-social-bottom-nav-d20f43 a[data-reb-nav="profile"] .reb-footer-profile-photo{
+   display:block!important;width:23px!important;height:23px!important;min-width:23px!important;min-height:23px!important;
+   object-fit:cover!important;object-position:center!important;border-radius:50%!important;border:1.5px solid #c4cbd1!important;
+   margin:0!important;padding:0!important;background:#fff!important;box-sizing:border-box!important;
+ }
+ .reb-social-bottom-nav.reb-social-bottom-nav-d20f43 a[data-reb-nav="profile"].active .reb-footer-profile-photo,
+ body.reb-profile-page .reb-social-bottom-nav.reb-social-bottom-nav-d20f43 a[data-reb-nav="profile"] .reb-footer-profile-photo{
+   border-color:var(--reb-social-gold,#f5b026)!important;
+ }
+}
+
+/* D20F45 — one persistent mobile footer across the complete website. */
+@media (max-width:760px){
+ body.reb-global-mobile-footer-enabled{padding-bottom:82px!important;}
+ .reb-global-mobile-footer-d20f45{display:grid!important;}
+ .reb-global-mobile-footer-d20f45 .reb-footer-profile-photo{width:23px!important;height:23px!important;border-radius:50%!important;object-fit:cover!important;border:1.5px solid #c4cbd1!important;box-sizing:border-box!important;}
+ .reb-global-mobile-footer-d20f45 a.active .reb-footer-profile-photo{border-color:var(--reb-social-gold,#f5b026)!important;}
+}
+
+/* D20F46 — Active footer state is URL-driven only. Community posts may appear in Feed,
+   but only the current PAGE button receives the gold active state. */
+@media (max-width:760px){
+ .reb-social-bottom-nav.reb-social-bottom-nav-d20f43>a:not(.active){color:#c4cbd1!important;}
+ .reb-social-bottom-nav.reb-social-bottom-nav-d20f43>a.active{color:var(--reb-social-gold,#f5b026)!important;}
+}
+
+
+/* V101 Mobile verified identity: preserve blue tick inside shared/original-author and Community rows. */
+@media(max-width:767px){
+  body.reb-social-page .reb-social-shared-name-line,
+  body.reb-social-page .reb-social-community-name-line{display:flex!important;align-items:center!important;min-width:0!important;max-width:100%!important}
+  body.reb-social-page .reb-social-shared-name-line .reb-social-shared-author-link,
+  body.reb-social-page .reb-social-community-name-line strong{min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+  body.reb-social-page .reb-social-shared-name-line .reb-blue-verified,
+  body.reb-social-page .reb-social-community-name-line .reb-blue-verified{width:16px!important;height:16px!important;min-width:16px!important;flex:0 0 16px!important;margin-left:5px!important}
+  body.reb-social-page .reb-social-shared-name-line .reb-blue-verified svg,
+  body.reb-social-page .reb-social-community-name-line .reb-blue-verified svg{width:16px!important;height:16px!important}
+}
+
+
+/* V104 — Mobile post engagement cleanup: remove Android native button box from Comment count. */
+@media (max-width:767px){
+  body.reb-social-page .reb-social-engagement-icon-stat,
+  body.reb-community-page .reb-social-engagement-icon-stat,
+  body.reb-profile-page .reb-social-engagement-icon-stat{
+    -webkit-appearance:none!important;
+    appearance:none!important;
+    border:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    background:transparent!important;
+    border-radius:0!important;
+    padding:0!important;
+    margin:0!important;
+    min-width:0!important;
+    min-height:0!important;
+    width:auto!important;
+    height:auto!important;
+    font:inherit!important;
+    color:inherit!important;
+    line-height:1!important;
+  }
+  body.reb-social-page button.reb-social-engagement-icon-stat:focus,
+  body.reb-social-page button.reb-social-engagement-icon-stat:focus-visible,
+  body.reb-social-page button.reb-social-engagement-icon-stat:active,
+  body.reb-community-page button.reb-social-engagement-icon-stat:focus,
+  body.reb-community-page button.reb-social-engagement-icon-stat:focus-visible,
+  body.reb-community-page button.reb-social-engagement-icon-stat:active,
+  body.reb-profile-page button.reb-social-engagement-icon-stat:focus,
+  body.reb-profile-page button.reb-social-engagement-icon-stat:focus-visible,
+  body.reb-profile-page button.reb-social-engagement-icon-stat:active{
+    border:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    background:transparent!important;
+  }
+}
+
+/* V123 — Mobile feed: show the complete author name instead of truncating it with ellipsis. */
+@media (max-width: 767px) {
+  body.reb-social-page .reb-social-post-author-row {
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+    row-gap: 4px !important;
+  }
+  body.reb-social-page .reb-social-post-author-row .reb-social-author-link {
+    width: auto !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    line-height: 1.22 !important;
+  }
+}

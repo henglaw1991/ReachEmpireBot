@@ -1,0 +1,12 @@
+/* ReachEmpireBot R139 — Social FEED only (mobile).
+ * Social's own overflow:hidden/auto containers can be scroll boundaries;
+ * HTML/body touch-action alone does not necessarily cover gestures originating
+ * inside nested feed, cards, media grids, overlays and composer containers.
+ * Allow both horizontal and vertical single-finger panning, disallow pinch.
+ * Do NOT use touch-action:none: normal scrolling and button taps must work.
+ * Scoped to the Social Feed body and only when R137 has activated mobile lock.
+ */
+html.reb-mobile-zoom-locked body.reb-social-page,
+html.reb-mobile-zoom-locked body.reb-social-page * {
+  touch-action: pan-x pan-y !important;
+}

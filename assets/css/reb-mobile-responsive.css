@@ -1,0 +1,2702 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+/* ReachEmpireBot shared fixes: desktop polish + mobile responsive overrides */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box}
+img,iframe,video{max-width:100%}
+
+.main-header .search-btn,.reb-header .search-btn{display:none!important}
+.main-header .option-block{margin-left:auto!important;display:flex!important;align-items:center;justify-content:flex-end;gap:10px}
+.main-header .option-block .theme-btn,.reb-actions a,.reb-login a{
+  min-width:0!important;min-height:38px!important;padding:8px 18px!important;border-radius:7px!important;
+  font-size:15px!important;line-height:1.1!important
+}
+.reb-actions,.reb-login{display:flex!important;align-items:center;justify-content:flex-end;gap:10px;margin-left:auto}
+.reb-session-account{
+  border-color:rgba(245,173,24,.65)!important;background:rgba(245,173,24,.16)!important;color:#fff!important;
+  max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap
+}
+.reb-session-logout{border-color:rgba(255,77,100,.48)!important;background:rgba(255,77,100,.13)!important;color:#fff!important}
+.reb-auth-logged-in{justify-content:flex-end}
+
+@media (max-width:900px){
+  .reb-top,.reb-header,.reb-footer{padding-left:18px!important;padding-right:18px!important}
+  .reb-top{align-items:center!important;justify-content:flex-end!important;text-align:right;gap:10px!important;min-height:0!important;padding-top:12px!important;padding-bottom:12px!important}
+  .reb-phone{display:none!important}
+  .reb-actions,.reb-login{
+    width:min(245px,calc(100vw - 36px))!important;max-width:calc(100vw - 36px)!important;
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;justify-content:end;gap:8px!important
+  }
+  .reb-actions.reb-auth-logged-in,.reb-login.reb-auth-logged-in,.main-header .option-block.reb-auth-logged-in{
+    width:min(286px,calc(100vw - 36px))!important;grid-template-columns:minmax(0,1fr) auto!important
+  }
+  .reb-actions a,.reb-login a{display:flex!important;justify-content:center;align-items:center;min-height:38px!important;padding:8px 14px!important;text-align:center;font-size:14px!important}
+  .reb-header{display:grid!important;grid-template-columns:minmax(0,1fr) auto;align-items:center!important;gap:14px!important}
+  .reb-header .reb-logo img,.reb-logo img{width:210px!important;max-width:58vw!important}
+  .reb-nav{grid-column:1/-1;width:100%;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px!important}
+  .reb-nav a{display:flex;justify-content:center;align-items:center;min-height:42px;padding:8px 10px!important;text-align:center}
+  .reb-hero,.reb-download,.reb-store,.reb-process,.reb-contact,.reb-support,.reb-story,.reb-band,.reb-workflow,.reb-commit{padding-left:18px!important;padding-right:18px!important}
+  .reb-hero h1,.reb-card h2,.reb-title h2,.reb-section-title h2,.reb-section h2{font-size:clamp(32px,10vw,44px)!important;line-height:1.08!important}
+  .reb-hero p{font-size:17px!important;line-height:1.62!important}
+}
+
+@media (max-width:767px){
+  .main-header .header-top,.main-header .header-top .large-container,.main-header .header-top .top-inner,
+  .main-header .header-lower,.main-header .header-lower .large-container,.main-header .header-lower .outer-box{
+    width:100vw!important;max-width:100vw!important;min-width:0!important;overflow:hidden
+  }
+  .main-header .header-top{position:relative!important;min-height:62px!important}
+  .main-header .header-top .large-container,.main-header .header-lower .large-container,.main-header .header-bottom .large-container,.banner-section .large-container{
+    max-width:100%!important;padding-left:18px!important;padding-right:18px!important
+  }
+  .main-header .header-top .top-inner{display:flex!important;justify-content:flex-end!important;align-items:center!important;gap:8px;padding:12px 0;min-width:0;width:100%}
+  .main-header .support-box{display:none!important}
+  .main-header .option-block{
+    width:min(245px,calc(100vw - 36px))!important;max-width:calc(100vw - 36px)!important;min-width:0;
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;position:static!important;
+    margin:0 18px 0 auto!important;transform:translateX(clamp(-104px,calc(390px - 100vw),0px));justify-content:end
+  }
+  .main-header .option-block.reb-auth-logged-in{width:min(286px,calc(100vw - 36px))!important;grid-template-columns:minmax(0,1fr) auto!important}
+  .main-header .language-picker{display:none!important}
+  .main-header .option-block .theme-btn{display:flex!important;align-items:center;justify-content:center;justify-self:stretch;width:100%;min-width:0!important;max-width:100%!important;min-height:38px!important;margin:0!important;padding:8px 14px!important;text-align:center;overflow:hidden;font-size:14px!important}
+  .main-header .header-lower{background:#fff}
+  .main-header .header-lower .outer-box{display:grid!important;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:14px 0}
+  .main-header .logo-box{min-width:0!important}
+  .main-header .logo-box img{width:220px!important;max-width:62vw!important}
+  .main-header .menu-area{display:flex;align-items:center;justify-content:flex-end;gap:0;margin-right:18px!important;transform:translateX(clamp(-104px,calc(390px - 100vw),0px))}
+  .main-header .mobile-nav-toggler{width:48px;height:46px;display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0!important}
+  .main-header .header-bottom{background:#fff;padding:0 0 14px;overflow:hidden}
+
+  .reb-home .header-bottom .reb-live-widget{display:none!important}
+  .reb-home .header-bottom .reb-live-widget + .stock-list,.reb-home .header-bottom .stock-list{
+    display:flex!important;width:max-content;min-width:max-content;min-height:66px;margin:0;padding:11px 12px;gap:0;
+    overflow:visible!important;border-radius:10px;background:#050505;animation:rebTickerRun 42s linear infinite
+  }
+  .reb-home .header-bottom .large-container{overflow:hidden!important}
+  .reb-home .header-bottom .stock-list:hover{animation-play-state:paused}
+  .reb-home .header-bottom .stock-list li{display:block!important;flex:0 0 178px;min-width:178px;max-width:178px;padding:0 12px;color:#fff;white-space:normal;line-height:1.35;font-size:14px}
+  .reb-home .header-bottom .stock-list li:not(:last-child){border-right:1px solid rgba(255,255,255,.18)}
+  .reb-home .header-bottom .stock-list li strong{margin-right:4px;padding:0;background:transparent}
+  .reb-home .header-bottom .stock-list li em{display:block;margin-top:4px;color:#fff;font-size:18px;font-weight:700}
+  @keyframes rebTickerRun{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .banner-section{padding-top:0!important}
+  .reb-hero{border-radius:0!important;padding:34px 20px 24px!important;min-height:0!important;width:100%!important;max-width:100%!important}
+  .reb-hero-copy{min-width:0!important;width:100%!important;max-width:calc(100vw - 76px)!important;overflow:hidden}
+  .reb-hero h1{max-width:100%!important;font-size:clamp(38px,11.5vw,48px)!important;line-height:1.04!important;overflow-wrap:break-word}
+  .reb-hero-text{max-width:calc(100vw - 76px)!important;font-size:17px!important;line-height:1.58!important;margin-bottom:24px!important;overflow-wrap:anywhere}
+  .reb-hero .theme-btn{width:100%;min-width:0!important;max-width:100%!important;min-height:58px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:18px}
+  .reb-hero-stats{display:grid;grid-template-columns:1fr!important;gap:12px;margin-top:26px}
+  .reb-feature-list{position:relative!important;width:100%!important;top:auto!important;right:auto!important;gap:10px}
+  .reb-feature{width:100%!important;min-height:54px}
+  .reb-robot{position:relative!important;left:auto!important;bottom:auto!important;transform:none!important;width:min(330px,92vw)!important;margin:20px auto 0;display:block}
+  .reb-chart-card{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:100%!important;margin-top:16px}
+}
+
+@media (max-width:620px){
+  .reb-shell{width:100%;padding-left:16px!important;padding-right:16px!important;overflow:hidden}
+  .reb-shell .reb-topbar{display:grid;grid-template-columns:1fr;justify-items:start;gap:14px}
+  .reb-shell .reb-topbar,.reb-shell .reb-card,.reb-shell .reb-actions,.reb-shell .reb-quick,.reb-shell .reb-footer{width:100%;max-width:calc(100vw - 32px)!important;min-width:0!important}
+  .reb-shell .reb-brand img{width:205px!important;max-width:76vw!important}
+  .reb-shell .reb-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px}
+  .reb-shell .reb-btn{min-width:0;min-height:38px;padding-left:10px;padding-right:10px;text-align:center;width:100%;font-size:13px}
+  .reb-shell .reb-hero,.reb-shell .reb-grid,.reb-shell .reb-quick{grid-template-columns:1fr!important}
+  .reb-shell h1{font-size:clamp(38px,12vw,54px)!important}
+  .reb-table-wrap{margin-left:-6px;margin-right:-6px}
+}
+
+@media (max-width:767px){
+  .reb-footer{padding-left:0!important;padding-right:0!important}
+  .reb-footer .widget-section{padding:34px 18px 26px!important}
+  .reb-footer .widget-section .auto-container{padding-left:0!important;padding-right:0!important}
+  .reb-footer .widget-section>.auto-container>.row,.reb-footer .big-column>.row{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px;margin-left:0!important;margin-right:0!important}
+  .reb-footer .big-column,.reb-footer .footer-column{width:100%!important;max-width:100%!important;flex:0 0 auto!important;padding-left:0!important;padding-right:0!important}
+  .reb-footer .big-column{grid-column:1/-1}
+  .reb-footer .footer-widget{margin-bottom:0!important}
+  .reb-footer .widget-title{margin-bottom:10px!important}
+  .reb-footer .widget-title h3{font-size:20px!important;line-height:1.2!important}
+  .reb-footer .links-widget .links-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;margin:0!important}
+  .reb-footer .links-widget .links-list li{margin-bottom:0!important;line-height:1.3!important}
+  .reb-footer .links-widget .links-list li a{display:block;font-size:14px!important;line-height:1.35!important;overflow-wrap:break-word}
+  .reb-footer .logo-widget{grid-column:1/-1;margin-left:0!important;padding:0!important;border:0!important;background:transparent!important}
+  .reb-footer .logo-widget .footer-logo,.reb-footer .logo-widget p,.reb-footer .scanner-box{display:none!important}
+  .reb-footer .download-list{display:flex;justify-content:center;gap:10px;margin:8px 0 0!important}
+  .reb-footer .download-list li{margin:0!important}
+  .reb-footer .download-list li a{width:54px!important;height:46px!important;display:flex!important;align-items:center;justify-content:center}
+  .reb-footer .footer-lower{padding:20px 18px 10px!important}
+  .reb-footer .footer-lower .lower-inner{display:grid!important;grid-template-columns:1fr;gap:14px;justify-items:center;text-align:center}
+  .reb-footer .footer-lower .footer-logo img{width:210px!important}
+  .reb-footer .footer-card{display:flex!important;flex-wrap:wrap;justify-content:center;gap:8px;margin:0!important}
+  .reb-footer .footer-card li{margin:0!important}
+  .reb-footer .footer-card li h4{width:100%;margin-bottom:2px!important;font-size:17px!important}
+  .reb-footer .footer-card li img{max-height:32px}
+  .reb-footer .footer-bottom{padding:18px!important}
+  .reb-footer .footer-bottom .bottom-inner{display:grid!important;grid-template-columns:1fr;gap:14px;justify-items:center;text-align:center}
+  .reb-footer .footer-bottom .social-links{display:flex!important;flex-wrap:wrap;justify-content:center;gap:10px;margin:0!important}
+  .reb-footer .footer-bottom .social-links li{margin:0!important}
+  .reb-footer .footer-bottom .social-links h5{width:100%;margin:0 0 2px!important}
+}
+
+@media (max-width:380px){
+  .reb-footer .widget-section>.auto-container>.row,.reb-footer .big-column>.row{gap:22px 14px}
+  .reb-footer .links-widget .links-list{gap:7px 10px}
+  .reb-footer .links-widget .links-list li a{font-size:13px!important}
+}
+
+
+:root{
+  --reb-text-font: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+  --reb-title-font: "Ubuntu", Arial, Helvetica, sans-serif;
+}
+body,
+p, a, button, input, textarea, select, option, label,
+th, td, li,
+.reb-top, .reb-header, .reb-nav, .reb-footer,
+.reb-section, .reb-card, .reb-panel, .reb-table,
+.reb-shell, .reb-shell p, .reb-shell td, .reb-shell th,
+.main-header, .main-footer{
+  font-family:var(--reb-text-font)!important;
+  letter-spacing:0!important;
+}
+h1,h2,h3,h4,h5,h6,
+button,
+.main-menu .navigation > li > a,
+.reb-nav a,
+.theme-btn,.btn,.reb-btn,.reb-actions a,.reb-login a,
+.reb-kicker,.reb-section-title span,
+.reb-mini strong,.reb-stat strong,.reb-feature strong,
+.reb-card h2,.reb-card h3,.reb-panel h3,
+.reb-hero h1,.reb-page h1,.reb-page h2,
+.reb-shell h1,.reb-shell h2,.reb-shell h3,
+.sec-title h2,.sub-title,.footer-widget h3{
+  font-family:var(--reb-title-font)!important;
+  letter-spacing:0!important;
+}
+.fa,.fas,.far,.fal{font-family:"Font Awesome 5 Free"!important}
+.fab{font-family:"Font Awesome 5 Brands"!important}
+[class^="flaticon-"],[class*=" flaticon-"]{font-family:"Flaticon"!important}
+
+/* ReachEmpireBot market ticker standard: desktop + mobile */
+.reb-home .header-bottom{
+  padding:0 20px 18px!important;
+  background:#fff!important;
+}
+.reb-home .header-bottom .large-container{
+  max-width:100%!important;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+.reb-home .header-bottom .bottom-inner{
+  width:100%!important;
+  max-width:100%!important;
+  min-height:68px!important;
+  padding:0!important;
+  border-radius:10px!important;
+  background:#050505!important;
+  overflow:hidden!important;
+  border:1px solid rgba(245,176,38,.12)!important;
+  box-shadow:none!important;
+}
+.reb-home .header-bottom .bottom-inner .inner-box{
+  width:100%!important;
+  min-height:68px!important;
+  overflow:hidden!important;
+  display:flex!important;
+  align-items:center!important;
+}
+.reb-home .header-bottom .reb-live-widget{
+  display:none!important;
+  width:0!important;
+  height:0!important;
+  overflow:hidden!important;
+}
+.reb-home .header-bottom .stock-list,
+.reb-home .header-bottom .reb-live-widget + .stock-list{
+  display:flex!important;
+  align-items:center!important;
+  width:max-content!important;
+  min-width:max-content!important;
+  height:68px!important;
+  min-height:68px!important;
+  margin:0!important;
+  padding:0!important;
+  gap:0!important;
+  overflow:visible!important;
+  background:transparent!important;
+  border-radius:0!important;
+  list-style:none!important;
+  white-space:nowrap!important;
+  animation:rebTickerDesktop 64s linear infinite!important;
+  will-change:transform;
+}
+.reb-home .header-bottom .stock-list:hover{
+  animation-play-state:paused!important;
+}
+.reb-home .header-bottom .stock-list li,
+.reb-home .header-bottom .stock-list li.reb-market-tick{
+  display:inline-flex!important;
+  align-items:center!important;
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  height:68px!important;
+  margin:0!important;
+  padding:0 24px!important;
+  border-right:1px solid rgba(255,255,255,.18)!important;
+  color:rgba(255,255,255,.86)!important;
+  font-family:var(--reb-text-font)!important;
+  font-size:16px!important;
+  font-weight:600!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+.reb-home .header-bottom .stock-list li:not(.reb-market-tick){
+  display:none!important;
+}
+.reb-home .header-bottom .stock-list li strong{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  margin:0 10px 0 0!important;
+  padding:4px 10px!important;
+  border-radius:999px!important;
+  background:rgba(245,176,38,.16)!important;
+  color:#f5b026!important;
+  font-family:var(--reb-title-font)!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  text-transform:uppercase!important;
+}
+.reb-home .header-bottom .stock-list li em{
+  display:inline!important;
+  margin-left:6px!important;
+  color:rgba(255,255,255,.74)!important;
+  font-style:normal!important;
+  font-weight:700!important;
+}
+.reb-home .header-bottom .stock-list li span{
+  display:inline-flex!important;
+  align-items:center!important;
+  margin-left:8px!important;
+  color:#f5b026!important;
+  font-size:15px!important;
+  font-weight:600!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+.reb-home .header-bottom .stock-list li.lower span{
+  color:#ff3f54!important;
+}
+.reb-home .header-bottom .stock-list li.upper span{
+  color:#00a99d!important;
+}
+.reb-home .header-bottom .stock-list li span i{
+  margin-left:4px!important;
+  font-size:7px!important;
+  line-height:1!important;
+}
+@keyframes rebTickerDesktop{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-50%,0,0)}
+}
+@keyframes rebTickerMobile{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-50%,0,0)}
+}
+@media (max-width:767px){
+  .reb-home .header-bottom{
+    padding:0 20px 14px!important;
+  }
+  .reb-home .header-bottom .bottom-inner,
+  .reb-home .header-bottom .bottom-inner .inner-box,
+  .reb-home .header-bottom .stock-list,
+  .reb-home .header-bottom .reb-live-widget + .stock-list{
+    min-height:58px!important;
+    height:58px!important;
+  }
+  .reb-home .header-bottom .stock-list,
+  .reb-home .header-bottom .reb-live-widget + .stock-list{
+    animation:rebTickerMobile 88s linear infinite!important;
+  }
+  .reb-home .header-bottom .stock-list li,
+  .reb-home .header-bottom .stock-list li.reb-market-tick{
+    height:58px!important;
+    padding:0 16px!important;
+    font-size:14px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+  .reb-home .header-bottom .stock-list li strong{
+    margin-right:8px!important;
+    padding:3px 8px!important;
+    font-size:11px!important;
+  }
+  .reb-home .header-bottom .stock-list li em{
+    margin-left:5px!important;
+    font-size:15px!important;
+  }
+  .reb-home .header-bottom .stock-list li span{
+    margin-left:6px!important;
+    font-size:13px!important;
+  }
+}
+
+.reb-home .header-bottom .stock-list li .reb-market-icon{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:26px!important;
+  height:26px!important;
+  min-width:26px!important;
+  margin-right:9px!important;
+  border-radius:50%!important;
+  background:#f5b026!important;
+  color:#050505!important;
+  font-family:var(--reb-title-font)!important;
+  font-size:14px!important;
+  font-weight:800!important;
+  line-height:1!important;
+}
+.reb-home .header-bottom .stock-list li .reb-market-symbol{
+  display:inline!important;
+  margin-right:8px!important;
+  color:#fff!important;
+  font-family:var(--reb-title-font)!important;
+  font-weight:700!important;
+}
+.reb-home .header-bottom .stock-list li .reb-market-change{
+  margin-left:8px!important;
+  font-size:15px!important;
+  font-weight:700!important;
+}
+.reb-home .header-bottom .stock-list li .reb-market-status{
+  margin-left:5px!important;
+  color:rgba(255,255,255,.64)!important;
+  font-size:14px!important;
+  font-weight:600!important;
+}
+@media (max-width:767px){
+  .reb-home .header-bottom .stock-list li .reb-market-icon{
+    width:23px!important;height:23px!important;min-width:23px!important;margin-right:7px!important;font-size:12px!important;
+  }
+  .reb-home .header-bottom .stock-list li .reb-market-symbol{margin-right:6px!important;}
+  .reb-home .header-bottom .stock-list li .reb-market-change{font-size:13px!important;margin-left:6px!important;}
+  .reb-home .header-bottom .stock-list li .reb-market-status{font-size:12px!important;margin-left:4px!important;}
+}
+/* End ReachEmpireBot market ticker standard */
+
+
+/* ReachEmpireBot ticker polish 2026-05-18: restore compact professional market bar */
+.reb-home .header-bottom .bottom-inner{
+  min-height:66px!important;
+  border-radius:10px!important;
+  background:#050505!important;
+  border:1px solid rgba(245,176,38,.18)!important;
+  box-shadow:none!important;
+}
+.reb-home .header-bottom .bottom-inner .inner-box{
+  min-height:66px!important;
+}
+.reb-home .header-bottom .stock-list,
+.reb-home .header-bottom .reb-live-widget + .stock-list{
+  height:66px!important;
+  min-height:66px!important;
+  animation:rebTickerDesktop 54s linear infinite!important;
+}
+.reb-home .header-bottom .stock-list li,
+.reb-home .header-bottom .stock-list li.reb-market-tick{
+  height:66px!important;
+  padding:0 26px!important;
+  color:#fff!important;
+  font-family:var(--reb-title-font)!important;
+  font-size:16px!important;
+  font-weight:700!important;
+  letter-spacing:0!important;
+  gap:0!important;
+}
+.reb-home .header-bottom .stock-list li .reb-market-icon{
+  width:28px!important;
+  height:28px!important;
+  min-width:28px!important;
+  margin-right:10px!important;
+  background:rgba(255,255,255,.14)!important;
+  color:#f5b026!important;
+  font-family:"Segoe UI Emoji",var(--reb-title-font)!important;
+  font-size:16px!important;
+  box-shadow:none!important;
+}
+.reb-home .header-bottom .stock-list li strong{
+  display:inline!important;
+  margin:0!important;
+  padding:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:#fff!important;
+  font-family:var(--reb-title-font)!important;
+  font-size:16px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  text-transform:none!important;
+}
+.reb-home .header-bottom .stock-list li .reb-market-symbol{
+  display:none!important;
+}
+.reb-home .header-bottom .stock-list li .reb-market-dot{
+  display:inline-flex!important;
+  margin:0 8px!important;
+  color:rgba(255,255,255,.55)!important;
+}
+.reb-home .header-bottom .stock-list li em{
+  display:inline!important;
+  margin:0!important;
+  color:rgba(255,255,255,.78)!important;
+  font-family:var(--reb-title-font)!important;
+  font-size:16px!important;
+  font-style:normal!important;
+  font-weight:700!important;
+}
+.reb-home .header-bottom .stock-list li .reb-market-change{
+  margin-left:12px!important;
+  font-family:var(--reb-title-font)!important;
+  font-size:15px!important;
+  font-weight:700!important;
+}
+.reb-home .header-bottom .stock-list li.upper .reb-market-change{color:#00a99d!important;}
+.reb-home .header-bottom .stock-list li.lower .reb-market-change{color:#ff3f54!important;}
+.reb-home .header-bottom .stock-list li .reb-market-status{display:none!important;}
+@media (max-width:767px){
+  .reb-home .header-bottom{padding:0 20px 14px!important;}
+  .reb-home .header-bottom .bottom-inner,
+  .reb-home .header-bottom .bottom-inner .inner-box,
+  .reb-home .header-bottom .stock-list,
+  .reb-home .header-bottom .reb-live-widget + .stock-list{
+    height:58px!important;
+    min-height:58px!important;
+  }
+  .reb-home .header-bottom .stock-list,
+  .reb-home .header-bottom .reb-live-widget + .stock-list{
+    animation:rebTickerMobile 92s linear infinite!important;
+  }
+  .reb-home .header-bottom .stock-list li,
+  .reb-home .header-bottom .stock-list li.reb-market-tick{
+    height:58px!important;
+    padding:0 15px!important;
+    font-size:14px!important;
+  }
+  .reb-home .header-bottom .stock-list li .reb-market-icon{
+    width:23px!important;
+    height:23px!important;
+    min-width:23px!important;
+    margin-right:8px!important;
+    font-size:13px!important;
+  }
+  .reb-home .header-bottom .stock-list li strong,
+  .reb-home .header-bottom .stock-list li em{
+    font-size:14px!important;
+  }
+  .reb-home .header-bottom .stock-list li .reb-market-dot{
+    margin:0 6px!important;
+  }
+  .reb-home .header-bottom .stock-list li .reb-market-change{
+    margin-left:8px!important;
+    font-size:13px!important;
+  }
+}
+/* End ticker polish 2026-05-18 */
+
+/* Preserve template icon font after global font standardization */
+[class^="icon-"], [class*=" icon-"]{
+  font-family:"icomoon"!important;
+  speak:never;
+  font-style:normal!important;
+  font-weight:400!important;
+  font-variant:normal;
+  text-transform:none;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+/* End icon font preservation */
+
+/* Preserve Font Awesome solid icons after global font standardization */
+.fa,.fas,.far,.fal,.fab{
+  font-style:normal!important;
+  speak:never;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.fa,.fas{font-family:"Font Awesome 5 Free"!important;font-weight:900!important;}
+.far{font-family:"Font Awesome 5 Free"!important;font-weight:400!important;}
+.fab{font-family:"Font Awesome 5 Brands"!important;font-weight:400!important;}
+/* End Font Awesome preservation */
+
+/* Hero feature checks: use a plain check mark so missing webfonts cannot show square boxes */
+.reb-feature i.fas.fa-check{
+  font-family:Arial, Helvetica, sans-serif!important;
+  font-weight:800!important;
+}
+.reb-feature i.fas.fa-check:before{
+  content:"\2713"!important;
+  font-family:Arial, Helvetica, sans-serif!important;
+  font-weight:800!important;
+}
+/* End hero feature check fallback */
+
+/* TradingView live ticker restore 2026-05-18
+   Primary ticker must be TradingView so icons/logos and live prices sync from TradingView. */
+.reb-home .header-bottom .bottom-inner{
+  height:68px!important;
+  min-height:68px!important;
+  border-radius:10px!important;
+  background:#050505!important;
+  overflow:hidden!important;
+  border:1px solid rgba(245,176,38,.14)!important;
+}
+.reb-home .header-bottom .bottom-inner .inner-box{
+  height:68px!important;
+  min-height:68px!important;
+  display:block!important;
+  overflow:hidden!important;
+}
+.reb-home .header-bottom .reb-live-widget{
+  display:block!important;
+  width:100%!important;
+  height:68px!important;
+  min-height:68px!important;
+  overflow:hidden!important;
+  background:#050505!important;
+  border-radius:10px!important;
+}
+.reb-home .header-bottom .reb-live-widget .tradingview-widget-container,
+.reb-home .header-bottom .reb-live-widget .tradingview-widget-container__widget,
+.reb-home .header-bottom .reb-live-widget iframe{
+  display:block!important;
+  width:100%!important;
+  height:68px!important;
+  min-height:68px!important;
+  background:#050505!important;
+  border:0!important;
+}
+.reb-home:not(.reb-tv-fallback) .header-bottom .stock-list,
+.reb-home:not(.reb-tv-fallback) .header-bottom .reb-live-widget + .stock-list,
+.reb-home:not(.reb-tv-fallback) #reb-live-ticker{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+}
+.reb-home.reb-tv-fallback .header-bottom .reb-live-widget{
+  display:none!important;
+}
+.reb-home.reb-tv-fallback .header-bottom .stock-list,
+.reb-home.reb-tv-fallback .header-bottom .reb-live-widget + .stock-list,
+.reb-home.reb-tv-fallback #reb-live-ticker{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+
+body.reb-tv-fallback .reb-home .header-bottom .reb-live-widget{
+  display:none!important;
+}
+body.reb-tv-fallback .reb-home .header-bottom .stock-list,
+body.reb-tv-fallback .reb-home .header-bottom .reb-live-widget + .stock-list,
+body.reb-tv-fallback .reb-home #reb-live-ticker{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}@media (max-width:767px){
+  .reb-home .header-bottom .bottom-inner,
+  .reb-home .header-bottom .bottom-inner .inner-box,
+  .reb-home .header-bottom .reb-live-widget,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container__widget,
+  .reb-home .header-bottom .reb-live-widget iframe{
+    height:60px!important;
+    min-height:60px!important;
+  }
+}
+/* End TradingView live ticker restore */
+
+/* Mobile ticker + footer final polish 2026-05-18 */
+@media (max-width:767px){
+  .reb-home .main-header .header-bottom{
+    padding:0 20px 18px!important;
+    overflow:visible!important;
+  }
+  .reb-home .header-bottom .large-container,
+  .reb-home .header-bottom .bottom-inner,
+  .reb-home .header-bottom .bottom-inner .inner-box{
+    overflow:hidden!important;
+  }
+  .reb-home .header-bottom .bottom-inner,
+  .reb-home .header-bottom .bottom-inner .inner-box,
+  .reb-home .header-bottom .reb-live-widget,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container__widget,
+  .reb-home .header-bottom .reb-live-widget iframe{
+    height:74px!important;
+    min-height:74px!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .bottom-inner,
+  body.reb-tv-fallback .reb-home .header-bottom .bottom-inner,
+  .reb-home.reb-tv-fallback .header-bottom .bottom-inner .inner-box,
+  body.reb-tv-fallback .reb-home .header-bottom .bottom-inner .inner-box,
+  .reb-home.reb-tv-fallback .header-bottom .stock-list,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list,
+  .reb-home.reb-tv-fallback .header-bottom .reb-live-widget + .stock-list,
+  body.reb-tv-fallback .reb-home .header-bottom .reb-live-widget + .stock-list{
+    height:84px!important;
+    min-height:84px!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list,
+  .reb-home.reb-tv-fallback .header-bottom .reb-live-widget + .stock-list,
+  body.reb-tv-fallback .reb-home .header-bottom .reb-live-widget + .stock-list{
+    align-items:center!important;
+    padding:0 8px!important;
+    animation:rebTickerMobile 78s linear infinite!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li,
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li.reb-market-tick,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li.reb-market-tick{
+    height:84px!important;
+    min-height:84px!important;
+    padding:8px 16px!important;
+    display:grid!important;
+    grid-template-columns:auto 1fr!important;
+    grid-template-rows:auto auto!important;
+    align-content:center!important;
+    column-gap:8px!important;
+    row-gap:5px!important;
+    min-width:178px!important;
+    max-width:178px!important;
+    white-space:normal!important;
+    line-height:1.1!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li .reb-market-icon,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li .reb-market-icon{
+    grid-row:1/3!important;
+    align-self:center!important;
+    margin:0!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li strong,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li strong{
+    display:block!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    white-space:nowrap!important;
+    font-size:13px!important;
+    line-height:1.1!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li .reb-market-dot,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li .reb-market-dot,
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li .reb-market-symbol,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li .reb-market-symbol{
+    display:none!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li em,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li em{
+    display:inline!important;
+    margin:0!important;
+    font-size:17px!important;
+    line-height:1.05!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li .reb-market-change,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li .reb-market-change{
+    display:block!important;
+    margin:3px 0 0!important;
+    font-size:12px!important;
+    line-height:1!important;
+  }
+
+  .reb-footer{
+    padding-left:0!important;
+    padding-right:0!important;
+    background:#020202!important;
+  }
+  .reb-footer .widget-section{
+    padding:34px 22px 28px!important;
+  }
+  .reb-footer .widget-section>.auto-container>.row{
+    display:block!important;
+    margin:0!important;
+  }
+  .reb-footer .big-column,
+  .reb-footer .footer-column{
+    width:100%!important;
+    max-width:100%!important;
+    padding:0!important;
+    margin:0!important;
+  }
+  .reb-footer .big-column>.row{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:24px 22px!important;
+    margin:0!important;
+  }
+  .reb-footer .links-widget .links-list{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px 14px!important;
+  }
+  .reb-footer .links-widget .links-list li a{
+    font-size:14px!important;
+    line-height:1.25!important;
+  }
+  .reb-footer .widget-title h3{
+    font-size:20px!important;
+    margin-bottom:12px!important;
+  }
+  .reb-footer .widget-section>.auto-container>.row>.footer-column:last-child,
+  .reb-footer .logo-widget{
+    display:none!important;
+  }
+  .reb-footer .footer-lower{
+    padding:28px 0 0!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+    justify-items:center!important;
+    text-align:center!important;
+  }
+  .reb-footer .footer-lower .footer-logo img{
+    width:min(260px,72vw)!important;
+  }
+  .reb-footer .footer-card{
+    display:grid!important;
+    grid-template-columns:repeat(3,auto)!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:10px!important;
+    margin:0!important;
+  }
+  .reb-footer .footer-card li{
+    margin:0!important;
+  }
+  .reb-footer .footer-card li:first-child{
+    grid-column:1/-1!important;
+  }
+  .reb-footer .footer-card li h4{
+    font-size:20px!important;
+    line-height:1.15!important;
+    margin:0!important;
+  }
+  .reb-footer .footer-card li img{
+    width:auto!important;
+    height:34px!important;
+    max-height:34px!important;
+  }
+  .reb-footer .footer-bottom{
+    padding:22px 20px 24px!important;
+    border-top:1px solid rgba(245,176,38,.16)!important;
+  }
+  .reb-footer .footer-bottom .bottom-inner{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+    justify-items:center!important;
+    text-align:center!important;
+  }
+  .reb-footer .footer-bottom .bottom-inner p{
+    max-width:320px!important;
+    font-size:15px!important;
+    line-height:1.55!important;
+    margin:0!important;
+  }
+  .reb-footer .footer-bottom .social-links{
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+    flex-wrap:wrap!important;
+    gap:10px!important;
+    margin:0!important;
+  }
+  .reb-footer .footer-bottom .social-links li:first-child{
+    width:100%!important;
+  }
+  .reb-footer .footer-bottom .social-links h5{
+    font-size:18px!important;
+    margin:0 0 2px!important;
+  }
+  .reb-footer .footer-bottom .social-links li a{
+    width:48px!important;
+    height:48px!important;
+    font-size:18px!important;
+  }
+}
+@media (max-width:380px){
+  .reb-footer .big-column>.row{gap:22px 16px!important;}
+  .reb-footer .links-widget .links-list{gap:9px 10px!important;}
+  .reb-footer .links-widget .links-list li a{font-size:13px!important;}
+}
+/* End mobile ticker + footer final polish */
+/* Mobile header edge guard 2026-05-18 */
+@media (max-width:767px){
+  .main-header .header-lower .outer-box{
+    grid-template-columns:minmax(0,1fr) 52px!important;
+    gap:10px!important;
+  }
+  .main-header .menu-area{
+    margin-right:0!important;
+    transform:none!important;
+    justify-self:end!important;
+    width:52px!important;
+    min-width:52px!important;
+    overflow:visible!important;
+  }
+  .main-header .mobile-nav-toggler{
+    width:52px!important;
+    height:52px!important;
+    border-radius:6px!important;
+  }
+}
+/* End mobile header edge guard */
+/* Mobile header width containment 2026-05-18 */
+@media (max-width:767px){
+  .main-header .header-lower .large-container,
+  .main-header .header-lower .outer-box{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+  }
+  .main-header .header-lower .outer-box{
+    overflow:visible!important;
+  }
+  .main-header .logo-box img{
+    width:200px!important;
+    max-width:calc(100vw - 116px)!important;
+  }
+  .main-header .menu-area,
+  .main-header .mobile-nav-toggler{
+    display:flex!important;
+    flex-shrink:0!important;
+  }
+}
+/* End mobile header width containment */
+/* Mobile hamburger fixed placement 2026-05-18 */
+@media (max-width:767px){
+  .main-header .header-lower .outer-box{
+    position:relative!important;
+    display:block!important;
+    padding:14px 70px 14px 0!important;
+  }
+  .main-header .logo-box{
+    display:block!important;
+    width:auto!important;
+    max-width:100%!important;
+  }
+  .main-header .logo-box img{
+    width:200px!important;
+    max-width:100%!important;
+  }
+  .main-header .menu-area{
+    position:absolute!important;
+    right:0!important;
+    top:50%!important;
+    transform:translateY(-50%)!important;
+    width:52px!important;
+    min-width:52px!important;
+    height:52px!important;
+    margin:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    z-index:5!important;
+  }
+  .main-header .mobile-nav-toggler{
+    display:flex!important;
+    width:52px!important;
+    height:52px!important;
+    margin:0!important;
+  }
+}
+/* End mobile hamburger fixed placement */
+/* Market ticker vertical centering 2026-05-18 */
+.reb-home .header-bottom .bottom-inner,
+.reb-home .header-bottom .bottom-inner .inner-box,
+.reb-home .header-bottom .reb-live-widget,
+.reb-home .header-bottom .reb-live-widget .tradingview-widget-container,
+.reb-home .header-bottom .reb-live-widget .tradingview-widget-container__widget,
+.reb-home .header-bottom .reb-live-widget iframe{
+  height:56px!important;
+  min-height:56px!important;
+}
+.reb-home .header-bottom .bottom-inner .inner-box,
+.reb-home .header-bottom .reb-live-widget,
+.reb-home .header-bottom .reb-live-widget .tradingview-widget-container,
+.reb-home .header-bottom .reb-live-widget .tradingview-widget-container__widget{
+  display:flex!important;
+  align-items:center!important;
+}
+.reb-home .header-bottom .reb-live-widget iframe{
+  position:relative!important;
+  top:4px!important;
+}
+.reb-home .header-bottom .stock-list,
+.reb-home .header-bottom .reb-live-widget + .stock-list,
+.reb-home .header-bottom .stock-list li,
+.reb-home .header-bottom .stock-list li.reb-market-tick{
+  height:56px!important;
+  min-height:56px!important;
+  align-items:center!important;
+}
+@media (max-width:767px){
+  .reb-home .header-bottom .bottom-inner,
+  .reb-home .header-bottom .bottom-inner .inner-box,
+  .reb-home .header-bottom .reb-live-widget,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container__widget,
+  .reb-home .header-bottom .reb-live-widget iframe{
+    height:58px!important;
+    min-height:58px!important;
+  }
+  .reb-home .header-bottom .reb-live-widget iframe{
+    top:3px!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .bottom-inner,
+  body.reb-tv-fallback .reb-home .header-bottom .bottom-inner,
+  .reb-home.reb-tv-fallback .header-bottom .bottom-inner .inner-box,
+  body.reb-tv-fallback .reb-home .header-bottom .bottom-inner .inner-box,
+  .reb-home.reb-tv-fallback .header-bottom .stock-list,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list,
+  .reb-home.reb-tv-fallback .header-bottom .reb-live-widget + .stock-list,
+  body.reb-tv-fallback .reb-home .header-bottom .reb-live-widget + .stock-list{
+    height:72px!important;
+    min-height:72px!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li,
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li.reb-market-tick,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li.reb-market-tick{
+    height:72px!important;
+    min-height:72px!important;
+    padding-top:5px!important;
+    padding-bottom:5px!important;
+    align-content:center!important;
+  }
+}
+/* End market ticker vertical centering */
+/* Market ticker mobile no-cut final 2026-05-18 */
+@media (max-width:767px){
+  .reb-home .header-bottom{
+    overflow:hidden!important;
+  }
+  .reb-home .header-bottom .bottom-inner,
+  .reb-home .header-bottom .bottom-inner .inner-box,
+  .reb-home .header-bottom .reb-live-widget,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container__widget,
+  .reb-home .header-bottom .reb-live-widget iframe{
+    height:76px!important;
+    min-height:76px!important;
+  }
+  .reb-home .header-bottom .reb-live-widget,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container,
+  .reb-home .header-bottom .reb-live-widget .tradingview-widget-container__widget{
+    align-items:center!important;
+  }
+  .reb-home .header-bottom .reb-live-widget iframe{
+    top:0!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .bottom-inner,
+  body.reb-tv-fallback .reb-home .header-bottom .bottom-inner,
+  .reb-home.reb-tv-fallback .header-bottom .bottom-inner .inner-box,
+  body.reb-tv-fallback .reb-home .header-bottom .bottom-inner .inner-box,
+  .reb-home.reb-tv-fallback .header-bottom .stock-list,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list,
+  .reb-home.reb-tv-fallback .header-bottom .reb-live-widget + .stock-list,
+  body.reb-tv-fallback .reb-home .header-bottom .reb-live-widget + .stock-list{
+    height:86px!important;
+    min-height:86px!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list,
+  .reb-home.reb-tv-fallback .header-bottom .reb-live-widget + .stock-list,
+  body.reb-tv-fallback .reb-home .header-bottom .reb-live-widget + .stock-list{
+    align-items:center!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li,
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li.reb-market-tick,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li.reb-market-tick{
+    height:86px!important;
+    min-height:86px!important;
+    padding:8px 14px!important;
+    display:grid!important;
+    grid-template-columns:26px minmax(112px,1fr)!important;
+    grid-template-rows:auto auto auto!important;
+    column-gap:8px!important;
+    align-content:center!important;
+    align-items:center!important;
+    overflow:hidden!important;
+    line-height:1.12!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li .reb-market-icon,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li .reb-market-icon{
+    grid-row:1 / span 3!important;
+    align-self:center!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li strong,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li strong,
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li em,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li em,
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li .reb-market-change,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li .reb-market-change{
+    grid-column:2!important;
+    margin:0!important;
+    min-height:0!important;
+  }
+  .reb-home.reb-tv-fallback .header-bottom .stock-list li em,
+  body.reb-tv-fallback .reb-home .header-bottom .stock-list li em{
+    font-size:18px!important;
+  }
+}
+/* End market ticker mobile no-cut final */
+
+/* Core subpage mobile polish + icon recovery 2026-05-18 */
+.fa,.fas,.far,.fal,
+.fa:before,.fas:before,.far:before,.fal:before{
+  font-family:"Font Awesome 5 Pro"!important;
+  font-style:normal!important;
+  line-height:1!important;
+  text-rendering:auto!important;
+  -webkit-font-smoothing:antialiased!important;
+  -moz-osx-font-smoothing:grayscale!important;
+}
+.fa,.fas,.fa:before,.fas:before{font-weight:900!important;}
+.far,.far:before{font-weight:400!important;}
+.fal,.fal:before{font-weight:300!important;}
+.fab,.fab:before{font-family:"Font Awesome 5 Brands"!important;font-weight:400!important;font-style:normal!important;}
+
+.reb-btn i,
+.reb-actions i,
+.reb-login i,
+.reb-info-card i,
+.reb-value i,
+.reb-file i,
+.reb-product-top i,
+.reb-list i{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+}
+
+.reb-btn i:before,
+.reb-info-card i:before,
+.reb-value i:before,
+.reb-file i:before,
+.reb-product-top i:before,
+.reb-list i:before{
+  display:block!important;
+}
+
+@media (max-width:767px){
+  body:not(.home) .reb-top,
+  body .reb-top{
+    padding:12px 24px!important;
+    min-height:68px!important;
+    align-items:flex-end!important;
+    justify-content:flex-end!important;
+  }
+  .reb-top .reb-phone{display:none!important;}
+  .reb-top .reb-actions,
+  .reb-top .reb-login{
+    width:auto!important;
+    max-width:100%!important;
+    display:flex!important;
+    grid-template-columns:none!important;
+    gap:10px!important;
+    margin-left:auto!important;
+    justify-content:flex-end!important;
+  }
+  .reb-top .reb-actions a,
+  .reb-top .reb-login a{
+    width:auto!important;
+    min-width:118px!important;
+    min-height:44px!important;
+    padding:10px 18px!important;
+    border-radius:8px!important;
+    font-size:16px!important;
+    line-height:1!important;
+  }
+
+  .reb-header{
+    position:relative!important;
+    top:auto!important;
+    padding:24px 26px 20px!important;
+    gap:22px!important;
+    align-items:stretch!important;
+  }
+  .reb-logo img{
+    width:238px!important;
+    max-width:78vw!important;
+  }
+  .reb-nav{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+    width:100%!important;
+  }
+  .reb-nav a{
+    min-height:54px!important;
+    padding:0 12px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    border-radius:999px!important;
+    font-size:18px!important;
+    line-height:1.1!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+  }
+  .reb-nav a:last-child:nth-child(odd){grid-column:auto!important;}
+
+  .reb-hero{
+    padding:46px 28px 44px!important;
+    overflow:hidden!important;
+  }
+  .reb-hero-inner{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:34px!important;
+    align-items:start!important;
+    width:100%!important;
+    max-width:100%!important;
+  }
+  .reb-kicker{
+    font-size:15px!important;
+    line-height:1.25!important;
+    margin:0 0 18px!important;
+    letter-spacing:.02em!important;
+  }
+  .reb-hero h1{
+    font-size:clamp(44px,10.5vw,58px)!important;
+    line-height:1.08!important;
+    margin:0 0 22px!important;
+    max-width:100%!important;
+    overflow-wrap:break-word!important;
+  }
+  .reb-hero p{
+    font-size:19px!important;
+    line-height:1.58!important;
+    max-width:100%!important;
+    margin-bottom:0!important;
+  }
+  .reb-hero-actions{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+    margin-top:28px!important;
+  }
+  .reb-btn,
+  .reb-btn.gold,
+  .reb-btn.dark,
+  .reb-field .reb-btn{
+    width:100%!important;
+    min-height:58px!important;
+    padding:0 18px!important;
+    gap:12px!important;
+    border-radius:8px!important;
+    font-size:18px!important;
+    line-height:1.15!important;
+    text-align:center!important;
+  }
+  .reb-btn i{
+    width:20px!important;
+    min-width:20px!important;
+    font-size:18px!important;
+  }
+  .reb-device,
+  .reb-robot,
+  .reb-hero-card,
+  .reb-portrait{
+    width:100%!important;
+    padding:22px!important;
+    border-radius:8px!important;
+    margin:0!important;
+  }
+  .reb-device img,
+  .reb-robot img,
+  .reb-hero-card img,
+  .reb-portrait img{
+    width:min(330px,100%)!important;
+  }
+  .reb-mini-grid{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+  .reb-mini{
+    min-height:92px!important;
+    padding:18px!important;
+  }
+
+  .reb-download,
+  .reb-store,
+  .reb-process,
+  .reb-contact,
+  .reb-support,
+  .reb-story,
+  .reb-workflow,
+  .reb-band,
+  .reb-commit{
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+  .reb-contact-grid,
+  .reb-support-inner,
+  .reb-panel,
+  .reb-products,
+  .reb-steps,
+  .reb-values,
+  .reb-flow,
+  .reb-story-grid,
+  .reb-band-inner,
+  .reb-commit-inner{
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+  }
+  .reb-info-card,
+  .reb-form,
+  .reb-card,
+  .reb-support-card,
+  .reb-value,
+  .reb-flow-card,
+  .reb-step,
+  .reb-product{
+    border-radius:8px!important;
+    padding:26px!important;
+  }
+  .reb-info-card i,
+  .reb-value i,
+  .reb-file i,
+  .reb-product-top i{
+    color:#050505!important;
+    font-size:20px!important;
+  }
+  .reb-value i,
+  .reb-info-card i{
+    width:58px!important;
+    height:58px!important;
+    margin-bottom:20px!important;
+  }
+  .reb-field textarea{min-height:150px!important;}
+  .reb-section h2,
+  .reb-section-title h2,
+  .reb-title h2,
+  .reb-card h2,
+  .reb-form h2{
+    font-size:clamp(32px,8.8vw,42px)!important;
+    line-height:1.12!important;
+  }
+}
+/* End core subpage mobile polish + icon recovery */
+
+/* Subpage mobile overflow containment 2026-05-18 */
+@media (max-width:767px){
+  html,body{
+    width:100%!important;
+    max-width:100%!important;
+    overflow-x:hidden!important;
+  }
+  .reb-top,
+  .reb-header,
+  .reb-hero,
+  .reb-download,
+  .reb-store,
+  .reb-process,
+  .reb-contact,
+  .reb-support,
+  .reb-story,
+  .reb-workflow,
+  .reb-band,
+  .reb-commit,
+  .reb-footer{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    overflow-x:hidden!important;
+    box-sizing:border-box!important;
+  }
+  .reb-top{
+    padding-left:18px!important;
+    padding-right:18px!important;
+  }
+  .reb-top .reb-actions,
+  .reb-top .reb-login{
+    max-width:100%!important;
+    gap:8px!important;
+  }
+  .reb-top .reb-actions a,
+  .reb-top .reb-login a{
+    min-width:96px!important;
+    max-width:120px!important;
+    padding-left:14px!important;
+    padding-right:14px!important;
+    font-size:15px!important;
+  }
+  .reb-header{
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+  .reb-nav{
+    max-width:100%!important;
+    min-width:0!important;
+  }
+  .reb-nav a{
+    min-width:0!important;
+    font-size:17px!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+  .reb-hero,
+  .reb-download,
+  .reb-store,
+  .reb-process,
+  .reb-contact,
+  .reb-support,
+  .reb-story,
+  .reb-workflow,
+  .reb-band,
+  .reb-commit{
+    padding-left:28px!important;
+    padding-right:28px!important;
+  }
+  .reb-hero-inner,
+  .reb-contact-grid,
+  .reb-support-inner,
+  .reb-panel,
+  .reb-products,
+  .reb-steps,
+  .reb-values,
+  .reb-flow,
+  .reb-story-grid,
+  .reb-band-inner,
+  .reb-commit-inner,
+  .reb-hero-card,
+  .reb-portrait,
+  .reb-device,
+  .reb-robot,
+  .reb-card,
+  .reb-info-card,
+  .reb-form,
+  .reb-value,
+  .reb-product,
+  .reb-file{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  .reb-hero h1{
+    width:100%!important;
+    max-width:100%!important;
+    font-size:clamp(38px,9.7vw,48px)!important;
+    line-height:1.1!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+    word-break:normal!important;
+  }
+  .reb-hero p,
+  .reb-card p,
+  .reb-section p,
+  .reb-form p,
+  .reb-info-card p,
+  .reb-support-card p,
+  .reb-value p{
+    width:100%!important;
+    max-width:100%!important;
+    overflow-wrap:break-word!important;
+  }
+  .reb-btn,
+  .reb-btn.gold,
+  .reb-btn.dark,
+  .reb-field .reb-btn{
+    max-width:100%!important;
+    overflow:hidden!important;
+  }
+}
+/* End subpage mobile overflow containment */
+
+/* Mobile no-missing-icon fallback 2026-05-18 */
+@media (max-width:767px){
+  .reb-btn i.fa-store:before,.reb-product .reb-btn i.fa-store:before{content:"\25A3"!important;}
+  .reb-btn i.fa-phone:before{content:"\260E"!important;}
+  .reb-btn i.fa-headset:before{content:"\260E"!important;}
+  .reb-btn i.fa-paper-plane:before{content:"\27A4"!important;}
+  .reb-btn i.fa-arrow-down:before,.reb-file i.fa-download:before{content:"\2193"!important;}
+  .reb-file i.fa-shield-alt:before{content:"\2713"!important;}
+  .reb-file i.fa-sync-alt:before{content:"\21BB"!important;}
+  .reb-product-top i.fa-coins:before{content:"$"!important;}
+  .reb-product-top i.fa-bitcoin:before{content:"\20BF"!important;}
+  .reb-product-top i.fa-gem:before{content:"\25C6"!important;}
+  .reb-list i.fa-check:before{content:"\2713"!important;}
+  .reb-value i.fa-shield-alt:before{content:"\2713"!important;}
+  .reb-value i.fa-robot:before{content:"AI"!important;font-size:15px!important;letter-spacing:0!important;}
+  .reb-value i.fa-chart-line:before{content:"\2197"!important;}
+  .reb-value i.fa-mobile-alt:before{content:"\25AF"!important;}
+  .reb-info-card i.fa-phone:before{content:"\260E"!important;}
+  .reb-info-card i.fa-globe:before{content:"\25CE"!important;}
+  .reb-info-card i.fa-clock:before{content:"\25F7"!important;}
+  .reb-btn i:before,
+  .reb-file i:before,
+  .reb-product-top i:before,
+  .reb-list i:before,
+  .reb-value i:before,
+  .reb-info-card i:before{
+    font-family:Arial, Helvetica, sans-serif!important;
+    font-weight:800!important;
+    line-height:1!important;
+  }
+  .reb-support-card{
+    position:relative!important;
+    padding-top:84px!important;
+  }
+  .reb-support-card:before{
+    content:"\2713";
+    position:absolute;
+    left:26px;
+    top:24px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f5b026;
+    color:#050505;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:800;
+    font-size:18px;
+  }
+  .reb-support-card:nth-child(2):before{content:"\25A3";}
+  .reb-support-card:nth-child(3):before{content:"\2197";}
+}
+/* End mobile no-missing-icon fallback */
+
+/* Compact mobile content rhythm 2026-05-18 */
+@media (max-width: 767px){
+  /* Keep the home page dense enough for phone screens without touching desktop. */
+  .reb-home .banner-section{padding-top:0!important;}
+  .reb-home .reb-hero{
+    padding:32px 22px 22px!important;
+    min-height:0!important;
+  }
+  .reb-home .reb-hero-inner{
+    gap:18px!important;
+  }
+  .reb-home .reb-hero-kicker{
+    font-size:14px!important;
+    line-height:1.25!important;
+    margin-bottom:14px!important;
+  }
+  .reb-home .reb-hero h1{
+    font-size:clamp(42px, 12vw, 58px)!important;
+    line-height:1.02!important;
+    margin:0 0 16px!important;
+  }
+  .reb-home .reb-hero-text{
+    font-size:18px!important;
+    line-height:1.45!important;
+    margin-bottom:18px!important;
+  }
+  .reb-home .reb-hero-actions{margin:0 0 16px!important;}
+  .reb-home .reb-hero-actions .theme-btn{
+    min-height:52px!important;
+    padding:14px 18px!important;
+    font-size:17px!important;
+    line-height:1.15!important;
+    width:100%!important;
+    border-radius:8px!important;
+  }
+  .reb-home .reb-hero-stats{
+    display:grid!important;
+    grid-template-columns:repeat(3, minmax(0, 1fr))!important;
+    gap:8px!important;
+    margin-top:12px!important;
+  }
+  .reb-home .reb-stat{
+    min-height:72px!important;
+    padding:12px 10px!important;
+    border-radius:8px!important;
+  }
+  .reb-home .reb-stat strong{font-size:24px!important;line-height:1!important;}
+  .reb-home .reb-stat span{font-size:11px!important;line-height:1.2!important;}
+  .reb-home .reb-hero-visual{margin-top:8px!important;}
+  .reb-home .reb-feature-list{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+    margin-bottom:12px!important;
+  }
+  .reb-home .reb-feature{
+    min-height:46px!important;
+    padding:9px 10px!important;
+    border-radius:8px!important;
+    gap:8px!important;
+  }
+  .reb-home .reb-feature i{width:24px!important;height:24px!important;font-size:12px!important;}
+  .reb-home .reb-feature span{font-size:12px!important;line-height:1.15!important;}
+  .reb-home .reb-chart-card{margin-top:10px!important;min-height:160px!important;}
+
+  .reb-home .reb-trust-section,
+  .reb-home .reb-solutions,
+  .reb-home .reb-platform-section,
+  .reb-home .reb-metrics,
+  .reb-home .reb-markets,
+  .reb-home .reb-symbol-sync{
+    padding-top:38px!important;
+    padding-bottom:38px!important;
+  }
+  .reb-home .sec-title,
+  .reb-home .reb-solutions .sec-title,
+  .reb-home .reb-platform-section .sec-title,
+  .reb-home .reb-markets .sec-title{
+    padding-bottom:22px!important;
+    margin-bottom:0!important;
+  }
+  .reb-home .sec-title .sub-title{
+    font-size:12px!important;
+    padding:6px 14px!important;
+    line-height:1.1!important;
+    margin-bottom:10px!important;
+  }
+  .reb-home .sec-title h2{
+    font-size:clamp(30px, 9vw, 40px)!important;
+    line-height:1.1!important;
+    margin:0!important;
+  }
+
+  /* White summary panel directly under the hero. */
+  .reb-home .reb-trust-panel{
+    display:grid!important;
+    grid-template-columns:repeat(2, minmax(0, 1fr))!important;
+    gap:0!important;
+    padding:0!important;
+    border-radius:8px!important;
+    overflow:hidden!important;
+  }
+  .reb-home .reb-trust-lead{
+    grid-column:1 / -1!important;
+    padding:18px 18px!important;
+  }
+  .reb-home .reb-trust-lead strong{font-size:23px!important;line-height:1.18!important;}
+  .reb-home .reb-trust-item{
+    padding:16px 18px!important;
+    min-height:78px!important;
+  }
+  .reb-home .reb-trust-item strong{font-size:28px!important;line-height:1!important;}
+  .reb-home .reb-trust-item span{font-size:14px!important;line-height:1.25!important;}
+
+  /* Solutions cards: two compact columns instead of long single-card scrolling. */
+  .reb-home .reb-solutions .row{display:flex!important;flex-wrap:wrap!important;margin-left:-6px!important;margin-right:-6px!important;}
+  .reb-home .reb-solutions .account-block{
+    width:50%!important;
+    max-width:50%!important;
+    flex:0 0 50%!important;
+    padding-left:6px!important;
+    padding-right:6px!important;
+    margin-bottom:12px!important;
+  }
+  .reb-home .reb-solutions .account-block-one .inner-box{
+    min-height:176px!important;
+    padding:16px 14px!important;
+    border-radius:8px!important;
+  }
+  .reb-home .reb-solutions .account-block-one .inner-box .icon-box{
+    width:44px!important;
+    height:44px!important;
+    margin:0 0 12px!important;
+    border-radius:8px!important;
+  }
+  .reb-home .reb-solutions .account-block-one .inner-box .icon-box i{font-size:20px!important;line-height:44px!important;}
+  .reb-home .reb-solutions .account-block-one .inner-box h3{margin:0 0 8px!important;}
+  .reb-home .reb-solutions .account-block-one .inner-box h3 a{font-size:18px!important;line-height:1.18!important;}
+  .reb-home .reb-solutions .account-block-one .inner-box p{font-size:13px!important;line-height:1.35!important;margin:0!important;}
+
+  /* Work accordion: shorter open card and tighter closed rows. */
+  .reb-home .reb-platform-section .content_block_one .content-box{margin:0!important;}
+  .reb-home .reb-platform-section .accordion-box{margin:0!important;}
+  .reb-home .reb-platform-section .accordion-box .accordion{
+    margin-bottom:10px!important;
+    border-radius:8px!important;
+    min-height:0!important;
+  }
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-btn{
+    min-height:72px!important;
+    padding:14px 16px 14px 64px!important;
+  }
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-btn .icon-box{
+    left:14px!important;
+    top:14px!important;
+    width:38px!important;
+    height:38px!important;
+    line-height:38px!important;
+  }
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-btn h3{
+    font-size:20px!important;
+    line-height:1.18!important;
+    margin:0!important;
+  }
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-content .content{
+    padding:0 18px 18px 64px!important;
+  }
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-content .content p{
+    font-size:14px!important;
+    line-height:1.4!important;
+    margin:0!important;
+  }
+  .reb-home .reb-platform-section .video-box{margin-top:18px!important;}
+  .reb-home .reb-platform-section .video-inner{min-height:220px!important;border-radius:8px!important;}
+
+  /* Dark metric cards: compact vertical rhythm. */
+  .reb-home .reb-metrics .inner-container{padding:20px 18px!important;border-radius:8px!important;}
+  .reb-home .reb-metrics .row{display:grid!important;grid-template-columns:1fr!important;gap:14px!important;margin:0!important;}
+  .reb-home .reb-metrics .funfact-block{padding:0!important;margin:0!important;width:100%!important;max-width:100%!important;}
+  .reb-home .reb-metrics .funfact-block-one .inner-box{
+    padding:0!important;
+    min-height:0!important;
+  }
+  .reb-home .reb-metrics .count-outer{
+    font-size:48px!important;
+    line-height:1!important;
+    margin-bottom:8px!important;
+  }
+  .reb-home .reb-metrics .count-outer .text{font-size:22px!important;margin-left:8px!important;}
+  .reb-home .reb-metrics p{font-size:15px!important;line-height:1.45!important;margin:0!important;}
+
+  /* Markets Supported cards: remove empty image space and keep buttons close. */
+  .reb-home .reb-markets .inner-container{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+  }
+  .reb-home .reb-markets .trading-block-one{width:100%!important;max-width:100%!important;margin:0!important;}
+  .reb-home .reb-markets .trading-block-one .inner-box{
+    min-height:0!important;
+    padding:22px!important;
+    border-radius:8px!important;
+  }
+  .reb-home .reb-markets .trading-block-one .inner-box .image-box{display:none!important;}
+  .reb-home .reb-markets .trading-block-one .inner-box h3{margin:0 0 10px!important;}
+  .reb-home .reb-markets .trading-block-one .inner-box h3 a{font-size:23px!important;line-height:1.2!important;}
+  .reb-home .reb-markets .trading-block-one .inner-box p{
+    min-height:0!important;
+    font-size:15px!important;
+    line-height:1.45!important;
+    margin:0 0 18px!important;
+  }
+  .reb-home .reb-markets .trading-block-one .inner-box .btn-box{margin:0!important;}
+  .reb-home .reb-markets .trading-block-one .inner-box .theme-btn{
+    min-height:48px!important;
+    padding:13px 16px!important;
+    font-size:15px!important;
+    border-radius:8px!important;
+    width:100%!important;
+  }
+
+  .reb-home .reb-symbol-sync{padding-top:40px!important;}
+  .reb-home .reb-symbol-grid{gap:12px!important;}
+  .reb-home .reb-symbol-card{padding:18px!important;min-height:0!important;border-radius:8px!important;}
+  .reb-home .reb-symbol-card h3{font-size:28px!important;line-height:1.1!important;margin:8px 0!important;}
+  .reb-home .reb-symbol-card p{font-size:14px!important;line-height:1.4!important;margin-bottom:12px!important;}
+}
+@media (max-width: 420px){
+  .reb-home .reb-solutions .account-block-one .inner-box{min-height:166px!important;padding:14px 12px!important;}
+  .reb-home .reb-solutions .account-block-one .inner-box h3 a{font-size:17px!important;}
+  .reb-home .reb-solutions .account-block-one .inner-box p{font-size:12.5px!important;}
+  .reb-home .reb-stat{padding:10px 8px!important;}
+  .reb-home .reb-stat strong{font-size:22px!important;}
+}
+/* End compact mobile content rhythm */
+
+/* Compact mobile viewport fit correction 2026-05-18 */
+@media (max-width: 767px){
+  .reb-home .reb-hero,
+  .reb-home .reb-hero-inner,
+  .reb-home .reb-hero-copy,
+  .reb-home .reb-hero-visual,
+  .reb-home .reb-hero-actions,
+  .reb-home .reb-hero-stats,
+  .reb-home .reb-feature-list{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+  }
+  .reb-home .reb-hero{padding-left:20px!important;padding-right:20px!important;}
+  .reb-home .reb-hero h1{
+    font-size:clamp(38px, 10.4vw, 46px)!important;
+    line-height:1.05!important;
+    max-width:100%!important;
+    overflow-wrap:normal!important;
+    word-break:normal!important;
+  }
+  .reb-home .reb-hero h1 span{display:block!important;white-space:normal!important;}
+  .reb-home .reb-hero-text{font-size:16px!important;line-height:1.45!important;}
+  .reb-home .reb-hero-actions .theme-btn{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  .reb-home .reb-hero-stats{
+    grid-template-columns:repeat(3, minmax(0, 1fr))!important;
+    gap:8px!important;
+  }
+  .reb-home .reb-stat{
+    min-width:0!important;
+    max-width:100%!important;
+    overflow:hidden!important;
+  }
+  .reb-home .reb-stat strong{font-size:22px!important;white-space:nowrap!important;}
+  .reb-home .reb-stat span{
+    display:block!important;
+    font-size:10px!important;
+    line-height:1.18!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+  .reb-home .reb-feature-list{grid-template-columns:1fr 1fr!important;}
+  .reb-home .reb-feature{
+    min-width:0!important;
+    max-width:100%!important;
+    overflow:hidden!important;
+  }
+  .reb-home .reb-feature span{
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    white-space:nowrap!important;
+  }
+}
+@media (max-width: 420px){
+  .reb-home .reb-hero h1{font-size:40px!important;}
+  .reb-home .reb-hero{padding-left:20px!important;padding-right:20px!important;}
+  .reb-home .reb-hero-actions .theme-btn{min-height:50px!important;font-size:16px!important;}
+}
+/* End compact mobile viewport fit correction */
+
+/* Compact mobile final sizing pass 2026-05-18 */
+@media (max-width: 767px){
+  .reb-home .banner-section .large-container{padding-left:20px!important;padding-right:20px!important;overflow:hidden!important;}
+  .reb-home .reb-hero{padding:30px 18px 20px!important;overflow:hidden!important;}
+  .reb-home .reb-hero h1{font-size:39px!important;line-height:1.06!important;letter-spacing:0!important;}
+  .reb-home .reb-hero h1 span{display:block!important;}
+  .reb-home .reb-hero-text{max-width:100%!important;font-size:15.5px!important;line-height:1.45!important;margin-bottom:16px!important;}
+  .reb-home .reb-hero-actions .theme-btn{min-height:48px!important;padding:12px 14px!important;font-size:16px!important;}
+  .reb-home .reb-stat{min-height:66px!important;padding:10px 8px!important;}
+  .reb-home .reb-stat strong{font-size:20px!important;}
+  .reb-home .reb-stat span{font-size:9.5px!important;}
+  .reb-home .reb-feature{min-height:42px!important;padding:8px!important;}
+  .reb-home .reb-feature span{font-size:11px!important;}
+}
+/* End compact mobile final sizing pass */
+
+/* Compact mobile hard viewport containment 2026-05-18 */
+@media (max-width: 767px){
+  .reb-home .reb-hero-copy,
+  .reb-home .reb-hero-actions,
+  .reb-home .reb-hero-stats,
+  .reb-home .reb-feature-list,
+  .reb-home .reb-hero-text{
+    max-width:calc(100vw - 76px)!important;
+  }
+  .reb-home .reb-hero-actions .theme-btn,
+  .reb-home .reb-hero-stats,
+  .reb-home .reb-feature-list{
+    width:calc(100vw - 76px)!important;
+  }
+}
+/* End compact mobile hard viewport containment */
+
+/* Subpage compact mobile standard 2026-05-19 */
+@media (max-width: 767px){
+  .reb-subpage .reb-top,
+  .reb-subpage .reb-header,
+  .reb-subpage .reb-footer{
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+  .reb-subpage .reb-hero,
+  .reb-subpage .reb-download,
+  .reb-subpage .reb-store,
+  .reb-subpage .reb-process,
+  .reb-subpage .reb-contact,
+  .reb-subpage .reb-support,
+  .reb-subpage .reb-story,
+  .reb-subpage .reb-band,
+  .reb-subpage .reb-workflow,
+  .reb-subpage .reb-commit{
+    padding-left:24px!important;
+    padding-right:24px!important;
+    padding-top:34px!important;
+    padding-bottom:34px!important;
+  }
+  .reb-subpage .reb-hero{padding-top:36px!important;padding-bottom:34px!important;}
+  .reb-subpage .reb-hero-inner,
+  .reb-subpage .reb-panel,
+  .reb-subpage .reb-contact-grid,
+  .reb-subpage .reb-support-inner,
+  .reb-subpage .reb-products,
+  .reb-subpage .reb-steps,
+  .reb-subpage .reb-story-grid,
+  .reb-subpage .reb-band-inner,
+  .reb-subpage .reb-flow,
+  .reb-subpage .reb-commit-inner{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+    margin-top:0!important;
+  }
+  .reb-subpage .reb-kicker,
+  .reb-subpage .reb-title span,
+  .reb-subpage .reb-section-title span,
+  .reb-subpage .reb-section span{
+    font-size:12px!important;
+    line-height:1.15!important;
+    margin-bottom:10px!important;
+    letter-spacing:.03em!important;
+  }
+  .reb-subpage .reb-hero h1{
+    font-size:clamp(36px, 10.5vw, 44px)!important;
+    line-height:1.08!important;
+    margin:12px 0 14px!important;
+    max-width:100%!important;
+    overflow-wrap:normal!important;
+  }
+  .reb-subpage .reb-hero p{
+    font-size:16px!important;
+    line-height:1.48!important;
+    margin:0!important;
+    max-width:100%!important;
+  }
+  .reb-subpage .reb-device,
+  .reb-subpage .reb-robot,
+  .reb-subpage .reb-hero-card,
+  .reb-subpage .reb-portrait{
+    padding:18px!important;
+    border-radius:8px!important;
+    margin-top:8px!important;
+  }
+  .reb-subpage .reb-device img,
+  .reb-subpage .reb-robot img,
+  .reb-subpage .reb-hero-card img,
+  .reb-subpage .reb-portrait img{
+    width:min(250px, 82vw)!important;
+  }
+  .reb-subpage .reb-badge{
+    padding:12px 14px!important;
+    margin-top:10px!important;
+    border-radius:8px!important;
+  }
+  .reb-subpage .reb-badge strong{font-size:22px!important;line-height:1!important;}
+
+  .reb-subpage .reb-title,
+  .reb-subpage .reb-section-title{
+    margin:0 auto 18px!important;
+    padding-bottom:0!important;
+  }
+  .reb-subpage .reb-title h2,
+  .reb-subpage .reb-section-title h2,
+  .reb-subpage .reb-section h2,
+  .reb-subpage .reb-card h2,
+  .reb-subpage .reb-form h2,
+  .reb-subpage .reb-commit h2{
+    font-size:clamp(26px, 7.5vw, 34px)!important;
+    line-height:1.14!important;
+    margin:10px 0 10px!important;
+  }
+  .reb-subpage .reb-title p,
+  .reb-subpage .reb-section-title p,
+  .reb-subpage .reb-section p,
+  .reb-subpage .reb-card p,
+  .reb-subpage .reb-form p,
+  .reb-subpage .reb-commit p{
+    font-size:15px!important;
+    line-height:1.45!important;
+    margin-bottom:14px!important;
+  }
+  .reb-subpage .reb-card,
+  .reb-subpage .reb-info-card,
+  .reb-subpage .reb-form,
+  .reb-subpage .reb-support-card,
+  .reb-subpage .reb-step,
+  .reb-subpage .reb-value,
+  .reb-subpage .reb-flow-card,
+  .reb-subpage .reb-product,
+  .reb-subpage .reb-bundle,
+  .reb-subpage .reb-commit-inner{
+    padding:18px!important;
+    border-radius:8px!important;
+    min-height:0!important;
+    box-shadow:0 14px 34px rgba(0,0,0,.055)!important;
+  }
+
+  .reb-subpage .reb-file{
+    gap:12px!important;
+    padding:14px!important;
+    margin:14px 0!important;
+    border-radius:8px!important;
+  }
+  .reb-subpage .reb-file i,
+  .reb-subpage .reb-info-card i,
+  .reb-subpage .reb-value i,
+  .reb-subpage .reb-product-top i{
+    width:42px!important;
+    height:42px!important;
+    min-width:42px!important;
+    font-size:18px!important;
+    margin-bottom:10px!important;
+  }
+  .reb-subpage .reb-file strong{font-size:17px!important;line-height:1.2!important;}
+  .reb-subpage .reb-file span{font-size:13px!important;line-height:1.3!important;}
+  .reb-subpage .reb-btn,
+  .reb-subpage .reb-btn.gold,
+  .reb-subpage .reb-btn.dark,
+  .reb-subpage .reb-outline,
+  .reb-subpage .reb-field .reb-btn{
+    min-height:48px!important;
+    padding:12px 16px!important;
+    font-size:15px!important;
+    line-height:1.2!important;
+    border-radius:8px!important;
+    width:100%!important;
+    margin:8px 0 0!important;
+  }
+
+  .reb-subpage .reb-grid,
+  .reb-subpage .reb-steps,
+  .reb-subpage .reb-flow,
+  .reb-subpage .reb-support-inner,
+  .reb-subpage .reb-values{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:12px!important;
+  }
+  .reb-subpage .reb-step strong,
+  .reb-subpage .reb-flow-card strong{
+    width:34px!important;
+    height:34px!important;
+    margin-bottom:10px!important;
+    font-size:14px!important;
+  }
+  .reb-subpage .reb-step h3,
+  .reb-subpage .reb-flow-card h3,
+  .reb-subpage .reb-info-card h3,
+  .reb-subpage .reb-support-card strong,
+  .reb-subpage .reb-value h3{
+    font-size:18px!important;
+    line-height:1.18!important;
+    margin:0 0 6px!important;
+  }
+  .reb-subpage .reb-step p,
+  .reb-subpage .reb-flow-card p,
+  .reb-subpage .reb-info-card p,
+  .reb-subpage .reb-support-card p,
+  .reb-subpage .reb-value p{
+    font-size:13px!important;
+    line-height:1.38!important;
+    margin:0!important;
+  }
+
+  .reb-subpage .reb-product-top{
+    min-height:72px!important;
+  }
+  .reb-subpage .reb-product-body{padding:18px!important;}
+  .reb-subpage .reb-product h3{font-size:22px!important;margin:0 0 8px!important;}
+  .reb-subpage .reb-product p{font-size:14px!important;line-height:1.42!important;margin:0 0 12px!important;}
+  .reb-subpage .reb-price{margin:0 0 12px!important;}
+  .reb-subpage .reb-price strong{font-size:28px!important;}
+  .reb-subpage .reb-list{margin:0 0 12px!important;}
+  .reb-subpage .reb-list li{padding:6px 0!important;font-size:13px!important;line-height:1.25!important;}
+  .reb-subpage .reb-mini-grid{grid-template-columns:repeat(3, minmax(0,1fr))!important;gap:8px!important;}
+  .reb-subpage .reb-mini{padding:10px 8px!important;min-height:58px!important;}
+  .reb-subpage .reb-mini strong{font-size:20px!important;line-height:1!important;}
+  .reb-subpage .reb-mini span{font-size:11px!important;line-height:1.2!important;}
+  .reb-subpage .reb-fields{gap:12px!important;}
+  .reb-subpage .reb-field input,
+  .reb-subpage .reb-field select,
+  .reb-subpage .reb-field textarea{padding:12px!important;font-size:15px!important;}
+  .reb-subpage .reb-field textarea{min-height:110px!important;}
+  .reb-subpage .reb-band-inner{grid-template-columns:1fr!important;}
+  .reb-subpage .reb-metric{padding:18px!important;}
+  .reb-subpage .reb-metric strong{font-size:30px!important;line-height:1!important;}
+  .reb-subpage .reb-metric span{font-size:14px!important;line-height:1.35!important;}
+}
+@media (max-width: 420px){
+  .reb-subpage .reb-grid,
+  .reb-subpage .reb-steps,
+  .reb-subpage .reb-flow,
+  .reb-subpage .reb-support-inner,
+  .reb-subpage .reb-values{
+    grid-template-columns:1fr!important;
+  }
+  .reb-subpage .reb-hero h1{font-size:36px!important;}
+}
+
+/* Subpage tighter phone spacing 2026-05-19 */
+@media (max-width: 767px){
+  .reb-subpage .reb-btn i,
+  .reb-subpage .reb-outline i,
+  .reb-subpage .reb-list i,
+  .reb-subpage .reb-phone i{
+    font-family:"Font Awesome 5 Free"!important;
+    font-weight:900!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    line-height:1!important;
+  }
+  .reb-subpage .reb-btn i,
+  .reb-subpage .reb-outline i{
+    width:auto!important;
+    height:auto!important;
+    min-width:0!important;
+    margin:0 8px 0 0!important;
+    background:transparent!important;
+    border-radius:0!important;
+    font-size:14px!important;
+  }
+}
+@media (max-width: 420px){
+  .reb-subpage .reb-hero,
+  .reb-subpage .reb-download,
+  .reb-subpage .reb-store,
+  .reb-subpage .reb-process,
+  .reb-subpage .reb-contact,
+  .reb-subpage .reb-support,
+  .reb-subpage .reb-story,
+  .reb-subpage .reb-band,
+  .reb-subpage .reb-workflow,
+  .reb-subpage .reb-commit{
+    padding-left:20px!important;
+    padding-right:20px!important;
+    padding-top:28px!important;
+    padding-bottom:28px!important;
+  }
+  .reb-subpage .reb-hero{padding-top:30px!important;padding-bottom:28px!important;}
+  .reb-subpage .reb-hero h1{font-size:34px!important;line-height:1.06!important;margin:10px 0 12px!important;}
+  .reb-subpage .reb-hero p{font-size:15px!important;line-height:1.42!important;}
+  .reb-subpage .reb-title h2,
+  .reb-subpage .reb-section-title h2,
+  .reb-subpage .reb-section h2,
+  .reb-subpage .reb-card h2,
+  .reb-subpage .reb-form h2,
+  .reb-subpage .reb-commit h2{font-size:27px!important;line-height:1.12!important;}
+  .reb-subpage .reb-card,
+  .reb-subpage .reb-info-card,
+  .reb-subpage .reb-form,
+  .reb-subpage .reb-support-card,
+  .reb-subpage .reb-step,
+  .reb-subpage .reb-value,
+  .reb-subpage .reb-flow-card,
+  .reb-subpage .reb-product,
+  .reb-subpage .reb-bundle,
+  .reb-subpage .reb-commit-inner{padding:14px!important;}
+  .reb-subpage .reb-grid,
+  .reb-subpage .reb-steps,
+  .reb-subpage .reb-flow{grid-template-columns:1fr 1fr!important;gap:10px!important;}
+  .reb-subpage .reb-values,
+  .reb-subpage .reb-support-inner{grid-template-columns:1fr!important;gap:10px!important;}
+  .reb-subpage .reb-step strong,
+  .reb-subpage .reb-flow-card strong{width:30px!important;height:30px!important;margin-bottom:7px!important;font-size:12px!important;}
+  .reb-subpage .reb-step h3,
+  .reb-subpage .reb-flow-card h3,
+  .reb-subpage .reb-info-card h3,
+  .reb-subpage .reb-support-card strong,
+  .reb-subpage .reb-value h3{font-size:15px!important;line-height:1.15!important;margin-bottom:5px!important;}
+  .reb-subpage .reb-step p,
+  .reb-subpage .reb-flow-card p,
+  .reb-subpage .reb-info-card p,
+  .reb-subpage .reb-support-card p,
+  .reb-subpage .reb-value p{font-size:12px!important;line-height:1.32!important;}
+  .reb-subpage .reb-device,
+  .reb-subpage .reb-robot,
+  .reb-subpage .reb-hero-card,
+  .reb-subpage .reb-portrait{padding:14px!important;margin-top:4px!important;}
+  .reb-subpage .reb-device img,
+  .reb-subpage .reb-robot img,
+  .reb-subpage .reb-hero-card img,
+  .reb-subpage .reb-portrait img{width:min(220px,78vw)!important;}
+  .reb-subpage .reb-mini-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+  .reb-subpage .reb-mini{padding:9px 6px!important;min-height:50px!important;}
+  .reb-subpage .reb-product-top{min-height:118px!important;}
+  .reb-subpage .reb-product-body{padding:14px!important;}
+  .reb-subpage .reb-product h3{font-size:19px!important;}
+  .reb-subpage .reb-product p{font-size:13px!important;line-height:1.34!important;}
+  .reb-subpage .reb-list li{font-size:12px!important;padding:5px 0!important;}
+  .reb-subpage .reb-field textarea{min-height:92px!important;}
+}
+/* End subpage tighter phone spacing */
+/* End subpage compact mobile standard */
+
+/* Global mobile dense spacing standard 2026-05-19 */
+@media (max-width: 767px){
+  .reb-home .auto-container,
+  .reb-subpage .auto-container{
+    padding-left:20px!important;
+    padding-right:20px!important;
+    max-width:100%!important;
+  }
+
+  .reb-home .reb-trust-section,
+  .reb-home .reb-solutions,
+  .reb-home .reb-platform-section,
+  .reb-home .reb-metrics,
+  .reb-home .reb-markets,
+  .reb-home .reb-symbol-sync,
+  .reb-home .reb-process,
+  .reb-home .reb-news,
+  .reb-home .reb-subscribe,
+  .reb-home .process-section,
+  .reb-home .news-section,
+  .reb-home .subscribe-section,
+  .reb-home section.pt_100,
+  .reb-home section.pb_100,
+  .reb-home section.pb_90,
+  .reb-home section.pb_70{
+    padding-top:30px!important;
+    padding-bottom:30px!important;
+  }
+
+  .reb-home .sec-title,
+  .reb-home .reb-section-title,
+  .reb-home .title-box{
+    margin:0 0 16px!important;
+    padding:0!important;
+  }
+  .reb-home .sec-title .sub-title,
+  .reb-home .reb-section-title span{
+    margin:0 0 8px!important;
+    padding:5px 12px!important;
+    font-size:11px!important;
+    line-height:1.1!important;
+  }
+  .reb-home .sec-title h2,
+  .reb-home .reb-section-title h2,
+  .reb-home .title-box h2{
+    font-size:30px!important;
+    line-height:1.08!important;
+    margin:0!important;
+    letter-spacing:0!important;
+  }
+  .reb-home .sec-title p,
+  .reb-home .reb-section-title p{
+    font-size:14px!important;
+    line-height:1.38!important;
+    margin:8px 0 0!important;
+  }
+
+  .reb-home .reb-hero{padding:26px 20px 24px!important;}
+  .reb-home .reb-hero h1{font-size:36px!important;line-height:1.05!important;margin:0 0 12px!important;}
+  .reb-home .reb-hero-text{font-size:15px!important;line-height:1.38!important;margin-bottom:14px!important;}
+  .reb-home .reb-hero-actions .theme-btn{min-height:46px!important;padding:11px 14px!important;font-size:15px!important;}
+  .reb-home .reb-stat{min-height:54px!important;padding:9px 8px!important;}
+  .reb-home .reb-stat strong{font-size:18px!important;}
+  .reb-home .reb-stat span{font-size:9px!important;}
+
+  .reb-home .reb-markets .inner-container,
+  .reb-home .reb-symbol-grid,
+  .reb-home .reb-process .row,
+  .reb-home .reb-news .row{
+    gap:10px!important;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+  .reb-home .reb-markets .trading-block-one,
+  .reb-home .reb-news .news-block,
+  .reb-home .reb-process .process-block{
+    padding-left:0!important;
+    padding-right:0!important;
+    margin-bottom:10px!important;
+  }
+  .reb-home .reb-markets .trading-block-one .inner-box,
+  .reb-home .reb-symbol-card,
+  .reb-home .reb-news .news-block-one .inner-box,
+  .reb-home .reb-process .process-block-one .inner-box{
+    min-height:0!important;
+    padding:16px!important;
+    border-radius:8px!important;
+    margin-bottom:0!important;
+    box-shadow:0 10px 24px rgba(0,0,0,.05)!important;
+  }
+
+  .reb-home .reb-markets .trading-block-one .inner-box h3,
+  .reb-home .reb-symbol-card h3,
+  .reb-home .reb-news .news-block-one .inner-box h3,
+  .reb-home .reb-process .process-block-one .inner-box h3{
+    margin:0 0 7px!important;
+    font-size:20px!important;
+    line-height:1.18!important;
+  }
+  .reb-home .reb-markets .trading-block-one .inner-box h3 a,
+  .reb-home .reb-news .news-block-one .inner-box h3 a{
+    font-size:20px!important;
+    line-height:1.18!important;
+  }
+  .reb-home .reb-markets .trading-block-one .inner-box p,
+  .reb-home .reb-symbol-card p,
+  .reb-home .reb-news .news-block-one .inner-box p,
+  .reb-home .reb-process .process-block-one .inner-box p{
+    min-height:0!important;
+    font-size:13.5px!important;
+    line-height:1.34!important;
+    margin:0 0 10px!important;
+  }
+  .reb-home .reb-markets .trading-block-one .inner-box .theme-btn,
+  .reb-home .reb-news .news-block-one .inner-box .link a,
+  .reb-home .reb-symbol-note a{
+    min-height:42px!important;
+    padding:10px 14px!important;
+    font-size:14px!important;
+    line-height:1.15!important;
+    border-radius:8px!important;
+  }
+  .reb-home .reb-markets .trading-block-one .inner-box .btn-box{margin-top:8px!important;}
+
+  .reb-home .reb-symbol-sync{padding-top:30px!important;}
+  .reb-home .reb-symbol-grid{grid-template-columns:1fr!important;}
+  .reb-home .reb-symbol-card span{font-size:11px!important;padding:5px 10px!important;margin-bottom:12px!important;}
+  .reb-home .reb-symbol-card h3{font-size:24px!important;}
+  .reb-home .reb-symbol-card strong{font-size:18px!important;line-height:1.15!important;}
+
+  .reb-home .reb-platform-section .accordion-box .accordion{margin-bottom:8px!important;}
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-btn{min-height:58px!important;padding:12px 14px 12px 58px!important;}
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-btn .icon-box{left:12px!important;top:12px!important;width:34px!important;height:34px!important;line-height:34px!important;}
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-btn h3{font-size:18px!important;line-height:1.15!important;}
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-content .content{padding:0 14px 14px 58px!important;}
+  .reb-home .reb-platform-section .accordion-box .accordion .acc-content .content p{font-size:13px!important;line-height:1.34!important;}
+  .reb-home .reb-platform-section .video-box{margin-top:12px!important;}
+  .reb-home .reb-platform-section .video-inner{min-height:185px!important;}
+
+  .reb-home .reb-process .process-block-one .inner-box{padding:14px 14px 14px 56px!important;}
+  .reb-home .reb-process .process-block-one .inner-box .count-text{left:14px!important;top:14px!important;width:30px!important;height:30px!important;line-height:30px!important;font-size:14px!important;}
+  .reb-home .reb-process .process-block-one .inner-box h3{font-size:19px!important;line-height:1.2!important;}
+  .reb-home .reb-process .process-block-one .inner-box p{font-size:13.5px!important;line-height:1.36!important;}
+  .reb-home .reb-process .image-box{margin-top:8px!important;}
+  .reb-home .reb-process .image-box .image{min-height:0!important;border-radius:8px!important;}
+  .reb-home .reb-process .image-box .image img{border-radius:8px!important;}
+
+  .reb-home .reb-news .news-block-one .inner-box .post-date,
+  .reb-home .reb-news .news-block-one .author-box{display:none!important;}
+  .reb-home .reb-news .news-block-one .inner-box .link{margin-top:8px!important;}
+
+  .reb-home .reb-subscribe .inner-container,
+  .reb-home .subscribe-section .inner-container{
+    padding:22px 18px!important;
+    border-radius:8px!important;
+  }
+  .reb-home .reb-subscribe h2,
+  .reb-home .subscribe-section h2{
+    font-size:28px!important;
+    line-height:1.1!important;
+    margin:0 0 14px!important;
+  }
+  .reb-home .reb-subscribe .form-inner .form-group input[type='email'],
+  .reb-home .subscribe-section .form-inner .form-group input[type='email']{
+    height:48px!important;
+    padding:10px 14px!important;
+    font-size:14px!important;
+  }
+  .reb-home .reb-subscribe .form-inner .form-group button[type='submit'],
+  .reb-home .subscribe-section .form-inner .form-group button[type='submit']{
+    position:relative!important;
+    width:100%!important;
+    height:48px!important;
+    margin-top:10px!important;
+    font-size:15px!important;
+    border-radius:8px!important;
+  }
+
+  .reb-subpage .reb-hero,
+  .reb-subpage .reb-download,
+  .reb-subpage .reb-store,
+  .reb-subpage .reb-process,
+  .reb-subpage .reb-contact,
+  .reb-subpage .reb-support,
+  .reb-subpage .reb-story,
+  .reb-subpage .reb-band,
+  .reb-subpage .reb-workflow,
+  .reb-subpage .reb-commit{
+    padding-top:26px!important;
+    padding-bottom:26px!important;
+  }
+  .reb-subpage .reb-card,
+  .reb-subpage .reb-info-card,
+  .reb-subpage .reb-form,
+  .reb-subpage .reb-support-card,
+  .reb-subpage .reb-step,
+  .reb-subpage .reb-value,
+  .reb-subpage .reb-flow-card,
+  .reb-subpage .reb-product,
+  .reb-subpage .reb-bundle,
+  .reb-subpage .reb-commit-inner{
+    padding:14px!important;
+    margin-bottom:10px!important;
+  }
+}
+@media (max-width: 420px){
+  .reb-home .sec-title h2,
+  .reb-home .reb-section-title h2,
+  .reb-home .title-box h2{font-size:28px!important;}
+  .reb-home .reb-markets .trading-block-one .inner-box,
+  .reb-home .reb-symbol-card,
+  .reb-home .reb-news .news-block-one .inner-box,
+  .reb-home .reb-process .process-block-one .inner-box{padding:14px!important;}
+  .reb-home .reb-process .process-block-one .inner-box{padding-left:52px!important;}
+}
+
+/* Mobile overflow guard and shared page polish 2026-05-29 */
+@media (max-width: 767px){
+  html,
+  body{
+    max-width:100%!important;
+    overflow-x:hidden!important;
+  }
+  body{min-width:0!important;}
+
+  .reb-home,
+  .reb-subpage,
+  .reb-top,
+  .reb-header,
+  .reb-hero,
+  .reb-section,
+  .reb-footer,
+  .reb-ticker,
+  .market-ticker{
+    max-width:100vw!important;
+    overflow-x:hidden!important;
+    box-sizing:border-box!important;
+  }
+
+  .reb-home .auto-container,
+  .reb-subpage .auto-container,
+  .reb-home .container,
+  .reb-subpage .container{
+    width:100%!important;
+    max-width:390px!important;
+    padding-left:20px!important;
+    padding-right:20px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    box-sizing:border-box!important;
+  }
+
+  .reb-top{
+    padding:12px 20px!important;
+    justify-content:flex-end!important;
+  }
+  .reb-top .reb-phone{
+    display:none!important;
+  }
+  .reb-actions{
+    width:auto!important;
+    max-width:calc(100vw - 40px)!important;
+    margin-left:auto!important;
+    margin-right:0!important;
+    justify-content:flex-end!important;
+    gap:8px!important;
+  }
+  .reb-actions a{
+    width:auto!important;
+    min-width:86px!important;
+    max-width:calc(50% - 4px)!important;
+    min-height:40px!important;
+    padding:0 12px!important;
+    font-size:14px!important;
+    line-height:1!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    box-sizing:border-box!important;
+  }
+
+  .reb-header{
+    padding-left:20px!important;
+    padding-right:20px!important;
+    gap:14px!important;
+  }
+  .reb-logo,
+  .reb-header .reb-logo{
+    max-width:100%!important;
+    min-width:0!important;
+  }
+  .reb-logo img,
+  .reb-header .reb-logo img{
+    max-width:82vw!important;
+    height:auto!important;
+  }
+
+  .reb-subpage .reb-header{
+    align-items:flex-start!important;
+    flex-direction:column!important;
+  }
+  .reb-subpage .reb-nav{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    width:min(350px, calc(100vw - 40px))!important;
+    max-width:calc(100vw - 40px)!important;
+    margin:0 auto 0 0!important;
+    gap:6px!important;
+    padding:6px!important;
+    background:#101312!important;
+    border-radius:10px!important;
+    border:1px solid rgba(247,174,31,.28)!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+  }
+  .reb-subpage .reb-nav a,
+  .reb-subpage .reb-nav a.trade-account-link{
+    width:100%!important;
+    min-width:0!important;
+    min-height:42px!important;
+    padding:0 8px!important;
+    font-size:14px!important;
+    line-height:1.08!important;
+    white-space:normal!important;
+    overflow:hidden!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    box-sizing:border-box!important;
+  }
+
+  .reb-subpage .reb-hero-inner,
+  .reb-subpage .reb-title,
+  .reb-subpage .reb-grid,
+  .reb-subpage .reb-download-grid,
+  .reb-subpage .reb-store-grid,
+  .reb-subpage .reb-contact-grid,
+  .reb-subpage .reb-story-grid,
+  .reb-subpage .reb-flow-grid,
+  .reb-subpage .reb-values,
+  .reb-subpage .reb-products,
+  .reb-subpage .broker-grid,
+  .reb-subpage .step-grid,
+  .reb-subpage .reb-note,
+  .reb-home .reb-hero-inner,
+  .reb-home .reb-hero-content,
+  .reb-home .reb-hero-copy,
+  .reb-home .reb-hero-visual,
+  .reb-home .reb-stat-grid,
+  .reb-home .reb-feature-grid,
+  .reb-home .reb-symbol-grid,
+  .reb-home .reb-section-title,
+  .reb-home .sec-title,
+  .reb-home .title-box{
+    width:min(350px, calc(100vw - 40px))!important;
+    max-width:calc(100vw - 40px)!important;
+    min-width:0!important;
+    margin-left:0!important;
+    margin-right:auto!important;
+    box-sizing:border-box!important;
+  }
+
+  .reb-home .row,
+  .reb-subpage .row{
+    max-width:100%!important;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+  .reb-home [class*="col-"],
+  .reb-subpage [class*="col-"]{
+    max-width:100%!important;
+    flex:0 0 100%!important;
+    padding-left:0!important;
+    padding-right:0!important;
+    box-sizing:border-box!important;
+  }
+
+  .reb-home h1,
+  .reb-home h2,
+  .reb-home h3,
+  .reb-home p,
+  .reb-subpage h1,
+  .reb-subpage h2,
+  .reb-subpage h3,
+  .reb-subpage p{
+    max-width:100%!important;
+    overflow-wrap:break-word!important;
+    word-break:normal!important;
+  }
+
+  .reb-home .theme-btn,
+  .reb-subpage .theme-btn,
+  .reb-subpage .reb-btn{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  .reb-home .theme-btn i,
+  .reb-subpage .theme-btn i,
+  .reb-subpage .reb-btn i{
+    display:none!important;
+  }
+
+  .reb-home .reb-hero-single,
+  .reb-home .reb-hero-slide,
+  .reb-home .reb-hero{
+    width:100%!important;
+    max-width:100vw!important;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+  .reb-home .reb-hero{
+    padding:30px 20px 22px!important;
+  }
+  .reb-home .reb-hero h1{
+    font-size:34px!important;
+    line-height:1.05!important;
+  }
+  .reb-home .reb-hero-text{
+    max-width:100%!important;
+    font-size:14px!important;
+    line-height:1.45!important;
+  }
+  .reb-home .reb-hero-actions{
+    width:100%!important;
+    max-width:100%!important;
+  }
+  .reb-home .reb-hero-actions .theme-btn{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    max-width:100%!important;
+  }
+  .reb-home .reb-hero-stats{
+    width:100%!important;
+    max-width:100%!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:8px!important;
+  }
+  .reb-home .reb-stat{
+    min-width:0!important;
+    min-height:58px!important;
+    padding:9px 8px!important;
+  }
+  .reb-home .reb-feature-list{
+    position:relative!important;
+    top:auto!important;
+    right:auto!important;
+    width:100%!important;
+    max-width:100%!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:8px!important;
+    margin:14px 0 18px!important;
+  }
+  .reb-home .reb-feature{
+    width:100%!important;
+    min-width:0!important;
+    min-height:48px!important;
+    padding:9px 8px!important;
+    gap:7px!important;
+    justify-content:flex-start!important;
+    transform:none!important;
+  }
+  .reb-home .reb-feature span{
+    white-space:normal!important;
+    font-size:12px!important;
+    line-height:1.15!important;
+  }
+  .reb-home .reb-feature i{
+    width:24px!important;
+    height:24px!important;
+    min-width:24px!important;
+    font-size:12px!important;
+    display:flex!important;
+  }
+  .reb-home .reb-hero-visual{
+    min-height:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+  }
+  .reb-home .reb-robot{
+    position:relative!important;
+    left:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    transform:none!important;
+    width:min(310px, 100%)!important;
+    margin:0 auto 14px!important;
+  }
+  .reb-home .reb-chart-card{
+    position:relative!important;
+    width:100%!important;
+    max-width:100%!important;
+    right:auto!important;
+    bottom:auto!important;
+    margin:0!important;
+  }
+
+  .reb-home .reb-trust-grid,
+  .reb-home .reb-trust-list,
+  .reb-home .reb-trust-items{
+    width:min(350px, calc(100vw - 40px))!important;
+    max-width:calc(100vw - 40px)!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:0!important;
+  }
+  .reb-home .reb-trust-item{
+    min-width:0!important;
+    padding:14px 12px!important;
+  }
+
+  .reb-subpage .reb-file,
+  .reb-subpage .reb-info-card,
+  .reb-subpage .reb-support-card,
+  .reb-subpage .broker-card,
+  .reb-subpage .step-card{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  .reb-subpage .reb-file{
+    align-items:flex-start!important;
+    gap:12px!important;
+    padding:14px!important;
+  }
+  .reb-subpage .reb-file strong,
+  .reb-subpage .reb-file span{
+    max-width:100%!important;
+    overflow-wrap:break-word!important;
+  }
+  .reb-subpage .reb-fields{
+    grid-template-columns:1fr!important;
+  }
+}
+/* End global mobile dense spacing standard */
+
+/* AUTH_HEADER_UNIFIED_V1_START */
+.main-header .header-top .option-block.reb-auth-logged-in{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:12px!important}
+.main-header .header-top .option-block.reb-auth-logged-in>a.reb-session-account,
+.main-header .header-top .option-block.reb-auth-logged-in>a.reb-session-logout{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  min-height:44px!important;width:auto!important;margin:0!important;padding:0 20px!important;
+  border-radius:8px!important;font-size:15px!important;font-weight:800!important;line-height:1!important;
+  text-decoration:none!important;box-shadow:none!important;white-space:nowrap!important
+}
+.main-header .header-top .option-block.reb-auth-logged-in>a.reb-session-account{
+  max-width:230px!important;border:1px solid rgba(245,176,38,.72)!important;
+  background:rgba(245,176,38,.13)!important;color:#fff!important;overflow:hidden!important;text-overflow:ellipsis!important
+}
+.main-header .header-top .option-block.reb-auth-logged-in>a.reb-session-logout{
+  border:1px solid rgba(255,77,100,.55)!important;background:rgba(255,77,100,.14)!important;color:#fff!important
+}
+.main-header .header-top .option-block.reb-auth-logged-in>a.reb-session-account:hover{background:rgba(245,176,38,.24)!important}
+.main-header .header-top .option-block.reb-auth-logged-in>a.reb-session-logout:hover{background:rgba(255,77,100,.25)!important}
+@media(max-width:767px){
+  .main-header .header-top .option-block.reb-auth-logged-in{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:8px!important}
+  .main-header .header-top .option-block.reb-auth-logged-in>a.reb-session-account,
+  .main-header .header-top .option-block.reb-auth-logged-in>a.reb-session-logout{min-height:38px!important;padding:0 12px!important;font-size:13px!important}
+}
+/* AUTH_HEADER_UNIFIED_V1_END */

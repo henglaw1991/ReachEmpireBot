@@ -1,0 +1,19 @@
+/* ReachEmpire Social R130: published images open within the current page. */
+.reb-r130-image-viewer[hidden]{display:none!important}
+.reb-r130-image-viewer{position:fixed!important;inset:0!important;z-index:2147483000!important;display:flex;align-items:center;justify-content:center;padding:60px 14px 22px;box-sizing:border-box;background:rgba(0,0,0,.94);overscroll-behavior:contain}
+.reb-r130-image-viewer-inner{max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;min-height:0;min-width:0}
+.reb-r130-image-viewer-photo{display:block;max-width:min(96vw,1500px);max-height:calc(100dvh - 116px);width:auto;height:auto;object-fit:contain;border-radius:3px}
+.reb-r130-image-viewer-caption{max-width:90vw;overflow-wrap:anywhere;text-align:center;font:400 13px/1.4 Arial,sans-serif;color:#e6e6e6}
+.reb-r130-image-viewer-close{position:absolute!important;right:max(12px,env(safe-area-inset-right));top:max(9px,env(safe-area-inset-top));width:46px;height:46px;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:#282828;color:white;font:400 30px/1 Arial,sans-serif;cursor:pointer;z-index:1}
+.reb-r130-image-viewer-close:focus-visible{outline:3px solid #ffbf2a;outline-offset:2px}
+.reb-social-media-cell,.reb-social-comment-photo,.reb-post-media img{cursor:zoom-in}
+
+/* R132: arrows appear only if the current post contains multiple images. */
+.reb-r130-image-viewer-nav[hidden],.reb-r130-image-viewer-counter[hidden]{display:none!important}
+.reb-r130-image-viewer-nav{position:absolute!important;top:50%;transform:translateY(-50%);width:52px;height:60px;border:1px solid rgba(255,255,255,.35);border-radius:12px;background:rgba(28,28,28,.82);color:#fff;font:400 48px/1 Arial,sans-serif;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2}
+.reb-r130-image-viewer-prev{left:max(10px,env(safe-area-inset-left))}
+.reb-r130-image-viewer-next{right:max(10px,env(safe-area-inset-right))}
+.reb-r130-image-viewer-nav:disabled{opacity:.28;cursor:default}
+.reb-r130-image-viewer-nav:focus-visible{outline:3px solid #ffbf2a;outline-offset:2px}
+.reb-r130-image-viewer-counter{position:absolute;bottom:max(10px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:rgba(25,25,25,.82);border-radius:14px;padding:5px 13px;color:#fff;font:600 13px/1.5 Arial,sans-serif;pointer-events:none}
+@media(max-width:767px){.reb-r130-image-viewer-nav{width:38px;height:52px;font-size:38px;border-radius:9px;background:rgba(18,18,18,.85)}.reb-r130-image-viewer-photo{max-width:calc(100vw - 22px)}}

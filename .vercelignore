@@ -1,0 +1,13 @@
+.git
+.github
+.vercel
+node_modules
+assets/download/*
+*.ex4
+*.ex5
+*.mq4
+*.mq5
+*.zip
+*.rar
+*.7z
+DEPLOYMENT-GUIDE.md

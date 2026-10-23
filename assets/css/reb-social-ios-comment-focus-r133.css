@@ -1,0 +1,12 @@
+/* R133 — iOS-only Social comment input focus zoom guard.
+   iOS WebKit auto-zooms focused editable controls below 16 CSS px.
+   Keep Android/Desktop, comment JS, viewport zoom, and layout unchanged. */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (max-width: 767px) {
+    body.reb-social-page .reb-social-comment-input-row textarea,
+    body.reb-social-page .reb-social-inline-composer-field textarea,
+    body.reb-social-page .reb-social-reply-composer textarea {
+      font-size: 16px !important;
+    }
+  }
+}

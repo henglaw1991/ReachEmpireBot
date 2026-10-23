@@ -1,0 +1,82 @@
+/* ReachEmpire Social D20-D — Global Typography Standard
+   One typography contract for Feed, Community, Messages, Mini Chat,
+   Notifications, Profile, Settings, Call UI and responsive/mobile screens. */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap');
+
+:root{
+  --reb-d20d-font:"IBM Plex Sans","Noto Sans Khmer",Arial,Helvetica,sans-serif;
+  --reb-d20d-body-size:15px;
+  --reb-d20d-small-size:13px;
+  --reb-d20d-line:1.45;
+}
+
+html,body{font-family:var(--reb-d20d-font)!important;font-size:var(--reb-d20d-body-size);line-height:var(--reb-d20d-line);font-weight:400;letter-spacing:0!important;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+/* Force the same text face through every Social component, including
+   dynamically-created Mini Chat and Voice/Video Call windows. */
+body :where(div,section,article,header,footer,main,nav,aside,p,a,span,small,strong,b,em,label,button,input,textarea,select,option,ul,ol,li,table,thead,tbody,tr,td,th,h1,h2,h3,h4,h5,h6,time){
+  font-family:var(--reb-d20d-font)!important;
+  letter-spacing:0!important;
+}
+
+button,input,textarea,select{font-size:inherit;line-height:1.35}
+input::placeholder,textarea::placeholder{font-family:var(--reb-d20d-font)!important;font-weight:400}
+
+h1,h2,h3,h4,h5,h6,.reb-social-global-brand strong,.reb-social-brand-copy strong{font-weight:700!important;line-height:1.22}
+strong,b{font-weight:600}
+.reb-social-global-nav a,.reb-social-bottom-nav a,.reb-social-bottom-nav button,
+.reb-profile-tabs button,.reb-notif-tabs button,.reb-social-tool-btn,
+.reb-social-primary-btn,.reb-social-secondary-btn,.reb-social-small-btn,
+.reb-btn-primary,.reb-btn-secondary{font-weight:600!important}
+
+small,.reb-msg-meta,.reb-post-time,.reb-social-brand-copy small{font-size:var(--reb-d20d-small-size);line-height:1.35}
+
+/* Khmer must use the same scale/weight contract rather than browser-specific fallback sizing. */
+:lang(km){font-family:"Noto Sans Khmer","IBM Plex Sans",Arial,Helvetica,sans-serif!important;line-height:1.55}
+
+/* Preserve icon fonts — typography standardization must never turn icons into text glyphs. */
+.fa,.fas,.far,.fal{font-family:"Font Awesome 5 Pro"!important}
+.fa,.fas{font-weight:900!important}.far{font-weight:400!important}.fal{font-weight:300!important}
+.fab{font-family:"Font Awesome 5 Brands"!important;font-weight:400!important}
+
+@media(max-width:760px){
+  :root{--reb-d20d-body-size:14px;--reb-d20d-small-size:12px}
+}
+
+/* D20E admin-controlled verified badge */
+.reb-blue-verified{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:18px!important;height:18px!important;margin-left:6px!important;background:#1d9bf0!important;color:#fff!important;font-size:11px!important;font-weight:900!important;line-height:1!important;vertical-align:middle!important;flex:0 0 18px!important;clip-path:polygon(50% 0,61% 8%,75% 5%,82% 18%,95% 25%,92% 39%,100% 50%,92% 61%,95% 75%,82% 82%,75% 95%,61% 92%,50% 100%,39% 92%,25% 95%,18% 82%,5% 75%,8% 61%,0 50%,8% 39%,5% 25%,18% 18%,25% 5%,39% 8%)!important;box-shadow:none!important}
+.reb-profile-name-row h1{display:inline-flex!important;align-items:center!important;flex-wrap:nowrap!important;white-space:nowrap!important;max-width:100%!important}.reb-profile-name-row h1 .reb-blue-verified{position:relative!important;top:1px!important}
+
+/* D20F5 Blue Verified: real scalloped SVG badge, inline with account name */
+.reb-blue-verified{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:21px!important;height:21px!important;min-width:21px!important;margin-left:7px!important;background:transparent!important;color:inherit!important;clip-path:none!important;box-shadow:none!important;vertical-align:middle!important;flex:0 0 21px!important;line-height:0!important;position:relative!important;top:0!important}
+.reb-blue-verified svg{display:block!important;width:21px!important;height:21px!important;overflow:visible!important;flex:none!important}
+.reb-profile-name-row>div{min-width:0!important}
+.reb-profile-name-row h1{display:flex!important;align-items:center!important;flex-flow:row nowrap!important;gap:0!important;white-space:nowrap!important;width:max-content!important;max-width:100%!important;line-height:1.12!important}
+.reb-profile-name-row h1 .reb-blue-verified{position:static!important}
+
+/* D20F6 Social verified/public alignment — single-row, optically centered */
+.reb-blue-verified{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  width:20px!important;height:20px!important;min-width:20px!important;flex:0 0 20px!important;
+  margin:0 0 0 7px!important;padding:0!important;line-height:0!important;
+  vertical-align:middle!important;position:relative!important;top:-1px!important;
+  transform:none!important;align-self:center!important;
+}
+.reb-blue-verified svg{display:block!important;width:20px!important;height:20px!important;margin:0!important;transform:none!important}
+.reb-social-post-author-row,.reb-profile-name-row h1,.reb-post-author-line{
+  display:flex!important;align-items:center!important;flex-wrap:nowrap!important;white-space:nowrap!important;
+}
+.reb-social-post-author-row .reb-blue-verified,.reb-profile-name-row h1 .reb-blue-verified,.reb-post-author-line .reb-blue-verified{top:0!important}
+.reb-social-post-meta,.reb-post-meta{
+  display:flex!important;align-items:center!important;flex-wrap:nowrap!important;gap:6px!important;line-height:1.25!important;
+}
+.reb-social-post-privacy,.reb-post-privacy{
+  display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;gap:4px!important;
+  line-height:1!important;white-space:nowrap!important;vertical-align:middle!important;margin:0!important;
+}
+.reb-social-post-privacy i,.reb-post-privacy i{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  width:13px!important;height:13px!important;line-height:13px!important;font-size:11px!important;
+  margin:0!important;padding:0!important;position:relative!important;top:0!important;vertical-align:middle!important;
+}
+.reb-social-post-privacy span,.reb-post-privacy span{display:inline-flex!important;align-items:center!important;line-height:1!important;margin:0!important}

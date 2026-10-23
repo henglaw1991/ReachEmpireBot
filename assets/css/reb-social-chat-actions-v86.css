@@ -1,0 +1,17 @@
+/* ReachEmpire V86 chat action menus — restored in V121 regression repair */
+.reb-msg-conv-item{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 32px;align-items:center;min-width:0}
+.reb-msg-conv-item>.reb-msg-conversation{grid-column:1/-1;grid-row:1;width:100%;padding-right:42px!important}
+.reb-msg-conv-more{grid-column:2;grid-row:1;z-index:2;width:28px;height:28px;border:0;border-radius:50%;background:transparent;color:#697583;display:grid;place-items:center;cursor:pointer}
+.reb-msg-conv-more:hover{background:#eef1f4;color:#111}
+.reb-msg-conv-menu{display:none;position:absolute;right:8px;top:calc(50% + 17px);z-index:50;min-width:145px;padding:6px;background:#fff;border:1px solid #dfe3e7;border-radius:10px;box-shadow:0 10px 30px rgba(15,23,42,.16)}
+.reb-msg-conv-menu.open{display:block}
+.reb-msg-conv-menu button{width:100%;border:0;background:transparent;border-radius:7px;padding:8px 10px;display:flex;align-items:center;gap:8px;text-align:left;cursor:pointer;font:600 12px/1.2 inherit;color:#333}
+.reb-msg-conv-menu button:hover{background:#f4f5f6}.reb-msg-conv-menu button.danger{color:#d53131}
+.reb-msg-action-wrap{position:relative;display:flex;align-items:center;gap:3px;flex:0 0 auto}
+.reb-msg-action-wrap>button{width:28px;height:28px;border:0;border-radius:50%;background:transparent;color:#7b8590;display:grid;place-items:center;cursor:pointer}
+.reb-msg-action-wrap>button:hover{background:#edf0f3;color:#222}
+.reb-msg-actions,.reb-msg-react-picker{display:none;position:fixed;z-index:2147482000;background:#fff;border:1px solid #dfe3e7;border-radius:10px;box-shadow:0 10px 30px rgba(15,23,42,.18);padding:6px}
+.reb-msg-actions.open,.reb-msg-react-picker.open{display:flex}.reb-msg-actions{min-width:150px;flex-direction:column}.reb-msg-react-picker{gap:2px}
+.reb-msg-actions button{border:0;background:transparent;border-radius:7px;padding:8px 10px;display:flex;gap:8px;align-items:center;text-align:left;cursor:pointer}.reb-msg-actions button:hover{background:#f4f5f6}.reb-msg-actions button.danger{color:#d53131}
+.reb-msg-react-picker button{border:0;background:transparent;border-radius:7px;padding:6px;font-size:18px;cursor:pointer}.reb-msg-react-picker button:hover{background:#f2f3f5}
+@media(max-width:767px){.reb-msg-conv-item{display:block}.reb-msg-conv-more,.reb-msg-conv-menu{display:none!important}}

@@ -1,0 +1,45 @@
+/* REB V72 — Desktop footer icon normalization only.
+   Prevent Font Awesome ::before glyphs from stacking on inline SVG icons.
+   Desktop-only by design; mobile remains untouched. */
+@media (min-width: 901px) {
+  .reb-clean-footer i.reb-inline-icon::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .reb-clean-footer i.reb-inline-icon {
+    font-style: normal !important;
+    line-height: 1 !important;
+  }
+
+  .reb-clean-footer i.reb-inline-icon > svg {
+    display: block !important;
+    width: 1em !important;
+    height: 1em !important;
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 2 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+    pointer-events: none !important;
+  }
+
+  .reb-clean-footer .reb-clean-footer-btn i.reb-inline-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 18px !important;
+    height: 18px !important;
+    flex: 0 0 18px !important;
+  }
+
+  .reb-clean-footer .reb-clean-footer-btn i.reb-inline-icon > svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .reb-clean-footer .reb-contact-row i.reb-inline-icon > svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}

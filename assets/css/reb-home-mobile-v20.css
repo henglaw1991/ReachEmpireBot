@@ -1,0 +1,165 @@
+/* ReachEmpireBot Home V20 - compact Apps, Insights and process heading on phones. */
+@media (max-width:767px){
+  /* Keep the long process title clean on one line. */
+  body.reb-home .reb-process .sec-title h2{
+    width:100%!important;
+    max-width:none!important;
+    font-size:clamp(17px,5vw,21px)!important;
+    line-height:1.15!important;
+    letter-spacing:-.025em!important;
+    white-space:nowrap!important;
+  }
+
+  /* Monitor Anywhere: compact split card instead of a tall empty frame. */
+  body.reb-home .reb-apps{
+    padding-top:36px!important;
+    padding-bottom:36px!important;
+  }
+  body.reb-home .reb-apps .inner-container{
+    position:relative!important;
+    display:grid!important;
+    grid-template-columns:96px minmax(0,1fr)!important;
+    gap:14px!important;
+    min-height:0!important;
+    height:auto!important;
+    padding:16px!important;
+    border-radius:12px!important;
+    overflow:hidden!important;
+  }
+  body.reb-home .reb-apps .shape{display:none!important}
+  body.reb-home .reb-apps .image-layer{
+    position:relative!important;
+    inset:auto!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:96px!important;
+    height:126px!important;
+    margin:0!important;
+    overflow:hidden!important;
+  }
+  body.reb-home .reb-apps .image-layer img{
+    width:92px!important;
+    max-width:92px!important;
+    height:112px!important;
+    max-height:112px!important;
+    object-fit:contain!important;
+    margin:0!important;
+  }
+  body.reb-home .reb-apps .content_block_two,
+  body.reb-home .reb-apps .content-box{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  body.reb-home .reb-apps .sec-title{
+    padding:0!important;
+    text-align:left!important;
+  }
+  body.reb-home .reb-apps .sec-title .sub-title{
+    margin:0 0 6px!important;
+    font-size:9px!important;
+  }
+  body.reb-home .reb-apps .sec-title h2{
+    margin:0 0 7px!important;
+    font-size:18px!important;
+    line-height:1.15!important;
+  }
+  body.reb-home .reb-apps .sec-title p{
+    display:-webkit-box!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:3!important;
+    overflow:hidden!important;
+    margin:0!important;
+    font-size:10.5px!important;
+    line-height:1.4!important;
+  }
+  body.reb-home .reb-apps .download-list{
+    display:flex!important;
+    gap:6px!important;
+    margin:10px 0 0!important;
+    padding:0!important;
+  }
+  body.reb-home .reb-apps .download-list li{
+    width:32px!important;
+    height:32px!important;
+    margin:0!important;
+  }
+  body.reb-home .reb-apps .download-list li a{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:32px!important;
+    height:32px!important;
+    padding:0!important;
+  }
+
+  /* Automation Insights: short, consistent cards with no author-height waste. */
+  body.reb-home .reb-news{
+    padding-top:36px!important;
+    padding-bottom:36px!important;
+  }
+  body.reb-home .reb-news .sec-title{padding-bottom:16px!important}
+  body.reb-home .reb-news .row{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    margin:0!important;
+  }
+  body.reb-home .reb-news .news-block{
+    width:100%!important;
+    max-width:100%!important;
+    padding:0!important;
+    margin:0!important;
+  }
+  body.reb-home .reb-news .news-block-one{
+    display:block!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0!important;
+  }
+  body.reb-home .reb-news .news-block-one .inner-box{
+    min-height:0!important;
+    height:auto!important;
+    padding:14px!important;
+    border-radius:10px!important;
+  }
+  body.reb-home .reb-news .post-date{
+    display:inline-flex!important;
+    margin:0 0 7px!important;
+    padding:4px 8px!important;
+    font-size:9px!important;
+    line-height:1.1!important;
+  }
+  body.reb-home .reb-news .inner-box h3{
+    display:-webkit-box!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:2!important;
+    overflow:hidden!important;
+    margin:0 0 6px!important;
+    font-size:15px!important;
+    line-height:1.25!important;
+  }
+  body.reb-home .reb-news .inner-box p{
+    display:-webkit-box!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:2!important;
+    overflow:hidden!important;
+    margin:0!important;
+    font-size:10.5px!important;
+    line-height:1.4!important;
+  }
+  body.reb-home .reb-news .author-box{display:none!important}
+}
+
+@media (max-width:350px){
+  body.reb-home .reb-process .sec-title h2{font-size:16px!important}
+  body.reb-home .reb-apps .inner-container{grid-template-columns:78px minmax(0,1fr)!important;gap:10px!important;padding:13px!important}
+  body.reb-home .reb-apps .image-layer{width:78px!important;height:112px!important}
+  body.reb-home .reb-apps .image-layer img{width:76px!important;height:104px!important}
+  body.reb-home .reb-apps .sec-title h2{font-size:16px!important}
+}

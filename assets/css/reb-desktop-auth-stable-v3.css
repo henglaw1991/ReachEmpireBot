@@ -1,0 +1,24 @@
+/* Critical desktop auth geometry. Loaded in <head> to prevent a late layout jump. */
+@media (min-width:768px){
+  html body .reb-top{
+    box-sizing:border-box!important;width:100%!important;padding:12px 5.5vw!important;
+    display:flex!important;align-items:center!important;justify-content:space-between!important;
+    gap:18px!important;position:relative!important;
+  }
+  html body .reb-top .reb-actions,
+  html body .reb-top .reb-login,
+  html body.reb-home .main-header .header-top .option-block{
+    box-sizing:border-box!important;display:flex!important;grid-template-columns:none!important;
+    align-items:center!important;justify-content:flex-end!important;gap:14px!important;
+    width:auto!important;max-width:none!important;flex:0 0 auto!important;
+    position:absolute!important;top:50%!important;left:auto!important;bottom:auto!important;
+    margin:0!important;padding:0!important;background:transparent!important;border:0!important;
+    outline:0!important;border-radius:0!important;box-shadow:none!important;
+    transform:translateY(-50%)!important;
+  }
+  html body:not(.reb-home) .reb-top .reb-actions,
+  html body:not(.reb-home) .reb-top .reb-login{right:5.5vw!important}
+  html body.reb-home .main-header .header-top .large-container,
+  html body.reb-home .main-header .header-top .top-inner{position:relative!important}
+  html body.reb-home .main-header .header-top .option-block{right:0!important}
+}

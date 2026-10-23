@@ -1,0 +1,82 @@
+/* ReachEmpireBot V73
+   Uses the verified Home-page mobile account control as the shared standard.
+   Desktop styles are intentionally untouched. */
+@media (max-width: 767px) {
+  html body .reb-top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    padding: 0 11px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .reb-top > .reb-phone {
+    display: none !important;
+  }
+
+  html body .reb-top > .reb-actions,
+  html body .reb-top > .reb-login {
+    position: relative !important;
+    inset: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: center !important;
+    width: 238px !important;
+    max-width: 68vw !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    margin: 0 !important;
+    padding: 4px !important;
+    gap: 5px !important;
+    border: 1px solid rgba(244, 174, 27, 0.34) !important;
+    border-radius: 11px !important;
+    background: #111514 !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+
+  html body .reb-top > .reb-actions > a,
+  html body .reb-top > .reb-login > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    margin: 0 !important;
+    padding: 6px 9px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    line-height: 20px !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+
+  html body .reb-top > .reb-actions > a:first-child,
+  html body .reb-top > .reb-login > a:first-child {
+    border-color: #f5ab1b !important;
+    background: #ffb321 !important;
+    color: #0c0f0e !important;
+  }
+
+  html body .reb-top > .reb-actions > a:last-child,
+  html body .reb-top > .reb-login > a:last-child {
+    border-color: rgba(255, 255, 255, 0.28) !important;
+    background: #101312 !important;
+    color: #fff !important;
+  }
+}
+
+@media (max-width: 374px) {
+  html body .reb-top > .reb-actions,
+  html body .reb-top > .reb-login {
+    width: min(212px, 70vw) !important;
+  }
+}

@@ -1,0 +1,139 @@
+/* ReachEmpireBot Home V27 - unified mobile spacing, header controls and monitor card. */
+@media (max-width:767px){
+  /* Keep both account actions together and leave a safe lane for the menu trigger. */
+  html body.reb-home .main-header .header-top .top-inner{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:8px!important;
+  }
+  html body.reb-home .main-header .support-box{flex:0 1 auto!important;min-width:0!important}
+  html body.reb-home .main-header .option-block{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    width:190px!important;
+    max-width:52vw!important;
+    padding:3px!important;
+    gap:4px!important;
+    border:1px solid rgba(245,176,38,.34)!important;
+    border-radius:10px!important;
+    background:#171918!important;
+  }
+  html body.reb-home .main-header .option-block .language-picker{display:none!important}
+  html body.reb-home .main-header .option-block .theme-btn{
+    width:100%!important;
+    min-width:0!important;
+    min-height:31px!important;
+    height:31px!important;
+    margin:0!important;
+    padding:6px 7px!important;
+    border-radius:7px!important;
+    font-size:10.5px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+  html body.reb-home .main-header .header-lower .outer-box{gap:10px!important}
+  html body.reb-home .main-header .menu-area{flex:0 0 46px!important;width:46px!important;margin-left:auto!important}
+  html body.reb-home .main-header .mobile-nav-toggler{
+    position:relative!important;
+    inset:auto!important;
+    z-index:20!important;
+    margin:0!important;
+    flex:0 0 46px!important;
+  }
+  html body.reb-home .main-header .search-btn{display:none!important}
+
+  /* Give the live market strip its own breathing room above the banner. */
+  html body.reb-home .main-header .header-bottom{margin:0 0 8px!important}
+  html body.reb-home section.banner-section{padding-top:0!important}
+
+  /* Hero: robot is large, clean and anchored at the left centre. */
+  html body.reb-home section.banner-section .reb-hero-inner{gap:12px!important}
+  html body.reb-home section.banner-section .reb-hero-inner > .reb-hero-visual{
+    grid-template-columns:minmax(145px,46%) minmax(0,54%)!important;
+    grid-template-rows:198px!important;
+    min-height:198px!important;
+    height:198px!important;
+    max-height:198px!important;
+    gap:5px!important;
+    padding:8px!important;
+  }
+  html body.reb-home section.banner-section .reb-hero-visual > img.reb-robot{
+    grid-column:1!important;
+    align-self:center!important;
+    justify-self:start!important;
+    width:174px!important;
+    max-width:48vw!important;
+    max-height:188px!important;
+    margin-left:-9px!important;
+    transform:none!important;
+  }
+
+  /* Consistent vertical rhythm across the full phone home page. */
+  html body.reb-home .reb-trust-section{padding:8px 0 20px!important}
+  html body.reb-home .reb-solutions,
+  html body.reb-home .reb-platform-section,
+  html body.reb-home .reb-markets,
+  html body.reb-home .reb-symbol-sync,
+  html body.reb-home .reb-process,
+  html body.reb-home .reb-news{padding-top:30px!important;padding-bottom:30px!important}
+  html body.reb-home .reb-apps{padding-top:14px!important;padding-bottom:26px!important}
+  html body.reb-home .sec-title{padding-bottom:16px!important}
+  html body.reb-home .sec-title h2{font-size:28px!important;line-height:1.12!important;letter-spacing:-.015em!important}
+  html body.reb-home .reb-news .sec-title{padding-bottom:18px!important}
+  html body.reb-home .reb-news .sec-title h2{font-size:28px!important;line-height:1.12!important}
+
+  /* Mobile control: robot on the left, clean title and platform icons on the right. */
+  html body.reb-home .reb-apps .inner-container{
+    display:block!important;
+    min-height:142px!important;
+    height:142px!important;
+    padding:15px 14px 14px 126px!important;
+    overflow:hidden!important;
+  }
+  html body.reb-home .reb-apps .content_block_two{
+    width:100%!important;
+    max-width:100%!important;
+    padding:0!important;
+    text-align:left!important;
+  }
+  html body.reb-home .reb-apps .sec-title{padding:0!important}
+  html body.reb-home .reb-apps .sec-title .sub-title{margin:0 0 7px!important;font-size:9px!important}
+  html body.reb-home .reb-apps .sec-title h2{margin:0 0 13px!important;font-size:20px!important;line-height:1.1!important}
+  html body.reb-home .reb-apps .sec-title p{display:none!important}
+  html body.reb-home .reb-apps .image-layer{
+    left:8px!important;
+    right:auto!important;
+    top:50%!important;
+    bottom:auto!important;
+    width:112px!important;
+    height:132px!important;
+    background:url('/assets/images/resource/reb-robot.png') center/contain no-repeat!important;
+    transform:translateY(-50%) scaleX(-1)!important;
+  }
+  html body.reb-home .reb-apps .download-list{
+    display:grid!important;
+    grid-template-columns:repeat(4,34px)!important;
+    justify-content:start!important;
+    gap:6px!important;
+    margin:0!important;
+  }
+  html body.reb-home .reb-apps .download-list li{margin:0!important;width:34px!important;height:34px!important}
+  html body.reb-home .reb-apps .download-list li a{width:34px!important;height:34px!important}
+}
+
+@media (max-width:374px){
+  html body.reb-home .main-header .option-block{width:166px!important;max-width:50vw!important}
+  html body.reb-home .main-header .option-block .theme-btn{font-size:9.5px!important}
+  html body.reb-home section.banner-section .reb-hero-inner > .reb-hero-visual{
+    grid-template-columns:132px minmax(0,1fr)!important;
+  }
+  html body.reb-home section.banner-section .reb-hero-visual > img.reb-robot{width:158px!important;margin-left:-10px!important}
+  html body.reb-home .reb-apps .inner-container{padding-left:112px!important}
+  html body.reb-home .reb-apps .image-layer{left:5px!important;width:102px!important}
+  html body.reb-home .reb-apps .sec-title h2{font-size:18px!important}
+  html body.reb-home .reb-apps .download-list{grid-template-columns:repeat(4,31px)!important;gap:4px!important}
+  html body.reb-home .reb-apps .download-list li,
+  html body.reb-home .reb-apps .download-list li a{width:31px!important;height:31px!important}
+}
+

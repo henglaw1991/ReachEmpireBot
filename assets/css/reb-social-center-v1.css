@@ -1,0 +1,280 @@
+/* ReachEmpire Social Center — Mobile Foundation Phase 2A */
+:root{
+  --reb-social-gold:#f5b026;
+  --reb-social-bg:#f4f6f8;
+  --reb-social-ink:#101214;
+  --reb-social-muted:#6b7280;
+  --reb-social-line:#e5e7eb;
+  --reb-social-card:#ffffff;
+  --reb-social-dark:#111214;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--reb-social-bg);color:var(--reb-social-ink);font-family:var(--reb-social-text-font,"IBM Plex Sans",Arial,Helvetica,sans-serif)}
+body{padding-bottom:calc(78px + env(safe-area-inset-bottom));overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,textarea{font:inherit}
+button{cursor:pointer}
+.reb-social-shell{width:100%;max-width:760px;margin:0 auto;min-height:100vh;background:var(--reb-social-bg)}
+.reb-social-topbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:70px;padding:10px 14px;background:rgba(17,18,20,.97);border-bottom:1px solid rgba(245,176,38,.22);backdrop-filter:blur(16px)}
+.reb-social-brand{display:flex;align-items:center;min-width:0;gap:10px;color:#fff;font-weight:800}.reb-social-brand img{display:block;width:154px;max-width:44vw;height:auto}.reb-social-brand span{font-size:12px;line-height:1;padding:6px 8px;border:1px solid rgba(245,176,38,.4);border-radius:999px;color:var(--reb-social-gold);white-space:nowrap}
+.reb-social-top-actions{display:flex;align-items:center;gap:8px}.reb-social-icon-btn{position:relative;display:grid;place-items:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:#1b1c20;color:#fff}.reb-social-icon-btn:active{transform:scale(.98)}
+.reb-social-badge{position:absolute;top:-4px;right:-5px;min-width:19px;height:19px;padding:0 5px;border-radius:10px;background:#ef4444;color:#fff;font-size:10px;font-weight:800;line-height:19px;text-align:center}
+.reb-social-main{display:flex;flex-direction:column;gap:12px;padding:12px 12px 26px}
+.reb-social-account-card,.reb-social-card{background:var(--reb-social-card);border:1px solid var(--reb-social-line);border-radius:16px;box-shadow:0 10px 26px rgba(15,23,42,.05)}
+.reb-social-account-card{display:grid;grid-template-columns:50px minmax(0,1fr) auto;align-items:center;gap:12px;padding:12px}
+.reb-social-avatar{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--reb-social-gold),#ffcf6b);color:#111;font-weight:900;font-size:20px;box-shadow:inset 0 0 0 2px rgba(17,18,20,.08)}
+.reb-social-account-copy{display:flex;flex-direction:column;gap:4px;min-width:0}.reb-social-account-copy strong{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-social-account-copy span{font-size:12px;color:var(--reb-social-muted);line-height:1.35}
+.reb-social-small-btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:10px;background:var(--reb-social-dark);color:#fff;font-size:12px;font-weight:800;white-space:nowrap}
+.reb-social-card{padding:14px}
+.reb-social-card-head,.reb-social-feed-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.reb-social-card-head h1,.reb-social-feed-head h2{margin:3px 0 0;font-size:18px;line-height:1.25}.reb-social-eyebrow{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#9a6500}.reb-social-draft-state{font-size:10px;color:var(--reb-social-muted);white-space:nowrap}
+.reb-social-composer textarea{display:block;width:100%;min-height:112px;margin-top:12px;padding:13px 14px;border:1px solid #d9dde3;border-radius:12px;background:#fafafa;color:#111;resize:vertical;outline:none;line-height:1.5}.reb-social-composer textarea:focus{border-color:var(--reb-social-gold);box-shadow:0 0 0 3px rgba(245,176,38,.14);background:#fff}
+.reb-social-composer-meta{display:flex;justify-content:space-between;gap:12px;min-height:20px;margin-top:7px;color:var(--reb-social-muted);font-size:11px}.reb-social-composer-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}.reb-social-media-tools{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none}.reb-social-media-tools::-webkit-scrollbar{display:none}.reb-social-tool-btn{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 10px;border:1px solid #e1e5e9;border-radius:10px;background:#fff;color:#31363b;font-size:11px;font-weight:800;white-space:nowrap}.reb-social-tool-btn i{color:#a36f00}
+.reb-social-primary-btn,.reb-social-secondary-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;border-radius:11px;border:0;font-weight:900;font-size:13px}.reb-social-primary-btn{background:var(--reb-social-gold);color:#101214}.reb-social-primary-btn[disabled]{opacity:.48;cursor:not-allowed}.reb-social-secondary-btn{border:1px solid #d8dce1;background:#fff;color:#111}
+.reb-social-guest-card{text-align:center;padding:26px 18px}.reb-social-guest-icon{display:grid;place-items:center;width:62px;height:62px;margin:0 auto 14px;border-radius:18px;background:#fff6df;color:#9a6500;font-size:24px}.reb-social-guest-card h1{margin:0 0 8px;font-size:24px}.reb-social-guest-card p{margin:0 auto;max-width:560px;color:var(--reb-social-muted);font-size:14px;line-height:1.6}.reb-social-guest-actions{display:flex;justify-content:center;gap:9px;margin-top:18px}
+.reb-social-feed-section{padding:2px 0 6px}.reb-social-feed-head{padding:4px 2px 10px}.reb-social-feed-tabs{display:flex;gap:5px;padding:3px;background:#e9edf1;border-radius:10px}.reb-social-feed-tabs button{min-height:34px;padding:0 11px;border:0;border-radius:8px;background:transparent;color:#5d6570;font-size:11px;font-weight:900}.reb-social-feed-tabs button.active{background:#fff;color:#111;box-shadow:0 2px 6px rgba(15,23,42,.08)}
+.reb-social-feed-state{padding:24px 18px;border:1px dashed #cfd5dc;border-radius:14px;background:#fff;color:var(--reb-social-muted);font-size:13px;line-height:1.55;text-align:center}.reb-social-feed-state[hidden]{display:none}
+.reb-social-feed{display:flex;flex-direction:column;gap:10px}.reb-social-post{background:#fff;border:1px solid var(--reb-social-line);border-radius:16px;padding:14px;box-shadow:0 8px 22px rgba(15,23,42,.045)}.reb-social-post-head{display:grid;grid-template-columns:42px minmax(0,1fr);gap:10px;align-items:center}.reb-social-post-avatar{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#f0f2f5;color:#111;font-weight:900}.reb-social-post-author{display:flex;flex-direction:column;min-width:0}.reb-social-post-author strong{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-social-post-author span{margin-top:2px;color:#7a828c;font-size:11px}.reb-social-post-text{margin:12px 0 0;color:#202428;font-size:14px;line-height:1.58;white-space:pre-wrap;overflow-wrap:anywhere}.reb-social-post-media{display:block;width:100%;max-height:520px;object-fit:cover;margin-top:12px;border-radius:12px;background:#f1f3f5}.reb-social-post-actions{display:flex;gap:6px;margin-top:12px;padding-top:10px;border-top:1px solid #edf0f2}.reb-social-post-actions button{flex:1;min-height:38px;border:0;border-radius:9px;background:#f6f7f9;color:#4c535b;font-size:11px;font-weight:800}.reb-social-post-actions button.is-active{background:#fff4d7;color:#8c5a00}
+.reb-social-bottom-nav{position:fixed;left:50%;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(5,1fr);width:min(760px,100%);min-height:68px;padding:6px 5px calc(6px + env(safe-area-inset-bottom));transform:translateX(-50%);background:rgba(17,18,20,.98);border-top:1px solid rgba(245,176,38,.2);backdrop-filter:blur(16px)}.reb-social-bottom-nav a,.reb-social-bottom-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:0;border:0;background:transparent;color:#c2c7cc;font-size:10px;font-weight:800}.reb-social-bottom-nav i{font-size:18px}.reb-social-bottom-nav .active{color:var(--reb-social-gold)}.reb-social-bottom-nav button:nth-child(3){justify-self:center;width:52px;height:52px;margin-top:-15px;border-radius:17px;background:var(--reb-social-gold);color:#111;box-shadow:0 8px 22px rgba(245,176,38,.28)}.reb-social-bottom-nav button:nth-child(3) i{font-size:19px}.reb-social-bottom-nav button:nth-child(3) span{display:none}
+.reb-social-toast{position:fixed;left:50%;bottom:92px;z-index:100;width:min(390px,calc(100% - 28px));padding:12px 14px;transform:translateX(-50%);border-radius:12px;background:#111214;color:#fff;box-shadow:0 16px 38px rgba(0,0,0,.28);font-size:12px;line-height:1.45;text-align:center}.reb-social-toast[hidden]{display:none}
+.reb-social-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(min-width:761px){body{padding-bottom:30px}.reb-social-shell{margin:18px auto 32px;border:1px solid #e1e4e8;border-radius:20px;overflow:hidden;box-shadow:0 22px 60px rgba(15,23,42,.09)}.reb-social-main{padding:16px 18px 34px}.reb-social-bottom-nav{position:sticky;left:auto;bottom:0;transform:none;width:100%;max-width:none}.reb-social-topbar{position:sticky}}
+@media(max-width:390px){.reb-social-brand img{width:138px}.reb-social-brand span{display:none}.reb-social-main{padding-left:9px;padding-right:9px}.reb-social-account-card{grid-template-columns:46px minmax(0,1fr) auto}.reb-social-avatar{width:46px;height:46px}.reb-social-composer-actions{align-items:flex-end}.reb-social-tool-btn span{display:none}.reb-social-tool-btn{width:38px;padding:0;justify-content:center}.reb-social-primary-btn{padding:0 15px}.reb-social-feed-tabs button{padding:0 9px}.reb-social-bottom-nav a,.reb-social-bottom-nav button{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* ================================================================
+   ReachEmpire Social Center — Phase 2C: Media, Comments & Profiles
+   ================================================================ */
+.reb-social-avatar img,.reb-social-post-avatar img,.reb-social-comment-avatar img,.reb-social-profile-avatar img,.reb-social-user-avatar img,.reb-social-notification-avatar img{width:100%;height:100%;display:block;object-fit:cover;border-radius:inherit}
+.reb-default-avatar-image{object-fit:contain!important;padding:4px;background:#fff2c9}
+.reb-social-attachment-preview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.reb-social-attachment-preview[hidden]{display:none}
+.reb-social-selected-attachment{position:relative;display:grid;grid-template-columns:54px minmax(0,1fr) 30px;align-items:center;gap:8px;min-height:62px;padding:6px;border:1px solid #e2e6ea;border-radius:11px;background:#f8f9fa}
+.reb-social-selected-visual{display:grid;place-items:center;width:54px;height:48px;border-radius:8px;overflow:hidden;background:#eceff2;color:#8b5e00}.reb-social-selected-visual img{width:100%;height:100%;object-fit:cover}.reb-social-selected-visual i{font-size:20px}
+.reb-social-selected-copy{min-width:0;display:flex;flex-direction:column;gap:3px}.reb-social-selected-copy strong{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-social-selected-copy span{font-size:9px;color:#77808a}
+.reb-social-selected-remove{display:grid;place-items:center;width:28px;height:28px;border:0;border-radius:8px;background:#fff;color:#59616b;font-size:20px;line-height:1}
+.reb-social-load-more{display:block;width:100%;min-height:42px;margin-top:10px;border:1px solid #dfe3e7;border-radius:11px;background:#fff;color:#343a40;font-size:12px;font-weight:900}.reb-social-load-more[hidden]{display:none}.reb-social-load-more:disabled{opacity:.6}
+.reb-social-post-head{grid-template-columns:42px minmax(0,1fr) auto}
+.reb-social-avatar-button,.reb-social-author-link{border:0;background:transparent;padding:0;text-align:left;color:inherit}
+.reb-social-post-author-row{display:flex;align-items:center;gap:8px;min-width:0}.reb-social-author-link{min-width:0;max-width:100%;font-size:14px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reb-social-follow-mini{min-height:26px;padding:0 9px;border:1px solid #e1e4e8;border-radius:8px;background:#fff;color:#8d5d00;font-size:10px;font-weight:900;white-space:nowrap}.reb-social-follow-mini.is-following{background:#f3f4f6;color:#565e67}
+.reb-social-post-more{display:grid;place-items:center;width:34px;height:34px;border:0;border-radius:9px;background:#f5f6f8;color:#626a73}
+.reb-social-post-media-wrap{display:flex;flex-direction:column;gap:8px;margin-top:12px}.reb-social-media-grid{display:grid;gap:4px;overflow:hidden;border-radius:12px;background:#edf0f3}.reb-social-media-count-1{grid-template-columns:1fr}.reb-social-media-count-2{grid-template-columns:repeat(2,1fr)}.reb-social-media-count-3,.reb-social-media-count-4{grid-template-columns:repeat(2,1fr)}
+.reb-social-media-cell{display:block;min-width:0;min-height:0;background:#eef1f3;overflow:hidden}.reb-social-media-count-1 .reb-social-media-cell{max-height:520px}.reb-social-media-count-2 .reb-social-media-cell{height:300px}.reb-social-media-count-3 .reb-social-media-cell,.reb-social-media-count-4 .reb-social-media-cell{height:220px}.reb-social-media-grid .reb-social-post-media{width:100%;height:100%;max-height:none;margin:0;border-radius:0;object-fit:cover}
+.reb-social-post-video{display:block;width:100%;max-height:520px;border-radius:12px;background:#0c0d0f}
+.reb-social-post-files{display:flex;flex-direction:column;gap:7px}.reb-social-file-card{display:grid;grid-template-columns:38px minmax(0,1fr);align-items:center;gap:9px;padding:9px 10px;border:1px solid #e0e4e8;border-radius:10px;background:#f8f9fa}.reb-social-file-card>i{display:grid;place-items:center;width:36px;height:36px;border-radius:9px;background:#fff3d6;color:#9a6500}.reb-social-file-card>span{display:flex;flex-direction:column;min-width:0}.reb-social-file-card strong{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-social-file-card small{margin-top:2px;color:#777f88;font-size:9px}
+.reb-social-panel-open{overflow:hidden}
+.reb-social-overlay{position:fixed;inset:0;z-index:140;display:flex;align-items:flex-end;justify-content:center;padding:24px 12px 0;background:rgba(3,6,10,.58);backdrop-filter:blur(5px)}.reb-social-overlay[hidden]{display:none}
+.reb-social-panel{display:flex;flex-direction:column;width:min(760px,100%);max-height:min(86vh,900px);min-height:220px;border:1px solid rgba(255,255,255,.35);border-bottom:0;border-radius:20px 20px 0 0;background:#f4f6f8;box-shadow:0 -20px 70px rgba(0,0,0,.28);overflow:hidden}
+.reb-social-panel-head{display:grid;grid-template-columns:42px minmax(0,1fr) 42px;align-items:center;gap:8px;min-height:62px;padding:8px 12px;border-bottom:1px solid #e3e6e9;background:#fff}.reb-social-panel-head h2{margin:0;text-align:center;font-size:17px}.reb-social-panel-icon{display:grid;place-items:center;width:40px;height:40px;border:0;border-radius:10px;background:#f3f4f6;color:#353b42}.reb-social-panel-icon[hidden]{visibility:hidden;display:block}
+.reb-social-panel-body{display:flex;flex-direction:column;gap:10px;padding:12px;overflow:auto;overscroll-behavior:contain}.reb-social-panel-state{padding:24px 14px;border:1px dashed #cfd5dc;border-radius:12px;background:#fff;color:#727a84;text-align:center;font-size:12px;line-height:1.5}.reb-social-panel-state.is-error{color:#b42318;border-color:#f2c2bd;background:#fff8f7}
+.reb-social-comments-section{display:flex;flex-direction:column;gap:10px}.reb-social-comments-list{display:flex;flex-direction:column;gap:8px}.reb-social-comment{display:grid;grid-template-columns:38px minmax(0,1fr);gap:9px;padding:10px;border:1px solid #e5e8eb;border-radius:12px;background:#fff}.reb-social-comment-avatar{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#eef1f3;font-size:11px;font-weight:900;overflow:hidden}.reb-social-comment-main{min-width:0}.reb-social-comment-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.reb-social-comment-top strong{font-size:11px}.reb-social-comment-top span{font-size:9px;color:#7b838d}.reb-social-comment-main p{margin:6px 0 0;font-size:12px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}.reb-social-inline-tools{display:flex;gap:8px;margin-top:6px}.reb-social-text-action{padding:0;border:0;background:transparent;color:#796126;font-size:10px;font-weight:800}.reb-social-text-action.is-danger{color:#b42318}.reb-social-inline-editor{display:block;width:100%;min-height:72px;margin-top:6px;padding:9px;border:1px solid #d6dbe0;border-radius:9px;resize:vertical}.reb-social-inline-editor-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:7px}.reb-social-inline-editor-actions .reb-social-primary-btn,.reb-social-inline-editor-actions .reb-social-secondary-btn{min-height:34px;padding:0 12px;font-size:10px}
+.reb-social-comment-composer{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:8px;position:sticky;bottom:-12px;padding:10px 0 2px;background:linear-gradient(to top,#f4f6f8 78%,rgba(244,246,248,0))}.reb-social-comment-composer textarea{width:100%;min-height:54px;max-height:120px;padding:10px 11px;border:1px solid #d8dde2;border-radius:11px;resize:vertical}.reb-social-comment-composer .reb-social-primary-btn{min-height:42px}.reb-social-panel-login{display:flex;align-items:center;justify-content:center;min-height:42px;border-radius:10px;background:#111214;color:#fff;font-size:11px;font-weight:900}
+.reb-social-edit-post-text{width:100%;min-height:130px;padding:12px;border:1px solid #d5dae0;border-radius:12px;background:#fff;resize:vertical}.reb-social-edit-media-list{display:flex;flex-direction:column;gap:7px}.reb-social-edit-media-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 11px;border:1px solid #e0e4e8;border-radius:10px;background:#fff}.reb-social-edit-media-row span{min-width:0;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-social-manage-actions{display:flex;justify-content:space-between;gap:8px;margin-top:4px}.reb-social-danger-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 14px;border:1px solid #f3c2bd;border-radius:11px;background:#fff6f5;color:#b42318;font-size:11px;font-weight:900}
+.reb-social-profile-card{display:grid;grid-template-columns:74px minmax(0,1fr);align-items:center;gap:13px;padding:14px;border:1px solid #e3e6ea;border-radius:14px;background:#fff}.reb-social-profile-avatar{display:grid;place-items:center;width:74px;height:74px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--reb-social-gold),#ffcf6b);font-size:22px;font-weight:900}.reb-social-profile-copy{min-width:0}.reb-social-profile-copy h3{margin:0;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-social-profile-copy>span{display:block;margin-top:3px;color:#6f7882;font-size:11px}.reb-social-profile-copy p{margin:7px 0 0;color:#444b53;font-size:12px;line-height:1.45;white-space:pre-wrap}
+.reb-social-profile-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.reb-social-stat-btn{min-height:42px;border:1px solid #e1e5e9;border-radius:10px;background:#fff;color:#343a40;font-size:11px;font-weight:900}.reb-social-profile-actions{display:flex;justify-content:flex-end}.reb-social-panel-section-title{margin:4px 2px 0;font-size:13px}.reb-social-profile-posts{display:flex;flex-direction:column;gap:9px}.reb-social-profile-editor{display:flex;flex-direction:column;gap:10px;padding:12px;border:1px solid #e2e6ea;border-radius:13px;background:#fff}.reb-social-profile-editor label{display:flex;flex-direction:column;gap:6px;color:#555d66;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.reb-social-profile-editor input[type="text"],.reb-social-profile-editor input[type="file"],.reb-social-profile-editor textarea{width:100%;padding:10px;border:1px solid #d8dde2;border-radius:9px;background:#fff;color:#111;font-size:12px;text-transform:none;letter-spacing:normal;font-weight:500}.reb-social-profile-editor textarea{min-height:100px;resize:vertical}
+.reb-social-user-row{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:9px;padding:9px;border:1px solid #e2e6e9;border-radius:12px;background:#fff}.reb-social-user-avatar{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;overflow:hidden;background:#eef1f4;font-size:11px;font-weight:900}.reb-social-user-copy{display:flex;flex-direction:column;min-width:0;padding:0;border:0;background:transparent;text-align:left}.reb-social-user-copy strong{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-social-user-copy span{margin-top:2px;color:#767f89;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reb-social-notification{display:grid;grid-template-columns:42px minmax(0,1fr);align-items:center;gap:10px;width:100%;padding:10px;border:1px solid #e4e7ea;border-radius:12px;background:#fff;text-align:left}.reb-social-notification.is-unread{border-color:#efcc7c;background:#fffaf0}.reb-social-notification-avatar{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;overflow:hidden;background:#eef1f3;font-size:11px;font-weight:900}.reb-social-notification-copy{display:flex;flex-direction:column;min-width:0}.reb-social-notification-copy strong{color:#282d32;font-size:11px;line-height:1.4}.reb-social-notification-copy small{margin-top:3px;color:#7d858e;font-size:9px}
+@media(min-width:761px){.reb-social-overlay{align-items:center;padding:24px}.reb-social-panel{max-height:86vh;border-bottom:1px solid rgba(255,255,255,.35);border-radius:20px}.reb-social-panel-body{padding:16px}.reb-social-comment-composer{bottom:-16px}.reb-social-media-count-2 .reb-social-media-cell{height:340px}}
+@media(max-width:540px){.reb-social-attachment-preview{grid-template-columns:1fr}.reb-social-media-count-2 .reb-social-media-cell{height:190px}.reb-social-media-count-3 .reb-social-media-cell,.reb-social-media-count-4 .reb-social-media-cell{height:150px}.reb-social-panel{max-height:91vh}.reb-social-profile-card{grid-template-columns:62px minmax(0,1fr)}.reb-social-profile-avatar{width:62px;height:62px}.reb-social-comment-composer{grid-template-columns:1fr}.reb-social-comment-composer .reb-social-primary-btn{width:100%}.reb-social-manage-actions{flex-direction:column-reverse}.reb-social-manage-actions>*{width:100%}}
+
+
+/* Phase 3C — Inline Discussion & Social Interaction */
+.reb-social-inline-comments{border-top:1px solid #edf0f2;padding:10px 0 0;margin-top:0}.reb-social-inline-comments-top{display:flex;align-items:center;min-height:0}.reb-social-comment-toggle{padding:2px 0 7px;border:0;background:transparent;color:#6b737c;font-size:10px;font-weight:800;text-align:left}.reb-social-comment-toggle:hover{color:#111214}.reb-social-inline-comments-list{display:flex;flex-direction:column;gap:8px;padding:2px 0 8px}.reb-social-inline-comment-state{padding:8px 10px;border-radius:9px;background:#f7f8f9;color:#7c848d;font-size:10px;text-align:center}.reb-social-inline-comment-state.is-error{background:#fff4f3;color:#b42318}
+.reb-social-inline-comment-composer{display:grid;grid-template-columns:34px minmax(0,1fr);align-items:center;gap:8px;padding:4px 0 0}.reb-social-inline-composer-avatar{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;overflow:hidden;background:#eef1f3;font-size:10px;font-weight:900}.reb-social-inline-composer-avatar img{width:100%;height:100%;object-fit:cover}.reb-social-inline-composer-field{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:7px;padding:5px 6px 5px 11px;border:1px solid #dfe3e7;border-radius:18px;background:#f7f8f9}.reb-social-inline-composer-field:focus-within{border-color:#e1ac39;background:#fff;box-shadow:0 0 0 2px rgba(245,181,47,.10)}.reb-social-inline-composer-field textarea{width:100%;min-height:24px;max-height:90px;padding:3px 0;border:0;outline:0;background:transparent;color:#17191b;font:inherit;font-size:11px;line-height:1.45;resize:vertical}.reb-social-inline-comment-submit{min-height:30px;padding:0 11px;border:0;border-radius:14px;background:#ffb51f;color:#111214;font-size:10px;font-weight:900}.reb-social-inline-comment-submit:disabled{opacity:.55}.reb-social-inline-login{display:flex;align-items:center;justify-content:center;grid-column:1/-1;min-height:36px;border-radius:18px;background:#f7f8f9;color:#333a41;font-size:10px;font-weight:900}
+.reb-social-comment-thread-item{display:flex;flex-direction:column;gap:6px}.reb-social-comment{border:0;background:#f5f6f7;border-radius:12px;padding:8px 10px}.reb-social-comment.is-reply{background:#f7f8f9}.reb-social-comment-top strong{font-size:10.5px}.reb-social-comment-main p{font-size:11px;margin-top:4px}.reb-social-inline-tools{margin-top:4px}.reb-social-replies{display:flex;flex-direction:column;gap:6px;margin-left:36px;padding-left:9px;border-left:2px solid #eceff1}.reb-social-reply-compose-slot{margin-top:4px}.reb-social-reply-composer{display:flex;flex-direction:column;gap:6px}.reb-social-reply-composer textarea{width:100%;min-height:52px;padding:8px 9px;border:1px solid #dfe3e7;border-radius:10px;background:#fff;font-size:11px;resize:vertical}.reb-social-reply-composer-actions{display:flex;justify-content:flex-end;gap:6px}.reb-social-reply-composer-actions .reb-social-primary-btn,.reb-social-reply-composer-actions .reb-social-secondary-btn{min-height:30px;padding:0 10px;font-size:9px}.reb-social-post .reb-social-post-actions{margin-bottom:0}
+@media(max-width:540px){.reb-social-inline-comment-composer{grid-template-columns:30px minmax(0,1fr)}.reb-social-inline-composer-avatar{width:30px;height:30px}.reb-social-inline-composer-field{padding-left:9px}.reb-social-inline-comment-submit{padding:0 9px}.reb-social-replies{margin-left:28px;padding-left:7px}.reb-social-comment{grid-template-columns:32px minmax(0,1fr);padding:8px}.reb-social-comment-avatar{width:32px;height:32px}}
+
+/* Phase 3C Share-to-Profile hotfix */
+.reb-social-post-actions{position:relative}
+.reb-social-share-menu{position:absolute;right:0;top:calc(100% + 7px);z-index:80;width:min(310px,calc(100vw - 64px));padding:8px;border:1px solid #dde2e7;border-radius:13px;background:#fff;box-shadow:0 16px 40px rgba(15,23,42,.18);display:flex;flex-direction:column;gap:3px}
+.reb-social-share-menu-title{padding:4px 7px 7px;color:#17191b;font-size:11px;font-weight:900;border-bottom:1px solid #eef1f3;margin-bottom:2px}
+.reb-social-post-actions .reb-social-share-option{display:grid;grid-template-columns:38px minmax(0,1fr);align-items:center;gap:9px;width:100%;min-height:50px;padding:7px;border:0;border-radius:10px;background:#fff;color:#1d2125;text-align:left;flex:none}
+.reb-social-post-actions .reb-social-share-option:hover{background:#f6f7f8}
+.reb-social-post-actions .reb-social-share-option:disabled{opacity:.55}
+.reb-social-share-option-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff2cf;color:#976000;font-size:14px}
+.reb-social-share-option-copy{display:flex;flex-direction:column;min-width:0;line-height:1.25}
+.reb-social-share-option-copy strong{font-size:11px;font-weight:900;color:#17191b}
+.reb-social-share-option-copy small{margin-top:3px;font-size:9px;font-weight:600;color:#747c85;white-space:normal}
+.reb-social-shared-post{margin-top:11px;border:1px solid #dfe3e7;border-radius:13px;background:#fbfbfc;overflow:hidden;padding:11px}
+.reb-social-shared-post-head{display:grid;grid-template-columns:34px minmax(0,1fr);align-items:center;gap:8px}
+.reb-social-shared-avatar{display:grid;place-items:center;width:34px;height:34px;padding:0;border:0;border-radius:50%;overflow:hidden;background:#eceff2;color:#151719;font-size:10px;font-weight:900}
+.reb-social-shared-avatar img{width:100%;height:100%;object-fit:cover}
+.reb-social-shared-author{display:flex;flex-direction:column;min-width:0}
+.reb-social-shared-author-link{padding:0;border:0;background:transparent;text-align:left;color:#141618;font-size:11px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reb-social-shared-author span{margin-top:2px;color:#7b838c;font-size:9px}
+.reb-social-shared-text{margin:9px 0 0;color:#25292d;font-size:12px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+.reb-social-shared-post .reb-social-post-media-wrap{margin-top:9px}
+.reb-social-view-original{margin-top:8px;padding:0;border:0;background:transparent;color:#8b5b00;font-size:9.5px;font-weight:900}
+.reb-social-shared-post.is-unavailable{padding:14px;background:#f7f8f9}
+.reb-social-shared-unavailable{color:#7b838c;font-size:10px;text-align:center}
+@media(max-width:540px){.reb-social-share-menu{right:-1px;width:min(286px,calc(100vw - 42px))}.reb-social-share-option-copy small{font-size:8.5px}.reb-social-shared-post{padding:9px}}
+
+/* Phase 3C Share UI + video upload polish */
+body.reb-social-share-open{overflow:hidden}
+.reb-social-selected-visual video{width:100%;height:100%;object-fit:cover;background:#111}
+.reb-social-share-modal-overlay{position:fixed;inset:0;z-index:220;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(14,18,24,.58);backdrop-filter:blur(7px)}
+.reb-social-share-modal{width:min(610px,calc(100vw - 32px));max-height:min(780px,calc(100vh - 36px));overflow:auto;border:1px solid rgba(255,255,255,.85);border-radius:22px;background:#fff;box-shadow:0 28px 90px rgba(0,0,0,.30);color:#17191c;scrollbar-width:thin}
+.reb-social-share-modal-head{position:sticky;top:0;z-index:4;display:grid;grid-template-columns:48px 1fr 48px;align-items:center;min-height:66px;padding:0 14px;border-bottom:1px solid #e6e9ed;background:rgba(255,255,255,.97);backdrop-filter:blur(12px)}
+.reb-social-share-modal-head h3{grid-column:2;margin:0;text-align:center;font-size:22px;font-weight:900;letter-spacing:-.25px;color:#151719}
+.reb-social-share-modal-close{grid-column:3;width:42px;height:42px;border:0;border-radius:50%;background:#eef1f4;color:#25292e;font-size:28px;line-height:1;cursor:pointer;transition:background .15s ease,transform .15s ease}
+.reb-social-share-modal-close:hover{background:#e1e5e9;transform:scale(1.03)}
+.reb-social-share-account{display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;align-items:center;padding:18px 20px 7px}
+.reb-social-share-account-avatar,.reb-social-share-preview-avatar{display:grid;place-items:center;overflow:hidden;border-radius:50%;background:#f2b129;color:#111;font-weight:900}
+.reb-social-share-account-avatar{width:48px;height:48px}.reb-social-share-account-avatar img,.reb-social-share-preview-avatar img{width:100%;height:100%;object-fit:cover}
+.reb-social-share-account strong{display:block;font-size:15px;font-weight:900;color:#17191b}
+.reb-social-share-chips{display:flex;gap:6px;margin-top:5px}.reb-social-share-chips span{display:inline-flex;align-items:center;gap:5px;min-height:25px;padding:3px 9px;border-radius:7px;background:#eef1f4;color:#343a40;font-size:10px;font-weight:800}
+.reb-social-share-caption{display:block;width:calc(100% - 40px);min-height:76px;margin:3px 20px 6px;padding:12px 0;border:0;outline:0;resize:vertical;background:#fff;color:#202428;font:inherit;font-size:16px;line-height:1.48}
+.reb-social-share-caption::placeholder{color:#7b828b}
+.reb-social-share-preview-label{margin:2px 20px 8px;color:#68717b;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.55px}
+.reb-social-share-preview{margin:0 20px 14px;border:1px solid #dde2e7;border-radius:16px;background:#fff;overflow:hidden;box-shadow:0 1px 1px rgba(0,0,0,.02)}
+.reb-social-share-preview-head{display:grid;grid-template-columns:36px minmax(0,1fr);gap:9px;align-items:center;padding:11px 12px 6px}.reb-social-share-preview-avatar{width:36px;height:36px;background:#eef1f4;font-size:10px}.reb-social-share-preview-head>div{display:flex;flex-direction:column;min-width:0}.reb-social-share-preview-head strong{font-size:11px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-social-share-preview-head span{margin-top:2px;color:#7b828a;font-size:9px}
+.reb-social-share-preview p{margin:5px 12px 11px;color:#32373c;font-size:11.5px;line-height:1.48;white-space:pre-wrap;overflow-wrap:anywhere}
+.reb-social-share-preview-media{position:relative;display:flex;align-items:center;justify-content:center;min-height:88px;border-top:1px solid #eceff2;background:#f0f2f5;color:#5b626a;overflow:hidden}
+.reb-social-share-preview-media img,.reb-social-share-preview-media video{display:block;width:100%;height:auto;max-height:210px;object-fit:cover;background:#111}
+.reb-social-share-preview-media-video{aspect-ratio:16/9;background:#111}.reb-social-share-preview-media-video video{width:100%;height:100%;max-height:none;object-fit:cover}
+.reb-social-share-preview-video-tag{position:absolute;left:10px;bottom:9px;display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;background:rgba(17,20,24,.82);color:#fff;font-size:9px;font-weight:800;backdrop-filter:blur(4px)}
+.reb-social-share-preview-file{display:flex;align-items:center;gap:9px;padding:18px;color:#4f5862;font-size:11px;font-weight:800}.reb-social-share-preview-file i{font-size:18px;color:#a46a00}
+.reb-social-share-preview-count{position:absolute;right:10px;top:10px;display:grid;place-items:center;min-width:28px;height:28px;padding:0 7px;border-radius:999px;background:rgba(17,20,24,.80);color:#fff;font-size:10px;font-weight:900}
+.reb-social-share-primary-row{display:flex;padding:0 20px 18px}.reb-social-share-now{width:100%;height:46px;border:0;border-radius:11px;background:#ffb21c;color:#111;font-size:13px;font-weight:900;cursor:pointer;box-shadow:0 5px 14px rgba(255,178,28,.20);transition:transform .15s ease,filter .15s ease}.reb-social-share-now:hover{filter:brightness(.98);transform:translateY(-1px)}.reb-social-share-now:disabled{opacity:.55;cursor:wait;transform:none}
+.reb-social-share-section-title{padding:15px 20px 9px;border-top:1px solid #e7eaed;font-size:13px;font-weight:900;color:#24282c}
+.reb-social-share-shortcuts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;padding:0 18px 20px}
+.reb-social-share-shortcut{display:flex;flex-direction:column;align-items:center;gap:7px;min-width:0;padding:5px 2px;border:0;background:transparent;color:#353b41;font-size:9px;font-weight:800;cursor:pointer}.reb-social-share-shortcut>span:last-child{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reb-social-share-shortcut-icon{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:#eef1f4;color:#252a2f;font-size:19px;transition:transform .15s ease,background .15s ease,box-shadow .15s ease}.reb-social-share-shortcut:hover .reb-social-share-shortcut-icon{transform:translateY(-2px);background:#e3e7eb;box-shadow:0 5px 12px rgba(0,0,0,.08)}.reb-social-share-shortcut.is-facebook .reb-social-share-shortcut-icon{color:#1877f2}.reb-social-share-shortcut.is-whatsapp .reb-social-share-shortcut-icon{color:#128c7e}.reb-social-share-shortcut.is-telegram .reb-social-share-shortcut-icon{color:#229ed9}.reb-social-share-shortcut.is-x .reb-social-share-shortcut-icon{color:#111}
+.reb-social-post-video{aspect-ratio:16/9;object-fit:contain;max-height:min(620px,72vh)}
+@media(max-width:560px){.reb-social-share-modal-overlay{align-items:flex-end;padding:0}.reb-social-share-modal{width:100%;max-height:92vh;border-radius:22px 22px 0 0;border-bottom:0}.reb-social-share-modal-head{min-height:58px}.reb-social-share-account{padding:14px 16px 6px}.reb-social-share-caption{width:calc(100% - 32px);min-height:68px;margin-left:16px;margin-right:16px}.reb-social-share-preview-label{margin-left:16px;margin-right:16px}.reb-social-share-preview{margin-left:16px;margin-right:16px}.reb-social-share-primary-row{padding-left:16px;padding-right:16px}.reb-social-share-shortcuts{grid-template-columns:repeat(3,1fr);row-gap:14px;padding-left:14px;padding-right:14px}.reb-social-share-shortcut-icon{width:48px;height:48px}.reb-social-share-preview-media img,.reb-social-share-preview-media video{max-height:175px}}
+
+
+/* Phase 3D — Profile & Community */
+.reb-social-profile-panel-body{gap:12px}
+.reb-social-profile-hero{overflow:hidden;border:1px solid #e0e4e8;border-radius:18px;background:#fff;box-shadow:0 2px 8px rgba(18,22,26,.04)}
+.reb-social-profile-cover{position:relative;height:176px;background:linear-gradient(135deg,#161a20 0%,#27313b 48%,#d49a24 140%);overflow:hidden}
+.reb-social-profile-cover.is-fallback:after{content:"ReachEmpire";position:absolute;right:18px;bottom:13px;color:rgba(255,255,255,.17);font-size:28px;font-weight:900;letter-spacing:.5px}
+.reb-social-profile-cover img{width:100%;height:100%;display:block;object-fit:cover}
+.reb-social-profile-identity{display:grid;grid-template-columns:104px minmax(0,1fr);gap:14px;align-items:end;padding:0 18px 17px}
+.reb-social-profile-avatar-large{width:96px;height:96px;margin-top:-38px;border:5px solid #fff;box-shadow:0 5px 18px rgba(0,0,0,.14);font-size:26px;z-index:2}
+.reb-social-profile-copy-large{padding-top:11px}.reb-social-profile-name-line{display:flex;align-items:center;gap:8px;min-width:0}.reb-social-profile-name-line h3{min-width:0}
+.reb-social-profile-public-badge{display:inline-flex;align-items:center;gap:4px;flex:0 0 auto;padding:4px 7px;border-radius:999px;background:#f0f2f4;color:#59616a;font-size:8.5px;font-weight:900;text-transform:uppercase;letter-spacing:.03em}
+.reb-social-profile-copy-large>span{font-size:10.5px}.reb-social-profile-copy-large p{max-width:580px;font-size:12px}
+.reb-social-profile-stats-3{grid-template-columns:repeat(3,1fr)}
+.reb-social-profile-actions-row{display:flex;gap:8px;justify-content:flex-end}.reb-social-profile-actions-row .reb-social-primary-btn,.reb-social-profile-actions-row .reb-social-secondary-btn{min-height:40px;padding:9px 14px}
+.reb-social-profile-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border:1px solid #e0e4e8;border-radius:12px;background:#eef1f4}
+.reb-social-profile-tab{min-height:38px;border:0;border-radius:9px;background:transparent;color:#626a73;font-size:10.5px;font-weight:900;cursor:pointer}.reb-social-profile-tab.active{background:#fff;color:#121416;box-shadow:0 1px 5px rgba(0,0,0,.09)}
+.reb-social-profile-visibility-note{display:grid;grid-template-columns:34px minmax(0,1fr);gap:9px;align-items:center;padding:10px;border:1px solid #e2e6ea;border-radius:10px;background:#f8f9fa;color:#535b64}.reb-social-profile-visibility-note>i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#eef1f4;color:#8c640b}.reb-social-profile-visibility-note div{display:flex;flex-direction:column;gap:2px}.reb-social-profile-visibility-note strong{font-size:10px}.reb-social-profile-visibility-note span{font-size:9px;line-height:1.35;color:#737b84}
+.reb-social-community-panel{gap:12px}.reb-social-community-intro{padding:15px 16px;border-radius:16px;background:linear-gradient(135deg,#171b20,#2b333c);color:#fff;box-shadow:0 8px 24px rgba(22,26,31,.14)}.reb-social-community-intro h3{margin:0;font-size:18px}.reb-social-community-intro p{margin:6px 0 0;max-width:620px;color:#d7dde3;font-size:10.5px;line-height:1.5}
+.reb-social-community-search{display:grid;grid-template-columns:24px minmax(0,1fr) 34px;align-items:center;gap:5px;min-height:48px;padding:0 7px 0 12px;border:1px solid #dce1e6;border-radius:13px;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.03)}.reb-social-community-search>i{color:#8a929b}.reb-social-community-search input{width:100%;height:44px;border:0;outline:0;background:transparent;color:#15181b;font-size:12px}.reb-social-community-search input::placeholder{color:#929aa3}.reb-social-community-clear{width:32px;height:32px;border:0;border-radius:50%;background:#f0f2f4;color:#5f6770;font-size:20px;line-height:1;cursor:pointer}
+.reb-social-community-meta{display:flex;align-items:center;justify-content:space-between;padding:0 2px}.reb-social-community-meta strong{font-size:12px;color:#343a40}
+.reb-social-community-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.reb-social-community-list>.reb-social-panel-state{grid-column:1/-1}
+.reb-social-community-member{display:grid;grid-template-columns:50px minmax(0,1fr) auto;align-items:center;gap:9px;padding:11px;border:1px solid #e1e5e9;border-radius:14px;background:#fff;min-width:0;transition:box-shadow .15s ease,transform .15s ease}.reb-social-community-member:hover{box-shadow:0 5px 16px rgba(20,24,28,.08);transform:translateY(-1px)}
+.reb-social-community-avatar{display:grid;place-items:center;width:50px;height:50px;padding:0;border:0;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,#f5b529,#ffd978);color:#121416;font-size:12px;font-weight:900;cursor:pointer}.reb-social-community-avatar img{width:100%;height:100%;object-fit:cover}
+.reb-social-community-copy{display:flex;flex-direction:column;min-width:0;padding:0;border:0;background:transparent;text-align:left;cursor:pointer}.reb-social-community-copy strong{font-size:11.5px;color:#181b1e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-social-community-copy span{margin-top:2px;color:#747d86;font-size:9.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reb-social-community-copy small{margin-top:4px;color:#8c949c;font-size:8.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:700px){.reb-social-community-list{grid-template-columns:1fr}.reb-social-profile-cover{height:145px}.reb-social-profile-identity{grid-template-columns:84px minmax(0,1fr);padding:0 13px 14px}.reb-social-profile-avatar-large{width:80px;height:80px;margin-top:-30px;border-width:4px}.reb-social-profile-actions-row{display:grid;grid-template-columns:1fr 1fr}.reb-social-profile-actions-row>*{width:100%}}
+@media(max-width:430px){.reb-social-profile-cover{height:122px}.reb-social-profile-identity{grid-template-columns:68px minmax(0,1fr);gap:10px}.reb-social-profile-avatar-large{width:66px;height:66px;margin-top:-24px}.reb-social-profile-name-line{align-items:flex-start;flex-direction:column;gap:4px}.reb-social-profile-public-badge{padding:3px 6px}.reb-social-profile-stats-3 .reb-social-stat-btn{font-size:9px}.reb-social-profile-actions-row{grid-template-columns:1fr}.reb-social-profile-tabs{gap:2px}.reb-social-community-member{grid-template-columns:46px minmax(0,1fr) auto}.reb-social-community-avatar{width:46px;height:46px}}
+
+#rebSocialMessages{text-decoration:none;position:relative}
+
+
+/* Phase 3N — Feed Reactions */
+.reb-social-reaction-summary{display:flex;align-items:center;justify-content:flex-start;gap:7px;min-height:24px;margin:8px 2px -2px;color:#6b7280;font-size:11px}.reb-social-reaction-summary[hidden]{display:none}.reb-social-reaction-summary-icons{display:inline-flex;align-items:center}.reb-social-reaction-summary-icons>span{display:grid;place-items:center;width:22px;height:22px;margin-left:-4px;border:2px solid #fff;border-radius:50%;background:#fff;font-size:15px;line-height:1}.reb-social-reaction-summary-icons>span:first-child{margin-left:0}.reb-social-reaction-summary-count{font-weight:700}
+.reb-social-post-actions>.reb-social-reaction-wrap{position:relative;flex:1;min-width:0}.reb-social-reaction-main{width:100%}.reb-social-reaction-emoji{display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;transform:translateY(1px)}.reb-social-reaction-main[data-reaction="LIKE"]{background:#edf5ff;color:#1769c2}.reb-social-reaction-main[data-reaction="LOVE"]{background:#fff0f4;color:#d81b60}.reb-social-reaction-main[data-reaction="HAHA"]{background:#fff7dc;color:#a86700}.reb-social-reaction-main[data-reaction="WOW"]{background:#fff7dc;color:#9a5b00}.reb-social-reaction-main[data-reaction="SAD"]{background:#eef5ff;color:#496b9b}.reb-social-reaction-main[data-reaction="PRAY"]{background:#fff4e8;color:#8a5a19}
+.reb-social-reaction-picker{position:absolute;left:50%;bottom:calc(100% + 10px);z-index:60;display:flex;align-items:center;gap:3px;padding:7px 8px;border:1px solid #e3e7eb;border-radius:999px;background:#fff;box-shadow:0 12px 34px rgba(15,23,42,.18);opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,8px) scale(.96);transform-origin:center bottom;transition:opacity .14s ease,transform .14s ease,visibility .14s ease}.reb-social-reaction-wrap.is-open .reb-social-reaction-picker{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0) scale(1)}.reb-social-post-actions .reb-social-reaction-picker .reb-social-reaction-choice{flex:0 0 38px;width:38px;height:38px;min-height:38px;padding:0;border:0;border-radius:50%;background:transparent;font-size:24px;line-height:1;transition:transform .12s ease,background .12s ease}.reb-social-post-actions .reb-social-reaction-picker .reb-social-reaction-choice:hover,.reb-social-post-actions .reb-social-reaction-picker .reb-social-reaction-choice:focus-visible{background:#f3f5f7;transform:translateY(-5px) scale(1.18);outline:none}.reb-social-post-actions .reb-social-reaction-picker .reb-social-reaction-choice.is-selected{background:#fff2cc;box-shadow:0 0 0 2px #f2b01e inset}
+@media(max-width:540px){.reb-social-reaction-picker{left:0;transform:translate(0,8px) scale(.96);max-width:calc(100vw - 34px)}.reb-social-reaction-wrap.is-open .reb-social-reaction-picker{transform:translate(0,0) scale(1)}.reb-social-post-actions .reb-social-reaction-picker .reb-social-reaction-choice{flex-basis:36px;width:36px;height:36px;min-height:36px;font-size:22px}}
+
+
+/* Phase 3N-D9 — Desktop comment sorting/filter */
+.reb-social-comment-filter{display:none}
+@media(min-width:1200px){
+  .reb-social-inline-comments-top{justify-content:space-between;gap:14px;position:relative;padding:2px 0 6px}
+  .reb-social-comment-filter{display:block;position:relative;margin-left:auto}
+  .reb-social-comment-filter[hidden]{display:none!important}
+  .reb-social-comment-filter-btn{display:inline-flex;align-items:center;gap:7px;min-height:34px;padding:0 10px;border:0;border-radius:8px;background:transparent;color:#565f69;font-size:13px;font-weight:800;cursor:pointer}
+  .reb-social-comment-filter-btn:hover,.reb-social-comment-filter.is-open .reb-social-comment-filter-btn{background:#f4f5f6;color:#111214}
+  .reb-social-comment-filter-btn i{font-size:11px;color:#69727c;transition:transform .15s ease}
+  .reb-social-comment-filter.is-open .reb-social-comment-filter-btn i{transform:rotate(180deg)}
+  .reb-social-comment-filter-menu{position:absolute;right:0;top:calc(100% + 6px);z-index:90;width:310px;padding:8px;border:1px solid #e0e3e7;border-radius:13px;background:#fff;box-shadow:0 12px 30px rgba(15,23,42,.16)}
+  .reb-social-comment-filter-menu[hidden]{display:none!important}
+  .reb-social-comment-filter-option{display:flex;flex-direction:column;align-items:flex-start;width:100%;gap:3px;padding:11px 12px;border:0;border-radius:9px;background:#fff;text-align:left;cursor:pointer}
+  .reb-social-comment-filter-option:hover,.reb-social-comment-filter-option:focus-visible{background:#f3f4f5;outline:none}
+  .reb-social-comment-filter-option strong{font-family:var(--reb-title-font,"Ubuntu",Arial,sans-serif);font-size:14px;line-height:1.2;color:#17191c}
+  .reb-social-comment-filter-option small{font-family:var(--reb-text-font,"IBM Plex Sans",Arial,sans-serif);font-size:11px;line-height:1.35;color:#707984}
+}
+
+/* Phase 3N-D10: collapse comments must actually hide the list. */
+.reb-social-inline-comments-list[hidden]{display:none!important}
+
+/* Phase 3N-D17 — professional post options dropdown + pinned state */
+.reb-social-post-head{position:relative}
+.reb-social-post-more[aria-expanded="true"]{background:#e9ecef;color:#111}
+.reb-social-post-options{
+  position:absolute;top:44px;right:0;z-index:80;width:min(290px,calc(100vw - 42px));padding:8px;
+  border:1px solid #e0e4e8;border-radius:14px;background:#fff;box-shadow:0 16px 44px rgba(15,23,42,.18);
+}
+.reb-social-post-options[hidden]{display:none!important}
+.reb-social-post-option{
+  width:100%;min-height:52px;border:0;border-radius:10px;background:transparent;color:#1f2328;
+  display:grid;grid-template-columns:38px minmax(0,1fr);gap:9px;align-items:center;padding:7px 9px;text-align:left;cursor:pointer;
+  font-family:var(--reb-social-text-font,"IBM Plex Sans",Arial,sans-serif)!important;
+}
+.reb-social-post-option:hover,.reb-social-post-option:focus-visible{background:#f2f4f6;outline:0}
+.reb-social-post-option:disabled{opacity:.55;cursor:not-allowed}
+.reb-social-post-option-icon{width:38px;height:38px;border-radius:50%;background:#eef1f4;display:grid;place-items:center;font-size:16px;color:#20262d}
+.reb-social-post-option-copy{min-width:0;display:flex;flex-direction:column}
+.reb-social-post-option-copy strong{font:800 13px/1.2 var(--reb-social-title-font,"Ubuntu",Arial,sans-serif)!important;color:#15191e}
+.reb-social-post-option-note{margin-top:3px;color:#747d87;font-size:10.5px;line-height:1.3}
+.reb-social-post-option.is-danger .reb-social-post-option-icon{background:#fff0f0;color:#c62828}
+.reb-social-post-option.is-danger .reb-social-post-option-copy strong{color:#b42318}
+.reb-social-post-pinned{display:inline-flex;align-items:center;gap:4px;margin-left:8px;color:#9b6800;font-weight:800}
+.reb-social-post-pinned i{font-size:9px}
+@media(max-width:760px){
+  .reb-social-post-options{top:42px;right:0;width:min(270px,calc(100vw - 30px));border-radius:13px;padding:7px}
+  .reb-social-post-option{min-height:50px}
+}
+
+/* Phase 3N-D18 — comment composer, threaded replies, photo/emoji comments, robust post menu */
+.reb-social-post-options{
+  position:fixed!important;right:auto!important;bottom:auto!important;z-index:10050!important;
+  width:290px;max-width:calc(100vw - 20px);padding:8px;border:1px solid #e0e4e8;border-radius:14px;
+  background:#fff;box-shadow:0 18px 48px rgba(15,23,42,.22);
+}
+.reb-social-post-options.is-open{display:block!important}
+.reb-social-post-option{font-size:13px!important}
+
+.reb-social-comment-composer-v2{position:relative;display:flex;flex-direction:column;gap:6px;width:100%;min-width:0}
+.reb-social-inline-comment-composer>.reb-social-comment-composer-v2{min-width:0}
+.reb-social-comment-input-row{
+  position:relative;display:flex;align-items:flex-end;gap:4px;width:100%;min-height:40px;padding:4px 5px 4px 12px;
+  border:1px solid #dfe3e7;border-radius:20px;background:#f1f3f5;transition:border-color .15s ease,background .15s ease,box-shadow .15s ease;
+}
+.reb-social-comment-input-row:focus-within{border-color:#d7a22d;background:#fff;box-shadow:0 0 0 2px rgba(245,181,47,.10)}
+.reb-social-comment-input-row textarea{flex:1 1 auto;min-width:0;min-height:30px;max-height:110px;padding:6px 4px;border:0!important;outline:0!important;background:transparent!important;color:#181b1e;font:inherit;font-size:13px;line-height:1.45;resize:none}
+.reb-social-comment-composer-tools{position:relative;display:flex;align-items:center;gap:2px;flex:0 0 auto;padding-bottom:1px}
+.reb-social-comment-tool{display:grid;place-items:center;width:32px;height:32px;padding:0;border:0;border-radius:50%;background:transparent;color:#65707a;font-size:15px;cursor:pointer}
+.reb-social-comment-tool:hover,.reb-social-comment-tool:focus-visible{background:#e5e8eb;color:#202428;outline:0}
+.reb-social-comment-send{display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;padding:0;border:0;border-radius:50%;background:#ffb51f;color:#111;font-size:14px;box-shadow:0 4px 12px rgba(245,181,31,.22);cursor:pointer}
+.reb-social-comment-send[hidden]{display:none!important}
+.reb-social-comment-send:hover{transform:translateY(-1px);background:#f4aa0d}
+.reb-social-comment-send:disabled{opacity:.55;transform:none;cursor:not-allowed}
+.reb-social-comment-emoji-picker{position:absolute;right:0;bottom:calc(100% + 9px);z-index:10020;display:flex;flex-wrap:wrap;gap:3px;width:238px;padding:8px;border:1px solid #e0e4e8;border-radius:14px;background:#fff;box-shadow:0 14px 36px rgba(15,23,42,.18)}
+.reb-social-comment-emoji-picker[hidden]{display:none!important}
+.reb-social-comment-emoji{display:grid;place-items:center;width:34px;height:34px;padding:0;border:0;border-radius:9px;background:transparent;font-size:22px;cursor:pointer}
+.reb-social-comment-emoji:hover{background:#f2f4f6;transform:scale(1.08)}
+.reb-social-comment-photo-preview{position:relative;width:max-content;max-width:100%;padding:4px;border:1px solid #e0e4e8;border-radius:12px;background:#fff}
+.reb-social-comment-photo-preview[hidden]{display:none!important}
+.reb-social-comment-photo-preview img{display:block;width:auto;max-width:180px;height:auto;max-height:130px;border-radius:9px;object-fit:cover}
+.reb-social-comment-photo-remove{position:absolute;top:8px;right:8px;display:grid;place-items:center;width:27px;height:27px;padding:0;border:0;border-radius:50%;background:rgba(17,19,21,.82);color:#fff;cursor:pointer}
+.reb-social-comment-photo{display:block;width:max-content;max-width:100%;margin-top:7px;border-radius:12px;overflow:hidden;background:#e9ecef}
+.reb-social-comment-photo img{display:block;width:auto;max-width:min(360px,100%);height:auto;max-height:360px;object-fit:cover}
+.reb-social-reply-composer.reb-social-comment-composer-v2{padding:7px 0 2px;gap:5px}
+.reb-social-reply-composer-footer{display:flex;justify-content:flex-end;padding-right:4px}
+.reb-social-reply-composer-footer .reb-social-text-action{font-size:10px}
+.reb-social-replies{margin-left:26px;padding-left:9px;border-left:2px solid #e6e9ec}
+.reb-social-comment-thread-item.is-reply .reb-social-comment{background:#f6f7f8}
+@media(max-width:760px){
+  .reb-social-post-options{width:min(280px,calc(100vw - 20px))}
+  .reb-social-comment-input-row{padding-left:10px}
+  .reb-social-comment-input-row textarea{font-size:14px}
+  .reb-social-comment-tool{width:30px;height:30px}
+  .reb-social-comment-send{flex-basis:32px;width:32px;height:32px}
+  .reb-social-comment-emoji-picker{right:-38px;width:226px}
+  .reb-social-replies{margin-left:14px;padding-left:7px}
+  .reb-social-comment-photo img{max-width:min(290px,100%)}
+}

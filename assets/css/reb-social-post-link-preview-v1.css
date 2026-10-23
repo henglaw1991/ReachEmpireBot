@@ -1,0 +1,9 @@
+/* REB Social safe link preview: Feed and Profile, desktop and mobile */
+.reb-social-link-preview{display:block;margin:10px 0 14px;border:1px solid #e0e4e9;border-radius:13px;overflow:hidden;background:#fff;text-decoration:none!important;color:#17202a!important;max-width:100%;box-shadow:0 2px 10px rgba(18,27,40,.045)}
+.reb-social-link-preview:hover{border-color:#edb749;background:#fffdfa}
+.reb-social-link-preview-image{width:100%;max-height:340px;aspect-ratio:16/9;object-fit:cover;display:block;background:#eef1f4}
+.reb-social-link-preview-info{display:flex;flex-direction:column;gap:5px;padding:12px 14px;min-width:0;overflow-wrap:anywhere}
+.reb-social-link-preview-info strong{font-size:14px;line-height:1.4;font-weight:700;color:#17191c}
+.reb-social-link-preview-info span{font-size:12px;color:#596674;line-height:1.45}
+.reb-social-link-preview-info small{font-size:11px;color:#858d98}
+@media(max-width:767px){.reb-social-link-preview{margin:8px 0 12px}.reb-social-link-preview-image{max-height:260px}.reb-social-link-preview-info{padding:10px 12px}}

@@ -1,0 +1,8 @@
+/* R134 — iOS Post composer input only. Keep Android/Desktop and Comment R133 rules unchanged. */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (max-width: 767px) {
+    body.reb-social-page #rebSocialComposer #rebSocialText {
+      font-size: 16px !important;
+    }
+  }
+}

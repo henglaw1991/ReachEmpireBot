@@ -1,0 +1,26 @@
+/* ReachEmpireBot Home V34 - compact phone header and normalized market badges. */
+@media (max-width:767px){
+  html body.reb-home .main-header .header-lower,
+  html body.reb-home .main-header .header-lower .outer-box{
+    height:62px!important;
+    min-height:62px!important;
+  }
+  html body.reb-home .main-header .header-lower .outer-box{padding:3px 0!important}
+  html body.reb-home .main-header .logo-box{height:56px!important;min-height:56px!important}
+  html body.reb-home .main-header .logo-box img{width:min(172px,55vw)!important;max-height:50px!important}
+  html body.reb-home .main-header .menu-area{transform:translateY(-3px)!important}
+  html body.reb-home .main-header .header-bottom,
+  html body.reb-home .main-header .header-bottom .large-container,
+  html body.reb-home .main-header .header-bottom .bottom-inner,
+  html body.reb-home .main-header .header-bottom .bottom-inner .inner-box{
+    height:46px!important;min-height:46px!important;max-height:46px!important;
+  }
+  html body.reb-home .main-header .header-bottom{margin:0 0 6px!important;padding:0!important}
+  html body.reb-home #reb-live-ticker,
+  html body.reb-home #reb-live-ticker .reb-market-tick{height:46px!important;min-height:46px!important}
+  html body.reb-home #reb-live-ticker .reb-market-tick{padding-left:10px!important}
+  html body.reb-home #reb-live-ticker .reb-market-icon{
+    display:inline-flex!important;visibility:visible!important;opacity:1!important;
+    width:28px!important;height:28px!important;flex:0 0 28px!important;
+  }
+}

@@ -1,0 +1,21 @@
+/* REB Social D125: desktop account dropdown wins over the right-rail search.
+   Header and menu need a common stacking context; raising menu alone cannot
+   escape a lower header stacking context. Scoped to desktop Social Feed. */
+@media (min-width:768px){
+  body.reb-social-page .reb-social-global-topbar{
+    position:relative!important;
+    z-index:2001!important;
+    overflow:visible!important;
+  }
+  body.reb-social-page .reb-social-global-inner,
+  body.reb-social-page .reb-social-account-control{
+    overflow:visible!important;
+  }
+  body.reb-social-page .reb-social-account-control{
+    position:relative!important;
+    z-index:2!important;
+  }
+  body.reb-social-page .reb-social-account-dropdown{
+    z-index:2002!important;
+  }
+}

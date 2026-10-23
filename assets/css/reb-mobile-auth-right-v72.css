@@ -1,0 +1,53 @@
+/* ReachEmpireBot mobile auth alignment v72
+   Keeps desktop unchanged and standardizes Sign Up / Login on phone pages. */
+@media (max-width: 767px) {
+  html body .reb-top {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    justify-content: initial !important;
+    width: 100% !important;
+    min-height: 56px !important;
+    padding: 7px 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .reb-top > .reb-phone {
+    display: none !important;
+  }
+
+  html body .reb-top > .reb-actions,
+  html body .reb-top > .reb-login {
+    grid-column: 2 !important;
+    justify-self: end !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    width: min(280px, calc(100vw - 20px)) !important;
+    max-width: 280px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    position: static !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .reb-top > .reb-actions > a,
+  html body .reb-top > .reb-login > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 42px !important;
+    margin: 0 !important;
+    padding: 0 12px !important;
+    border-radius: 9px !important;
+    box-sizing: border-box !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+}

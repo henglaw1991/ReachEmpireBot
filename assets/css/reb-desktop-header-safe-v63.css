@@ -1,0 +1,92 @@
+/* REB V63 — SAFE DESKTOP HEADER + MASTER WIDTH ALIGNMENT
+   Built on top of V62/V58. No page hero/content changes.
+   Desktop only: header/ticker frame aligns with the Home trust/title panel.
+   Mobile <=900px is untouched. */
+@media (min-width:901px){
+  body.reb-v62-public{--reb62-gold:#f5b026;--reb62-ink:#0d1311;overflow-x:hidden;}
+  body.reb-v62-public > .reb-v62-header{display:block!important;width:100%;position:relative;z-index:5000;background:#fff;font-family:Ubuntu,Arial,sans-serif;}
+  .reb-v62-header .reb-v62-frame{
+    box-sizing:border-box;
+    width:min(1440px, calc(100vw - 36px));
+    max-width:1440px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .reb-v62-header .reb-v62-top{height:50px;background:#0e1412;border-bottom:1px solid rgba(255,255,255,.05);}
+  .reb-v62-header .reb-v62-top .reb-v62-frame{height:50px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .reb-v62-header .reb-v62-phone{display:inline-flex;align-items:center;gap:10px;color:#fff!important;text-decoration:none!important;font-size:17px;font-weight:800;line-height:1;white-space:nowrap;}
+  .reb-v62-header .reb-v62-phone i{color:var(--reb62-gold)!important;font-size:18px;}
+  .reb-v62-header .reb-v62-auth{height:50px;display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:18px!important;margin-left:auto!important;}
+  .reb-v62-header .reb-v62-auth a{box-sizing:border-box;text-decoration:none!important;white-space:nowrap;font-family:Ubuntu,Arial,sans-serif!important;}
+  .reb-v62-header .reb-v62-account{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;height:34px!important;max-width:260px!important;padding:0 15px!important;border:1px solid #a27618!important;border-radius:7px!important;background:#181b18!important;color:#fff!important;font-size:13px!important;font-weight:800!important;line-height:1!important;overflow:hidden!important;text-overflow:ellipsis!important;box-shadow:none!important;}
+  .reb-v62-header .reb-v62-account i{flex:0 0 auto!important;color:var(--reb62-gold)!important;font-size:13px!important;line-height:1!important;}
+  .reb-v62-header .reb-v62-account span{min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;color:#fff!important;}
+  .reb-v62-header .reb-v62-account:visited{color:#fff!important;}
+  .reb-v62-header .reb-v62-account:hover{background:#20231f!important;border-color:var(--reb62-gold)!important;color:#fff!important;}
+  .reb-v62-header .reb-v62-signup{display:inline-flex!important;align-items:center!important;justify-content:center!important;height:34px!important;padding:0 15px!important;border:1px solid rgba(245,176,38,.72)!important;border-radius:7px!important;background:rgba(245,176,38,.08)!important;color:#fff!important;font-size:13px!important;font-weight:800!important;line-height:1!important;}
+  .reb-v62-header .reb-v62-login,
+  .reb-v62-header .reb-v62-logout{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;height:50px!important;padding:0!important;border:0!important;background:transparent!important;color:#fff!important;font-size:14px!important;font-weight:800!important;line-height:1!important;}
+  .reb-v62-header .reb-v62-login i,
+  .reb-v62-header .reb-v62-logout i{color:var(--reb62-gold)!important;font-size:14px!important;}
+
+  .reb-v62-header .reb-v62-nav{height:84px;background:#fff;border-bottom:1px solid #e8ebe9;box-shadow:0 2px 8px rgba(0,0,0,.03);}
+  .reb-v62-header .reb-v62-nav .reb-v62-frame{height:84px;display:flex;align-items:center;gap:30px;}
+  .reb-v62-header .reb-v62-brand{display:flex;align-items:center;flex:0 0 210px;width:210px;height:72px;text-decoration:none!important;}
+  .reb-v62-header .reb-v62-brand img{display:block;width:190px;max-width:190px;height:auto;object-fit:contain;}
+  .reb-v62-header .reb-v62-menu{display:flex;align-items:center;justify-content:flex-end;gap:3px;margin-left:auto;min-width:0;white-space:nowrap;}
+  .reb-v62-header .reb-v62-menu>a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 12px;border-radius:13px;color:#454a54!important;background:transparent!important;text-decoration:none!important;font-size:15px!important;font-weight:800!important;line-height:1!important;}
+  .reb-v62-header .reb-v62-menu>a i{width:18px;text-align:center;color:#59616d!important;font-size:16px!important;}
+  .reb-v62-header .reb-v62-menu>a.active{background:#fff0c9!important;color:#8e5a00!important;box-shadow:inset 0 0 0 1px rgba(245,176,38,.06)!important;}
+  .reb-v62-header .reb-v62-menu>a.active i{color:#b36c00!important;}
+
+  /* HOME: replace only top utility + white nav. Keep original market price bar below it. */
+  body.reb-v62-home .boxed_wrapper > .main-header > .header-top,
+  body.reb-v62-home .boxed_wrapper > .main-header > header.reb-web-menu,
+  body.reb-v62-home .boxed_wrapper > .main-header > .reb-home-mobile-nav,
+  body.reb-v62-home .boxed_wrapper > .main-header > .sticky-header{display:none!important;}
+  body.reb-v62-home .boxed_wrapper > .main-header{display:block!important;visibility:visible!important;height:auto!important;overflow:visible!important;margin:0!important;padding:0!important;}
+  body.reb-v62-home .boxed_wrapper > .main-header > .header-bottom{
+    display:block!important;
+    visibility:visible!important;
+    height:auto!important;
+    width:min(1440px, calc(100vw - 36px))!important;
+    max-width:1440px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding-left:0!important;
+    padding-right:0!important;
+    box-sizing:border-box!important;
+  }
+  body.reb-v62-home .boxed_wrapper > .main-header > .header-bottom > .large-container{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+    padding:0!important;
+    box-sizing:border-box!important;
+  }
+
+  /* V58 also has a JS-mounted desktop header on subpages. Hide it so V62 stays single-header. */
+  body.reb-v62-public > #reb-global-home-header-v35{display:none!important;visibility:hidden!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;}
+
+  /* CORE SUBPAGES: hide only the old desktop header. Their original hero/content stays untouched. */
+  body.reb-v62-subpage > .reb-global-master-header{display:none!important;visibility:hidden!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;}
+
+  /* Forex/Crypto/Metal had two legacy desktop headers. Hide both only on Desktop. */
+  body.reb-v62-market-page > .reb-global-master-header,
+  body.reb-v62-market-page > .main-header.reb-market-home-header-v29{display:none!important;visibility:hidden!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;}
+}
+
+@media (min-width:901px) and (max-width:1220px){
+  .reb-v62-header .reb-v62-nav .reb-v62-frame{gap:14px;}
+  .reb-v62-header .reb-v62-brand{flex-basis:175px;width:175px;}
+  .reb-v62-header .reb-v62-brand img{width:165px;max-width:165px;}
+  .reb-v62-header .reb-v62-menu>a{padding:0 8px;gap:6px;font-size:13.5px!important;}
+  .reb-v62-header .reb-v62-menu>a i{width:15px;font-size:14px!important;}
+}
+
+@media (max-width:900px){
+  body > .reb-v62-header{display:none!important;}
+}

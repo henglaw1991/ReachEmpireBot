@@ -1,0 +1,23 @@
+/* R135: keep panning and tapping; prevent page pinch and double-tap zoom where supported.
+   This rule applies only on detected mobile devices via HTML class. */
+html.reb-mobile-zoom-locked,
+html.reb-mobile-zoom-locked body {
+  touch-action: pan-x pan-y;
+}
+html.reb-mobile-zoom-locked a,
+html.reb-mobile-zoom-locked button,
+html.reb-mobile-zoom-locked input,
+html.reb-mobile-zoom-locked textarea,
+html.reb-mobile-zoom-locked select,
+html.reb-mobile-zoom-locked [role="button"] {
+  touch-action: manipulation;
+}
+/* Prevent iOS text-input focus from triggering another automatic page scale.
+   Input readability is retained; Android/Desktop keep their existing font sizing. */
+@supports (-webkit-touch-callout: none) {
+  html.reb-mobile-zoom-locked input:not([type="checkbox"]):not([type="radio"]),
+  html.reb-mobile-zoom-locked textarea,
+  html.reb-mobile-zoom-locked select {
+    font-size: max(16px, 1em);
+  }
+}

@@ -1,0 +1,27 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Deployment and dependency caches
+.vercel/
+node_modules/
+
+# Never commit paid EA binaries or generated archives
+assets/download/*
+*.ex4
+*.ex5
+*.mq4
+*.mq5
+*.zip
+*.rar
+*.7z
+
+# Keep the download directory documented
+!assets/download/README.md
+
+# Secrets
+.env
+.env.*
+!.env.example
