@@ -679,6 +679,45 @@ html body .reb-top .reb-auth-logged-in {
 </style>
 
 <link rel="stylesheet" href="/assets/css/reb-desktop-footer-icon-fix-v72.css?v=72" media="(min-width: 901px)">
+<!-- R154: Download hero title layout only. No download or application logic modified. -->
+<style id="reb-r154-hero-title-layout">
+html body.reb-download-page .reb-hero .reb-hero-product-title{
+  font-size:clamp(36px,3.15vw,50px)!important;
+  font-weight:700!important;
+  line-height:1.12!important;
+  letter-spacing:-.032em!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+  margin:12px 0 8px!important;
+}
+html body.reb-download-page .reb-hero .reb-hero-product-variant{
+  font-size:clamp(18px,1.55vw,23px)!important;
+  font-weight:500!important;
+  line-height:1.4!important;
+  letter-spacing:-.01em!important;
+  color:rgba(255,255,255,.91)!important;
+  margin:0 0 18px!important;
+}
+html body.reb-download-page .reb-hero .reb-hero-product-variant strong{
+  color:#f5b026!important;
+  font-weight:700!important;
+  white-space:nowrap!important;
+}
+@media(max-width:767px){
+  html body.reb-download-page .reb-hero .reb-hero-product-title{
+    font-size:clamp(25px,7.3vw,34px)!important;
+    line-height:1.15!important;
+    letter-spacing:-.035em!important;
+    margin:10px 0 7px!important;
+  }
+  html body.reb-download-page .reb-hero .reb-hero-product-variant{
+    font-size:clamp(14px,3.65vw,17px)!important;
+    line-height:1.45!important;
+    margin-bottom:13px!important;
+  }
+}
+</style>
 </head>
 
 <style id="reb-v111-download-mobile-clean-icon">
@@ -742,7 +781,7 @@ html body .reb-top .reb-auth-logged-in {
 <main>
 <section class="reb-hero">
 <div class="reb-hero-inner">
-<div><div class="reb-kicker">Setup Download</div><h1>Download REB-SuperProfitHunter Auto-Switch TriCore Mode V1.2</h1><p>Download the official SuperProfitHunter EA package for MetaTrader 5 and follow the included installation guide.</p></div>
+<div><div class="reb-kicker">Setup Download</div><h1 class="reb-hero-product-title">REB SuperProfitHunter</h1><div class="reb-hero-product-variant">Auto-Switch TriCore Mode <strong>V1.2</strong></div><p>Download the official SuperProfitHunter EA package for MetaTrader 5 and follow the included installation guide.</p></div>
 <div class="reb-device reb-standard-hero-frame reb-download-video-frame"><video aria-label="ReachEmpireBot download setup video" autoplay="" class="reb-download-hero-video" controls="" loop="" muted="" playsinline="" preload="metadata" webkit-playsinline=""><source src="/assets/videos/download.mp4?v=20260809-surgical27" type="video/mp4"/></video></div>
 </div>
 </section>
