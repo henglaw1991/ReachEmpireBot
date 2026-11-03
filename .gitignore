@@ -25,3 +25,6 @@ assets/download/*
 .env
 .env.*
 !.env.example
+
+# R153: allow only the named public SuperProfitHunter setup ZIP; other ZIPs remain ignored.
+!assets/downloads/REB-SuperProfitHunter Auto-Switch TriCore Mode V1.2.zip
