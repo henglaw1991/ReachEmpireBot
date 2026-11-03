@@ -92,9 +92,13 @@ async function loadSupport(silent,expectedToken){
   try{var d=await api('/api/customer-chat/messages?after_id=0',{method:'GET',timeoutMs:10000});
     if(token!==state.threadToken||state.kind!=='support'||state.view!=='thread')return;
     var list=mergeDeleted(Array.isArray(d.messages)?d.messages:[],'support','id');var sig=list.map(function(m){return String(m.id||0)+':'+String(m.read_at||'')+':'+String(m.message_text||'')+':'+String(m.edited_at||'')+':'+String(m.deleted_at||m._deleted_local||'')}).join('|');
-    if(!(silent&&sig===state.supportSig)){var nearBottom=el.messages.scrollHeight-el.messages.scrollTop-el.messages.clientHeight<90;el.messages.innerHTML='';state.messageIndex.support={};list.forEach(function(m){el.messages.insertAdjacentHTML('beforeend',supportMessageHtml(m))});hydrateSupportMedia();state.supportSig=sig;if(!silent||nearBottom)scrollBottom()}
+    // A loading/error placeholder is not a message: a successful fetch must clear it,
+    // even when a silent retry returns the same (possibly empty) message signature.
+    var supportPlaceholder=el.messages.querySelector('.reb-hc-mini-empty');
+    var supportPlaceholderStale=!!(supportPlaceholder&&supportPlaceholder.textContent.trim()!=='No messages yet.');
+    if(!(silent&&sig===state.supportSig)||supportPlaceholderStale){var nearBottom=el.messages.scrollHeight-el.messages.scrollTop-el.messages.clientHeight<90;el.messages.innerHTML='';state.messageIndex.support={};list.forEach(function(m){el.messages.insertAdjacentHTML('beforeend',supportMessageHtml(m))});if(!list.length)el.messages.innerHTML='<div class="reb-hc-mini-empty">No messages yet.</div>';hydrateSupportMedia();state.supportSig=sig;if(!silent||nearBottom)scrollBottom()}
     state.supportUnread=Number(d.unread||0);if(state.supportUnread>0){await api('/api/customer-chat/read',{method:'POST',timeoutMs:7000}).catch(function(){});if(token!==state.threadToken||state.kind!=='support')return;state.supportUnread=0}syncBadge()
-  }catch(e){if(token!==state.threadToken||state.kind!=='support')return;if(!silent)toast(e.message||'Unable to load Customer Service chat.')}
+  }catch(e){if(token!==state.threadToken||state.kind!=='support'||state.view!=='thread')return;var pending=el.messages.querySelector('.reb-hc-mini-empty');if(pending&&pending.textContent.indexOf('Loading messages')>=0)pending.textContent='Unable to load messages. Retrying…';if(!silent)toast(e.message||'Unable to load Customer Service chat.')}
 }
 async function openSocial(c){
   if(!c||c.conversation_id==null)return;state.threadToken++;var token=state.threadToken,cid=String(c.conversation_id);
@@ -116,11 +120,14 @@ async function loadSocial(silent,expectedToken,expectedCid){
     if(token!==state.threadToken||state.kind!=='social'||state.view!=='thread'||!state.active||String(state.active.conversation_id)!==cid)return;
     if(d.conversation&&String(d.conversation.conversation_id)==cid)state.active=d.conversation;
     var list=mergeDeleted(Array.isArray(d.messages)?d.messages:[],'social:'+cid,'message_id');var sig=stableSocialMessageSig(list);
-    if(!(silent&&sig===state.socialSig)){reconcileMiniSocial(list,silent);state.socialSig=sig}
+    // Remove initial loading/error/empty placeholders before inserting real messages.
+    var socialPlaceholder=el.messages.querySelector('.reb-hc-mini-empty');
+    var socialNeedsRefresh=!!(socialPlaceholder&&socialPlaceholder.textContent.trim()!=='No messages yet.');
+    if(!(silent&&sig===state.socialSig)||socialNeedsRefresh){if(socialPlaceholder)socialPlaceholder.remove();reconcileMiniSocial(list,silent);if(!list.length&&!el.messages.querySelector('.reb-hc-mini-message'))el.messages.innerHTML='<div class="reb-hc-mini-empty">No messages yet.</div>';state.socialSig=sig}
     await api('/api/social/messages/conversations/'+encodeURIComponent(cid)+'/read',{method:'POST',timeoutMs:7000}).catch(function(){});
     if(token!==state.threadToken||state.kind!=='social'||!state.active||String(state.active.conversation_id)!==cid)return;
     var fresh=state.social.find(function(x){return String(x.conversation_id)===cid});if(fresh)fresh.unread=0;syncBadge()
-  }catch(e){if(token!==state.threadToken||state.kind!=='social'||!state.active||String(state.active.conversation_id)!==cid)return;if(!silent)toast(e.message||'Unable to load messages.')}finally{state.threadBusy=false}
+  }catch(e){if(token!==state.threadToken||state.kind!=='social'||state.view!=='thread'||!state.active||String(state.active.conversation_id)!==cid)return;var pending=el.messages.querySelector('.reb-hc-mini-empty');if(pending&&pending.textContent.indexOf('Loading messages')>=0)pending.textContent='Unable to load messages. Retrying…';if(!silent)toast(e.message||'Unable to load messages.')}finally{state.threadBusy=false}
 }
 function startThreadPoll(){clearInterval(state.threadPoll);state.threadPoll=setInterval(function(){if(!state.open||state.view!=='thread')return;state.kind==='support'?loadSupport(true):loadSocial(true)},3500)}
 async function send(){var v=el.input.value.trim();if(!v||state.busy)return;var sendKind=state.kind,sendToken=state.threadToken,sendCid=sendKind==='social'&&state.active?String(state.active.conversation_id):'';state.busy=true;el.send.disabled=true;try{if(sendKind==='support'){await api('/api/customer-chat/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:v}),timeoutMs:15000});el.input.value='';if(sendToken===state.threadToken&&state.kind==='support')await loadSupport(false,sendToken)}else if(sendKind==='social'&&sendCid){await api('/api/social/messages/conversations/'+encodeURIComponent(sendCid)+'/messages',{method:'POST',json:{content:v,staged_upload_ids:[]},timeoutMs:15000});el.input.value='';if(sendToken===state.threadToken&&state.kind==='social'&&state.active&&String(state.active.conversation_id)===sendCid)await loadSocial(false,sendToken,sendCid)}await refreshList(true)}catch(e){toast(e.message||'Unable to send message.')}finally{state.busy=false;el.send.disabled=false;el.input.focus()}}
